@@ -1,0 +1,917 @@
+fileFormatVersion: 2
+guid: 1421b99fb8c2663459ea1476f73ac363
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7436332465909100632
+    second: Medieval_Dungeons_Manticore_running_0
+  - first:
+      213: -164519909863820463
+    second: Medieval_Dungeons_Manticore_running_1
+  - first:
+      213: 7078422800530133027
+    second: Medieval_Dungeons_Manticore_running_2
+  - first:
+      213: 2308452455858340892
+    second: Medieval_Dungeons_Manticore_running_3
+  - first:
+      213: -804575361375113779
+    second: Medieval_Dungeons_Manticore_running_4
+  - first:
+      213: 2273289001917687194
+    second: Medieval_Dungeons_Manticore_running_5
+  - first:
+      213: -4434971706020260513
+    second: Medieval_Dungeons_Manticore_running_6
+  - first:
+      213: -2936381112841790845
+    second: Medieval_Dungeons_Manticore_running_7
+  - first:
+      213: -2635630792587508065
+    second: Medieval_Dungeons_Manticore_running_8
+  - first:
+      213: 8474504677930837904
+    second: Medieval_Dungeons_Manticore_running_9
+  - first:
+      213: 3284093223044967177
+    second: Medieval_Dungeons_Manticore_running_10
+  - first:
+      213: -562146708260144193
+    second: Medieval_Dungeons_Manticore_running_11
+  - first:
+      213: -177455146458149945
+    second: Medieval_Dungeons_Manticore_running_12
+  - first:
+      213: -6363794473063299158
+    second: Medieval_Dungeons_Manticore_running_13
+  - first:
+      213: 7996700236597115901
+    second: Medieval_Dungeons_Manticore_running_14
+  - first:
+      213: -6636419355086461825
+    second: Medieval_Dungeons_Manticore_running_15
+  - first:
+      213: 6719166770918995481
+    second: Medieval_Dungeons_Manticore_running_16
+  - first:
+      213: -3331181677764633869
+    second: Medieval_Dungeons_Manticore_running_17
+  - first:
+      213: 2205088929589496678
+    second: Medieval_Dungeons_Manticore_running_18
+  - first:
+      213: -7096486718926286191
+    second: Medieval_Dungeons_Manticore_running_19
+  - first:
+      213: -6352454331576904109
+    second: Medieval_Dungeons_Manticore_running_20
+  - first:
+      213: 8134804098292729905
+    second: Medieval_Dungeons_Manticore_running_21
+  - first:
+      213: 3880309953821654202
+    second: Medieval_Dungeons_Manticore_running_22
+  - first:
+      213: -8899051483330942169
+    second: Medieval_Dungeons_Manticore_running_23
+  - first:
+      213: 7969916407257048348
+    second: Medieval_Dungeons_Manticore_running_24
+  - first:
+      213: 2835164484383452715
+    second: Medieval_Dungeons_Manticore_running_25
+  - first:
+      213: -8448431934941811457
+    second: Medieval_Dungeons_Manticore_running_26
+  - first:
+      213: 109019718999971719
+    second: Medieval_Dungeons_Manticore_running_27
+  - first:
+      213: -3438762922888765618
+    second: Medieval_Dungeons_Manticore_running_28
+  - first:
+      213: -3304730140322877033
+    second: Medieval_Dungeons_Manticore_running_29
+  - first:
+      213: -3457772964468308896
+    second: Medieval_Dungeons_Manticore_running_30
+  - first:
+      213: -5171159435247593901
+    second: Medieval_Dungeons_Manticore_running_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Manticore_running_0
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 792
+        width: 80
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8af88c98507dcc890800000000000000
+      internalID: -7436332465909100632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Manticore_running_1
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 791
+        width: 76
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 153761e730287bdf0800000000000000
+      internalID: -164519909863820463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Manticore_running_2
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 794
+        width: 76
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 320df93b80c9b3260800000000000000
+      internalID: 7078422800530133027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Manticore_running_3
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 787
+        width: 78
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1480542745490020800000000000000
+      internalID: 2308452455858340892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Manticore_running_4
+      rect:
+        serializedVersion: 2
+        x: 1118
+        y: 782
+        width: 80
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcd643eb8f295d4f0800000000000000
+      internalID: -804575361375113779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Manticore_running_5
+      rect:
+        serializedVersion: 2
+        x: 1374
+        y: 782
+        width: 82
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a952b178d485c8f10800000000000000
+      internalID: 2273289001917687194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Manticore_running_6
+      rect:
+        serializedVersion: 2
+        x: 1624
+        y: 786
+        width: 83
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5511c91bb0d372c0800000000000000
+      internalID: -4434971706020260513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Manticore_running_7
+      rect:
+        serializedVersion: 2
+        x: 1879
+        y: 790
+        width: 87
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38a16eb7fe0ef37d0800000000000000
+      internalID: -2936381112841790845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Manticore_running_8
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 560
+        width: 194
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f968db022cb5c6bd0800000000000000
+      internalID: -2635630792587508065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Manticore_running_9
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 567
+        width: 189
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 097247fca1d7b9570800000000000000
+      internalID: 8474504677930837904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Manticore_running_10
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 564
+        width: 216
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90becd0f261739d20800000000000000
+      internalID: 3284093223044967177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Manticore_running_11
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 570
+        width: 233
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbbbf761c8ad238f0800000000000000
+      internalID: -562146708260144193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Manticore_running_12
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 581
+        width: 236
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cb0cc70c7d898df0800000000000000
+      internalID: -177455146458149945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Manticore_running_13
+      rect:
+        serializedVersion: 2
+        x: 1306
+        y: 575
+        width: 228
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa7c771c4a24fa7a0800000000000000
+      internalID: -6363794473063299158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Manticore_running_14
+      rect:
+        serializedVersion: 2
+        x: 1563
+        y: 564
+        width: 208
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfb37a13f7cf9fe60800000000000000
+      internalID: 7996700236597115901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Manticore_running_15
+      rect:
+        serializedVersion: 2
+        x: 1818
+        y: 558
+        width: 209
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f746b8ff1c3b6e3a0800000000000000
+      internalID: -6636419355086461825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Manticore_running_16
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 313
+        width: 181
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9163c3714964f3d50800000000000000
+      internalID: 6719166770918995481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Manticore_running_17
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 306
+        width: 175
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fa9c86d9e345c1d0800000000000000
+      internalID: -3331181677764633869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Manticore_running_18
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 315
+        width: 205
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66b045ac2bc0a9e10800000000000000
+      internalID: 2205088929589496678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Manticore_running_19
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 315
+        width: 221
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1921f1d8de6348d90800000000000000
+      internalID: -7096486718926286191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Manticore_running_20
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 310
+        width: 223
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3569772317c87d7a0800000000000000
+      internalID: -6352454331576904109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Manticore_running_21
+      rect:
+        serializedVersion: 2
+        x: 1306
+        y: 311
+        width: 214
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13841243a31a4e070800000000000000
+      internalID: 8134804098292729905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Manticore_running_22
+      rect:
+        serializedVersion: 2
+        x: 1579
+        y: 301
+        width: 193
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abcb3ff1851a9d530800000000000000
+      internalID: 3880309953821654202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Manticore_running_23
+      rect:
+        serializedVersion: 2
+        x: 1836
+        y: 303
+        width: 194
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72b652a33d7308480800000000000000
+      internalID: -8899051483330942169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Manticore_running_24
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 58
+        width: 79
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c152d18feb4da9e60800000000000000
+      internalID: 7969916407257048348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Manticore_running_25
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 61
+        width: 76
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2eaa73c317885720800000000000000
+      internalID: 2835164484383452715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Manticore_running_26
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 48
+        width: 76
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffc2ab8bae321ca80800000000000000
+      internalID: -8448431934941811457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Manticore_running_27
+      rect:
+        serializedVersion: 2
+        x: 861
+        y: 39
+        width: 77
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78791885bd0538100800000000000000
+      internalID: 109019718999971719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Manticore_running_28
+      rect:
+        serializedVersion: 2
+        x: 1117
+        y: 23
+        width: 77
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4f5e6a475f0740d0800000000000000
+      internalID: -3438762922888765618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Manticore_running_29
+      rect:
+        serializedVersion: 2
+        x: 1373
+        y: 19
+        width: 76
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7913783527d3322d0800000000000000
+      internalID: -3304730140322877033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Manticore_running_30
+      rect:
+        serializedVersion: 2
+        x: 1629
+        y: 29
+        width: 76
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 064cae21fc58300d0800000000000000
+      internalID: -3457772964468308896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Manticore_running_31
+      rect:
+        serializedVersion: 2
+        x: 1883
+        y: 39
+        width: 80
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 356582144e95c38b0800000000000000
+      internalID: -5171159435247593901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

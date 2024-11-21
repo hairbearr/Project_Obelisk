@@ -1,0 +1,667 @@
+fileFormatVersion: 2
+guid: 7735638f49374924d817954770d7ce4f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4106305794630973304
+    second: $!Medieval_Dungeons_Trap_2_0
+  - first:
+      213: -6225099884335611400
+    second: $!Medieval_Dungeons_Trap_2_1
+  - first:
+      213: -1487715029810209232
+    second: $!Medieval_Dungeons_Trap_2_2
+  - first:
+      213: 3960810530334135254
+    second: $!Medieval_Dungeons_Trap_2_3
+  - first:
+      213: -1718026885508966388
+    second: $!Medieval_Dungeons_Trap_2_4
+  - first:
+      213: 3819140639123549461
+    second: $!Medieval_Dungeons_Trap_2_5
+  - first:
+      213: 7838305376518846863
+    second: $!Medieval_Dungeons_Trap_2_6
+  - first:
+      213: 1146995059620863286
+    second: $!Medieval_Dungeons_Trap_2_7
+  - first:
+      213: -6549070804817622890
+    second: $!Medieval_Dungeons_Trap_2_8
+  - first:
+      213: 446463165145707758
+    second: $!Medieval_Dungeons_Trap_2_9
+  - first:
+      213: -3246243031487869746
+    second: $!Medieval_Dungeons_Trap_2_10
+  - first:
+      213: -8220494922423323507
+    second: $!Medieval_Dungeons_Trap_2_11
+  - first:
+      213: -4742284114836758096
+    second: $!Medieval_Dungeons_Trap_2_12
+  - first:
+      213: -4719455783308125552
+    second: $!Medieval_Dungeons_Trap_2_13
+  - first:
+      213: -7610804047533300429
+    second: $!Medieval_Dungeons_Trap_2_14
+  - first:
+      213: -5665475998792850441
+    second: $!Medieval_Dungeons_Trap_2_15
+  - first:
+      213: -4760042637552424959
+    second: $!Medieval_Dungeons_Trap_2_16
+  - first:
+      213: -6388028733066641847
+    second: $!Medieval_Dungeons_Trap_2_17
+  - first:
+      213: 8582397957909345997
+    second: $!Medieval_Dungeons_Trap_2_18
+  - first:
+      213: 1885550189256962584
+    second: $!Medieval_Dungeons_Trap_2_19
+  - first:
+      213: -3191344753230148726
+    second: $!Medieval_Dungeons_Trap_2_20
+  - first:
+      213: -4363102148168371842
+    second: $!Medieval_Dungeons_Trap_2_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: $!Medieval_Dungeons_Trap_2_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 159
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8777b143d578cf830800000000000000
+      internalID: 4106305794630973304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $!Medieval_Dungeons_Trap_2_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 149
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f1c9de13a00c99a0800000000000000
+      internalID: -6225099884335611400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $!Medieval_Dungeons_Trap_2_2
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 160
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03e172900139a5be0800000000000000
+      internalID: -1487715029810209232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $!Medieval_Dungeons_Trap_2_3
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 140
+        width: 16
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d3513b2130a7f630800000000000000
+      internalID: 3960810530334135254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $!Medieval_Dungeons_Trap_2_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 143
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c08daae66a75828e0800000000000000
+      internalID: -1718026885508966388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $!Medieval_Dungeons_Trap_2_5
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 140
+        width: 19
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51da7363d20500530800000000000000
+      internalID: 3819140639123549461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $!Medieval_Dungeons_Trap_2_6
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 140
+        width: 16
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f89b078f53147cc60800000000000000
+      internalID: 7838305376518846863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $!Medieval_Dungeons_Trap_2_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 149
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63d54dffde1faef00800000000000000
+      internalID: 1146995059620863286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $!Medieval_Dungeons_Trap_2_8
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 140
+        width: 19
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 698c6fd2dc60d15a0800000000000000
+      internalID: -6549070804817622890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $!Medieval_Dungeons_Trap_2_9
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 140
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee47ecb12e7223600800000000000000
+      internalID: 446463165145707758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $!Medieval_Dungeons_Trap_2_10
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 140
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecc0495892703f2d0800000000000000
+      internalID: -3246243031487869746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $!Medieval_Dungeons_Trap_2_11
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 124
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d843e0f0c6feaed80800000000000000
+      internalID: -8220494922423323507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $!Medieval_Dungeons_Trap_2_12
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 115
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b16d2729b5003eb0800000000000000
+      internalID: -4742284114836758096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $!Medieval_Dungeons_Trap_2_13
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 124
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09a91c648ff118eb0800000000000000
+      internalID: -4719455783308125552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $!Medieval_Dungeons_Trap_2_14
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 97
+        width: 16
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3352ca3ea0ef06690800000000000000
+      internalID: -7610804047533300429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $!Medieval_Dungeons_Trap_2_15
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 107
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f36378989f2061b0800000000000000
+      internalID: -5665475998792850441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $!Medieval_Dungeons_Trap_2_16
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 96
+        width: 19
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10869f0e07ee0fdb0800000000000000
+      internalID: -4760042637552424959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $!Medieval_Dungeons_Trap_2_17
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 91
+        width: 16
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94ef29666b92957a0800000000000000
+      internalID: -6388028733066641847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $!Medieval_Dungeons_Trap_2_18
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 101
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc67932a87dca1770800000000000000
+      internalID: 8582397957909345997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $!Medieval_Dungeons_Trap_2_19
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 90
+        width: 19
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 812f4d438e1da2a10800000000000000
+      internalID: 1885550189256962584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $!Medieval_Dungeons_Trap_2_20
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 105
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8b09ebfad016b3d0800000000000000
+      internalID: -3191344753230148726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: $!Medieval_Dungeons_Trap_2_21
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 104
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e713ea386b52373c0800000000000000
+      internalID: -4363102148168371842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

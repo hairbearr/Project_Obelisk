@@ -1,0 +1,917 @@
+fileFormatVersion: 2
+guid: d489ab42fed26a84f937071b283a2670
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8472805102900279636
+    second: Medieval_Dungeons_Gremlin_running_0
+  - first:
+      213: -3762431393341186888
+    second: Medieval_Dungeons_Gremlin_running_1
+  - first:
+      213: -7968728364477879270
+    second: Medieval_Dungeons_Gremlin_running_2
+  - first:
+      213: 3003443598596314767
+    second: Medieval_Dungeons_Gremlin_running_3
+  - first:
+      213: 5394018171644723868
+    second: Medieval_Dungeons_Gremlin_running_4
+  - first:
+      213: -8009547102135949122
+    second: Medieval_Dungeons_Gremlin_running_5
+  - first:
+      213: 7584344687851925380
+    second: Medieval_Dungeons_Gremlin_running_6
+  - first:
+      213: 7030102773203118981
+    second: Medieval_Dungeons_Gremlin_running_7
+  - first:
+      213: 77749984360282171
+    second: Medieval_Dungeons_Gremlin_running_8
+  - first:
+      213: 1351179548163204983
+    second: Medieval_Dungeons_Gremlin_running_9
+  - first:
+      213: -4390682317984548258
+    second: Medieval_Dungeons_Gremlin_running_10
+  - first:
+      213: -7538664920448588104
+    second: Medieval_Dungeons_Gremlin_running_11
+  - first:
+      213: 5319197349408608988
+    second: Medieval_Dungeons_Gremlin_running_12
+  - first:
+      213: -8628856340414502502
+    second: Medieval_Dungeons_Gremlin_running_13
+  - first:
+      213: 8181658011769036963
+    second: Medieval_Dungeons_Gremlin_running_14
+  - first:
+      213: 449975295843283185
+    second: Medieval_Dungeons_Gremlin_running_15
+  - first:
+      213: -3612605019731070296
+    second: Medieval_Dungeons_Gremlin_running_16
+  - first:
+      213: 6413702277518388831
+    second: Medieval_Dungeons_Gremlin_running_17
+  - first:
+      213: 1995559071147698780
+    second: Medieval_Dungeons_Gremlin_running_18
+  - first:
+      213: 5133898513087378132
+    second: Medieval_Dungeons_Gremlin_running_19
+  - first:
+      213: -1470038471386400286
+    second: Medieval_Dungeons_Gremlin_running_20
+  - first:
+      213: -4097966505628478128
+    second: Medieval_Dungeons_Gremlin_running_21
+  - first:
+      213: -4610385246759617715
+    second: Medieval_Dungeons_Gremlin_running_22
+  - first:
+      213: -5047385014971708522
+    second: Medieval_Dungeons_Gremlin_running_23
+  - first:
+      213: -6420501922185187283
+    second: Medieval_Dungeons_Gremlin_running_24
+  - first:
+      213: 6309070329894003142
+    second: Medieval_Dungeons_Gremlin_running_25
+  - first:
+      213: 4989928083066187112
+    second: Medieval_Dungeons_Gremlin_running_26
+  - first:
+      213: -6113902442923653162
+    second: Medieval_Dungeons_Gremlin_running_27
+  - first:
+      213: 1568149207874729362
+    second: Medieval_Dungeons_Gremlin_running_28
+  - first:
+      213: 8208831984477546070
+    second: Medieval_Dungeons_Gremlin_running_29
+  - first:
+      213: -2791286568462195622
+    second: Medieval_Dungeons_Gremlin_running_30
+  - first:
+      213: 2262766411398459355
+    second: Medieval_Dungeons_Gremlin_running_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Gremlin_running_0
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 304
+        width: 39
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 459fc79a953759570800000000000000
+      internalID: 8472805102900279636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Gremlin_running_1
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 307
+        width: 44
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bcde1cf49829cbc0800000000000000
+      internalID: -3762431393341186888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Gremlin_running_2
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 304
+        width: 45
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1c67bbc5c3696190800000000000000
+      internalID: -7968728364477879270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Gremlin_running_3
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 303
+        width: 44
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f86114d3a006ea920800000000000000
+      internalID: 3003443598596314767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Gremlin_running_4
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 302
+        width: 42
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c92c2e8c2f66bda40800000000000000
+      internalID: 5394018171644723868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Gremlin_running_5
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 303
+        width: 48
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb86d65d85f58d090800000000000000
+      internalID: -8009547102135949122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Gremlin_running_6
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 305
+        width: 43
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48fe88d5f41014960800000000000000
+      internalID: 7584344687851925380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Gremlin_running_7
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 306
+        width: 47
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58ba243a931ff8160800000000000000
+      internalID: 7030102773203118981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Gremlin_running_8
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 213
+        width: 49
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b383617e239341100800000000000000
+      internalID: 77749984360282171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Gremlin_running_9
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 214
+        width: 56
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7776a04e3aa50c210800000000000000
+      internalID: 1351179548163204983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Gremlin_running_10
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 213
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5a31f2d1b92113c0800000000000000
+      internalID: -4390682317984548258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Gremlin_running_11
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 211
+        width: 56
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b6a6f74238416790800000000000000
+      internalID: -7538664920448588104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Gremlin_running_12
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 211
+        width: 52
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd213b59ec591d940800000000000000
+      internalID: 5319197349408608988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Gremlin_running_13
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 211
+        width: 55
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9967b340e4204880800000000000000
+      internalID: -8628856340414502502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Gremlin_running_14
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 211
+        width: 49
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a0e8390d961b8170800000000000000
+      internalID: 8181658011769036963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Gremlin_running_15
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 213
+        width: 51
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f0b072c522ae3600800000000000000
+      internalID: 449975295843283185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Gremlin_running_16
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 111
+        width: 51
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a2f22dffd27dddc0800000000000000
+      internalID: -3612605019731070296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Gremlin_running_17
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 116
+        width: 48
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5ee89a7d3c020950800000000000000
+      internalID: 6413702277518388831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Gremlin_running_18
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 117
+        width: 51
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5a211cf666a1bb10800000000000000
+      internalID: 1995559071147698780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Gremlin_running_19
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 116
+        width: 53
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d2ba714f754f3740800000000000000
+      internalID: 5133898513087378132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Gremlin_running_20
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 116
+        width: 60
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e9fad28ccf599be0800000000000000
+      internalID: -1470038471386400286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Gremlin_running_21
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 117
+        width: 52
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 055d092dc291127c0800000000000000
+      internalID: -4097966505628478128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Gremlin_running_22
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 114
+        width: 45
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4bf0318b0f9400c0800000000000000
+      internalID: -4610385246759617715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Gremlin_running_23
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 115
+        width: 56
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69b4bf1321614f9b0800000000000000
+      internalID: -5047385014971708522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Gremlin_running_24
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 10
+        width: 38
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d207070e48bc5e6a0800000000000000
+      internalID: -6420501922185187283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Gremlin_running_25
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 15
+        width: 42
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c1e944c9025e8750800000000000000
+      internalID: 6309070329894003142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Gremlin_running_26
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 13
+        width: 41
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86de7ed5729cf3540800000000000000
+      internalID: 4989928083066187112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Gremlin_running_27
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 12
+        width: 41
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d7842afe1e072ba0800000000000000
+      internalID: -6113902442923653162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Gremlin_running_28
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 12
+        width: 42
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 295fe2a656f23c510800000000000000
+      internalID: 1568149207874729362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Gremlin_running_29
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 12
+        width: 43
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65626a79231abe170800000000000000
+      internalID: 8208831984477546070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Gremlin_running_30
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 17
+        width: 37
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a54ed74a7ab5349d0800000000000000
+      internalID: -2791286568462195622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Gremlin_running_31
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 12
+        width: 38
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdf27110016f66f10800000000000000
+      internalID: 2262766411398459355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

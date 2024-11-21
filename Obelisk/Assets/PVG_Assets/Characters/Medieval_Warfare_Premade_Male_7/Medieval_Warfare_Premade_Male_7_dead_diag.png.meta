@@ -1,0 +1,417 @@
+fileFormatVersion: 2
+guid: 974e6e5654adb044eb04230126322ff1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1598822811008997417
+    second: Medieval_Warfare_Premade_Male_7_dead_diag_0
+  - first:
+      213: 4328388561260194192
+    second: Medieval_Warfare_Premade_Male_7_dead_diag_1
+  - first:
+      213: 7374087854351966711
+    second: Medieval_Warfare_Premade_Male_7_dead_diag_2
+  - first:
+      213: -8409293515318327084
+    second: Medieval_Warfare_Premade_Male_7_dead_diag_3
+  - first:
+      213: 6288366871799380907
+    second: Medieval_Warfare_Premade_Male_7_dead_diag_4
+  - first:
+      213: -511811487473382996
+    second: Medieval_Warfare_Premade_Male_7_dead_diag_5
+  - first:
+      213: 2932907768792615718
+    second: Medieval_Warfare_Premade_Male_7_dead_diag_6
+  - first:
+      213: 3150321195052760747
+    second: Medieval_Warfare_Premade_Male_7_dead_diag_7
+  - first:
+      213: -7313544084926747746
+    second: Medieval_Warfare_Premade_Male_7_dead_diag_8
+  - first:
+      213: 182095213186707627
+    second: Medieval_Warfare_Premade_Male_7_dead_diag_9
+  - first:
+      213: 1399850062138359204
+    second: Medieval_Warfare_Premade_Male_7_dead_diag_10
+  - first:
+      213: 8649302831020782374
+    second: Medieval_Warfare_Premade_Male_7_dead_diag_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Medieval_Warfare_Premade_Male_7_dead_diag_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 395
+        width: 94
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d76403df17dfc9e0800000000000000
+      internalID: -1598822811008997417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Warfare_Premade_Male_7_dead_diag_1
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 392
+        width: 106
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09927c3b676811c30800000000000000
+      internalID: 4328388561260194192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Warfare_Premade_Male_7_dead_diag_2
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 393
+        width: 88
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f1eb2d75d5065660800000000000000
+      internalID: 7374087854351966711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Warfare_Premade_Male_7_dead_diag_3
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 270
+        width: 87
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d884772a103c4b80800000000000000
+      internalID: -8409293515318327084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Warfare_Premade_Male_7_dead_diag_4
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 270
+        width: 100
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: babbfea4a54c44750800000000000000
+      internalID: 6288366871799380907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Warfare_Premade_Male_7_dead_diag_5
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 276
+        width: 69
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca94f21f92ea5e8f0800000000000000
+      internalID: -511811487473382996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Warfare_Premade_Male_7_dead_diag_6
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 138
+        width: 86
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62b0ed59318c3b820800000000000000
+      internalID: 2932907768792615718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Warfare_Premade_Male_7_dead_diag_7
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 139
+        width: 101
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baef08f8f6038bb20800000000000000
+      internalID: 3150321195052760747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Warfare_Premade_Male_7_dead_diag_8
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 135
+        width: 68
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9b28c05762118a90800000000000000
+      internalID: -7313544084926747746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Warfare_Premade_Male_7_dead_diag_9
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 17
+        width: 93
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba0fa41b1aee68200800000000000000
+      internalID: 182095213186707627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Warfare_Premade_Male_7_dead_diag_10
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 18
+        width: 95
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4adb09cf6344d6310800000000000000
+      internalID: 1399850062138359204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Warfare_Premade_Male_7_dead_diag_11
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 24
+        width: 86
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62336cd491f780870800000000000000
+      internalID: 8649302831020782374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

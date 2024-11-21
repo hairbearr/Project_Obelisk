@@ -1,0 +1,917 @@
+fileFormatVersion: 2
+guid: 208d3179c53d41d4db58e3033baadc87
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2828058010779346512
+    second: Medieval_Dungeons_Goblin_running_0
+  - first:
+      213: -6540859319635220269
+    second: Medieval_Dungeons_Goblin_running_1
+  - first:
+      213: -5705741486780349860
+    second: Medieval_Dungeons_Goblin_running_2
+  - first:
+      213: 2020008100885279113
+    second: Medieval_Dungeons_Goblin_running_3
+  - first:
+      213: -9152182848913024768
+    second: Medieval_Dungeons_Goblin_running_4
+  - first:
+      213: 201886707350947581
+    second: Medieval_Dungeons_Goblin_running_5
+  - first:
+      213: 1465674697560801146
+    second: Medieval_Dungeons_Goblin_running_6
+  - first:
+      213: -5442908794176888794
+    second: Medieval_Dungeons_Goblin_running_7
+  - first:
+      213: -5108824483424899399
+    second: Medieval_Dungeons_Goblin_running_8
+  - first:
+      213: -8202527997093025795
+    second: Medieval_Dungeons_Goblin_running_9
+  - first:
+      213: 3097312456537506773
+    second: Medieval_Dungeons_Goblin_running_10
+  - first:
+      213: -2683756452549865959
+    second: Medieval_Dungeons_Goblin_running_11
+  - first:
+      213: -2838749453255332200
+    second: Medieval_Dungeons_Goblin_running_12
+  - first:
+      213: -5383900867653894713
+    second: Medieval_Dungeons_Goblin_running_13
+  - first:
+      213: 550746728444341120
+    second: Medieval_Dungeons_Goblin_running_14
+  - first:
+      213: -7806531231663473422
+    second: Medieval_Dungeons_Goblin_running_15
+  - first:
+      213: -4986523079696492498
+    second: Medieval_Dungeons_Goblin_running_16
+  - first:
+      213: -492841393426271830
+    second: Medieval_Dungeons_Goblin_running_17
+  - first:
+      213: -7899974562252058534
+    second: Medieval_Dungeons_Goblin_running_18
+  - first:
+      213: 2881559327512831560
+    second: Medieval_Dungeons_Goblin_running_19
+  - first:
+      213: 455477921629074309
+    second: Medieval_Dungeons_Goblin_running_20
+  - first:
+      213: -2793784706442072936
+    second: Medieval_Dungeons_Goblin_running_21
+  - first:
+      213: -2864564256700193472
+    second: Medieval_Dungeons_Goblin_running_22
+  - first:
+      213: 4043327163269782265
+    second: Medieval_Dungeons_Goblin_running_23
+  - first:
+      213: 7313191046116580726
+    second: Medieval_Dungeons_Goblin_running_24
+  - first:
+      213: -7416855241490139964
+    second: Medieval_Dungeons_Goblin_running_25
+  - first:
+      213: -7096936593359072756
+    second: Medieval_Dungeons_Goblin_running_26
+  - first:
+      213: -3598831255586717475
+    second: Medieval_Dungeons_Goblin_running_27
+  - first:
+      213: 3809802080308057227
+    second: Medieval_Dungeons_Goblin_running_28
+  - first:
+      213: -2968319589906443621
+    second: Medieval_Dungeons_Goblin_running_29
+  - first:
+      213: -8006524937557335974
+    second: Medieval_Dungeons_Goblin_running_30
+  - first:
+      213: -9053281805746039126
+    second: Medieval_Dungeons_Goblin_running_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Goblin_running_0
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 397
+        width: 54
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b99c4f0938b0c8d0800000000000000
+      internalID: -2828058010779346512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Goblin_running_1
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 402
+        width: 60
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d8e65f8a133a35a0800000000000000
+      internalID: -6540859319635220269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Goblin_running_2
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 397
+        width: 62
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c528f3c195221d0b0800000000000000
+      internalID: -5705741486780349860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Goblin_running_3
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 395
+        width: 60
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 981bda05aa2880c10800000000000000
+      internalID: 2020008100885279113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Goblin_running_4
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 394
+        width: 58
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 009dd13703aecf080800000000000000
+      internalID: -9152182848913024768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Goblin_running_5
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 395
+        width: 65
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df6c68404ee3dc200800000000000000
+      internalID: 201886707350947581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Goblin_running_6
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 398
+        width: 62
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7fb3683f5f175410800000000000000
+      internalID: 1465674697560801146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Goblin_running_7
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 399
+        width: 57
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 620ac3a1a47e674b0800000000000000
+      internalID: -5442908794176888794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Goblin_running_8
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 277
+        width: 62
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bee3a5333fc919b0800000000000000
+      internalID: -5108824483424899399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Goblin_running_9
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 278
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df7e219de34ca2e80800000000000000
+      internalID: -8202527997093025795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Goblin_running_10
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 278
+        width: 68
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d38f4ad44ddbfa20800000000000000
+      internalID: 3097312456537506773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Goblin_running_11
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 274
+        width: 70
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91e4a1eb9b161cad0800000000000000
+      internalID: -2683756452549865959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Goblin_running_12
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 274
+        width: 66
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89ea160a96cba98d0800000000000000
+      internalID: -2838749453255332200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Goblin_running_13
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 274
+        width: 69
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cd729d9faa8845b0800000000000000
+      internalID: -5383900867653894713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Goblin_running_14
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 276
+        width: 59
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08b22264b35a4a700800000000000000
+      internalID: 550746728444341120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Goblin_running_15
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 277
+        width: 71
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fcb4b0a431a9a390800000000000000
+      internalID: -7806531231663473422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Goblin_running_16
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 141
+        width: 69
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e285762cdaf4ccab0800000000000000
+      internalID: -4986523079696492498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Goblin_running_17
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 148
+        width: 59
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa1f7362d531929f0800000000000000
+      internalID: -492841393426271830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Goblin_running_18
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 149
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a501852ddf6ad5290800000000000000
+      internalID: -7899974562252058534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Goblin_running_19
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 148
+        width: 75
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 846ad93f0fa5df720800000000000000
+      internalID: 2881559327512831560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Goblin_running_20
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 148
+        width: 82
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 583fbb9a1ce225600800000000000000
+      internalID: 455477921629074309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Goblin_running_21
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 150
+        width: 72
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89ce9919c9b7a39d0800000000000000
+      internalID: -2793784706442072936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Goblin_running_22
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 145
+        width: 61
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 045aa135cf50f38d0800000000000000
+      internalID: -2864564256700193472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Goblin_running_23
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 147
+        width: 78
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fa126de1a8cc1830800000000000000
+      internalID: 4043327163269782265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Goblin_running_24
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 8
+        width: 51
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67d985e628cad7560800000000000000
+      internalID: 7313191046116580726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Goblin_running_25
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 14
+        width: 57
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c47c7c3479021990800000000000000
+      internalID: -7416855241490139964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Goblin_running_26
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 11
+        width: 57
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c029c5ff4cd928d90800000000000000
+      internalID: -7096936593359072756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Goblin_running_27
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 11
+        width: 62
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd04e2c5a026e0ec0800000000000000
+      internalID: -3598831255586717475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Goblin_running_28
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 11
+        width: 64
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b845e4d8ec22fd430800000000000000
+      internalID: 3809802080308057227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Goblin_running_29
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 10
+        width: 62
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b921bcf4f096ec6d0800000000000000
+      internalID: -2968319589906443621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Goblin_running_30
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 18
+        width: 49
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a50a69b5dfb13e090800000000000000
+      internalID: -8006524937557335974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Goblin_running_31
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 11
+        width: 51
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa6100df9284c5280800000000000000
+      internalID: -9053281805746039126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

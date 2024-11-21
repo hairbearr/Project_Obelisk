@@ -1,0 +1,417 @@
+fileFormatVersion: 2
+guid: 143d5a9586abd2e439fe9e76bd21a4cc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8031324553242673814
+    second: Medieval_Warfare_Premade_Male_7_idle1_0
+  - first:
+      213: -8901149706975418018
+    second: Medieval_Warfare_Premade_Male_7_idle1_1
+  - first:
+      213: -8677639882243624028
+    second: Medieval_Warfare_Premade_Male_7_idle1_2
+  - first:
+      213: -4737657219554517617
+    second: Medieval_Warfare_Premade_Male_7_idle1_3
+  - first:
+      213: 284184412057645390
+    second: Medieval_Warfare_Premade_Male_7_idle1_4
+  - first:
+      213: -8778728998596598486
+    second: Medieval_Warfare_Premade_Male_7_idle1_5
+  - first:
+      213: 5523510569117678122
+    second: Medieval_Warfare_Premade_Male_7_idle1_6
+  - first:
+      213: 7531518348152069816
+    second: Medieval_Warfare_Premade_Male_7_idle1_7
+  - first:
+      213: 1818217793521441732
+    second: Medieval_Warfare_Premade_Male_7_idle1_8
+  - first:
+      213: -3744743007747857600
+    second: Medieval_Warfare_Premade_Male_7_idle1_9
+  - first:
+      213: -4135119491133675072
+    second: Medieval_Warfare_Premade_Male_7_idle1_10
+  - first:
+      213: -8982943635730581684
+    second: Medieval_Warfare_Premade_Male_7_idle1_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Medieval_Warfare_Premade_Male_7_idle1_0
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 397
+        width: 55
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69207ef112ff47f60800000000000000
+      internalID: 8031324553242673814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Warfare_Premade_Male_7_idle1_1
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 397
+        width: 56
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5968277083c87480800000000000000
+      internalID: -8901149706975418018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Warfare_Premade_Male_7_idle1_2
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 397
+        width: 56
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a33b12d084d29780800000000000000
+      internalID: -8677639882243624028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Warfare_Premade_Male_7_idle1_3
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 269
+        width: 41
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8d53e82cd5704eb0800000000000000
+      internalID: -4737657219554517617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Warfare_Premade_Male_7_idle1_4
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 269
+        width: 42
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4136639730a1f300800000000000000
+      internalID: 284184412057645390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Warfare_Premade_Male_7_idle1_5
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 269
+        width: 43
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a25aa3bcc70bb2680800000000000000
+      internalID: -8778728998596598486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Warfare_Premade_Male_7_idle1_6
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 141
+        width: 42
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2aff59099377ac40800000000000000
+      internalID: 5523510569117678122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Warfare_Premade_Male_7_idle1_7
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 141
+        width: 41
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bed0f0b804558860800000000000000
+      internalID: 7531518348152069816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Warfare_Premade_Male_7_idle1_8
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 141
+        width: 41
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cbd32b237b9b3910800000000000000
+      internalID: 1818217793521441732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Warfare_Premade_Male_7_idle1_9
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 18
+        width: 55
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 043af003310080cc0800000000000000
+      internalID: -3744743007747857600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Warfare_Premade_Male_7_idle1_10
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 18
+        width: 56
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c9ee2b4bba1d96c0800000000000000
+      internalID: -4135119491133675072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Warfare_Premade_Male_7_idle1_11
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 18
+        width: 56
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c473ce26b5c265380800000000000000
+      internalID: -8982943635730581684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

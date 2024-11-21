@@ -1,0 +1,917 @@
+fileFormatVersion: 2
+guid: b759b7300614c1345b3f98768a7c5697
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8988142915605668973
+    second: Medieval_Dungeons_Bugbear_running_0
+  - first:
+      213: -6026878064734508962
+    second: Medieval_Dungeons_Bugbear_running_1
+  - first:
+      213: 2329295081534779581
+    second: Medieval_Dungeons_Bugbear_running_2
+  - first:
+      213: 3167651693999495555
+    second: Medieval_Dungeons_Bugbear_running_3
+  - first:
+      213: 5531265444514208053
+    second: Medieval_Dungeons_Bugbear_running_4
+  - first:
+      213: 6348874948419899475
+    second: Medieval_Dungeons_Bugbear_running_5
+  - first:
+      213: -4874649395502859225
+    second: Medieval_Dungeons_Bugbear_running_6
+  - first:
+      213: -4955476537716053000
+    second: Medieval_Dungeons_Bugbear_running_7
+  - first:
+      213: 3434534912740600781
+    second: Medieval_Dungeons_Bugbear_running_8
+  - first:
+      213: 5956503546635160693
+    second: Medieval_Dungeons_Bugbear_running_9
+  - first:
+      213: -2273794069769099414
+    second: Medieval_Dungeons_Bugbear_running_10
+  - first:
+      213: -7727285737288123091
+    second: Medieval_Dungeons_Bugbear_running_11
+  - first:
+      213: -7452486237405312937
+    second: Medieval_Dungeons_Bugbear_running_12
+  - first:
+      213: -1980677952534005068
+    second: Medieval_Dungeons_Bugbear_running_13
+  - first:
+      213: 3524222269987462655
+    second: Medieval_Dungeons_Bugbear_running_14
+  - first:
+      213: -6513046213503325640
+    second: Medieval_Dungeons_Bugbear_running_15
+  - first:
+      213: 2764914994394943738
+    second: Medieval_Dungeons_Bugbear_running_16
+  - first:
+      213: 8476618919330369652
+    second: Medieval_Dungeons_Bugbear_running_17
+  - first:
+      213: -5806640777562648223
+    second: Medieval_Dungeons_Bugbear_running_18
+  - first:
+      213: -3061080482114071569
+    second: Medieval_Dungeons_Bugbear_running_19
+  - first:
+      213: -5954797756481403003
+    second: Medieval_Dungeons_Bugbear_running_20
+  - first:
+      213: 356269395143630032
+    second: Medieval_Dungeons_Bugbear_running_21
+  - first:
+      213: -5336720763392294420
+    second: Medieval_Dungeons_Bugbear_running_22
+  - first:
+      213: 6867456205778720217
+    second: Medieval_Dungeons_Bugbear_running_23
+  - first:
+      213: 7894843140002149036
+    second: Medieval_Dungeons_Bugbear_running_24
+  - first:
+      213: -669480507207300998
+    second: Medieval_Dungeons_Bugbear_running_25
+  - first:
+      213: -4016457546245861897
+    second: Medieval_Dungeons_Bugbear_running_26
+  - first:
+      213: -9178348055021046350
+    second: Medieval_Dungeons_Bugbear_running_27
+  - first:
+      213: -1658588971905699081
+    second: Medieval_Dungeons_Bugbear_running_28
+  - first:
+      213: -2518922409396382773
+    second: Medieval_Dungeons_Bugbear_running_29
+  - first:
+      213: 8932867406314492627
+    second: Medieval_Dungeons_Bugbear_running_30
+  - first:
+      213: 2911645529597672875
+    second: Medieval_Dungeons_Bugbear_running_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Bugbear_running_0
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 390
+        width: 68
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d64ae1b4c5c4cbc70800000000000000
+      internalID: 8988142915605668973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Bugbear_running_1
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 403
+        width: 74
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e58e7e6f45a3c5ca0800000000000000
+      internalID: -6026878064734508962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Bugbear_running_2
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 399
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db0f1f71981535020800000000000000
+      internalID: 2329295081534779581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Bugbear_running_3
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 395
+        width: 69
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3891109ce62c5fb20800000000000000
+      internalID: 3167651693999495555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Bugbear_running_4
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 387
+        width: 68
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53999aaad9003cc40800000000000000
+      internalID: 5531265444514208053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Bugbear_running_5
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 394
+        width: 76
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 350d1f7b02cbb1850800000000000000
+      internalID: 6348874948419899475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Bugbear_running_6
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 400
+        width: 75
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72cba78a334c95cb0800000000000000
+      internalID: -4874649395502859225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Bugbear_running_7
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 399
+        width: 66
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fbe6ac185c9a3bb0800000000000000
+      internalID: -4955476537716053000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Bugbear_running_8
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 274
+        width: 82
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcba4926e4be9af20800000000000000
+      internalID: 3434534912740600781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Bugbear_running_9
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 277
+        width: 83
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57c0b80ba60c9a250800000000000000
+      internalID: 5956503546635160693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Bugbear_running_10
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 275
+        width: 72
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a67e503375cd170e0800000000000000
+      internalID: -2273794069769099414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Bugbear_running_11
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 275
+        width: 73
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2dbff6109a23c490800000000000000
+      internalID: -7727285737288123091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Bugbear_running_12
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 275
+        width: 77
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75808f58043739890800000000000000
+      internalID: -7452486237405312937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Bugbear_running_13
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 273
+        width: 74
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ba33c075e73384e0800000000000000
+      internalID: -1980677952534005068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Bugbear_running_14
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 270
+        width: 73
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffd9f108b7d88e030800000000000000
+      internalID: 3524222269987462655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Bugbear_running_15
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 273
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83a6e66f9f20d95a0800000000000000
+      internalID: -6513046213503325640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Bugbear_running_16
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 141
+        width: 84
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af0df0bc983fe5620800000000000000
+      internalID: 2764914994394943738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Bugbear_running_17
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 144
+        width: 68
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 470da0ffefff2a570800000000000000
+      internalID: 8476618919330369652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Bugbear_running_18
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 147
+        width: 84
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 161941b4afaaa6fa0800000000000000
+      internalID: -5806640777562648223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Bugbear_running_19
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 145
+        width: 88
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe395b2158bd485d0800000000000000
+      internalID: -3061080482114071569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Bugbear_running_20
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 144
+        width: 97
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58702a78dfe4c5da0800000000000000
+      internalID: -5954797756481403003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Bugbear_running_21
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 147
+        width: 86
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dc11e59029b1f400800000000000000
+      internalID: 356269395143630032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Bugbear_running_22
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 145
+        width: 74
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce10d88adb820f5b0800000000000000
+      internalID: -5336720763392294420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Bugbear_running_23
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 146
+        width: 93
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d51ef7a80b1e4f50800000000000000
+      internalID: 6867456205778720217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Bugbear_running_24
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 0
+        width: 62
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca2f145d10e109d60800000000000000
+      internalID: 7894843140002149036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Bugbear_running_25
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 5
+        width: 76
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a784cd7960785b6f0800000000000000
+      internalID: -669480507207300998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Bugbear_running_26
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 1
+        width: 79
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fd049c442da248c0800000000000000
+      internalID: -4016457546245861897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Bugbear_running_27
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 0
+        width: 86
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b5b29ba215ff9080800000000000000
+      internalID: -9178348055021046350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Bugbear_running_28
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 1
+        width: 88
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f23e2d1e128bf8e0800000000000000
+      internalID: -1658588971905699081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Bugbear_running_29
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 1
+        width: 85
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc3582b1a6dfa0dd0800000000000000
+      internalID: -2518922409396382773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Bugbear_running_30
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 10
+        width: 71
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d25a03e39be7fb70800000000000000
+      internalID: 8932867406314492627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Bugbear_running_31
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 2
+        width: 71
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: badf58fbe2e386820800000000000000
+      internalID: 2911645529597672875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

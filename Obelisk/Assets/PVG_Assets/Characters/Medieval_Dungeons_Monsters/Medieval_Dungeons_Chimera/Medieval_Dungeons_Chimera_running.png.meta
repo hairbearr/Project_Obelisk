@@ -1,0 +1,917 @@
+fileFormatVersion: 2
+guid: b6fe1d7f1bc8f2d4c90fe239233daaf6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4218030535360108515
+    second: Medieval_Dungeons_Chimera_running_0
+  - first:
+      213: 3531411377094959191
+    second: Medieval_Dungeons_Chimera_running_1
+  - first:
+      213: -5328802343336316216
+    second: Medieval_Dungeons_Chimera_running_2
+  - first:
+      213: 9106031820596344360
+    second: Medieval_Dungeons_Chimera_running_3
+  - first:
+      213: -3070498604723736263
+    second: Medieval_Dungeons_Chimera_running_4
+  - first:
+      213: 3320937573923216368
+    second: Medieval_Dungeons_Chimera_running_5
+  - first:
+      213: 6909133335771621718
+    second: Medieval_Dungeons_Chimera_running_6
+  - first:
+      213: 9157446258340603623
+    second: Medieval_Dungeons_Chimera_running_7
+  - first:
+      213: -294152881842384074
+    second: Medieval_Dungeons_Chimera_running_8
+  - first:
+      213: 848328256447519365
+    second: Medieval_Dungeons_Chimera_running_9
+  - first:
+      213: -41741079360842475
+    second: Medieval_Dungeons_Chimera_running_10
+  - first:
+      213: 58757369896954617
+    second: Medieval_Dungeons_Chimera_running_11
+  - first:
+      213: 5596991505001860076
+    second: Medieval_Dungeons_Chimera_running_12
+  - first:
+      213: -5623045181706482426
+    second: Medieval_Dungeons_Chimera_running_13
+  - first:
+      213: 2028877913677540605
+    second: Medieval_Dungeons_Chimera_running_14
+  - first:
+      213: -8838853410958227284
+    second: Medieval_Dungeons_Chimera_running_15
+  - first:
+      213: 8861676099012845977
+    second: Medieval_Dungeons_Chimera_running_16
+  - first:
+      213: -531042187414804735
+    second: Medieval_Dungeons_Chimera_running_17
+  - first:
+      213: 5863817108117584264
+    second: Medieval_Dungeons_Chimera_running_18
+  - first:
+      213: -8848232521941152810
+    second: Medieval_Dungeons_Chimera_running_19
+  - first:
+      213: 3946497057798607061
+    second: Medieval_Dungeons_Chimera_running_20
+  - first:
+      213: -6808217790760480002
+    second: Medieval_Dungeons_Chimera_running_21
+  - first:
+      213: -2486423155587542947
+    second: Medieval_Dungeons_Chimera_running_22
+  - first:
+      213: -2090477287894955542
+    second: Medieval_Dungeons_Chimera_running_23
+  - first:
+      213: -4445973196049799334
+    second: Medieval_Dungeons_Chimera_running_24
+  - first:
+      213: 1549378381923336001
+    second: Medieval_Dungeons_Chimera_running_25
+  - first:
+      213: -4128748572863483459
+    second: Medieval_Dungeons_Chimera_running_26
+  - first:
+      213: -1033903043920827382
+    second: Medieval_Dungeons_Chimera_running_27
+  - first:
+      213: -2774313846830909008
+    second: Medieval_Dungeons_Chimera_running_28
+  - first:
+      213: 9067881641539427653
+    second: Medieval_Dungeons_Chimera_running_29
+  - first:
+      213: 303906869786598566
+    second: Medieval_Dungeons_Chimera_running_30
+  - first:
+      213: -3255567382117286286
+    second: Medieval_Dungeons_Chimera_running_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Chimera_running_0
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 787
+        width: 97
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e7d3ef7c64798a30800000000000000
+      internalID: 4218030535360108515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Chimera_running_1
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 788
+        width: 99
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 750a48fefe7120130800000000000000
+      internalID: 3531411377094959191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Chimera_running_2
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 788
+        width: 100
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c27b2f708a4c06b0800000000000000
+      internalID: -5328802343336316216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Chimera_running_3
+      rect:
+        serializedVersion: 2
+        x: 861
+        y: 780
+        width: 99
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8267c0ce1bf1f5e70800000000000000
+      internalID: 9106031820596344360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Chimera_running_4
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 777
+        width: 95
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 931fb1689c56365d0800000000000000
+      internalID: -3070498604723736263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Chimera_running_5
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 774
+        width: 90
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fbd0fed027561e20800000000000000
+      internalID: 3320937573923216368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Chimera_running_6
+      rect:
+        serializedVersion: 2
+        x: 1625
+        y: 776
+        width: 90
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6592a78a92c22ef50800000000000000
+      internalID: 6909133335771621718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Chimera_running_7
+      rect:
+        serializedVersion: 2
+        x: 1883
+        y: 777
+        width: 92
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e62f1e8ad8c51f70800000000000000
+      internalID: 9157446258340603623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Chimera_running_8
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 580
+        width: 248
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63390203385faebf0800000000000000
+      internalID: -294152881842384074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Chimera_running_9
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 580
+        width: 246
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58a1b7afd0ed5cb00800000000000000
+      internalID: 848328256447519365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Chimera_running_10
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 580
+        width: 233
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 515d720a5b4bb6ff0800000000000000
+      internalID: -41741079360842475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Chimera_running_11
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 584
+        width: 238
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fae4a0448fb0d000800000000000000
+      internalID: 58757369896954617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Chimera_running_12
+      rect:
+        serializedVersion: 2
+        x: 1025
+        y: 582
+        width: 253
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cebc382ae128cad40800000000000000
+      internalID: 5596991505001860076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Chimera_running_13
+      rect:
+        serializedVersion: 2
+        x: 1281
+        y: 580
+        width: 254
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60dc96c033ee6f1b0800000000000000
+      internalID: -5623045181706482426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Chimera_running_14
+      rect:
+        serializedVersion: 2
+        x: 1538
+        y: 581
+        width: 253
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfca26986b5082c10800000000000000
+      internalID: 2028877913677540605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Chimera_running_15
+      rect:
+        serializedVersion: 2
+        x: 1793
+        y: 569
+        width: 255
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca8c51a27a5165580800000000000000
+      internalID: -8838853410958227284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Chimera_running_16
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 325
+        width: 240
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 991ea3cf57ffafa70800000000000000
+      internalID: 8861676099012845977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Chimera_running_17
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 324
+        width: 241
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 107e462b1fb51a8f0800000000000000
+      internalID: -531042187414804735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Chimera_running_18
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 328
+        width: 237
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 889f43d8796706150800000000000000
+      internalID: 5863817108117584264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Chimera_running_19
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 327
+        width: 241
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6db83a7b663c43580800000000000000
+      internalID: -8848232521941152810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Chimera_running_20
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 327
+        width: 247
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d0d5352a26c4c630800000000000000
+      internalID: 3946497057798607061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Chimera_running_21
+      rect:
+        serializedVersion: 2
+        x: 1283
+        y: 318
+        width: 252
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef21a34adf95481a0800000000000000
+      internalID: -6808217790760480002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Chimera_running_22
+      rect:
+        serializedVersion: 2
+        x: 1541
+        y: 311
+        width: 250
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5016e940537e7dd0800000000000000
+      internalID: -2486423155587542947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Chimera_running_23
+      rect:
+        serializedVersion: 2
+        x: 1794
+        y: 320
+        width: 253
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae9cff38bf12df2e0800000000000000
+      internalID: -2090477287894955542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Chimera_running_24
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 0
+        width: 98
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a572b881feabc42c0800000000000000
+      internalID: -4445973196049799334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Chimera_running_25
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 0
+        width: 100
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14fb53ded6f708510800000000000000
+      internalID: 1549378381923336001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Chimera_running_26
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 1
+        width: 102
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db1329b4c0db3b6c0800000000000000
+      internalID: -4128748572863483459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Chimera_running_27
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 0
+        width: 102
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0c67eec8a6d6a1f0800000000000000
+      internalID: -1033903043920827382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Chimera_running_28
+      rect:
+        serializedVersion: 2
+        x: 1111
+        y: 0
+        width: 99
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b932385148af79d0800000000000000
+      internalID: -2774313846830909008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Chimera_running_29
+      rect:
+        serializedVersion: 2
+        x: 1369
+        y: 0
+        width: 94
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54d5e3d2f4697dd70800000000000000
+      internalID: 9067881641539427653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Chimera_running_30
+      rect:
+        serializedVersion: 2
+        x: 1627
+        y: 1
+        width: 93
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ac5e6a10b1b73400800000000000000
+      internalID: 303906869786598566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Chimera_running_31
+      rect:
+        serializedVersion: 2
+        x: 1882
+        y: 0
+        width: 94
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27efc86f6b6e1d2d0800000000000000
+      internalID: -3255567382117286286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

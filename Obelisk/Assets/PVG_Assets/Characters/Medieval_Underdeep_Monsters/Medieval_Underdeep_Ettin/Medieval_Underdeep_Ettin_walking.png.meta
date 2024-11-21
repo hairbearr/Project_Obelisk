@@ -1,0 +1,917 @@
+fileFormatVersion: 2
+guid: 06ca63ac3989f5e49ae881b233319cca
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6146650682101120698
+    second: Medieval_Underdeep_Ettin_walking_0
+  - first:
+      213: 1234130702494505443
+    second: Medieval_Underdeep_Ettin_walking_1
+  - first:
+      213: -4610736121128088521
+    second: Medieval_Underdeep_Ettin_walking_2
+  - first:
+      213: -3567545157027600147
+    second: Medieval_Underdeep_Ettin_walking_3
+  - first:
+      213: 4673224570487314199
+    second: Medieval_Underdeep_Ettin_walking_4
+  - first:
+      213: 8637398693722137290
+    second: Medieval_Underdeep_Ettin_walking_5
+  - first:
+      213: 529618044280904
+    second: Medieval_Underdeep_Ettin_walking_6
+  - first:
+      213: 8111026493909661127
+    second: Medieval_Underdeep_Ettin_walking_7
+  - first:
+      213: 6548246597616394281
+    second: Medieval_Underdeep_Ettin_walking_8
+  - first:
+      213: -948996831431607221
+    second: Medieval_Underdeep_Ettin_walking_9
+  - first:
+      213: 6074279617181557628
+    second: Medieval_Underdeep_Ettin_walking_10
+  - first:
+      213: 7154612158534537161
+    second: Medieval_Underdeep_Ettin_walking_11
+  - first:
+      213: 1484510468185732460
+    second: Medieval_Underdeep_Ettin_walking_12
+  - first:
+      213: 2427509738451259894
+    second: Medieval_Underdeep_Ettin_walking_13
+  - first:
+      213: 3996848541676879364
+    second: Medieval_Underdeep_Ettin_walking_14
+  - first:
+      213: 5110107009500949676
+    second: Medieval_Underdeep_Ettin_walking_15
+  - first:
+      213: -1763519057083933529
+    second: Medieval_Underdeep_Ettin_walking_16
+  - first:
+      213: 5008597177695017782
+    second: Medieval_Underdeep_Ettin_walking_17
+  - first:
+      213: 7999278018267772161
+    second: Medieval_Underdeep_Ettin_walking_18
+  - first:
+      213: -6918367559156345556
+    second: Medieval_Underdeep_Ettin_walking_19
+  - first:
+      213: -4593156694638831072
+    second: Medieval_Underdeep_Ettin_walking_20
+  - first:
+      213: -1869775936365973925
+    second: Medieval_Underdeep_Ettin_walking_21
+  - first:
+      213: 1892357919859993516
+    second: Medieval_Underdeep_Ettin_walking_22
+  - first:
+      213: 155136945656325994
+    second: Medieval_Underdeep_Ettin_walking_23
+  - first:
+      213: -1575233981748643216
+    second: Medieval_Underdeep_Ettin_walking_24
+  - first:
+      213: 3662557120491670017
+    second: Medieval_Underdeep_Ettin_walking_25
+  - first:
+      213: 7687318206109601447
+    second: Medieval_Underdeep_Ettin_walking_26
+  - first:
+      213: -1744644254247748207
+    second: Medieval_Underdeep_Ettin_walking_27
+  - first:
+      213: -5675745415715243509
+    second: Medieval_Underdeep_Ettin_walking_28
+  - first:
+      213: -1682332726710448241
+    second: Medieval_Underdeep_Ettin_walking_29
+  - first:
+      213: -4327315503602880745
+    second: Medieval_Underdeep_Ettin_walking_30
+  - first:
+      213: -2489935203295894077
+    second: Medieval_Underdeep_Ettin_walking_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Ettin_walking_0
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 785
+        width: 152
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64143fe55c5b2baa0800000000000000
+      internalID: -6146650682101120698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Ettin_walking_1
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 783
+        width: 153
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e99690d553802110800000000000000
+      internalID: 1234130702494505443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Ettin_walking_2
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 774
+        width: 153
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73c09133def5300c0800000000000000
+      internalID: -4610736121128088521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Ettin_walking_3
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 767
+        width: 152
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de86433d4988d7ec0800000000000000
+      internalID: -3567545157027600147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Ettin_walking_4
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 774
+        width: 151
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 717168facf0aad040800000000000000
+      internalID: 4673224570487314199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Ettin_walking_5
+      rect:
+        serializedVersion: 2
+        x: 1335
+        y: 778
+        width: 152
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac22bba59543ed770800000000000000
+      internalID: 8637398693722137290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Ettin_walking_6
+      rect:
+        serializedVersion: 2
+        x: 1594
+        y: 767
+        width: 147
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 840656f4fa1e10000800000000000000
+      internalID: 529618044280904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Ettin_walking_7
+      rect:
+        serializedVersion: 2
+        x: 1849
+        y: 767
+        width: 149
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c574454f97209070800000000000000
+      internalID: 8111026493909661127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Ettin_walking_8
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 527
+        width: 138
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 920e590269b00ea50800000000000000
+      internalID: 6548246597616394281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Ettin_walking_9
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 527
+        width: 131
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4c3c89e86c74d2f0800000000000000
+      internalID: -948996831431607221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Ettin_walking_10
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 520
+        width: 122
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c73a080012d2c4450800000000000000
+      internalID: 6074279617181557628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Ettin_walking_11
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 524
+        width: 147
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cf4427f9d94a4360800000000000000
+      internalID: 7154612158534537161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Ettin_walking_12
+      rect:
+        serializedVersion: 2
+        x: 1085
+        y: 529
+        width: 130
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c653f81d76a0a9410800000000000000
+      internalID: 1484510468185732460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Ettin_walking_13
+      rect:
+        serializedVersion: 2
+        x: 1338
+        y: 526
+        width: 131
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f15031ee3f30b120800000000000000
+      internalID: 2427509738451259894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Ettin_walking_14
+      rect:
+        serializedVersion: 2
+        x: 1564
+        y: 528
+        width: 148
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40e30bb8298a77730800000000000000
+      internalID: 3996848541676879364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Ettin_walking_15
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 529
+        width: 157
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caca989204fbae640800000000000000
+      internalID: 5110107009500949676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Ettin_walking_16
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 269
+        width: 140
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ac51e7d2c8b687e0800000000000000
+      internalID: -1763519057083933529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Ettin_walking_17
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 266
+        width: 133
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63b198fa89c128540800000000000000
+      internalID: 5008597177695017782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Ettin_walking_18
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 264
+        width: 125
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 105f072c9f4230f60800000000000000
+      internalID: 7999278018267772161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Ettin_walking_19
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 253
+        width: 121
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2556ea2c550dff90800000000000000
+      internalID: -6918367559156345556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Ettin_walking_20
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 262
+        width: 133
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02a58526254d140c0800000000000000
+      internalID: -4593156694638831072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Ettin_walking_21
+      rect:
+        serializedVersion: 2
+        x: 1349
+        y: 266
+        width: 134
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5e255f31b83d06e0800000000000000
+      internalID: -1869775936365973925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Ettin_walking_22
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 253
+        width: 145
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cabe6218081034a10800000000000000
+      internalID: 1892357919859993516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Ettin_walking_23
+      rect:
+        serializedVersion: 2
+        x: 1861
+        y: 270
+        width: 147
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a676269ea38272200800000000000000
+      internalID: 155136945656325994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Ettin_walking_24
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 7
+        width: 156
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07a7fbf1a05a32ae0800000000000000
+      internalID: -1575233981748643216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Ettin_walking_25
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 15
+        width: 151
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10acb78cb4404d230800000000000000
+      internalID: 3662557120491670017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Ettin_walking_26
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 18
+        width: 154
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ae4e86ed27deaa60800000000000000
+      internalID: 7687318206109601447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Ettin_walking_27
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 18
+        width: 150
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19df2265b47c9c7e0800000000000000
+      internalID: -1744644254247748207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Ettin_walking_28
+      rect:
+        serializedVersion: 2
+        x: 1082
+        y: 10
+        width: 148
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0abdb4ad93bb31b0800000000000000
+      internalID: -5675745415715243509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Ettin_walking_29
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 13
+        width: 152
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8fc8666c4727a8e0800000000000000
+      internalID: -1682332726710448241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Ettin_walking_30
+      rect:
+        serializedVersion: 2
+        x: 1587
+        y: 21
+        width: 149
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71fa5b00a7942f3c0800000000000000
+      internalID: -4327315503602880745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Ettin_walking_31
+      rect:
+        serializedVersion: 2
+        x: 1842
+        y: 11
+        width: 151
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c5eec5ff19f17dd0800000000000000
+      internalID: -2489935203295894077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

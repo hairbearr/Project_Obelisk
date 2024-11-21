@@ -1,0 +1,942 @@
+fileFormatVersion: 2
+guid: 95e166d7e9f22164aa2a6c655869eed3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8613767130173653604
+    second: Medieval_Dungeons_Flayer_walking_0
+  - first:
+      213: -2238232080344929234
+    second: Medieval_Dungeons_Flayer_walking_1
+  - first:
+      213: 1494583322080101436
+    second: Medieval_Dungeons_Flayer_walking_2
+  - first:
+      213: 2499086811799531295
+    second: Medieval_Dungeons_Flayer_walking_3
+  - first:
+      213: 8133264844910942775
+    second: Medieval_Dungeons_Flayer_walking_4
+  - first:
+      213: 655955563439767502
+    second: Medieval_Dungeons_Flayer_walking_5
+  - first:
+      213: 5965302282605099808
+    second: Medieval_Dungeons_Flayer_walking_6
+  - first:
+      213: -727860280799052147
+    second: Medieval_Dungeons_Flayer_walking_7
+  - first:
+      213: -5688140196138509494
+    second: Medieval_Dungeons_Flayer_walking_8
+  - first:
+      213: -8480152790341498903
+    second: Medieval_Dungeons_Flayer_walking_9
+  - first:
+      213: -7350582422217267617
+    second: Medieval_Dungeons_Flayer_walking_10
+  - first:
+      213: 8965179191327915521
+    second: Medieval_Dungeons_Flayer_walking_11
+  - first:
+      213: 2757000555426427213
+    second: Medieval_Dungeons_Flayer_walking_12
+  - first:
+      213: -4823300220733810032
+    second: Medieval_Dungeons_Flayer_walking_13
+  - first:
+      213: -1528543401967994999
+    second: Medieval_Dungeons_Flayer_walking_14
+  - first:
+      213: -3884723054731121835
+    second: Medieval_Dungeons_Flayer_walking_15
+  - first:
+      213: 7626776884355079378
+    second: Medieval_Dungeons_Flayer_walking_16
+  - first:
+      213: -462656388681100039
+    second: Medieval_Dungeons_Flayer_walking_17
+  - first:
+      213: 7823838749558687576
+    second: Medieval_Dungeons_Flayer_walking_18
+  - first:
+      213: 2502614551586094632
+    second: Medieval_Dungeons_Flayer_walking_19
+  - first:
+      213: -47036220005769305
+    second: Medieval_Dungeons_Flayer_walking_20
+  - first:
+      213: -626165918106053442
+    second: Medieval_Dungeons_Flayer_walking_21
+  - first:
+      213: -2087893836519026194
+    second: Medieval_Dungeons_Flayer_walking_22
+  - first:
+      213: -9095566775828780546
+    second: Medieval_Dungeons_Flayer_walking_23
+  - first:
+      213: -2992529017720682759
+    second: Medieval_Dungeons_Flayer_walking_24
+  - first:
+      213: -4504367233068211772
+    second: Medieval_Dungeons_Flayer_walking_25
+  - first:
+      213: 6762064731868322762
+    second: Medieval_Dungeons_Flayer_walking_26
+  - first:
+      213: -3542844231314445946
+    second: Medieval_Dungeons_Flayer_walking_27
+  - first:
+      213: 4062282882202665188
+    second: Medieval_Dungeons_Flayer_walking_28
+  - first:
+      213: -1091409367228519189
+    second: Medieval_Dungeons_Flayer_walking_29
+  - first:
+      213: 7309093273212584669
+    second: Medieval_Dungeons_Flayer_walking_30
+  - first:
+      213: 2048684769354768457
+    second: Medieval_Dungeons_Flayer_walking_31
+  - first:
+      213: 3995393197327260630
+    second: Medieval_Dungeons_Flayer_walking_32
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Flayer_walking_0
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 392
+        width: 54
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 462cfe3319f3a8770800000000000000
+      internalID: 8613767130173653604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Flayer_walking_1
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 396
+        width: 54
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2c282618c330f0e0800000000000000
+      internalID: -2238232080344929234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Flayer_walking_2
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 402
+        width: 58
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c34cecfdc93ddb410800000000000000
+      internalID: 1494583322080101436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Flayer_walking_3
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 390
+        width: 52
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1fac20f63a8ea220800000000000000
+      internalID: 2499086811799531295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Flayer_walking_4
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 391
+        width: 55
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73ad619d8492fd070800000000000000
+      internalID: 8133264844910942775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Flayer_walking_5
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 400
+        width: 56
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecfb44b0c1c6a1900800000000000000
+      internalID: 655955563439767502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Flayer_walking_6
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 401
+        width: 55
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02bf08c02d209c250800000000000000
+      internalID: 5965302282605099808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Flayer_walking_7
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 389
+        width: 53
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8e3bd45eee16e5f0800000000000000
+      internalID: -727860280799052147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Flayer_walking_8
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 275
+        width: 68
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4b1b80f0aaaf01b0800000000000000
+      internalID: -5688140196138509494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Flayer_walking_9
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 276
+        width: 69
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e748aa87f1705a80800000000000000
+      internalID: -8480152790341498903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Flayer_walking_10
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 275
+        width: 65
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5662876b3c7df990800000000000000
+      internalID: -7350582422217267617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Flayer_walking_11
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 273
+        width: 65
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10ef2d699f6ba6c70800000000000000
+      internalID: 8965179191327915521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Flayer_walking_12
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 272
+        width: 63
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d413fbfd565d24620800000000000000
+      internalID: 2757000555426427213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Flayer_walking_13
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 279
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09a19121102301db0800000000000000
+      internalID: -4823300220733810032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Flayer_walking_14
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 273
+        width: 64
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9873eeddfd589cae0800000000000000
+      internalID: -1528543401967994999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Flayer_walking_15
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 273
+        width: 65
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55b2bffb6f0b61ac0800000000000000
+      internalID: -3884723054731121835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Flayer_walking_16
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 274
+        width: 63
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dc152dfa21c7d960800000000000000
+      internalID: 7626776884355079378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Flayer_walking_17
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 145
+        width: 64
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f4199b37705499f0800000000000000
+      internalID: -462656388681100039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Flayer_walking_18
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 144
+        width: 65
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 857c167e3ebd39c60800000000000000
+      internalID: 7823838749558687576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Flayer_walking_19
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 143
+        width: 58
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82e330ddca21bb220800000000000000
+      internalID: 2502614551586094632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Flayer_walking_20
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 145
+        width: 58
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7af9afe9ec4e85ff0800000000000000
+      internalID: -47036220005769305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Flayer_walking_21
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 146
+        width: 63
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb415d04a696f47f0800000000000000
+      internalID: -626165918106053442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Flayer_walking_22
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 147
+        width: 60
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee15e892e9f4603e0800000000000000
+      internalID: -2087893836519026194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Flayer_walking_23
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 143
+        width: 57
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef961ef253e06c180800000000000000
+      internalID: -9095566775828780546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Flayer_walking_24
+      rect:
+        serializedVersion: 2
+        x: 933
+        y: 145
+        width: 64
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f6c5b6a6b66876d0800000000000000
+      internalID: -2992529017720682759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Flayer_walking_25
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 4
+        width: 55
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c16f0fddd54d71c0800000000000000
+      internalID: -4504367233068211772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Flayer_walking_26
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 5
+        width: 56
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acb5533fb0ea7dd50800000000000000
+      internalID: 6762064731868322762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Flayer_walking_27
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 10
+        width: 55
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 689e5f141f945dec0800000000000000
+      internalID: -3542844231314445946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Flayer_walking_28
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 15
+        width: 53
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e007da22c0206830800000000000000
+      internalID: 4062282882202665188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Flayer_walking_29
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 6
+        width: 52
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bec6fc986f88ad0f0800000000000000
+      internalID: -1091409367228519189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Flayer_walking_30
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 7
+        width: 55
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd288045b9d1f6560800000000000000
+      internalID: 7309093273212584669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Flayer_walking_31
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 15
+        width: 54
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 940e42e71f36e6c10800000000000000
+      internalID: 2048684769354768457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Flayer_walking_32
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 8
+        width: 53
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6db14b8c1fc727730800000000000000
+      internalID: 3995393197327260630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

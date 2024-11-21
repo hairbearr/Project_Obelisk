@@ -1,0 +1,567 @@
+fileFormatVersion: 2
+guid: ae37da2241acdbf4c827c6decf7401a4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 157425128785898270
+    second: Medieval_Expansion_Items_2_0
+  - first:
+      213: 2125565211073150442
+    second: Medieval_Expansion_Items_2_1
+  - first:
+      213: 5719133293624353794
+    second: Medieval_Expansion_Items_2_2
+  - first:
+      213: -8113841905923307019
+    second: Medieval_Expansion_Items_2_3
+  - first:
+      213: -5682584489048131599
+    second: Medieval_Expansion_Items_2_4
+  - first:
+      213: -73929089557154744
+    second: Medieval_Expansion_Items_2_5
+  - first:
+      213: 7281628286246478008
+    second: Medieval_Expansion_Items_2_6
+  - first:
+      213: -2398907973558306789
+    second: Medieval_Expansion_Items_2_7
+  - first:
+      213: -5871614577205223653
+    second: Medieval_Expansion_Items_2_8
+  - first:
+      213: 7012553736068020639
+    second: Medieval_Expansion_Items_2_9
+  - first:
+      213: -6241455388497292068
+    second: Medieval_Expansion_Items_2_10
+  - first:
+      213: -6787570238526314993
+    second: Medieval_Expansion_Items_2_11
+  - first:
+      213: -2051090031546588128
+    second: Medieval_Expansion_Items_2_12
+  - first:
+      213: -7952211828334419114
+    second: Medieval_Expansion_Items_2_13
+  - first:
+      213: 9103968613078198124
+    second: Medieval_Expansion_Items_2_14
+  - first:
+      213: 2164485596286623539
+    second: Medieval_Expansion_Items_2_15
+  - first:
+      213: -1989663531710380482
+    second: Medieval_Expansion_Items_2_16
+  - first:
+      213: 2812173968241768614
+    second: Medieval_Expansion_Items_2_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Medieval_Expansion_Items_2_0
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 672
+        width: 78
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1be00012594f2200800000000000000
+      internalID: 157425128785898270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Expansion_Items_2_1
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 678
+        width: 96
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aed71f83c468f7d10800000000000000
+      internalID: 2125565211073150442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Expansion_Items_2_2
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 641
+        width: 57
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 204e695ed617e5f40800000000000000
+      internalID: 5719133293624353794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Expansion_Items_2_3
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 680
+        width: 114
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f943c986c7d56f80800000000000000
+      internalID: -8113841905923307019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Expansion_Items_2_4
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 632
+        width: 58
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f7342cc3876321b0800000000000000
+      internalID: -5682584489048131599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Expansion_Items_2_5
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 633
+        width: 53
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 844b06e72e959fef0800000000000000
+      internalID: -73929089557154744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Expansion_Items_2_6
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 582
+        width: 129
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b0682cb85a8d0560800000000000000
+      internalID: 7281628286246478008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Expansion_Items_2_7
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 580
+        width: 95
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b18743378ed55bed0800000000000000
+      internalID: -2398907973558306789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Expansion_Items_2_8
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 501
+        width: 56
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1f5da3b6a5d38ea0800000000000000
+      internalID: -5871614577205223653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Expansion_Items_2_9
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 583
+        width: 114
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f993ca60878915160800000000000000
+      internalID: 7012553736068020639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Expansion_Items_2_10
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 489
+        width: 129
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd4db2f8465e169a0800000000000000
+      internalID: -6241455388497292068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Expansion_Items_2_11
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 483
+        width: 96
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0620a484d4bdc1a0800000000000000
+      internalID: -6787570238526314993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Expansion_Items_2_12
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 453
+        width: 111
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0242253cb701983e0800000000000000
+      internalID: -2051090031546588128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Expansion_Items_2_13
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 456
+        width: 106
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 653a779897114a190800000000000000
+      internalID: -7952211828334419114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Expansion_Items_2_14
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 386
+        width: 96
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c67e4dcf73bc75e70800000000000000
+      internalID: 9103968613078198124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Expansion_Items_2_15
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 19
+        width: 106
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33f1d109e2cc90e10800000000000000
+      internalID: 2164485596286623539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Expansion_Items_2_16
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 19
+        width: 111
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e368ad14f8b4364e0800000000000000
+      internalID: -1989663531710380482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Expansion_Items_2_17
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 12
+        width: 422
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a8b6a71359d60720800000000000000
+      internalID: 2812173968241768614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
