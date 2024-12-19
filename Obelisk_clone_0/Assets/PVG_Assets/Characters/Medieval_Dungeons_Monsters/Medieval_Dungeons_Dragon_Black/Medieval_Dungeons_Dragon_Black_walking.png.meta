@@ -1,0 +1,917 @@
+fileFormatVersion: 2
+guid: 605bdd9d25cca894392d9d5827f7dae2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5689822886479962946
+    second: Medieval_Dungeons_Dragon_Black_walking_0
+  - first:
+      213: -5639081912381519933
+    second: Medieval_Dungeons_Dragon_Black_walking_1
+  - first:
+      213: 94801415722980392
+    second: Medieval_Dungeons_Dragon_Black_walking_2
+  - first:
+      213: 7063263266416665281
+    second: Medieval_Dungeons_Dragon_Black_walking_3
+  - first:
+      213: 6756124992853849640
+    second: Medieval_Dungeons_Dragon_Black_walking_4
+  - first:
+      213: -9108594903919831667
+    second: Medieval_Dungeons_Dragon_Black_walking_5
+  - first:
+      213: 6568172383407600377
+    second: Medieval_Dungeons_Dragon_Black_walking_6
+  - first:
+      213: 5950598947526149359
+    second: Medieval_Dungeons_Dragon_Black_walking_7
+  - first:
+      213: -7508442493883436973
+    second: Medieval_Dungeons_Dragon_Black_walking_8
+  - first:
+      213: 1718557361113302982
+    second: Medieval_Dungeons_Dragon_Black_walking_9
+  - first:
+      213: 6904082892165279839
+    second: Medieval_Dungeons_Dragon_Black_walking_10
+  - first:
+      213: -5221826886465859434
+    second: Medieval_Dungeons_Dragon_Black_walking_11
+  - first:
+      213: -7748948392427082664
+    second: Medieval_Dungeons_Dragon_Black_walking_12
+  - first:
+      213: 219090231426363723
+    second: Medieval_Dungeons_Dragon_Black_walking_13
+  - first:
+      213: -8124346376903634888
+    second: Medieval_Dungeons_Dragon_Black_walking_14
+  - first:
+      213: 8092334391268398959
+    second: Medieval_Dungeons_Dragon_Black_walking_15
+  - first:
+      213: 2130601741127173850
+    second: Medieval_Dungeons_Dragon_Black_walking_16
+  - first:
+      213: 2138731464850678390
+    second: Medieval_Dungeons_Dragon_Black_walking_17
+  - first:
+      213: 6944411715116685667
+    second: Medieval_Dungeons_Dragon_Black_walking_18
+  - first:
+      213: -7444695111351616464
+    second: Medieval_Dungeons_Dragon_Black_walking_19
+  - first:
+      213: 1717404492696671237
+    second: Medieval_Dungeons_Dragon_Black_walking_20
+  - first:
+      213: 2716665687176828484
+    second: Medieval_Dungeons_Dragon_Black_walking_21
+  - first:
+      213: -9133631255299887530
+    second: Medieval_Dungeons_Dragon_Black_walking_22
+  - first:
+      213: 4108118034454769508
+    second: Medieval_Dungeons_Dragon_Black_walking_23
+  - first:
+      213: 4096579587491556590
+    second: Medieval_Dungeons_Dragon_Black_walking_24
+  - first:
+      213: 5555487735131827594
+    second: Medieval_Dungeons_Dragon_Black_walking_25
+  - first:
+      213: 4967026463759005247
+    second: Medieval_Dungeons_Dragon_Black_walking_26
+  - first:
+      213: 666024345201351032
+    second: Medieval_Dungeons_Dragon_Black_walking_27
+  - first:
+      213: 2918999278927450239
+    second: Medieval_Dungeons_Dragon_Black_walking_28
+  - first:
+      213: 2780810961948744142
+    second: Medieval_Dungeons_Dragon_Black_walking_29
+  - first:
+      213: -1949761423752243105
+    second: Medieval_Dungeons_Dragon_Black_walking_30
+  - first:
+      213: -526644356822886819
+    second: Medieval_Dungeons_Dragon_Black_walking_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Dragon_Black_walking_0
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 1567
+        width: 323
+        height: 368
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebc59701b30b901b0800000000000000
+      internalID: -5689822886479962946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Dragon_Black_walking_1
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 1567
+        width: 347
+        height: 387
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c74b29b0e4fdb1b0800000000000000
+      internalID: -5639081912381519933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Dragon_Black_walking_2
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 1568
+        width: 354
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8245f54a26dc05100800000000000000
+      internalID: 94801415722980392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Dragon_Black_walking_3
+      rect:
+        serializedVersion: 2
+        x: 1630
+        y: 1574
+        width: 349
+        height: 389
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c2a4dd9480c50260800000000000000
+      internalID: 7063263266416665281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Dragon_Black_walking_4
+      rect:
+        serializedVersion: 2
+        x: 2150
+        y: 1570
+        width: 329
+        height: 391
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8263131b2e392cd50800000000000000
+      internalID: 6756124992853849640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Dragon_Black_walking_5
+      rect:
+        serializedVersion: 2
+        x: 2674
+        y: 1571
+        width: 311
+        height: 391
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d85dcecb135c79180800000000000000
+      internalID: -9108594903919831667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Dragon_Black_walking_6
+      rect:
+        serializedVersion: 2
+        x: 3178
+        y: 1572
+        width: 328
+        height: 390
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f27a88abf5d62b50800000000000000
+      internalID: 6568172383407600377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Dragon_Black_walking_7
+      rect:
+        serializedVersion: 2
+        x: 3699
+        y: 1569
+        width: 397
+        height: 389
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe40c141736c49250800000000000000
+      internalID: 5950598947526149359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Dragon_Black_walking_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1136
+        width: 491
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35031af4557acc790800000000000000
+      internalID: -7508442493883436973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Dragon_Black_walking_9
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 1131
+        width: 504
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c78a4b80da89d710800000000000000
+      internalID: 1718557361113302982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Dragon_Black_walking_10
+      rect:
+        serializedVersion: 2
+        x: 1021
+        y: 1123
+        width: 510
+        height: 292
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f50fc5f9fca30df50800000000000000
+      internalID: 6904082892165279839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Dragon_Black_walking_11
+      rect:
+        serializedVersion: 2
+        x: 1533
+        y: 1127
+        width: 512
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6905e99fc185887b0800000000000000
+      internalID: -5221826886465859434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Dragon_Black_walking_12
+      rect:
+        serializedVersion: 2
+        x: 2045
+        y: 1126
+        width: 513
+        height: 301
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85cac862e74367490800000000000000
+      internalID: -7748948392427082664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Dragon_Black_walking_13
+      rect:
+        serializedVersion: 2
+        x: 2557
+        y: 1134
+        width: 512
+        height: 295
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b413de9976d5a0300800000000000000
+      internalID: 219090231426363723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Dragon_Black_walking_14
+      rect:
+        serializedVersion: 2
+        x: 3069
+        y: 1140
+        width: 503
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8305d6cc306804f80800000000000000
+      internalID: -8124346376903634888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Dragon_Black_walking_15
+      rect:
+        serializedVersion: 2
+        x: 3581
+        y: 1135
+        width: 507
+        height: 292
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f67da3bf04fbd4070800000000000000
+      internalID: 8092334391268398959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Dragon_Black_walking_16
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 619
+        width: 502
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad6c6b1cefa619d10800000000000000
+      internalID: 2130601741127173850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Dragon_Black_walking_17
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 620
+        width: 506
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67220609fec4ead10800000000000000
+      internalID: 2138731464850678390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Dragon_Black_walking_18
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 618
+        width: 500
+        height: 295
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 369579d69a18f5060800000000000000
+      internalID: 6944411715116685667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Dragon_Black_walking_19
+      rect:
+        serializedVersion: 2
+        x: 1547
+        y: 622
+        width: 503
+        height: 295
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03cbcca6d312fa890800000000000000
+      internalID: -7444695111351616464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Dragon_Black_walking_20
+      rect:
+        serializedVersion: 2
+        x: 2060
+        y: 622
+        width: 502
+        height: 303
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50458d2794275d710800000000000000
+      internalID: 1717404492696671237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Dragon_Black_walking_21
+      rect:
+        serializedVersion: 2
+        x: 2579
+        y: 621
+        width: 496
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 446daa98c0983b520800000000000000
+      internalID: 2716665687176828484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Dragon_Black_walking_22
+      rect:
+        serializedVersion: 2
+        x: 3080
+        y: 617
+        width: 506
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65ee17ee3c2de3180800000000000000
+      internalID: -9133631255299887530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Dragon_Black_walking_23
+      rect:
+        serializedVersion: 2
+        x: 3595
+        y: 622
+        width: 501
+        height: 305
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46f6d0b2697f20930800000000000000
+      internalID: 4108118034454769508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Dragon_Black_walking_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 28
+        width: 418
+        height: 422
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eecec822e69f9d830800000000000000
+      internalID: 4096579587491556590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Dragon_Black_walking_25
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 32
+        width: 346
+        height: 417
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8d629e29ae091d40800000000000000
+      internalID: 5555487735131827594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Dragon_Black_walking_26
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 36
+        width: 354
+        height: 415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f36f15a904c6ee440800000000000000
+      internalID: 4967026463759005247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Dragon_Black_walking_27
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 41
+        width: 348
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8791d7bfc913e3900800000000000000
+      internalID: 666024345201351032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Dragon_Black_walking_28
+      rect:
+        serializedVersion: 2
+        x: 2145
+        y: 47
+        width: 328
+        height: 409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f709710f06e528820800000000000000
+      internalID: 2918999278927450239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Dragon_Black_walking_29
+      rect:
+        serializedVersion: 2
+        x: 2667
+        y: 38
+        width: 311
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec9977626dc679620800000000000000
+      internalID: 2780810961948744142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Dragon_Black_walking_30
+      rect:
+        serializedVersion: 2
+        x: 3169
+        y: 39
+        width: 326
+        height: 419
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f58dc7cb05e01f4e0800000000000000
+      internalID: -1949761423752243105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Dragon_Black_walking_31
+      rect:
+        serializedVersion: 2
+        x: 3691
+        y: 30
+        width: 310
+        height: 425
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d569b9c6fbbf0b8f0800000000000000
+      internalID: -526644356822886819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

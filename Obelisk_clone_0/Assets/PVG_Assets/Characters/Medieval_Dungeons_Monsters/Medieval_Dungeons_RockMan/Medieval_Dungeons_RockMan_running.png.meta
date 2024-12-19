@@ -1,0 +1,917 @@
+fileFormatVersion: 2
+guid: f1910c107f1b421489348869fb75585a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3452364923269850058
+    second: Medieval_Dungeons_RockMan_running_0
+  - first:
+      213: 9156256417991871664
+    second: Medieval_Dungeons_RockMan_running_1
+  - first:
+      213: 8614634008315764614
+    second: Medieval_Dungeons_RockMan_running_2
+  - first:
+      213: 2640101067006974161
+    second: Medieval_Dungeons_RockMan_running_3
+  - first:
+      213: 2483935597870866792
+    second: Medieval_Dungeons_RockMan_running_4
+  - first:
+      213: 8338427819578263397
+    second: Medieval_Dungeons_RockMan_running_5
+  - first:
+      213: 8663327991958523465
+    second: Medieval_Dungeons_RockMan_running_6
+  - first:
+      213: -2916341661520835950
+    second: Medieval_Dungeons_RockMan_running_7
+  - first:
+      213: 9095211063147466729
+    second: Medieval_Dungeons_RockMan_running_8
+  - first:
+      213: 3340550901705336546
+    second: Medieval_Dungeons_RockMan_running_9
+  - first:
+      213: -4951747488404320900
+    second: Medieval_Dungeons_RockMan_running_10
+  - first:
+      213: -3718162546338138656
+    second: Medieval_Dungeons_RockMan_running_11
+  - first:
+      213: 389604965078519159
+    second: Medieval_Dungeons_RockMan_running_12
+  - first:
+      213: 566707457773269052
+    second: Medieval_Dungeons_RockMan_running_13
+  - first:
+      213: 3343168209522252843
+    second: Medieval_Dungeons_RockMan_running_14
+  - first:
+      213: 6699279936774400880
+    second: Medieval_Dungeons_RockMan_running_15
+  - first:
+      213: 2467535861307503900
+    second: Medieval_Dungeons_RockMan_running_16
+  - first:
+      213: 1714229257954938628
+    second: Medieval_Dungeons_RockMan_running_17
+  - first:
+      213: -7204992572824983896
+    second: Medieval_Dungeons_RockMan_running_18
+  - first:
+      213: 7223563898899208202
+    second: Medieval_Dungeons_RockMan_running_19
+  - first:
+      213: -2432661283121002640
+    second: Medieval_Dungeons_RockMan_running_20
+  - first:
+      213: 8699837282512513113
+    second: Medieval_Dungeons_RockMan_running_21
+  - first:
+      213: 6691990241696288104
+    second: Medieval_Dungeons_RockMan_running_22
+  - first:
+      213: 265642890029504195
+    second: Medieval_Dungeons_RockMan_running_23
+  - first:
+      213: -1536924717227036163
+    second: Medieval_Dungeons_RockMan_running_24
+  - first:
+      213: 3891506882899850341
+    second: Medieval_Dungeons_RockMan_running_25
+  - first:
+      213: -2267096588275427401
+    second: Medieval_Dungeons_RockMan_running_26
+  - first:
+      213: 4843393313273000416
+    second: Medieval_Dungeons_RockMan_running_27
+  - first:
+      213: -8639461002870685468
+    second: Medieval_Dungeons_RockMan_running_28
+  - first:
+      213: 7013784389119491476
+    second: Medieval_Dungeons_RockMan_running_29
+  - first:
+      213: -608198610833759815
+    second: Medieval_Dungeons_RockMan_running_30
+  - first:
+      213: 6160607101950695685
+    second: Medieval_Dungeons_RockMan_running_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Medieval_Dungeons_RockMan_running_0
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 392
+        width: 67
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63c5b79c46cb610d0800000000000000
+      internalID: -3452364923269850058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_RockMan_running_1
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 402
+        width: 74
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bccbc243be811f70800000000000000
+      internalID: 9156256417991871664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_RockMan_running_2
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 398
+        width: 71
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68f19affcf35d8770800000000000000
+      internalID: 8614634008315764614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_RockMan_running_3
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 397
+        width: 64
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d8941ebee583a420800000000000000
+      internalID: 2640101067006974161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_RockMan_running_4
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 390
+        width: 62
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8616a0c0446b87220800000000000000
+      internalID: 2483935597870866792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_RockMan_running_5
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 395
+        width: 75
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 567823b4ceb08b370800000000000000
+      internalID: 8338427819578263397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_RockMan_running_6
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 400
+        width: 75
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94ec26d88e25a3870800000000000000
+      internalID: 8663327991958523465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_RockMan_running_7
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 399
+        width: 64
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29ac065d5b21787d0800000000000000
+      internalID: -2916341661520835950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_RockMan_running_8
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 277
+        width: 72
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ef8b10064ea83e70800000000000000
+      internalID: 9095211063147466729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_RockMan_running_9
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 278
+        width: 81
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e6e14a98550c5e20800000000000000
+      internalID: 3340550901705336546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_RockMan_running_10
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 276
+        width: 75
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7d4a3015ebd74bb0800000000000000
+      internalID: -4951747488404320900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_RockMan_running_11
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 275
+        width: 76
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e57a502dde666cc0800000000000000
+      internalID: -3718162546338138656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_RockMan_running_12
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 275
+        width: 71
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77dcb3ac6a7286500800000000000000
+      internalID: 389604965078519159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_RockMan_running_13
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 274
+        width: 76
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c30f3282e695dd700800000000000000
+      internalID: 566707457773269052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_RockMan_running_14
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 273
+        width: 71
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2cd3f016c1556e20800000000000000
+      internalID: 3343168209522252843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_RockMan_running_15
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 276
+        width: 75
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07be652bb9f98fc50800000000000000
+      internalID: 6699279936774400880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_RockMan_running_16
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 140
+        width: 77
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1575c3dac27e3220800000000000000
+      internalID: 2467535861307503900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_RockMan_running_17
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 145
+        width: 67
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40f4cff7d6a2ac710800000000000000
+      internalID: 1714229257954938628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_RockMan_running_18
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 147
+        width: 77
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a6607fbd69b20c90800000000000000
+      internalID: -7204992572824983896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_RockMan_running_19
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 148
+        width: 81
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a08193e08114f3460800000000000000
+      internalID: 7223563898899208202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_RockMan_running_20
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 147
+        width: 90
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0770ab8a3737d3ed0800000000000000
+      internalID: -2432661283121002640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_RockMan_running_21
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 149
+        width: 79
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 958abdb2ae70cb870800000000000000
+      internalID: 8699837282512513113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_RockMan_running_22
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 145
+        width: 68
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86d00bc4ba9bedc50800000000000000
+      internalID: 6691990241696288104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_RockMan_running_23
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 147
+        width: 87
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c611511dc0cfa300800000000000000
+      internalID: 265642890029504195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_RockMan_running_24
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 2
+        width: 57
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df13a27dc1fbbaae0800000000000000
+      internalID: -1536924717227036163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_RockMan_running_25
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 9
+        width: 63
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 564bb3454e8610630800000000000000
+      internalID: 3891506882899850341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_RockMan_running_26
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 3
+        width: 65
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b7d7502aa7a980e0800000000000000
+      internalID: -2267096588275427401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_RockMan_running_27
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 3
+        width: 73
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e1b3299e80373340800000000000000
+      internalID: 4843393313273000416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_RockMan_running_28
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 3
+        width: 77
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e08d01edf77a1880800000000000000
+      internalID: -8639461002870685468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_RockMan_running_29
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 5
+        width: 69
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49db5a4cdb7f55160800000000000000
+      internalID: 7013784389119491476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_RockMan_running_30
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 14
+        width: 57
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b12e58f59e3f87f0800000000000000
+      internalID: -608198610833759815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_RockMan_running_31
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 3
+        width: 58
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5091588d48fde7550800000000000000
+      internalID: 6160607101950695685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,417 @@
+fileFormatVersion: 2
+guid: afa67f664fedcb64c836cabdf6ff9f15
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6363238259178460401
+    second: Medieval_Underdeep_Troll_1_sitting2_0
+  - first:
+      213: 895809050692667948
+    second: Medieval_Underdeep_Troll_1_sitting2_1
+  - first:
+      213: 2624019012498262258
+    second: Medieval_Underdeep_Troll_1_sitting2_2
+  - first:
+      213: -1853364537233652376
+    second: Medieval_Underdeep_Troll_1_sitting2_3
+  - first:
+      213: 1376705571939580985
+    second: Medieval_Underdeep_Troll_1_sitting2_4
+  - first:
+      213: 9032955308946573623
+    second: Medieval_Underdeep_Troll_1_sitting2_5
+  - first:
+      213: -1212266882349755831
+    second: Medieval_Underdeep_Troll_1_sitting2_6
+  - first:
+      213: -5006220834483758764
+    second: Medieval_Underdeep_Troll_1_sitting2_7
+  - first:
+      213: 1881177867103604513
+    second: Medieval_Underdeep_Troll_1_sitting2_8
+  - first:
+      213: -6078779188323554657
+    second: Medieval_Underdeep_Troll_1_sitting2_9
+  - first:
+      213: 937358518522327173
+    second: Medieval_Underdeep_Troll_1_sitting2_10
+  - first:
+      213: -6527804293095872402
+    second: Medieval_Underdeep_Troll_1_sitting2_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Troll_1_sitting2_0
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 802
+        width: 126
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f4d18b9b73ce4850800000000000000
+      internalID: 6363238259178460401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Troll_1_sitting2_1
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 802
+        width: 126
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2acd1dd59d8e6c00800000000000000
+      internalID: 895809050692667948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Troll_1_sitting2_2
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 802
+        width: 126
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f884d3a3636a6420800000000000000
+      internalID: 2624019012498262258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Troll_1_sitting2_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 536
+        width: 102
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 865c1eed5c68746e0800000000000000
+      internalID: -1853364537233652376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Troll_1_sitting2_4
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 536
+        width: 102
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93c72cf6c6a0b1310800000000000000
+      internalID: 1376705571939580985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Troll_1_sitting2_5
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 536
+        width: 101
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7394dbdaef08b5d70800000000000000
+      internalID: 9032955308946573623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Troll_1_sitting2_6
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 275
+        width: 102
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 942929081b92d2fe0800000000000000
+      internalID: -1212266882349755831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Troll_1_sitting2_7
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 275
+        width: 102
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4599f65dca4568ab0800000000000000
+      internalID: -5006220834483758764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Troll_1_sitting2_8
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 275
+        width: 102
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12f8900ad494b1a10800000000000000
+      internalID: 1881177867103604513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Troll_1_sitting2_9
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 28
+        width: 126
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9aefe3f886d3aba0800000000000000
+      internalID: -6078779188323554657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Troll_1_sitting2_10
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 28
+        width: 125
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 580b5b33b9a220d00800000000000000
+      internalID: 937358518522327173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Troll_1_sitting2_11
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 28
+        width: 125
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6820cac4949865a0800000000000000
+      internalID: -6527804293095872402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

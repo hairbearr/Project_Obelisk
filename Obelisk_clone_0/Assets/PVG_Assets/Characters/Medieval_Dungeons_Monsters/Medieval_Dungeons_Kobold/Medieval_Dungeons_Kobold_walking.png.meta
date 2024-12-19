@@ -1,0 +1,917 @@
+fileFormatVersion: 2
+guid: a68181e3435f0e64986d11c8c040a17a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -910849511662673897
+    second: Medieval_Dungeons_Kobold_walking_0
+  - first:
+      213: 1136059439356138206
+    second: Medieval_Dungeons_Kobold_walking_1
+  - first:
+      213: -6969061414949777637
+    second: Medieval_Dungeons_Kobold_walking_2
+  - first:
+      213: -918000410026215718
+    second: Medieval_Dungeons_Kobold_walking_3
+  - first:
+      213: 8617962733668987969
+    second: Medieval_Dungeons_Kobold_walking_4
+  - first:
+      213: 5048664819065627566
+    second: Medieval_Dungeons_Kobold_walking_5
+  - first:
+      213: 4466892161464300077
+    second: Medieval_Dungeons_Kobold_walking_6
+  - first:
+      213: 2933611903030836792
+    second: Medieval_Dungeons_Kobold_walking_7
+  - first:
+      213: -7423364981632605733
+    second: Medieval_Dungeons_Kobold_walking_8
+  - first:
+      213: -7631893053329801917
+    second: Medieval_Dungeons_Kobold_walking_9
+  - first:
+      213: 4326218669480798034
+    second: Medieval_Dungeons_Kobold_walking_10
+  - first:
+      213: 3287406091054715374
+    second: Medieval_Dungeons_Kobold_walking_11
+  - first:
+      213: -2617850987929334782
+    second: Medieval_Dungeons_Kobold_walking_12
+  - first:
+      213: 5567380547544754894
+    second: Medieval_Dungeons_Kobold_walking_13
+  - first:
+      213: -6118674806942389332
+    second: Medieval_Dungeons_Kobold_walking_14
+  - first:
+      213: 233819871856850491
+    second: Medieval_Dungeons_Kobold_walking_15
+  - first:
+      213: 2524454804933723729
+    second: Medieval_Dungeons_Kobold_walking_16
+  - first:
+      213: 7953440781580378823
+    second: Medieval_Dungeons_Kobold_walking_17
+  - first:
+      213: 4262746921104574454
+    second: Medieval_Dungeons_Kobold_walking_18
+  - first:
+      213: 2091699740899291626
+    second: Medieval_Dungeons_Kobold_walking_19
+  - first:
+      213: -2184868326164429440
+    second: Medieval_Dungeons_Kobold_walking_20
+  - first:
+      213: -3005437523049206602
+    second: Medieval_Dungeons_Kobold_walking_21
+  - first:
+      213: 3524026862340663396
+    second: Medieval_Dungeons_Kobold_walking_22
+  - first:
+      213: -5837071547903559904
+    second: Medieval_Dungeons_Kobold_walking_23
+  - first:
+      213: 3730180247621825315
+    second: Medieval_Dungeons_Kobold_walking_24
+  - first:
+      213: -7075780800929520179
+    second: Medieval_Dungeons_Kobold_walking_25
+  - first:
+      213: -6417424909549213438
+    second: Medieval_Dungeons_Kobold_walking_26
+  - first:
+      213: -3284258366953886776
+    second: Medieval_Dungeons_Kobold_walking_27
+  - first:
+      213: -6629468488882362840
+    second: Medieval_Dungeons_Kobold_walking_28
+  - first:
+      213: 541707111149786829
+    second: Medieval_Dungeons_Kobold_walking_29
+  - first:
+      213: -2944506069604488606
+    second: Medieval_Dungeons_Kobold_walking_30
+  - first:
+      213: 8749701954487956620
+    second: Medieval_Dungeons_Kobold_walking_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Kobold_walking_0
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 399
+        width: 47
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 710228de1330c53f0800000000000000
+      internalID: -910849511662673897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Kobold_walking_1
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 402
+        width: 49
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed25d8e7a0814cf00800000000000000
+      internalID: 1136059439356138206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Kobold_walking_2
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 404
+        width: 52
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1f8908119be84f90800000000000000
+      internalID: -6969061414949777637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Kobold_walking_3
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 397
+        width: 46
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad679b8ad7b9243f0800000000000000
+      internalID: -918000410026215718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Kobold_walking_4
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 399
+        width: 50
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 144f4e34277299770800000000000000
+      internalID: 8617962733668987969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Kobold_walking_5
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 402
+        width: 50
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea32b6a67e5701640800000000000000
+      internalID: 5048664819065627566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Kobold_walking_6
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 403
+        width: 47
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d227e0611c69dfd30800000000000000
+      internalID: 4466892161464300077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Kobold_walking_7
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 397
+        width: 47
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83eb20d9b7846b820800000000000000
+      internalID: 2933611903030836792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Kobold_walking_8
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 278
+        width: 48
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd1e6bf31e8eaf890800000000000000
+      internalID: -7423364981632605733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Kobold_walking_9
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 278
+        width: 46
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34d718814b1161690800000000000000
+      internalID: -7631893053329801917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Kobold_walking_10
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 277
+        width: 49
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 257e01765f0d90c30800000000000000
+      internalID: 4326218669480798034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Kobold_walking_11
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 278
+        width: 55
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee195c12c663f9d20800000000000000
+      internalID: 3287406091054715374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Kobold_walking_12
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 278
+        width: 49
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20c019d75668babd0800000000000000
+      internalID: -2617850987929334782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Kobold_walking_13
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 277
+        width: 43
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eca23d95c1f434d40800000000000000
+      internalID: 5567380547544754894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Kobold_walking_14
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 278
+        width: 49
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cab21146ea9161ba0800000000000000
+      internalID: -6118674806942389332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Kobold_walking_15
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 279
+        width: 48
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3674734fe1be3300800000000000000
+      internalID: 233819871856850491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Kobold_walking_16
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 150
+        width: 48
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1564a9b154aa80320800000000000000
+      internalID: 2524454804933723729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Kobold_walking_17
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 150
+        width: 57
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c22430704c406e60800000000000000
+      internalID: 7953440781580378823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Kobold_walking_18
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 149
+        width: 52
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f704df5db1582b30800000000000000
+      internalID: 4262746921104574454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Kobold_walking_19
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 151
+        width: 44
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae1341105d5370d10800000000000000
+      internalID: 2091699740899291626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Kobold_walking_20
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 150
+        width: 53
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08587f155d9cda1e0800000000000000
+      internalID: -2184868326164429440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Kobold_walking_21
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 150
+        width: 44
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bca50c0f7a8a46d0800000000000000
+      internalID: -3005437523049206602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Kobold_walking_22
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 150
+        width: 53
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 468efbc92cbd7e030800000000000000
+      internalID: 3524026862340663396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Kobold_walking_23
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 151
+        width: 51
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0273ba27a5e8efea0800000000000000
+      internalID: -5837071547903559904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Kobold_walking_24
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 15
+        width: 48
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3237daffb2344c330800000000000000
+      internalID: 3730180247621825315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Kobold_walking_25
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 14
+        width: 48
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc52114c9d6cdcd90800000000000000
+      internalID: -7075780800929520179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Kobold_walking_26
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 21
+        width: 45
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2096395bb0ab0f6a0800000000000000
+      internalID: -6417424909549213438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Kobold_walking_27
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 21
+        width: 45
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cbeb1f7a68fb62d0800000000000000
+      internalID: -3284258366953886776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Kobold_walking_28
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 17
+        width: 44
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8266586a8856ff3a0800000000000000
+      internalID: -6629468488882362840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Kobold_walking_29
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 18
+        width: 44
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc6d26c5fb7848700800000000000000
+      internalID: 541707111149786829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Kobold_walking_30
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 21
+        width: 43
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26a2e3294530327d0800000000000000
+      internalID: -2944506069604488606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Kobold_walking_31
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 17
+        width: 45
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c84bbc7d19f2d6970800000000000000
+      internalID: 8749701954487956620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,917 @@
+fileFormatVersion: 2
+guid: 7157bbbaec868224d89f9034bd9b9e03
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3925781359425993991
+    second: Medieval_Dungeons_Howler_running_0
+  - first:
+      213: 8039366567531953777
+    second: Medieval_Dungeons_Howler_running_1
+  - first:
+      213: 7739442540628841278
+    second: Medieval_Dungeons_Howler_running_2
+  - first:
+      213: 8475271201546621618
+    second: Medieval_Dungeons_Howler_running_3
+  - first:
+      213: 2007379589424501852
+    second: Medieval_Dungeons_Howler_running_4
+  - first:
+      213: -9039989868367169387
+    second: Medieval_Dungeons_Howler_running_5
+  - first:
+      213: -7426463516114599388
+    second: Medieval_Dungeons_Howler_running_6
+  - first:
+      213: 4615135089231785546
+    second: Medieval_Dungeons_Howler_running_7
+  - first:
+      213: 2404656849069201032
+    second: Medieval_Dungeons_Howler_running_8
+  - first:
+      213: 3128268208655539593
+    second: Medieval_Dungeons_Howler_running_9
+  - first:
+      213: -5403785543071163274
+    second: Medieval_Dungeons_Howler_running_10
+  - first:
+      213: 5381536562142745556
+    second: Medieval_Dungeons_Howler_running_11
+  - first:
+      213: 2678267616572614091
+    second: Medieval_Dungeons_Howler_running_12
+  - first:
+      213: 6458537985056552182
+    second: Medieval_Dungeons_Howler_running_13
+  - first:
+      213: 2214775217672926363
+    second: Medieval_Dungeons_Howler_running_14
+  - first:
+      213: 2000234552047751321
+    second: Medieval_Dungeons_Howler_running_15
+  - first:
+      213: -6931810742286507254
+    second: Medieval_Dungeons_Howler_running_16
+  - first:
+      213: -1759448051837819408
+    second: Medieval_Dungeons_Howler_running_17
+  - first:
+      213: 6614818692639474788
+    second: Medieval_Dungeons_Howler_running_18
+  - first:
+      213: 3199312351282405331
+    second: Medieval_Dungeons_Howler_running_19
+  - first:
+      213: 4696415157132267122
+    second: Medieval_Dungeons_Howler_running_20
+  - first:
+      213: 7244117558378301922
+    second: Medieval_Dungeons_Howler_running_21
+  - first:
+      213: -5884659882076869430
+    second: Medieval_Dungeons_Howler_running_22
+  - first:
+      213: 3842475419002619797
+    second: Medieval_Dungeons_Howler_running_23
+  - first:
+      213: 8249797589848386801
+    second: Medieval_Dungeons_Howler_running_24
+  - first:
+      213: -220220813628173218
+    second: Medieval_Dungeons_Howler_running_25
+  - first:
+      213: -4845616672600131618
+    second: Medieval_Dungeons_Howler_running_26
+  - first:
+      213: 9068250991094163287
+    second: Medieval_Dungeons_Howler_running_27
+  - first:
+      213: -5551803926289102097
+    second: Medieval_Dungeons_Howler_running_28
+  - first:
+      213: 3992397282401771620
+    second: Medieval_Dungeons_Howler_running_29
+  - first:
+      213: -8573005343658343270
+    second: Medieval_Dungeons_Howler_running_30
+  - first:
+      213: 1758911314522756883
+    second: Medieval_Dungeons_Howler_running_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Howler_running_0
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 609
+        width: 133
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70dbf62c85d2b7630800000000000000
+      internalID: 3925781359425993991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Howler_running_1
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 617
+        width: 129
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17eb4ec7c41919f60800000000000000
+      internalID: 8039366567531953777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Howler_running_2
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 616
+        width: 122
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e339ab14cf5086b60800000000000000
+      internalID: 7739442540628841278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Howler_running_3
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 618
+        width: 120
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b2d84ff0463e9570800000000000000
+      internalID: 8475271201546621618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Howler_running_4
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 600
+        width: 120
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c54540dd915abdb10800000000000000
+      internalID: 2007379589424501852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Howler_running_5
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 614
+        width: 122
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59838d25c118b8280800000000000000
+      internalID: -9039989868367169387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Howler_running_6
+      rect:
+        serializedVersion: 2
+        x: 1198
+        y: 618
+        width: 111
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 422479877c6efe890800000000000000
+      internalID: -7426463516114599388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Howler_running_7
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 621
+        width: 121
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4ee91069e04c0040800000000000000
+      internalID: 4615135089231785546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Howler_running_8
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 437
+        width: 114
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 886da7fe9ae0f5120800000000000000
+      internalID: 2404656849069201032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Howler_running_9
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 434
+        width: 125
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98d9f0b8c57d96b20800000000000000
+      internalID: 3128268208655539593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Howler_running_10
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 435
+        width: 127
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67c1ad6dda5e105b0800000000000000
+      internalID: -5403785543071163274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Howler_running_11
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 432
+        width: 123
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d39b4c9dfe0faa40800000000000000
+      internalID: 5381536562142745556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Howler_running_12
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 427
+        width: 132
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc52e3b053e1b2520800000000000000
+      internalID: 2678267616572614091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Howler_running_13
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 426
+        width: 127
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f4b9af141651a950800000000000000
+      internalID: 6458537985056552182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Howler_running_14
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 425
+        width: 120
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b94bbba73567cbe10800000000000000
+      internalID: 2214775217672926363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Howler_running_15
+      rect:
+        serializedVersion: 2
+        x: 1393
+        y: 438
+        width: 123
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 990d4463ab242cb10800000000000000
+      internalID: 2000234552047751321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Howler_running_16
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 228
+        width: 130
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a03a6cf2bd24dcf90800000000000000
+      internalID: -6931810742286507254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Howler_running_17
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 234
+        width: 140
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f5247d915f2597e0800000000000000
+      internalID: -1759448051837819408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Howler_running_18
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 242
+        width: 145
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 464c36cdd8e8ccb50800000000000000
+      internalID: 6614818692639474788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Howler_running_19
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 247
+        width: 153
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3df15bff1ad366c20800000000000000
+      internalID: 3199312351282405331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Howler_running_20
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 245
+        width: 150
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27e01a6e3b40d2140800000000000000
+      internalID: 4696415157132267122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Howler_running_21
+      rect:
+        serializedVersion: 2
+        x: 1004
+        y: 243
+        width: 140
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e90f42d986488460800000000000000
+      internalID: 7244117558378301922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Howler_running_22
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 236
+        width: 139
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acce0d8f30d755ea0800000000000000
+      internalID: -5884659882076869430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Howler_running_23
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 229
+        width: 152
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59742d70907335530800000000000000
+      internalID: 3842475419002619797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Howler_running_24
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 33
+        width: 129
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fc69cbd23b2d7270800000000000000
+      internalID: 8249797589848386801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Howler_running_25
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 32
+        width: 130
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e549b87365e91fcf0800000000000000
+      internalID: -220220813628173218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Howler_running_26
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 22
+        width: 120
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed775f73f49e0ccb0800000000000000
+      internalID: -4845616672600131618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Howler_running_27
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 17
+        width: 121
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75760421b36e8dd70800000000000000
+      internalID: 9068250991094163287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Howler_running_28
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 21
+        width: 119
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fea4be66eb704f2b0800000000000000
+      internalID: -5551803926289102097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Howler_running_29
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 32
+        width: 120
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 460eacbfc28d76730800000000000000
+      internalID: 3992397282401771620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Howler_running_30
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 33
+        width: 118
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9408b9cf01960980800000000000000
+      internalID: -8573005343658343270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Howler_running_31
+      rect:
+        serializedVersion: 2
+        x: 1403
+        y: 15
+        width: 121
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3175b8d7588e86810800000000000000
+      internalID: 1758911314522756883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

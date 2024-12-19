@@ -1,0 +1,967 @@
+fileFormatVersion: 2
+guid: ec0937c3b4497b047b9854a731f8399e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7980452038538091721
+    second: Medieval_Dungeons_Golem_running_0
+  - first:
+      213: 9104233282498248969
+    second: Medieval_Dungeons_Golem_running_1
+  - first:
+      213: 287504496982870024
+    second: Medieval_Dungeons_Golem_running_2
+  - first:
+      213: -5318748124614042510
+    second: Medieval_Dungeons_Golem_running_3
+  - first:
+      213: -5796254895777731780
+    second: Medieval_Dungeons_Golem_running_4
+  - first:
+      213: -6931775966440651619
+    second: Medieval_Dungeons_Golem_running_5
+  - first:
+      213: 2347655831837126986
+    second: Medieval_Dungeons_Golem_running_6
+  - first:
+      213: -9031111557730840741
+    second: Medieval_Dungeons_Golem_running_7
+  - first:
+      213: -2072864214772958009
+    second: Medieval_Dungeons_Golem_running_8
+  - first:
+      213: -6247153614388343842
+    second: Medieval_Dungeons_Golem_running_9
+  - first:
+      213: -110069288005228775
+    second: Medieval_Dungeons_Golem_running_10
+  - first:
+      213: 1002382266352651772
+    second: Medieval_Dungeons_Golem_running_11
+  - first:
+      213: -1213147488239389271
+    second: Medieval_Dungeons_Golem_running_12
+  - first:
+      213: -3538919405812658697
+    second: Medieval_Dungeons_Golem_running_13
+  - first:
+      213: -4658490419215562837
+    second: Medieval_Dungeons_Golem_running_14
+  - first:
+      213: 7265127780126502300
+    second: Medieval_Dungeons_Golem_running_15
+  - first:
+      213: 6018104758772735333
+    second: Medieval_Dungeons_Golem_running_16
+  - first:
+      213: 5436827910827913876
+    second: Medieval_Dungeons_Golem_running_17
+  - first:
+      213: 2177726063406191162
+    second: Medieval_Dungeons_Golem_running_18
+  - first:
+      213: 4415073277438545461
+    second: Medieval_Dungeons_Golem_running_19
+  - first:
+      213: 2715821168399813183
+    second: Medieval_Dungeons_Golem_running_20
+  - first:
+      213: -293456697013360365
+    second: Medieval_Dungeons_Golem_running_21
+  - first:
+      213: -748387253239860922
+    second: Medieval_Dungeons_Golem_running_22
+  - first:
+      213: 7446773001952610819
+    second: Medieval_Dungeons_Golem_running_23
+  - first:
+      213: -6574530973923939427
+    second: Medieval_Dungeons_Golem_running_24
+  - first:
+      213: -324695202739112744
+    second: Medieval_Dungeons_Golem_running_25
+  - first:
+      213: -7821096122168131340
+    second: Medieval_Dungeons_Golem_running_26
+  - first:
+      213: -8367094159806525787
+    second: Medieval_Dungeons_Golem_running_27
+  - first:
+      213: -8872067704472231074
+    second: Medieval_Dungeons_Golem_running_28
+  - first:
+      213: 6338878113461437339
+    second: Medieval_Dungeons_Golem_running_29
+  - first:
+      213: 6052843181164497483
+    second: Medieval_Dungeons_Golem_running_30
+  - first:
+      213: -2771355592957349602
+    second: Medieval_Dungeons_Golem_running_31
+  - first:
+      213: -8662412625323036203
+    second: Medieval_Dungeons_Golem_running_32
+  - first:
+      213: -1792914707767249995
+    second: Medieval_Dungeons_Golem_running_33
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Golem_running_0
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 811
+        width: 122
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ccda18c8d240ce60800000000000000
+      internalID: 7980452038538091721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Golem_running_1
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 813
+        width: 132
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 901c8932febb85e70800000000000000
+      internalID: 9104233282498248969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Golem_running_2
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 805
+        width: 133
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 808cdf511db6df300800000000000000
+      internalID: 287504496982870024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Golem_running_3
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 805
+        width: 126
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27cda96b2c20036b0800000000000000
+      internalID: -5318748124614042510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Golem_running_4
+      rect:
+        serializedVersion: 2
+        x: 1109
+        y: 806
+        width: 123
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3bac85d1e09f8fa0800000000000000
+      internalID: -5796254895777731780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Golem_running_5
+      rect:
+        serializedVersion: 2
+        x: 1355
+        y: 804
+        width: 139
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9407b11c726dcf90800000000000000
+      internalID: -6931775966440651619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Golem_running_6
+      rect:
+        serializedVersion: 2
+        x: 1615
+        y: 810
+        width: 127
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a41b6876a8c849020800000000000000
+      internalID: 2347655831837126986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Golem_running_7
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 818
+        width: 121
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5f478a13eb0ba280800000000000000
+      internalID: -9031111557730840741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Golem_running_8
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 566
+        width: 142
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ccb6daaaf4bb33e0800000000000000
+      internalID: -2072864214772958009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Golem_running_9
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 570
+        width: 135
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edbc515f2e6ad49a0800000000000000
+      internalID: -6247153614388343842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Golem_running_10
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 566
+        width: 128
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 917a4c3d094f87ef0800000000000000
+      internalID: -110069288005228775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Golem_running_11
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 562
+        width: 136
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfdc9134c5d29ed00800000000000000
+      internalID: 1002382266352651772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Golem_running_12
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 562
+        width: 132
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a5755779c80a2fe0800000000000000
+      internalID: -1213147488239389271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Golem_running_13
+      rect:
+        serializedVersion: 2
+        x: 1333
+        y: 563
+        width: 131
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fdccc7ec8b33eec0800000000000000
+      internalID: -3538919405812658697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Golem_running_14
+      rect:
+        serializedVersion: 2
+        x: 1591
+        y: 559
+        width: 126
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba7881d35a7b95fb0800000000000000
+      internalID: -4658490419215562837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Golem_running_15
+      rect:
+        serializedVersion: 2
+        x: 1845
+        y: 563
+        width: 159
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9d2346493be2d460800000000000000
+      internalID: 7265127780126502300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Golem_running_16
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 291
+        width: 155
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56d9cbf846a948350800000000000000
+      internalID: 6018104758772735333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Golem_running_17
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 311
+        width: 132
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 492b3d9ed2e737b40800000000000000
+      internalID: 5436827910827913876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Golem_running_18
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 308
+        width: 150
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a329f6b0156d83e10800000000000000
+      internalID: 2177726063406191162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Golem_running_19
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 307
+        width: 154
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53e4b07f0cd754d30800000000000000
+      internalID: 4415073277438545461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Golem_running_20
+      rect:
+        serializedVersion: 2
+        x: 1094
+        y: 307
+        width: 171
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3a05ffa6f880b520800000000000000
+      internalID: 2715821168399813183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Golem_running_21
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 314
+        width: 146
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3192f8950be6debf0800000000000000
+      internalID: -293456697013360365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Golem_running_22
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 301
+        width: 146
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 641353022c13d95f0800000000000000
+      internalID: -748387253239860922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Golem_running_23
+      rect:
+        serializedVersion: 2
+        x: 1855
+        y: 305
+        width: 176
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30aca503790485760800000000000000
+      internalID: 7446773001952610819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Golem_running_24
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 44
+        width: 115
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9be57e99e292c4a0800000000000000
+      internalID: -6574530973923939427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Golem_running_25
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 54
+        width: 125
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d43674fe637e7bf0800000000000000
+      internalID: -324695202739112744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Golem_running_26
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 34
+        width: 37
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f0cbfbc382e57390800000000000000
+      internalID: -7821096122168131340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Golem_running_27
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 42
+        width: 120
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ae8c72413c12eb80800000000000000
+      internalID: -8367094159806525787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Golem_running_28
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 41
+        width: 115
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e53a7b3dd6510e480800000000000000
+      internalID: -8872067704472231074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Golem_running_29
+      rect:
+        serializedVersion: 2
+        x: 1109
+        y: 42
+        width: 114
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b930e533f0838f750800000000000000
+      internalID: 6338878113461437339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Golem_running_30
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 40
+        width: 127
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4a847ecdc4000450800000000000000
+      internalID: 6052843181164497483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Golem_running_31
+      rect:
+        serializedVersion: 2
+        x: 1624
+        y: 49
+        width: 112
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e113c7f75ca2a89d0800000000000000
+      internalID: -2771355592957349602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Golem_running_32
+      rect:
+        serializedVersion: 2
+        x: 1876
+        y: 39
+        width: 118
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d1f2c9dc9de8c780800000000000000
+      internalID: -8662412625323036203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Golem_running_33
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 25
+        width: 37
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b3b5f292994e17e0800000000000000
+      internalID: -1792914707767249995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

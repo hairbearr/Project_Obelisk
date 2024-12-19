@@ -1,0 +1,917 @@
+fileFormatVersion: 2
+guid: 3911baece07bfc148889c9e5de770860
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1387608104536572739
+    second: Medieval_Dungeons_Minotaur_walking_0
+  - first:
+      213: 8199690363462952979
+    second: Medieval_Dungeons_Minotaur_walking_1
+  - first:
+      213: 879154887561540896
+    second: Medieval_Dungeons_Minotaur_walking_2
+  - first:
+      213: -1804089031456046184
+    second: Medieval_Dungeons_Minotaur_walking_3
+  - first:
+      213: 6380512000903910342
+    second: Medieval_Dungeons_Minotaur_walking_4
+  - first:
+      213: -2971805049892363594
+    second: Medieval_Dungeons_Minotaur_walking_5
+  - first:
+      213: -5583785634044881039
+    second: Medieval_Dungeons_Minotaur_walking_6
+  - first:
+      213: -8897205225705701819
+    second: Medieval_Dungeons_Minotaur_walking_7
+  - first:
+      213: 253883038189886812
+    second: Medieval_Dungeons_Minotaur_walking_8
+  - first:
+      213: 5180967889232520699
+    second: Medieval_Dungeons_Minotaur_walking_9
+  - first:
+      213: 2784993387492571525
+    second: Medieval_Dungeons_Minotaur_walking_10
+  - first:
+      213: 56901704806759058
+    second: Medieval_Dungeons_Minotaur_walking_11
+  - first:
+      213: -3139228346216940628
+    second: Medieval_Dungeons_Minotaur_walking_12
+  - first:
+      213: 1042697872746328816
+    second: Medieval_Dungeons_Minotaur_walking_13
+  - first:
+      213: 1753175458853965589
+    second: Medieval_Dungeons_Minotaur_walking_14
+  - first:
+      213: 3906452521929356432
+    second: Medieval_Dungeons_Minotaur_walking_15
+  - first:
+      213: -5367977721719489346
+    second: Medieval_Dungeons_Minotaur_walking_16
+  - first:
+      213: -8951441187064821635
+    second: Medieval_Dungeons_Minotaur_walking_17
+  - first:
+      213: -3236128917183016603
+    second: Medieval_Dungeons_Minotaur_walking_18
+  - first:
+      213: 8692796005537029737
+    second: Medieval_Dungeons_Minotaur_walking_19
+  - first:
+      213: 556301875207788503
+    second: Medieval_Dungeons_Minotaur_walking_20
+  - first:
+      213: -1188678324860403776
+    second: Medieval_Dungeons_Minotaur_walking_21
+  - first:
+      213: -3833105640564500703
+    second: Medieval_Dungeons_Minotaur_walking_22
+  - first:
+      213: -2854667091301041699
+    second: Medieval_Dungeons_Minotaur_walking_23
+  - first:
+      213: 953705182234635363
+    second: Medieval_Dungeons_Minotaur_walking_24
+  - first:
+      213: 3354825028416273448
+    second: Medieval_Dungeons_Minotaur_walking_25
+  - first:
+      213: -1407587427459468133
+    second: Medieval_Dungeons_Minotaur_walking_26
+  - first:
+      213: 1001105334907972711
+    second: Medieval_Dungeons_Minotaur_walking_27
+  - first:
+      213: 1509630135429975404
+    second: Medieval_Dungeons_Minotaur_walking_28
+  - first:
+      213: 876447652543298722
+    second: Medieval_Dungeons_Minotaur_walking_29
+  - first:
+      213: -6050547107372160892
+    second: Medieval_Dungeons_Minotaur_walking_30
+  - first:
+      213: 1566935208662389252
+    second: Medieval_Dungeons_Minotaur_walking_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Minotaur_walking_0
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 585
+        width: 96
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3430b5e1836c14310800000000000000
+      internalID: 1387608104536572739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Minotaur_walking_1
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 589
+        width: 95
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 318276611f62bc170800000000000000
+      internalID: 8199690363462952979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Minotaur_walking_2
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 587
+        width: 96
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02577a756b2633c00800000000000000
+      internalID: 879154887561540896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Minotaur_walking_3
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 583
+        width: 95
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89342e8959696f6e0800000000000000
+      internalID: -1804089031456046184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Minotaur_walking_4
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 584
+        width: 96
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c39ef20cd12c8850800000000000000
+      internalID: 6380512000903910342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Minotaur_walking_5
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 585
+        width: 95
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b2247b6d0702c6d0800000000000000
+      internalID: -2971805049892363594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Minotaur_walking_6
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 592
+        width: 95
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17753dccc886282b0800000000000000
+      internalID: -5583785634044881039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Minotaur_walking_7
+      rect:
+        serializedVersion: 2
+        x: 1404
+        y: 581
+        width: 99
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54eff049cf6c68480800000000000000
+      internalID: -8897205225705701819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Minotaur_walking_8
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 406
+        width: 101
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5d1ec13749f58300800000000000000
+      internalID: 253883038189886812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Minotaur_walking_9
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 409
+        width: 101
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf5e86668de76e740800000000000000
+      internalID: 5180967889232520699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Minotaur_walking_10
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 405
+        width: 98
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5897e4bfab846a620800000000000000
+      internalID: 2784993387492571525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Minotaur_walking_11
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 410
+        width: 116
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29afe1e8cc72ac000800000000000000
+      internalID: 56901704806759058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Minotaur_walking_12
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 404
+        width: 103
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cabf6e293783f64d0800000000000000
+      internalID: -3139228346216940628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Minotaur_walking_13
+      rect:
+        serializedVersion: 2
+        x: 1007
+        y: 404
+        width: 93
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f2b919d038687e00800000000000000
+      internalID: 1042697872746328816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Minotaur_walking_14
+      rect:
+        serializedVersion: 2
+        x: 1195
+        y: 404
+        width: 98
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51f4ce58ac7845810800000000000000
+      internalID: 1753175458853965589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Minotaur_walking_15
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 405
+        width: 92
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09437851fd1863630800000000000000
+      internalID: 3906452521929356432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Minotaur_walking_16
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 217
+        width: 100
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebcf2bee3bc1185b0800000000000000
+      internalID: -5367977721719489346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Minotaur_walking_17
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 212
+        width: 122
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d784339caa716c380800000000000000
+      internalID: -8951441187064821635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Minotaur_walking_18
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 209
+        width: 107
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 561dfe345e5f613d0800000000000000
+      internalID: -3236128917183016603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Minotaur_walking_19
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 212
+        width: 88
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96e18fe19e303a870800000000000000
+      internalID: 8692796005537029737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Minotaur_walking_20
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 212
+        width: 111
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d7d4abab9168b700800000000000000
+      internalID: 556301875207788503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Minotaur_walking_21
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 213
+        width: 96
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cf3d768c57f08fe0800000000000000
+      internalID: -1188678324860403776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Minotaur_walking_22
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 209
+        width: 95
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1275b938ab21ecac0800000000000000
+      internalID: -3833105640564500703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Minotaur_walking_23
+      rect:
+        serializedVersion: 2
+        x: 1406
+        y: 213
+        width: 98
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd9f007b76f2268d0800000000000000
+      internalID: -2854667091301041699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Minotaur_walking_24
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 9
+        width: 96
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36c6b8f6fcd3c3d00800000000000000
+      internalID: 953705182234635363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Minotaur_walking_25
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 5
+        width: 97
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82c7756b69bbe8e20800000000000000
+      internalID: 3354825028416273448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Minotaur_walking_26
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 20
+        width: 97
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b94f8f341be377ce0800000000000000
+      internalID: -1407587427459468133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Minotaur_walking_27
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 21
+        width: 96
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76c20fd7ff3a4ed00800000000000000
+      internalID: 1001105334907972711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Minotaur_walking_28
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 14
+        width: 96
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6d478c1c9843f410800000000000000
+      internalID: 1509630135429975404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Minotaur_walking_29
+      rect:
+        serializedVersion: 2
+        x: 1021
+        y: 15
+        width: 96
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ac71121f74c92c00800000000000000
+      internalID: 876447652543298722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Minotaur_walking_30
+      rect:
+        serializedVersion: 2
+        x: 1213
+        y: 23
+        width: 96
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 488a0588673280ca0800000000000000
+      internalID: -6050547107372160892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Minotaur_walking_31
+      rect:
+        serializedVersion: 2
+        x: 1404
+        y: 14
+        width: 97
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 402df52354fdeb510800000000000000
+      internalID: 1566935208662389252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

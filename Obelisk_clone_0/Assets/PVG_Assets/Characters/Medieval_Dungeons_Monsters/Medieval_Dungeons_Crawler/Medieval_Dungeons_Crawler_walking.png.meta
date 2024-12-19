@@ -1,0 +1,917 @@
+fileFormatVersion: 2
+guid: 2a1b0973a9e3af746b686f52ef8c6cb6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6451784307091024532
+    second: Medieval_Dungeons_Crawler_walking_0
+  - first:
+      213: -495273947153802812
+    second: Medieval_Dungeons_Crawler_walking_1
+  - first:
+      213: 2993641220109024422
+    second: Medieval_Dungeons_Crawler_walking_2
+  - first:
+      213: -6656255383988826274
+    second: Medieval_Dungeons_Crawler_walking_3
+  - first:
+      213: 2716945247283691230
+    second: Medieval_Dungeons_Crawler_walking_4
+  - first:
+      213: -4279950526872086499
+    second: Medieval_Dungeons_Crawler_walking_5
+  - first:
+      213: 5711333592351564098
+    second: Medieval_Dungeons_Crawler_walking_6
+  - first:
+      213: 2176000809063386650
+    second: Medieval_Dungeons_Crawler_walking_7
+  - first:
+      213: -2081295481289162867
+    second: Medieval_Dungeons_Crawler_walking_8
+  - first:
+      213: -2697391631637122878
+    second: Medieval_Dungeons_Crawler_walking_9
+  - first:
+      213: 4189307594434146547
+    second: Medieval_Dungeons_Crawler_walking_10
+  - first:
+      213: 9056593726889367699
+    second: Medieval_Dungeons_Crawler_walking_11
+  - first:
+      213: 6802738266223241754
+    second: Medieval_Dungeons_Crawler_walking_12
+  - first:
+      213: 3602905228581491790
+    second: Medieval_Dungeons_Crawler_walking_13
+  - first:
+      213: 322364335620664558
+    second: Medieval_Dungeons_Crawler_walking_14
+  - first:
+      213: 6779991758437327913
+    second: Medieval_Dungeons_Crawler_walking_15
+  - first:
+      213: 724298930554107943
+    second: Medieval_Dungeons_Crawler_walking_16
+  - first:
+      213: 5952998333212110802
+    second: Medieval_Dungeons_Crawler_walking_17
+  - first:
+      213: -6600654129807697664
+    second: Medieval_Dungeons_Crawler_walking_18
+  - first:
+      213: -1198216926979459489
+    second: Medieval_Dungeons_Crawler_walking_19
+  - first:
+      213: -2226534448877258490
+    second: Medieval_Dungeons_Crawler_walking_20
+  - first:
+      213: 160447256267077813
+    second: Medieval_Dungeons_Crawler_walking_21
+  - first:
+      213: 269461244955624892
+    second: Medieval_Dungeons_Crawler_walking_22
+  - first:
+      213: -2622768989762261580
+    second: Medieval_Dungeons_Crawler_walking_23
+  - first:
+      213: -4613441367547080365
+    second: Medieval_Dungeons_Crawler_walking_24
+  - first:
+      213: -6774898602681028320
+    second: Medieval_Dungeons_Crawler_walking_25
+  - first:
+      213: 7014145999158772726
+    second: Medieval_Dungeons_Crawler_walking_26
+  - first:
+      213: -4694064531986358937
+    second: Medieval_Dungeons_Crawler_walking_27
+  - first:
+      213: -7785623624280114973
+    second: Medieval_Dungeons_Crawler_walking_28
+  - first:
+      213: -8159113659227043207
+    second: Medieval_Dungeons_Crawler_walking_29
+  - first:
+      213: 78322117178040647
+    second: Medieval_Dungeons_Crawler_walking_30
+  - first:
+      213: 4660991380498813538
+    second: Medieval_Dungeons_Crawler_walking_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Crawler_walking_0
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 840
+        width: 136
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49aa99fe4a7598950800000000000000
+      internalID: 6451784307091024532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Crawler_walking_1
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 836
+        width: 137
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c9546918fe6029f0800000000000000
+      internalID: -495273947153802812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Crawler_walking_2
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 832
+        width: 139
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6acb09524dc8b8920800000000000000
+      internalID: 2993641220109024422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Crawler_walking_3
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 837
+        width: 137
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5f801f9efa30a3a0800000000000000
+      internalID: -6656255383988826274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Crawler_walking_4
+      rect:
+        serializedVersion: 2
+        x: 1079
+        y: 841
+        width: 134
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edeb782be4784b520800000000000000
+      internalID: 2716945247283691230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Crawler_walking_5
+      rect:
+        serializedVersion: 2
+        x: 1336
+        y: 837
+        width: 136
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d181b850caf8a94c0800000000000000
+      internalID: -4279950526872086499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Crawler_walking_6
+      rect:
+        serializedVersion: 2
+        x: 1592
+        y: 832
+        width: 139
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 241eedd64abb24f40800000000000000
+      internalID: 5711333592351564098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Crawler_walking_7
+      rect:
+        serializedVersion: 2
+        x: 1850
+        y: 836
+        width: 138
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1e8f27f435b23e10800000000000000
+      internalID: 2176000809063386650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Crawler_walking_8
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 594
+        width: 185
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8f322579c0cd13e0800000000000000
+      internalID: -2081295481289162867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Crawler_walking_9
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 593
+        width: 192
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c078283a90f09ad0800000000000000
+      internalID: -2697391631637122878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Crawler_walking_10
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 593
+        width: 201
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f0f71daf09632a30800000000000000
+      internalID: 4189307594434146547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Crawler_walking_11
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 593
+        width: 190
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 398954eb20c7fad70800000000000000
+      internalID: 9056593726889367699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Crawler_walking_12
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 594
+        width: 181
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1a6132296e286e50800000000000000
+      internalID: 6802738266223241754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Crawler_walking_13
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 593
+        width: 191
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e445ff46737100230800000000000000
+      internalID: 3602905228581491790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Crawler_walking_14
+      rect:
+        serializedVersion: 2
+        x: 1564
+        y: 593
+        width: 201
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eecace0c7a4497400800000000000000
+      internalID: 322364335620664558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Crawler_walking_15
+      rect:
+        serializedVersion: 2
+        x: 1826
+        y: 593
+        width: 192
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 924abb5159e571e50800000000000000
+      internalID: 6779991758437327913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Crawler_walking_16
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 338
+        width: 182
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7287fd23a0a3d0a00800000000000000
+      internalID: 724298930554107943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Crawler_walking_17
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 338
+        width: 191
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dfa997917c4d9250800000000000000
+      internalID: 5952998333212110802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Crawler_walking_18
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 337
+        width: 201
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 009d89b6a04c564a0800000000000000
+      internalID: -6600654129807697664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Crawler_walking_19
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 337
+        width: 191
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f567787ad041f5fe0800000000000000
+      internalID: -1198216926979459489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Crawler_walking_20
+      rect:
+        serializedVersion: 2
+        x: 1059
+        y: 337
+        width: 183
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 609308627b2c911e0800000000000000
+      internalID: -2226534448877258490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Crawler_walking_21
+      rect:
+        serializedVersion: 2
+        x: 1312
+        y: 337
+        width: 192
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b83cf2fde50a3200800000000000000
+      internalID: 160447256267077813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Crawler_walking_22
+      rect:
+        serializedVersion: 2
+        x: 1564
+        y: 337
+        width: 201
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb5805a13915db300800000000000000
+      internalID: 269461244955624892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Crawler_walking_23
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 337
+        width: 191
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bd6f45ff7d0a9bd0800000000000000
+      internalID: -2622768989762261580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Crawler_walking_24
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 71
+        width: 134
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 351934fe483c9ffb0800000000000000
+      internalID: -4613441367547080365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Crawler_walking_25
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 68
+        width: 137
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02138e5ad99baf1a0800000000000000
+      internalID: -6774898602681028320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Crawler_walking_26
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 64
+        width: 139
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f3069aaf90475160800000000000000
+      internalID: 7014145999158772726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Crawler_walking_27
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 67
+        width: 136
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76d513aad255bdeb0800000000000000
+      internalID: -4694064531986358937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Crawler_walking_28
+      rect:
+        serializedVersion: 2
+        x: 1085
+        y: 68
+        width: 136
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e8f4ef4098e3f390800000000000000
+      internalID: -7785623624280114973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Crawler_walking_29
+      rect:
+        serializedVersion: 2
+        x: 1338
+        y: 66
+        width: 137
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97a0cb31b5105ce80800000000000000
+      internalID: -8159113659227043207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Crawler_walking_30
+      rect:
+        serializedVersion: 2
+        x: 1592
+        y: 64
+        width: 139
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7412474fc81461100800000000000000
+      internalID: 78322117178040647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Crawler_walking_31
+      rect:
+        serializedVersion: 2
+        x: 1848
+        y: 68
+        width: 136
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2621acf27fa2fa040800000000000000
+      internalID: 4660991380498813538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

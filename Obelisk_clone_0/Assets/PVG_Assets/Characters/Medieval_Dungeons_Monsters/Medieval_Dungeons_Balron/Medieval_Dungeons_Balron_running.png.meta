@@ -1,0 +1,917 @@
+fileFormatVersion: 2
+guid: 6ea1c492778a6784a8105ac9dd0db2f0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2766567254823495871
+    second: Medieval_Dungeons_Balron_running_0
+  - first:
+      213: -7722525123990005238
+    second: Medieval_Dungeons_Balron_running_1
+  - first:
+      213: 920525828715000010
+    second: Medieval_Dungeons_Balron_running_2
+  - first:
+      213: -9178967831030417811
+    second: Medieval_Dungeons_Balron_running_3
+  - first:
+      213: 5617783914294965086
+    second: Medieval_Dungeons_Balron_running_4
+  - first:
+      213: 2107713205629659596
+    second: Medieval_Dungeons_Balron_running_5
+  - first:
+      213: 4015010261113963398
+    second: Medieval_Dungeons_Balron_running_6
+  - first:
+      213: -680350256057968296
+    second: Medieval_Dungeons_Balron_running_7
+  - first:
+      213: -3353688544948542982
+    second: Medieval_Dungeons_Balron_running_8
+  - first:
+      213: -5367206758984961486
+    second: Medieval_Dungeons_Balron_running_9
+  - first:
+      213: -8076033054279411299
+    second: Medieval_Dungeons_Balron_running_10
+  - first:
+      213: 3633293992709366794
+    second: Medieval_Dungeons_Balron_running_11
+  - first:
+      213: -2543800829694373399
+    second: Medieval_Dungeons_Balron_running_12
+  - first:
+      213: 9019906316182438515
+    second: Medieval_Dungeons_Balron_running_13
+  - first:
+      213: -4000674909438450408
+    second: Medieval_Dungeons_Balron_running_14
+  - first:
+      213: -3403274289088925149
+    second: Medieval_Dungeons_Balron_running_15
+  - first:
+      213: 7642184645812077831
+    second: Medieval_Dungeons_Balron_running_16
+  - first:
+      213: 6701481273711562446
+    second: Medieval_Dungeons_Balron_running_17
+  - first:
+      213: -4220705732967817985
+    second: Medieval_Dungeons_Balron_running_18
+  - first:
+      213: -5159754846545132373
+    second: Medieval_Dungeons_Balron_running_19
+  - first:
+      213: -4592748308241958235
+    second: Medieval_Dungeons_Balron_running_20
+  - first:
+      213: -867513081870075303
+    second: Medieval_Dungeons_Balron_running_21
+  - first:
+      213: -869686063048658541
+    second: Medieval_Dungeons_Balron_running_22
+  - first:
+      213: -8026863333039986618
+    second: Medieval_Dungeons_Balron_running_23
+  - first:
+      213: 541825557849699313
+    second: Medieval_Dungeons_Balron_running_24
+  - first:
+      213: -4901336986113681505
+    second: Medieval_Dungeons_Balron_running_25
+  - first:
+      213: 7630656894300025886
+    second: Medieval_Dungeons_Balron_running_26
+  - first:
+      213: -1120016917769441745
+    second: Medieval_Dungeons_Balron_running_27
+  - first:
+      213: 7103551276077798797
+    second: Medieval_Dungeons_Balron_running_28
+  - first:
+      213: -5464593600164270228
+    second: Medieval_Dungeons_Balron_running_29
+  - first:
+      213: -7159976814593652006
+    second: Medieval_Dungeons_Balron_running_30
+  - first:
+      213: -6968003477640942828
+    second: Medieval_Dungeons_Balron_running_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Balron_running_0
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 1626
+        width: 282
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14794095dbd2b99d0800000000000000
+      internalID: -2766567254823495871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Balron_running_1
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 1621
+        width: 280
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0adb8fb05414d490800000000000000
+      internalID: -7722525123990005238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Balron_running_2
+      rect:
+        serializedVersion: 2
+        x: 1182
+        y: 1621
+        width: 252
+        height: 317
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac031233d5d56cc00800000000000000
+      internalID: 920525828715000010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Balron_running_3
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 1622
+        width: 244
+        height: 318
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d66b1b2d361cd9080800000000000000
+      internalID: -9178967831030417811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Balron_running_4
+      rect:
+        serializedVersion: 2
+        x: 2215
+        y: 1626
+        width: 241
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e53747ca4b066fd40800000000000000
+      internalID: 5617783914294965086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Balron_running_5
+      rect:
+        serializedVersion: 2
+        x: 2710
+        y: 1617
+        width: 251
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc9a4fd4ef9104d10800000000000000
+      internalID: 2107713205629659596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Balron_running_6
+      rect:
+        serializedVersion: 2
+        x: 3213
+        y: 1619
+        width: 259
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6830f3f5f8e28b730800000000000000
+      internalID: 4015010261113963398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Balron_running_7
+      rect:
+        serializedVersion: 2
+        x: 3715
+        y: 1642
+        width: 286
+        height: 289
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85991d8fb09ee86f0800000000000000
+      internalID: -680350256057968296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Balron_running_8
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 1159
+        width: 296
+        height: 265
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af1ab07790e4571d0800000000000000
+      internalID: -3353688544948542982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Balron_running_9
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 1149
+        width: 319
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23230aea3e9d385b0800000000000000
+      internalID: -5367206758984961486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Balron_running_10
+      rect:
+        serializedVersion: 2
+        x: 1131
+        y: 1142
+        width: 318
+        height: 286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d99dc5dc9ba2cef80800000000000000
+      internalID: -8076033054279411299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Balron_running_11
+      rect:
+        serializedVersion: 2
+        x: 1651
+        y: 1155
+        width: 307
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a04a008e2ad0c6230800000000000000
+      internalID: 3633293992709366794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Balron_running_12
+      rect:
+        serializedVersion: 2
+        x: 2165
+        y: 1154
+        width: 305
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e119be7f9a92bcd0800000000000000
+      internalID: -2543800829694373399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Balron_running_13
+      rect:
+        serializedVersion: 2
+        x: 2666
+        y: 1156
+        width: 317
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3724b5b41052d2d70800000000000000
+      internalID: 9019906316182438515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Balron_running_14
+      rect:
+        serializedVersion: 2
+        x: 3190
+        y: 1133
+        width: 303
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8156a19cd5fba78c0800000000000000
+      internalID: -4000674909438450408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Balron_running_15
+      rect:
+        serializedVersion: 2
+        x: 3697
+        y: 1145
+        width: 310
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32272adb01425c0d0800000000000000
+      internalID: -3403274289088925149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Balron_running_16
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 601
+        width: 328
+        height: 301
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 705c291027e7e0a60800000000000000
+      internalID: 7642184645812077831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Balron_running_17
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 632
+        width: 337
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ece828466b1700d50800000000000000
+      internalID: 6701481273711562446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Balron_running_18
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 638
+        width: 334
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffc9ff48f7a0d65c0800000000000000
+      internalID: -4220705732967817985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Balron_running_19
+      rect:
+        serializedVersion: 2
+        x: 1653
+        y: 638
+        width: 333
+        height: 263
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba4c39bfd4ed468b0800000000000000
+      internalID: -5159754846545132373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Balron_running_20
+      rect:
+        serializedVersion: 2
+        x: 2151
+        y: 642
+        width: 346
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5aa36704fb74340c0800000000000000
+      internalID: -4592748308241958235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Balron_running_21
+      rect:
+        serializedVersion: 2
+        x: 2676
+        y: 639
+        width: 330
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95a3125c279f5f3f0800000000000000
+      internalID: -867513081870075303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Balron_running_22
+      rect:
+        serializedVersion: 2
+        x: 3190
+        y: 625
+        width: 332
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39170e922214ee3f0800000000000000
+      internalID: -869686063048658541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Balron_running_23
+      rect:
+        serializedVersion: 2
+        x: 3695
+        y: 603
+        width: 342
+        height: 318
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6482b85a35ada9090800000000000000
+      internalID: -8026863333039986618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Balron_running_24
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 78
+        width: 275
+        height: 363
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f3fbd16973f48700800000000000000
+      internalID: 541825557849699313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Balron_running_25
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 81
+        width: 276
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f97d532caf3fafbb0800000000000000
+      internalID: -4901336986113681505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Balron_running_26
+      rect:
+        serializedVersion: 2
+        x: 1172
+        y: 71
+        width: 246
+        height: 376
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1473a3340a85e960800000000000000
+      internalID: 7630656894300025886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Balron_running_27
+      rect:
+        serializedVersion: 2
+        x: 1689
+        y: 56
+        width: 242
+        height: 389
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2eace12c86e470f0800000000000000
+      internalID: -1120016917769441745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Balron_running_28
+      rect:
+        serializedVersion: 2
+        x: 2198
+        y: 55
+        width: 238
+        height: 389
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d85d366df32e49260800000000000000
+      internalID: 7103551276077798797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Balron_running_29
+      rect:
+        serializedVersion: 2
+        x: 2715
+        y: 82
+        width: 247
+        height: 358
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6fe554c21dd924b0800000000000000
+      internalID: -5464593600164270228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Balron_running_30
+      rect:
+        serializedVersion: 2
+        x: 3229
+        y: 83
+        width: 260
+        height: 361
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adacc16b507a2ac90800000000000000
+      internalID: -7159976814593652006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Dungeons_Balron_running_31
+      rect:
+        serializedVersion: 2
+        x: 3734
+        y: 54
+        width: 260
+        height: 394
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41b668151cdac4f90800000000000000
+      internalID: -6968003477640942828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

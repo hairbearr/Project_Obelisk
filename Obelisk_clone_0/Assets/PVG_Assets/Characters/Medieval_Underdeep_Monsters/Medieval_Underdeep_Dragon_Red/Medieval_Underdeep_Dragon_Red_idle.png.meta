@@ -1,0 +1,417 @@
+fileFormatVersion: 2
+guid: f75834a28f7cc06488a84b317254968e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 9092452116283543941
+    second: Medieval_Underdeep_Dragon_Red_idle_0
+  - first:
+      213: -8211141680845387447
+    second: Medieval_Underdeep_Dragon_Red_idle_1
+  - first:
+      213: -302144752675842621
+    second: Medieval_Underdeep_Dragon_Red_idle_2
+  - first:
+      213: 252715943087542963
+    second: Medieval_Underdeep_Dragon_Red_idle_3
+  - first:
+      213: -6776507355848362349
+    second: Medieval_Underdeep_Dragon_Red_idle_4
+  - first:
+      213: 3744744719139338720
+    second: Medieval_Underdeep_Dragon_Red_idle_5
+  - first:
+      213: 3946740686924189502
+    second: Medieval_Underdeep_Dragon_Red_idle_6
+  - first:
+      213: -7200245770042566783
+    second: Medieval_Underdeep_Dragon_Red_idle_7
+  - first:
+      213: 5400842208686235381
+    second: Medieval_Underdeep_Dragon_Red_idle_8
+  - first:
+      213: 7510769278377716990
+    second: Medieval_Underdeep_Dragon_Red_idle_9
+  - first:
+      213: -8445160122362572875
+    second: Medieval_Underdeep_Dragon_Red_idle_10
+  - first:
+      213: -5186518091193907282
+    second: Medieval_Underdeep_Dragon_Red_idle_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Dragon_Red_idle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1603
+        width: 442
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5815450a601ee2e70800000000000000
+      internalID: 9092452116283543941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Dragon_Red_idle_1
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 1603
+        width: 469
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9498ec0552a2c0e80800000000000000
+      internalID: -8211141680845387447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Dragon_Red_idle_2
+      rect:
+        serializedVersion: 2
+        x: 1034
+        y: 1597
+        width: 458
+        height: 299
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c51202c2f09ecbf0800000000000000
+      internalID: -302144752675842621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Dragon_Red_idle_3
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1077
+        width: 417
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b29fc0bfc3d18300800000000000000
+      internalID: 252715943087542963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Dragon_Red_idle_4
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 1074
+        width: 425
+        height: 407
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39636dc967205f1a0800000000000000
+      internalID: -6776507355848362349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Dragon_Red_idle_5
+      rect:
+        serializedVersion: 2
+        x: 1033
+        y: 1097
+        width: 463
+        height: 383
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e9f1d64b7108f330800000000000000
+      internalID: 3744744719139338720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Dragon_Red_idle_6
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 576
+        width: 425
+        height: 381
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3f82b87eb3a5c630800000000000000
+      internalID: 3946740686924189502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Dragon_Red_idle_7
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 605
+        width: 435
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1879a15ee96931c90800000000000000
+      internalID: -7200245770042566783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Dragon_Red_idle_8
+      rect:
+        serializedVersion: 2
+        x: 1069
+        y: 605
+        width: 467
+        height: 402
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fedda8bf55a3fa40800000000000000
+      internalID: 5400842208686235381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Dragon_Red_idle_9
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 74
+        width: 443
+        height: 378
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efcee9b6ddc9b3860800000000000000
+      internalID: 7510769278377716990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Dragon_Red_idle_10
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 58
+        width: 469
+        height: 389
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bfc843fc93ccca80800000000000000
+      internalID: -8445160122362572875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval_Underdeep_Dragon_Red_idle_11
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 42
+        width: 458
+        height: 399
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea700418649c508b0800000000000000
+      internalID: -5186518091193907282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
