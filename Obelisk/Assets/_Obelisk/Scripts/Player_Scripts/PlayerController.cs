@@ -10,7 +10,7 @@ public class PlayerController : NetworkBehaviour
     private Rigidbody2D rb;
     private float movementSpeedMultiplier =1f;
     [SerializeField]private Vector2 movementInput;
-    [SerializeField] private float direction, isMoving, isAttacking, isBlocking, isGrappling;
+    [SerializeField] private float direction, isMoving, isAttacking, isBlocking, isGrappling, isJumping;
 
     public override void OnNetworkSpawn()
     {
@@ -33,13 +33,24 @@ public class PlayerController : NetworkBehaviour
     void Update()
     {
         Move();
-        Attack();
+        SwingSword();
         Animate();
-        Block();
-        GrapplingHook();
+        ShieldBlock();
+        FireGrapplingHook();
+        Jump();
     }
 
-    private void Attack()
+    private void Jump()
+    {
+        if (Input.GetButtonDown("Jump"))
+        {
+            isJumping = 1;
+            print("Jumping");
+            // play jump animation
+            // do jump mechanics?
+        }
+    }
+    private void SwingSword()
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -50,7 +61,7 @@ public class PlayerController : NetworkBehaviour
         }
     }
 
-    private void Block()
+    private void ShieldBlock()
     {
         if (Input.GetMouseButtonDown(1))
         {
@@ -61,7 +72,7 @@ public class PlayerController : NetworkBehaviour
         }
     }
 
-    private void GrapplingHook()
+    private void FireGrapplingHook()
     {
         if(Input.GetMouseButtonDown(2))
         {
@@ -107,5 +118,6 @@ public class PlayerController : NetworkBehaviour
         animator.SetFloat("IsAttacking", isAttacking);
         animator.SetFloat("IsBlocking", isBlocking);
         animator.SetFloat("IsGrappling", isGrappling);
+        animator.SetFloat("IsJumping", isJumping);
     }
 }
