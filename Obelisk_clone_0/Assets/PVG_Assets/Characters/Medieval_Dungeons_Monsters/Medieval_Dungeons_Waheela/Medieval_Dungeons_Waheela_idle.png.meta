@@ -129,6 +129,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Waheela_idle_0: 5567500710625029590
+      Medieval_Dungeons_Waheela_idle_1: 2564726515780885232
+      Medieval_Dungeons_Waheela_idle_10: 5942273843601312775
+      Medieval_Dungeons_Waheela_idle_11: -3064427354998752441
+      Medieval_Dungeons_Waheela_idle_2: -9211300855697577477
+      Medieval_Dungeons_Waheela_idle_3: -4610626938958125466
+      Medieval_Dungeons_Waheela_idle_4: 610006878673250803
+      Medieval_Dungeons_Waheela_idle_5: -9168488641291455605
+      Medieval_Dungeons_Waheela_idle_6: 7697542721348862619
+      Medieval_Dungeons_Waheela_idle_7: 6939720106009023554
+      Medieval_Dungeons_Waheela_idle_8: -7415258993785596584
+      Medieval_Dungeons_Waheela_idle_9: 2401061666023951857
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

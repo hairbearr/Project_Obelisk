@@ -189,6 +189,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -909,7 +922,39 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Goblin_running_0: -2828058010779346512
+      Medieval_Dungeons_Goblin_running_1: -6540859319635220269
+      Medieval_Dungeons_Goblin_running_10: 3097312456537506773
+      Medieval_Dungeons_Goblin_running_11: -2683756452549865959
+      Medieval_Dungeons_Goblin_running_12: -2838749453255332200
+      Medieval_Dungeons_Goblin_running_13: -5383900867653894713
+      Medieval_Dungeons_Goblin_running_14: 550746728444341120
+      Medieval_Dungeons_Goblin_running_15: -7806531231663473422
+      Medieval_Dungeons_Goblin_running_16: -4986523079696492498
+      Medieval_Dungeons_Goblin_running_17: -492841393426271830
+      Medieval_Dungeons_Goblin_running_18: -7899974562252058534
+      Medieval_Dungeons_Goblin_running_19: 2881559327512831560
+      Medieval_Dungeons_Goblin_running_2: -5705741486780349860
+      Medieval_Dungeons_Goblin_running_20: 455477921629074309
+      Medieval_Dungeons_Goblin_running_21: -2793784706442072936
+      Medieval_Dungeons_Goblin_running_22: -2864564256700193472
+      Medieval_Dungeons_Goblin_running_23: 4043327163269782265
+      Medieval_Dungeons_Goblin_running_24: 7313191046116580726
+      Medieval_Dungeons_Goblin_running_25: -7416855241490139964
+      Medieval_Dungeons_Goblin_running_26: -7096936593359072756
+      Medieval_Dungeons_Goblin_running_27: -3598831255586717475
+      Medieval_Dungeons_Goblin_running_28: 3809802080308057227
+      Medieval_Dungeons_Goblin_running_29: -2968319589906443621
+      Medieval_Dungeons_Goblin_running_3: 2020008100885279113
+      Medieval_Dungeons_Goblin_running_30: -8006524937557335974
+      Medieval_Dungeons_Goblin_running_31: -9053281805746039126
+      Medieval_Dungeons_Goblin_running_4: -9152182848913024768
+      Medieval_Dungeons_Goblin_running_5: 201886707350947581
+      Medieval_Dungeons_Goblin_running_6: 1465674697560801146
+      Medieval_Dungeons_Goblin_running_7: -5442908794176888794
+      Medieval_Dungeons_Goblin_running_8: -5108824483424899399
+      Medieval_Dungeons_Goblin_running_9: -8202527997093025795
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

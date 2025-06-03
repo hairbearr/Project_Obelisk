@@ -129,6 +129,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_RockMan_kneel_0: 5299892173802638693
+      Medieval_Dungeons_RockMan_kneel_1: -4807999666194291251
+      Medieval_Dungeons_RockMan_kneel_10: -5870280856055916550
+      Medieval_Dungeons_RockMan_kneel_11: -4610426226880292948
+      Medieval_Dungeons_RockMan_kneel_2: 5615790139239438533
+      Medieval_Dungeons_RockMan_kneel_3: -7650793402922494283
+      Medieval_Dungeons_RockMan_kneel_4: -4810614128983496433
+      Medieval_Dungeons_RockMan_kneel_5: 577504549875847776
+      Medieval_Dungeons_RockMan_kneel_6: -6510160520321751766
+      Medieval_Dungeons_RockMan_kneel_7: -9204700364190239914
+      Medieval_Dungeons_RockMan_kneel_8: 4445959434303566158
+      Medieval_Dungeons_RockMan_kneel_9: 2942007436671712923
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

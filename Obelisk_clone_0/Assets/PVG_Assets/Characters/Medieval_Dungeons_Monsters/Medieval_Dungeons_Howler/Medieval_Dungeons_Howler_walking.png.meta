@@ -189,6 +189,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -909,7 +922,39 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Howler_walking_0: -2086428702639349280
+      Medieval_Dungeons_Howler_walking_1: 3952681647718795064
+      Medieval_Dungeons_Howler_walking_10: -3308561402699140415
+      Medieval_Dungeons_Howler_walking_11: -1747195369183128146
+      Medieval_Dungeons_Howler_walking_12: -6592091516578717009
+      Medieval_Dungeons_Howler_walking_13: 8616260469365822535
+      Medieval_Dungeons_Howler_walking_14: -7112409163622328136
+      Medieval_Dungeons_Howler_walking_15: -3134769864401414110
+      Medieval_Dungeons_Howler_walking_16: 7941819010408040461
+      Medieval_Dungeons_Howler_walking_17: -1492628791787245411
+      Medieval_Dungeons_Howler_walking_18: 2191065576116144384
+      Medieval_Dungeons_Howler_walking_19: 3159278418974524169
+      Medieval_Dungeons_Howler_walking_2: -6093901841969307983
+      Medieval_Dungeons_Howler_walking_20: -2190363089667202753
+      Medieval_Dungeons_Howler_walking_21: -2108761701127639278
+      Medieval_Dungeons_Howler_walking_22: 9071100970306409804
+      Medieval_Dungeons_Howler_walking_23: -2697456368458364692
+      Medieval_Dungeons_Howler_walking_24: 4471574010362871040
+      Medieval_Dungeons_Howler_walking_25: -2044785081142719323
+      Medieval_Dungeons_Howler_walking_26: 3223337200164365960
+      Medieval_Dungeons_Howler_walking_27: -3989230284721268128
+      Medieval_Dungeons_Howler_walking_28: -5621704241317639260
+      Medieval_Dungeons_Howler_walking_29: -7489383279496051322
+      Medieval_Dungeons_Howler_walking_3: 1078827864764294857
+      Medieval_Dungeons_Howler_walking_30: -234917127920024729
+      Medieval_Dungeons_Howler_walking_31: 680312580792145324
+      Medieval_Dungeons_Howler_walking_4: 3163387028670744450
+      Medieval_Dungeons_Howler_walking_5: -5027021591483516066
+      Medieval_Dungeons_Howler_walking_6: -2491084338915436927
+      Medieval_Dungeons_Howler_walking_7: 8265083713503326284
+      Medieval_Dungeons_Howler_walking_8: 5057136071376812727
+      Medieval_Dungeons_Howler_walking_9: 812195119165650918
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

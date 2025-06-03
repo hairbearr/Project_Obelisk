@@ -189,6 +189,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -909,7 +922,39 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Underdeep_Ettin_walking_0: -6146650682101120698
+      Medieval_Underdeep_Ettin_walking_1: 1234130702494505443
+      Medieval_Underdeep_Ettin_walking_10: 6074279617181557628
+      Medieval_Underdeep_Ettin_walking_11: 7154612158534537161
+      Medieval_Underdeep_Ettin_walking_12: 1484510468185732460
+      Medieval_Underdeep_Ettin_walking_13: 2427509738451259894
+      Medieval_Underdeep_Ettin_walking_14: 3996848541676879364
+      Medieval_Underdeep_Ettin_walking_15: 5110107009500949676
+      Medieval_Underdeep_Ettin_walking_16: -1763519057083933529
+      Medieval_Underdeep_Ettin_walking_17: 5008597177695017782
+      Medieval_Underdeep_Ettin_walking_18: 7999278018267772161
+      Medieval_Underdeep_Ettin_walking_19: -6918367559156345556
+      Medieval_Underdeep_Ettin_walking_2: -4610736121128088521
+      Medieval_Underdeep_Ettin_walking_20: -4593156694638831072
+      Medieval_Underdeep_Ettin_walking_21: -1869775936365973925
+      Medieval_Underdeep_Ettin_walking_22: 1892357919859993516
+      Medieval_Underdeep_Ettin_walking_23: 155136945656325994
+      Medieval_Underdeep_Ettin_walking_24: -1575233981748643216
+      Medieval_Underdeep_Ettin_walking_25: 3662557120491670017
+      Medieval_Underdeep_Ettin_walking_26: 7687318206109601447
+      Medieval_Underdeep_Ettin_walking_27: -1744644254247748207
+      Medieval_Underdeep_Ettin_walking_28: -5675745415715243509
+      Medieval_Underdeep_Ettin_walking_29: -1682332726710448241
+      Medieval_Underdeep_Ettin_walking_3: -3567545157027600147
+      Medieval_Underdeep_Ettin_walking_30: -4327315503602880745
+      Medieval_Underdeep_Ettin_walking_31: -2489935203295894077
+      Medieval_Underdeep_Ettin_walking_4: 4673224570487314199
+      Medieval_Underdeep_Ettin_walking_5: 8637398693722137290
+      Medieval_Underdeep_Ettin_walking_6: 529618044280904
+      Medieval_Underdeep_Ettin_walking_7: 8111026493909661127
+      Medieval_Underdeep_Ettin_walking_8: 6548246597616394281
+      Medieval_Underdeep_Ettin_walking_9: -948996831431607221
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

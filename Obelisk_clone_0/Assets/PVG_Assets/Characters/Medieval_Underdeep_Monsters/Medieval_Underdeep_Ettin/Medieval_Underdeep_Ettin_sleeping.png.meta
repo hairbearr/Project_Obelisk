@@ -129,6 +129,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Underdeep_Ettin_sleeping_0: -3977146159291855870
+      Medieval_Underdeep_Ettin_sleeping_1: 6388936420654503755
+      Medieval_Underdeep_Ettin_sleeping_10: -7192824789781131597
+      Medieval_Underdeep_Ettin_sleeping_11: -3623945129758764911
+      Medieval_Underdeep_Ettin_sleeping_2: 8067612189179671120
+      Medieval_Underdeep_Ettin_sleeping_3: -5384043236112781311
+      Medieval_Underdeep_Ettin_sleeping_4: -2316337814858621456
+      Medieval_Underdeep_Ettin_sleeping_5: -4546497570772326660
+      Medieval_Underdeep_Ettin_sleeping_6: 6114428562422516255
+      Medieval_Underdeep_Ettin_sleeping_7: 454787185222810345
+      Medieval_Underdeep_Ettin_sleeping_8: -6992074462431494303
+      Medieval_Underdeep_Ettin_sleeping_9: -2741360819961802456
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

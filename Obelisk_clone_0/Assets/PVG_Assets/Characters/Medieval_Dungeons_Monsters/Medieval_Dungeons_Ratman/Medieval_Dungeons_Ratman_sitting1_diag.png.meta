@@ -129,6 +129,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Ratman_sitting1_diag_0: -6521510895726777594
+      Medieval_Dungeons_Ratman_sitting1_diag_1: -8542600443105329981
+      Medieval_Dungeons_Ratman_sitting1_diag_10: 2072931620068407199
+      Medieval_Dungeons_Ratman_sitting1_diag_11: 1722270918426700674
+      Medieval_Dungeons_Ratman_sitting1_diag_2: -6281991003817621625
+      Medieval_Dungeons_Ratman_sitting1_diag_3: 3489295296836743554
+      Medieval_Dungeons_Ratman_sitting1_diag_4: -4297039162781652195
+      Medieval_Dungeons_Ratman_sitting1_diag_5: 3580990695613674295
+      Medieval_Dungeons_Ratman_sitting1_diag_6: 4453765928630002109
+      Medieval_Dungeons_Ratman_sitting1_diag_7: 3054196102634238977
+      Medieval_Dungeons_Ratman_sitting1_diag_8: -1254653184119109808
+      Medieval_Dungeons_Ratman_sitting1_diag_9: -4340830742373865180
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

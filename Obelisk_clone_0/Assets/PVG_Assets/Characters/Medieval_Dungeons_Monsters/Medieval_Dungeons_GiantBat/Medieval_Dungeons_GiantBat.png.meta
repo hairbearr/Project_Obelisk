@@ -402,6 +402,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -2684,7 +2697,110 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_GiantBat_0: -2472925904157833440
+      Medieval_Dungeons_GiantBat_1: -1867613652456972408
+      Medieval_Dungeons_GiantBat_10: -4481426524263675295
+      Medieval_Dungeons_GiantBat_100: 5508464671131654982
+      Medieval_Dungeons_GiantBat_101: -6853880672180697938
+      Medieval_Dungeons_GiantBat_102: 6721856184579208414
+      Medieval_Dungeons_GiantBat_11: 4332363598889721439
+      Medieval_Dungeons_GiantBat_12: 8258361618494615973
+      Medieval_Dungeons_GiantBat_13: -7791205919555076518
+      Medieval_Dungeons_GiantBat_14: 7022359545971951590
+      Medieval_Dungeons_GiantBat_15: 6270509195376606513
+      Medieval_Dungeons_GiantBat_16: 8123830688799511776
+      Medieval_Dungeons_GiantBat_17: -8191682917144802645
+      Medieval_Dungeons_GiantBat_18: 5607451837623281474
+      Medieval_Dungeons_GiantBat_19: 1877916227645007935
+      Medieval_Dungeons_GiantBat_2: 7586537396151502338
+      Medieval_Dungeons_GiantBat_20: -2622218601773805112
+      Medieval_Dungeons_GiantBat_21: -4203554225435176294
+      Medieval_Dungeons_GiantBat_22: 5480054636033321014
+      Medieval_Dungeons_GiantBat_23: 6040352142325857441
+      Medieval_Dungeons_GiantBat_24: -9848643211733314
+      Medieval_Dungeons_GiantBat_25: -3073037858179603834
+      Medieval_Dungeons_GiantBat_26: -6586870124855363523
+      Medieval_Dungeons_GiantBat_27: 7605658032313034661
+      Medieval_Dungeons_GiantBat_28: 8075102148924253693
+      Medieval_Dungeons_GiantBat_29: 2504290245740014310
+      Medieval_Dungeons_GiantBat_3: 7438783586254200294
+      Medieval_Dungeons_GiantBat_30: 4029585184100125776
+      Medieval_Dungeons_GiantBat_31: -8404424144830769964
+      Medieval_Dungeons_GiantBat_32: -5171300158073330988
+      Medieval_Dungeons_GiantBat_33: 5629158900611065891
+      Medieval_Dungeons_GiantBat_34: 9136389073145654387
+      Medieval_Dungeons_GiantBat_35: 2657282358747120360
+      Medieval_Dungeons_GiantBat_36: -2754860501434804995
+      Medieval_Dungeons_GiantBat_37: -6569200040749759913
+      Medieval_Dungeons_GiantBat_38: -1208840816660632835
+      Medieval_Dungeons_GiantBat_39: 4662250487230686419
+      Medieval_Dungeons_GiantBat_4: -1156182848346252544
+      Medieval_Dungeons_GiantBat_40: 2918734684106832551
+      Medieval_Dungeons_GiantBat_41: 6375230999523271932
+      Medieval_Dungeons_GiantBat_42: -1950551142731880465
+      Medieval_Dungeons_GiantBat_43: 5856871940207920175
+      Medieval_Dungeons_GiantBat_44: 2307904434891853024
+      Medieval_Dungeons_GiantBat_45: -6570137848975803611
+      Medieval_Dungeons_GiantBat_46: 3323159885906293637
+      Medieval_Dungeons_GiantBat_47: 7542878470136474691
+      Medieval_Dungeons_GiantBat_48: 4267315810871280684
+      Medieval_Dungeons_GiantBat_49: 3160157299295948630
+      Medieval_Dungeons_GiantBat_5: 2108758461787268512
+      Medieval_Dungeons_GiantBat_50: 2606244698090480201
+      Medieval_Dungeons_GiantBat_51: 8316377470809834568
+      Medieval_Dungeons_GiantBat_52: -8653468964366160054
+      Medieval_Dungeons_GiantBat_53: 85519667209838064
+      Medieval_Dungeons_GiantBat_54: -3922097311863276570
+      Medieval_Dungeons_GiantBat_55: 7995986740205339475
+      Medieval_Dungeons_GiantBat_56: 5485035536266606331
+      Medieval_Dungeons_GiantBat_57: -9073691016097294420
+      Medieval_Dungeons_GiantBat_58: 1715876649907793988
+      Medieval_Dungeons_GiantBat_59: -6124928950024266899
+      Medieval_Dungeons_GiantBat_6: -7439506207296419903
+      Medieval_Dungeons_GiantBat_60: 1989293591662645823
+      Medieval_Dungeons_GiantBat_61: 4284927140551610459
+      Medieval_Dungeons_GiantBat_62: -7420920462129877726
+      Medieval_Dungeons_GiantBat_63: 397060419049857666
+      Medieval_Dungeons_GiantBat_64: 5303174296714580471
+      Medieval_Dungeons_GiantBat_65: -6988651338655569752
+      Medieval_Dungeons_GiantBat_66: 1814191039411583710
+      Medieval_Dungeons_GiantBat_67: 7158800795076753401
+      Medieval_Dungeons_GiantBat_68: 2085391238058716915
+      Medieval_Dungeons_GiantBat_69: -8226407720612112082
+      Medieval_Dungeons_GiantBat_7: 7914062967240583863
+      Medieval_Dungeons_GiantBat_70: -3049553367286116369
+      Medieval_Dungeons_GiantBat_71: -3649178565605310494
+      Medieval_Dungeons_GiantBat_72: 3171929691610511547
+      Medieval_Dungeons_GiantBat_73: 7074266692376815481
+      Medieval_Dungeons_GiantBat_74: 7164143963570469630
+      Medieval_Dungeons_GiantBat_75: 5421944724455372430
+      Medieval_Dungeons_GiantBat_76: 3741800061226688872
+      Medieval_Dungeons_GiantBat_77: 3667301504126218237
+      Medieval_Dungeons_GiantBat_78: 28049071122286748
+      Medieval_Dungeons_GiantBat_79: 8990461084808617249
+      Medieval_Dungeons_GiantBat_8: -6514491088077134853
+      Medieval_Dungeons_GiantBat_80: 7687328661252320038
+      Medieval_Dungeons_GiantBat_81: 3908695494200471352
+      Medieval_Dungeons_GiantBat_82: 4607300078073566817
+      Medieval_Dungeons_GiantBat_83: -1002487889890655389
+      Medieval_Dungeons_GiantBat_84: -8877789278595499679
+      Medieval_Dungeons_GiantBat_85: 3300890092696352491
+      Medieval_Dungeons_GiantBat_86: -6210309720572501840
+      Medieval_Dungeons_GiantBat_87: -7855943308965577848
+      Medieval_Dungeons_GiantBat_88: 6798682387686228496
+      Medieval_Dungeons_GiantBat_89: -3073245513230143168
+      Medieval_Dungeons_GiantBat_9: 6706433036835227507
+      Medieval_Dungeons_GiantBat_90: -1944898815383221300
+      Medieval_Dungeons_GiantBat_91: -8405530815401312554
+      Medieval_Dungeons_GiantBat_92: -3678900837773958233
+      Medieval_Dungeons_GiantBat_93: 5764575614258993302
+      Medieval_Dungeons_GiantBat_94: -7647501740991419050
+      Medieval_Dungeons_GiantBat_95: 919154458711760878
+      Medieval_Dungeons_GiantBat_96: 1449462736326835225
+      Medieval_Dungeons_GiantBat_97: -5844978850918741215
+      Medieval_Dungeons_GiantBat_98: 415648436858937959
+      Medieval_Dungeons_GiantBat_99: 5911247992479761351
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

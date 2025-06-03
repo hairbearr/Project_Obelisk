@@ -129,6 +129,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Griffin_ko_diag_0: 2570052402225647660
+      Medieval_Dungeons_Griffin_ko_diag_1: 8939057531839948886
+      Medieval_Dungeons_Griffin_ko_diag_10: 2382916822787478342
+      Medieval_Dungeons_Griffin_ko_diag_11: 3506542649812876554
+      Medieval_Dungeons_Griffin_ko_diag_2: 3867977479449883024
+      Medieval_Dungeons_Griffin_ko_diag_3: 6464326518018914400
+      Medieval_Dungeons_Griffin_ko_diag_4: -3005161698561596077
+      Medieval_Dungeons_Griffin_ko_diag_5: -6648558894379190913
+      Medieval_Dungeons_Griffin_ko_diag_6: 6378986822737979966
+      Medieval_Dungeons_Griffin_ko_diag_7: -2166951888606925064
+      Medieval_Dungeons_Griffin_ko_diag_8: 3939118810372858495
+      Medieval_Dungeons_Griffin_ko_diag_9: -6708774350069557469
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

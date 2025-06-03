@@ -129,6 +129,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Bugbear_sitting1_0: 7667479423234673866
+      Medieval_Dungeons_Bugbear_sitting1_1: -5682363277310667617
+      Medieval_Dungeons_Bugbear_sitting1_10: 2472712078014058599
+      Medieval_Dungeons_Bugbear_sitting1_11: -659046901596507010
+      Medieval_Dungeons_Bugbear_sitting1_2: -6904338077419377884
+      Medieval_Dungeons_Bugbear_sitting1_3: -1666321160936537783
+      Medieval_Dungeons_Bugbear_sitting1_4: -4958236022369636233
+      Medieval_Dungeons_Bugbear_sitting1_5: 8752364825650777045
+      Medieval_Dungeons_Bugbear_sitting1_6: -2454168301873461006
+      Medieval_Dungeons_Bugbear_sitting1_7: 1087317911679357158
+      Medieval_Dungeons_Bugbear_sitting1_8: 4445248687649515193
+      Medieval_Dungeons_Bugbear_sitting1_9: -8399861270104608009
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

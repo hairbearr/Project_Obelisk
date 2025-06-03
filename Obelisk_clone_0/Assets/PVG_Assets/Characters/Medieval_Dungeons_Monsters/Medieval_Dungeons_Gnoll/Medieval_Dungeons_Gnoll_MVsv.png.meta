@@ -255,6 +255,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -1459,7 +1472,61 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Gnoll_MVsv_0: 7714129348383352576
+      Medieval_Dungeons_Gnoll_MVsv_1: 3619786693081871175
+      Medieval_Dungeons_Gnoll_MVsv_10: 9213939759527318353
+      Medieval_Dungeons_Gnoll_MVsv_11: -6132740357916734348
+      Medieval_Dungeons_Gnoll_MVsv_12: -66808647193209431
+      Medieval_Dungeons_Gnoll_MVsv_13: 3797757462396785451
+      Medieval_Dungeons_Gnoll_MVsv_14: -320152247372163666
+      Medieval_Dungeons_Gnoll_MVsv_15: 7325489102602479900
+      Medieval_Dungeons_Gnoll_MVsv_16: -3316244874045261723
+      Medieval_Dungeons_Gnoll_MVsv_17: -4732152701153779915
+      Medieval_Dungeons_Gnoll_MVsv_18: -2808885470598762950
+      Medieval_Dungeons_Gnoll_MVsv_19: -7781347707456065412
+      Medieval_Dungeons_Gnoll_MVsv_2: 5918454377576391939
+      Medieval_Dungeons_Gnoll_MVsv_20: -7782970357504216113
+      Medieval_Dungeons_Gnoll_MVsv_21: -1263703403130231972
+      Medieval_Dungeons_Gnoll_MVsv_22: 8172082686397928806
+      Medieval_Dungeons_Gnoll_MVsv_23: 1549339116559097470
+      Medieval_Dungeons_Gnoll_MVsv_24: -5577854614307788424
+      Medieval_Dungeons_Gnoll_MVsv_25: -8455368088802541560
+      Medieval_Dungeons_Gnoll_MVsv_26: 1021539142092028105
+      Medieval_Dungeons_Gnoll_MVsv_27: -8446097802512364410
+      Medieval_Dungeons_Gnoll_MVsv_28: -7661826209714955447
+      Medieval_Dungeons_Gnoll_MVsv_29: -621223930177282307
+      Medieval_Dungeons_Gnoll_MVsv_3: -1003658228312291818
+      Medieval_Dungeons_Gnoll_MVsv_30: 5244225844472611786
+      Medieval_Dungeons_Gnoll_MVsv_31: -652046385009309727
+      Medieval_Dungeons_Gnoll_MVsv_32: 5045119317405868989
+      Medieval_Dungeons_Gnoll_MVsv_33: 6978274232070361331
+      Medieval_Dungeons_Gnoll_MVsv_34: -4905149617400762181
+      Medieval_Dungeons_Gnoll_MVsv_35: -1277301387662974642
+      Medieval_Dungeons_Gnoll_MVsv_36: 2300924649332519576
+      Medieval_Dungeons_Gnoll_MVsv_37: -3636783324863267612
+      Medieval_Dungeons_Gnoll_MVsv_38: -4038190544504605992
+      Medieval_Dungeons_Gnoll_MVsv_39: 4859548038010443575
+      Medieval_Dungeons_Gnoll_MVsv_4: 2697254718195519598
+      Medieval_Dungeons_Gnoll_MVsv_40: -7078949150809154080
+      Medieval_Dungeons_Gnoll_MVsv_41: -3429131423740634790
+      Medieval_Dungeons_Gnoll_MVsv_42: -5613291306337677360
+      Medieval_Dungeons_Gnoll_MVsv_43: -8099603994768193887
+      Medieval_Dungeons_Gnoll_MVsv_44: -1048384932642256313
+      Medieval_Dungeons_Gnoll_MVsv_45: -5641537164023330109
+      Medieval_Dungeons_Gnoll_MVsv_46: -4877427322454919747
+      Medieval_Dungeons_Gnoll_MVsv_47: 9153025500084519826
+      Medieval_Dungeons_Gnoll_MVsv_48: -1832111786665625789
+      Medieval_Dungeons_Gnoll_MVsv_49: 4662888564681370822
+      Medieval_Dungeons_Gnoll_MVsv_5: 1155791119184836527
+      Medieval_Dungeons_Gnoll_MVsv_50: -8899237222908050122
+      Medieval_Dungeons_Gnoll_MVsv_51: -1604845552562788860
+      Medieval_Dungeons_Gnoll_MVsv_52: 3260855643447806225
+      Medieval_Dungeons_Gnoll_MVsv_53: 327460047951056313
+      Medieval_Dungeons_Gnoll_MVsv_6: -886189733691154187
+      Medieval_Dungeons_Gnoll_MVsv_7: -5159551146684816102
+      Medieval_Dungeons_Gnoll_MVsv_8: 1600301731584834961
+      Medieval_Dungeons_Gnoll_MVsv_9: -3396216499419497692
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -189,6 +189,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -909,7 +922,39 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Bugbear_running_0: 8988142915605668973
+      Medieval_Dungeons_Bugbear_running_1: -6026878064734508962
+      Medieval_Dungeons_Bugbear_running_10: -2273794069769099414
+      Medieval_Dungeons_Bugbear_running_11: -7727285737288123091
+      Medieval_Dungeons_Bugbear_running_12: -7452486237405312937
+      Medieval_Dungeons_Bugbear_running_13: -1980677952534005068
+      Medieval_Dungeons_Bugbear_running_14: 3524222269987462655
+      Medieval_Dungeons_Bugbear_running_15: -6513046213503325640
+      Medieval_Dungeons_Bugbear_running_16: 2764914994394943738
+      Medieval_Dungeons_Bugbear_running_17: 8476618919330369652
+      Medieval_Dungeons_Bugbear_running_18: -5806640777562648223
+      Medieval_Dungeons_Bugbear_running_19: -3061080482114071569
+      Medieval_Dungeons_Bugbear_running_2: 2329295081534779581
+      Medieval_Dungeons_Bugbear_running_20: -5954797756481403003
+      Medieval_Dungeons_Bugbear_running_21: 356269395143630032
+      Medieval_Dungeons_Bugbear_running_22: -5336720763392294420
+      Medieval_Dungeons_Bugbear_running_23: 6867456205778720217
+      Medieval_Dungeons_Bugbear_running_24: 7894843140002149036
+      Medieval_Dungeons_Bugbear_running_25: -669480507207300998
+      Medieval_Dungeons_Bugbear_running_26: -4016457546245861897
+      Medieval_Dungeons_Bugbear_running_27: -9178348055021046350
+      Medieval_Dungeons_Bugbear_running_28: -1658588971905699081
+      Medieval_Dungeons_Bugbear_running_29: -2518922409396382773
+      Medieval_Dungeons_Bugbear_running_3: 3167651693999495555
+      Medieval_Dungeons_Bugbear_running_30: 8932867406314492627
+      Medieval_Dungeons_Bugbear_running_31: 2911645529597672875
+      Medieval_Dungeons_Bugbear_running_4: 5531265444514208053
+      Medieval_Dungeons_Bugbear_running_5: 6348874948419899475
+      Medieval_Dungeons_Bugbear_running_6: -4874649395502859225
+      Medieval_Dungeons_Bugbear_running_7: -4955476537716053000
+      Medieval_Dungeons_Bugbear_running_8: 3434534912740600781
+      Medieval_Dungeons_Bugbear_running_9: 5956503546635160693
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

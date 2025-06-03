@@ -144,6 +144,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -534,7 +547,24 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Howler_ko_diag_0: 3836033260180782039
+      Medieval_Dungeons_Howler_ko_diag_1: -4947938764580370112
+      Medieval_Dungeons_Howler_ko_diag_10: -6812708185388416347
+      Medieval_Dungeons_Howler_ko_diag_11: -3378270537452854003
+      Medieval_Dungeons_Howler_ko_diag_12: -7925736733886333984
+      Medieval_Dungeons_Howler_ko_diag_13: -8084795366055238293
+      Medieval_Dungeons_Howler_ko_diag_14: 5165514983651285565
+      Medieval_Dungeons_Howler_ko_diag_15: -1279849229579676831
+      Medieval_Dungeons_Howler_ko_diag_16: -3315423639963716436
+      Medieval_Dungeons_Howler_ko_diag_2: 1587668724887185720
+      Medieval_Dungeons_Howler_ko_diag_3: 727923630307989845
+      Medieval_Dungeons_Howler_ko_diag_4: -7400055803325541005
+      Medieval_Dungeons_Howler_ko_diag_5: -6438516141411057884
+      Medieval_Dungeons_Howler_ko_diag_6: -843251546310567773
+      Medieval_Dungeons_Howler_ko_diag_7: -4348269252824074813
+      Medieval_Dungeons_Howler_ko_diag_8: 8586056067610683067
+      Medieval_Dungeons_Howler_ko_diag_9: -3118329706288813653
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -129,6 +129,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Ratman_dead_diag_0: 3950997194581562599
+      Medieval_Dungeons_Ratman_dead_diag_1: 1333220449027459944
+      Medieval_Dungeons_Ratman_dead_diag_10: 4799473544857472737
+      Medieval_Dungeons_Ratman_dead_diag_11: -2839202181277893129
+      Medieval_Dungeons_Ratman_dead_diag_2: -7498817853926914739
+      Medieval_Dungeons_Ratman_dead_diag_3: -3930569756387735366
+      Medieval_Dungeons_Ratman_dead_diag_4: -8707987979523596180
+      Medieval_Dungeons_Ratman_dead_diag_5: -8104175747976046038
+      Medieval_Dungeons_Ratman_dead_diag_6: -1202061017917476409
+      Medieval_Dungeons_Ratman_dead_diag_7: 4921032054957124528
+      Medieval_Dungeons_Ratman_dead_diag_8: 5713670055424054333
+      Medieval_Dungeons_Ratman_dead_diag_9: 1060023054677043981
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

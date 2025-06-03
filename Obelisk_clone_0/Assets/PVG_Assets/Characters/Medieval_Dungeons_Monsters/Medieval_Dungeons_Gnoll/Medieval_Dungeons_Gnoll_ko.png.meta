@@ -129,6 +129,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Gnoll_ko_0: -8018307909177784122
+      Medieval_Dungeons_Gnoll_ko_1: -8763607508672183042
+      Medieval_Dungeons_Gnoll_ko_10: 5578889865237916656
+      Medieval_Dungeons_Gnoll_ko_11: 6045569376220242367
+      Medieval_Dungeons_Gnoll_ko_2: 469565466594633453
+      Medieval_Dungeons_Gnoll_ko_3: 7454376874529091231
+      Medieval_Dungeons_Gnoll_ko_4: 8608019090290159179
+      Medieval_Dungeons_Gnoll_ko_5: -5985143887530718012
+      Medieval_Dungeons_Gnoll_ko_6: -859812141335296163
+      Medieval_Dungeons_Gnoll_ko_7: -1439145411587360797
+      Medieval_Dungeons_Gnoll_ko_8: -2121796548358286384
+      Medieval_Dungeons_Gnoll_ko_9: -7821584701889489969
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -129,6 +129,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Balron_ko_diag_0: -2846215360923036497
+      Medieval_Dungeons_Balron_ko_diag_1: -4863911093222033841
+      Medieval_Dungeons_Balron_ko_diag_10: 1887458913692895726
+      Medieval_Dungeons_Balron_ko_diag_11: -7808759556274749964
+      Medieval_Dungeons_Balron_ko_diag_2: 1722302267214782173
+      Medieval_Dungeons_Balron_ko_diag_3: -322571320649224245
+      Medieval_Dungeons_Balron_ko_diag_4: -2353742040316926030
+      Medieval_Dungeons_Balron_ko_diag_5: -6106878155326227395
+      Medieval_Dungeons_Balron_ko_diag_6: 3718960188872042226
+      Medieval_Dungeons_Balron_ko_diag_7: -8893216101400474735
+      Medieval_Dungeons_Balron_ko_diag_8: 4733181869786842113
+      Medieval_Dungeons_Balron_ko_diag_9: -3657576887596948336
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

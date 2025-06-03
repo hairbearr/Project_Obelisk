@@ -129,6 +129,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Underdeep_Troll_2_idle2_0: -7513318775406872637
+      Medieval_Underdeep_Troll_2_idle2_1: 4409474058982324961
+      Medieval_Underdeep_Troll_2_idle2_10: -4735233144228047640
+      Medieval_Underdeep_Troll_2_idle2_11: -587776949487161284
+      Medieval_Underdeep_Troll_2_idle2_2: 2829480492633279769
+      Medieval_Underdeep_Troll_2_idle2_3: -7989723575112105935
+      Medieval_Underdeep_Troll_2_idle2_4: -4705053581470453228
+      Medieval_Underdeep_Troll_2_idle2_5: -924573415785527406
+      Medieval_Underdeep_Troll_2_idle2_6: -2956727872038599589
+      Medieval_Underdeep_Troll_2_idle2_7: 171844134524494726
+      Medieval_Underdeep_Troll_2_idle2_8: 8476381996224344861
+      Medieval_Underdeep_Troll_2_idle2_9: -3539740206305843467
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

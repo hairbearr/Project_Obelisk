@@ -117,6 +117,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -309,7 +322,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Expansion_Ruins_1_0: -5829282122572088705
+      Medieval_Expansion_Ruins_1_1: 3607875831038381487
+      Medieval_Expansion_Ruins_1_2: 1385539240400449279
+      Medieval_Expansion_Ruins_1_3: -7678112720221917749
+      Medieval_Expansion_Ruins_1_4: -5375362767482238370
+      Medieval_Expansion_Ruins_1_5: -4061796172005990182
+      Medieval_Expansion_Ruins_1_6: -8323668130100165255
+      Medieval_Expansion_Ruins_1_7: 3061852787859641134
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

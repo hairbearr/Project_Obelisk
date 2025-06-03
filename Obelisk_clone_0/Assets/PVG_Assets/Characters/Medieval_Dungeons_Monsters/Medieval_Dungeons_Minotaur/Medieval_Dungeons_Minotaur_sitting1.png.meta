@@ -129,6 +129,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Minotaur_sitting1_0: -1454596338520486036
+      Medieval_Dungeons_Minotaur_sitting1_1: -1296663231524831225
+      Medieval_Dungeons_Minotaur_sitting1_10: 8236852659000096115
+      Medieval_Dungeons_Minotaur_sitting1_11: 6060500055218824963
+      Medieval_Dungeons_Minotaur_sitting1_2: -2006231696944087198
+      Medieval_Dungeons_Minotaur_sitting1_3: -798980715602504176
+      Medieval_Dungeons_Minotaur_sitting1_4: -6927223335463725824
+      Medieval_Dungeons_Minotaur_sitting1_5: -3229656259177326520
+      Medieval_Dungeons_Minotaur_sitting1_6: -7496287215803698666
+      Medieval_Dungeons_Minotaur_sitting1_7: 3686549291627683678
+      Medieval_Dungeons_Minotaur_sitting1_8: 8330459302088675341
+      Medieval_Dungeons_Minotaur_sitting1_9: 511404143557393963
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

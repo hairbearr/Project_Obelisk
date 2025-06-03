@@ -129,6 +129,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Balron_idle_0: 2719998920523202173
+      Medieval_Dungeons_Balron_idle_1: 981085029503870319
+      Medieval_Dungeons_Balron_idle_10: 2043664656879163798
+      Medieval_Dungeons_Balron_idle_11: 1295334746404452949
+      Medieval_Dungeons_Balron_idle_2: -7633522417776174138
+      Medieval_Dungeons_Balron_idle_3: 5318356260487083131
+      Medieval_Dungeons_Balron_idle_4: 6088572592323474463
+      Medieval_Dungeons_Balron_idle_5: -1634023158829840061
+      Medieval_Dungeons_Balron_idle_6: 6044363531411866478
+      Medieval_Dungeons_Balron_idle_7: 5995444032254492058
+      Medieval_Dungeons_Balron_idle_8: -8932511133328934279
+      Medieval_Dungeons_Balron_idle_9: 8377984558542501912
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

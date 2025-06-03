@@ -189,6 +189,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -909,7 +922,39 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Chimera_running_diag_0: 1748125883683485847
+      Medieval_Dungeons_Chimera_running_diag_1: -8035372186759470063
+      Medieval_Dungeons_Chimera_running_diag_10: 5249236383950540865
+      Medieval_Dungeons_Chimera_running_diag_11: -4946866499144715240
+      Medieval_Dungeons_Chimera_running_diag_12: -8106482909550195825
+      Medieval_Dungeons_Chimera_running_diag_13: -2363943524671489133
+      Medieval_Dungeons_Chimera_running_diag_14: -6466266444360519302
+      Medieval_Dungeons_Chimera_running_diag_15: 433727734333055645
+      Medieval_Dungeons_Chimera_running_diag_16: 4341827364113329046
+      Medieval_Dungeons_Chimera_running_diag_17: 3457920653325915273
+      Medieval_Dungeons_Chimera_running_diag_18: -4646447925117922477
+      Medieval_Dungeons_Chimera_running_diag_19: -7923924942876311183
+      Medieval_Dungeons_Chimera_running_diag_2: 7166925712757227469
+      Medieval_Dungeons_Chimera_running_diag_20: 1072007542124883923
+      Medieval_Dungeons_Chimera_running_diag_21: -3154231664248056050
+      Medieval_Dungeons_Chimera_running_diag_22: 910988710556859121
+      Medieval_Dungeons_Chimera_running_diag_23: 7490954679029094555
+      Medieval_Dungeons_Chimera_running_diag_24: -8244382364824412015
+      Medieval_Dungeons_Chimera_running_diag_25: 1624456883537714892
+      Medieval_Dungeons_Chimera_running_diag_26: 2608096303915000110
+      Medieval_Dungeons_Chimera_running_diag_27: 8223998737406396494
+      Medieval_Dungeons_Chimera_running_diag_28: -4887933352432560261
+      Medieval_Dungeons_Chimera_running_diag_29: -5077547201690643322
+      Medieval_Dungeons_Chimera_running_diag_3: 1456581830720921608
+      Medieval_Dungeons_Chimera_running_diag_30: -6953227589891355945
+      Medieval_Dungeons_Chimera_running_diag_31: 3424373424577538146
+      Medieval_Dungeons_Chimera_running_diag_4: 2184071154536789049
+      Medieval_Dungeons_Chimera_running_diag_5: 6558931093848465577
+      Medieval_Dungeons_Chimera_running_diag_6: -5612163626163653455
+      Medieval_Dungeons_Chimera_running_diag_7: -8272673089544897800
+      Medieval_Dungeons_Chimera_running_diag_8: 811470533742998359
+      Medieval_Dungeons_Chimera_running_diag_9: -2518297803439485912
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -189,6 +189,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -909,7 +922,39 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Ogre_running_diag_0: -8888106651077843683
+      Medieval_Dungeons_Ogre_running_diag_1: -2912383530185149078
+      Medieval_Dungeons_Ogre_running_diag_10: -8758201030351574334
+      Medieval_Dungeons_Ogre_running_diag_11: 7151163236612800694
+      Medieval_Dungeons_Ogre_running_diag_12: -2163037106337749124
+      Medieval_Dungeons_Ogre_running_diag_13: 2936504121542589374
+      Medieval_Dungeons_Ogre_running_diag_14: -6056854426052418148
+      Medieval_Dungeons_Ogre_running_diag_15: -193597503064020123
+      Medieval_Dungeons_Ogre_running_diag_16: 1601826207453656964
+      Medieval_Dungeons_Ogre_running_diag_17: -662765306858341319
+      Medieval_Dungeons_Ogre_running_diag_18: -7124807434603902678
+      Medieval_Dungeons_Ogre_running_diag_19: -426396270765117367
+      Medieval_Dungeons_Ogre_running_diag_2: -2426974967870707787
+      Medieval_Dungeons_Ogre_running_diag_20: -3571702510764837002
+      Medieval_Dungeons_Ogre_running_diag_21: -2789211578794738485
+      Medieval_Dungeons_Ogre_running_diag_22: -2959480864077430931
+      Medieval_Dungeons_Ogre_running_diag_23: 2399733140634111802
+      Medieval_Dungeons_Ogre_running_diag_24: -7218629985899369505
+      Medieval_Dungeons_Ogre_running_diag_25: -3699586477734585288
+      Medieval_Dungeons_Ogre_running_diag_26: 7280589874985065341
+      Medieval_Dungeons_Ogre_running_diag_27: 6871235496137138125
+      Medieval_Dungeons_Ogre_running_diag_28: -2594513137332955327
+      Medieval_Dungeons_Ogre_running_diag_29: -6365813155601308644
+      Medieval_Dungeons_Ogre_running_diag_3: 7625302849441444243
+      Medieval_Dungeons_Ogre_running_diag_30: 5899178147514578769
+      Medieval_Dungeons_Ogre_running_diag_31: -2363066059789338023
+      Medieval_Dungeons_Ogre_running_diag_4: 3052086487879417058
+      Medieval_Dungeons_Ogre_running_diag_5: -5046991767344709880
+      Medieval_Dungeons_Ogre_running_diag_6: -4606865311506797842
+      Medieval_Dungeons_Ogre_running_diag_7: 7608618412832021462
+      Medieval_Dungeons_Ogre_running_diag_8: 1157755566520595776
+      Medieval_Dungeons_Ogre_running_diag_9: -2148353564478306555
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

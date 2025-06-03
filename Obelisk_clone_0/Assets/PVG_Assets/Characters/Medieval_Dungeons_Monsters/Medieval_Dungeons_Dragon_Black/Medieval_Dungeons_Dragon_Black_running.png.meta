@@ -186,6 +186,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -884,7 +897,38 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Dragon_Black_running_0: -3487110083456228924
+      Medieval_Dungeons_Dragon_Black_running_1: 5902478798211397130
+      Medieval_Dungeons_Dragon_Black_running_10: -5563630101404446737
+      Medieval_Dungeons_Dragon_Black_running_11: 902201400840157238
+      Medieval_Dungeons_Dragon_Black_running_12: -6181548117176408679
+      Medieval_Dungeons_Dragon_Black_running_13: 4436766867762263238
+      Medieval_Dungeons_Dragon_Black_running_14: -7570063782433632108
+      Medieval_Dungeons_Dragon_Black_running_15: 209323709627353
+      Medieval_Dungeons_Dragon_Black_running_16: 3334131080557812778
+      Medieval_Dungeons_Dragon_Black_running_17: 6222360461000626965
+      Medieval_Dungeons_Dragon_Black_running_18: 1379556773911739908
+      Medieval_Dungeons_Dragon_Black_running_19: 1717900421521682140
+      Medieval_Dungeons_Dragon_Black_running_2: 3597465015041210351
+      Medieval_Dungeons_Dragon_Black_running_20: 1679146834859948604
+      Medieval_Dungeons_Dragon_Black_running_21: 3053900454508356402
+      Medieval_Dungeons_Dragon_Black_running_22: -3528067016352902949
+      Medieval_Dungeons_Dragon_Black_running_23: -5418001330069541845
+      Medieval_Dungeons_Dragon_Black_running_24: -3211937499185412552
+      Medieval_Dungeons_Dragon_Black_running_25: 5741744789788032131
+      Medieval_Dungeons_Dragon_Black_running_26: 5396155620883222926
+      Medieval_Dungeons_Dragon_Black_running_27: 5168796298249718489
+      Medieval_Dungeons_Dragon_Black_running_28: -4558814737810964304
+      Medieval_Dungeons_Dragon_Black_running_29: -5039316214560608195
+      Medieval_Dungeons_Dragon_Black_running_3: -2425746112860892416
+      Medieval_Dungeons_Dragon_Black_running_30: 4715210634488332911
+      Medieval_Dungeons_Dragon_Black_running_4: 1792561725508373693
+      Medieval_Dungeons_Dragon_Black_running_5: 3451025628605782158
+      Medieval_Dungeons_Dragon_Black_running_6: 7631925712184966803
+      Medieval_Dungeons_Dragon_Black_running_7: -5777421825788394637
+      Medieval_Dungeons_Dragon_Black_running_8: -314298798858659467
+      Medieval_Dungeons_Dragon_Black_running_9: 2931852583566722
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -189,6 +189,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -909,7 +922,39 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Balron_walking_0: 886629973468311887
+      Medieval_Dungeons_Balron_walking_1: 6129695124728376119
+      Medieval_Dungeons_Balron_walking_10: 8054537144660506239
+      Medieval_Dungeons_Balron_walking_11: -1784353220651096504
+      Medieval_Dungeons_Balron_walking_12: -736174120733996813
+      Medieval_Dungeons_Balron_walking_13: 6901895757967512246
+      Medieval_Dungeons_Balron_walking_14: 227072950622661572
+      Medieval_Dungeons_Balron_walking_15: -6691676165049225094
+      Medieval_Dungeons_Balron_walking_16: -6486470290008348711
+      Medieval_Dungeons_Balron_walking_17: 8239123798848312574
+      Medieval_Dungeons_Balron_walking_18: 412346149471112230
+      Medieval_Dungeons_Balron_walking_19: -2804413942687804426
+      Medieval_Dungeons_Balron_walking_2: 7871526227015926654
+      Medieval_Dungeons_Balron_walking_20: 2283092716941285065
+      Medieval_Dungeons_Balron_walking_21: 4707677869072139059
+      Medieval_Dungeons_Balron_walking_22: 830667336956194566
+      Medieval_Dungeons_Balron_walking_23: 1824917648914837461
+      Medieval_Dungeons_Balron_walking_24: -8752745470031022334
+      Medieval_Dungeons_Balron_walking_25: -4454203717425560116
+      Medieval_Dungeons_Balron_walking_26: -2103778456689363343
+      Medieval_Dungeons_Balron_walking_27: 123815288054274430
+      Medieval_Dungeons_Balron_walking_28: 2846628160342467770
+      Medieval_Dungeons_Balron_walking_29: -2479786259987537095
+      Medieval_Dungeons_Balron_walking_3: -696530587668988476
+      Medieval_Dungeons_Balron_walking_30: 4168927230443708726
+      Medieval_Dungeons_Balron_walking_31: 3465901584066694342
+      Medieval_Dungeons_Balron_walking_4: -4857261440514905140
+      Medieval_Dungeons_Balron_walking_5: -1101922745604622522
+      Medieval_Dungeons_Balron_walking_6: 4877298336265505000
+      Medieval_Dungeons_Balron_walking_7: -129875189847679804
+      Medieval_Dungeons_Balron_walking_8: 2215543894170821921
+      Medieval_Dungeons_Balron_walking_9: 4680319819170240248
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

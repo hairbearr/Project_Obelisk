@@ -129,6 +129,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_GiantBat_flying_0: -6459488838772134933
+      Medieval_Dungeons_GiantBat_flying_1: -6100962676333582512
+      Medieval_Dungeons_GiantBat_flying_10: 2019766924328733231
+      Medieval_Dungeons_GiantBat_flying_11: 1623381889666396215
+      Medieval_Dungeons_GiantBat_flying_2: -6727945022472461863
+      Medieval_Dungeons_GiantBat_flying_3: 6726067324090011639
+      Medieval_Dungeons_GiantBat_flying_4: 8445212977820462529
+      Medieval_Dungeons_GiantBat_flying_5: -7859246431133847285
+      Medieval_Dungeons_GiantBat_flying_6: 7800795364602199626
+      Medieval_Dungeons_GiantBat_flying_7: -7994326398963196185
+      Medieval_Dungeons_GiantBat_flying_8: -4486931788253954553
+      Medieval_Dungeons_GiantBat_flying_9: -6199382835787548809
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

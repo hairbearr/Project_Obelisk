@@ -129,6 +129,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Warfare_Premade_Male_7_dead_0: 6599832096249398677
+      Medieval_Warfare_Premade_Male_7_dead_1: -7712148212175708000
+      Medieval_Warfare_Premade_Male_7_dead_10: 5523612647346046611
+      Medieval_Warfare_Premade_Male_7_dead_11: 2135348308485886028
+      Medieval_Warfare_Premade_Male_7_dead_2: 292237431439679332
+      Medieval_Warfare_Premade_Male_7_dead_3: 2079193953013877737
+      Medieval_Warfare_Premade_Male_7_dead_4: -7823586846898433394
+      Medieval_Warfare_Premade_Male_7_dead_5: 7805067278245167356
+      Medieval_Warfare_Premade_Male_7_dead_6: 6781522916473288202
+      Medieval_Warfare_Premade_Male_7_dead_7: 4211401028843054728
+      Medieval_Warfare_Premade_Male_7_dead_8: -6206018080672800175
+      Medieval_Warfare_Premade_Male_7_dead_9: -159680404872508283
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

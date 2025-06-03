@@ -189,6 +189,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -909,7 +922,39 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Manticore_running_0: -7436332465909100632
+      Medieval_Dungeons_Manticore_running_1: -164519909863820463
+      Medieval_Dungeons_Manticore_running_10: 3284093223044967177
+      Medieval_Dungeons_Manticore_running_11: -562146708260144193
+      Medieval_Dungeons_Manticore_running_12: -177455146458149945
+      Medieval_Dungeons_Manticore_running_13: -6363794473063299158
+      Medieval_Dungeons_Manticore_running_14: 7996700236597115901
+      Medieval_Dungeons_Manticore_running_15: -6636419355086461825
+      Medieval_Dungeons_Manticore_running_16: 6719166770918995481
+      Medieval_Dungeons_Manticore_running_17: -3331181677764633869
+      Medieval_Dungeons_Manticore_running_18: 2205088929589496678
+      Medieval_Dungeons_Manticore_running_19: -7096486718926286191
+      Medieval_Dungeons_Manticore_running_2: 7078422800530133027
+      Medieval_Dungeons_Manticore_running_20: -6352454331576904109
+      Medieval_Dungeons_Manticore_running_21: 8134804098292729905
+      Medieval_Dungeons_Manticore_running_22: 3880309953821654202
+      Medieval_Dungeons_Manticore_running_23: -8899051483330942169
+      Medieval_Dungeons_Manticore_running_24: 7969916407257048348
+      Medieval_Dungeons_Manticore_running_25: 2835164484383452715
+      Medieval_Dungeons_Manticore_running_26: -8448431934941811457
+      Medieval_Dungeons_Manticore_running_27: 109019718999971719
+      Medieval_Dungeons_Manticore_running_28: -3438762922888765618
+      Medieval_Dungeons_Manticore_running_29: -3304730140322877033
+      Medieval_Dungeons_Manticore_running_3: 2308452455858340892
+      Medieval_Dungeons_Manticore_running_30: -3457772964468308896
+      Medieval_Dungeons_Manticore_running_31: -5171159435247593901
+      Medieval_Dungeons_Manticore_running_4: -804575361375113779
+      Medieval_Dungeons_Manticore_running_5: 2273289001917687194
+      Medieval_Dungeons_Manticore_running_6: -4434971706020260513
+      Medieval_Dungeons_Manticore_running_7: -2936381112841790845
+      Medieval_Dungeons_Manticore_running_8: -2635630792587508065
+      Medieval_Dungeons_Manticore_running_9: 8474504677930837904
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

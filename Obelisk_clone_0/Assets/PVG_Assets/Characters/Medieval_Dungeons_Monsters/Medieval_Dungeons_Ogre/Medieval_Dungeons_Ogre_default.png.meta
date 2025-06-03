@@ -129,6 +129,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Ogre_default_0: 7005054434484998366
+      Medieval_Dungeons_Ogre_default_1: 2017403391641054194
+      Medieval_Dungeons_Ogre_default_10: 4811520121403605932
+      Medieval_Dungeons_Ogre_default_11: 1257250193785302127
+      Medieval_Dungeons_Ogre_default_2: 177743839201470582
+      Medieval_Dungeons_Ogre_default_3: 8905077509376202297
+      Medieval_Dungeons_Ogre_default_4: 4018786772746613897
+      Medieval_Dungeons_Ogre_default_5: -2076590382511026609
+      Medieval_Dungeons_Ogre_default_6: -3229971368736835257
+      Medieval_Dungeons_Ogre_default_7: 4188681241741516144
+      Medieval_Dungeons_Ogre_default_8: -2644384697404508304
+      Medieval_Dungeons_Ogre_default_9: 1018592569131405346
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

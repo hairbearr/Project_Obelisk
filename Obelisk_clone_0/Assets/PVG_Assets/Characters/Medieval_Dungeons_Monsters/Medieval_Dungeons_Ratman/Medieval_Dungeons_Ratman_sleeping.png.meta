@@ -129,6 +129,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Ratman_sleeping_0: 7993833442014009307
+      Medieval_Dungeons_Ratman_sleeping_1: -4788197430119985794
+      Medieval_Dungeons_Ratman_sleeping_10: -2637564210091788596
+      Medieval_Dungeons_Ratman_sleeping_11: -3159144793227001649
+      Medieval_Dungeons_Ratman_sleeping_2: 8977798936273267424
+      Medieval_Dungeons_Ratman_sleeping_3: 2454790867550181092
+      Medieval_Dungeons_Ratman_sleeping_4: -4437737582302243244
+      Medieval_Dungeons_Ratman_sleeping_5: 201117930683953023
+      Medieval_Dungeons_Ratman_sleeping_6: -9149739278217867663
+      Medieval_Dungeons_Ratman_sleeping_7: 7460009560272654119
+      Medieval_Dungeons_Ratman_sleeping_8: -3202498849131754975
+      Medieval_Dungeons_Ratman_sleeping_9: -9010457122768699284
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

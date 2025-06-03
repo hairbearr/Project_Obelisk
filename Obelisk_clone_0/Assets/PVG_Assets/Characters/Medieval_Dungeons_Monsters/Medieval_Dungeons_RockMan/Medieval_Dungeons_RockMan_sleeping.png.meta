@@ -129,6 +129,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_RockMan_sleeping_0: 3465123459306780452
+      Medieval_Dungeons_RockMan_sleeping_1: -4166382915661874624
+      Medieval_Dungeons_RockMan_sleeping_10: 669029596898505781
+      Medieval_Dungeons_RockMan_sleeping_11: 4786679654045097136
+      Medieval_Dungeons_RockMan_sleeping_2: -3773351840485370114
+      Medieval_Dungeons_RockMan_sleeping_3: 3043882067724151602
+      Medieval_Dungeons_RockMan_sleeping_4: 3979589048772298591
+      Medieval_Dungeons_RockMan_sleeping_5: 5270290427990171678
+      Medieval_Dungeons_RockMan_sleeping_6: 2191447029215698581
+      Medieval_Dungeons_RockMan_sleeping_7: 992475270428536834
+      Medieval_Dungeons_RockMan_sleeping_8: 558622494674099223
+      Medieval_Dungeons_RockMan_sleeping_9: -5347123782023493830
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

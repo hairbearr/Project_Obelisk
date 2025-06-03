@@ -129,6 +129,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Kobold_collapse_0: 2597546933441950367
+      Medieval_Dungeons_Kobold_collapse_1: -3565516649961500521
+      Medieval_Dungeons_Kobold_collapse_10: 8719153261204140754
+      Medieval_Dungeons_Kobold_collapse_11: 2499292450425890156
+      Medieval_Dungeons_Kobold_collapse_2: 7475262972440636182
+      Medieval_Dungeons_Kobold_collapse_3: 1203930230455845771
+      Medieval_Dungeons_Kobold_collapse_4: -7039614382306396470
+      Medieval_Dungeons_Kobold_collapse_5: -8140128716811669236
+      Medieval_Dungeons_Kobold_collapse_6: -4678801362130812166
+      Medieval_Dungeons_Kobold_collapse_7: 781602862606712849
+      Medieval_Dungeons_Kobold_collapse_8: -2881088397374511529
+      Medieval_Dungeons_Kobold_collapse_9: 4498745367017057784
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

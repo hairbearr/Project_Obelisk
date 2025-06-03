@@ -129,6 +129,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Bugbear_kneel_0: -1680706475387283567
+      Medieval_Dungeons_Bugbear_kneel_1: 1677011316463784362
+      Medieval_Dungeons_Bugbear_kneel_10: -4327667969982968347
+      Medieval_Dungeons_Bugbear_kneel_11: 2156849707411062518
+      Medieval_Dungeons_Bugbear_kneel_2: -5520193160680381366
+      Medieval_Dungeons_Bugbear_kneel_3: 5069293125845619074
+      Medieval_Dungeons_Bugbear_kneel_4: 1473286528063511261
+      Medieval_Dungeons_Bugbear_kneel_5: 8043372389389187455
+      Medieval_Dungeons_Bugbear_kneel_6: -148351207336158139
+      Medieval_Dungeons_Bugbear_kneel_7: 1386959074613009316
+      Medieval_Dungeons_Bugbear_kneel_8: 4897011790809595971
+      Medieval_Dungeons_Bugbear_kneel_9: 3671199484229629277
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

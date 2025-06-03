@@ -129,6 +129,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_GiantBat_collapse_0: 8634108669467702300
+      Medieval_Dungeons_GiantBat_collapse_1: -2207307233553826779
+      Medieval_Dungeons_GiantBat_collapse_10: -3662987150441776860
+      Medieval_Dungeons_GiantBat_collapse_11: -3767449981101831335
+      Medieval_Dungeons_GiantBat_collapse_2: 5034027624800042956
+      Medieval_Dungeons_GiantBat_collapse_3: -1303679684618612893
+      Medieval_Dungeons_GiantBat_collapse_4: 1925692069499487675
+      Medieval_Dungeons_GiantBat_collapse_5: 8356800018772728643
+      Medieval_Dungeons_GiantBat_collapse_6: -2668064961785588075
+      Medieval_Dungeons_GiantBat_collapse_7: 3282441646935671273
+      Medieval_Dungeons_GiantBat_collapse_8: -1311911597753794160
+      Medieval_Dungeons_GiantBat_collapse_9: 4076298094469382387
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

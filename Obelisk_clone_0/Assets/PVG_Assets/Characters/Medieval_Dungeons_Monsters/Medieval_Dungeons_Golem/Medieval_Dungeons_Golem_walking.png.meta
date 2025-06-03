@@ -189,6 +189,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -909,7 +922,39 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Golem_walking_0: 1661916516499417262
+      Medieval_Dungeons_Golem_walking_1: 1719783030858912296
+      Medieval_Dungeons_Golem_walking_10: -6904112533422695670
+      Medieval_Dungeons_Golem_walking_11: 6570998228871372059
+      Medieval_Dungeons_Golem_walking_12: -8900568008495477699
+      Medieval_Dungeons_Golem_walking_13: 6411773581663054553
+      Medieval_Dungeons_Golem_walking_14: 261327699990268277
+      Medieval_Dungeons_Golem_walking_15: 7813064593530017354
+      Medieval_Dungeons_Golem_walking_16: 4235483889659746123
+      Medieval_Dungeons_Golem_walking_17: 6075606524100939801
+      Medieval_Dungeons_Golem_walking_18: -4800999283629829491
+      Medieval_Dungeons_Golem_walking_19: 5325629611786375161
+      Medieval_Dungeons_Golem_walking_2: 1415655103567860352
+      Medieval_Dungeons_Golem_walking_20: 2424611229350376230
+      Medieval_Dungeons_Golem_walking_21: 1930410333745875119
+      Medieval_Dungeons_Golem_walking_22: -533535909349602962
+      Medieval_Dungeons_Golem_walking_23: 6184102785109505769
+      Medieval_Dungeons_Golem_walking_24: 2167966145622485849
+      Medieval_Dungeons_Golem_walking_25: 8628851998825559593
+      Medieval_Dungeons_Golem_walking_26: -919548110429233561
+      Medieval_Dungeons_Golem_walking_27: -5082046474331342748
+      Medieval_Dungeons_Golem_walking_28: -3077007011198638832
+      Medieval_Dungeons_Golem_walking_29: -1379283246816531321
+      Medieval_Dungeons_Golem_walking_3: -8601923731124425716
+      Medieval_Dungeons_Golem_walking_30: -1854125336123948466
+      Medieval_Dungeons_Golem_walking_31: -4527753689004841624
+      Medieval_Dungeons_Golem_walking_4: -2657143476163252847
+      Medieval_Dungeons_Golem_walking_5: -806654827048986310
+      Medieval_Dungeons_Golem_walking_6: 5647631029277743188
+      Medieval_Dungeons_Golem_walking_7: -1033113181260391570
+      Medieval_Dungeons_Golem_walking_8: 1724061986920533895
+      Medieval_Dungeons_Golem_walking_9: -4036574199598751948
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

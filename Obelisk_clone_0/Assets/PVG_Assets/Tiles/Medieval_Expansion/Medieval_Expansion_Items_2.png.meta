@@ -147,6 +147,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -559,7 +572,25 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Expansion_Items_2_0: 157425128785898270
+      Medieval_Expansion_Items_2_1: 2125565211073150442
+      Medieval_Expansion_Items_2_10: -6241455388497292068
+      Medieval_Expansion_Items_2_11: -6787570238526314993
+      Medieval_Expansion_Items_2_12: -2051090031546588128
+      Medieval_Expansion_Items_2_13: -7952211828334419114
+      Medieval_Expansion_Items_2_14: 9103968613078198124
+      Medieval_Expansion_Items_2_15: 2164485596286623539
+      Medieval_Expansion_Items_2_16: -1989663531710380482
+      Medieval_Expansion_Items_2_17: 2812173968241768614
+      Medieval_Expansion_Items_2_2: 5719133293624353794
+      Medieval_Expansion_Items_2_3: -8113841905923307019
+      Medieval_Expansion_Items_2_4: -5682584489048131599
+      Medieval_Expansion_Items_2_5: -73929089557154744
+      Medieval_Expansion_Items_2_6: 7281628286246478008
+      Medieval_Expansion_Items_2_7: -2398907973558306789
+      Medieval_Expansion_Items_2_8: -5871614577205223653
+      Medieval_Expansion_Items_2_9: 7012553736068020639
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

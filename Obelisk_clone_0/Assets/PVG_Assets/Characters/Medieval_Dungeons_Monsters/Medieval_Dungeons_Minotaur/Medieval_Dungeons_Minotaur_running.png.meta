@@ -189,6 +189,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -909,7 +922,39 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Minotaur_running_0: -4427177967328298599
+      Medieval_Dungeons_Minotaur_running_1: 3909436490904353692
+      Medieval_Dungeons_Minotaur_running_10: -2617482352560850039
+      Medieval_Dungeons_Minotaur_running_11: 7634623476339461534
+      Medieval_Dungeons_Minotaur_running_12: -5891192497425789652
+      Medieval_Dungeons_Minotaur_running_13: -829379262956075926
+      Medieval_Dungeons_Minotaur_running_14: 6376191181106023612
+      Medieval_Dungeons_Minotaur_running_15: -6429750685538166181
+      Medieval_Dungeons_Minotaur_running_16: -7116342069701749416
+      Medieval_Dungeons_Minotaur_running_17: 474711385976138978
+      Medieval_Dungeons_Minotaur_running_18: 6287033109841832938
+      Medieval_Dungeons_Minotaur_running_19: -8951486950044507546
+      Medieval_Dungeons_Minotaur_running_2: -7893726808041182320
+      Medieval_Dungeons_Minotaur_running_20: 8328659576616673130
+      Medieval_Dungeons_Minotaur_running_21: -7032239835137983441
+      Medieval_Dungeons_Minotaur_running_22: -1223109719268242575
+      Medieval_Dungeons_Minotaur_running_23: 7093871190295478708
+      Medieval_Dungeons_Minotaur_running_24: -1210052846797661616
+      Medieval_Dungeons_Minotaur_running_25: 3961257777009702674
+      Medieval_Dungeons_Minotaur_running_26: -1413293257063941988
+      Medieval_Dungeons_Minotaur_running_27: 8595199709626836711
+      Medieval_Dungeons_Minotaur_running_28: -3007500796687958804
+      Medieval_Dungeons_Minotaur_running_29: 2592785996274971134
+      Medieval_Dungeons_Minotaur_running_3: 7270453686820391260
+      Medieval_Dungeons_Minotaur_running_30: -3264776671980760779
+      Medieval_Dungeons_Minotaur_running_31: -1950023264299126392
+      Medieval_Dungeons_Minotaur_running_4: -142722848241181094
+      Medieval_Dungeons_Minotaur_running_5: 8442181105535521135
+      Medieval_Dungeons_Minotaur_running_6: 4733131579775510217
+      Medieval_Dungeons_Minotaur_running_7: 4119832775595478305
+      Medieval_Dungeons_Minotaur_running_8: 6018753972226606333
+      Medieval_Dungeons_Minotaur_running_9: 3343951318376985380
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

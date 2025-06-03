@@ -189,6 +189,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -909,7 +922,39 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Underdeep_Troll_3_running_0: 1570005759108397069
+      Medieval_Underdeep_Troll_3_running_1: 2277987410273329249
+      Medieval_Underdeep_Troll_3_running_10: -966291885211121769
+      Medieval_Underdeep_Troll_3_running_11: 4059377230522622703
+      Medieval_Underdeep_Troll_3_running_12: -1441441040571290092
+      Medieval_Underdeep_Troll_3_running_13: -1995817036176386269
+      Medieval_Underdeep_Troll_3_running_14: -2687396857206839902
+      Medieval_Underdeep_Troll_3_running_15: 1055372016746798653
+      Medieval_Underdeep_Troll_3_running_16: 2897529698236590872
+      Medieval_Underdeep_Troll_3_running_17: 4485473297019879333
+      Medieval_Underdeep_Troll_3_running_18: 9004402227422471847
+      Medieval_Underdeep_Troll_3_running_19: 533755525101025356
+      Medieval_Underdeep_Troll_3_running_2: 3843532656188748768
+      Medieval_Underdeep_Troll_3_running_20: -7437456971755062
+      Medieval_Underdeep_Troll_3_running_21: 4310633055835182106
+      Medieval_Underdeep_Troll_3_running_22: 9086279779670777539
+      Medieval_Underdeep_Troll_3_running_23: 2816611113667754221
+      Medieval_Underdeep_Troll_3_running_24: -4107410174341034187
+      Medieval_Underdeep_Troll_3_running_25: 598013428474615063
+      Medieval_Underdeep_Troll_3_running_26: 6627359487405055711
+      Medieval_Underdeep_Troll_3_running_27: 1449095236691772949
+      Medieval_Underdeep_Troll_3_running_28: 1279312986223244967
+      Medieval_Underdeep_Troll_3_running_29: -2301657772345833779
+      Medieval_Underdeep_Troll_3_running_3: 6318415035983286690
+      Medieval_Underdeep_Troll_3_running_30: 6539570880642120742
+      Medieval_Underdeep_Troll_3_running_31: 3378705293277660355
+      Medieval_Underdeep_Troll_3_running_4: 8956463225739663181
+      Medieval_Underdeep_Troll_3_running_5: -6856661459847615142
+      Medieval_Underdeep_Troll_3_running_6: 5920357850473614833
+      Medieval_Underdeep_Troll_3_running_7: -6594652185143207790
+      Medieval_Underdeep_Troll_3_running_8: -2949353032491038757
+      Medieval_Underdeep_Troll_3_running_9: 4242506514275547182
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

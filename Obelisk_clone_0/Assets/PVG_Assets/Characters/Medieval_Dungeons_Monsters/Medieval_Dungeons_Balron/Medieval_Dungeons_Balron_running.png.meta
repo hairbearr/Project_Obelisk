@@ -189,6 +189,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -909,7 +922,39 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Balron_running_0: -2766567254823495871
+      Medieval_Dungeons_Balron_running_1: -7722525123990005238
+      Medieval_Dungeons_Balron_running_10: -8076033054279411299
+      Medieval_Dungeons_Balron_running_11: 3633293992709366794
+      Medieval_Dungeons_Balron_running_12: -2543800829694373399
+      Medieval_Dungeons_Balron_running_13: 9019906316182438515
+      Medieval_Dungeons_Balron_running_14: -4000674909438450408
+      Medieval_Dungeons_Balron_running_15: -3403274289088925149
+      Medieval_Dungeons_Balron_running_16: 7642184645812077831
+      Medieval_Dungeons_Balron_running_17: 6701481273711562446
+      Medieval_Dungeons_Balron_running_18: -4220705732967817985
+      Medieval_Dungeons_Balron_running_19: -5159754846545132373
+      Medieval_Dungeons_Balron_running_2: 920525828715000010
+      Medieval_Dungeons_Balron_running_20: -4592748308241958235
+      Medieval_Dungeons_Balron_running_21: -867513081870075303
+      Medieval_Dungeons_Balron_running_22: -869686063048658541
+      Medieval_Dungeons_Balron_running_23: -8026863333039986618
+      Medieval_Dungeons_Balron_running_24: 541825557849699313
+      Medieval_Dungeons_Balron_running_25: -4901336986113681505
+      Medieval_Dungeons_Balron_running_26: 7630656894300025886
+      Medieval_Dungeons_Balron_running_27: -1120016917769441745
+      Medieval_Dungeons_Balron_running_28: 7103551276077798797
+      Medieval_Dungeons_Balron_running_29: -5464593600164270228
+      Medieval_Dungeons_Balron_running_3: -9178967831030417811
+      Medieval_Dungeons_Balron_running_30: -7159976814593652006
+      Medieval_Dungeons_Balron_running_31: -6968003477640942828
+      Medieval_Dungeons_Balron_running_4: 5617783914294965086
+      Medieval_Dungeons_Balron_running_5: 2107713205629659596
+      Medieval_Dungeons_Balron_running_6: 4015010261113963398
+      Medieval_Dungeons_Balron_running_7: -680350256057968296
+      Medieval_Dungeons_Balron_running_8: -3353688544948542982
+      Medieval_Dungeons_Balron_running_9: -5367206758984961486
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

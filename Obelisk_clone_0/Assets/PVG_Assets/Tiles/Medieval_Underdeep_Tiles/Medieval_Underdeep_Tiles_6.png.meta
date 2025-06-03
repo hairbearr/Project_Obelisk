@@ -306,6 +306,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -1884,7 +1897,78 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Underdeep_Tiles_6_0: 6011314448246519906
+      Medieval_Underdeep_Tiles_6_1: 8431685769900674985
+      Medieval_Underdeep_Tiles_6_10: 8796103290381429327
+      Medieval_Underdeep_Tiles_6_11: 1684389129660795174
+      Medieval_Underdeep_Tiles_6_12: 115890966239404576
+      Medieval_Underdeep_Tiles_6_13: 2922566519160477315
+      Medieval_Underdeep_Tiles_6_14: -8664018992409924795
+      Medieval_Underdeep_Tiles_6_15: 3755198793219126275
+      Medieval_Underdeep_Tiles_6_16: 3886311128283430556
+      Medieval_Underdeep_Tiles_6_17: -7691846483010937574
+      Medieval_Underdeep_Tiles_6_18: 1574000331930108735
+      Medieval_Underdeep_Tiles_6_19: -8811439753527157439
+      Medieval_Underdeep_Tiles_6_2: -2218176952679331946
+      Medieval_Underdeep_Tiles_6_20: -3718331144916184027
+      Medieval_Underdeep_Tiles_6_21: -9035306729057199741
+      Medieval_Underdeep_Tiles_6_22: 8306285255783699465
+      Medieval_Underdeep_Tiles_6_23: -1223794728016733540
+      Medieval_Underdeep_Tiles_6_24: -8668405063065022245
+      Medieval_Underdeep_Tiles_6_25: 5798984525374177470
+      Medieval_Underdeep_Tiles_6_26: -620099516619160118
+      Medieval_Underdeep_Tiles_6_27: -1312638534770258161
+      Medieval_Underdeep_Tiles_6_28: -2518167591036061876
+      Medieval_Underdeep_Tiles_6_29: -3684516278015235680
+      Medieval_Underdeep_Tiles_6_3: 707749171057798081
+      Medieval_Underdeep_Tiles_6_30: -141455196722803767
+      Medieval_Underdeep_Tiles_6_31: 8358184690218570086
+      Medieval_Underdeep_Tiles_6_32: -4957758034752192686
+      Medieval_Underdeep_Tiles_6_33: 8602538868844226475
+      Medieval_Underdeep_Tiles_6_34: 7740298862189483982
+      Medieval_Underdeep_Tiles_6_35: -7134810189451252796
+      Medieval_Underdeep_Tiles_6_36: 5940599912961346412
+      Medieval_Underdeep_Tiles_6_37: 3112495505737564812
+      Medieval_Underdeep_Tiles_6_38: 3123892435826272702
+      Medieval_Underdeep_Tiles_6_39: 8884127613909537458
+      Medieval_Underdeep_Tiles_6_4: -749189176763217242
+      Medieval_Underdeep_Tiles_6_40: 5317635936130738286
+      Medieval_Underdeep_Tiles_6_41: -6433500878727836090
+      Medieval_Underdeep_Tiles_6_42: 7906052503193946006
+      Medieval_Underdeep_Tiles_6_43: 4333410221593920646
+      Medieval_Underdeep_Tiles_6_44: -3941012412638784369
+      Medieval_Underdeep_Tiles_6_45: -8109336600124328285
+      Medieval_Underdeep_Tiles_6_46: 711880191147122356
+      Medieval_Underdeep_Tiles_6_47: 7050143153591357898
+      Medieval_Underdeep_Tiles_6_48: 137295409649299483
+      Medieval_Underdeep_Tiles_6_49: 1544905259398840826
+      Medieval_Underdeep_Tiles_6_5: 5331605480431745878
+      Medieval_Underdeep_Tiles_6_50: 8769558879149017731
+      Medieval_Underdeep_Tiles_6_51: 6929563923922531716
+      Medieval_Underdeep_Tiles_6_52: -8328303275889480487
+      Medieval_Underdeep_Tiles_6_53: -5546341026063749067
+      Medieval_Underdeep_Tiles_6_54: -6124822985710034470
+      Medieval_Underdeep_Tiles_6_55: -714476347319350495
+      Medieval_Underdeep_Tiles_6_56: 2916377776209609700
+      Medieval_Underdeep_Tiles_6_57: -6387333786716170418
+      Medieval_Underdeep_Tiles_6_58: -87149892051394376
+      Medieval_Underdeep_Tiles_6_59: -8569368197963114317
+      Medieval_Underdeep_Tiles_6_6: -6099098949689588264
+      Medieval_Underdeep_Tiles_6_60: -6391940492256911232
+      Medieval_Underdeep_Tiles_6_61: 6407352683320303407
+      Medieval_Underdeep_Tiles_6_62: 6418658461136079154
+      Medieval_Underdeep_Tiles_6_63: 8257681434395903722
+      Medieval_Underdeep_Tiles_6_64: 2397487928643888066
+      Medieval_Underdeep_Tiles_6_65: -4460652860646832384
+      Medieval_Underdeep_Tiles_6_66: -5880782488074582807
+      Medieval_Underdeep_Tiles_6_67: -8690471988941280152
+      Medieval_Underdeep_Tiles_6_68: -6284994839549117462
+      Medieval_Underdeep_Tiles_6_69: 914742021532720226
+      Medieval_Underdeep_Tiles_6_7: -5218386190911666135
+      Medieval_Underdeep_Tiles_6_70: -7171446445955286573
+      Medieval_Underdeep_Tiles_6_8: 3216718668934528233
+      Medieval_Underdeep_Tiles_6_9: -8002174916429518611
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

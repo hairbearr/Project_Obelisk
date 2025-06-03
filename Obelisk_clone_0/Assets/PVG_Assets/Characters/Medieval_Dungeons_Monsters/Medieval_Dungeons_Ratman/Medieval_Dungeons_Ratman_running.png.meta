@@ -189,6 +189,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -909,7 +922,39 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Ratman_running_0: -4878185342436046969
+      Medieval_Dungeons_Ratman_running_1: 1711698867524809163
+      Medieval_Dungeons_Ratman_running_10: 245553682125536851
+      Medieval_Dungeons_Ratman_running_11: 4419029791817853064
+      Medieval_Dungeons_Ratman_running_12: 7606337832314311606
+      Medieval_Dungeons_Ratman_running_13: 1527641734120516678
+      Medieval_Dungeons_Ratman_running_14: 6693585822335992070
+      Medieval_Dungeons_Ratman_running_15: 2262875017576589263
+      Medieval_Dungeons_Ratman_running_16: -7577417734055599325
+      Medieval_Dungeons_Ratman_running_17: 1817612743305148947
+      Medieval_Dungeons_Ratman_running_18: 8685638887859291866
+      Medieval_Dungeons_Ratman_running_19: -7534485689669551874
+      Medieval_Dungeons_Ratman_running_2: 4957207978655254902
+      Medieval_Dungeons_Ratman_running_20: -8084888246584104702
+      Medieval_Dungeons_Ratman_running_21: 7745536459613695512
+      Medieval_Dungeons_Ratman_running_22: 2451792470335787718
+      Medieval_Dungeons_Ratman_running_23: 685067714928749588
+      Medieval_Dungeons_Ratman_running_24: 4449782919153940447
+      Medieval_Dungeons_Ratman_running_25: 5875368896241974051
+      Medieval_Dungeons_Ratman_running_26: 63608215255277412
+      Medieval_Dungeons_Ratman_running_27: -3721159401580412759
+      Medieval_Dungeons_Ratman_running_28: 5262922193556945923
+      Medieval_Dungeons_Ratman_running_29: 5691633365810587005
+      Medieval_Dungeons_Ratman_running_3: 7516590714420778125
+      Medieval_Dungeons_Ratman_running_30: 5316478617442419601
+      Medieval_Dungeons_Ratman_running_31: 4042377458341055429
+      Medieval_Dungeons_Ratman_running_4: -5564716733148373438
+      Medieval_Dungeons_Ratman_running_5: 5977856120201468369
+      Medieval_Dungeons_Ratman_running_6: 8358023817676175862
+      Medieval_Dungeons_Ratman_running_7: 6969886229165634448
+      Medieval_Dungeons_Ratman_running_8: 8920881165997512369
+      Medieval_Dungeons_Ratman_running_9: 7766432409250063944
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

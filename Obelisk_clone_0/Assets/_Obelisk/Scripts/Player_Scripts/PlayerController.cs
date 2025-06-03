@@ -33,15 +33,89 @@ public class PlayerController : NetworkBehaviour
     void Update()
     {
         Move();
-        SwingSword();
         Animate();
-        ShieldBlock();
-        FireGrapplingHook();
-        Jump();
+        Controls();
     }
 
     private void Jump()
     {
+        
+    }
+    private void SwingSword()
+    {
+        
+    }
+
+    private void ShieldBlock()
+    {
+        
+    }
+
+    private void FireGrapplingHook()
+    {
+        
+    }
+
+    private void DealDamage()
+    {
+
+    }
+
+    private void CastSwordAbility()
+    {
+        print("Sword Ability");
+    }
+    
+    private void Controls()
+    {
+        // Swing Sword
+        if (Input.GetMouseButtonDown(0))
+        {
+            isAttacking = 1;
+            print("Swinging Sword");
+            // play attack animation()
+            // if there's an ability use the ability here
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            isAttacking = 0;
+            print("No Longer Attacking");
+        }
+
+        // Shield Block
+        if (Input.GetMouseButtonDown(1))
+        {
+            isBlocking = 1;
+            print("Actively Blocking");
+            // play block animation(s)
+            // if there's an ability, use the ability here
+        }
+        if (Input.GetMouseButtonUp(1))
+        {
+            isBlocking = 0;
+            print("No Longer Blocking");
+        }
+
+        // Fire Grappling Hook
+        if (Input.GetMouseButtonDown(2))
+        {
+            isGrappling = 1;
+            print("Grappling Hook Fire");
+            // play grappling hook animation
+            // fire grappling hook projectile, which does all the grappling hook stuffs, including the abilities
+        }
+        if (Input.GetMouseButtonUp(2))
+        {
+            isGrappling = 0;
+            print("Grappling Hook No Longer Firing");
+            //If (GrapplingHookConnected){
+            // if(Connection == enemy){
+            // pull enemy to player;}
+            // if (Connection == grapplePoint){
+            // Pull player to grapplePoint;}
+        }
+
+        // Jump
         if (Input.GetButtonDown("Jump"))
         {
             isJumping = 1;
@@ -50,39 +124,7 @@ public class PlayerController : NetworkBehaviour
             // do jump mechanics?
         }
     }
-    private void SwingSword()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            isAttacking = 1;
-            print("Swinging Sword");
-            // play attack animation()
-            // if there's an ability use the ability here
-        }
-    }
 
-    private void ShieldBlock()
-    {
-        if (Input.GetMouseButtonDown(1))
-        {
-            isBlocking = 1;
-            print("Actively Blocking");
-            // play block animation(s)
-            // if there's an ability, use the ability here
-        }
-    }
-
-    private void FireGrapplingHook()
-    {
-        if(Input.GetMouseButtonDown(2))
-        {
-            isGrappling = 1;
-            print("Grappling Hook Fire");
-            // play grappling hook animation
-            // fire grappling hook projectile, which does all the grappling hook stuffs, including the abilities
-        }
-    }
-    
     private void Move()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");

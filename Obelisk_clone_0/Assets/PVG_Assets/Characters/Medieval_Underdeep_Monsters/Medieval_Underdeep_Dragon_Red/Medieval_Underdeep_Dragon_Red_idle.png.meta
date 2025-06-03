@@ -129,6 +129,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Underdeep_Dragon_Red_idle_0: 9092452116283543941
+      Medieval_Underdeep_Dragon_Red_idle_1: -8211141680845387447
+      Medieval_Underdeep_Dragon_Red_idle_10: -8445160122362572875
+      Medieval_Underdeep_Dragon_Red_idle_11: -5186518091193907282
+      Medieval_Underdeep_Dragon_Red_idle_2: -302144752675842621
+      Medieval_Underdeep_Dragon_Red_idle_3: 252715943087542963
+      Medieval_Underdeep_Dragon_Red_idle_4: -6776507355848362349
+      Medieval_Underdeep_Dragon_Red_idle_5: 3744744719139338720
+      Medieval_Underdeep_Dragon_Red_idle_6: 3946740686924189502
+      Medieval_Underdeep_Dragon_Red_idle_7: -7200245770042566783
+      Medieval_Underdeep_Dragon_Red_idle_8: 5400842208686235381
+      Medieval_Underdeep_Dragon_Red_idle_9: 7510769278377716990
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

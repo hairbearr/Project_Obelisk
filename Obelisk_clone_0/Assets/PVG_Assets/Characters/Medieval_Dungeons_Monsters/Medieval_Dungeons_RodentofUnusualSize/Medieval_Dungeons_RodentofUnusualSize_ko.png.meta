@@ -129,6 +129,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_RodentofUnusualSize_ko_0: -7405767300351381978
+      Medieval_Dungeons_RodentofUnusualSize_ko_1: -1330249991638467665
+      Medieval_Dungeons_RodentofUnusualSize_ko_10: 6747363945038221056
+      Medieval_Dungeons_RodentofUnusualSize_ko_11: -7594619794476699168
+      Medieval_Dungeons_RodentofUnusualSize_ko_2: -6860966027998771589
+      Medieval_Dungeons_RodentofUnusualSize_ko_3: 4486958932083562306
+      Medieval_Dungeons_RodentofUnusualSize_ko_4: 851742050723328761
+      Medieval_Dungeons_RodentofUnusualSize_ko_5: 9207646324001952534
+      Medieval_Dungeons_RodentofUnusualSize_ko_6: -3583702926265058078
+      Medieval_Dungeons_RodentofUnusualSize_ko_7: -6705270020942795730
+      Medieval_Dungeons_RodentofUnusualSize_ko_8: -1805901090721032877
+      Medieval_Dungeons_RodentofUnusualSize_ko_9: 7030602849383741668
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

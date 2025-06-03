@@ -129,6 +129,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Underdeep_SpiderQueen_ko_0: -8301227669949190961
+      Medieval_Underdeep_SpiderQueen_ko_1: 1361791579649043167
+      Medieval_Underdeep_SpiderQueen_ko_10: -2611035387036141874
+      Medieval_Underdeep_SpiderQueen_ko_11: 4993140777973207418
+      Medieval_Underdeep_SpiderQueen_ko_2: 8895656815287973148
+      Medieval_Underdeep_SpiderQueen_ko_3: 7371097549301772523
+      Medieval_Underdeep_SpiderQueen_ko_4: 8687470483986870922
+      Medieval_Underdeep_SpiderQueen_ko_5: 8378326424249293287
+      Medieval_Underdeep_SpiderQueen_ko_6: -975512598207409512
+      Medieval_Underdeep_SpiderQueen_ko_7: 1710407818423815945
+      Medieval_Underdeep_SpiderQueen_ko_8: 5702137169106663064
+      Medieval_Underdeep_SpiderQueen_ko_9: 1326485152508398967
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

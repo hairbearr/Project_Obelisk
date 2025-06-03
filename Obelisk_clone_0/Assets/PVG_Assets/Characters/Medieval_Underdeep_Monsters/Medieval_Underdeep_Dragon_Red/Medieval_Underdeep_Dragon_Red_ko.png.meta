@@ -129,6 +129,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Underdeep_Dragon_Red_ko_0: -5404296764063963014
+      Medieval_Underdeep_Dragon_Red_ko_1: 5575419765484702620
+      Medieval_Underdeep_Dragon_Red_ko_10: -2109909098421147383
+      Medieval_Underdeep_Dragon_Red_ko_11: 1585652020437437053
+      Medieval_Underdeep_Dragon_Red_ko_2: -1141166937572889710
+      Medieval_Underdeep_Dragon_Red_ko_3: -315000846483489712
+      Medieval_Underdeep_Dragon_Red_ko_4: 1733801566505563467
+      Medieval_Underdeep_Dragon_Red_ko_5: 3930182813005907816
+      Medieval_Underdeep_Dragon_Red_ko_6: 2785075217607108647
+      Medieval_Underdeep_Dragon_Red_ko_7: -3230438997615058584
+      Medieval_Underdeep_Dragon_Red_ko_8: 8571073832548849147
+      Medieval_Underdeep_Dragon_Red_ko_9: 5694661815520675919
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

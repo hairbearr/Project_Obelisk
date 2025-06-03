@@ -129,6 +129,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Goblin_sleeping_0: 8122019067843061697
+      Medieval_Dungeons_Goblin_sleeping_1: -8318559309115616467
+      Medieval_Dungeons_Goblin_sleeping_10: 4545975773310440287
+      Medieval_Dungeons_Goblin_sleeping_11: -7716625157374452926
+      Medieval_Dungeons_Goblin_sleeping_2: -4279634321286554987
+      Medieval_Dungeons_Goblin_sleeping_3: -5984517700502811215
+      Medieval_Dungeons_Goblin_sleeping_4: 1949085117667333862
+      Medieval_Dungeons_Goblin_sleeping_5: -8688110260022251519
+      Medieval_Dungeons_Goblin_sleeping_6: 3980722942183230552
+      Medieval_Dungeons_Goblin_sleeping_7: -6882762506558009235
+      Medieval_Dungeons_Goblin_sleeping_8: -3450840765159860291
+      Medieval_Dungeons_Goblin_sleeping_9: 7815091862204514293
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

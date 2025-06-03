@@ -189,6 +189,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -909,7 +922,39 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Underdeep_Dragon_Red_walking_0: -2201438901617030183
+      Medieval_Underdeep_Dragon_Red_walking_1: -2854227680495156597
+      Medieval_Underdeep_Dragon_Red_walking_10: 3668252025687101971
+      Medieval_Underdeep_Dragon_Red_walking_11: 2852427430625019325
+      Medieval_Underdeep_Dragon_Red_walking_12: -711252177604184979
+      Medieval_Underdeep_Dragon_Red_walking_13: -4378832081659756208
+      Medieval_Underdeep_Dragon_Red_walking_14: 3236755808432167020
+      Medieval_Underdeep_Dragon_Red_walking_15: 2447637164190887041
+      Medieval_Underdeep_Dragon_Red_walking_16: 67195450055900735
+      Medieval_Underdeep_Dragon_Red_walking_17: 353307481664385575
+      Medieval_Underdeep_Dragon_Red_walking_18: 596752568229852963
+      Medieval_Underdeep_Dragon_Red_walking_19: -8413646855020430413
+      Medieval_Underdeep_Dragon_Red_walking_2: -2869982193008595292
+      Medieval_Underdeep_Dragon_Red_walking_20: -4656481161314560670
+      Medieval_Underdeep_Dragon_Red_walking_21: 6304552211401551426
+      Medieval_Underdeep_Dragon_Red_walking_22: -6829233048688313213
+      Medieval_Underdeep_Dragon_Red_walking_23: 1190561950754787310
+      Medieval_Underdeep_Dragon_Red_walking_24: -8492441573254440906
+      Medieval_Underdeep_Dragon_Red_walking_25: 5940415705204593167
+      Medieval_Underdeep_Dragon_Red_walking_26: -621690168513499693
+      Medieval_Underdeep_Dragon_Red_walking_27: 6311643680739671026
+      Medieval_Underdeep_Dragon_Red_walking_28: 1297905899743977274
+      Medieval_Underdeep_Dragon_Red_walking_29: -6870195380285037953
+      Medieval_Underdeep_Dragon_Red_walking_3: 2896528498404374293
+      Medieval_Underdeep_Dragon_Red_walking_30: 8909440002014818123
+      Medieval_Underdeep_Dragon_Red_walking_31: 5864115530808320840
+      Medieval_Underdeep_Dragon_Red_walking_4: 3674836209430778024
+      Medieval_Underdeep_Dragon_Red_walking_5: -2525856371846518411
+      Medieval_Underdeep_Dragon_Red_walking_6: 7659824448894236277
+      Medieval_Underdeep_Dragon_Red_walking_7: -1279518071173065382
+      Medieval_Underdeep_Dragon_Red_walking_8: 2771271994797343723
+      Medieval_Underdeep_Dragon_Red_walking_9: -1206272284335853663
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

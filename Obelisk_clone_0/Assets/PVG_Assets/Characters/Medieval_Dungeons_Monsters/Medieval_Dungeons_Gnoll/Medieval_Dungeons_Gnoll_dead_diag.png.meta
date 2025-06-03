@@ -129,6 +129,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Gnoll_dead_diag_0: -3342053482542368915
+      Medieval_Dungeons_Gnoll_dead_diag_1: -7246504414691215839
+      Medieval_Dungeons_Gnoll_dead_diag_10: -7018180401266933751
+      Medieval_Dungeons_Gnoll_dead_diag_11: 1419564140828183043
+      Medieval_Dungeons_Gnoll_dead_diag_2: 3279854072727389087
+      Medieval_Dungeons_Gnoll_dead_diag_3: -858783426163228072
+      Medieval_Dungeons_Gnoll_dead_diag_4: -1041172543329399646
+      Medieval_Dungeons_Gnoll_dead_diag_5: -594843687077121718
+      Medieval_Dungeons_Gnoll_dead_diag_6: -8500588155768851754
+      Medieval_Dungeons_Gnoll_dead_diag_7: 6464281879077424924
+      Medieval_Dungeons_Gnoll_dead_diag_8: 7688493094800608227
+      Medieval_Dungeons_Gnoll_dead_diag_9: 7969356849172278509
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

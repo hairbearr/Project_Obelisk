@@ -129,6 +129,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Crawler_idle_0: 6791007123702293831
+      Medieval_Dungeons_Crawler_idle_1: -2864090576460445236
+      Medieval_Dungeons_Crawler_idle_10: 5462654866702117393
+      Medieval_Dungeons_Crawler_idle_11: -6867853305642361634
+      Medieval_Dungeons_Crawler_idle_2: 5884091043717746504
+      Medieval_Dungeons_Crawler_idle_3: 1783715177728296442
+      Medieval_Dungeons_Crawler_idle_4: -6160050123539971482
+      Medieval_Dungeons_Crawler_idle_5: -3093449221760532523
+      Medieval_Dungeons_Crawler_idle_6: -276259845785182563
+      Medieval_Dungeons_Crawler_idle_7: 7103698685225430527
+      Medieval_Dungeons_Crawler_idle_8: -2582086714151752662
+      Medieval_Dungeons_Crawler_idle_9: -1956004128280408932
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

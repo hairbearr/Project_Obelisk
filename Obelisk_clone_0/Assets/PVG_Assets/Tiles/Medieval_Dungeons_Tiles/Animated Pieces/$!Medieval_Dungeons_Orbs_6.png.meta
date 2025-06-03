@@ -123,6 +123,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -359,7 +372,17 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      $!Medieval_Dungeons_Orbs_6_0: -2800201590968540835
+      $!Medieval_Dungeons_Orbs_6_1: 1215304196707328892
+      $!Medieval_Dungeons_Orbs_6_2: -6345428745927416412
+      $!Medieval_Dungeons_Orbs_6_3: -9117956729242427432
+      $!Medieval_Dungeons_Orbs_6_4: 624293896039357879
+      $!Medieval_Dungeons_Orbs_6_5: -566474532323100022
+      $!Medieval_Dungeons_Orbs_6_6: -989841987813060611
+      $!Medieval_Dungeons_Orbs_6_7: 6461954912502316819
+      $!Medieval_Dungeons_Orbs_6_8: -5781485171237196781
+      $!Medieval_Dungeons_Orbs_6_9: -8808727486210535928
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

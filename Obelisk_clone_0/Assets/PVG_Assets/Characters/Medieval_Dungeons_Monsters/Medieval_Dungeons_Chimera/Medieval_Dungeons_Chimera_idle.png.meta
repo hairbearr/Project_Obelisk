@@ -129,6 +129,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Chimera_idle_0: 486694853355420146
+      Medieval_Dungeons_Chimera_idle_1: 7128016536720202295
+      Medieval_Dungeons_Chimera_idle_10: -351378312363544132
+      Medieval_Dungeons_Chimera_idle_11: 6498010617896802586
+      Medieval_Dungeons_Chimera_idle_2: 7478793609781773856
+      Medieval_Dungeons_Chimera_idle_3: -1349365518015053960
+      Medieval_Dungeons_Chimera_idle_4: 6931667460581328548
+      Medieval_Dungeons_Chimera_idle_5: 4288146797307332166
+      Medieval_Dungeons_Chimera_idle_6: -1051716560660182886
+      Medieval_Dungeons_Chimera_idle_7: -7380058540620217568
+      Medieval_Dungeons_Chimera_idle_8: -8113853579879109710
+      Medieval_Dungeons_Chimera_idle_9: 6075431252172629875
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

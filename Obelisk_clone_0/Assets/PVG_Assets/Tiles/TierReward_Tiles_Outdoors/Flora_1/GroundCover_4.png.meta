@@ -267,6 +267,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -1559,7 +1572,65 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      GroundCover_4_0: -8128347580736142688
+      GroundCover_4_1: 1508548067142811473
+      GroundCover_4_10: -999742480062136764
+      GroundCover_4_11: 7341903481899072236
+      GroundCover_4_12: -780878067872268452
+      GroundCover_4_13: -5052901231716756071
+      GroundCover_4_14: -8155628858463075943
+      GroundCover_4_15: -1096562067846189742
+      GroundCover_4_16: 6506182090893873714
+      GroundCover_4_17: -7179005766059972406
+      GroundCover_4_18: -6598933464375782607
+      GroundCover_4_19: 417479501250371466
+      GroundCover_4_2: 4667353845029290921
+      GroundCover_4_20: -7600638724207279525
+      GroundCover_4_21: -1880255654470273441
+      GroundCover_4_22: -523731185062684580
+      GroundCover_4_23: -4821865691111814309
+      GroundCover_4_24: -1982299816126736291
+      GroundCover_4_25: -43703200200780716
+      GroundCover_4_26: -8618195493494978991
+      GroundCover_4_27: 4398496577969144187
+      GroundCover_4_28: 2728893621915321867
+      GroundCover_4_29: 665560714412235381
+      GroundCover_4_3: 3111178715971290398
+      GroundCover_4_30: -5680508942222837256
+      GroundCover_4_31: -9136586005869101707
+      GroundCover_4_32: 3320503010011338493
+      GroundCover_4_33: 8567797373911225873
+      GroundCover_4_34: -4226873155460382387
+      GroundCover_4_35: 3326218249808722423
+      GroundCover_4_36: 1361250492041625430
+      GroundCover_4_37: -1358932123838928888
+      GroundCover_4_38: 4933837420818250002
+      GroundCover_4_39: 6349897338624520861
+      GroundCover_4_4: -7199345176493842525
+      GroundCover_4_40: 5209901658606459220
+      GroundCover_4_41: 7205913277684187764
+      GroundCover_4_42: 2681559364295269774
+      GroundCover_4_43: -7684784102897543747
+      GroundCover_4_44: -4856565444377350206
+      GroundCover_4_45: -5565966005994871065
+      GroundCover_4_46: 3471410608923335048
+      GroundCover_4_47: 1501506038876601002
+      GroundCover_4_48: -4554877759113138394
+      GroundCover_4_49: -715788150674589051
+      GroundCover_4_5: -6456996522370487510
+      GroundCover_4_50: -5136501503961379546
+      GroundCover_4_51: -4005159702073967323
+      GroundCover_4_52: 8234252707090311208
+      GroundCover_4_53: -541279291955599112
+      GroundCover_4_54: 8922373220223794255
+      GroundCover_4_55: 7777399555426221850
+      GroundCover_4_56: -2112444268927777092
+      GroundCover_4_57: -4208030605798064297
+      GroundCover_4_6: -2113909038552296190
+      GroundCover_4_7: 120410936328626218
+      GroundCover_4_8: 4953274835004499141
+      GroundCover_4_9: 6682848060971965830
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

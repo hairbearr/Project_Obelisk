@@ -255,6 +255,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -1459,7 +1472,61 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_0: 4468797184671916951
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_1: -3813385352572913472
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_10: 812157898647660774
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_11: -344876932638306591
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_12: 5539162815903657740
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_13: -8258995295304381432
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_14: 1730086300784741438
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_15: -3704896868894561386
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_16: 1503993902783664415
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_17: -7095482007736508597
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_18: 9216750898591876436
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_19: -2689032381542857016
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_2: -1128531581319669610
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_20: -4473692263252493243
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_21: 2438465188661964881
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_22: 2489560362233163270
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_23: 4605839151338515146
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_24: -4543760289769100834
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_25: 3635717670743963104
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_26: 8390361662043937867
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_27: 8501665721443544924
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_28: -876917431668680335
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_29: 8248017649440998031
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_3: -6882201222704069737
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_30: -3397918785494685702
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_31: 5730009258912562398
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_32: 6729591110614718311
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_33: 7648199932527068221
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_34: -5603044941334493301
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_35: 3500259206408673018
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_36: 8255246630997194010
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_37: 6957121972703349556
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_38: 7179813262536993022
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_39: 6265440696305345811
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_4: -4343468953885451747
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_40: 8808291518837462132
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_41: 9202553441839606611
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_42: -8030006233006337530
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_43: 4454670113184183944
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_44: 7057045176011869863
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_45: -3841279665919070138
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_46: -8715989683387761196
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_47: 7451781621236746912
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_48: -5884567989134298950
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_49: 7067531758575647984
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_5: -224244434284660980
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_50: -1931162128727382041
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_51: 3138704689391874902
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_52: -6579897825261006801
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_53: -4110855312358944748
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_6: 3719302302582951395
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_7: 529178328266194823
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_8: 3913309588670836242
+      Medieval_Dungeons_RodentofUnusualSize_MVsv_9: 9061345467920119003
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

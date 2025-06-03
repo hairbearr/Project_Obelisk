@@ -174,6 +174,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -784,7 +797,34 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_4_0: 1590983605119582680
+      Medieval_Dungeons_4_1: -4803509365349627367
+      Medieval_Dungeons_4_10: -8548543988377815201
+      Medieval_Dungeons_4_11: 7531119787539363891
+      Medieval_Dungeons_4_12: 5297093834441104528
+      Medieval_Dungeons_4_13: -4243206119553889129
+      Medieval_Dungeons_4_14: -1972864382941007816
+      Medieval_Dungeons_4_15: -6439884842279460040
+      Medieval_Dungeons_4_16: 1616334457186197365
+      Medieval_Dungeons_4_17: 6968611785209174589
+      Medieval_Dungeons_4_18: 113141329967308858
+      Medieval_Dungeons_4_19: 695676623185033723
+      Medieval_Dungeons_4_2: -8426749492527534315
+      Medieval_Dungeons_4_20: -8878553996844351510
+      Medieval_Dungeons_4_21: 5230705775911815191
+      Medieval_Dungeons_4_22: -4217475654801057057
+      Medieval_Dungeons_4_23: 3306143704070329926
+      Medieval_Dungeons_4_24: 3477115929268505724
+      Medieval_Dungeons_4_25: -150578729297121102
+      Medieval_Dungeons_4_26: -6777298275836359104
+      Medieval_Dungeons_4_3: -6433477844053222104
+      Medieval_Dungeons_4_4: -3681565005320633862
+      Medieval_Dungeons_4_5: 2152261531321980279
+      Medieval_Dungeons_4_6: 8620850369877080857
+      Medieval_Dungeons_4_7: 8433374793216949051
+      Medieval_Dungeons_4_8: 2893699761093045070
+      Medieval_Dungeons_4_9: -707705994014123169
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

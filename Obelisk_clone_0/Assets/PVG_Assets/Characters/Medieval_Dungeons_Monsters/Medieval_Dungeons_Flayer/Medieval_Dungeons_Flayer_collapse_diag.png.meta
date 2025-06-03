@@ -132,6 +132,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -434,7 +447,20 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Flayer_collapse_diag_0: -3030189279195638976
+      Medieval_Dungeons_Flayer_collapse_diag_1: 2686486881542442502
+      Medieval_Dungeons_Flayer_collapse_diag_10: -1924500731886349967
+      Medieval_Dungeons_Flayer_collapse_diag_11: 6837396549174478295
+      Medieval_Dungeons_Flayer_collapse_diag_12: 4599643148958837515
+      Medieval_Dungeons_Flayer_collapse_diag_2: 998661306424901590
+      Medieval_Dungeons_Flayer_collapse_diag_3: -2466110587393406803
+      Medieval_Dungeons_Flayer_collapse_diag_4: -6576394161795388022
+      Medieval_Dungeons_Flayer_collapse_diag_5: -6615154474114005211
+      Medieval_Dungeons_Flayer_collapse_diag_6: -8888980502827827482
+      Medieval_Dungeons_Flayer_collapse_diag_7: 7772014285616069674
+      Medieval_Dungeons_Flayer_collapse_diag_8: -8176978486559894536
+      Medieval_Dungeons_Flayer_collapse_diag_9: 6593246830346012199
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

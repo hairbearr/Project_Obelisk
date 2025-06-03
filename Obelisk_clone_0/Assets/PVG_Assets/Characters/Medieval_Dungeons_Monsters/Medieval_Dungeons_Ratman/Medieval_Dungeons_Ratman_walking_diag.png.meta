@@ -189,6 +189,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -909,7 +922,39 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Ratman_walking_diag_0: 1713104125536165819
+      Medieval_Dungeons_Ratman_walking_diag_1: 2798316935381513384
+      Medieval_Dungeons_Ratman_walking_diag_10: -261396391325930027
+      Medieval_Dungeons_Ratman_walking_diag_11: 5801249594896311132
+      Medieval_Dungeons_Ratman_walking_diag_12: -7620212234803589985
+      Medieval_Dungeons_Ratman_walking_diag_13: -5356042003245610346
+      Medieval_Dungeons_Ratman_walking_diag_14: 1825157663925743887
+      Medieval_Dungeons_Ratman_walking_diag_15: 73646178791278398
+      Medieval_Dungeons_Ratman_walking_diag_16: -186251097961962591
+      Medieval_Dungeons_Ratman_walking_diag_17: -5341476812109527377
+      Medieval_Dungeons_Ratman_walking_diag_18: -1420673562984895405
+      Medieval_Dungeons_Ratman_walking_diag_19: 8508734834608060312
+      Medieval_Dungeons_Ratman_walking_diag_2: 26422628610417219
+      Medieval_Dungeons_Ratman_walking_diag_20: 4638672410705313054
+      Medieval_Dungeons_Ratman_walking_diag_21: -1546785418892570260
+      Medieval_Dungeons_Ratman_walking_diag_22: 4168882068446007269
+      Medieval_Dungeons_Ratman_walking_diag_23: 5578033998187264591
+      Medieval_Dungeons_Ratman_walking_diag_24: 7341647932277510676
+      Medieval_Dungeons_Ratman_walking_diag_25: -3640271882590810922
+      Medieval_Dungeons_Ratman_walking_diag_26: 700376879198081424
+      Medieval_Dungeons_Ratman_walking_diag_27: -72250805176970522
+      Medieval_Dungeons_Ratman_walking_diag_28: -333168650247442246
+      Medieval_Dungeons_Ratman_walking_diag_29: -1921474229144706738
+      Medieval_Dungeons_Ratman_walking_diag_3: 1903465539356465479
+      Medieval_Dungeons_Ratman_walking_diag_30: 1580876464457550571
+      Medieval_Dungeons_Ratman_walking_diag_31: 5413036577436957531
+      Medieval_Dungeons_Ratman_walking_diag_4: -8925611615654725277
+      Medieval_Dungeons_Ratman_walking_diag_5: -6659089002680074445
+      Medieval_Dungeons_Ratman_walking_diag_6: 1556933974308087120
+      Medieval_Dungeons_Ratman_walking_diag_7: 5073581097282953070
+      Medieval_Dungeons_Ratman_walking_diag_8: -2470603046987821435
+      Medieval_Dungeons_Ratman_walking_diag_9: 3087475480163164302
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

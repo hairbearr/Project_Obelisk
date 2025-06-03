@@ -129,6 +129,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Phoenix_flying_diag_0: -3176111053824335083
+      Medieval_Dungeons_Phoenix_flying_diag_1: -9161926952219376423
+      Medieval_Dungeons_Phoenix_flying_diag_10: 8616318739183134154
+      Medieval_Dungeons_Phoenix_flying_diag_11: -6947543566266309635
+      Medieval_Dungeons_Phoenix_flying_diag_2: -2492883828204296942
+      Medieval_Dungeons_Phoenix_flying_diag_3: -6648334101097734815
+      Medieval_Dungeons_Phoenix_flying_diag_4: 6519795854928324132
+      Medieval_Dungeons_Phoenix_flying_diag_5: -1553968441495169820
+      Medieval_Dungeons_Phoenix_flying_diag_6: 873494469957111371
+      Medieval_Dungeons_Phoenix_flying_diag_7: 8344561438972354277
+      Medieval_Dungeons_Phoenix_flying_diag_8: 1360224227835013308
+      Medieval_Dungeons_Phoenix_flying_diag_9: -4393724068263888164
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

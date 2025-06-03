@@ -129,6 +129,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Dragon_Black_ko_diag_0: -741838183021853269
+      Medieval_Dungeons_Dragon_Black_ko_diag_1: 7906348953602947814
+      Medieval_Dungeons_Dragon_Black_ko_diag_10: -5728998684821319182
+      Medieval_Dungeons_Dragon_Black_ko_diag_11: 1002951586099669845
+      Medieval_Dungeons_Dragon_Black_ko_diag_2: 3100270572798747115
+      Medieval_Dungeons_Dragon_Black_ko_diag_3: -2311055105901715972
+      Medieval_Dungeons_Dragon_Black_ko_diag_4: -8673588911481500395
+      Medieval_Dungeons_Dragon_Black_ko_diag_5: -4401580893803953510
+      Medieval_Dungeons_Dragon_Black_ko_diag_6: -9002808750919774052
+      Medieval_Dungeons_Dragon_Black_ko_diag_7: -8639030979354845634
+      Medieval_Dungeons_Dragon_Black_ko_diag_8: -2849590424472575471
+      Medieval_Dungeons_Dragon_Black_ko_diag_9: 5908224887468171399
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

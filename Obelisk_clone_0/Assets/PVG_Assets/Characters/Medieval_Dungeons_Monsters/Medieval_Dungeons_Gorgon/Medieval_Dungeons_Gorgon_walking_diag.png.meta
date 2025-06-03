@@ -189,6 +189,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -909,7 +922,39 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Gorgon_walking_diag_0: -1194769653676148051
+      Medieval_Dungeons_Gorgon_walking_diag_1: -1566410743804934073
+      Medieval_Dungeons_Gorgon_walking_diag_10: 9016523630852206129
+      Medieval_Dungeons_Gorgon_walking_diag_11: -4434917336065237853
+      Medieval_Dungeons_Gorgon_walking_diag_12: -1836086952480834082
+      Medieval_Dungeons_Gorgon_walking_diag_13: 4654193199343605828
+      Medieval_Dungeons_Gorgon_walking_diag_14: 3696859282430730347
+      Medieval_Dungeons_Gorgon_walking_diag_15: -3089176190504846148
+      Medieval_Dungeons_Gorgon_walking_diag_16: 6443167186600250562
+      Medieval_Dungeons_Gorgon_walking_diag_17: -2337582003696722449
+      Medieval_Dungeons_Gorgon_walking_diag_18: -1157651269001015259
+      Medieval_Dungeons_Gorgon_walking_diag_19: -6357898404115596627
+      Medieval_Dungeons_Gorgon_walking_diag_2: 2283764095383403145
+      Medieval_Dungeons_Gorgon_walking_diag_20: 848043756673929402
+      Medieval_Dungeons_Gorgon_walking_diag_21: 1497695938123023170
+      Medieval_Dungeons_Gorgon_walking_diag_22: 2754034489528852790
+      Medieval_Dungeons_Gorgon_walking_diag_23: -1753288785443551448
+      Medieval_Dungeons_Gorgon_walking_diag_24: -9049829549671362990
+      Medieval_Dungeons_Gorgon_walking_diag_25: -1092560593342709744
+      Medieval_Dungeons_Gorgon_walking_diag_26: 5240420249793827522
+      Medieval_Dungeons_Gorgon_walking_diag_27: -5427849304488950876
+      Medieval_Dungeons_Gorgon_walking_diag_28: 4747919809417166956
+      Medieval_Dungeons_Gorgon_walking_diag_29: -5045426615666967083
+      Medieval_Dungeons_Gorgon_walking_diag_3: -8730991219710331830
+      Medieval_Dungeons_Gorgon_walking_diag_30: -7119976474062532203
+      Medieval_Dungeons_Gorgon_walking_diag_31: -5263374726359247979
+      Medieval_Dungeons_Gorgon_walking_diag_4: -7452498770812023534
+      Medieval_Dungeons_Gorgon_walking_diag_5: 5269595238866473810
+      Medieval_Dungeons_Gorgon_walking_diag_6: -4055178388507482546
+      Medieval_Dungeons_Gorgon_walking_diag_7: -5697634059135251414
+      Medieval_Dungeons_Gorgon_walking_diag_8: -7549527741521458193
+      Medieval_Dungeons_Gorgon_walking_diag_9: -6226963088424173868
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -189,6 +189,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -909,7 +922,39 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Underdeep_LavaGel_walking_0: -8780223425442062720
+      Medieval_Underdeep_LavaGel_walking_1: 6258582805070124993
+      Medieval_Underdeep_LavaGel_walking_10: 2167163512801313353
+      Medieval_Underdeep_LavaGel_walking_11: -7033849925615947947
+      Medieval_Underdeep_LavaGel_walking_12: -2419694946726400108
+      Medieval_Underdeep_LavaGel_walking_13: -8228382398076578996
+      Medieval_Underdeep_LavaGel_walking_14: 466403748550847767
+      Medieval_Underdeep_LavaGel_walking_15: -1341321914856584581
+      Medieval_Underdeep_LavaGel_walking_16: -3000555412329736982
+      Medieval_Underdeep_LavaGel_walking_17: -7681133323481947219
+      Medieval_Underdeep_LavaGel_walking_18: 494381490901659980
+      Medieval_Underdeep_LavaGel_walking_19: 7377925175410155912
+      Medieval_Underdeep_LavaGel_walking_2: -6258824217998998176
+      Medieval_Underdeep_LavaGel_walking_20: -5083083699662599063
+      Medieval_Underdeep_LavaGel_walking_21: 2643551918215582967
+      Medieval_Underdeep_LavaGel_walking_22: 7195751630973116742
+      Medieval_Underdeep_LavaGel_walking_23: 8959945709513401023
+      Medieval_Underdeep_LavaGel_walking_24: -3658229301955661562
+      Medieval_Underdeep_LavaGel_walking_25: 584083886077025814
+      Medieval_Underdeep_LavaGel_walking_26: 2154990024006538196
+      Medieval_Underdeep_LavaGel_walking_27: -6585960871848750938
+      Medieval_Underdeep_LavaGel_walking_28: -4314967558190871387
+      Medieval_Underdeep_LavaGel_walking_29: -4235008145049236114
+      Medieval_Underdeep_LavaGel_walking_3: -4399763979877034129
+      Medieval_Underdeep_LavaGel_walking_30: 8610964754114571847
+      Medieval_Underdeep_LavaGel_walking_31: 3644015786121211467
+      Medieval_Underdeep_LavaGel_walking_4: 1251376599937823151
+      Medieval_Underdeep_LavaGel_walking_5: -6702861640921893516
+      Medieval_Underdeep_LavaGel_walking_6: 1047208259604120409
+      Medieval_Underdeep_LavaGel_walking_7: -942104418015174710
+      Medieval_Underdeep_LavaGel_walking_8: -6527520343843130168
+      Medieval_Underdeep_LavaGel_walking_9: -7182890278661221567
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

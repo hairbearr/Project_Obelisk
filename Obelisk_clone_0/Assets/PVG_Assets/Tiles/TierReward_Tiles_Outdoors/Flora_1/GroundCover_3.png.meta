@@ -207,6 +207,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -1059,7 +1072,45 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      GroundCover_3_0: 6883075766180774977
+      GroundCover_3_1: 5768777672089684616
+      GroundCover_3_10: 5924348884816587002
+      GroundCover_3_11: 1309860105851588384
+      GroundCover_3_12: -5680569958250152829
+      GroundCover_3_13: 3668984362266313338
+      GroundCover_3_14: -6371754738220759039
+      GroundCover_3_15: -4471075028238990972
+      GroundCover_3_16: 8825605256556500709
+      GroundCover_3_17: 6646778219156811955
+      GroundCover_3_18: -5655421144607413181
+      GroundCover_3_19: -5553385527596207936
+      GroundCover_3_2: 2614523641004247786
+      GroundCover_3_20: 6461362058439802869
+      GroundCover_3_21: 1760065952539685386
+      GroundCover_3_22: -6880627029080146120
+      GroundCover_3_23: 1876484207313844223
+      GroundCover_3_24: -7469212908795424229
+      GroundCover_3_25: 5950955671056163503
+      GroundCover_3_26: 5498384255897991150
+      GroundCover_3_27: -6555557560325525274
+      GroundCover_3_28: -3683013916809981176
+      GroundCover_3_29: 3958866597549243532
+      GroundCover_3_3: -6841406004792359465
+      GroundCover_3_30: -6007100960139264261
+      GroundCover_3_31: -5330394591723931600
+      GroundCover_3_32: 5888667809812565898
+      GroundCover_3_33: 5479257450253603313
+      GroundCover_3_34: -2870604037359040752
+      GroundCover_3_35: -5870496803028817234
+      GroundCover_3_36: -7577786547835174350
+      GroundCover_3_37: -7775430893418530143
+      GroundCover_3_4: -8721190056885490647
+      GroundCover_3_5: -4540423665522062308
+      GroundCover_3_6: 5079350887835076277
+      GroundCover_3_7: -115932470368502662
+      GroundCover_3_8: -4782704995529268041
+      GroundCover_3_9: 2731212014156050251
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

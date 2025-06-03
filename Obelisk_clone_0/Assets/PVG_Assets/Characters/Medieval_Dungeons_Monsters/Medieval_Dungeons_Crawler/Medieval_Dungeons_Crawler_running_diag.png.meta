@@ -189,6 +189,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -909,7 +922,39 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Crawler_running_diag_0: 5587608919823063028
+      Medieval_Dungeons_Crawler_running_diag_1: 2206803906703343306
+      Medieval_Dungeons_Crawler_running_diag_10: -7237530196743302691
+      Medieval_Dungeons_Crawler_running_diag_11: -4080484136572469546
+      Medieval_Dungeons_Crawler_running_diag_12: 4116115102733858415
+      Medieval_Dungeons_Crawler_running_diag_13: 939949415467159006
+      Medieval_Dungeons_Crawler_running_diag_14: 4279402685035272
+      Medieval_Dungeons_Crawler_running_diag_15: 4179660677893358752
+      Medieval_Dungeons_Crawler_running_diag_16: -477371436647447241
+      Medieval_Dungeons_Crawler_running_diag_17: -3900135574427596920
+      Medieval_Dungeons_Crawler_running_diag_18: 5560236278259847673
+      Medieval_Dungeons_Crawler_running_diag_19: 2233460578890427651
+      Medieval_Dungeons_Crawler_running_diag_2: -6868828654361111752
+      Medieval_Dungeons_Crawler_running_diag_20: 5844265347007305978
+      Medieval_Dungeons_Crawler_running_diag_21: -4177418579909539417
+      Medieval_Dungeons_Crawler_running_diag_22: -3076823881803471939
+      Medieval_Dungeons_Crawler_running_diag_23: -3782673121629265979
+      Medieval_Dungeons_Crawler_running_diag_24: 5174352773941519261
+      Medieval_Dungeons_Crawler_running_diag_25: -4079348310024036795
+      Medieval_Dungeons_Crawler_running_diag_26: 1034864951499009194
+      Medieval_Dungeons_Crawler_running_diag_27: 5172139133857766929
+      Medieval_Dungeons_Crawler_running_diag_28: -5888216859615187553
+      Medieval_Dungeons_Crawler_running_diag_29: -6538155642814297384
+      Medieval_Dungeons_Crawler_running_diag_3: -1431993067375103764
+      Medieval_Dungeons_Crawler_running_diag_30: -829560937880578867
+      Medieval_Dungeons_Crawler_running_diag_31: 3918481528638619580
+      Medieval_Dungeons_Crawler_running_diag_4: -3959577028038770704
+      Medieval_Dungeons_Crawler_running_diag_5: 7143957536668925971
+      Medieval_Dungeons_Crawler_running_diag_6: -6746201969272603652
+      Medieval_Dungeons_Crawler_running_diag_7: -3702529913692901370
+      Medieval_Dungeons_Crawler_running_diag_8: 1918908574738197626
+      Medieval_Dungeons_Crawler_running_diag_9: -8907572630210510350
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

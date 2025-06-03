@@ -129,6 +129,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Gorgon_ko_diag_0: 4996117587086476523
+      Medieval_Dungeons_Gorgon_ko_diag_1: -2257468557867300926
+      Medieval_Dungeons_Gorgon_ko_diag_10: 4747371682102199503
+      Medieval_Dungeons_Gorgon_ko_diag_11: -8175669145848750457
+      Medieval_Dungeons_Gorgon_ko_diag_2: -3693664841957859717
+      Medieval_Dungeons_Gorgon_ko_diag_3: 1186068339024124115
+      Medieval_Dungeons_Gorgon_ko_diag_4: -3307436301159588224
+      Medieval_Dungeons_Gorgon_ko_diag_5: -2356447845387793
+      Medieval_Dungeons_Gorgon_ko_diag_6: 7668735750449599088
+      Medieval_Dungeons_Gorgon_ko_diag_7: -8985153710866670053
+      Medieval_Dungeons_Gorgon_ko_diag_8: 6873343303074616442
+      Medieval_Dungeons_Gorgon_ko_diag_9: 4033299877758364032
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

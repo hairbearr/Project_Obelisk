@@ -189,6 +189,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -909,7 +922,39 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Underdeep_SpiderQueen_walking_0: -6138751706176972782
+      Medieval_Underdeep_SpiderQueen_walking_1: -2684608029621790047
+      Medieval_Underdeep_SpiderQueen_walking_10: 507560480291771453
+      Medieval_Underdeep_SpiderQueen_walking_11: -3596071138293251333
+      Medieval_Underdeep_SpiderQueen_walking_12: 7908515365652050680
+      Medieval_Underdeep_SpiderQueen_walking_13: -8556696597419282314
+      Medieval_Underdeep_SpiderQueen_walking_14: 3454119700022114165
+      Medieval_Underdeep_SpiderQueen_walking_15: -6918098078825578433
+      Medieval_Underdeep_SpiderQueen_walking_16: -6185434677359930004
+      Medieval_Underdeep_SpiderQueen_walking_17: 5241948875772208570
+      Medieval_Underdeep_SpiderQueen_walking_18: -2487927866712740973
+      Medieval_Underdeep_SpiderQueen_walking_19: -4754767037035955796
+      Medieval_Underdeep_SpiderQueen_walking_2: -8277162364832466612
+      Medieval_Underdeep_SpiderQueen_walking_20: 4986975022901943640
+      Medieval_Underdeep_SpiderQueen_walking_21: -8713062198048973234
+      Medieval_Underdeep_SpiderQueen_walking_22: -5146331758592096364
+      Medieval_Underdeep_SpiderQueen_walking_23: -1687470688421167089
+      Medieval_Underdeep_SpiderQueen_walking_24: 8087463401121741139
+      Medieval_Underdeep_SpiderQueen_walking_25: 1780027835466917544
+      Medieval_Underdeep_SpiderQueen_walking_26: -5360616961795026918
+      Medieval_Underdeep_SpiderQueen_walking_27: -7673420393774640610
+      Medieval_Underdeep_SpiderQueen_walking_28: 4955924674389338096
+      Medieval_Underdeep_SpiderQueen_walking_29: -6864551472748363624
+      Medieval_Underdeep_SpiderQueen_walking_3: -4249859276986383014
+      Medieval_Underdeep_SpiderQueen_walking_30: 6450870111712365574
+      Medieval_Underdeep_SpiderQueen_walking_31: 2331418745173453538
+      Medieval_Underdeep_SpiderQueen_walking_4: 3112138224061093940
+      Medieval_Underdeep_SpiderQueen_walking_5: 9203962065271591370
+      Medieval_Underdeep_SpiderQueen_walking_6: -8511894523811766255
+      Medieval_Underdeep_SpiderQueen_walking_7: -3311420852976678910
+      Medieval_Underdeep_SpiderQueen_walking_8: -1800199502128524022
+      Medieval_Underdeep_SpiderQueen_walking_9: 1995916636833330363
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

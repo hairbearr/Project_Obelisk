@@ -189,6 +189,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -909,7 +922,39 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Kobold_running_0: 4039621357148458172
+      Medieval_Dungeons_Kobold_running_1: 709802797482314821
+      Medieval_Dungeons_Kobold_running_10: -2257790429857792159
+      Medieval_Dungeons_Kobold_running_11: 4432557299284887588
+      Medieval_Dungeons_Kobold_running_12: -3739925887177248891
+      Medieval_Dungeons_Kobold_running_13: -4656247727043619125
+      Medieval_Dungeons_Kobold_running_14: 1797752035660810375
+      Medieval_Dungeons_Kobold_running_15: 1156949098452107149
+      Medieval_Dungeons_Kobold_running_16: 1254260418508818358
+      Medieval_Dungeons_Kobold_running_17: -1732699814904657919
+      Medieval_Dungeons_Kobold_running_18: 2976911124719018697
+      Medieval_Dungeons_Kobold_running_19: 6033396250128011336
+      Medieval_Dungeons_Kobold_running_2: 2898863054019471650
+      Medieval_Dungeons_Kobold_running_20: 6685577529488459189
+      Medieval_Dungeons_Kobold_running_21: 2122566778454480045
+      Medieval_Dungeons_Kobold_running_22: -3557815849062313132
+      Medieval_Dungeons_Kobold_running_23: -2030925142573048279
+      Medieval_Dungeons_Kobold_running_24: -852630880980856192
+      Medieval_Dungeons_Kobold_running_25: 96521566495576241
+      Medieval_Dungeons_Kobold_running_26: -5782212727306608732
+      Medieval_Dungeons_Kobold_running_27: -9011104390880894636
+      Medieval_Dungeons_Kobold_running_28: -8261871704864666078
+      Medieval_Dungeons_Kobold_running_29: -8950916641711494566
+      Medieval_Dungeons_Kobold_running_3: 4628001452096841313
+      Medieval_Dungeons_Kobold_running_30: -3839342943274689461
+      Medieval_Dungeons_Kobold_running_31: 6865986232593876366
+      Medieval_Dungeons_Kobold_running_4: -2133809326098024413
+      Medieval_Dungeons_Kobold_running_5: -7175151002252546506
+      Medieval_Dungeons_Kobold_running_6: 4102353843903196828
+      Medieval_Dungeons_Kobold_running_7: -7792089076442392573
+      Medieval_Dungeons_Kobold_running_8: 5137913706411064367
+      Medieval_Dungeons_Kobold_running_9: -3630880076621821914
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

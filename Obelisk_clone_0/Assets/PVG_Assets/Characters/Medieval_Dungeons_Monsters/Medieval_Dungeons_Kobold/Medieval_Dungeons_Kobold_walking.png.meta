@@ -189,6 +189,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -909,7 +922,39 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Kobold_walking_0: -910849511662673897
+      Medieval_Dungeons_Kobold_walking_1: 1136059439356138206
+      Medieval_Dungeons_Kobold_walking_10: 4326218669480798034
+      Medieval_Dungeons_Kobold_walking_11: 3287406091054715374
+      Medieval_Dungeons_Kobold_walking_12: -2617850987929334782
+      Medieval_Dungeons_Kobold_walking_13: 5567380547544754894
+      Medieval_Dungeons_Kobold_walking_14: -6118674806942389332
+      Medieval_Dungeons_Kobold_walking_15: 233819871856850491
+      Medieval_Dungeons_Kobold_walking_16: 2524454804933723729
+      Medieval_Dungeons_Kobold_walking_17: 7953440781580378823
+      Medieval_Dungeons_Kobold_walking_18: 4262746921104574454
+      Medieval_Dungeons_Kobold_walking_19: 2091699740899291626
+      Medieval_Dungeons_Kobold_walking_2: -6969061414949777637
+      Medieval_Dungeons_Kobold_walking_20: -2184868326164429440
+      Medieval_Dungeons_Kobold_walking_21: -3005437523049206602
+      Medieval_Dungeons_Kobold_walking_22: 3524026862340663396
+      Medieval_Dungeons_Kobold_walking_23: -5837071547903559904
+      Medieval_Dungeons_Kobold_walking_24: 3730180247621825315
+      Medieval_Dungeons_Kobold_walking_25: -7075780800929520179
+      Medieval_Dungeons_Kobold_walking_26: -6417424909549213438
+      Medieval_Dungeons_Kobold_walking_27: -3284258366953886776
+      Medieval_Dungeons_Kobold_walking_28: -6629468488882362840
+      Medieval_Dungeons_Kobold_walking_29: 541707111149786829
+      Medieval_Dungeons_Kobold_walking_3: -918000410026215718
+      Medieval_Dungeons_Kobold_walking_30: -2944506069604488606
+      Medieval_Dungeons_Kobold_walking_31: 8749701954487956620
+      Medieval_Dungeons_Kobold_walking_4: 8617962733668987969
+      Medieval_Dungeons_Kobold_walking_5: 5048664819065627566
+      Medieval_Dungeons_Kobold_walking_6: 4466892161464300077
+      Medieval_Dungeons_Kobold_walking_7: 2933611903030836792
+      Medieval_Dungeons_Kobold_walking_8: -7423364981632605733
+      Medieval_Dungeons_Kobold_walking_9: -7631893053329801917
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

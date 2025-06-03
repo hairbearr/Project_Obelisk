@@ -147,6 +147,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -559,7 +572,25 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Mushrooms_8_0: -8386780947380484672
+      Mushrooms_8_1: 2982389357636046032
+      Mushrooms_8_10: -4262504311626265595
+      Mushrooms_8_11: -4595185393049634368
+      Mushrooms_8_12: 2197318892375839823
+      Mushrooms_8_13: 1624587649537817199
+      Mushrooms_8_14: -2649154339580275764
+      Mushrooms_8_15: 3254895444199646494
+      Mushrooms_8_16: -8543602604881208374
+      Mushrooms_8_17: 1729216214343851543
+      Mushrooms_8_2: 5700883820350024638
+      Mushrooms_8_3: -4589913366842189797
+      Mushrooms_8_4: -680859171726149310
+      Mushrooms_8_5: -7763372426971182516
+      Mushrooms_8_6: 7618594702912060560
+      Mushrooms_8_7: -6969576486974335552
+      Mushrooms_8_8: 2971858384545380955
+      Mushrooms_8_9: -6416722897009514371
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

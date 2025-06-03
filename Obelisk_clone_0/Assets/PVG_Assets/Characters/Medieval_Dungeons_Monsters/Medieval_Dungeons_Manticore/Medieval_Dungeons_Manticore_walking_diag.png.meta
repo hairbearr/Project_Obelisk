@@ -189,6 +189,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -909,7 +922,39 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Manticore_walking_diag_0: 1145182405671020918
+      Medieval_Dungeons_Manticore_walking_diag_1: -7738239681832109130
+      Medieval_Dungeons_Manticore_walking_diag_10: 6365967010506495085
+      Medieval_Dungeons_Manticore_walking_diag_11: -3586358725947107650
+      Medieval_Dungeons_Manticore_walking_diag_12: 3925281304133532169
+      Medieval_Dungeons_Manticore_walking_diag_13: 6720923182307132320
+      Medieval_Dungeons_Manticore_walking_diag_14: 3434497379869731591
+      Medieval_Dungeons_Manticore_walking_diag_15: -5475720238785453917
+      Medieval_Dungeons_Manticore_walking_diag_16: -5373521558678968771
+      Medieval_Dungeons_Manticore_walking_diag_17: -8069269271422091692
+      Medieval_Dungeons_Manticore_walking_diag_18: 240921750080720617
+      Medieval_Dungeons_Manticore_walking_diag_19: 368853436522946631
+      Medieval_Dungeons_Manticore_walking_diag_2: 1733232418078183420
+      Medieval_Dungeons_Manticore_walking_diag_20: -2549378269221485730
+      Medieval_Dungeons_Manticore_walking_diag_21: -2550474391880010488
+      Medieval_Dungeons_Manticore_walking_diag_22: -6881247546844807224
+      Medieval_Dungeons_Manticore_walking_diag_23: 1072413603153731285
+      Medieval_Dungeons_Manticore_walking_diag_24: 6312928708201155492
+      Medieval_Dungeons_Manticore_walking_diag_25: -1607954731518940382
+      Medieval_Dungeons_Manticore_walking_diag_26: 5166628048786587327
+      Medieval_Dungeons_Manticore_walking_diag_27: 7069692708557552564
+      Medieval_Dungeons_Manticore_walking_diag_28: -9204063971810418537
+      Medieval_Dungeons_Manticore_walking_diag_29: -4423363790083613152
+      Medieval_Dungeons_Manticore_walking_diag_3: 1177547654342915623
+      Medieval_Dungeons_Manticore_walking_diag_30: 8314467282906058061
+      Medieval_Dungeons_Manticore_walking_diag_31: 4715353521898751687
+      Medieval_Dungeons_Manticore_walking_diag_4: -8277482186793958267
+      Medieval_Dungeons_Manticore_walking_diag_5: 3999495013135434990
+      Medieval_Dungeons_Manticore_walking_diag_6: 5787222606617011791
+      Medieval_Dungeons_Manticore_walking_diag_7: 5751232874722196521
+      Medieval_Dungeons_Manticore_walking_diag_8: -8608412180688121570
+      Medieval_Dungeons_Manticore_walking_diag_9: -4077492592976207094
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

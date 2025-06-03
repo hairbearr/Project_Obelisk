@@ -129,6 +129,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Golem_kneel_diag_0: 1266772390598097872
+      Medieval_Dungeons_Golem_kneel_diag_1: 1855851169808913
+      Medieval_Dungeons_Golem_kneel_diag_10: -1921362641731514975
+      Medieval_Dungeons_Golem_kneel_diag_11: -3030152401111889058
+      Medieval_Dungeons_Golem_kneel_diag_2: 6819373467820586475
+      Medieval_Dungeons_Golem_kneel_diag_3: 4005234320404604844
+      Medieval_Dungeons_Golem_kneel_diag_4: -594915138945101917
+      Medieval_Dungeons_Golem_kneel_diag_5: -7899338174732152620
+      Medieval_Dungeons_Golem_kneel_diag_6: -5905424540799701144
+      Medieval_Dungeons_Golem_kneel_diag_7: -2139114863989430660
+      Medieval_Dungeons_Golem_kneel_diag_8: 9069094284490027326
+      Medieval_Dungeons_Golem_kneel_diag_9: 4035900561057120929
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

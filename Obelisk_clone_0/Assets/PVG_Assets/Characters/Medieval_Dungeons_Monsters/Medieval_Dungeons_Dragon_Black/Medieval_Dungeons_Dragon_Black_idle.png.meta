@@ -129,6 +129,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Dragon_Black_idle_0: -4257870494459012976
+      Medieval_Dungeons_Dragon_Black_idle_1: -698627547290867267
+      Medieval_Dungeons_Dragon_Black_idle_10: -4430039363998658344
+      Medieval_Dungeons_Dragon_Black_idle_11: 6922127176386104537
+      Medieval_Dungeons_Dragon_Black_idle_2: 5132148275616356463
+      Medieval_Dungeons_Dragon_Black_idle_3: 4333205123036805139
+      Medieval_Dungeons_Dragon_Black_idle_4: 3619689324166588057
+      Medieval_Dungeons_Dragon_Black_idle_5: 9088777004184949928
+      Medieval_Dungeons_Dragon_Black_idle_6: 1199192309598324834
+      Medieval_Dungeons_Dragon_Black_idle_7: 5284095629066167555
+      Medieval_Dungeons_Dragon_Black_idle_8: 4702838057519110897
+      Medieval_Dungeons_Dragon_Black_idle_9: 7354327935475986108
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

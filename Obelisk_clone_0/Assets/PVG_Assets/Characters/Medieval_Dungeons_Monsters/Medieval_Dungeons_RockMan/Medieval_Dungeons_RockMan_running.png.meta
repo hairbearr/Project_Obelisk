@@ -189,6 +189,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -909,7 +922,39 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_RockMan_running_0: -3452364923269850058
+      Medieval_Dungeons_RockMan_running_1: 9156256417991871664
+      Medieval_Dungeons_RockMan_running_10: -4951747488404320900
+      Medieval_Dungeons_RockMan_running_11: -3718162546338138656
+      Medieval_Dungeons_RockMan_running_12: 389604965078519159
+      Medieval_Dungeons_RockMan_running_13: 566707457773269052
+      Medieval_Dungeons_RockMan_running_14: 3343168209522252843
+      Medieval_Dungeons_RockMan_running_15: 6699279936774400880
+      Medieval_Dungeons_RockMan_running_16: 2467535861307503900
+      Medieval_Dungeons_RockMan_running_17: 1714229257954938628
+      Medieval_Dungeons_RockMan_running_18: -7204992572824983896
+      Medieval_Dungeons_RockMan_running_19: 7223563898899208202
+      Medieval_Dungeons_RockMan_running_2: 8614634008315764614
+      Medieval_Dungeons_RockMan_running_20: -2432661283121002640
+      Medieval_Dungeons_RockMan_running_21: 8699837282512513113
+      Medieval_Dungeons_RockMan_running_22: 6691990241696288104
+      Medieval_Dungeons_RockMan_running_23: 265642890029504195
+      Medieval_Dungeons_RockMan_running_24: -1536924717227036163
+      Medieval_Dungeons_RockMan_running_25: 3891506882899850341
+      Medieval_Dungeons_RockMan_running_26: -2267096588275427401
+      Medieval_Dungeons_RockMan_running_27: 4843393313273000416
+      Medieval_Dungeons_RockMan_running_28: -8639461002870685468
+      Medieval_Dungeons_RockMan_running_29: 7013784389119491476
+      Medieval_Dungeons_RockMan_running_3: 2640101067006974161
+      Medieval_Dungeons_RockMan_running_30: -608198610833759815
+      Medieval_Dungeons_RockMan_running_31: 6160607101950695685
+      Medieval_Dungeons_RockMan_running_4: 2483935597870866792
+      Medieval_Dungeons_RockMan_running_5: 8338427819578263397
+      Medieval_Dungeons_RockMan_running_6: 8663327991958523465
+      Medieval_Dungeons_RockMan_running_7: -2916341661520835950
+      Medieval_Dungeons_RockMan_running_8: 9095211063147466729
+      Medieval_Dungeons_RockMan_running_9: 3340550901705336546
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

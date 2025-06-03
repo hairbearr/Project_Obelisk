@@ -189,6 +189,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -909,7 +922,39 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_Waheela_walking_0: -4850044163828193507
+      Medieval_Dungeons_Waheela_walking_1: 4030031521791983470
+      Medieval_Dungeons_Waheela_walking_10: 6480753032302023388
+      Medieval_Dungeons_Waheela_walking_11: -2353804663119827253
+      Medieval_Dungeons_Waheela_walking_12: -8969850013397345844
+      Medieval_Dungeons_Waheela_walking_13: 7702083307499322044
+      Medieval_Dungeons_Waheela_walking_14: 7779498096563203993
+      Medieval_Dungeons_Waheela_walking_15: 661614532477091798
+      Medieval_Dungeons_Waheela_walking_16: -420571278945763982
+      Medieval_Dungeons_Waheela_walking_17: 9152797156074102565
+      Medieval_Dungeons_Waheela_walking_18: -7286312089241996515
+      Medieval_Dungeons_Waheela_walking_19: 662056088808852186
+      Medieval_Dungeons_Waheela_walking_2: -2860433349148503944
+      Medieval_Dungeons_Waheela_walking_20: 2719474256889063308
+      Medieval_Dungeons_Waheela_walking_21: 5803942218725551524
+      Medieval_Dungeons_Waheela_walking_22: -1028331613076242798
+      Medieval_Dungeons_Waheela_walking_23: 5519941289138461415
+      Medieval_Dungeons_Waheela_walking_24: 8265056792546887296
+      Medieval_Dungeons_Waheela_walking_25: -489883837638838912
+      Medieval_Dungeons_Waheela_walking_26: -6102710490832090224
+      Medieval_Dungeons_Waheela_walking_27: -8092357315853625041
+      Medieval_Dungeons_Waheela_walking_28: -1276706861668625743
+      Medieval_Dungeons_Waheela_walking_29: -5422900253007406442
+      Medieval_Dungeons_Waheela_walking_3: 8347615442349547849
+      Medieval_Dungeons_Waheela_walking_30: -2867472476544237450
+      Medieval_Dungeons_Waheela_walking_31: -6799358726425246341
+      Medieval_Dungeons_Waheela_walking_4: -1075331003421789608
+      Medieval_Dungeons_Waheela_walking_5: -4263961303658818847
+      Medieval_Dungeons_Waheela_walking_6: -2030594468588247029
+      Medieval_Dungeons_Waheela_walking_7: 2186906297057210131
+      Medieval_Dungeons_Waheela_walking_8: 8947506958585088858
+      Medieval_Dungeons_Waheela_walking_9: 7868743816018790467
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -159,6 +159,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -659,7 +672,29 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      $!Medieval_Dungeons_Trap_2_0: 4106305794630973304
+      $!Medieval_Dungeons_Trap_2_1: -6225099884335611400
+      $!Medieval_Dungeons_Trap_2_10: -3246243031487869746
+      $!Medieval_Dungeons_Trap_2_11: -8220494922423323507
+      $!Medieval_Dungeons_Trap_2_12: -4742284114836758096
+      $!Medieval_Dungeons_Trap_2_13: -4719455783308125552
+      $!Medieval_Dungeons_Trap_2_14: -7610804047533300429
+      $!Medieval_Dungeons_Trap_2_15: -5665475998792850441
+      $!Medieval_Dungeons_Trap_2_16: -4760042637552424959
+      $!Medieval_Dungeons_Trap_2_17: -6388028733066641847
+      $!Medieval_Dungeons_Trap_2_18: 8582397957909345997
+      $!Medieval_Dungeons_Trap_2_19: 1885550189256962584
+      $!Medieval_Dungeons_Trap_2_2: -1487715029810209232
+      $!Medieval_Dungeons_Trap_2_20: -3191344753230148726
+      $!Medieval_Dungeons_Trap_2_21: -4363102148168371842
+      $!Medieval_Dungeons_Trap_2_3: 3960810530334135254
+      $!Medieval_Dungeons_Trap_2_4: -1718026885508966388
+      $!Medieval_Dungeons_Trap_2_5: 3819140639123549461
+      $!Medieval_Dungeons_Trap_2_6: 7838305376518846863
+      $!Medieval_Dungeons_Trap_2_7: 1146995059620863286
+      $!Medieval_Dungeons_Trap_2_8: -6549070804817622890
+      $!Medieval_Dungeons_Trap_2_9: 446463165145707758
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

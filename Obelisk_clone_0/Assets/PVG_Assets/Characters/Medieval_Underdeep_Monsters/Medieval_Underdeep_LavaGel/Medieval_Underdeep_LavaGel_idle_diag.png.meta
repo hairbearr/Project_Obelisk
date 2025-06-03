@@ -129,6 +129,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Underdeep_LavaGel_idle_diag_0: -4000712590085397049
+      Medieval_Underdeep_LavaGel_idle_diag_1: -4525645430048496252
+      Medieval_Underdeep_LavaGel_idle_diag_10: 148698894245382724
+      Medieval_Underdeep_LavaGel_idle_diag_11: 2916918108435395272
+      Medieval_Underdeep_LavaGel_idle_diag_2: -7976764614412745178
+      Medieval_Underdeep_LavaGel_idle_diag_3: -2230170566198113768
+      Medieval_Underdeep_LavaGel_idle_diag_4: 1240645161307172670
+      Medieval_Underdeep_LavaGel_idle_diag_5: -3515750159972034737
+      Medieval_Underdeep_LavaGel_idle_diag_6: -7375046498185352348
+      Medieval_Underdeep_LavaGel_idle_diag_7: -1213281768756486470
+      Medieval_Underdeep_LavaGel_idle_diag_8: 1695574549926427758
+      Medieval_Underdeep_LavaGel_idle_diag_9: 658064338931739954
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

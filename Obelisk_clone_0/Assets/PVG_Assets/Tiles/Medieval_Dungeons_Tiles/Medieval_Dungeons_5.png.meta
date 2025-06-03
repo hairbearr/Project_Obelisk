@@ -216,6 +216,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -1134,7 +1147,48 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_5_0: 418408286888507781
+      Medieval_Dungeons_5_1: 2147336078367687269
+      Medieval_Dungeons_5_10: 5892708050195590235
+      Medieval_Dungeons_5_11: -8573155454822159720
+      Medieval_Dungeons_5_12: -8152139588878581853
+      Medieval_Dungeons_5_13: 7084322980238708404
+      Medieval_Dungeons_5_14: -98597181002516527
+      Medieval_Dungeons_5_15: 8098041605699131140
+      Medieval_Dungeons_5_16: 5208389558930717983
+      Medieval_Dungeons_5_17: -7385892823864661167
+      Medieval_Dungeons_5_18: 7413413868962264428
+      Medieval_Dungeons_5_19: 1204696497703108878
+      Medieval_Dungeons_5_2: -6760862046341307989
+      Medieval_Dungeons_5_20: -3675450924343178837
+      Medieval_Dungeons_5_21: 4949150937974367003
+      Medieval_Dungeons_5_22: 260147144474822815
+      Medieval_Dungeons_5_23: -5447084617801170764
+      Medieval_Dungeons_5_24: 5716815759235210505
+      Medieval_Dungeons_5_25: 7234499694897377007
+      Medieval_Dungeons_5_26: -6028492645079716360
+      Medieval_Dungeons_5_27: -1541434784395507315
+      Medieval_Dungeons_5_28: -1373161527664646161
+      Medieval_Dungeons_5_29: 7393965443392916881
+      Medieval_Dungeons_5_3: -6830452319294877573
+      Medieval_Dungeons_5_30: 7754508783878948422
+      Medieval_Dungeons_5_31: 7580901213202877479
+      Medieval_Dungeons_5_32: -4549542225293552367
+      Medieval_Dungeons_5_33: -2950836150412679676
+      Medieval_Dungeons_5_34: 5274970215496989143
+      Medieval_Dungeons_5_35: -7055917925499992245
+      Medieval_Dungeons_5_36: 5964819210760877041
+      Medieval_Dungeons_5_37: 4705864552203128656
+      Medieval_Dungeons_5_38: -6222693116311956784
+      Medieval_Dungeons_5_39: -138601418560704878
+      Medieval_Dungeons_5_4: 3563993018409186921
+      Medieval_Dungeons_5_40: 3722380671878086319
+      Medieval_Dungeons_5_5: -3819443435036856389
+      Medieval_Dungeons_5_6: -5976384483861565481
+      Medieval_Dungeons_5_7: -671944393370724165
+      Medieval_Dungeons_5_8: 8219552412632098657
+      Medieval_Dungeons_5_9: -2619043539493667039
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

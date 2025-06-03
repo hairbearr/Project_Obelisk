@@ -195,6 +195,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -959,7 +972,41 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Medieval_Dungeons_8_0: -7859477557675376705
+      Medieval_Dungeons_8_1: -6285066042063908179
+      Medieval_Dungeons_8_10: -137211710777260440
+      Medieval_Dungeons_8_11: -6413719991926381702
+      Medieval_Dungeons_8_12: -3174572989147793909
+      Medieval_Dungeons_8_13: 5475624068366056871
+      Medieval_Dungeons_8_14: 8328004748724247585
+      Medieval_Dungeons_8_15: -192574955197644480
+      Medieval_Dungeons_8_16: -809972201841764583
+      Medieval_Dungeons_8_17: -5376749525158571842
+      Medieval_Dungeons_8_18: -459500430773080613
+      Medieval_Dungeons_8_19: 5921030075762936575
+      Medieval_Dungeons_8_2: -103387742773463965
+      Medieval_Dungeons_8_20: -5076357912872181456
+      Medieval_Dungeons_8_21: 6045978044943227116
+      Medieval_Dungeons_8_22: -3823091145191874401
+      Medieval_Dungeons_8_23: 4303187774164172419
+      Medieval_Dungeons_8_24: 2161442287250359717
+      Medieval_Dungeons_8_25: 8442597659270054945
+      Medieval_Dungeons_8_26: 5541086312231695878
+      Medieval_Dungeons_8_27: 8890762850832849148
+      Medieval_Dungeons_8_28: 1381764779893052295
+      Medieval_Dungeons_8_29: -6118680187861393132
+      Medieval_Dungeons_8_3: -719819316845131033
+      Medieval_Dungeons_8_30: -5191688225634605697
+      Medieval_Dungeons_8_31: 261823348430517930
+      Medieval_Dungeons_8_32: 8413852957869715505
+      Medieval_Dungeons_8_33: 7487609341044045269
+      Medieval_Dungeons_8_4: -8971285696305330041
+      Medieval_Dungeons_8_5: -5832979831098370340
+      Medieval_Dungeons_8_6: 5932691019505756413
+      Medieval_Dungeons_8_7: -741570198701758955
+      Medieval_Dungeons_8_8: 5426618883580023106
+      Medieval_Dungeons_8_9: 7764346560732254560
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
