@@ -234,7 +234,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1481803495, guid: 143d5a9586abd2e439fe9e76bd21a4cc, type: 3}
+  m_Sprite: {fileID: -8723801287270015590, guid: f208cc1515c008140ab4e5e5751f5532, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -287,6 +287,10 @@ MonoBehaviour:
   movementInput: {x: 0, y: 0}
   direction: 0
   isMoving: 0
+  isAttacking: 0
+  isBlocking: 0
+  isGrappling: 0
+  isJumping: 0
 --- !u!114 &8041656580344547172
 MonoBehaviour:
   m_ObjectHideFlags: 0
