@@ -1,0 +1,754 @@
+fileFormatVersion: 2
+guid: 6488cec21f904424bb869ca589b50789
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4781780693430788119
+    second: Male_Knight_Attack One Handed Overhead_0
+  - first:
+      213: -4647333256757061519
+    second: Male_Knight_Attack One Handed Overhead_1
+  - first:
+      213: 2602476397923990998
+    second: Male_Knight_Attack One Handed Overhead_2
+  - first:
+      213: 7839630721749038090
+    second: Male_Knight_Attack One Handed Overhead_3
+  - first:
+      213: -832873363651959269
+    second: Male_Knight_Attack One Handed Overhead_4
+  - first:
+      213: -2146409290709419157
+    second: Male_Knight_Attack One Handed Overhead_5
+  - first:
+      213: -6265726798402520688
+    second: Male_Knight_Attack One Handed Overhead_6
+  - first:
+      213: -3027819647697935697
+    second: Male_Knight_Attack One Handed Overhead_7
+  - first:
+      213: -625969849437949413
+    second: Male_Knight_Attack One Handed Overhead_8
+  - first:
+      213: -2544549424806372016
+    second: Male_Knight_Attack One Handed Overhead_9
+  - first:
+      213: -5928134931740279006
+    second: Male_Knight_Attack One Handed Overhead_10
+  - first:
+      213: -4142027770069815444
+    second: Male_Knight_Attack One Handed Overhead_11
+  - first:
+      213: 4360174836209864336
+    second: Male_Knight_Attack One Handed Overhead_12
+  - first:
+      213: 4307283728562003765
+    second: Male_Knight_Attack One Handed Overhead_13
+  - first:
+      213: -2189880239599335494
+    second: Male_Knight_Attack One Handed Overhead_14
+  - first:
+      213: -1079148262646146098
+    second: Male_Knight_Attack One Handed Overhead_15
+  - first:
+      213: 8853493114448718389
+    second: Male_Knight_Attack One Handed Overhead_16
+  - first:
+      213: 2788198959948610103
+    second: Male_Knight_Attack One Handed Overhead_17
+  - first:
+      213: -8611004839568644609
+    second: Male_Knight_Attack One Handed Overhead_18
+  - first:
+      213: 7485140730210187496
+    second: Male_Knight_Attack One Handed Overhead_19
+  - first:
+      213: -3384259002738506623
+    second: Male_Knight_Attack One Handed Overhead_20
+  - first:
+      213: 4411964102797691529
+    second: Male_Knight_Attack One Handed Overhead_21
+  - first:
+      213: 3133252889571069184
+    second: Male_Knight_Attack One Handed Overhead_22
+  - first:
+      213: 7740090860107742767
+    second: Male_Knight_Attack One Handed Overhead_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Male_Knight_Attack One Handed Overhead_0
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 1149
+        width: 57
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ef9c365bc3b3adb0800000000000000
+      internalID: -4781780693430788119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Attack One Handed Overhead_1
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 1149
+        width: 53
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 178d22e860b518fb0800000000000000
+      internalID: -4647333256757061519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Attack One Handed Overhead_2
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 1149
+        width: 63
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ddf892de7add1420800000000000000
+      internalID: 2602476397923990998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Attack One Handed Overhead_3
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 981
+        width: 63
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a043714fa96fbcc60800000000000000
+      internalID: 7839630721749038090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Attack One Handed Overhead_4
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 981
+        width: 63
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b16e3a8a61a0174f0800000000000000
+      internalID: -832873363651959269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Attack One Handed Overhead_5
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 981
+        width: 71
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6bbaac4f1c6632e0800000000000000
+      internalID: -2146409290709419157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Attack One Handed Overhead_6
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 819
+        width: 62
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09972919caaab09a0800000000000000
+      internalID: -6265726798402520688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Attack One Handed Overhead_7
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 819
+        width: 63
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa2240f82160bf5d0800000000000000
+      internalID: -3027819647697935697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Attack One Handed Overhead_8
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 819
+        width: 74
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b12752c0dbb1057f0800000000000000
+      internalID: -625969849437949413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Attack One Handed Overhead_9
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 651
+        width: 57
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05dddfc97c1ffacd0800000000000000
+      internalID: -2544549424806372016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Attack One Handed Overhead_10
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 653
+        width: 57
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22f390d20b80bbda0800000000000000
+      internalID: -5928134931740279006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Attack One Handed Overhead_11
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 653
+        width: 57
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6f6f2340bf8486c0800000000000000
+      internalID: -4142027770069815444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Attack One Handed Overhead_12
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 500
+        width: 44
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09ec2ee89e3728c30800000000000000
+      internalID: 4360174836209864336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Attack One Handed Overhead_13
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 500
+        width: 42
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53f12cbeabb86cb30800000000000000
+      internalID: 4307283728562003765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Attack One Handed Overhead_14
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 500
+        width: 62
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab7c80a468bfb91e0800000000000000
+      internalID: -2189880239599335494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Attack One Handed Overhead_15
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 343
+        width: 67
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecb1ff86f581601f0800000000000000
+      internalID: -1079148262646146098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Attack One Handed Overhead_16
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 344
+        width: 73
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53a251c641dedda70800000000000000
+      internalID: 8853493114448718389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Attack One Handed Overhead_17
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 346
+        width: 76
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73ab9da7e2ca1b620800000000000000
+      internalID: 2788198959948610103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Attack One Handed Overhead_18
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 198
+        width: 66
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff56752b8b09f7880800000000000000
+      internalID: -8611004839568644609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Attack One Handed Overhead_19
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 198
+        width: 69
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e87cfd06df80e760800000000000000
+      internalID: 7485140730210187496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Attack One Handed Overhead_20
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 186
+        width: 75
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1848ad91e52b801d0800000000000000
+      internalID: -3384259002738506623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Attack One Handed Overhead_21
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 13
+        width: 48
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98a0805d9f17a3d30800000000000000
+      internalID: 4411964102797691529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Attack One Handed Overhead_22
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 13
+        width: 47
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00d895207ec8b7b20800000000000000
+      internalID: 3133252889571069184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Attack One Handed Overhead_23
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 13
+        width: 61
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2e38f5e0a35a6b60800000000000000
+      internalID: 7740090860107742767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Male_Knight_Attack One Handed Overhead_0: -4781780693430788119
+      Male_Knight_Attack One Handed Overhead_1: -4647333256757061519
+      Male_Knight_Attack One Handed Overhead_10: -5928134931740279006
+      Male_Knight_Attack One Handed Overhead_11: -4142027770069815444
+      Male_Knight_Attack One Handed Overhead_12: 4360174836209864336
+      Male_Knight_Attack One Handed Overhead_13: 4307283728562003765
+      Male_Knight_Attack One Handed Overhead_14: -2189880239599335494
+      Male_Knight_Attack One Handed Overhead_15: -1079148262646146098
+      Male_Knight_Attack One Handed Overhead_16: 8853493114448718389
+      Male_Knight_Attack One Handed Overhead_17: 2788198959948610103
+      Male_Knight_Attack One Handed Overhead_18: -8611004839568644609
+      Male_Knight_Attack One Handed Overhead_19: 7485140730210187496
+      Male_Knight_Attack One Handed Overhead_2: 2602476397923990998
+      Male_Knight_Attack One Handed Overhead_20: -3384259002738506623
+      Male_Knight_Attack One Handed Overhead_21: 4411964102797691529
+      Male_Knight_Attack One Handed Overhead_22: 3133252889571069184
+      Male_Knight_Attack One Handed Overhead_23: 7740090860107742767
+      Male_Knight_Attack One Handed Overhead_3: 7839630721749038090
+      Male_Knight_Attack One Handed Overhead_4: -832873363651959269
+      Male_Knight_Attack One Handed Overhead_5: -2146409290709419157
+      Male_Knight_Attack One Handed Overhead_6: -6265726798402520688
+      Male_Knight_Attack One Handed Overhead_7: -3027819647697935697
+      Male_Knight_Attack One Handed Overhead_8: -625969849437949413
+      Male_Knight_Attack One Handed Overhead_9: -2544549424806372016
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,754 @@
+fileFormatVersion: 2
+guid: 7f8173a266d55e14fb3da51ef80347f4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2442991872323080904
+    second: Male_Knight_Interact_0
+  - first:
+      213: 606325959128451651
+    second: Male_Knight_Interact_1
+  - first:
+      213: -3008733895041341472
+    second: Male_Knight_Interact_2
+  - first:
+      213: 4041704992783775212
+    second: Male_Knight_Interact_3
+  - first:
+      213: 8404780254391239720
+    second: Male_Knight_Interact_4
+  - first:
+      213: -196926103809222709
+    second: Male_Knight_Interact_5
+  - first:
+      213: 5766305927792073154
+    second: Male_Knight_Interact_6
+  - first:
+      213: -5515807874895468645
+    second: Male_Knight_Interact_7
+  - first:
+      213: 1535432715684875822
+    second: Male_Knight_Interact_8
+  - first:
+      213: 5124304259832733219
+    second: Male_Knight_Interact_9
+  - first:
+      213: 7851907567433764287
+    second: Male_Knight_Interact_10
+  - first:
+      213: 3866682293644419303
+    second: Male_Knight_Interact_11
+  - first:
+      213: 6859757136728844600
+    second: Male_Knight_Interact_12
+  - first:
+      213: 5058936920975365833
+    second: Male_Knight_Interact_13
+  - first:
+      213: 5422228388041307654
+    second: Male_Knight_Interact_14
+  - first:
+      213: -1765884773058217083
+    second: Male_Knight_Interact_15
+  - first:
+      213: 6013028196006849526
+    second: Male_Knight_Interact_16
+  - first:
+      213: -819009668327396497
+    second: Male_Knight_Interact_17
+  - first:
+      213: -6062726431029110391
+    second: Male_Knight_Interact_18
+  - first:
+      213: -6451291471202844513
+    second: Male_Knight_Interact_19
+  - first:
+      213: -4999834658939660601
+    second: Male_Knight_Interact_20
+  - first:
+      213: -1443717711683023863
+    second: Male_Knight_Interact_21
+  - first:
+      213: 8492187746387186327
+    second: Male_Knight_Interact_22
+  - first:
+      213: -5014492349396885918
+    second: Male_Knight_Interact_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Male_Knight_Interact_0
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 1144
+        width: 51
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83d240de5dfb81ed0800000000000000
+      internalID: -2442991872323080904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Interact_1
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 1143
+        width: 51
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34a03f35f3a1a6800800000000000000
+      internalID: 606325959128451651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Interact_2
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 1142
+        width: 51
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e72262a674de36d0800000000000000
+      internalID: -3008733895041341472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Interact_3
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 979
+        width: 54
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce5bccde645071830800000000000000
+      internalID: 4041704992783775212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Interact_4
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 979
+        width: 56
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82405366c17c3a470800000000000000
+      internalID: 8404780254391239720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Interact_5
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 979
+        width: 58
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc7137f70c0644df0800000000000000
+      internalID: -196926103809222709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Interact_6
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 829
+        width: 58
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c9964ca0b8060050800000000000000
+      internalID: 5766305927792073154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Interact_7
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 829
+        width: 60
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b97ad8736f9e373b0800000000000000
+      internalID: -5515807874895468645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Interact_8
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 829
+        width: 63
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2e09ea7be3fe4510800000000000000
+      internalID: 1535432715684875822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Interact_9
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 666
+        width: 51
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32ed958139f2d1740800000000000000
+      internalID: 5124304259832733219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Interact_10
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 666
+        width: 51
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbd4716d45497fc60800000000000000
+      internalID: 7851907567433764287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Interact_11
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 666
+        width: 52
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e0e7fb3f0739a530800000000000000
+      internalID: 3866682293644419303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Interact_12
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 499
+        width: 51
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8396c2475c0c23f50800000000000000
+      internalID: 6859757136728844600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Interact_13
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 499
+        width: 50
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c658d38354f43640800000000000000
+      internalID: 5058936920975365833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Interact_14
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 499
+        width: 49
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 606bd30adff9f3b40800000000000000
+      internalID: 5422228388041307654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Interact_15
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 346
+        width: 49
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58bf79ba7215e77e0800000000000000
+      internalID: -1765884773058217083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Interact_16
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 346
+        width: 49
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fb656f2941927350800000000000000
+      internalID: 6013028196006849526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Interact_17
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 346
+        width: 49
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6b2cb3cb0b42a4f0800000000000000
+      internalID: -819009668327396497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Interact_18
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 187
+        width: 50
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9895324ce6edcdba0800000000000000
+      internalID: -6062726431029110391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Interact_19
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 187
+        width: 52
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f90827c56986876a0800000000000000
+      internalID: -6451291471202844513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Interact_20
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 188
+        width: 52
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c617323ed40d9ab0800000000000000
+      internalID: -4999834658939660601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Interact_21
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 27
+        width: 55
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90c813fe362e6fbe0800000000000000
+      internalID: -1443717711683023863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Interact_22
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 27
+        width: 53
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 792555503cf4ad570800000000000000
+      internalID: 8492187746387186327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Interact_23
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 27
+        width: 53
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26ed841b6c1f86ab0800000000000000
+      internalID: -5014492349396885918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Male_Knight_Interact_0: -2442991872323080904
+      Male_Knight_Interact_1: 606325959128451651
+      Male_Knight_Interact_10: 7851907567433764287
+      Male_Knight_Interact_11: 3866682293644419303
+      Male_Knight_Interact_12: 6859757136728844600
+      Male_Knight_Interact_13: 5058936920975365833
+      Male_Knight_Interact_14: 5422228388041307654
+      Male_Knight_Interact_15: -1765884773058217083
+      Male_Knight_Interact_16: 6013028196006849526
+      Male_Knight_Interact_17: -819009668327396497
+      Male_Knight_Interact_18: -6062726431029110391
+      Male_Knight_Interact_19: -6451291471202844513
+      Male_Knight_Interact_2: -3008733895041341472
+      Male_Knight_Interact_20: -4999834658939660601
+      Male_Knight_Interact_21: -1443717711683023863
+      Male_Knight_Interact_22: 8492187746387186327
+      Male_Knight_Interact_23: -5014492349396885918
+      Male_Knight_Interact_3: 4041704992783775212
+      Male_Knight_Interact_4: 8404780254391239720
+      Male_Knight_Interact_5: -196926103809222709
+      Male_Knight_Interact_6: 5766305927792073154
+      Male_Knight_Interact_7: -5515807874895468645
+      Male_Knight_Interact_8: 1535432715684875822
+      Male_Knight_Interact_9: 5124304259832733219
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

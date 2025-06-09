@@ -1,0 +1,754 @@
+fileFormatVersion: 2
+guid: bbb30d29bd52fa041b33a482d8de4539
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8396600095486814948
+    second: Male_Knight_Block Shield_0
+  - first:
+      213: 3767676051273499129
+    second: Male_Knight_Block Shield_1
+  - first:
+      213: 3755945268548650435
+    second: Male_Knight_Block Shield_2
+  - first:
+      213: 802469868484172647
+    second: Male_Knight_Block Shield_3
+  - first:
+      213: 4708176823851858227
+    second: Male_Knight_Block Shield_4
+  - first:
+      213: -5894450898658900694
+    second: Male_Knight_Block Shield_5
+  - first:
+      213: 6381630087004057680
+    second: Male_Knight_Block Shield_6
+  - first:
+      213: -6420743375334884645
+    second: Male_Knight_Block Shield_7
+  - first:
+      213: -1184743639280010311
+    second: Male_Knight_Block Shield_8
+  - first:
+      213: -5297502125491459382
+    second: Male_Knight_Block Shield_9
+  - first:
+      213: 8987541953168897473
+    second: Male_Knight_Block Shield_10
+  - first:
+      213: 4642538096358397469
+    second: Male_Knight_Block Shield_11
+  - first:
+      213: 1463551328288132298
+    second: Male_Knight_Block Shield_12
+  - first:
+      213: 393843889182593195
+    second: Male_Knight_Block Shield_13
+  - first:
+      213: -5528213081342033119
+    second: Male_Knight_Block Shield_14
+  - first:
+      213: 3527075337939537530
+    second: Male_Knight_Block Shield_15
+  - first:
+      213: 5428786961063227739
+    second: Male_Knight_Block Shield_16
+  - first:
+      213: 1840326492850649848
+    second: Male_Knight_Block Shield_17
+  - first:
+      213: -1959173154839943538
+    second: Male_Knight_Block Shield_18
+  - first:
+      213: -5137683422411376545
+    second: Male_Knight_Block Shield_19
+  - first:
+      213: 7331062769758611936
+    second: Male_Knight_Block Shield_20
+  - first:
+      213: 8992744233027994808
+    second: Male_Knight_Block Shield_21
+  - first:
+      213: 3267311005247817775
+    second: Male_Knight_Block Shield_22
+  - first:
+      213: -5457430557837317197
+    second: Male_Knight_Block Shield_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Male_Knight_Block Shield_0
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 1136
+        width: 51
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c155f7343b8497b80800000000000000
+      internalID: -8396600095486814948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Block Shield_1
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 1136
+        width: 46
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f147e81869794430800000000000000
+      internalID: 3767676051273499129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Block Shield_2
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 1136
+        width: 43
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c5c6a7625ccf1430800000000000000
+      internalID: 3755945268548650435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Block Shield_3
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 985
+        width: 66
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76b14fdf712f22b00800000000000000
+      internalID: 802469868484172647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Block Shield_4
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 985
+        width: 65
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 339ba6550edc65140800000000000000
+      internalID: 4708176823851858227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Block Shield_5
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 985
+        width: 66
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2544774324b23ea0800000000000000
+      internalID: -5894450898658900694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Block Shield_6
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 825
+        width: 65
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05072d7b0ca109850800000000000000
+      internalID: 6381630087004057680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Block Shield_7
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 825
+        width: 66
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdab83f2befe4e6a0800000000000000
+      internalID: -6420743375334884645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Block Shield_8
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 825
+        width: 65
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bbbfc6efe1fe8fe0800000000000000
+      internalID: -1184743639280010311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Block Shield_9
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 654
+        width: 56
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aca643d52ed7b76b0800000000000000
+      internalID: -5297502125491459382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Block Shield_10
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 654
+        width: 51
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c57d82d9c92abc70800000000000000
+      internalID: 8987541953168897473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Block Shield_11
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 654
+        width: 48
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1619a92dcb9d6040800000000000000
+      internalID: 4642538096358397469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Block Shield_12
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 498
+        width: 48
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acc4a29cd249f4410800000000000000
+      internalID: 1463551328288132298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Block Shield_13
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 498
+        width: 47
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba0dfa73ee6377500800000000000000
+      internalID: 393843889182593195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Block Shield_14
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 498
+        width: 48
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 123c0f30e77d743b0800000000000000
+      internalID: -5528213081342033119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Block Shield_15
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 342
+        width: 66
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7e4de52550b2f030800000000000000
+      internalID: 3527075337939537530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Block Shield_16
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 342
+        width: 65
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5132776afce65b40800000000000000
+      internalID: 5428786961063227739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Block Shield_17
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 342
+        width: 64
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fa7a1dd1372a8910800000000000000
+      internalID: 1840326492850649848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Block Shield_18
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 184
+        width: 61
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e86a844556e9fc4e0800000000000000
+      internalID: -1959173154839943538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Block Shield_19
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 184
+        width: 62
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f58b1ced52843b8b0800000000000000
+      internalID: -5137683422411376545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Block Shield_20
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 184
+        width: 64
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e9ad895fba2db560800000000000000
+      internalID: 7331062769758611936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Block Shield_21
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 15
+        width: 48
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b4839dfb35accc70800000000000000
+      internalID: 8992744233027994808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Block Shield_22
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 15
+        width: 51
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f28458e5c02d75d20800000000000000
+      internalID: 3267311005247817775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Block Shield_23
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 15
+        width: 53
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bbaeb582df4344b0800000000000000
+      internalID: -5457430557837317197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Male_Knight_Block Shield_0: -8396600095486814948
+      Male_Knight_Block Shield_1: 3767676051273499129
+      Male_Knight_Block Shield_10: 8987541953168897473
+      Male_Knight_Block Shield_11: 4642538096358397469
+      Male_Knight_Block Shield_12: 1463551328288132298
+      Male_Knight_Block Shield_13: 393843889182593195
+      Male_Knight_Block Shield_14: -5528213081342033119
+      Male_Knight_Block Shield_15: 3527075337939537530
+      Male_Knight_Block Shield_16: 5428786961063227739
+      Male_Knight_Block Shield_17: 1840326492850649848
+      Male_Knight_Block Shield_18: -1959173154839943538
+      Male_Knight_Block Shield_19: -5137683422411376545
+      Male_Knight_Block Shield_2: 3755945268548650435
+      Male_Knight_Block Shield_20: 7331062769758611936
+      Male_Knight_Block Shield_21: 8992744233027994808
+      Male_Knight_Block Shield_22: 3267311005247817775
+      Male_Knight_Block Shield_23: -5457430557837317197
+      Male_Knight_Block Shield_3: 802469868484172647
+      Male_Knight_Block Shield_4: 4708176823851858227
+      Male_Knight_Block Shield_5: -5894450898658900694
+      Male_Knight_Block Shield_6: 6381630087004057680
+      Male_Knight_Block Shield_7: -6420743375334884645
+      Male_Knight_Block Shield_8: -1184743639280010311
+      Male_Knight_Block Shield_9: -5297502125491459382
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

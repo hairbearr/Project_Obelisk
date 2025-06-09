@@ -1,0 +1,754 @@
+fileFormatVersion: 2
+guid: 621f3c8a140991047b4cd1caa898cc02
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 595357496432502299
+    second: Male_Knight_Climb_0
+  - first:
+      213: -6610442528689569035
+    second: Male_Knight_Climb_1
+  - first:
+      213: 1923578289132084637
+    second: Male_Knight_Climb_2
+  - first:
+      213: -6062138424741845884
+    second: Male_Knight_Climb_3
+  - first:
+      213: 6171936662908650378
+    second: Male_Knight_Climb_4
+  - first:
+      213: 7687910485619262496
+    second: Male_Knight_Climb_5
+  - first:
+      213: -4883132612666099130
+    second: Male_Knight_Climb_6
+  - first:
+      213: 5555763862008201764
+    second: Male_Knight_Climb_7
+  - first:
+      213: -3437995367499217413
+    second: Male_Knight_Climb_8
+  - first:
+      213: -826010617590044684
+    second: Male_Knight_Climb_9
+  - first:
+      213: 6011220907873719298
+    second: Male_Knight_Climb_10
+  - first:
+      213: -9214220543893019613
+    second: Male_Knight_Climb_11
+  - first:
+      213: 2961703442410618755
+    second: Male_Knight_Climb_12
+  - first:
+      213: -7156005032061918919
+    second: Male_Knight_Climb_13
+  - first:
+      213: 4079336819724673604
+    second: Male_Knight_Climb_14
+  - first:
+      213: -6983156235013305757
+    second: Male_Knight_Climb_15
+  - first:
+      213: 3889568305791717123
+    second: Male_Knight_Climb_16
+  - first:
+      213: 2948443146706733727
+    second: Male_Knight_Climb_17
+  - first:
+      213: 1757919186062381159
+    second: Male_Knight_Climb_18
+  - first:
+      213: -3020592725847756116
+    second: Male_Knight_Climb_19
+  - first:
+      213: -2323378187830324798
+    second: Male_Knight_Climb_20
+  - first:
+      213: 8274057895206129258
+    second: Male_Knight_Climb_21
+  - first:
+      213: -1043560426934960439
+    second: Male_Knight_Climb_22
+  - first:
+      213: -6091225932245532315
+    second: Male_Knight_Climb_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Male_Knight_Climb_0
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 1145
+        width: 66
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b16a9391d72234800800000000000000
+      internalID: 595357496432502299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Climb_1
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 1146
+        width: 67
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f2c2553b8df244a0800000000000000
+      internalID: -6610442528689569035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Climb_2
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 1145
+        width: 65
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9d1f5d234ce1ba10800000000000000
+      internalID: 1923578289132084637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Climb_3
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 999
+        width: 44
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4842406a835fedba0800000000000000
+      internalID: -6062138424741845884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Climb_4
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 988
+        width: 41
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8341e0d1bf17a550800000000000000
+      internalID: 6171936662908650378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Climb_5
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 984
+        width: 44
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0244658bad1f0ba60800000000000000
+      internalID: 7687910485619262496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Climb_6
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 824
+        width: 44
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64a79eeb2c0ab3cb0800000000000000
+      internalID: -4883132612666099130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Climb_7
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 828
+        width: 41
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42283fafbc90a1d40800000000000000
+      internalID: 5555763862008201764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Climb_8
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 838
+        width: 44
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf545c4bd69c940d0800000000000000
+      internalID: -3437995367499217413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Climb_9
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 674
+        width: 66
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f728dd38bb6984f0800000000000000
+      internalID: -826010617590044684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Climb_10
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 682
+        width: 68
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 204d63021952c6350800000000000000
+      internalID: 6011220907873719298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Climb_11
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 674
+        width: 65
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 324662ffb33802080800000000000000
+      internalID: -9214220543893019613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Climb_12
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 514
+        width: 43
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38fbfeec6951a1920800000000000000
+      internalID: 2961703442410618755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Climb_13
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 503
+        width: 54
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 931aa056653c0bc90800000000000000
+      internalID: -7156005032061918919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Climb_14
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 501
+        width: 62
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4426cda6937bc9830800000000000000
+      internalID: 4079336819724673604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Climb_15
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 360
+        width: 61
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36a4af01768d61f90800000000000000
+      internalID: -6983156235013305757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Climb_16
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 355
+        width: 55
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30f455c24c58af530800000000000000
+      internalID: 3889568305791717123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Climb_17
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 348
+        width: 43
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9ac3ef9b69fae820800000000000000
+      internalID: 2948443146706733727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Climb_18
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 181
+        width: 61
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76097159f22656810800000000000000
+      internalID: 1757919186062381159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Climb_19
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 183
+        width: 54
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca237bc6be2b416d0800000000000000
+      internalID: -3020592725847756116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Climb_20
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 193
+        width: 43
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c19b7319d3b1cfd0800000000000000
+      internalID: -2323378187830324798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Climb_21
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 28
+        width: 44
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6e07ce51db53d270800000000000000
+      internalID: 8274057895206129258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Climb_22
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 37
+        width: 56
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cef2ea12578481f0800000000000000
+      internalID: -1043560426934960439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Climb_23
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 39
+        width: 62
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5618bdd894e977ba0800000000000000
+      internalID: -6091225932245532315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Male_Knight_Climb_0: 595357496432502299
+      Male_Knight_Climb_1: -6610442528689569035
+      Male_Knight_Climb_10: 6011220907873719298
+      Male_Knight_Climb_11: -9214220543893019613
+      Male_Knight_Climb_12: 2961703442410618755
+      Male_Knight_Climb_13: -7156005032061918919
+      Male_Knight_Climb_14: 4079336819724673604
+      Male_Knight_Climb_15: -6983156235013305757
+      Male_Knight_Climb_16: 3889568305791717123
+      Male_Knight_Climb_17: 2948443146706733727
+      Male_Knight_Climb_18: 1757919186062381159
+      Male_Knight_Climb_19: -3020592725847756116
+      Male_Knight_Climb_2: 1923578289132084637
+      Male_Knight_Climb_20: -2323378187830324798
+      Male_Knight_Climb_21: 8274057895206129258
+      Male_Knight_Climb_22: -1043560426934960439
+      Male_Knight_Climb_23: -6091225932245532315
+      Male_Knight_Climb_3: -6062138424741845884
+      Male_Knight_Climb_4: 6171936662908650378
+      Male_Knight_Climb_5: 7687910485619262496
+      Male_Knight_Climb_6: -4883132612666099130
+      Male_Knight_Climb_7: 5555763862008201764
+      Male_Knight_Climb_8: -3437995367499217413
+      Male_Knight_Climb_9: -826010617590044684
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

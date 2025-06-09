@@ -1,0 +1,858 @@
+fileFormatVersion: 2
+guid: 7e2e5365679b22246b327e56d6186ff7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4361018337537120791
+    second: Male_Knight_Shield_Get Hit_0
+  - first:
+      213: -7777233251287230883
+    second: Male_Knight_Shield_Get Hit_1
+  - first:
+      213: 1516582965105016466
+    second: Male_Knight_Shield_Get Hit_2
+  - first:
+      213: -8368353696216437317
+    second: Male_Knight_Shield_Get Hit_3
+  - first:
+      213: 3273936944493131125
+    second: Male_Knight_Shield_Get Hit_4
+  - first:
+      213: -8232872052427197978
+    second: Male_Knight_Shield_Get Hit_5
+  - first:
+      213: -3377181853371427973
+    second: Male_Knight_Shield_Get Hit_6
+  - first:
+      213: 83647620959321402
+    second: Male_Knight_Shield_Get Hit_7
+  - first:
+      213: -6210315374496809988
+    second: Male_Knight_Shield_Get Hit_8
+  - first:
+      213: -7777638478322240852
+    second: Male_Knight_Shield_Get Hit_9
+  - first:
+      213: -6967979402720213276
+    second: Male_Knight_Shield_Get Hit_10
+  - first:
+      213: -8567456054024751212
+    second: Male_Knight_Shield_Get Hit_11
+  - first:
+      213: -1231946224462835913
+    second: Male_Knight_Shield_Get Hit_12
+  - first:
+      213: 83182654245057936
+    second: Male_Knight_Shield_Get Hit_13
+  - first:
+      213: -5255848119816522952
+    second: Male_Knight_Shield_Get Hit_14
+  - first:
+      213: 4242433380466387990
+    second: Male_Knight_Shield_Get Hit_15
+  - first:
+      213: -7327036121752641511
+    second: Male_Knight_Shield_Get Hit_16
+  - first:
+      213: 853929100800786820
+    second: Male_Knight_Shield_Get Hit_17
+  - first:
+      213: -6606172911915019983
+    second: Male_Knight_Shield_Get Hit_18
+  - first:
+      213: -7344413149721136570
+    second: Male_Knight_Shield_Get Hit_19
+  - first:
+      213: -7381171988303939230
+    second: Male_Knight_Shield_Get Hit_20
+  - first:
+      213: 4127084885999230720
+    second: Male_Knight_Shield_Get Hit_21
+  - first:
+      213: 7300373913767573076
+    second: Male_Knight_Shield_Get Hit_22
+  - first:
+      213: 4275284577816670514
+    second: Male_Knight_Shield_Get Hit_23
+  - first:
+      213: -5802050090077008747
+    second: Male_Knight_Shield_Get Hit_24
+  - first:
+      213: -9100957360853129664
+    second: Male_Knight_Shield_Get Hit_25
+  - first:
+      213: -512022798105131138
+    second: Male_Knight_Shield_Get Hit_26
+  - first:
+      213: 4179662388175322532
+    second: Male_Knight_Shield_Get Hit_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Get Hit_0
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 1172
+        width: 38
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e5a22c7dec8a73c0800000000000000
+      internalID: -4361018337537120791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Get Hit_1
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 1179
+        width: 12
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d561ba14097b11490800000000000000
+      internalID: -7777233251287230883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Get Hit_2
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 1193
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29e3e7beb2cfb0510800000000000000
+      internalID: 1516582965105016466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Get Hit_3
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 1200
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbd213696a2addb80800000000000000
+      internalID: -8368353696216437317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Get Hit_4
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 997
+        width: 67
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5757a811e4c5f6d20800000000000000
+      internalID: 3273936944493131125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Get Hit_5
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 993
+        width: 29
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e1f5d9ec76febd80800000000000000
+      internalID: -8232872052427197978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Get Hit_6
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 1008
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7396e75ff6d121d0800000000000000
+      internalID: -3377181853371427973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Get Hit_7
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 885
+        width: 30
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3d369d611d292100800000000000000
+      internalID: 83647620959321402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Get Hit_8
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 874
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfb78ff021780d9a0800000000000000
+      internalID: -6210315374496809988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Get Hit_9
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 886
+        width: 27
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca2713cf207401490800000000000000
+      internalID: -7777638478322240852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Get Hit_10
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 849
+        width: 17
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e68f92b6a3cc4f90800000000000000
+      internalID: -6967979402720213276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Get Hit_11
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 682
+        width: 38
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 497b5177c184a1980800000000000000
+      internalID: -8567456054024751212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Get Hit_12
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 680
+        width: 12
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73f428c9f6f37eee0800000000000000
+      internalID: -1231946224462835913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Get Hit_13
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 667
+        width: 51
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09530cdee26872100800000000000000
+      internalID: 83182654245057936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Get Hit_14
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 533
+        width: 73
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8337ee05bf97f07b0800000000000000
+      internalID: -5255848119816522952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Get Hit_15
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 525
+        width: 17
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61c65f1aea620ea30800000000000000
+      internalID: 4242433380466387990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Get Hit_16
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 547
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9106a72b773215a90800000000000000
+      internalID: -7327036121752641511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Get Hit_17
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 349
+        width: 25
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 481899c2ef3c9db00800000000000000
+      internalID: 853929100800786820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Get Hit_18
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 351
+        width: 27
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1315f74dcb82254a0800000000000000
+      internalID: -6606172911915019983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Get Hit_19
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 354
+        width: 43
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 642f9271727631a90800000000000000
+      internalID: -7344413149721136570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Get Hit_20
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 221
+        width: 24
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 269741b0f2fc09990800000000000000
+      internalID: -7381171988303939230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Get Hit_21
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 228
+        width: 27
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00f1edb66d9564930800000000000000
+      internalID: 4127084885999230720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Get Hit_22
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 258
+        width: 29
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 456f4a14563205560800000000000000
+      internalID: 7300373913767573076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Get Hit_23
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 226
+        width: 10
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 231f77e0cacd45b30800000000000000
+      internalID: 4275284577816670514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Get Hit_24
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 70
+        width: 50
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59ccfe30f2afa7fa0800000000000000
+      internalID: -5802050090077008747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Get Hit_25
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 83
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0466f5ecf77e2b180800000000000000
+      internalID: -9100957360853129664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Get Hit_26
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 54
+        width: 18
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e77ca0a5afde4e8f0800000000000000
+      internalID: -512022798105131138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Get Hit_27
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 33
+        width: 34
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ad30481cc4210a30800000000000000
+      internalID: 4179662388175322532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Male_Knight_Shield_Get Hit_0: -4361018337537120791
+      Male_Knight_Shield_Get Hit_1: -7777233251287230883
+      Male_Knight_Shield_Get Hit_10: -6967979402720213276
+      Male_Knight_Shield_Get Hit_11: -8567456054024751212
+      Male_Knight_Shield_Get Hit_12: -1231946224462835913
+      Male_Knight_Shield_Get Hit_13: 83182654245057936
+      Male_Knight_Shield_Get Hit_14: -5255848119816522952
+      Male_Knight_Shield_Get Hit_15: 4242433380466387990
+      Male_Knight_Shield_Get Hit_16: -7327036121752641511
+      Male_Knight_Shield_Get Hit_17: 853929100800786820
+      Male_Knight_Shield_Get Hit_18: -6606172911915019983
+      Male_Knight_Shield_Get Hit_19: -7344413149721136570
+      Male_Knight_Shield_Get Hit_2: 1516582965105016466
+      Male_Knight_Shield_Get Hit_20: -7381171988303939230
+      Male_Knight_Shield_Get Hit_21: 4127084885999230720
+      Male_Knight_Shield_Get Hit_22: 7300373913767573076
+      Male_Knight_Shield_Get Hit_23: 4275284577816670514
+      Male_Knight_Shield_Get Hit_24: -5802050090077008747
+      Male_Knight_Shield_Get Hit_25: -9100957360853129664
+      Male_Knight_Shield_Get Hit_26: -512022798105131138
+      Male_Knight_Shield_Get Hit_27: 4179662388175322532
+      Male_Knight_Shield_Get Hit_3: -8368353696216437317
+      Male_Knight_Shield_Get Hit_4: 3273936944493131125
+      Male_Knight_Shield_Get Hit_5: -8232872052427197978
+      Male_Knight_Shield_Get Hit_6: -3377181853371427973
+      Male_Knight_Shield_Get Hit_7: 83647620959321402
+      Male_Knight_Shield_Get Hit_8: -6210315374496809988
+      Male_Knight_Shield_Get Hit_9: -7777638478322240852
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

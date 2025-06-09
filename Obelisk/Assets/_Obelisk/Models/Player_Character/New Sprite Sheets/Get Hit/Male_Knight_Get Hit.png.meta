@@ -1,0 +1,754 @@
+fileFormatVersion: 2
+guid: 08d1907081b749b41ad8a349dc98fd36
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4439877230496767097
+    second: Male_Knight_Get Hit_0
+  - first:
+      213: -2142810382197253432
+    second: Male_Knight_Get Hit_1
+  - first:
+      213: 3685162545508268781
+    second: Male_Knight_Get Hit_2
+  - first:
+      213: 8628875146330952001
+    second: Male_Knight_Get Hit_3
+  - first:
+      213: -9055029031447626635
+    second: Male_Knight_Get Hit_4
+  - first:
+      213: -3047033823249064554
+    second: Male_Knight_Get Hit_5
+  - first:
+      213: 5045876868632558691
+    second: Male_Knight_Get Hit_6
+  - first:
+      213: 3082760008250679682
+    second: Male_Knight_Get Hit_7
+  - first:
+      213: -6883057413488928761
+    second: Male_Knight_Get Hit_8
+  - first:
+      213: 5317876874541771923
+    second: Male_Knight_Get Hit_9
+  - first:
+      213: -654171089414745267
+    second: Male_Knight_Get Hit_10
+  - first:
+      213: 8727135831367119855
+    second: Male_Knight_Get Hit_11
+  - first:
+      213: 8616048764000953018
+    second: Male_Knight_Get Hit_12
+  - first:
+      213: -1925677602547369769
+    second: Male_Knight_Get Hit_13
+  - first:
+      213: -5824538045100430283
+    second: Male_Knight_Get Hit_14
+  - first:
+      213: -2419700201476663102
+    second: Male_Knight_Get Hit_15
+  - first:
+      213: -2465321448269012194
+    second: Male_Knight_Get Hit_16
+  - first:
+      213: -4424035582088876129
+    second: Male_Knight_Get Hit_17
+  - first:
+      213: -7321953066423037915
+    second: Male_Knight_Get Hit_18
+  - first:
+      213: -1681699857885774311
+    second: Male_Knight_Get Hit_19
+  - first:
+      213: 6506436966779422497
+    second: Male_Knight_Get Hit_20
+  - first:
+      213: 5032912771907677106
+    second: Male_Knight_Get Hit_21
+  - first:
+      213: 3362973425338765490
+    second: Male_Knight_Get Hit_22
+  - first:
+      213: 7856213841968012358
+    second: Male_Knight_Get Hit_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Male_Knight_Get Hit_0
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 1149
+        width: 58
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97cda1251dc9d9d30800000000000000
+      internalID: 4439877230496767097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Get Hit_1
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 1148
+        width: 60
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ca1d1c7f453342e0800000000000000
+      internalID: -2142810382197253432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Get Hit_2
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 1148
+        width: 69
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dea38907fc3542330800000000000000
+      internalID: 3685162545508268781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Get Hit_3
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 975
+        width: 37
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 141d0445a3cefb770800000000000000
+      internalID: 8628875146330952001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Get Hit_4
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 980
+        width: 53
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57cf6bd4213165280800000000000000
+      internalID: -9055029031447626635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Get Hit_5
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 985
+        width: 58
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69d93a2b1e2c6b5d0800000000000000
+      internalID: -3047033823249064554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Get Hit_6
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 825
+        width: 41
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36c343f174e860640800000000000000
+      internalID: 5045876868632558691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Get Hit_7
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 827
+        width: 53
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 281ef83f4e928ca20800000000000000
+      internalID: 3082760008250679682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Get Hit_8
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 825
+        width: 60
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7089f5c10c77a70a0800000000000000
+      internalID: -6883057413488928761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Get Hit_9
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 670
+        width: 58
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39ca35297d4ecc940800000000000000
+      internalID: 5317876874541771923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Get Hit_10
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 659
+        width: 55
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d439a113cdaebe6f0800000000000000
+      internalID: -654171089414745267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Get Hit_11
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 656
+        width: 64
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe3783fdcc30d1970800000000000000
+      internalID: 8727135831367119855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Get Hit_12
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 499
+        width: 49
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab268b973ba529770800000000000000
+      internalID: 8616048764000953018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Get Hit_13
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 513
+        width: 57
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d8fc345c6e9645e0800000000000000
+      internalID: -1925677602547369769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Get Hit_14
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 516
+        width: 75
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53c6a09f1851b2fa0800000000000000
+      internalID: -5824538045100430283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Get Hit_15
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 341
+        width: 51
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c8da04ac7f7b6ed0800000000000000
+      internalID: -2419700201476663102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Get Hit_16
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 335
+        width: 50
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1326c2643b69cdd0800000000000000
+      internalID: -2465321448269012194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Get Hit_17
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 335
+        width: 46
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9f67efd31baa92c0800000000000000
+      internalID: -4424035582088876129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Get Hit_18
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 184
+        width: 48
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 520d5cdba72336a90800000000000000
+      internalID: -7321953066423037915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Get Hit_19
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 185
+        width: 55
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91eb4e7a3e669a8e0800000000000000
+      internalID: -1681699857885774311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Get Hit_20
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 183
+        width: 45
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1278b5ed2f18b4a50800000000000000
+      internalID: 6506436966779422497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Get Hit_21
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 27
+        width: 50
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bb6513208f78d540800000000000000
+      internalID: 5032912771907677106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Get Hit_22
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 29
+        width: 62
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b05566338eabae20800000000000000
+      internalID: 3362973425338765490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Get Hit_23
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 23
+        width: 74
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64c92028dd0e60d60800000000000000
+      internalID: 7856213841968012358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Male_Knight_Get Hit_0: 4439877230496767097
+      Male_Knight_Get Hit_1: -2142810382197253432
+      Male_Knight_Get Hit_10: -654171089414745267
+      Male_Knight_Get Hit_11: 8727135831367119855
+      Male_Knight_Get Hit_12: 8616048764000953018
+      Male_Knight_Get Hit_13: -1925677602547369769
+      Male_Knight_Get Hit_14: -5824538045100430283
+      Male_Knight_Get Hit_15: -2419700201476663102
+      Male_Knight_Get Hit_16: -2465321448269012194
+      Male_Knight_Get Hit_17: -4424035582088876129
+      Male_Knight_Get Hit_18: -7321953066423037915
+      Male_Knight_Get Hit_19: -1681699857885774311
+      Male_Knight_Get Hit_2: 3685162545508268781
+      Male_Knight_Get Hit_20: 6506436966779422497
+      Male_Knight_Get Hit_21: 5032912771907677106
+      Male_Knight_Get Hit_22: 3362973425338765490
+      Male_Knight_Get Hit_23: 7856213841968012358
+      Male_Knight_Get Hit_3: 8628875146330952001
+      Male_Knight_Get Hit_4: -9055029031447626635
+      Male_Knight_Get Hit_5: -3047033823249064554
+      Male_Knight_Get Hit_6: 5045876868632558691
+      Male_Knight_Get Hit_7: 3082760008250679682
+      Male_Knight_Get Hit_8: -6883057413488928761
+      Male_Knight_Get Hit_9: 5317876874541771923
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

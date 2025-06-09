@@ -1,0 +1,858 @@
+fileFormatVersion: 2
+guid: 81bc8aa5250017249bfca37e115d3745
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7813330817778597220
+    second: Male_Knight_Shield_Attack One Handed Stab_0
+  - first:
+      213: 3417219388159323800
+    second: Male_Knight_Shield_Attack One Handed Stab_1
+  - first:
+      213: 5605545699857054139
+    second: Male_Knight_Shield_Attack One Handed Stab_2
+  - first:
+      213: -4547379840275082644
+    second: Male_Knight_Shield_Attack One Handed Stab_3
+  - first:
+      213: -8481395762569504859
+    second: Male_Knight_Shield_Attack One Handed Stab_4
+  - first:
+      213: -711291278994842559
+    second: Male_Knight_Shield_Attack One Handed Stab_5
+  - first:
+      213: 6622329630434299409
+    second: Male_Knight_Shield_Attack One Handed Stab_6
+  - first:
+      213: 2123837064111138570
+    second: Male_Knight_Shield_Attack One Handed Stab_7
+  - first:
+      213: 109595504920176858
+    second: Male_Knight_Shield_Attack One Handed Stab_8
+  - first:
+      213: -2846940526833319752
+    second: Male_Knight_Shield_Attack One Handed Stab_9
+  - first:
+      213: -8326465712065984090
+    second: Male_Knight_Shield_Attack One Handed Stab_10
+  - first:
+      213: 4606846055221801156
+    second: Male_Knight_Shield_Attack One Handed Stab_11
+  - first:
+      213: 1589224231882679009
+    second: Male_Knight_Shield_Attack One Handed Stab_12
+  - first:
+      213: 8836588148430786847
+    second: Male_Knight_Shield_Attack One Handed Stab_13
+  - first:
+      213: 933748488709783007
+    second: Male_Knight_Shield_Attack One Handed Stab_14
+  - first:
+      213: 3582372978883078843
+    second: Male_Knight_Shield_Attack One Handed Stab_15
+  - first:
+      213: -8669740410282287658
+    second: Male_Knight_Shield_Attack One Handed Stab_16
+  - first:
+      213: 301660600783318168
+    second: Male_Knight_Shield_Attack One Handed Stab_17
+  - first:
+      213: 2493895658954514662
+    second: Male_Knight_Shield_Attack One Handed Stab_18
+  - first:
+      213: 2618172965945426239
+    second: Male_Knight_Shield_Attack One Handed Stab_19
+  - first:
+      213: 9169770284640530086
+    second: Male_Knight_Shield_Attack One Handed Stab_20
+  - first:
+      213: -6053205441974602732
+    second: Male_Knight_Shield_Attack One Handed Stab_21
+  - first:
+      213: 2068407975106249908
+    second: Male_Knight_Shield_Attack One Handed Stab_22
+  - first:
+      213: -282801952825146001
+    second: Male_Knight_Shield_Attack One Handed Stab_23
+  - first:
+      213: 8616395279483016611
+    second: Male_Knight_Shield_Attack One Handed Stab_24
+  - first:
+      213: 8681187742163574844
+    second: Male_Knight_Shield_Attack One Handed Stab_25
+  - first:
+      213: 5036703656140966444
+    second: Male_Knight_Shield_Attack One Handed Stab_26
+  - first:
+      213: 1911441409278244099
+    second: Male_Knight_Shield_Attack One Handed Stab_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Attack One Handed Stab_0
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 1178
+        width: 56
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c92c1bd9409719390800000000000000
+      internalID: -7813330817778597220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Attack One Handed Stab_1
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 1182
+        width: 74
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89e60d6ade66c6f20800000000000000
+      internalID: 3417219388159323800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Attack One Handed Stab_2
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 1180
+        width: 26
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb9b2345d16eacd40800000000000000
+      internalID: 5605545699857054139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Attack One Handed Stab_3
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 993
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6291a9d02674e0c0800000000000000
+      internalID: -4547379840275082644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Attack One Handed Stab_4
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 995
+        width: 27
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a79a848d770c4a80800000000000000
+      internalID: -8481395762569504859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Attack One Handed Stab_5
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 1014
+        width: 62
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14cddafa95cf026f0800000000000000
+      internalID: -711291278994842559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Attack One Handed Stab_6
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 897
+        width: 25
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11e849756bd37eb50800000000000000
+      internalID: 6622329630434299409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Attack One Handed Stab_7
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 876
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a072727ae82697d10800000000000000
+      internalID: 2123837064111138570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Attack One Handed Stab_8
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 876
+        width: 27
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad82fb3f78c558100800000000000000
+      internalID: 109595504920176858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Attack One Handed Stab_9
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 893
+        width: 52
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b0cf61bca2ad78d0800000000000000
+      internalID: -2846940526833319752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Attack One Handed Stab_10
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 889
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a946d5ec83727c80800000000000000
+      internalID: -8326465712065984090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Attack One Handed Stab_11
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 693
+        width: 50
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c0b760441eceef30800000000000000
+      internalID: 4606846055221801156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Attack One Handed Stab_12
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 717
+        width: 74
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e26fc1d40f0e0610800000000000000
+      internalID: 1589224231882679009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Attack One Handed Stab_13
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 695
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f11d4ad4a1ed1aa70800000000000000
+      internalID: 8836588148430786847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Attack One Handed Stab_14
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 537
+        width: 77
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fddba13ad4755fc00800000000000000
+      internalID: 933748488709783007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Attack One Handed Stab_15
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 533
+        width: 69
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbaa84b7e3527b130800000000000000
+      internalID: 3582372978883078843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Attack One Handed Stab_16
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 533
+        width: 67
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dd5646f705eea780800000000000000
+      internalID: -8669740410282287658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Attack One Handed Stab_17
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 351
+        width: 11
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89cab68d7b6bf2400800000000000000
+      internalID: 301660600783318168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Attack One Handed Stab_18
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 365
+        width: 42
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e06fda73e81c9220800000000000000
+      internalID: 2493895658954514662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Attack One Handed Stab_19
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 365
+        width: 40
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3145bbd07e955420800000000000000
+      internalID: 2618172965945426239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Attack One Handed Stab_20
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 225
+        width: 11
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ae6ee78d71914f70800000000000000
+      internalID: 9169770284640530086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Attack One Handed Stab_21
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 228
+        width: 42
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41474a6c8b1befba0800000000000000
+      internalID: -6053205441974602732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Attack One Handed Stab_22
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 235
+        width: 40
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b40bce281674bc10800000000000000
+      internalID: 2068407975106249908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Attack One Handed Stab_23
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 83
+        width: 51
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f65021c4f19431cf0800000000000000
+      internalID: -282801952825146001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Attack One Handed Stab_24
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 84
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a510f5ead5939770800000000000000
+      internalID: 8616395279483016611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Attack One Handed Stab_25
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 94
+        width: 51
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c30a220b146c97870800000000000000
+      internalID: 8681187742163574844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Attack One Handed Stab_26
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 83
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2a81372a47f5e540800000000000000
+      internalID: 5036703656140966444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Knight_Shield_Attack One Handed Stab_27
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 85
+        width: 61
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3057001a5ddc68a10800000000000000
+      internalID: 1911441409278244099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Male_Knight_Shield_Attack One Handed Stab_0: -7813330817778597220
+      Male_Knight_Shield_Attack One Handed Stab_1: 3417219388159323800
+      Male_Knight_Shield_Attack One Handed Stab_10: -8326465712065984090
+      Male_Knight_Shield_Attack One Handed Stab_11: 4606846055221801156
+      Male_Knight_Shield_Attack One Handed Stab_12: 1589224231882679009
+      Male_Knight_Shield_Attack One Handed Stab_13: 8836588148430786847
+      Male_Knight_Shield_Attack One Handed Stab_14: 933748488709783007
+      Male_Knight_Shield_Attack One Handed Stab_15: 3582372978883078843
+      Male_Knight_Shield_Attack One Handed Stab_16: -8669740410282287658
+      Male_Knight_Shield_Attack One Handed Stab_17: 301660600783318168
+      Male_Knight_Shield_Attack One Handed Stab_18: 2493895658954514662
+      Male_Knight_Shield_Attack One Handed Stab_19: 2618172965945426239
+      Male_Knight_Shield_Attack One Handed Stab_2: 5605545699857054139
+      Male_Knight_Shield_Attack One Handed Stab_20: 9169770284640530086
+      Male_Knight_Shield_Attack One Handed Stab_21: -6053205441974602732
+      Male_Knight_Shield_Attack One Handed Stab_22: 2068407975106249908
+      Male_Knight_Shield_Attack One Handed Stab_23: -282801952825146001
+      Male_Knight_Shield_Attack One Handed Stab_24: 8616395279483016611
+      Male_Knight_Shield_Attack One Handed Stab_25: 8681187742163574844
+      Male_Knight_Shield_Attack One Handed Stab_26: 5036703656140966444
+      Male_Knight_Shield_Attack One Handed Stab_27: 1911441409278244099
+      Male_Knight_Shield_Attack One Handed Stab_3: -4547379840275082644
+      Male_Knight_Shield_Attack One Handed Stab_4: -8481395762569504859
+      Male_Knight_Shield_Attack One Handed Stab_5: -711291278994842559
+      Male_Knight_Shield_Attack One Handed Stab_6: 6622329630434299409
+      Male_Knight_Shield_Attack One Handed Stab_7: 2123837064111138570
+      Male_Knight_Shield_Attack One Handed Stab_8: 109595504920176858
+      Male_Knight_Shield_Attack One Handed Stab_9: -2846940526833319752
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
