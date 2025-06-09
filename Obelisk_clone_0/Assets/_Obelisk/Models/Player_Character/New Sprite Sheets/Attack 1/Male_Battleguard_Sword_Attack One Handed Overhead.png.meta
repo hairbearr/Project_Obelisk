@@ -236,10 +236,10 @@ TextureImporter:
       name: Male_Battleguard_Sword_Attack One Handed Overhead_0
       rect:
         serializedVersion: 2
-        x: 208
-        y: 1240
-        width: 13
-        height: 7
+        x: 0
+        y: 1120
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,10 +258,10 @@ TextureImporter:
       name: Male_Battleguard_Sword_Attack One Handed Overhead_1
       rect:
         serializedVersion: 2
-        x: 220
-        y: 1245
-        width: 62
-        height: 24
+        x: 160
+        y: 1120
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -277,35 +277,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Male_Battleguard_Sword_Attack One Handed Overhead_2
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 1172
-        width: 32
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 84fb3d6bb4e7655e0800000000000000
-      internalID: -1921209327371960504
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Male_Battleguard_Sword_Attack One Handed Overhead_3
       rect:
         serializedVersion: 2
-        x: 55
-        y: 1202
-        width: 7
-        height: 7
+        x: 0
+        y: 960
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -324,10 +302,10 @@ TextureImporter:
       name: Male_Battleguard_Sword_Attack One Handed Overhead_4
       rect:
         serializedVersion: 2
-        x: 395
-        y: 1119
-        width: 11
-        height: 62
+        x: 160
+        y: 960
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -346,10 +324,10 @@ TextureImporter:
       name: Male_Battleguard_Sword_Attack One Handed Overhead_5
       rect:
         serializedVersion: 2
-        x: 41
-        y: 1054
-        width: 44
-        height: 28
+        x: 320
+        y: 960
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -368,10 +346,10 @@ TextureImporter:
       name: Male_Battleguard_Sword_Attack One Handed Overhead_6
       rect:
         serializedVersion: 2
-        x: 86
-        y: 1041
-        width: 25
-        height: 15
+        x: 0
+        y: 800
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -390,10 +368,10 @@ TextureImporter:
       name: Male_Battleguard_Sword_Attack One Handed Overhead_7
       rect:
         serializedVersion: 2
-        x: 269
-        y: 1050
-        width: 14
-        height: 35
+        x: 160
+        y: 800
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -412,10 +390,10 @@ TextureImporter:
       name: Male_Battleguard_Sword_Attack One Handed Overhead_8
       rect:
         serializedVersion: 2
-        x: 323
-        y: 997
-        width: 70
-        height: 33
+        x: 320
+        y: 800
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -434,10 +412,10 @@ TextureImporter:
       name: Male_Battleguard_Sword_Attack One Handed Overhead_9
       rect:
         serializedVersion: 2
-        x: 196
-        y: 891
-        width: 15
-        height: 60
+        x: 0
+        y: 640
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -456,10 +434,10 @@ TextureImporter:
       name: Male_Battleguard_Sword_Attack One Handed Overhead_10
       rect:
         serializedVersion: 2
-        x: 205
-        y: 879
-        width: 6
-        height: 11
+        x: 160
+        y: 640
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -478,10 +456,10 @@ TextureImporter:
       name: Male_Battleguard_Sword_Attack One Handed Overhead_11
       rect:
         serializedVersion: 2
-        x: 50
-        y: 850
-        width: 8
-        height: 6
+        x: 320
+        y: 640
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -500,10 +478,10 @@ TextureImporter:
       name: Male_Battleguard_Sword_Attack One Handed Overhead_12
       rect:
         serializedVersion: 2
-        x: 61
-        y: 841
-        width: 58
-        height: 16
+        x: 0
+        y: 480
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -522,10 +500,10 @@ TextureImporter:
       name: Male_Battleguard_Sword_Attack One Handed Overhead_13
       rect:
         serializedVersion: 2
-        x: 405
-        y: 855
-        width: 12
-        height: 6
+        x: 160
+        y: 480
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -544,10 +522,10 @@ TextureImporter:
       name: Male_Battleguard_Sword_Attack One Handed Overhead_14
       rect:
         serializedVersion: 2
-        x: 418
-        y: 852
-        width: 60
-        height: 11
+        x: 320
+        y: 480
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -566,10 +544,10 @@ TextureImporter:
       name: Male_Battleguard_Sword_Attack One Handed Overhead_15
       rect:
         serializedVersion: 2
-        x: 105
-        y: 709
-        width: 31
-        height: 51
+        x: 0
+        y: 320
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -588,10 +566,10 @@ TextureImporter:
       name: Male_Battleguard_Sword_Attack One Handed Overhead_16
       rect:
         serializedVersion: 2
-        x: 395
-        y: 759
-        width: 6
-        height: 26
+        x: 160
+        y: 320
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -610,10 +588,10 @@ TextureImporter:
       name: Male_Battleguard_Sword_Attack One Handed Overhead_17
       rect:
         serializedVersion: 2
-        x: 197
-        y: 725
-        width: 63
-        height: 18
+        x: 320
+        y: 320
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -632,10 +610,10 @@ TextureImporter:
       name: Male_Battleguard_Sword_Attack One Handed Overhead_18
       rect:
         serializedVersion: 2
-        x: 261
-        y: 727
-        width: 11
-        height: 7
+        x: 0
+        y: 160
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -654,10 +632,10 @@ TextureImporter:
       name: Male_Battleguard_Sword_Attack One Handed Overhead_19
       rect:
         serializedVersion: 2
-        x: 98
-        y: 697
-        width: 8
-        height: 10
+        x: 160
+        y: 160
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -676,10 +654,10 @@ TextureImporter:
       name: Male_Battleguard_Sword_Attack One Handed Overhead_20
       rect:
         serializedVersion: 2
-        x: 234
-        y: 605
-        width: 11
-        height: 7
+        x: 320
+        y: 160
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -698,10 +676,10 @@ TextureImporter:
       name: Male_Battleguard_Sword_Attack One Handed Overhead_21
       rect:
         serializedVersion: 2
-        x: 244
-        y: 596
-        width: 50
-        height: 14
+        x: 0
+        y: 0
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -720,10 +698,10 @@ TextureImporter:
       name: Male_Battleguard_Sword_Attack One Handed Overhead_22
       rect:
         serializedVersion: 2
-        x: 16
-        y: 545
-        width: 55
-        height: 28
+        x: 160
+        y: 0
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -742,10 +720,10 @@ TextureImporter:
       name: Male_Battleguard_Sword_Attack One Handed Overhead_23
       rect:
         serializedVersion: 2
-        x: 72
-        y: 568
-        width: 9
-        height: 6
+        x: 320
+        y: 0
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -761,375 +739,23 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Male_Battleguard_Sword_Attack One Handed Overhead_24
+      name: Male_Battleguard_Sword_Attack One Handed Overhead_2
       rect:
         serializedVersion: 2
-        x: 327
-        y: 488
-        width: 52
-        height: 45
+        x: 320
+        y: 1120
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 637203b10479ea830800000000000000
-      internalID: 4084368213661460278
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Battleguard_Sword_Attack One Handed Overhead_25
-      rect:
-        serializedVersion: 2
-        x: 377
-        y: 528
-        width: 11
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ee3496ab05c216900800000000000000
-      internalID: 675870144318751726
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Battleguard_Sword_Attack One Handed Overhead_26
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 405
-        width: 22
-        height: 51
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 327a924545e91f870800000000000000
-      internalID: 8714920838965077795
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Battleguard_Sword_Attack One Handed Overhead_27
-      rect:
-        serializedVersion: 2
-        x: 228
-        y: 405
-        width: 39
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: de3070aa3bb99edc0800000000000000
-      internalID: -3609182430406704147
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Battleguard_Sword_Attack One Handed Overhead_28
-      rect:
-        serializedVersion: 2
-        x: 268
-        y: 425
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fc60eb74056165a00800000000000000
-      internalID: 744807322433226447
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Battleguard_Sword_Attack One Handed Overhead_29
-      rect:
-        serializedVersion: 2
-        x: 331
-        y: 400
-        width: 54
-        height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e0cb1dfa403296520800000000000000
-      internalID: 2695724354994551822
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Battleguard_Sword_Attack One Handed Overhead_30
-      rect:
-        serializedVersion: 2
-        x: 100
-        y: 390
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ee2ffb5879b3716f0800000000000000
-      internalID: -714036493944884498
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Battleguard_Sword_Attack One Handed Overhead_31
-      rect:
-        serializedVersion: 2
-        x: 198
-        y: 260
-        width: 12
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6095b0cd883df6bb0800000000000000
-      internalID: -4940497681441400570
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Battleguard_Sword_Attack One Handed Overhead_32
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 268
-        width: 49
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bebeef50b0d9cdb60800000000000000
-      internalID: 7772259727605427179
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Battleguard_Sword_Attack One Handed Overhead_33
-      rect:
-        serializedVersion: 2
-        x: 45
-        y: 193
-        width: 26
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a70ebc387d27cd110800000000000000
-      internalID: 1287029863475830906
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Battleguard_Sword_Attack One Handed Overhead_34
-      rect:
-        serializedVersion: 2
-        x: 409
-        y: 176
-        width: 63
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 729b43d079f6e2ed0800000000000000
-      internalID: -2436887653808555737
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Battleguard_Sword_Attack One Handed Overhead_35
-      rect:
-        serializedVersion: 2
-        x: 95
-        y: 54
-        width: 54
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cb0cd4f98cd462c90800000000000000
-      internalID: -7194977830616317764
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Battleguard_Sword_Attack One Handed Overhead_36
-      rect:
-        serializedVersion: 2
-        x: 190
-        y: 86
-        width: 52
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 45b9218064e585190800000000000000
-      internalID: -7973519485383304364
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Battleguard_Sword_Attack One Handed Overhead_37
-      rect:
-        serializedVersion: 2
-        x: 241
-        y: 80
-        width: 11
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 48a6e48ab01d6f520800000000000000
-      internalID: 2735603671672711812
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Battleguard_Sword_Attack One Handed Overhead_38
-      rect:
-        serializedVersion: 2
-        x: 422
-        y: 77
-        width: 8
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cbd852c3e7f1f4bf0800000000000000
-      internalID: -338016819994063428
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Battleguard_Sword_Attack One Handed Overhead_39
-      rect:
-        serializedVersion: 2
-        x: 429
-        y: 86
-        width: 27
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ab2f419b36146bfd0800000000000000
-      internalID: -2326600260927556934
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Battleguard_Sword_Attack One Handed Overhead_40
-      rect:
-        serializedVersion: 2
-        x: 85
-        y: 50
-        width: 10
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0c9f8d0b6fce99390800000000000000
-      internalID: -7810951534424294976
+      spriteID: 4baa88d0b8c9257419006dbd914de66e
+      internalID: -1921209327371960504
       vertices: []
       indices: 
       edges: []
@@ -1138,7 +764,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e0ccaa8ff34425f4a8ab7a0879002dd1
     internalID: 0
     vertices: []
     indices: 
@@ -1146,7 +772,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":8.0},"gridSpriteSize":{"x":160.0,"y":160.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Male_Battleguard_Sword_Attack One Handed Overhead_0: -167435224426960823
       Male_Battleguard_Sword_Attack One Handed Overhead_1: 2649365208540342175
@@ -1165,25 +793,8 @@ TextureImporter:
       Male_Battleguard_Sword_Attack One Handed Overhead_21: 4079969171013121791
       Male_Battleguard_Sword_Attack One Handed Overhead_22: -2028984718317270956
       Male_Battleguard_Sword_Attack One Handed Overhead_23: 1953287585580620699
-      Male_Battleguard_Sword_Attack One Handed Overhead_24: 4084368213661460278
-      Male_Battleguard_Sword_Attack One Handed Overhead_25: 675870144318751726
-      Male_Battleguard_Sword_Attack One Handed Overhead_26: 8714920838965077795
-      Male_Battleguard_Sword_Attack One Handed Overhead_27: -3609182430406704147
-      Male_Battleguard_Sword_Attack One Handed Overhead_28: 744807322433226447
-      Male_Battleguard_Sword_Attack One Handed Overhead_29: 2695724354994551822
       Male_Battleguard_Sword_Attack One Handed Overhead_3: -7081372729974694998
-      Male_Battleguard_Sword_Attack One Handed Overhead_30: -714036493944884498
-      Male_Battleguard_Sword_Attack One Handed Overhead_31: -4940497681441400570
-      Male_Battleguard_Sword_Attack One Handed Overhead_32: 7772259727605427179
-      Male_Battleguard_Sword_Attack One Handed Overhead_33: 1287029863475830906
-      Male_Battleguard_Sword_Attack One Handed Overhead_34: -2436887653808555737
-      Male_Battleguard_Sword_Attack One Handed Overhead_35: -7194977830616317764
-      Male_Battleguard_Sword_Attack One Handed Overhead_36: -7973519485383304364
-      Male_Battleguard_Sword_Attack One Handed Overhead_37: 2735603671672711812
-      Male_Battleguard_Sword_Attack One Handed Overhead_38: -338016819994063428
-      Male_Battleguard_Sword_Attack One Handed Overhead_39: -2326600260927556934
       Male_Battleguard_Sword_Attack One Handed Overhead_4: -6655182139241115999
-      Male_Battleguard_Sword_Attack One Handed Overhead_40: -7810951534424294976
       Male_Battleguard_Sword_Attack One Handed Overhead_5: -8608184384024550647
       Male_Battleguard_Sword_Attack One Handed Overhead_6: 8009343303762795043
       Male_Battleguard_Sword_Attack One Handed Overhead_7: -6841691962612379401
