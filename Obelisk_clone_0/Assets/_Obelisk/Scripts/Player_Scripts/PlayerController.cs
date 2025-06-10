@@ -10,7 +10,7 @@ public class PlayerController : NetworkBehaviour
     private Rigidbody2D rb;
     private float movementSpeedMultiplier =1f;
     [SerializeField] private Vector2 movementInput;
-    [SerializeField] private float direction, isMoving, isAttacking, isBlocking, isGrappling, isJumping, swingSpeed;
+    [SerializeField] private float direction, isMoving, isAttacking, isBlocking, isGrappling, isJumping, swingSpeed, swordAttackType, attackTimer;
     [SerializeField] private GameObject sword, shield, grapplingHook;
     [SerializeField] private string activeSwordAbility;
 
@@ -38,6 +38,15 @@ public class PlayerController : NetworkBehaviour
         Move();
         Animate();
         Controls();
+        if(swordAttackType > 1)
+        {
+            attackTimer -= Time.deltaTime;
+        }
+        if(attackTimer <= 0)
+        {
+            swordAttackType = 1;
+            attackTimer = 10;
+        }
     }
 
     private void Jump()
@@ -98,6 +107,11 @@ public class PlayerController : NetworkBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             isAttacking = 1;
+            attackTimer = 10;
+            if(swordAttackType < 1)
+            {
+                swordAttackType = 1;
+            }
             print("Swinging Sword");
             // play attack animation()
             // if there's an ability use the ability here
@@ -105,6 +119,10 @@ public class PlayerController : NetworkBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             isAttacking = 0;
+            if(swordAttackType > 3)
+            {
+                swordAttackType = 1;
+            }
             print("No Longer Attacking");
         }
 
@@ -188,6 +206,7 @@ public class PlayerController : NetworkBehaviour
         playerAnimator.SetFloat("Direction", direction);
         playerAnimator.SetFloat("IsMoving", isMoving);
         playerAnimator.SetFloat("IsAttacking", isAttacking);
+        playerAnimator.SetFloat("SwordAttackType", swordAttackType);
         playerAnimator.SetFloat("IsBlocking", isBlocking);
         playerAnimator.SetFloat("IsGrappling", isGrappling);
         playerAnimator.SetFloat("IsJumping", isJumping);
@@ -196,6 +215,7 @@ public class PlayerController : NetworkBehaviour
         shieldAnimator.SetFloat("Direction", direction);
         shieldAnimator.SetFloat("IsMoving", isMoving);
         shieldAnimator.SetFloat("IsAttacking", isAttacking);
+        shieldAnimator.SetFloat("SwordAttackType", swordAttackType);
         shieldAnimator.SetFloat("IsBlocking", isBlocking);
         shieldAnimator.SetFloat("IsGrappling", isGrappling);
         shieldAnimator.SetFloat("IsJumping", isJumping);
@@ -204,6 +224,7 @@ public class PlayerController : NetworkBehaviour
         swordAnimator.SetFloat("Direction", direction);
         swordAnimator.SetFloat("IsMoving", isMoving);
         swordAnimator.SetFloat("IsAttacking", isAttacking);
+        swordAnimator.SetFloat("SwordAttackType", swordAttackType);
         swordAnimator.SetFloat("IsBlocking", isBlocking);
         swordAnimator.SetFloat("IsGrappling", isGrappling);
         swordAnimator.SetFloat("IsJumping", isJumping);
@@ -212,6 +233,7 @@ public class PlayerController : NetworkBehaviour
         grapplingHookAnimator.SetFloat("Direction", direction);
         grapplingHookAnimator.SetFloat("IsMoving", isMoving);
         grapplingHookAnimator.SetFloat("IsAttacking", isAttacking);
+        grapplingHookAnimator.SetFloat("SwordAttackType", swordAttackType);
         grapplingHookAnimator.SetFloat("IsBlocking", isBlocking);
         grapplingHookAnimator.SetFloat("IsGrappling", isGrappling);
         grapplingHookAnimator.SetFloat("IsJumping", isJumping);

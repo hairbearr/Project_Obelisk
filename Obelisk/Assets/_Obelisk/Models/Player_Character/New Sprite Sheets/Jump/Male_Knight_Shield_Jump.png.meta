@@ -188,10 +188,10 @@ TextureImporter:
       name: Male_Knight_Shield_Jump_0
       rect:
         serializedVersion: 2
-        x: 100
-        y: 1194
-        width: 12
-        height: 77
+        x: 0
+        y: 1120
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,10 +210,10 @@ TextureImporter:
       name: Male_Knight_Shield_Jump_1
       rect:
         serializedVersion: 2
-        x: 249
-        y: 1218
-        width: 30
-        height: 62
+        x: 160
+        y: 1120
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -232,10 +232,10 @@ TextureImporter:
       name: Male_Knight_Shield_Jump_2
       rect:
         serializedVersion: 2
-        x: 409
-        y: 1229
-        width: 33
-        height: 51
+        x: 320
+        y: 1120
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -254,10 +254,10 @@ TextureImporter:
       name: Male_Knight_Shield_Jump_3
       rect:
         serializedVersion: 2
-        x: 86
-        y: 1012
-        width: 52
-        height: 52
+        x: 0
+        y: 960
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -276,10 +276,10 @@ TextureImporter:
       name: Male_Knight_Shield_Jump_4
       rect:
         serializedVersion: 2
-        x: 252
-        y: 1026
-        width: 38
-        height: 69
+        x: 160
+        y: 960
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -298,10 +298,10 @@ TextureImporter:
       name: Male_Knight_Shield_Jump_5
       rect:
         serializedVersion: 2
-        x: 410
-        y: 1037
-        width: 30
-        height: 73
+        x: 320
+        y: 960
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -320,10 +320,10 @@ TextureImporter:
       name: Male_Knight_Shield_Jump_6
       rect:
         serializedVersion: 2
-        x: 34
-        y: 892
-        width: 48
-        height: 44
+        x: 0
+        y: 800
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -342,10 +342,10 @@ TextureImporter:
       name: Male_Knight_Shield_Jump_7
       rect:
         serializedVersion: 2
-        x: 202
-        y: 918
-        width: 36
-        height: 29
+        x: 160
+        y: 800
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -364,10 +364,10 @@ TextureImporter:
       name: Male_Knight_Shield_Jump_8
       rect:
         serializedVersion: 2
-        x: 372
-        y: 932
-        width: 28
-        height: 28
+        x: 320
+        y: 800
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -386,10 +386,10 @@ TextureImporter:
       name: Male_Knight_Shield_Jump_9
       rect:
         serializedVersion: 2
-        x: 48
-        y: 698
-        width: 11
-        height: 30
+        x: 0
+        y: 640
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -408,10 +408,10 @@ TextureImporter:
       name: Male_Knight_Shield_Jump_10
       rect:
         serializedVersion: 2
-        x: 201
-        y: 713
-        width: 32
-        height: 37
+        x: 160
+        y: 640
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -430,10 +430,10 @@ TextureImporter:
       name: Male_Knight_Shield_Jump_11
       rect:
         serializedVersion: 2
-        x: 358
-        y: 728
-        width: 37
-        height: 48
+        x: 320
+        y: 640
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -452,10 +452,10 @@ TextureImporter:
       name: Male_Knight_Shield_Jump_12
       rect:
         serializedVersion: 2
-        x: 98
-        y: 540
-        width: 37
-        height: 71
+        x: 0
+        y: 480
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -474,10 +474,10 @@ TextureImporter:
       name: Male_Knight_Shield_Jump_13
       rect:
         serializedVersion: 2
-        x: 264
-        y: 559
-        width: 25
-        height: 76
+        x: 160
+        y: 480
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -496,10 +496,10 @@ TextureImporter:
       name: Male_Knight_Shield_Jump_14
       rect:
         serializedVersion: 2
-        x: 424
-        y: 570
-        width: 27
-        height: 71
+        x: 320
+        y: 480
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -518,10 +518,10 @@ TextureImporter:
       name: Male_Knight_Shield_Jump_15
       rect:
         serializedVersion: 2
-        x: 63
-        y: 368
-        width: 40
-        height: 34
+        x: 0
+        y: 320
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -540,10 +540,10 @@ TextureImporter:
       name: Male_Knight_Shield_Jump_16
       rect:
         serializedVersion: 2
-        x: 223
-        y: 381
-        width: 44
-        height: 52
+        x: 160
+        y: 320
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -562,10 +562,10 @@ TextureImporter:
       name: Male_Knight_Shield_Jump_17
       rect:
         serializedVersion: 2
-        x: 381
-        y: 393
-        width: 37
-        height: 63
+        x: 320
+        y: 320
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -584,10 +584,10 @@ TextureImporter:
       name: Male_Knight_Shield_Jump_18
       rect:
         serializedVersion: 2
-        x: 63
-        y: 263
-        width: 31
-        height: 50
+        x: 0
+        y: 160
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -606,10 +606,10 @@ TextureImporter:
       name: Male_Knight_Shield_Jump_19
       rect:
         serializedVersion: 2
-        x: 220
-        y: 274
-        width: 43
-        height: 47
+        x: 160
+        y: 160
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -628,10 +628,10 @@ TextureImporter:
       name: Male_Knight_Shield_Jump_20
       rect:
         serializedVersion: 2
-        x: 394
-        y: 285
-        width: 30
-        height: 36
+        x: 320
+        y: 160
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -650,10 +650,10 @@ TextureImporter:
       name: Male_Knight_Shield_Jump_21
       rect:
         serializedVersion: 2
-        x: 91
-        y: 248
-        width: 12
-        height: 13
+        x: 0
+        y: 0
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -672,10 +672,10 @@ TextureImporter:
       name: Male_Knight_Shield_Jump_22
       rect:
         serializedVersion: 2
-        x: 197
-        y: 95
-        width: 23
-        height: 28
+        x: 160
+        y: 0
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -694,10 +694,10 @@ TextureImporter:
       name: Male_Knight_Shield_Jump_23
       rect:
         serializedVersion: 2
-        x: 355
-        y: 111
-        width: 27
-        height: 33
+        x: 320
+        y: 0
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -712,33 +712,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Male_Knight_Shield_Jump_24
-      rect:
-        serializedVersion: 2
-        x: 31
-        y: 75
-        width: 37
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ae25abbd3176b61a0800000000000000
-      internalID: -6815240276106652950
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 699778f92671e244495ae07f0fb3c5ab
     internalID: 0
     vertices: []
     indices: 
@@ -746,7 +724,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":8.0},"gridSpriteSize":{"x":160.0,"y":160.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Male_Knight_Shield_Jump_0: -3793442212895317619
       Male_Knight_Shield_Jump_1: 4235071681236926304
@@ -765,7 +745,6 @@ TextureImporter:
       Male_Knight_Shield_Jump_21: 2288263647279170617
       Male_Knight_Shield_Jump_22: -1872647855875213264
       Male_Knight_Shield_Jump_23: -1916745261050535332
-      Male_Knight_Shield_Jump_24: -6815240276106652950
       Male_Knight_Shield_Jump_3: -4905256273591101510
       Male_Knight_Shield_Jump_4: 8726465620237352961
       Male_Knight_Shield_Jump_5: 9047667641486761175

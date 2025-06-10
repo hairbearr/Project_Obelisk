@@ -197,10 +197,10 @@ TextureImporter:
       name: Male_Knight_Shield_Get Hit_0
       rect:
         serializedVersion: 2
-        x: 85
-        y: 1172
-        width: 38
-        height: 42
+        x: 0
+        y: 1120
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,10 +219,10 @@ TextureImporter:
       name: Male_Knight_Shield_Get Hit_1
       rect:
         serializedVersion: 2
-        x: 260
-        y: 1179
-        width: 12
-        height: 52
+        x: 160
+        y: 1120
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,10 +241,10 @@ TextureImporter:
       name: Male_Knight_Shield_Get Hit_2
       rect:
         serializedVersion: 2
-        x: 398
-        y: 1193
-        width: 7
-        height: 9
+        x: 320
+        y: 1120
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,10 +263,10 @@ TextureImporter:
       name: Male_Knight_Shield_Get Hit_3
       rect:
         serializedVersion: 2
-        x: 408
-        y: 1200
-        width: 41
-        height: 42
+        x: 0
+        y: 960
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -285,10 +285,10 @@ TextureImporter:
       name: Male_Knight_Shield_Get Hit_4
       rect:
         serializedVersion: 2
-        x: 49
-        y: 997
-        width: 67
-        height: 45
+        x: 160
+        y: 960
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -307,10 +307,10 @@ TextureImporter:
       name: Male_Knight_Shield_Get Hit_5
       rect:
         serializedVersion: 2
-        x: 229
-        y: 993
-        width: 29
-        height: 52
+        x: 320
+        y: 960
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -329,10 +329,10 @@ TextureImporter:
       name: Male_Knight_Shield_Get Hit_6
       rect:
         serializedVersion: 2
-        x: 422
-        y: 1008
-        width: 16
-        height: 28
+        x: 0
+        y: 800
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -351,10 +351,10 @@ TextureImporter:
       name: Male_Knight_Shield_Get Hit_7
       rect:
         serializedVersion: 2
-        x: 44
-        y: 885
-        width: 30
-        height: 15
+        x: 160
+        y: 800
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -373,10 +373,10 @@ TextureImporter:
       name: Male_Knight_Shield_Get Hit_8
       rect:
         serializedVersion: 2
-        x: 85
-        y: 874
-        width: 26
-        height: 24
+        x: 320
+        y: 800
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -395,10 +395,10 @@ TextureImporter:
       name: Male_Knight_Shield_Get Hit_9
       rect:
         serializedVersion: 2
-        x: 224
-        y: 886
-        width: 27
-        height: 39
+        x: 0
+        y: 640
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -417,10 +417,10 @@ TextureImporter:
       name: Male_Knight_Shield_Get Hit_10
       rect:
         serializedVersion: 2
-        x: 362
-        y: 849
-        width: 17
-        height: 77
+        x: 160
+        y: 640
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -439,10 +439,10 @@ TextureImporter:
       name: Male_Knight_Shield_Get Hit_11
       rect:
         serializedVersion: 2
-        x: 37
-        y: 682
-        width: 38
-        height: 63
+        x: 320
+        y: 640
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -461,10 +461,10 @@ TextureImporter:
       name: Male_Knight_Shield_Get Hit_12
       rect:
         serializedVersion: 2
-        x: 208
-        y: 680
-        width: 12
-        height: 66
+        x: 0
+        y: 480
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -483,10 +483,10 @@ TextureImporter:
       name: Male_Knight_Shield_Get Hit_13
       rect:
         serializedVersion: 2
-        x: 351
-        y: 667
-        width: 51
-        height: 46
+        x: 160
+        y: 480
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -505,10 +505,10 @@ TextureImporter:
       name: Male_Knight_Shield_Get Hit_14
       rect:
         serializedVersion: 2
-        x: 62
-        y: 533
-        width: 73
-        height: 23
+        x: 320
+        y: 480
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -527,10 +527,10 @@ TextureImporter:
       name: Male_Knight_Shield_Get Hit_15
       rect:
         serializedVersion: 2
-        x: 252
-        y: 525
-        width: 17
-        height: 51
+        x: 0
+        y: 320
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -549,10 +549,10 @@ TextureImporter:
       name: Male_Knight_Shield_Get Hit_16
       rect:
         serializedVersion: 2
-        x: 421
-        y: 547
-        width: 34
-        height: 32
+        x: 160
+        y: 320
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -571,10 +571,10 @@ TextureImporter:
       name: Male_Knight_Shield_Get Hit_17
       rect:
         serializedVersion: 2
-        x: 52
-        y: 349
-        width: 25
-        height: 66
+        x: 320
+        y: 320
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -593,10 +593,10 @@ TextureImporter:
       name: Male_Knight_Shield_Get Hit_18
       rect:
         serializedVersion: 2
-        x: 211
-        y: 351
-        width: 27
-        height: 59
+        x: 0
+        y: 160
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -615,10 +615,10 @@ TextureImporter:
       name: Male_Knight_Shield_Get Hit_19
       rect:
         serializedVersion: 2
-        x: 382
-        y: 354
-        width: 43
-        height: 29
+        x: 160
+        y: 160
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -637,10 +637,10 @@ TextureImporter:
       name: Male_Knight_Shield_Get Hit_20
       rect:
         serializedVersion: 2
-        x: 84
-        y: 221
-        width: 24
-        height: 47
+        x: 320
+        y: 160
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -659,10 +659,10 @@ TextureImporter:
       name: Male_Knight_Shield_Get Hit_21
       rect:
         serializedVersion: 2
-        x: 242
-        y: 228
-        width: 27
-        height: 53
+        x: 0
+        y: 0
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -681,10 +681,10 @@ TextureImporter:
       name: Male_Knight_Shield_Get Hit_22
       rect:
         serializedVersion: 2
-        x: 388
-        y: 258
-        width: 29
-        height: 36
+        x: 160
+        y: 0
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -703,10 +703,10 @@ TextureImporter:
       name: Male_Knight_Shield_Get Hit_23
       rect:
         serializedVersion: 2
-        x: 375
-        y: 226
-        width: 10
-        height: 30
+        x: 320
+        y: 0
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -721,99 +721,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Male_Knight_Shield_Get Hit_24
-      rect:
-        serializedVersion: 2
-        x: 25
-        y: 70
-        width: 50
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 59ccfe30f2afa7fa0800000000000000
-      internalID: -5802050090077008747
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Knight_Shield_Get Hit_25
-      rect:
-        serializedVersion: 2
-        x: 82
-        y: 83
-        width: 16
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0466f5ecf77e2b180800000000000000
-      internalID: -9100957360853129664
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Knight_Shield_Get Hit_26
-      rect:
-        serializedVersion: 2
-        x: 211
-        y: 54
-        width: 18
-        height: 65
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e77ca0a5afde4e8f0800000000000000
-      internalID: -512022798105131138
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Knight_Shield_Get Hit_27
-      rect:
-        serializedVersion: 2
-        x: 345
-        y: 33
-        width: 34
-        height: 69
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4ad30481cc4210a30800000000000000
-      internalID: 4179662388175322532
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 7102c1ef6f3c9b740826e84e8c2429e2
     internalID: 0
     vertices: []
     indices: 
@@ -821,7 +733,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":8.0},"gridSpriteSize":{"x":160.0,"y":160.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Male_Knight_Shield_Get Hit_0: -4361018337537120791
       Male_Knight_Shield_Get Hit_1: -7777233251287230883
@@ -840,10 +754,6 @@ TextureImporter:
       Male_Knight_Shield_Get Hit_21: 4127084885999230720
       Male_Knight_Shield_Get Hit_22: 7300373913767573076
       Male_Knight_Shield_Get Hit_23: 4275284577816670514
-      Male_Knight_Shield_Get Hit_24: -5802050090077008747
-      Male_Knight_Shield_Get Hit_25: -9100957360853129664
-      Male_Knight_Shield_Get Hit_26: -512022798105131138
-      Male_Knight_Shield_Get Hit_27: 4179662388175322532
       Male_Knight_Shield_Get Hit_3: -8368353696216437317
       Male_Knight_Shield_Get Hit_4: 3273936944493131125
       Male_Knight_Shield_Get Hit_5: -8232872052427197978

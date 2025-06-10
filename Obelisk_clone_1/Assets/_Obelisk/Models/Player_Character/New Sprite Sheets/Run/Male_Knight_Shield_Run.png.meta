@@ -374,10 +374,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_0
       rect:
         serializedVersion: 2
-        x: 65
-        y: 1167
-        width: 30
-        height: 37
+        x: 0
+        y: 1120
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -396,10 +396,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_1
       rect:
         serializedVersion: 2
-        x: 239
-        y: 1181
-        width: 25
-        height: 26
+        x: 160
+        y: 1120
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -418,10 +418,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_2
       rect:
         serializedVersion: 2
-        x: 406
-        y: 1180
-        width: 27
-        height: 38
+        x: 320
+        y: 1120
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -440,10 +440,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_3
       rect:
         serializedVersion: 2
-        x: 564
-        y: 1181
-        width: 25
-        height: 45
+        x: 480
+        y: 1120
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -462,10 +462,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_4
       rect:
         serializedVersion: 2
-        x: 727
-        y: 1182
-        width: 21
-        height: 36
+        x: 640
+        y: 1120
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -484,10 +484,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_5
       rect:
         serializedVersion: 2
-        x: 888
-        y: 1181
-        width: 22
-        height: 27
+        x: 800
+        y: 1120
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -506,10 +506,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_6
       rect:
         serializedVersion: 2
-        x: 1030
-        y: 1169
-        width: 32
-        height: 35
+        x: 960
+        y: 1120
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -528,10 +528,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_7
       rect:
         serializedVersion: 2
-        x: 1186
-        y: 1158
-        width: 29
-        height: 52
+        x: 1120
+        y: 1120
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -550,10 +550,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_8
       rect:
         serializedVersion: 2
-        x: 46
-        y: 1001
-        width: 31
-        height: 64
+        x: 0
+        y: 960
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -572,10 +572,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_9
       rect:
         serializedVersion: 2
-        x: 205
-        y: 1006
-        width: 67
-        height: 39
+        x: 160
+        y: 960
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -594,10 +594,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_10
       rect:
         serializedVersion: 2
-        x: 369
-        y: 1006
-        width: 72
-        height: 38
+        x: 320
+        y: 960
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -616,10 +616,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_11
       rect:
         serializedVersion: 2
-        x: 534
-        y: 1024
-        width: 73
-        height: 13
+        x: 480
+        y: 960
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -638,10 +638,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_12
       rect:
         serializedVersion: 2
-        x: 695
-        y: 1024
-        width: 73
-        height: 13
+        x: 640
+        y: 960
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -660,10 +660,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_13
       rect:
         serializedVersion: 2
-        x: 852
-        y: 1006
-        width: 71
-        height: 35
+        x: 800
+        y: 960
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -682,10 +682,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_14
       rect:
         serializedVersion: 2
-        x: 1004
-        y: 996
-        width: 37
-        height: 65
+        x: 960
+        y: 960
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -704,10 +704,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_15
       rect:
         serializedVersion: 2
-        x: 1165
-        y: 1006
-        width: 27
-        height: 60
+        x: 1120
+        y: 960
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -726,10 +726,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_16
       rect:
         serializedVersion: 2
-        x: 86
-        y: 864
-        width: 28
-        height: 42
+        x: 0
+        y: 800
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -748,10 +748,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_17
       rect:
         serializedVersion: 2
-        x: 206
-        y: 879
-        width: 32
-        height: 19
+        x: 160
+        y: 800
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -770,10 +770,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_18
       rect:
         serializedVersion: 2
-        x: 246
-        y: 879
-        width: 28
-        height: 30
+        x: 320
+        y: 800
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -792,10 +792,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_19
       rect:
         serializedVersion: 2
-        x: 348
-        y: 886
-        width: 50
-        height: 22
+        x: 480
+        y: 800
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -814,10 +814,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_20
       rect:
         serializedVersion: 2
-        x: 408
-        y: 883
-        width: 16
-        height: 25
+        x: 640
+        y: 800
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -836,10 +836,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_21
       rect:
         serializedVersion: 2
-        x: 512
-        y: 875
-        width: 46
-        height: 29
+        x: 800
+        y: 800
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -858,10 +858,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_22
       rect:
         serializedVersion: 2
-        x: 567
-        y: 883
-        width: 19
-        height: 30
+        x: 960
+        y: 800
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -880,10 +880,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_23
       rect:
         serializedVersion: 2
-        x: 672
-        y: 874
-        width: 46
-        height: 30
+        x: 1120
+        y: 800
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -902,10 +902,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_24
       rect:
         serializedVersion: 2
-        x: 726
-        y: 886
-        width: 19
-        height: 26
+        x: 0
+        y: 640
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -924,10 +924,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_25
       rect:
         serializedVersion: 2
-        x: 727
-        y: 883
-        width: 6
-        height: 6
+        x: 160
+        y: 640
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -946,10 +946,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_26
       rect:
         serializedVersion: 2
-        x: 837
-        y: 885
-        width: 41
-        height: 21
+        x: 320
+        y: 640
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -968,10 +968,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_27
       rect:
         serializedVersion: 2
-        x: 886
-        y: 885
-        width: 22
-        height: 27
+        x: 480
+        y: 640
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -990,10 +990,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_28
       rect:
         serializedVersion: 2
-        x: 1044
-        y: 871
-        width: 33
-        height: 39
+        x: 640
+        y: 640
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1012,10 +1012,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_29
       rect:
         serializedVersion: 2
-        x: 1206
-        y: 871
-        width: 30
-        height: 43
+        x: 800
+        y: 640
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1034,10 +1034,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_30
       rect:
         serializedVersion: 2
-        x: 1028
-        y: 859
-        width: 14
-        height: 12
+        x: 960
+        y: 640
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1056,10 +1056,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_31
       rect:
         serializedVersion: 2
-        x: 1199
-        y: 857
-        width: 11
-        height: 11
+        x: 1120
+        y: 640
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1078,10 +1078,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_32
       rect:
         serializedVersion: 2
-        x: 64
-        y: 735
-        width: 21
-        height: 31
+        x: 0
+        y: 480
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1100,10 +1100,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_33
       rect:
         serializedVersion: 2
-        x: 211
-        y: 680
-        width: 27
-        height: 75
+        x: 160
+        y: 480
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1122,10 +1122,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_34
       rect:
         serializedVersion: 2
-        x: 372
-        y: 678
-        width: 25
-        height: 74
+        x: 320
+        y: 480
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1144,10 +1144,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_35
       rect:
         serializedVersion: 2
-        x: 538
-        y: 675
-        width: 15
-        height: 70
+        x: 480
+        y: 480
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1166,10 +1166,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_36
       rect:
         serializedVersion: 2
-        x: 700
-        y: 673
-        width: 13
-        height: 69
+        x: 640
+        y: 480
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1188,10 +1188,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_37
       rect:
         serializedVersion: 2
-        x: 850
-        y: 674
-        width: 20
-        height: 76
+        x: 800
+        y: 480
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1210,10 +1210,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_38
       rect:
         serializedVersion: 2
-        x: 1023
-        y: 736
-        width: 24
-        height: 26
+        x: 960
+        y: 480
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1232,10 +1232,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_39
       rect:
         serializedVersion: 2
-        x: 1181
-        y: 695
-        width: 18
-        height: 69
+        x: 1120
+        y: 480
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1254,10 +1254,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_40
       rect:
         serializedVersion: 2
-        x: 64
-        y: 701
-        width: 9
-        height: 34
+        x: 0
+        y: 320
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1276,10 +1276,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_41
       rect:
         serializedVersion: 2
-        x: 1022
-        y: 692
-        width: 11
-        height: 42
+        x: 160
+        y: 320
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1298,10 +1298,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_42
       rect:
         serializedVersion: 2
-        x: 48
-        y: 521
-        width: 40
-        height: 47
+        x: 320
+        y: 320
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1320,10 +1320,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_43
       rect:
         serializedVersion: 2
-        x: 220
-        y: 544
-        width: 61
-        height: 13
+        x: 480
+        y: 320
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1342,10 +1342,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_44
       rect:
         serializedVersion: 2
-        x: 385
-        y: 541
-        width: 66
-        height: 19
+        x: 640
+        y: 320
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1364,10 +1364,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_45
       rect:
         serializedVersion: 2
-        x: 555
-        y: 537
-        width: 41
-        height: 40
+        x: 800
+        y: 320
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1386,10 +1386,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_46
       rect:
         serializedVersion: 2
-        x: 715
-        y: 538
-        width: 43
-        height: 37
+        x: 960
+        y: 320
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1408,10 +1408,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_47
       rect:
         serializedVersion: 2
-        x: 871
-        y: 540
-        width: 60
-        height: 20
+        x: 1120
+        y: 320
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1430,10 +1430,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_48
       rect:
         serializedVersion: 2
-        x: 1013
-        y: 530
-        width: 50
-        height: 30
+        x: 0
+        y: 160
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1452,10 +1452,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_49
       rect:
         serializedVersion: 2
-        x: 1171
-        y: 528
-        width: 28
-        height: 42
+        x: 160
+        y: 160
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1474,10 +1474,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_50
       rect:
         serializedVersion: 2
-        x: 56
-        y: 366
-        width: 15
-        height: 73
+        x: 320
+        y: 160
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1496,10 +1496,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_51
       rect:
         serializedVersion: 2
-        x: 207
-        y: 355
-        width: 42
-        height: 67
+        x: 480
+        y: 160
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1518,10 +1518,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_52
       rect:
         serializedVersion: 2
-        x: 369
-        y: 353
-        width: 38
-        height: 66
+        x: 640
+        y: 160
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1540,10 +1540,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_53
       rect:
         serializedVersion: 2
-        x: 524
-        y: 368
-        width: 68
-        height: 40
+        x: 800
+        y: 160
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1562,10 +1562,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_54
       rect:
         serializedVersion: 2
-        x: 685
-        y: 365
-        width: 66
-        height: 43
+        x: 960
+        y: 160
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1584,10 +1584,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_55
       rect:
         serializedVersion: 2
-        x: 846
-        y: 351
-        width: 45
-        height: 64
+        x: 1120
+        y: 160
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1606,10 +1606,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_56
       rect:
         serializedVersion: 2
-        x: 1009
-        y: 362
-        width: 27
-        height: 73
+        x: 0
+        y: 0
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1628,10 +1628,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_57
       rect:
         serializedVersion: 2
-        x: 1168
-        y: 368
-        width: 23
-        height: 71
+        x: 160
+        y: 0
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1650,10 +1650,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_58
       rect:
         serializedVersion: 2
-        x: 393
-        y: 260
-        width: 7
-        height: 7
+        x: 320
+        y: 0
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1672,10 +1672,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_59
       rect:
         serializedVersion: 2
-        x: 408
-        y: 229
-        width: 23
-        height: 31
+        x: 480
+        y: 0
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1694,10 +1694,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_60
       rect:
         serializedVersion: 2
-        x: 529
-        y: 246
-        width: 29
-        height: 16
+        x: 640
+        y: 0
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1716,10 +1716,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_61
       rect:
         serializedVersion: 2
-        x: 567
-        y: 233
-        width: 29
-        height: 30
+        x: 800
+        y: 0
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1738,10 +1738,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_62
       rect:
         serializedVersion: 2
-        x: 689
-        y: 246
-        width: 29
-        height: 16
+        x: 960
+        y: 0
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1760,10 +1760,10 @@ TextureImporter:
       name: Male_Knight_Shield_Run_63
       rect:
         serializedVersion: 2
-        x: 727
-        y: 234
-        width: 28
-        height: 30
+        x: 1120
+        y: 0
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1778,517 +1778,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Male_Knight_Shield_Run_64
-      rect:
-        serializedVersion: 2
-        x: 869
-        y: 258
-        width: 12
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4dcaa8d4af1dc2ae0800000000000000
-      internalID: -1572651296886182700
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Knight_Shield_Run_65
-      rect:
-        serializedVersion: 2
-        x: 888
-        y: 233
-        width: 26
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cef17647975da98a0800000000000000
-      internalID: -6297486411303542804
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Knight_Shield_Run_66
-      rect:
-        serializedVersion: 2
-        x: 89
-        y: 215
-        width: 15
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ce4c7cf1a1a0d6f00800000000000000
-      internalID: 1111555790348993772
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Knight_Shield_Run_67
-      rect:
-        serializedVersion: 2
-        x: 247
-        y: 227
-        width: 26
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6c9967f6a410c8000800000000000000
-      internalID: 39407915948743110
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Knight_Shield_Run_68
-      rect:
-        serializedVersion: 2
-        x: 1035
-        y: 222
-        width: 37
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d89f1add65e8f78b0800000000000000
-      internalID: -5152242944951846515
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Knight_Shield_Run_69
-      rect:
-        serializedVersion: 2
-        x: 1206
-        y: 214
-        width: 25
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 85cf71ea7b4537670800000000000000
-      internalID: 8535258866673777752
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Knight_Shield_Run_70
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 62
-        width: 40
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f0e089764e9459440800000000000000
-      internalID: 4941937411448376847
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Knight_Shield_Run_71
-      rect:
-        serializedVersion: 2
-        x: 237
-        y: 108
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ee41ab0d5d6117b90800000000000000
-      internalID: -7245985217876716306
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Knight_Shield_Run_72
-      rect:
-        serializedVersion: 2
-        x: 246
-        y: 92
-        width: 14
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9eb7f018e6d12d920800000000000000
-      internalID: 3013503461113166825
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Knight_Shield_Run_73
-      rect:
-        serializedVersion: 2
-        x: 398
-        y: 101
-        width: 17
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6e25856e76fae2260800000000000000
-      internalID: 7074784925426668262
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Knight_Shield_Run_74
-      rect:
-        serializedVersion: 2
-        x: 543
-        y: 102
-        width: 18
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f610b2743fab19a20800000000000000
-      internalID: 3067438375249838447
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Knight_Shield_Run_75
-      rect:
-        serializedVersion: 2
-        x: 701
-        y: 100
-        width: 13
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e0e4e0287a1e3edf0800000000000000
-      internalID: -152029852842701298
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Knight_Shield_Run_76
-      rect:
-        serializedVersion: 2
-        x: 864
-        y: 102
-        width: 25
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6b8b9d3d3ccf35820800000000000000
-      internalID: 2905944102587185334
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Knight_Shield_Run_77
-      rect:
-        serializedVersion: 2
-        x: 1038
-        y: 82
-        width: 26
-        height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cb88c5f3e87a61fa0800000000000000
-      internalID: -5830288438194304836
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Knight_Shield_Run_78
-      rect:
-        serializedVersion: 2
-        x: 1201
-        y: 79
-        width: 28
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 32baf109079bb4620800000000000000
-      internalID: 2759503089800031011
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Knight_Shield_Run_79
-      rect:
-        serializedVersion: 2
-        x: 199
-        y: 58
-        width: 36
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5330c175c177dd700800000000000000
-      internalID: 566740091722793781
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Knight_Shield_Run_80
-      rect:
-        serializedVersion: 2
-        x: 349
-        y: 65
-        width: 47
-        height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bedfcadee09f03da0800000000000000
-      internalID: -5966995663753511445
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Knight_Shield_Run_81
-      rect:
-        serializedVersion: 2
-        x: 524
-        y: 51
-        width: 32
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ba545123035296520800000000000000
-      internalID: 2695726740886865323
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Knight_Shield_Run_82
-      rect:
-        serializedVersion: 2
-        x: 681
-        y: 51
-        width: 35
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d3724fd9f4f11bee0800000000000000
-      internalID: -1247181194992015555
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Knight_Shield_Run_83
-      rect:
-        serializedVersion: 2
-        x: 705
-        y: 96
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 126a0bb25bf0da300800000000000000
-      internalID: 264885223881221665
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Knight_Shield_Run_84
-      rect:
-        serializedVersion: 2
-        x: 829
-        y: 60
-        width: 47
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a39e86f302552b4d0800000000000000
-      internalID: -3120337994823177926
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Knight_Shield_Run_85
-      rect:
-        serializedVersion: 2
-        x: 1015
-        y: 51
-        width: 21
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1f09d893f1675adf0800000000000000
-      internalID: -169599534474882831
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Male_Knight_Shield_Run_86
-      rect:
-        serializedVersion: 2
-        x: 1198
-        y: 62
-        width: 6
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d64fe7436d36f21a0800000000000000
-      internalID: -6832132338042866579
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 1544d429b7708254a8343c27150fad33
     internalID: 0
     vertices: []
     indices: 
@@ -2296,7 +1790,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":8.0,"y":8.0},"gridSpriteSize":{"x":160.0,"y":160.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Male_Knight_Shield_Run_0: 4307500475264343764
       Male_Knight_Shield_Run_1: 6217188464144692776
@@ -2359,31 +1855,8 @@ TextureImporter:
       Male_Knight_Shield_Run_61: 8978871240355786987
       Male_Knight_Shield_Run_62: -8071598813376373985
       Male_Knight_Shield_Run_63: 6357114598463160898
-      Male_Knight_Shield_Run_64: -1572651296886182700
-      Male_Knight_Shield_Run_65: -6297486411303542804
-      Male_Knight_Shield_Run_66: 1111555790348993772
-      Male_Knight_Shield_Run_67: 39407915948743110
-      Male_Knight_Shield_Run_68: -5152242944951846515
-      Male_Knight_Shield_Run_69: 8535258866673777752
       Male_Knight_Shield_Run_7: 5217314851077322602
-      Male_Knight_Shield_Run_70: 4941937411448376847
-      Male_Knight_Shield_Run_71: -7245985217876716306
-      Male_Knight_Shield_Run_72: 3013503461113166825
-      Male_Knight_Shield_Run_73: 7074784925426668262
-      Male_Knight_Shield_Run_74: 3067438375249838447
-      Male_Knight_Shield_Run_75: -152029852842701298
-      Male_Knight_Shield_Run_76: 2905944102587185334
-      Male_Knight_Shield_Run_77: -5830288438194304836
-      Male_Knight_Shield_Run_78: 2759503089800031011
-      Male_Knight_Shield_Run_79: 566740091722793781
       Male_Knight_Shield_Run_8: -4593135186260176996
-      Male_Knight_Shield_Run_80: -5966995663753511445
-      Male_Knight_Shield_Run_81: 2695726740886865323
-      Male_Knight_Shield_Run_82: -1247181194992015555
-      Male_Knight_Shield_Run_83: 264885223881221665
-      Male_Knight_Shield_Run_84: -3120337994823177926
-      Male_Knight_Shield_Run_85: -169599534474882831
-      Male_Knight_Shield_Run_86: -6832132338042866579
       Male_Knight_Shield_Run_9: 486694655800395809
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

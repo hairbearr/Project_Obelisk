@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2936174483584434782
 Transform:
   m_ObjectHideFlags: 0
@@ -410,6 +410,8 @@ MonoBehaviour:
   isGrappling: 0
   isJumping: 0
   swingSpeed: 0
+  swordAttackType: 0
+  attackTimer: 0
   sword: {fileID: 6480514896236650404}
   shield: {fileID: 2424599008129838022}
   grapplingHook: {fileID: 7570831862445896486}

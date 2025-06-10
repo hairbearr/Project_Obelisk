@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ATK_SW_Overhead_S
+  m_Name: ATK_Sw_Overhead_S
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -25,7 +25,7 @@ AnimationClip:
     - time: 0.25
       value: {fileID: 2649365208540342175, guid: fae946ac59595204fbfa339cb0441295, type: 3}
     - time: 0.5
-      value: {fileID: 2649365208540342175, guid: fae946ac59595204fbfa339cb0441295, type: 3}
+      value: {fileID: -1921209327371960504, guid: fae946ac59595204fbfa339cb0441295, type: 3}
     - time: 0.75
       value: {fileID: -167435224426960823, guid: fae946ac59595204fbfa339cb0441295, type: 3}
     attribute: m_Sprite
@@ -52,7 +52,7 @@ AnimationClip:
     pptrCurveMapping:
     - {fileID: -167435224426960823, guid: fae946ac59595204fbfa339cb0441295, type: 3}
     - {fileID: 2649365208540342175, guid: fae946ac59595204fbfa339cb0441295, type: 3}
-    - {fileID: 2649365208540342175, guid: fae946ac59595204fbfa339cb0441295, type: 3}
+    - {fileID: -1921209327371960504, guid: fae946ac59595204fbfa339cb0441295, type: 3}
     - {fileID: -167435224426960823, guid: fae946ac59595204fbfa339cb0441295, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
