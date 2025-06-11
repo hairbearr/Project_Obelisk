@@ -10,7 +10,8 @@ public class PlayerController : NetworkBehaviour
     private Rigidbody2D rb;
     private float movementSpeedMultiplier =1f;
     [SerializeField] private Vector2 movementInput;
-    [SerializeField] private float swingSpeed, swordAttackType, direction, attackTimer;
+    [SerializeField] private float swingSpeed, swordAttackType, direction, attackComboTimer, jumpTimer;
+    [SerializeField] private bool attackCooldown;
     [SerializeField] private float isMoving, isAttacking, isBlocking, isGrappling, isJumping, isClimbing, isDrinkingPotion, isGettingHit, isInteracting, isShooting, isUsingItem;
     [SerializeField] private GameObject sword, shield, grapplingHook;
     [SerializeField] private string activeSwordAbility;
@@ -41,23 +42,31 @@ public class PlayerController : NetworkBehaviour
         Controls();
         if(swordAttackType > 1)
         {
-            attackTimer -= Time.deltaTime;
+            attackComboTimer -= Time.deltaTime;
         }
-        if(attackTimer <= 0)
+        if(attackComboTimer <= 0)
         {
             swordAttackType = 1;
-            attackTimer = 10;
+            attackComboTimer = 10;
         }
     }
 
+    private void StopJump()
+    {
+        isJumping = 0;
+    }
     private void Jump()
     {
-        
+
     }
     private void SwingSword()
     {
-
-        
+        attackComboTimer = 10;
+        if (swordAttackType < 1)
+        {
+            swordAttackType = 1;
+        }
+        attackCooldown = true;
     }
 
     private void UseSwordAbility(string activeSwordAbility)
@@ -67,7 +76,13 @@ public class PlayerController : NetworkBehaviour
 
     private void SheatheSword()
     {
-        
+        swordAttackType++;
+        if (swordAttackType > 3)
+        {
+            swordAttackType = 1;
+        }
+        isAttacking = 0;
+        attackCooldown = false;
     }
 
     private void TurnOffComponents(GameObject obj)
@@ -105,27 +120,11 @@ public class PlayerController : NetworkBehaviour
     private void Controls()
     {
         // Swing Sword
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)&& !attackCooldown)
         {
             isAttacking = 1;
-            attackTimer = 10;
-            if(swordAttackType < 1)
-            {
-                swordAttackType = 1;
-            }
-            print("Swinging Sword");
-            // play attack animation()
-            // if there's an ability use the ability here
         }
-        if (Input.GetMouseButtonUp(0))
-        {
-            isAttacking = 0;
-            if(swordAttackType > 3)
-            {
-                swordAttackType = 1;
-            }
-            print("No Longer Attacking");
-        }
+        
 
         // Shield Block
         if (Input.GetMouseButtonDown(1))

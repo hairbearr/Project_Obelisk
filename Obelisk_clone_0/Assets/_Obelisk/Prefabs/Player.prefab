@@ -162,6 +162,7 @@ GameObject:
   - component: {fileID: 2397773516213116938}
   - component: {fileID: 2170024039090534872}
   - component: {fileID: 1376831193277127441}
+  - component: {fileID: 8311445733467291910}
   m_Layer: 0
   m_Name: ShieldAnimation
   m_TagString: Untagged
@@ -262,6 +263,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8311445733467291910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178975577014766791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1ef152b034a1594aa92a3db7dfc0704, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  TransitionStateInfoList: []
+  m_Animator: {fileID: 1376831193277127441}
 --- !u!1 &1510615852687295852
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,15 +419,22 @@ MonoBehaviour:
   swordAnimator: {fileID: 8749061771453730162}
   grapplingHookAnimator: {fileID: 2030324587001277612}
   movementInput: {x: 0, y: 0}
+  swingSpeed: 0
+  swordAttackType: 0
   direction: 0
+  attackTimer: 0
+  jumpTimer: 0
   isMoving: 0
   isAttacking: 0
   isBlocking: 0
   isGrappling: 0
   isJumping: 0
-  swingSpeed: 0
-  swordAttackType: 0
-  attackTimer: 0
+  isClimbing: 0
+  isDrinkingPotion: 0
+  isGettingHit: 0
+  isInteracting: 0
+  isShooting: 0
+  isUsingItem: 0
   sword: {fileID: 6480514896236650404}
   shield: {fileID: 2424599008129838022}
   grapplingHook: {fileID: 7570831862445896486}
@@ -558,6 +581,7 @@ GameObject:
   - component: {fileID: 841220100118316268}
   - component: {fileID: 8202831133710973970}
   - component: {fileID: 8749061771453730162}
+  - component: {fileID: 1148089609191459865}
   m_Layer: 0
   m_Name: SwordAnimation
   m_TagString: Untagged
@@ -658,6 +682,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1148089609191459865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6332690074828862356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1ef152b034a1594aa92a3db7dfc0704, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  TransitionStateInfoList: []
+  m_Animator: {fileID: 8749061771453730162}
 --- !u!1 &6480514896236650404
 GameObject:
   m_ObjectHideFlags: 0
