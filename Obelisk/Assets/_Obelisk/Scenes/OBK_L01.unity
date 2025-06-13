@@ -136,7 +136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &142623287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,6 +175,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
+  enemyPrefab: {fileID: 0}
+  enemy: {fileID: 0}
+  spawnCooldown: 0
 --- !u!4 &142623289
 Transform:
   m_ObjectHideFlags: 0
