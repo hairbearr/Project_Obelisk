@@ -6,7 +6,7 @@ public class PlayerController : NetworkBehaviour
 {
     [SerializeField] private float movementSpeed =5;
 
-    [SerializeField] private Animator playerAnimator, shieldAnimator, swordAnimator, grapplingHookAnimator;
+    [SerializeField] private Animator animator;
     private Rigidbody2D rb;
     private float movementSpeedMultiplier =1f;
     [SerializeField] private Vector2 movementInput;
@@ -86,6 +86,23 @@ public class PlayerController : NetworkBehaviour
         get { return movementSpeed; }
         set { movementSpeed = value; }
     }
+    public bool IsDisabled
+    {
+        get { return movementDisabled; }
+        set { movementDisabled = value; }
+    }
+    public float AttackComboTimer
+    {
+        get { return attackComboTimer; }
+        set { attackComboTimer = value; }
+    }
+    public bool AttackCooldown
+    {
+        get { return attackCooldown; }
+        set { attackCooldown = value; }
+    }
+
+
 
 
 
@@ -102,9 +119,7 @@ public class PlayerController : NetworkBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        playerAnimator = GetComponent<Animator>();
-        shieldAnimator = GetComponentInChildren<ShieldController>().GetComponent<Animator>();
-        swordAnimator = GetComponentInChildren<SwordController>().GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -115,16 +130,6 @@ public class PlayerController : NetworkBehaviour
         Move();
         Animate();
         Controls();
-
-        if(swordAttackType > 1)
-        {
-            attackComboTimer -= Time.deltaTime;
-        }
-        if(attackComboTimer <= 0)
-        {
-            swordAttackType = 1;
-            attackComboTimer = 10;
-        }
     }
 
     private void StopJump()
@@ -134,28 +139,6 @@ public class PlayerController : NetworkBehaviour
     private void Jump()
     {
 
-    }
-    private void SwingSword()
-    {
-        movementDisabled = true;
-        attackComboTimer = 10;
-        if (swordAttackType < 1)
-        {
-            swordAttackType = 1;
-        }
-        attackCooldown = true;
-    }
-
-    private void SheatheSword()
-    {
-        swordAttackType++;
-        if (swordAttackType > 3)
-        {
-            swordAttackType = 1;
-        }
-        isAttacking = 0;
-        attackCooldown = false;
-        movementDisabled = false;
     }
     
     private void Controls()
@@ -254,36 +237,18 @@ public class PlayerController : NetworkBehaviour
 
     private void Animate()
     {
-        playerAnimator.SetFloat("Direction", direction);
-        playerAnimator.SetFloat("IsMoving", isMoving);
-        playerAnimator.SetFloat("IsAttacking", isAttacking);
-        playerAnimator.SetFloat("SwordAttackType", swordAttackType);
-        playerAnimator.SetFloat("IsBlocking", isBlocking);
-        playerAnimator.SetFloat("IsClimbing", isClimbing);
-        playerAnimator.SetFloat("IsDrinkingPotion", isDrinkingPotion);
-        playerAnimator.SetFloat("IsGettingHit", isGettingHit);
-        playerAnimator.SetFloat("IsInteracting", isInteracting);
-        playerAnimator.SetFloat("IsJumping", isJumping);
-        playerAnimator.SetFloat("IsGrappling", isGrappling);
-        playerAnimator.SetFloat("IsShooting", isShooting);
-        playerAnimator.SetFloat("IsUsingItem", isUsingItem);
-        
-        if (grapplingHook.gameObject.activeSelf)
-        {
-            grapplingHookAnimator.SetFloat("Direction", direction);
-            grapplingHookAnimator.SetFloat("IsMoving", isMoving);
-            grapplingHookAnimator.SetFloat("IsAttacking", isAttacking);
-            grapplingHookAnimator.SetFloat("SwordAttackType", swordAttackType);
-            grapplingHookAnimator.SetFloat("IsBlocking", isBlocking);
-            grapplingHookAnimator.SetFloat("IsClimbing", isClimbing);
-            grapplingHookAnimator.SetFloat("IsDrinkingPotion", isDrinkingPotion);
-            grapplingHookAnimator.SetFloat("IsGettingHit", isGettingHit);
-            grapplingHookAnimator.SetFloat("IsInteracting", isInteracting);
-            grapplingHookAnimator.SetFloat("IsJumping", isJumping);
-            grapplingHookAnimator.SetFloat("IsGrappling", isGrappling);
-            grapplingHookAnimator.SetFloat("IsShooting", isShooting);
-            grapplingHookAnimator.SetFloat("IsUsingItem", isUsingItem);
-        }
-        
+        animator.SetFloat("Direction", direction);
+        animator.SetFloat("IsMoving", isMoving);
+        animator.SetFloat("IsAttacking", isAttacking);
+        animator.SetFloat("SwordAttackType", swordAttackType);
+        animator.SetFloat("IsBlocking", isBlocking);
+        animator.SetFloat("IsClimbing", isClimbing);
+        animator.SetFloat("IsDrinkingPotion", isDrinkingPotion);
+        animator.SetFloat("IsGettingHit", isGettingHit);
+        animator.SetFloat("IsInteracting", isInteracting);
+        animator.SetFloat("IsJumping", isJumping);
+        animator.SetFloat("IsGrappling", isGrappling);
+        animator.SetFloat("IsShooting", isShooting);
+        animator.SetFloat("IsUsingItem", isUsingItem);        
     }
 }

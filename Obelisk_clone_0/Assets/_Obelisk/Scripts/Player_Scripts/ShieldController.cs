@@ -17,6 +17,21 @@ public class ShieldController : MonoBehaviour
         Animate();
     }
 
+    private void ShieldBlock()
+    {
+
+    }
+
+    private void ShieldBreak()
+    {
+
+    }
+
+    private void CastAbility(string ability)
+    {
+
+    }
+
     private void Animate()
     {
         animator.SetFloat("Direction", player.Direction);

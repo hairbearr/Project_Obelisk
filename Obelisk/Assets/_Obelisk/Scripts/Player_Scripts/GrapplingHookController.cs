@@ -1,9 +1,11 @@
 using UnityEngine;
 
-public class ShieldController : MonoBehaviour
+public class GrapplingHookController : MonoBehaviour
 {
     private PlayerController player;
     private Animator animator;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,17 +19,22 @@ public class ShieldController : MonoBehaviour
         Animate();
     }
 
-    private void ShieldBlock()
+    private void FireGrapplingHook()
     {
 
     }
 
-    private void ShieldBreak()
+    private void PullGrapplingHook()
     {
 
     }
 
-    private void CastAbility(string ability)
+    private void RetractGrapplingHook()
+    {
+
+    }
+
+    private void CastAbility(float abilityID)
     {
 
     }
