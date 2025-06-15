@@ -9,7 +9,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] GameObject player, weapon;
     private Rigidbody2D rb;
     private Animator enemyAnimator, weaponAnimator;
-    [SerializeField] bool playerIsInAggroRange, playerIsInAttackRange, isAttacking, specialAttacking, isPatrolling, canPatrol, isChasing;
+    [SerializeField] bool playerIsInAggroRange, playerIsInAttackRange, isAttacking, specialAttacking, isPatrolling, canPatrol, isRunning, isWalking, isChasing, isGettingHit;
     [SerializeField] Vector3 patrolStart, patrolEnd;
     public EnemySpawner enemySpawner;
 
@@ -30,6 +30,9 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        enemyAnimator = GetComponent<Animator>();
+        weaponAnimator = GetComponentInChildren<EnemyWeaponController>().GetComponent<Animator>();
+        weapon = weaponAnimator.gameObject;
     }
 
     // Update is called once per frame
@@ -74,11 +77,17 @@ public class EnemyController : MonoBehaviour
                 direction = 3; // northwest
             }
         }
+
+        Animate();
     }
 
     private void Animate()
     {
-        
+        enemyAnimator.SetBool("IsAttacking", isAttacking);
+        enemyAnimator.SetBool("IsGettingHit", isGettingHit);
+        enemyAnimator.SetBool("IsRunning", isRunning);
+        enemyAnimator.SetBool("IsWalking", isWalking);
+        enemyAnimator.SetFloat("Direction", direction);
     }
 
 }

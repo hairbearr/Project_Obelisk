@@ -16,6 +16,79 @@ public class PlayerController : NetworkBehaviour
     [SerializeField] private GameObject sword, shield, grapplingHook;
     [SerializeField] private string activeSwordAbility;
 
+    public float Direction
+    {
+        get { return direction; }
+        set { direction = value; }
+    }
+    public float IsMoving
+    {
+        get { return isMoving; }
+        set { isMoving = value; }
+    }
+    public float IsAttacking
+    {
+        get { return isAttacking; }
+        set { isAttacking = value; }
+    }
+    public float SwordAttackType
+    {
+        get { return swordAttackType; }
+        set { swordAttackType = value; }
+    }
+    public float IsBlocking
+    {
+        get { return isBlocking; }
+        set { isBlocking = value; }
+    }
+    public float IsClimbing
+    {
+        get { return isClimbing; }
+        set { isClimbing = value; }
+    }
+    public float IsDrinkingPotion
+    {
+        get { return isDrinkingPotion; }
+        set { isDrinkingPotion = value; }
+    }
+    public float IsGettingHit
+    {
+        get { return isGettingHit; }
+        set { isGettingHit = value; }
+    }
+    public float IsInteracting
+    {
+        get { return isInteracting; }
+        set { isInteracting = value; }
+    }
+    public float IsJumping
+    {
+        get { return isJumping; }
+        set { isJumping = value; }
+    }
+    public float IsGrappling
+    {
+        get { return isGrappling; }
+        set { isGrappling = value; }
+    }
+    public float IsShooting
+    {
+        get { return isShooting; }
+        set { isShooting = value; }
+    }
+    public float IsUsingItem
+    {
+        get { return isUsingItem; }
+        set { isUsingItem = value; }
+    }
+    public float MovementSpeed
+    {
+        get { return movementSpeed; }
+        set { movementSpeed = value; }
+    }
+
+
+
 
     public override void OnNetworkSpawn()
     {
@@ -73,11 +146,6 @@ public class PlayerController : NetworkBehaviour
         attackCooldown = true;
     }
 
-    private void UseSwordAbility(string activeSwordAbility)
-    {
-        throw new NotImplementedException();
-    }
-
     private void SheatheSword()
     {
         swordAttackType++;
@@ -88,38 +156,6 @@ public class PlayerController : NetworkBehaviour
         isAttacking = 0;
         attackCooldown = false;
         movementDisabled = false;
-    }
-
-    private void TurnOffComponents(GameObject obj)
-    {
-        obj.SetActive(false);
-        obj.GetComponent<BoxCollider2D>().enabled = false;
-    }
-
-    private void TurnOnComponents(GameObject gameObject)
-    {
-        gameObject.SetActive(true);
-        gameObject.GetComponent<BoxCollider2D>().enabled = true;
-    }
-
-    private void ShieldBlock()
-    {
-        
-    }
-
-    private void FireGrapplingHook()
-    {
-        
-    }
-
-    private void DealDamage()
-    {
-
-    }
-
-    private void CastSwordAbility()
-    {
-        print("Sword Ability");
     }
     
     private void Controls()
@@ -231,34 +267,6 @@ public class PlayerController : NetworkBehaviour
         playerAnimator.SetFloat("IsGrappling", isGrappling);
         playerAnimator.SetFloat("IsShooting", isShooting);
         playerAnimator.SetFloat("IsUsingItem", isUsingItem);
-        
-        swordAnimator.SetFloat("Direction", direction);
-        swordAnimator.SetFloat("IsMoving", isMoving);
-        swordAnimator.SetFloat("IsAttacking", isAttacking);
-        swordAnimator.SetFloat("SwordAttackType", swordAttackType);
-        swordAnimator.SetFloat("IsBlocking", isBlocking);
-        swordAnimator.SetFloat("IsClimbing", isClimbing);
-        swordAnimator.SetFloat("IsDrinkingPotion", isDrinkingPotion);
-        swordAnimator.SetFloat("IsGettingHit", isGettingHit);
-        swordAnimator.SetFloat("IsInteracting", isInteracting);
-        swordAnimator.SetFloat("IsJumping", isJumping);
-        swordAnimator.SetFloat("IsGrappling", isGrappling);
-        swordAnimator.SetFloat("IsShooting", isShooting);
-        swordAnimator.SetFloat("IsUsingItem", isUsingItem);
-
-        shieldAnimator.SetFloat("Direction", direction);
-        shieldAnimator.SetFloat("IsMoving", isMoving);
-        shieldAnimator.SetFloat("IsAttacking", isAttacking);
-        shieldAnimator.SetFloat("SwordAttackType", swordAttackType);
-        shieldAnimator.SetFloat("IsBlocking", isBlocking);
-        shieldAnimator.SetFloat("IsClimbing", isClimbing);
-        shieldAnimator.SetFloat("IsDrinkingPotion", isDrinkingPotion);
-        shieldAnimator.SetFloat("IsGettingHit", isGettingHit);
-        shieldAnimator.SetFloat("IsInteracting", isInteracting);
-        shieldAnimator.SetFloat("IsJumping", isJumping);
-        shieldAnimator.SetFloat("IsGrappling", isGrappling);
-        shieldAnimator.SetFloat("IsShooting", isShooting);
-        shieldAnimator.SetFloat("IsUsingItem", isUsingItem);
         
         if (grapplingHook.gameObject.activeSelf)
         {
