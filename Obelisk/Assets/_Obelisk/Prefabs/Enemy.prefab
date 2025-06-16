@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2831068328896984794}
   - component: {fileID: 6100683373574527253}
+  - component: {fileID: 7825435757221718035}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -44,6 +45,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2177af5acc1c0964b87f907410dd2cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseDamage: 0
+  damageModifier: 0
+  knockbackForce: 0
+--- !u!95 &7825435757221718035
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3469548524246058309}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 10775bc5b71c786499e19cdb0c25b468, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4835585955475140316
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,6 +176,8 @@ GameObject:
   - component: {fileID: 7284657103081393818}
   - component: {fileID: 3909946500482452120}
   - component: {fileID: 8010837336297072515}
+  - component: {fileID: 5240316554649227041}
+  - component: {fileID: 4425365914209931163}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -198,8 +226,10 @@ MonoBehaviour:
   specialAttacking: 0
   isPatrolling: 0
   canPatrol: 0
-  isMoving: 0
+  isRunning: 0
+  isWalking: 0
   isChasing: 0
+  isGettingHit: 0
   patrolStart: {x: 0, y: 0, z: 0}
   patrolEnd: {x: 0, y: 0, z: 0}
   enemySpawner: {fileID: 0}
@@ -227,8 +257,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eae3bade1bc8974dafcf812b58ec6b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  maxHealth: 0
+  health: 100
+  maxHealth: 100
   healthUpgrade: 0
   maxHealthUpgrade: 0
   knockBackDelayTime: 0.15
@@ -242,7 +272,7 @@ Animator:
   m_GameObject: {fileID: 6205151091289128448}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5f609140431392841aae056e0a6904a1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -349,3 +379,67 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!70 &5240316554649227041
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6205151091289128448}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.039744675, y: 0.05384761}
+  m_Size: {x: 0.54051065, y: 0.91230476}
+  m_Direction: 0
+--- !u!50 &4425365914209931163
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6205151091289128448}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4
