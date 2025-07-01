@@ -6,7 +6,8 @@ public class SwordController : MonoBehaviour
     private PlayerController player;
     private BoxCollider2D boxCollider;
     private Animator animator;
-    [SerializeField] float baseDamage, damageModifier, knockbackForce, swordType; 
+    [SerializeField] float baseDamage, damageModifier, knockbackForce;
+    [SerializeField] int abilityID;
     // private somethingCollider2d collider;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -63,7 +64,7 @@ public class SwordController : MonoBehaviour
         player.IsDisabled = false;
     }
 
-    private void CastAbility(float abilityID)
+    private void CastAbility()
     {
         if(abilityID != 0)
         {
