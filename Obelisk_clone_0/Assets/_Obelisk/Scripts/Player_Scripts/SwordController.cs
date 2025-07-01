@@ -4,6 +4,7 @@ using UnityEngine;
 public class SwordController : MonoBehaviour
 {
     private PlayerController player;
+    private BoxCollider2D boxCollider;
     private Animator animator;
     [SerializeField] float baseDamage, damageModifier, knockbackForce, swordType; 
     // private somethingCollider2d collider;
@@ -64,7 +65,15 @@ public class SwordController : MonoBehaviour
 
     private void CastAbility(float abilityID)
     {
-        print("Sword Ability");
+        if(abilityID != 0)
+        {
+            print("Cast Sword Ability");
+            // use a switch to decide which abilities to cast, have functions to call what ability it is
+        }
+        else
+        {
+            print ("No Sword Ability");
+        }
     }
 
     private void Animate()
@@ -84,12 +93,13 @@ public class SwordController : MonoBehaviour
         animator.SetFloat("IsUsingItem", player.IsUsingItem);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision != null)
+        if (collision != null)
         {
             if (collision.gameObject.CompareTag("Enemy"))
             {
+                print(collision.gameObject.name);
                 collision.gameObject.GetComponent<Health>().TakeDamage(DealDamage(baseDamage, damageModifier), knockbackForce, transform.position);
             }
         }

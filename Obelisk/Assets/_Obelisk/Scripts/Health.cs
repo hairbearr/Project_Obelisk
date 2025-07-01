@@ -53,7 +53,7 @@ public class Health : MonoBehaviour
         if(health <= 0)
         {
             // play death animation that calls a death function
-            GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<CapsuleCollider2D>().enabled = false;
         }
 
         StartCoroutine(KnockBackStop(knockBackDelayTime));
