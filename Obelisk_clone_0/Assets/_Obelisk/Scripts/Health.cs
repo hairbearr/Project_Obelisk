@@ -62,13 +62,13 @@ public class Health : MonoBehaviour
 
     private void Death()
     {
-        if(this.GetComponent <EnemyController>() != null)
+        if(GetComponent <EnemyController>() != null)
         {
-            this.GetComponent<EnemyController>().IsDead = true;
+            GetComponent<EnemyController>().IsDead = true;
         }
-        if(this.GetComponent <PlayerController>() != null)
+        if(GetComponent <PlayerController>() != null)
         {
-            this.GetComponent<PlayerController>().IsDead = 1;
+            GetComponent<PlayerController>().IsDead = 1;
         }
     }
 
@@ -76,7 +76,7 @@ public class Health : MonoBehaviour
     {
         yield return new WaitForSeconds(delayTime);
         rb.linearVelocity = Vector3.zero;
-        if (this.GetComponent<EnemyController>() != null)
+        if (GetComponent<EnemyController>() != null)
         {
             GetComponent<AIPath>().enabled = true;
         }

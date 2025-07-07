@@ -14,9 +14,6 @@ public class EnemyAggroCheck : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-
-
         if (collision != null)
         {
             if (collision.gameObject.CompareTag("Player"))
@@ -36,7 +33,6 @@ public class EnemyAggroCheck : MonoBehaviour
             {
                 print(collision + " is out of Aggro Range of " + enemyController.name);
                 enemyController.IsInAggroRange = false;
-
                 enemyController.GetComponent<AIDestinationSetter>().target = null;
             }
         }

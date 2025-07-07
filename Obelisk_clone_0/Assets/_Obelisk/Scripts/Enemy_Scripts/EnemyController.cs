@@ -6,7 +6,7 @@ using System;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] private float directionInRadian, movementSpeed, direction, waitTime;
+    [SerializeField] private float directionInRadian, movementSpeed, direction, waitTime = 10f;
     [SerializeField] GameObject player, weapon;
     private Rigidbody2D rb;
     private Animator animator;
