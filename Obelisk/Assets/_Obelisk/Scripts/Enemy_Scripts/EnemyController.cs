@@ -9,10 +9,15 @@ public class EnemyController : MonoBehaviour
     [SerializeField] GameObject player, weapon;
     private Rigidbody2D rb;
     private Animator animator;
-    [SerializeField] bool playerIsInAggroRange, playerIsInAttackRange, isAttacking, specialAttacking, isPatrolling, canPatrol, isRunning, isWalking, isChasing, isGettingHit;
+    [SerializeField] bool playerIsInAggroRange, playerIsInAttackRange, isAttacking, specialAttacking, isPatrolling, canPatrol, isRunning, isWalking, isChasing, isGettingHit, isDead;
     [SerializeField] Vector3 patrolStart, patrolEnd;
     public EnemySpawner enemySpawner;
 
+    public bool IsDead
+    {
+        get{ return isDead; }
+        set{ isDead = value; }
+    }
     public bool IsInAggroRange
     {
         get { return playerIsInAggroRange; }
@@ -120,6 +125,7 @@ public class EnemyController : MonoBehaviour
         animator.SetBool("IsGettingHit", isGettingHit);
         animator.SetBool("IsRunning", isRunning);
         animator.SetBool("IsWalking", isWalking);
+        animator.SetBool("IsDead", isDead);
         animator.SetFloat("Direction", direction);
     }
 

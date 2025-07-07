@@ -52,11 +52,24 @@ public class Health : MonoBehaviour
         health -= amount;
         if(health <= 0)
         {
+            Death();
             // play death animation that calls a death function
             GetComponent<CapsuleCollider2D>().enabled = false;
         }
 
         StartCoroutine(KnockBackStop(knockBackDelayTime));
+    }
+
+    private void Death()
+    {
+        if(this.GetComponent <EnemyController>() != null)
+        {
+            this.GetComponent<EnemyController>().IsDead = true;
+        }
+        if(this.GetComponent <PlayerController>() != null)
+        {
+            this.GetComponent<PlayerController>().IsDead = 1;
+        }
     }
 
     IEnumerator KnockBackStop(float delayTime)

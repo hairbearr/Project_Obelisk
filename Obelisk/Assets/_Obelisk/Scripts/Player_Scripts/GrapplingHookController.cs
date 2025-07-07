@@ -54,5 +54,6 @@ public class GrapplingHookController : MonoBehaviour
         animator.SetFloat("IsGrappling", player.IsGrappling);
         animator.SetFloat("IsShooting", player.IsShooting);
         animator.SetFloat("IsUsingItem", player.IsUsingItem);
+        animator.SetFloat("IsDead", player.IsDead);
     }
 }

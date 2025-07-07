@@ -92,6 +92,7 @@ public class SwordController : MonoBehaviour
         animator.SetFloat("IsGrappling", player.IsGrappling);
         animator.SetFloat("IsShooting", player.IsShooting);
         animator.SetFloat("IsUsingItem", player.IsUsingItem);
+        animator.SetFloat("IsDead", player.IsDead);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

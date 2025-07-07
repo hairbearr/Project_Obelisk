@@ -1,6 +1,7 @@
 using UnityEngine;
 using Unity.Netcode;
 using System;
+using System.Collections;
 
 public class PlayerController : NetworkBehaviour
 {
@@ -10,12 +11,22 @@ public class PlayerController : NetworkBehaviour
     private Rigidbody2D rb;
     private float movementSpeedMultiplier =1f;
     [SerializeField] private Vector2 movementInput;
-    [SerializeField] private float swingSpeed, swordAttackType, direction, attackComboTimer, jumpTimer;
-    [SerializeField] private bool attackCooldown, movementDisabled;
+    [SerializeField] private float swingSpeed, swordAttackType, direction, attackComboTimer, jumpTimer, isDead;
+    [SerializeField] private bool attackCooldown, movementDisabled, cantShield, isDisabled;
     [SerializeField] private float isMoving, isAttacking, isBlocking, isGrappling, isJumping, isClimbing, isDrinkingPotion, isGettingHit, isInteracting, isShooting, isUsingItem;
     [SerializeField] private GameObject sword, shield, grapplingHook;
     [SerializeField] private string activeSwordAbility;
 
+    public float IsDead
+    {
+        get { return isDead; }
+        set { isDead = value; }
+    }
+    public bool CantShield
+    {
+        get { return cantShield; }
+        set { cantShield = value; }
+    }
     public float Direction
     {
         get { return direction; }
@@ -88,6 +99,11 @@ public class PlayerController : NetworkBehaviour
     }
     public bool IsDisabled
     {
+        get { return isDisabled; }
+        set { isDisabled = value; }
+    }
+    public bool IsMovementDisabled
+    {
         get { return movementDisabled; }
         set { movementDisabled = value; }
     }
@@ -126,10 +142,13 @@ public class PlayerController : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        Move();
+        if (!IsDisabled)
+        {
+            Controls();
+            Move();
+        }
         Animate();
-        Controls();
+        
     }
 
     private void StopJump()
@@ -151,7 +170,7 @@ public class PlayerController : NetworkBehaviour
         
 
         // Shield Block
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1)&& !cantShield)
         {
             isBlocking = 1;
             print("Actively Blocking");
@@ -194,6 +213,13 @@ public class PlayerController : NetworkBehaviour
             print("Jumping");
             // play jump animation
             // do jump mechanics?
+        }
+
+        if (cantShield)
+        {
+            isBlocking = 0;
+            Delay(shield.GetComponent<ShieldController>().ShieldCooldownTime);
+            cantShield = false;
         }
     }
 
@@ -249,6 +275,19 @@ public class PlayerController : NetworkBehaviour
         animator.SetFloat("IsJumping", isJumping);
         animator.SetFloat("IsGrappling", isGrappling);
         animator.SetFloat("IsShooting", isShooting);
-        animator.SetFloat("IsUsingItem", isUsingItem);        
+        animator.SetFloat("IsUsingItem", isUsingItem);
+        animator.SetFloat("IsDead", isDead);
+    }
+
+    public virtual IEnumerator DelayedDisable(float disableTime)
+    {
+        IsDisabled = true;
+        yield return new WaitForSeconds(disableTime);
+        IsDisabled = false;
+    }
+
+    IEnumerator Delay (float delayTime)
+    {
+        yield return new WaitForSeconds(delayTime);
     }
 }

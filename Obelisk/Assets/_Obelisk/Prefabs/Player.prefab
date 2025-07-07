@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 6348838781034228441}
   m_Layer: 0
   m_Name: Shield
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -291,6 +291,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 714faebbe78edcc4086f8089a9d27c3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  abilityID: 0
+  shieldEnergy: 50
+  maxShieldEnergy: 50
+  shieldRegenRate: 2
+  knockBackModifier: 2
+  disableTime: 1
+  shieldCooldownTime: 2
+  isBlocking: 0
+  hasShield: 1
+  shieldCooldown: 0
+  regenerateShieldEnergy: 0
 --- !u!61 &6348838781034228441
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -483,6 +494,7 @@ MonoBehaviour:
   jumpTimer: 0
   attackCooldown: 0
   movementDisabled: 0
+  cantShield: 0
   isMoving: 0
   isAttacking: 0
   isBlocking: 0
@@ -494,8 +506,8 @@ MonoBehaviour:
   isInteracting: 0
   isShooting: 0
   isUsingItem: 0
-  sword: {fileID: 0}
-  shield: {fileID: 0}
+  sword: {fileID: 6332690074828862356}
+  shield: {fileID: 1178975577014766791}
   grapplingHook: {fileID: 7570831862445896486}
   activeSwordAbility: 
 --- !u!114 &8041656580344547172
@@ -836,7 +848,7 @@ GameObject:
   - component: {fileID: 1318030092456730513}
   - component: {fileID: 2030324587001277612}
   m_Layer: 0
-  m_Name: Grappling Hook
+  m_Name: GrapplingGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
