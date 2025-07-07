@@ -2,15 +2,16 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using Pathfinding;
+using System;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] private float directionInRadian, movementSpeed, direction;
+    [SerializeField] private float directionInRadian, movementSpeed, direction, waitTime;
     [SerializeField] GameObject player, weapon;
     private Rigidbody2D rb;
     private Animator animator;
     [SerializeField] bool playerIsInAggroRange, playerIsInAttackRange, isAttacking, specialAttacking, isPatrolling, canPatrol, isRunning, isWalking, isChasing, isGettingHit, isDead;
-    [SerializeField] Vector3 patrolStart, patrolEnd;
+    [SerializeField] Vector3 patrolStart, patrolEnd, startPosition;
     public EnemySpawner enemySpawner;
 
     public bool IsDead
@@ -75,7 +76,31 @@ public class EnemyController : MonoBehaviour
             Movement();
         }
 
+        if (!playerIsInAggroRange && startPosition != transform.position)
+        {
+            StartCoroutine(ReturnToSpawnPoint());
+        }
+
+        Combat();
+        Patrol();
         Animate();
+    }
+
+    private IEnumerator ReturnToSpawnPoint()
+    {
+        yield return new WaitForSeconds(waitTime);
+        GetComponent<AIDestinationSetter>().target = enemySpawner.transform;
+    }
+
+    private void Patrol()
+    {
+        if (!playerIsInAggroRange && canPatrol)
+        {
+            isPatrolling = true;
+            //if position != patrol point i, set destination to patrol point i.
+            // when you hit patrol point i, set destination to patrol point i+1
+            // if i > patrol points, set i to 0;
+        }
     }
 
     private void Movement()
@@ -118,6 +143,19 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    private void Combat()
+    {
+        if (playerIsInAttackRange)
+        {
+            isAttacking = true;
+            GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
+        }
+
+        if (!playerIsInAttackRange && playerIsInAggroRange)
+        {
+            isAttacking = false;
+        }
+    }
     private void Animate()
     {
         animator.SetBool("IsAttacking", isAttacking);

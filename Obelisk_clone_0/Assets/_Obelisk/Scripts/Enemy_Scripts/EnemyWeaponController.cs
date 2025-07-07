@@ -14,31 +14,40 @@ public class EnemyWeaponController : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void NextAttack()
     {
-        Animate();
+        // roll a die, pick either basic attack or whichever one of it's special attacks
+        // cast that attack/play that animation
     }
+
+    void BasicMeleeAttack()
+    {
+        //pick the right animation
+        //set baseDamage, damageModifier, and knockbackForce correctly
+    }
+
+    void BasicRangedAttack()
+    {
+        //pick the right animation
+        //set the baseDamage, damageModifier, and KnockbackForce correctly
+        // pick the right projectile, and set it's baseDamage, damageModifier, and KnockbackForce correctly
+    }
+
     private float DealDamage(float damage, float modifier)
     {
         return damage + modifier;
-    }
-
-    private void Animate()
-    {
-        animator.SetBool("IsAttacking", enemy.IsAttacking);
-        animator.SetBool("IsSpecialAttacking", enemy.SpecialAttack);
-        animator.SetBool("IsGettingHit", enemy.IsGettingHit);
-        animator.SetBool("IsRunning", enemy.IsRunning);
-        animator.SetBool("IsWalking", enemy.IsWalking);
-        animator.SetFloat("Direction", enemy.Direction);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision != null)
         {
-            if (collision.gameObject.CompareTag("Player"))
+            if (collision.collider.gameObject.CompareTag("Shield"))
+            {
+                collision.collider.gameObject.GetComponent<ShieldController>().ShieldDamage(DealDamage(baseDamage, damageModifier), knockbackForce, transform.position);
+                return;
+            }
+            if (collision.collider.gameObject.CompareTag("Player"))
             {
                 collision.gameObject.GetComponent<Health>().TakeDamage(DealDamage(baseDamage, damageModifier), knockbackForce, transform.position);
             }
