@@ -270,7 +270,6 @@ public class PlayerController : NetworkBehaviour
         animator.SetFloat("IsBlocking", isBlocking);
         animator.SetFloat("IsClimbing", isClimbing);
         animator.SetFloat("IsDrinkingPotion", isDrinkingPotion);
-        animator.SetFloat("IsGettingHit", isGettingHit);
         animator.SetFloat("IsInteracting", isInteracting);
         animator.SetFloat("IsJumping", isJumping);
         animator.SetFloat("IsGrappling", isGrappling);

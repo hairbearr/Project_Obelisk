@@ -55,9 +55,6 @@ AnimatorStateTransition:
     m_ConditionEvent: IsDrinkingPotion
     m_EventTreshold: 1
   - m_ConditionMode: 4
-    m_ConditionEvent: IsGettingHit
-    m_EventTreshold: 1
-  - m_ConditionMode: 4
     m_ConditionEvent: IsInteracting
     m_EventTreshold: 1
   - m_ConditionMode: 4
@@ -575,9 +572,6 @@ AnimatorStateTransition:
     m_ConditionEvent: IsDrinkingPotion
     m_EventTreshold: 1
   - m_ConditionMode: 4
-    m_ConditionEvent: IsGettingHit
-    m_EventTreshold: 1
-  - m_ConditionMode: 4
     m_ConditionEvent: IsInteracting
     m_EventTreshold: 1
   - m_ConditionMode: 4
@@ -842,9 +836,6 @@ AnimatorStateTransition:
     m_EventTreshold: 1
   - m_ConditionMode: 4
     m_ConditionEvent: IsDrinkingPotion
-    m_EventTreshold: 1
-  - m_ConditionMode: 4
-    m_ConditionEvent: IsGettingHit
     m_EventTreshold: 1
   - m_ConditionMode: 4
     m_ConditionEvent: IsInteracting
@@ -1133,9 +1124,6 @@ AnimatorStateTransition:
     m_EventTreshold: 1
   - m_ConditionMode: 4
     m_ConditionEvent: IsDrinkingPotion
-    m_EventTreshold: 1
-  - m_ConditionMode: 4
-    m_ConditionEvent: IsGettingHit
     m_EventTreshold: 1
   - m_ConditionMode: 4
     m_ConditionEvent: IsInteracting
@@ -1697,9 +1685,6 @@ AnimatorStateTransition:
     m_ConditionEvent: IsDrinkingPotion
     m_EventTreshold: 1
   - m_ConditionMode: 4
-    m_ConditionEvent: IsGettingHit
-    m_EventTreshold: 1
-  - m_ConditionMode: 4
     m_ConditionEvent: IsInteracting
     m_EventTreshold: 1
   - m_ConditionMode: 4
@@ -1896,9 +1881,6 @@ AnimatorStateTransition:
     m_ConditionEvent: IsDrinkingPotion
     m_EventTreshold: 1
   - m_ConditionMode: 4
-    m_ConditionEvent: IsGettingHit
-    m_EventTreshold: 1
-  - m_ConditionMode: 4
     m_ConditionEvent: IsInteracting
     m_EventTreshold: 1
   - m_ConditionMode: 4
@@ -2078,9 +2060,6 @@ AnimatorStateTransition:
     m_EventTreshold: 1
   - m_ConditionMode: 4
     m_ConditionEvent: IsDrinkingPotion
-    m_EventTreshold: 1
-  - m_ConditionMode: 4
-    m_ConditionEvent: IsGettingHit
     m_EventTreshold: 1
   - m_ConditionMode: 4
     m_ConditionEvent: IsInteracting
@@ -2608,9 +2587,6 @@ AnimatorStateTransition:
     m_ConditionEvent: IsDrinkingPotion
     m_EventTreshold: 1
   - m_ConditionMode: 4
-    m_ConditionEvent: IsGettingHit
-    m_EventTreshold: 1
-  - m_ConditionMode: 4
     m_ConditionEvent: IsInteracting
     m_EventTreshold: 1
   - m_ConditionMode: 4
@@ -2742,9 +2718,6 @@ AnimatorStateTransition:
     m_ConditionEvent: IsDrinkingPotion
     m_EventTreshold: 1
   - m_ConditionMode: 4
-    m_ConditionEvent: IsGettingHit
-    m_EventTreshold: 1
-  - m_ConditionMode: 4
     m_ConditionEvent: IsInteracting
     m_EventTreshold: 1
   - m_ConditionMode: 4
@@ -2853,9 +2826,6 @@ AnimatorStateTransition:
     m_ConditionEvent: IsDrinkingPotion
     m_EventTreshold: 1
   - m_ConditionMode: 4
-    m_ConditionEvent: IsGettingHit
-    m_EventTreshold: 1
-  - m_ConditionMode: 4
     m_ConditionEvent: IsInteracting
     m_EventTreshold: 1
   - m_ConditionMode: 4
@@ -2931,9 +2901,6 @@ AnimatorStateTransition:
     m_EventTreshold: 1
   - m_ConditionMode: 4
     m_ConditionEvent: IsDrinkingPotion
-    m_EventTreshold: 1
-  - m_ConditionMode: 4
-    m_ConditionEvent: IsGettingHit
     m_EventTreshold: 1
   - m_ConditionMode: 4
     m_ConditionEvent: IsInteracting

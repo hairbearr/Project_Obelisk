@@ -244,7 +244,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8842397654035953887}
   - component: {fileID: 3153546976205672121}
-  - component: {fileID: 2323349985951483939}
   - component: {fileID: 8595410283389588095}
   - component: {fileID: 5529529377625453421}
   - component: {fileID: 7284657103081393818}
@@ -293,9 +292,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   directionInRadian: 0
-  movementSpeed: 0
+  movementSpeed: 5
   direction: 0
-  waitTime: 0
+  waitTime: 10
   player: {fileID: 0}
   weapon: {fileID: 3469548524246058309}
   playerIsInAggroRange: 0
@@ -309,22 +308,11 @@ MonoBehaviour:
   isChasing: 0
   isGettingHit: 0
   isDead: 0
+  returnToStartPoint: 0
   patrolStart: {x: 0, y: 0, z: 0}
   patrolEnd: {x: 0, y: 0, z: 0}
   startPosition: {x: 0, y: 0, z: 0}
   enemySpawner: {fileID: 0}
---- !u!114 &2323349985951483939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6205151091289128448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d144850e90d133b48affe6cbc48150f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8595410283389588095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -550,7 +538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
-  radius: 0.5
+  radius: 0.75
   height: 2
   canMove: 1
   maxSpeed: 1
@@ -561,8 +549,8 @@ MonoBehaviour:
   centerOffsetCompatibility: NaN
   repathRateCompatibility: NaN
   canSearchCompability: 0
-  orientation: 0
-  enableRotation: 1
+  orientation: 1
+  enableRotation: 0
   autoRepath:
     mode: 2
     interval: 0.5
@@ -575,9 +563,9 @@ MonoBehaviour:
   slowdownDistance: 0.6
   pickNextWaypointDist: 2
   endReachedDistance: 0.2
-  alwaysDrawGizmos: 0
+  alwaysDrawGizmos: 1
   slowWhenNotFacingTarget: 1
-  whenCloseToDestination: 0
+  whenCloseToDestination: 1
   constrainInsideGraph: 0
 --- !u!114 &2961504555484043623
 MonoBehaviour:

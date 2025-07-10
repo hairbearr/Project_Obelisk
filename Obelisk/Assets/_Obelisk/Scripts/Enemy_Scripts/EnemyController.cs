@@ -10,7 +10,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] GameObject player, weapon;
     private Rigidbody2D rb;
     private Animator animator;
-    [SerializeField] bool playerIsInAggroRange, playerIsInAttackRange, isAttacking, specialAttacking, isPatrolling, canPatrol, isRunning, isWalking, isChasing, isGettingHit, isDead;
+    [SerializeField] bool playerIsInAggroRange, playerIsInAttackRange, isAttacking, specialAttacking, isPatrolling, canPatrol, isRunning, isWalking, isChasing, isGettingHit, isDead, returnToStartPoint = false;
     [SerializeField] Vector3 patrolStart, patrolEnd, startPosition;
     public EnemySpawner enemySpawner;
 
@@ -66,6 +66,7 @@ public class EnemyController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        startPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -78,7 +79,7 @@ public class EnemyController : MonoBehaviour
 
         if (!playerIsInAggroRange && startPosition != transform.position)
         {
-            StartCoroutine(ReturnToSpawnPoint());
+            ReturnToSpawnPoint();
         }
 
         Combat();
@@ -86,10 +87,17 @@ public class EnemyController : MonoBehaviour
         Animate();
     }
 
-    private IEnumerator ReturnToSpawnPoint()
+    private void ReturnToSpawnPoint()
     {
-        yield return new WaitForSeconds(waitTime);
+        StartCoroutine(Delay(waitTime));
+        print("Returning To Spawn Point");
         GetComponent<AIDestinationSetter>().target = enemySpawner.transform;
+        if (Vector2.Distance(startPosition, transform.position) <= .5f)
+        {
+            transform.position = startPosition;
+            GetComponent<AIDestinationSetter>().target = null;
+        }
+        returnToStartPoint = false;
     }
 
     private void Patrol()
@@ -160,11 +168,15 @@ public class EnemyController : MonoBehaviour
     {
         animator.SetBool("IsAttacking", isAttacking);
         animator.SetBool("IsSpecialAttacking", specialAttacking);
-        animator.SetBool("IsGettingHit", isGettingHit);
         animator.SetBool("IsRunning", isRunning);
         animator.SetBool("IsWalking", isWalking);
         animator.SetBool("IsDead", isDead);
         animator.SetFloat("Direction", direction);
     }
 
+    IEnumerator Delay(float delayTime)
+    {
+        print("delaying by: " + delayTime);
+        yield return new WaitForSeconds(delayTime);
+    }
 }
