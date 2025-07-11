@@ -11,8 +11,21 @@ public class EnemyController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
     [SerializeField] bool playerIsInAggroRange, playerIsInAttackRange, isAttacking, specialAttacking, isPatrolling, canPatrol, isRunning, isWalking, isChasing, isGettingHit, isDead, returnToStartPoint = false;
-    [SerializeField] Vector3 patrolStart, patrolEnd, startPosition;
+    [SerializeField] Vector3 patrolStart, patrolEnd;
+    [SerializeField] Transform startPosition;
     public EnemySpawner enemySpawner;
+
+    public Transform StartPosition
+    {
+        get { return startPosition; }
+        set { startPosition = value; }
+    }
+
+    public bool IsReturningToStartPoint
+    {
+        get { return returnToStartPoint; }
+        set { returnToStartPoint = value; }
+    }
 
     public bool IsDead
     {
@@ -66,38 +79,37 @@ public class EnemyController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        startPosition = transform.position;
+        startPosition = enemySpawner.transform;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(startPosition == null) {  return; }
+
         if (GetComponent<AIDestinationSetter>().target != null)
         {
             Movement();
         }
 
-        if (!playerIsInAggroRange && startPosition != transform.position)
+        if (!playerIsInAggroRange && Vector2.Distance(startPosition.position, transform.position) > 0.05f)
         {
-            ReturnToSpawnPoint();
+            returnToStartPoint = true;
+        }
+
+        if (IsReturningToStartPoint)
+        {
+            if (Vector2.Distance(startPosition.position, transform.position) <= 0.05f)
+            {
+                transform.position = startPosition.position;
+                GetComponent<AIDestinationSetter>().target = null;
+                IsReturningToStartPoint = false;
+            }
         }
 
         Combat();
         Patrol();
         Animate();
-    }
-
-    private void ReturnToSpawnPoint()
-    {
-        StartCoroutine(Delay(waitTime));
-        print("Returning To Spawn Point");
-        GetComponent<AIDestinationSetter>().target = enemySpawner.transform;
-        if (Vector2.Distance(startPosition, transform.position) <= .5f)
-        {
-            transform.position = startPosition;
-            GetComponent<AIDestinationSetter>().target = null;
-        }
-        returnToStartPoint = false;
     }
 
     private void Patrol()
@@ -113,42 +125,20 @@ public class EnemyController : MonoBehaviour
 
     private void Movement()
     {
-        directionInRadian = Mathf.Atan2(transform.position.y - GetComponent<AIDestinationSetter>().target.position.y, transform.position.x - GetComponent<AIDestinationSetter>().target.position.x);
+        var target = GetComponent<AIDestinationSetter>().target;
+        if (target == null) return;
 
+        directionInRadian = Mathf.Atan2(transform.position.y - target.position.y, transform.position.x - target.position.x);
         float directionInDegrees = directionInRadian * Mathf.Rad2Deg * -1;
 
-        if (directionInDegrees >= 67.5 && directionInDegrees <= 112.5)
-        {
-            direction = 1; // north
-        }
-        else if (directionInDegrees < 67.5f && directionInDegrees > 22.5)
-        {
-            direction = 2; // northeast
-        }
-        else if (directionInDegrees <= 22.5 && directionInDegrees >= -22.5)
-        {
-            direction = 0; // east
-        }
-        else if (directionInDegrees < -22.5 && directionInDegrees > -67.5)
-        {
-            direction = 5; // southeast
-        }
-        else if (directionInDegrees <= -67.5 && directionInDegrees >= -112.5)
-        {
-            direction = 4; // south
-        }
-        else if (directionInDegrees < -112.5 && directionInDegrees > -157.5)
-        {
-            direction = 6; // southwest
-        }
-        else if (directionInDegrees <= 157.5 && directionInDegrees >= 157.5)
-        {
-            direction = 7; // west
-        }
-        else if (directionInDegrees < 157.5 && directionInDegrees > 112.5)
-        {
-            direction = 3; // northwest
-        }
+        if (directionInDegrees >= 67.5 && directionInDegrees <= 112.5) direction = 1; // N
+        else if (directionInDegrees < 67.5f && directionInDegrees > 22.5) direction = 2; // NE
+        else if (directionInDegrees <= 22.5 && directionInDegrees >= -22.5) direction = 0; // E
+        else if (directionInDegrees < -22.5 && directionInDegrees > -67.5) direction = 5; // SE
+        else if (directionInDegrees <= -67.5 && directionInDegrees >= -112.5) direction = 4; // S
+        else if (directionInDegrees < -112.5 && directionInDegrees > -157.5) direction = 6; // SW
+        else if (directionInDegrees <= 157.5 && directionInDegrees >= 157.5) direction = 7; // W
+        else if (directionInDegrees < 157.5 && directionInDegrees > 112.5) direction = 3; // NW
     }
 
     private void Combat()
@@ -156,7 +146,7 @@ public class EnemyController : MonoBehaviour
         if (playerIsInAttackRange)
         {
             isAttacking = true;
-            GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
+            rb.linearVelocity = Vector2.zero;
         }
 
         if (!playerIsInAttackRange && playerIsInAggroRange)
@@ -172,11 +162,5 @@ public class EnemyController : MonoBehaviour
         animator.SetBool("IsWalking", isWalking);
         animator.SetBool("IsDead", isDead);
         animator.SetFloat("Direction", direction);
-    }
-
-    IEnumerator Delay(float delayTime)
-    {
-        print("delaying by: " + delayTime);
-        yield return new WaitForSeconds(delayTime);
     }
 }
