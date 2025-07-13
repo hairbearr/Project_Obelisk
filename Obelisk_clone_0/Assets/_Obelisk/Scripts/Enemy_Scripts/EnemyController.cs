@@ -10,7 +10,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] GameObject player, weapon;
     private Rigidbody2D rb;
     private Animator animator;
-    [SerializeField] bool playerIsInAggroRange, playerIsInAttackRange, isAttacking, specialAttacking, isPatrolling, canPatrol, isRunning, isWalking, isChasing, isGettingHit, isDead, returnToStartPoint = false;
+    [SerializeField] bool playerIsInAggroRange, playerIsInAttackRange, isAttacking, specialAttacking, isPatrolling, canPatrol, isRunning, isWalking, isChasing, isGettingHit, isDead, isDisabled, returnToStartPoint = false;
     [SerializeField] Vector3 patrolStart, patrolEnd;
     [SerializeField] Transform startPosition;
     public EnemySpawner enemySpawner;
@@ -20,7 +20,11 @@ public class EnemyController : MonoBehaviour
         get { return startPosition; }
         set { startPosition = value; }
     }
-
+    public bool IsDisabled
+    {
+        get { return isDisabled; }
+        set { isDisabled = value; }
+    }
     public bool IsReturningToStartPoint
     {
         get { return returnToStartPoint; }
@@ -87,28 +91,31 @@ public class EnemyController : MonoBehaviour
     {
         if(startPosition == null) {  return; }
 
-        if (GetComponent<AIDestinationSetter>().target != null)
+        if (!IsDisabled)
         {
-            Movement();
-        }
-
-        if (!playerIsInAggroRange && Vector2.Distance(startPosition.position, transform.position) > 0.05f)
-        {
-            returnToStartPoint = true;
-        }
-
-        if (IsReturningToStartPoint)
-        {
-            if (Vector2.Distance(startPosition.position, transform.position) <= 0.05f)
+            if (GetComponent<AIDestinationSetter>().target != null)
             {
-                transform.position = startPosition.position;
-                GetComponent<AIDestinationSetter>().target = null;
-                IsReturningToStartPoint = false;
+                Movement();
             }
-        }
 
-        Combat();
-        Patrol();
+            if (!playerIsInAggroRange && Vector2.Distance(startPosition.position, transform.position) > 0.05f)
+            {
+                returnToStartPoint = true;
+            }
+
+            if (IsReturningToStartPoint)
+            {
+                if (Vector2.Distance(startPosition.position, transform.position) <= 0.05f)
+                {
+                    transform.position = startPosition.position;
+                    GetComponent<AIDestinationSetter>().target = null;
+                    IsReturningToStartPoint = false;
+                }
+            }
+
+            Combat();
+            Patrol();
+        }
         Animate();
     }
 

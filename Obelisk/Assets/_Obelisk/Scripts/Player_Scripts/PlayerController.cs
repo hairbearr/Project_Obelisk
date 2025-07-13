@@ -175,8 +175,6 @@ public class PlayerController : NetworkBehaviour
             isBlocking = 1;
             print("Actively Blocking");
             movementDisabled = true;
-            // play block animation(s)
-            // if there's an ability, use the ability here
         }
         if (Input.GetMouseButtonUp(1))
         {
@@ -188,22 +186,13 @@ public class PlayerController : NetworkBehaviour
         // Fire Grappling Hook
         if (Input.GetMouseButtonDown(2))
         {
-            movementDisabled = true;
             isShooting = 1;
             print("Grappling Hook Fire");
-            // play grappling hook animation
-            // fire grappling hook projectile, which does all the grappling hook stuffs, including the abilities
         }
         if (Input.GetMouseButtonUp(2))
         {
-            movementDisabled = false;
             isShooting = 0;
             print("Grappling Hook No Longer Firing");
-            //If (GrapplingHookConnected){
-            // if(Connection == enemy){
-            // pull enemy to player;}
-            // if (Connection == grapplePoint){
-            // Pull player to grapplePoint;}
         }
 
         // Jump
@@ -236,11 +225,8 @@ public class PlayerController : NetworkBehaviour
         }
 
         movementInput = new Vector2(horizontal, vertical);
-        // east
-        if ( horizontal == 1  && vertical == 0   )
-        { 
-            direction = 0;
-        }
+
+             if ( horizontal == 1  && vertical == 0   ) { direction = 0; } // east
         else if ( horizontal == 1  && vertical == 1   ) { direction = 1; } // northEast
         else if ( horizontal == 0  && vertical == 1   ) { direction = 2; } // north
         else if ( horizontal == -1 && vertical == 1   ) { direction = 3; } // northWest
