@@ -5,6 +5,7 @@ public class EnemyAttack : ScriptableObject
 {
     [SerializeField] private string attackName;
     [SerializeField] private bool isRanged;
+    [SerializeField] private int direction;
     [SerializeField] private AnimationClip animation;
     [SerializeField] private float baseDamage, damageModifier, knockbackForce, cooldown = 1f, weight = 1f;
     [SerializeField] private GameObject projectilePrefab;
@@ -20,6 +21,7 @@ public class EnemyAttack : ScriptableObject
     public float KnockbackForce => knockbackForce;
     public float Cooldown => cooldown;
     public float Weight => weight;
+    public int Direction => direction;
 
     // calculate total damage from base + modifier
     public float DealDamage() => baseDamage + damageModifier;

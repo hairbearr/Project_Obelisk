@@ -10,6 +10,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] GameObject player, weapon;
     private Rigidbody2D rb;
     private Animator animator;
+    private AIDestinationSetter destinationSetter;
     [SerializeField] bool playerIsInAggroRange, playerIsInAttackRange, isAttacking, specialAttacking, isPatrolling, canPatrol, isRunning, isWalking, isChasing, isGettingHit, isDead, isDisabled, returnToStartPoint = false;
     [SerializeField] Vector3 patrolStart, patrolEnd;
     [SerializeField] Transform startPosition;
@@ -81,6 +82,7 @@ public class EnemyController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        destinationSetter = GetComponent<AIDestinationSetter>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         startPosition = enemySpawner.transform;
@@ -93,7 +95,7 @@ public class EnemyController : MonoBehaviour
 
         if (!IsDisabled)
         {
-            if (GetComponent<AIDestinationSetter>().target != null)
+            if (destinationSetter.target != null)
             {
                 Movement();
             }
@@ -108,7 +110,7 @@ public class EnemyController : MonoBehaviour
                 if (Vector2.Distance(startPosition.position, transform.position) <= 0.05f)
                 {
                     transform.position = startPosition.position;
-                    GetComponent<AIDestinationSetter>().target = null;
+                    destinationSetter.target = null;
                     IsReturningToStartPoint = false;
                 }
             }
@@ -132,20 +134,21 @@ public class EnemyController : MonoBehaviour
 
     private void Movement()
     {
-        var target = GetComponent<AIDestinationSetter>().target;
+        var target = destinationSetter.target;
         if (target == null) return;
 
         directionInRadian = Mathf.Atan2(transform.position.y - target.position.y, transform.position.x - target.position.x);
         float directionInDegrees = directionInRadian * Mathf.Rad2Deg * -1;
 
-        if (directionInDegrees >= 67.5 && directionInDegrees <= 112.5) direction = 1; // N
-        else if (directionInDegrees < 67.5f && directionInDegrees > 22.5) direction = 2; // NE
-        else if (directionInDegrees <= 22.5 && directionInDegrees >= -22.5) direction = 0; // E
-        else if (directionInDegrees < -22.5 && directionInDegrees > -67.5) direction = 5; // SE
-        else if (directionInDegrees <= -67.5 && directionInDegrees >= -112.5) direction = 4; // S
-        else if (directionInDegrees < -112.5 && directionInDegrees > -157.5) direction = 6; // SW
-        else if (directionInDegrees <= 157.5 && directionInDegrees >= 157.5) direction = 7; // W
-        else if (directionInDegrees < 157.5 && directionInDegrees > 112.5) direction = 3; // NW
+        if (directionInDegrees > 67.5f && directionInDegrees <= 112.5f) direction = 1;   // N
+        else if (directionInDegrees > 22.5f && directionInDegrees <= 67.5f) direction = 2;  // NE
+        else if (directionInDegrees > -22.5f && directionInDegrees <= 22.5f) direction = 0;  // E
+        else if (directionInDegrees > -67.5f && directionInDegrees <= -22.5f) direction = 5; // SE
+        else if (directionInDegrees > -112.5f && directionInDegrees <= -67.5f) direction = 4; // S
+        else if (directionInDegrees > -157.5f && directionInDegrees <= -112.5f) direction = 6; // SW
+        else if (directionInDegrees > 157.5f || directionInDegrees <= -157.5f) direction = 7;  // W
+        else if (directionInDegrees > 112.5f && directionInDegrees <= 157.5f) direction = 3;  // NW
+
     }
 
     private void Combat()

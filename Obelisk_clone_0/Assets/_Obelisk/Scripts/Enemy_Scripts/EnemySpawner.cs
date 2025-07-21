@@ -1,12 +1,11 @@
 using UnityEngine;
 using Unity.Netcode;
 using System.Collections;
-using NUnit.Framework;
 
 public class EnemySpawner : NetworkBehaviour
 {
     [SerializeField] private Transform enemyPrefab, enemy;
-    [SerializeField] private float spawnCooldown;
+    [SerializeField] private float spawnCooldown = 60f;
 
     public override void OnNetworkSpawn()
     {
@@ -23,16 +22,15 @@ public class EnemySpawner : NetworkBehaviour
     {
         while (true)
         {
+            yield return new WaitForSeconds(spawnCooldown);
+
             if (enemy == null)
             {
                 Transform enemyTransform = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
-                spawnCooldown = 60;
                 enemyTransform.GetComponent<EnemyController>().enemySpawner = this;
                 enemy = enemyTransform;
-                yield return new WaitForSeconds(spawnCooldown);
+                enemy.GetComponent<NetworkObject>().Spawn();
             }
-            yield return null;
         }
     }
-
 }
