@@ -7,8 +7,8 @@ public class EnemyWeaponController : MonoBehaviour
     private EnemyController enemy;
     private Animator animator;
 
-    [SerializeField] private EnemyAttack[] attackPool;
-    private EnemyAttack currentAttack;
+    [SerializeField] private Attack[] attackPool;
+    private Attack currentAttack;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -36,7 +36,7 @@ public class EnemyWeaponController : MonoBehaviour
     private void Attack()
     {
         // get all attacks that are off cooldown
-        List<EnemyAttack> readyAttacks = attackPool.Where(a => a.IsReady()).ToList();
+        List<Attack> readyAttacks = attackPool.Where(a => a.IsReady()).ToList();
         if (readyAttacks.Count == 0) return; // No attacks are ready, do nothing
 
         // Sum weights of all ready attacks for weighted random selection
@@ -61,10 +61,11 @@ public class EnemyWeaponController : MonoBehaviour
         // Record current time as last used for cooldown tracking
         currentAttack.lastUsedTime = Time.time;
 
-        // play the attack animation if assigned
-        if(currentAttack.Animation != null)
+        // Play animation for the correct direction
+        AnimationClip clip = currentAttack.GetAnimation(enemy.Direction);
+        if (clip != null)
         {
-            animator.Play(currentAttack.Animation.name);
+            animator.Play(clip.name);
         }
 
         //if it's a ranged attack and has a projectile, fire it
@@ -74,7 +75,7 @@ public class EnemyWeaponController : MonoBehaviour
         }
     }
 
-    private void FireProjectile(EnemyAttack attack)
+    private void FireProjectile(Attack attack)
     {
         // instantiate the projectile at the enemy's position, no rotation
         GameObject projectile = Instantiate(attack.ProjectilePrefab, transform.position, Quaternion.identity);

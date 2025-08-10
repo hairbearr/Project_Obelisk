@@ -1,31 +1,36 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "EnemyAttack", menuName = "Enemy/Attack")]
-public class EnemyAttack : ScriptableObject
+[CreateAssetMenu(fileName = "Attack", menuName = "Combat/Attack")]
+public class Attack : ScriptableObject
 {
     [SerializeField] private string attackName;
     [SerializeField] private bool isRanged;
-    [SerializeField] private int direction;
-    [SerializeField] private AnimationClip animation;
-    [SerializeField] private float baseDamage, damageModifier, knockbackForce, cooldown = 1f, weight = 1f;
+    [SerializeField] private AnimationClip[] directionalAnimations = new AnimationClip[8];
+    [SerializeField] private float baseDamage;
+    [SerializeField] private float damageModifier;
+    [SerializeField] private float knockbackForce;
+    [SerializeField] private float cooldown = 1f;
+    [SerializeField] private float weight = 1f;
     [SerializeField] private GameObject projectilePrefab;
 
     [HideInInspector] public float lastUsedTime = -Mathf.Infinity;
 
     public string AttackName => attackName;
     public bool IsRanged => isRanged;
-    public AnimationClip Animation => animation;
+    public AnimationClip[] DirectionalAnimations => directionalAnimations;
     public GameObject ProjectilePrefab => projectilePrefab;
     public float BaseDamage => baseDamage;
     public float DamageModifier => damageModifier;
     public float KnockbackForce => knockbackForce;
     public float Cooldown => cooldown;
     public float Weight => weight;
-    public int Direction => direction;
 
-    // calculate total damage from base + modifier
+    // Get animation for a specific direction
+    public AnimationClip GetAnimation(Direction dir) => directionalAnimations[(int)dir];
+
+    // Calculate total damage
     public float DealDamage() => baseDamage + damageModifier;
 
-    // check if cooldown time has passed to allow attack again
+    // Check if cooldown is ready
     public bool IsReady() => Time.time >= lastUsedTime + cooldown;
 }

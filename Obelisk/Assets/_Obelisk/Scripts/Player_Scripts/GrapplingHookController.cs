@@ -41,7 +41,7 @@ public class GrapplingHookController : MonoBehaviour
 
     private void Animate()
     {
-        animator.SetFloat("Direction", player.Direction);
+        animator.SetFloat("Direction", (float)player.Direction);
         animator.SetFloat("IsMoving", player.IsMoving);
         animator.SetFloat("IsAttacking", player.IsAttacking);
         animator.SetFloat("SwordAttackType", player.SwordAttackType);

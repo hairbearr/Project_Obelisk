@@ -6,8 +6,9 @@ using System;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] private float directionInRadian, movementSpeed, direction, waitTime = 10f;
+    [SerializeField] private float directionInRadian, movementSpeed, waitTime = 10f;
     [SerializeField] GameObject player, weapon;
+    [SerializeField] Direction direction;
     private Rigidbody2D rb;
     private Animator animator;
     private AIDestinationSetter destinationSetter;
@@ -67,7 +68,7 @@ public class EnemyController : MonoBehaviour
         get { return isWalking; }
         set { isWalking = value; }
     }
-    public float Direction
+    public Direction Direction
     {
         get { return direction; }
         set {  direction = value; }
@@ -140,14 +141,14 @@ public class EnemyController : MonoBehaviour
         directionInRadian = Mathf.Atan2(transform.position.y - target.position.y, transform.position.x - target.position.x);
         float directionInDegrees = directionInRadian * Mathf.Rad2Deg * -1;
 
-        if (directionInDegrees > 67.5f && directionInDegrees <= 112.5f) direction = 1;   // N
-        else if (directionInDegrees > 22.5f && directionInDegrees <= 67.5f) direction = 2;  // NE
-        else if (directionInDegrees > -22.5f && directionInDegrees <= 22.5f) direction = 0;  // E
-        else if (directionInDegrees > -67.5f && directionInDegrees <= -22.5f) direction = 5; // SE
-        else if (directionInDegrees > -112.5f && directionInDegrees <= -67.5f) direction = 4; // S
-        else if (directionInDegrees > -157.5f && directionInDegrees <= -112.5f) direction = 6; // SW
-        else if (directionInDegrees > 157.5f || directionInDegrees <= -157.5f) direction = 7;  // W
-        else if (directionInDegrees > 112.5f && directionInDegrees <= 157.5f) direction = 3;  // NW
+        if (directionInDegrees > 67.5f && directionInDegrees <= 112.5f) direction = Direction.North;   // N
+        else if (directionInDegrees > 22.5f && directionInDegrees <= 67.5f) direction = Direction.NorthEast;  // NE
+        else if (directionInDegrees > -22.5f && directionInDegrees <= 22.5f) direction = Direction.East;  // E
+        else if (directionInDegrees > -67.5f && directionInDegrees <= -22.5f) direction = Direction.SouthEast; // SE
+        else if (directionInDegrees > -112.5f && directionInDegrees <= -67.5f) direction = Direction.South; // S
+        else if (directionInDegrees > -157.5f && directionInDegrees <= -112.5f) direction = Direction.SouthWest; // SW
+        else if (directionInDegrees > 157.5f || directionInDegrees <= -157.5f) direction = Direction.West;  // W
+        else if (directionInDegrees > 112.5f && directionInDegrees <= 157.5f) direction = Direction.NorthWest;  // NW
 
     }
 
@@ -171,6 +172,6 @@ public class EnemyController : MonoBehaviour
         animator.SetBool("IsRunning", isRunning);
         animator.SetBool("IsWalking", isWalking);
         animator.SetBool("IsDead", isDead);
-        animator.SetFloat("Direction", direction);
+        animator.SetFloat("Direction", (float)direction);
     }
 }

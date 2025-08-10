@@ -162,14 +162,13 @@ public class ShieldController : NetworkBehaviour
 
     private void Animate()
     {
-        animator.SetFloat("Direction", player.Direction);
+        animator.SetFloat("Direction", (float)player.Direction);
         animator.SetFloat("IsMoving", player.IsMoving);
         animator.SetFloat("IsAttacking", player.IsAttacking);
         animator.SetFloat("SwordAttackType", player.SwordAttackType);
         animator.SetFloat("IsBlocking", player.IsBlocking);
         animator.SetFloat("IsClimbing", player.IsClimbing);
         animator.SetFloat("IsDrinkingPotion", player.IsDrinkingPotion);
-        animator.SetFloat("IsGettingHit", player.IsGettingHit);
         animator.SetFloat("IsInteracting", player.IsInteracting);
         animator.SetFloat("IsJumping", player.IsJumping);
         animator.SetFloat("IsGrappling", player.IsGrappling);

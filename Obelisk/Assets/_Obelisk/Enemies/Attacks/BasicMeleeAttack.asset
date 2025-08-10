@@ -16,9 +16,9 @@ MonoBehaviour:
   isRanged: 0
   direction: 0
   animation: {fileID: 0}
-  baseDamage: 0
+  baseDamage: 5
   damageModifier: 0
-  knockbackForce: 0
+  knockbackForce: 200
   cooldown: 1
   weight: 1
   projectilePrefab: {fileID: 0}

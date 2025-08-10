@@ -5,7 +5,7 @@ using System.Collections;
 public class EnemySpawner : NetworkBehaviour
 {
     [SerializeField] private Transform enemyPrefab, enemy;
-    [SerializeField] private float spawnCooldown = 60f;
+    [SerializeField] private float spawnCooldown = 60f , spawnCooldownOG =60f;
 
     public override void OnNetworkSpawn()
     {
@@ -30,6 +30,7 @@ public class EnemySpawner : NetworkBehaviour
                 enemyTransform.GetComponent<EnemyController>().enemySpawner = this;
                 enemy = enemyTransform;
                 enemy.GetComponent<NetworkObject>().Spawn();
+                spawnCooldown = spawnCooldownOG;
             }
         }
     }
