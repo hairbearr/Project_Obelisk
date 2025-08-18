@@ -4,106 +4,121 @@ using UnityEngine;
 
 public class SwordController : NetworkBehaviour
 {
+    // Reference to the PlayerController (parent object)
     private PlayerController player;
+
+    // Collider for detecting hits
     private BoxCollider2D boxCollider;
+
+    // Animator for the sword itself (for unique swing/ability animations)
     private Animator animator;
 
-    [SerializeField] private float baseDamage, damageModifier, knockbackForce;
+    // Currently equipped attack (sigil/ability)
+    [SerializeField] private Attack currentAttack;
+
+    // Unique ID for this ability (optional)
     [SerializeField] private int abilityID;
 
     void Start()
     {
+        // Grab references to PlayerController, Animator, and Collider
         player = GetComponentInParent<PlayerController>();
         animator = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
+
+        if (currentAttack != null)
+        {
+            // Set initial stats from Attack ScriptableObject
+            player.SetParameterFloat("SwordAttackType", 1f);
+        }
     }
 
     void Update()
     {
         if (!IsOwner) return;
 
-        Animate();
-        SwordTimer();
-    }
+        // Sync sword animation with player animator parameters
+        AnimateSword();
 
-    private void SwordTimer()
-    {
-        if (player.SwordAttackType > 1)
+        // Handle combo timer
+        if (player.GetParameterFloat("SwordAttackType") > 1)
         {
             player.AttackComboTimer -= Time.deltaTime;
         }
 
         if (player.AttackComboTimer <= 0)
         {
-            player.SwordAttackType = 1;
+            player.SetParameterFloat("SwordAttackType", 1);
             player.AttackComboTimer = 10f;
         }
     }
 
-    public float DealDamage(float damage, float modifier)
+    /// <summary>
+    /// Called by animation events when the sword swing starts
+    /// </summary>
+    public void SwingSword()
     {
-        return damage + modifier;
-    }
+        if (!IsOwner || currentAttack == null) return;
 
-    private void SwingSword()
-    {
-        if (!IsOwner) return;
+        // Disable player input/actions during swing
+        player.SetParameterBool("IsDisabled", true);
 
-        player.IsDisabled = true;
+        // Reset combo timer
         player.AttackComboTimer = 10f;
 
-        if (player.SwordAttackType < 1)
-            player.SwordAttackType = 1;
+        // Ensure SwordAttackType starts at 1
+        if (player.GetParameterFloat("SwordAttackType") < 1)
+            player.SetParameterFloat("SwordAttackType", 1);
 
-        player.AttackCooldown = true;
+        player.SetParameterBool("AttackCooldown", true);
 
-        // Trigger animation for all clients
-        PlaySwingAnimationClientRpc(player.SwordAttackType);
+        // Trigger swing animation across clients
+        PlaySwingAnimationClientRpc(player.GetParameterFloat("SwordAttackType"));
     }
 
-    private void SheatheSword()
+    /// <summary>
+    /// Called by animation events when the sword swing ends
+    /// </summary>
+    public void SheatheSword()
     {
-        if (!IsOwner) return;
+        if (!IsOwner || currentAttack == null) return;
 
-        player.SwordAttackType++;
-        if (player.SwordAttackType > 3)
-            player.SwordAttackType = 1;
+        // Increment combo attack type
+        float attackType = player.GetParameterFloat("SwordAttackType") + 1;
+        if (attackType > 3) attackType = 1;
+        player.SetParameterFloat("SwordAttackType", attackType);
 
-        player.IsAttacking = 0;
-        player.AttackCooldown = false;
-        player.IsDisabled = false;
+        // Reset attacking state
+        player.SetParameterFloat("IsAttacking", 0);
+        player.SetParameterBool("AttackCooldown", false);
+        player.SetParameterBool("IsDisabled", false);
     }
 
-    private void CastAbility()
+    /// <summary>
+    /// Deal damage to a target using the Attack ScriptableObject
+    /// </summary>
+    public float DealDamage()
     {
-        if (!IsOwner) return;
+        return currentAttack != null ? currentAttack.DealDamage() : 0f;
+    }
 
-        if (abilityID != 0)
+    /// <summary>
+    /// Update sword animator with all relevant player parameters
+    /// </summary>
+    private void AnimateSword()
+    {
+        foreach (var param in player.GetAnimatorParameters())
         {
-            Debug.Log("Cast Sword Ability");
-            // Call ability logic here
+            switch (param.Value)
+            {
+                case float f:
+                    animator.SetFloat(param.Key, f);
+                    break;
+                case bool b:
+                    animator.SetBool(param.Key, b);
+                    break;
+            }
         }
-        else
-        {
-            Debug.Log("No Sword Ability");
-        }
-    }
-
-    private void Animate()
-    {
-        animator.SetFloat("Direction", (float)player.Direction);
-        animator.SetFloat("IsMoving", player.IsMoving);
-        animator.SetFloat("IsAttacking", player.IsAttacking);
-        animator.SetFloat("SwordAttackType", player.SwordAttackType);
-        animator.SetFloat("IsBlocking", player.IsBlocking);
-        animator.SetFloat("IsClimbing", player.IsClimbing);
-        animator.SetFloat("IsDrinkingPotion", player.IsDrinkingPotion);
-        animator.SetFloat("IsInteracting", player.IsInteracting);
-        animator.SetFloat("IsJumping", player.IsJumping);
-        animator.SetFloat("IsGrappling", player.IsGrappling);
-        animator.SetFloat("IsShooting", player.IsShooting);
-        animator.SetFloat("IsUsingItem", player.IsUsingItem);
-        animator.SetFloat("IsDead", player.IsDead);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -128,7 +143,7 @@ public class SwordController : NetworkBehaviour
             Health health = enemyObj.GetComponent<Health>();
             if (health != null)
             {
-                health.TakeDamage(DealDamage(baseDamage, damageModifier), knockbackForce, transform.position);
+                health.TakeDamage(DealDamage(), currentAttack != null ? currentAttack.KnockbackForce : 0f, transform.position);
             }
         }
     }
@@ -137,116 +152,18 @@ public class SwordController : NetworkBehaviour
     private void PlaySwingAnimationClientRpc(float attackType)
     {
         animator.SetFloat("SwordAttackType", attackType);
-       // animator.SetTrigger("Swing"); // Assumes you use a "Swing" trigger in your Animator
+    }
+
+    /// <summary>
+    /// Equip a new Attack ScriptableObject (e.g., swapping sigils)
+    /// </summary>
+    public void EquipAttack(Attack newAttack)
+    {
+        currentAttack = newAttack;
+        if (currentAttack != null)
+        {
+            player.SetParameterFloat("SwordAttackType", 1f);
+        }
     }
 }
 
-// old code
-//using System;
-//using UnityEngine;
-
-//public class SwordController : MonoBehaviour
-//{
-//    private PlayerController player;
-//    private BoxCollider2D boxCollider;
-//    private Animator animator;
-//    [SerializeField] float baseDamage, damageModifier, knockbackForce;
-//    [SerializeField] int abilityID;
-//    // private somethingCollider2d collider;
-//    // Start is called once before the first execution of Update after the MonoBehaviour is created
-//    void Start()
-//    {
-//        player = GetComponentInParent<PlayerController>();
-//        animator = GetComponent<Animator>();
-//    }
-
-//    // Update is called once per frame
-//    void Update()
-//    {
-//        Animate();
-//        SwordTimer();
-//    }
-
-//    private void SwordTimer()
-//    {
-//        if (player.SwordAttackType > 1)
-//        {
-//            player.AttackComboTimer -= Time.deltaTime;
-//        }
-//        if (player.AttackComboTimer <= 0)
-//        {
-//            player.SwordAttackType = 1;
-//            player.AttackComboTimer = 10;
-//        }
-//    }
-
-//    public float DealDamage(float damage, float modifier)
-//    {
-//        return damage + modifier;
-//    }
-
-//    private void SwingSword()
-//    {
-//        player.IsDisabled = true;
-//        player.AttackComboTimer = 10f;
-//        if (player.SwordAttackType < 1)
-//        {
-//            player.SwordAttackType = 1;
-//        }
-//        player.AttackCooldown = true;
-//    }
-
-//    private void SheatheSword()
-//    {
-//        player.SwordAttackType++;
-//        if(player.SwordAttackType >3)
-//        {
-//            player.SwordAttackType = 1;
-//        }
-//        player.IsAttacking = 0;
-//        player.AttackCooldown = false;
-//        player.IsDisabled = false;
-//    }
-
-//    private void CastAbility()
-//    {
-//        if(abilityID != 0)
-//        {
-//            print("Cast Sword Ability");
-//            // use a switch to decide which abilities to cast, have functions to call what ability it is
-//        }
-//        else
-//        {
-//            print ("No Sword Ability");
-//        }
-//    }
-
-//    //private void Animate()
-//    //{
-//    //    animator.SetFloat("Direction", player.Direction);
-//    //    animator.SetFloat("IsMoving", player.IsMoving);
-//    //    animator.SetFloat("IsAttacking", player.IsAttacking);
-//    //    animator.SetFloat("SwordAttackType", player.SwordAttackType);
-//    //    animator.SetFloat("IsBlocking", player.IsBlocking);
-//    //    animator.SetFloat("IsClimbing", player.IsClimbing);
-//    //    animator.SetFloat("IsDrinkingPotion", player.IsDrinkingPotion);
-//    //    animator.SetFloat("IsInteracting", player.IsInteracting);
-//    //    animator.SetFloat("IsJumping", player.IsJumping);
-//    //    animator.SetFloat("IsGrappling", player.IsGrappling);
-//    //    animator.SetFloat("IsShooting", player.IsShooting);
-//    //    animator.SetFloat("IsUsingItem", player.IsUsingItem);
-//    //    animator.SetFloat("IsDead", player.IsDead);
-//    //}
-
-//    private void OnTriggerEnter2D(Collider2D collision)
-//    {
-//        if (collision != null)
-//        {
-//            if (collision.gameObject.CompareTag("Enemy"))
-//            {
-//                print(collision.gameObject.name);
-//                collision.gameObject.GetComponent<Health>().TakeDamage(DealDamage(baseDamage, damageModifier), knockbackForce, transform.position);
-//            }
-//        }
-//    }
-//}
