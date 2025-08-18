@@ -22,6 +22,8 @@ public class ShieldController : NetworkBehaviour
     [SerializeField] private float knockBackModifier = 2f;
     [SerializeField] private float disableTime = 2f;
     [SerializeField] private float shieldCooldownTime = 5f;
+    public float ShieldCooldownTime => shieldCooldownTime;
+
 
     // Server-synced shield variables
     private NetworkVariable<float> shieldEnergy = new NetworkVariable<float>(100f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
