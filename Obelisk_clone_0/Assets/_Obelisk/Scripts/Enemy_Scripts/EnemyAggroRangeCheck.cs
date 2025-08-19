@@ -16,14 +16,12 @@ public class EnemyAggroCheck : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision != null && collision.gameObject.CompareTag("Player"))
+        if (collision != null && collision.CompareTag("Player"))
         {
-            print(collision + " is in Aggro Range of " + enemyController.name);
             enemyController.IsInAggroRange = true;
             enemyController.GetComponent<AIDestinationSetter>().target = collision.transform;
             enemyController.IsReturningToStartPoint = false;
 
-            // Cancel return coroutine if running
             if (returnRoutine != null)
             {
                 enemyController.StopCoroutine(returnRoutine);
@@ -34,12 +32,10 @@ public class EnemyAggroCheck : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision != null && collision.gameObject.CompareTag("Player"))
+        if (collision != null && collision.CompareTag("Player"))
         {
-            print(collision + " is out of Aggro Range of " + enemyController.name);
             enemyController.IsInAggroRange = false;
 
-            // Start delayed return coroutine
             if (returnRoutine == null)
             {
                 returnRoutine = enemyController.StartCoroutine(DelayedReturn(waitTime));
@@ -50,13 +46,12 @@ public class EnemyAggroCheck : MonoBehaviour
     private IEnumerator DelayedReturn(float delay)
     {
         yield return new WaitForSeconds(delay);
-
         if (!enemyController.IsInAggroRange && !enemyController.IsDead)
         {
             enemyController.IsReturningToStartPoint = true;
             enemyController.GetComponent<AIDestinationSetter>().target = enemyController.StartPosition;
         }
-
         returnRoutine = null;
     }
 }
+

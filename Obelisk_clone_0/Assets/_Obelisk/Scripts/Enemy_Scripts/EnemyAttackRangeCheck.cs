@@ -1,12 +1,10 @@
 using UnityEngine;
 using Pathfinding;
 
-
 public class EnemyRangeCheck : MonoBehaviour
 {
-    [SerializeField] EnemyController enemyController;
+    [SerializeField] private EnemyController enemyController;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         enemyController = GetComponentInParent<EnemyController>();
@@ -14,27 +12,19 @@ public class EnemyRangeCheck : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision != null)
+        if (collision != null && collision.CompareTag("Player"))
         {
-            if (collision.gameObject.CompareTag("Player"))
-            {
-                print(collision + " is in Attack Range of " + enemyController.name);
-                enemyController.IsInAttackRange = true;
-                enemyController.GetComponent<AIPath>().canMove = false;
-            }
+            enemyController.IsInAttackRange = true;
+            enemyController.GetComponent<AIPath>().canMove = false;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision != null)
+        if (collision != null && collision.CompareTag("Player"))
         {
-            if (collision.gameObject.CompareTag("Player"))
-            {
-                print(collision + " is out of Attack Range of "+ enemyController.name);
-                enemyController.IsInAttackRange = false;
-                enemyController.GetComponent<AIPath>().canMove = true;
-            }
+            enemyController.IsInAttackRange = false;
+            enemyController.GetComponent<AIPath>().canMove = true;
         }
     }
 }
