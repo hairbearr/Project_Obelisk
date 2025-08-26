@@ -1,116 +1,128 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
+using Sigilspire.Combat;
 
-/// <summary>
-/// Handles all sword-related actions for the player using Attack ScriptableObjects.
-/// </summary>
-[RequireComponent(typeof(Animator))]
-public class PlayerSwordController : MonoBehaviour
+namespace Sigilspire.Player
 {
-    [Header("Sword Attacks")]
-    [SerializeField] private Attack[] attackPool; // Assign sword attacks in inspector
-    private Attack currentAttack;
-
-    private Animator animator;
-    private PlayerController playerController;
-
-    private bool isComboActive = false;
-
-    void Awake()
-    {
-        animator = GetComponent<Animator>();
-        playerController = GetComponentInParent<PlayerController>();
-
-        if (attackPool == null || attackPool.Length == 0)
-            Debug.LogWarning("No sword attacks assigned to PlayerSwordController!");
-    }
-
     /// <summary>
-    /// Perform an attack in the specified direction.
+    /// Handles sword attacks for the player.
+    /// Reads data from the Attack ScriptableObject.
+    /// Server-authoritative for multiplayer; clients only play visuals/audio.
     /// </summary>
-    public void PerformAttack(Direction direction)
+    public class PlayerSwordController : NetworkBehaviour
     {
-        if (playerController.IsDead) return;
+        [Header("Sword Attack Settings")]
+        public Attack currentAttack; // The Attack ScriptableObject currently equipped
+        public Animator swordAnimator; // Animator for the sword sprite
 
-        // Select next available attack
-        currentAttack = GetNextAttack();
+        private float lastUsedTime = -Mathf.Infinity; // Tracks last attack time for cooldown
 
-        if (currentAttack == null) return;
+        private PlayerController playerController;
 
-        // Set player state
-        playerController.IsAttacking = true;
-
-        // Play directional animation
-        AnimationClip clip = currentAttack.GetAnimation(direction);
-        if (clip != null)
+        private void Awake()
         {
-            animator.Play(clip.name);
+            playerController = GetComponentInParent<PlayerController>();
         }
 
-        // Apply attack effects after animation delay (optional)
-        StartCoroutine(HandleAttackCooldown(currentAttack.Cooldown));
-    }
-
-    /// <summary>
-    /// Chooses the next attack based on cooldown and weighted selection.
-    /// </summary>
-    private Attack GetNextAttack()
-    {
-        List<Attack> readyAttacks = new List<Attack>();
-        foreach (var atk in attackPool)
+        /// <summary>
+        /// Determines if the sword attack can currently be used.
+        /// Checks cooldown timer.
+        /// </summary>
+        public bool IsReady()
         {
-            if (atk.IsReady())
-                readyAttacks.Add(atk);
+            return Time.time >= lastUsedTime + currentAttack.cooldown;
         }
 
-        if (readyAttacks.Count == 0) return null;
-
-        // Weighted selection
-        float totalWeight = 0f;
-        foreach (var atk in readyAttacks) totalWeight += atk.Weight;
-
-        float roll = Random.Range(0f, totalWeight);
-        float cumulative = 0f;
-
-        foreach (var atk in readyAttacks)
+        /// <summary>
+        /// Called by PlayerController to perform an attack.
+        /// Only the server should execute actual damage/knockback logic.
+        /// </summary>
+        public void PerformAttack(Direction dir)
         {
-            cumulative += atk.Weight;
-            if (roll <= cumulative) return atk;
+            if (!IsServer) return; // Server-authoritative logic
+
+            if (!IsReady()) return;
+
+            lastUsedTime = Time.time;
+
+            // Apply attack logic here: damage & knockback
+            DealDamage(dir);
+
+            // Notify all clients to play animation/effects
+            PlayAttackAnimationClientRpc(dir);
         }
 
-        return readyAttacks[0]; // fallback
-    }
-
-    /// <summary>
-    /// Handles cooldown timing and combo chaining.
-    /// </summary>
-    private IEnumerator HandleAttackCooldown(float cooldown)
-    {
-        currentAttack.lastUsedTime = Time.time;
-
-        // Wait for the cooldown duration before allowing next attack
-        yield return new WaitForSeconds(cooldown);
-
-        if (currentAttack.CanChainCombo)
+        /// <summary>
+        /// Deals damage and knockback to hit targets.
+        /// Should only run on the server.
+        /// </summary>
+        private void DealDamage(Direction dir)
         {
-            isComboActive = true;
+            // For simplicity, we use a 2D boxcast in the facing direction
+            Vector2 attackDir = DirectionToVector(dir);
+            Vector2 origin = (Vector2)playerController.transform.position + attackDir * 0.5f;
+
+            float attackRange = 1f; // Adjust range as needed
+            LayerMask hitMask = LayerMask.GetMask("Enemy");
+
+            RaycastHit2D[] hits = Physics2D.BoxCastAll(origin, new Vector2(1f, 1f), 0f, attackDir, attackRange, hitMask);
+            foreach (var hit in hits)
+            {
+                Health enemyHealth = hit.collider.GetComponent<Health>();
+                if (enemyHealth != null)
+                {
+                    // Apply damage
+                    if (IsServer)
+                    {
+                        enemyHealth.TakeDamageServerRpc(currentAttack.damage, currentAttack.knockback, transform.position);
+                    }
+                }
+            }
         }
-        else
-        {
-            isComboActive = false;
-            playerController.IsAttacking = false;
-        }
-    }
 
-    /// <summary>
-    /// Called by animation event or external script to apply attack effects.
-    /// </summary>
-    public void ApplyAttackEffects(GameObject target)
-    {
-        if (currentAttack != null)
+        /// <summary>
+        /// Converts Direction enum to normalized Vector2.
+        /// </summary>
+        private Vector2 DirectionToVector(Direction dir)
         {
-            currentAttack.ApplyEffect(target);
+            return dir switch
+            {
+                Direction.North => Vector2.up,
+                Direction.NorthEast => (Vector2.up + Vector2.right).normalized,
+                Direction.East => Vector2.right,
+                Direction.SouthEast => (Vector2.down + Vector2.right).normalized,
+                Direction.South => Vector2.down,
+                Direction.SouthWest => (Vector2.down + Vector2.left).normalized,
+                Direction.West => Vector2.left,
+                Direction.NorthWest => (Vector2.up + Vector2.left).normalized,
+                _ => Vector2.right
+            };
+        }
+
+        /// <summary>
+        /// Plays the sword animation for the given direction.
+        /// Can be called locally on clients.
+        /// </summary>
+        public void PlayAttackAnimation(Direction dir)
+        {
+            if (swordAnimator == null) return;
+
+            AnimationClip clip = currentAttack.GetAttackAnimation(dir);
+            if (clip != null)
+            {
+                swordAnimator.Play(clip.name);
+            }
+        }
+
+        // -------------------------------
+        // CLIENT RPC to sync animations
+        // -------------------------------
+
+        [ClientRpc]
+        private void PlayAttackAnimationClientRpc(Direction dir, ClientRpcParams rpcParams = default)
+        {
+            PlayAttackAnimation(dir);
         }
     }
 }
+

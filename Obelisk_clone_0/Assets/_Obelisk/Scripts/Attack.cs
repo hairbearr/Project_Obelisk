@@ -1,78 +1,218 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Attack", menuName = "Combat/Attack")]
-public class Attack : ScriptableObject
+namespace Sigilspire.Combat
 {
-    [Header("Basic Info")]
-    [SerializeField] private string attackName;
-    [SerializeField] private bool isRanged;
-    [SerializeField] private bool isSpecialAttack;
-    [SerializeField] private bool canChainCombo;
-
-    [Header("Animations (8 Directions)")]
-    [SerializeField] private AnimationClip[] attackAnimations = new AnimationClip[8];
-    [SerializeField] private AnimationClip[] blockAnimations = new AnimationClip[8];
-    [SerializeField] private AnimationClip[] grappleAnimations = new AnimationClip[8];
-    [SerializeField] private AnimationClip[] runAnimations = new AnimationClip[8];
-    [SerializeField] private AnimationClip[] climbAnimations = new AnimationClip[8];
-    [SerializeField] private AnimationClip[] potionAnimations = new AnimationClip[8];
-    [SerializeField] private AnimationClip[] interactAnimations = new AnimationClip[8];
-    [SerializeField] private AnimationClip[] jumpAnimations = new AnimationClip[8];
-    [SerializeField] private AnimationClip[] shootAnimations = new AnimationClip[8];
-    [SerializeField] private AnimationClip[] useItemAnimations = new AnimationClip[8];
-    [SerializeField] private AnimationClip[] deathAnimations = new AnimationClip[8];
-
-    [Header("Combat Stats")]
-    [SerializeField] private float baseDamage;
-    [SerializeField] private float damageModifier;
-    [SerializeField] private float knockbackForce;
-    [SerializeField] private float cooldown = 1f;
-    [SerializeField] private float weight = 1f;
-
-    [Header("Projectile / Grapple")]
-    [SerializeField] private GameObject projectilePrefab;
-    [SerializeField] private float pullSpeed = 5f;
-    [SerializeField] private float maxRange = 10f;
-    [SerializeField] private Sprite hookSprite;
-
-    [HideInInspector] public float lastUsedTime = -Mathf.Infinity;
-
-    // --- Accessors ---
-    public string AttackName => attackName;
-    public bool IsRanged => isRanged;
-    public bool IsSpecialAttack => isSpecialAttack;
-    public bool CanChainCombo => canChainCombo;
-    public GameObject ProjectilePrefab => projectilePrefab;
-    public float BaseDamage => baseDamage;
-    public float DamageModifier => damageModifier;
-    public float KnockbackForce => knockbackForce;
-    public float Cooldown => cooldown;
-    public float Weight => weight;
-    public float PullSpeed => pullSpeed;
-    public float MaxRange => maxRange;
-    public Sprite HookSprite => hookSprite;
-
-    // --- Animation Accessors ---
-    public AnimationClip GetAttackAnimation(Direction dir) => attackAnimations[(int)dir];
-    public AnimationClip GetBlockAnimation(Direction dir) => blockAnimations[(int)dir];
-    public AnimationClip GetGrappleAnimation(Direction dir) => grappleAnimations[(int)dir];
-    public AnimationClip GetRunAnimation(Direction dir) => runAnimations[(int)dir];
-    public AnimationClip GetClimbAnimation(Direction dir) => climbAnimations[(int)dir];
-    public AnimationClip GetPotionAnimation(Direction dir) => potionAnimations[(int)dir];
-    public AnimationClip GetInteractAnimation(Direction dir) => interactAnimations[(int)dir];
-    public AnimationClip GetJumpAnimation(Direction dir) => jumpAnimations[(int)dir];
-    public AnimationClip GetShootAnimation(Direction dir) => shootAnimations[(int)dir];
-    public AnimationClip GetUseItemAnimation(Direction dir) => useItemAnimations[(int)dir];
-    public AnimationClip GetDeathAnimation(Direction dir) => deathAnimations[(int)dir];
-
-    // --- Combat Helpers ---
-    public float DealDamage() => baseDamage + damageModifier;
-    public bool IsReady() => Time.time >= lastUsedTime + cooldown;
-
-    public virtual void ApplyEffect(GameObject target)
+    /// <summary>
+    /// Central ScriptableObject for attacks and abilities.
+    /// Stores animation references, stats, cooldowns, and upgrade paths.
+    /// Used by both Player and Enemy controllers with Netcode for GameObjects.
+    /// </summary>
+    [CreateAssetMenu(menuName = "Sigilspire/Combat/Attack")]
+    public class Attack : ScriptableObject
     {
-        if (target == null) return;
-        Debug.Log($"{attackName} effect applied to {target.name}");
-        // Effects like burn, stun, slow can be implemented here
+        [Header("Attack Info")]
+        [Tooltip("Name of this attack, used for debugging/UI.")]
+        public string attackName;
+
+        [Tooltip("Damage dealt by this attack.")]
+        public float damage;
+
+        [Tooltip("Cooldown in seconds before this attack can be used again.")]
+        public float cooldown;
+
+        [Tooltip("Knockback force applied to the target.")]
+        public float knockback;
+
+        [Tooltip("Weight of the attack (used for stagger, poise, or weighted random enemy selection).")]
+        public float weight;
+
+        [Tooltip("If true, this attack is a special ability.")]
+        public bool isSpecial;
+
+        [Tooltip("If true, this attack can chain into another attack.")]
+        public bool canChainCombo;
+
+        [Tooltip("Prefab for any projectile this attack spawns (optional).")]
+        public GameObject projectilePrefab;
+
+        [Header("Animation Clips")]
+        [Tooltip("Animations for directional actions (attack, block, grapple, etc.).")]
+        public DirectionalAnimations animations;
+
+        [Header("Upgrade System")]
+        [Tooltip("Reference to the upgraded version of this attack (if any).")]
+        public Attack upgradedAttack;
+
+        // Tracks the last time this attack was used
+        [HideInInspector] public float lastUsedTime;
+
+        // -------------------------------
+        // Cooldown / Combo / Weight Logic
+        // -------------------------------
+
+        /// <summary>
+        /// Returns true if this attack is ready to be used (cooldown elapsed).
+        /// </summary>
+        public bool IsReady()
+        {
+            return Time.time >= lastUsedTime + cooldown;
+        }
+
+        /// <summary>
+        /// Gets the attack name.
+        /// </summary>
+        public string AttackName => attackName;
+
+        /// <summary>
+        /// Gets the attack cooldown.
+        /// </summary>
+        public float Cooldown => cooldown;
+
+        /// <summary>
+        /// Gets the attack weight (useful for enemies).
+        /// </summary>
+        public float Weight => weight;
+
+        /// <summary>
+        /// Gets whether this attack can chain into another.
+        /// </summary>
+        public bool CanChainCombo => canChainCombo;
+
+        // -------------------------------
+        // Animation Accessors
+        // -------------------------------
+
+        public AnimationClip GetAttackAnimation(Direction dir) =>
+            animations.GetAnimation(ActionType.Attack, dir);
+
+        public AnimationClip GetBlockAnimation(Direction dir) =>
+            animations.GetAnimation(ActionType.Block, dir);
+
+        public AnimationClip GetGrappleAnimation(Direction dir) =>
+            animations.GetAnimation(ActionType.Grapple, dir);
+
+        public AnimationClip GetRunAnimation(Direction dir) =>
+            animations.GetAnimation(ActionType.Run, dir);
+
+        public AnimationClip GetClimbAnimation(Direction dir) =>
+            animations.GetAnimation(ActionType.Climb, dir);
+
+        public AnimationClip GetPotionAnimation(Direction dir) =>
+            animations.GetAnimation(ActionType.Potion, dir);
+
+        public AnimationClip GetInteractAnimation(Direction dir) =>
+            animations.GetAnimation(ActionType.Interact, dir);
+
+        public AnimationClip GetJumpAnimation(Direction dir) =>
+            animations.GetAnimation(ActionType.Jump, dir);
+
+        public AnimationClip GetShootAnimation(Direction dir) =>
+            animations.GetAnimation(ActionType.Shoot, dir);
+
+        public AnimationClip GetUseItemAnimation(Direction dir) =>
+            animations.GetAnimation(ActionType.UseItem, dir);
+
+        public AnimationClip GetDeathAnimation(Direction dir) =>
+            animations.GetAnimation(ActionType.Death, dir);
+
+        // -------------------------------
+        // Upgrade Handling
+        // -------------------------------
+
+        /// <summary>
+        /// Returns true if this attack has an upgrade path.
+        /// </summary>
+        public bool HasUpgrade() => upgradedAttack != null;
+
+        /// <summary>
+        /// Gets the upgraded version of this attack.
+        /// </summary>
+        public Attack GetUpgradedAttack() => upgradedAttack;
+    }
+
+    /// <summary>
+    /// Defines the type of action (attack, block, run, etc.).
+    /// Used to organize animations.
+    /// </summary>
+    public enum ActionType
+    {
+        Attack,
+        Block,
+        Grapple,
+        Run,
+        Climb,
+        Potion,
+        Interact,
+        Jump,
+        Shoot,
+        UseItem,
+        Death
+    }
+
+    /// <summary>
+    /// Holds AnimationClips for each ActionType & Direction.
+    /// </summary>
+    [System.Serializable]
+    public class DirectionalAnimations
+    {
+        [Tooltip("Animations grouped by action type.")]
+        public ActionAnimations[] actionAnimations;
+
+        /// <summary>
+        /// Retrieve animation for a given action type and direction.
+        /// </summary>
+        public AnimationClip GetAnimation(ActionType type, Direction dir)
+        {
+            foreach (var action in actionAnimations)
+            {
+                if (action.actionType == type)
+                {
+                    return action.GetDirectionalClip(dir);
+                }
+            }
+
+            Debug.LogWarning($"No animation found for {type} in direction {dir}");
+            return null;
+        }
+    }
+
+    /// <summary>
+    /// Holds directional animations for a specific action type.
+    /// </summary>
+    [System.Serializable]
+    public class ActionAnimations
+    {
+        [Tooltip("The type of action these animations represent.")]
+        public ActionType actionType;
+
+        [Tooltip("Animations for each of the 8 directions.")]
+        public AnimationClip north;
+        public AnimationClip northEast;
+        public AnimationClip east;
+        public AnimationClip southEast;
+        public AnimationClip south;
+        public AnimationClip southWest;
+        public AnimationClip west;
+        public AnimationClip northWest;
+
+        /// <summary>
+        /// Returns the animation for the given direction.
+        /// </summary>
+        public AnimationClip GetDirectionalClip(Direction dir)
+        {
+            return dir switch
+            {
+                Direction.North => north,
+                Direction.NorthEast => northEast,
+                Direction.East => east,
+                Direction.SouthEast => southEast,
+                Direction.South => south,
+                Direction.SouthWest => southWest,
+                Direction.West => west,
+                Direction.NorthWest => northWest,
+                _ => null
+            };
+        }
     }
 }
+

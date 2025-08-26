@@ -16,6 +16,7 @@ public class EnemyController : MonoBehaviour
     public bool IsInAttackRange { get => playerIsInAttackRange; set => playerIsInAttackRange = value; }
     public bool IsDead { get => isDead; set => isDead = value; }
     public bool IsAttacking { get => isAttacking; set => isAttacking = value; }
+    public bool IsGrappleable { get; internal set; }
 
     void Start()
     {

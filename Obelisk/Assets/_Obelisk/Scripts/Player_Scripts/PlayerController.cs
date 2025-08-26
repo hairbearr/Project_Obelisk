@@ -1,128 +1,185 @@
 using UnityEngine;
 using Unity.Netcode;
+using UnityEngine.InputSystem;
 
-/// <summary>
-/// Central player controller handling input, movement, and coordinating body and weapon animations.
-/// Works with all PlayerWeaponControllers (Sword, Shield, Grappling Hook).
-/// </summary>
-[RequireComponent(typeof(Rigidbody2D))]
-public class PlayerController : NetworkBehaviour
+namespace Sigilspire.Player
 {
-    [Header("Movement")]
-    [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private Vector2 movement;
-
-    [Header("Animation")]
-    [SerializeField] private Animator bodyAnimator; // Player body animator
-    [SerializeField] private Direction direction;   // Current facing direction
-
-    [Header("Weapon Controllers")]
-    public PlayerSwordController swordController;
-    public PlayerShieldController shieldController;
-    public PlayerGrapplingHookController grapplingHookController;
-
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
-
-    private void Update()
-    {
-        if (!IsOwner) return; // Only process input for the owning client
-
-        HandleInput();
-        UpdateDirection();
-        UpdateAnimations();
-        HandleWeapons();
-    }
-
     /// <summary>
-    /// Reads input axes and buttons for movement and actions.
+    /// Handles player movement, body animations, and delegates attacks to weapon controllers.
+    /// Integrates Netcode for GameObjects for multiplayer authority.
     /// </summary>
-    private void HandleInput()
+    [RequireComponent(typeof(Rigidbody2D))]
+    public class PlayerController : NetworkBehaviour
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        [Header("Movement")]
+        public float moveSpeed = 5f;
+        private Vector2 moveInput;
+        private Rigidbody2D rb;
 
-        // Normalize to prevent faster diagonal movement
-        if (movement.sqrMagnitude > 1)
-            movement.Normalize();
+        [Header("Animation")]
+        public Animator bodyAnimator; // Animator for the player's body
+        private Direction currentDirection;
 
-        // Attack input
-        if (Input.GetButtonDown("Fire1"))
+        // Allow other scripts to get/set the current facing direction
+        public Direction CurrentDirection { get => currentDirection; set => currentDirection = value; }
+
+        [Header("Weapon Controllers")]
+        public PlayerSwordController swordController;
+        public PlayerShieldController shieldController;
+        public PlayerGrapplingHookController grappleController;
+
+        [Header("Input Actions")]
+        public InputAction moveAction;
+        public InputAction attackAction;
+        public InputAction shieldAction;
+        public InputAction grappleAction;
+
+        private void Awake()
         {
-            swordController.PerformAttack(direction);
+            rb = GetComponent<Rigidbody2D>();
         }
 
-        // Shield input
-        if (Input.GetButton("Fire2"))
+        public override void OnNetworkSpawn()
         {
-            shieldController.PerformBlock(direction);
+            if (!IsOwner)
+            {
+                // Only the owning client processes input
+                enabled = false;
+            }
         }
 
-        // Grappling hook input
-        if (Input.GetButtonDown("Fire3"))
+        private void OnEnable()
         {
-            grapplingHookController.PerformGrapple(direction);
+            moveAction.Enable();
+            attackAction.Enable();
+            shieldAction.Enable();
+            grappleAction.Enable();
         }
 
-        // Additional inputs like use item, potion, interact can be added similarly
-    }
-
-    /// <summary>
-    /// Updates the player's facing direction based on movement.
-    /// </summary>
-    private void UpdateDirection()
-    {
-        if (movement != Vector2.zero)
+        private void OnDisable()
         {
-            float angle = Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg;
-            // Convert angle to Direction enum
-            if (angle > 67.5f && angle <= 112.5f) direction = Direction.North;
-            else if (angle > 22.5f && angle <= 67.5f) direction = Direction.NorthEast;
-            else if (angle > -22.5f && angle <= 22.5f) direction = Direction.East;
-            else if (angle > -67.5f && angle <= -22.5f) direction = Direction.SouthEast;
-            else if (angle > -112.5f && angle <= -67.5f) direction = Direction.South;
-            else if (angle > -157.5f && angle <= -112.5f) direction = Direction.SouthWest;
-            else if (angle > 112.5f && angle <= 157.5f) direction = Direction.NorthWest;
-            else direction = Direction.West;
+            moveAction.Disable();
+            attackAction.Disable();
+            shieldAction.Disable();
+            grappleAction.Disable();
         }
-    }
 
-    /// <summary>
-    /// Moves the player rigidbody based on input.
-    /// </summary>
-    private void FixedUpdate()
-    {
-        if (!IsOwner) return;
-        rb.linearVelocity = movement * moveSpeed;
-    }
+        private void Update()
+        {
+            // Update movement input
+            moveInput = moveAction.ReadValue<Vector2>();
 
-    /// <summary>
-    /// Updates the body animator for all animation states based on movement and actions.
-    /// </summary>
-    private void UpdateAnimations()
-    {
-        // Movement
-        bodyAnimator.SetFloat("Horizontal", movement.x);
-        bodyAnimator.SetFloat("Vertical", movement.y);
-        bodyAnimator.SetFloat("Speed", movement.sqrMagnitude);
+            // Update direction for animations and weapon controllers
+            UpdateDirection(moveInput);
 
-        // Pass direction for directional animations
-        bodyAnimator.SetFloat("Direction", (float)direction);
+            // Update body animator for movement
+            bodyAnimator.SetFloat("Horizontal", moveInput.x);
+            bodyAnimator.SetFloat("Vertical", moveInput.y);
+            bodyAnimator.SetFloat("Speed", moveInput.sqrMagnitude);
 
-        // Example: idle if no movement
-        bodyAnimator.SetBool("IsMoving", movement.sqrMagnitude > 0);
-    }
+            // Handle attack inputs
+            if (IsAttackPressed())
+            {
+                PerformSwordAttackServerRpc();
+            }
 
-    /// <summary>
-    /// Calls update functions for each weapon controller to manage their animations and abilities.
-    /// </summary>
-    private void HandleWeapons()
-    {
-        swordController.UpdateWeaponAnimator(direction);
-        shieldController.UpdateWeaponAnimator(direction);
-        grapplingHookController.UpdateWeaponAnimator(direction);
+            if (shieldAction.triggered)
+            {
+                PerformShieldAttackServerRpc();
+            }
+
+            if (grappleAction.triggered)
+            {
+                PerformGrappleServerRpc();
+            }
+        }
+
+        private void FixedUpdate()
+        {
+            // Move the player using Rigidbody2D for physics integration
+            rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
+        }
+
+        /// <summary>
+        /// Helper function to check if the attack button is pressed.
+        /// Abstracts input system handling.
+        /// </summary>
+        public bool IsAttackPressed()
+        {
+            return attackAction.triggered;
+        }
+
+        /// <summary>
+        /// Updates the player's facing direction based on input.
+        /// Sets CurrentDirection for weapon controllers and body animator.
+        /// </summary>
+        private void UpdateDirection(Vector2 input)
+        {
+            if (input == Vector2.zero) return;
+
+            float angle = Mathf.Atan2(input.y, input.x) * Mathf.Rad2Deg;
+            angle = (angle + 360f) % 360f; // Normalize angle to [0,360)
+
+            // Map angle to Direction enum (8 directions)
+            if (angle >= 337.5f || angle < 22.5f) currentDirection = Direction.East;
+            else if (angle >= 22.5f && angle < 67.5f) currentDirection = Direction.NorthEast;
+            else if (angle >= 67.5f && angle < 112.5f) currentDirection = Direction.North;
+            else if (angle >= 112.5f && angle < 157.5f) currentDirection = Direction.NorthWest;
+            else if (angle >= 157.5f && angle < 202.5f) currentDirection = Direction.West;
+            else if (angle >= 202.5f && angle < 247.5f) currentDirection = Direction.SouthWest;
+            else if (angle >= 247.5f && angle < 292.5f) currentDirection = Direction.South;
+            else currentDirection = Direction.SouthEast;
+
+            // Update body animator's direction parameter
+            bodyAnimator.SetFloat("Direction", (float)currentDirection);
+        }
+
+        // -------------------------------
+        // SERVER RPCs for attacks
+        // -------------------------------
+
+        [ServerRpc]
+        private void PerformSwordAttackServerRpc(ServerRpcParams rpcParams = default)
+        {
+            // SwordController handles actual attack logic, damage, cooldown
+            swordController.PerformAttack(currentDirection);
+
+            // Notify all clients to play visual/audio feedback
+            PlaySwordAttackClientRpc(currentDirection);
+        }
+
+        [ClientRpc]
+        private void PlaySwordAttackClientRpc(Direction dir, ClientRpcParams rpcParams = default)
+        {
+            swordController.PlayAttackAnimation(dir);
+        }
+
+        [ServerRpc]
+        private void PerformShieldAttackServerRpc(ServerRpcParams rpcParams = default)
+        {
+            shieldController.StartBlock(); // Server-authoritative start of block
+            PlayShieldAttackClientRpc(currentDirection);
+        }
+
+        [ClientRpc]
+        private void PlayShieldAttackClientRpc(Direction dir, ClientRpcParams rpcParams = default)
+        {
+            shieldController.shieldAnimator.SetFloat("Direction", (float)dir);
+            shieldController.shieldAnimator.SetBool("IsBlocking", true);
+        }
+
+        [ServerRpc]
+        private void PerformGrappleServerRpc(ServerRpcParams rpcParams = default)
+        {
+            grappleController.PerformGrapple(currentDirection);
+            PlayGrappleClientRpc(currentDirection);
+        }
+
+        [ClientRpc]
+        private void PlayGrappleClientRpc(Direction dir, ClientRpcParams rpcParams = default)
+        {
+            grappleController.PlayGrappleAnimationClientRpc(dir);
+        }
     }
 }
+

@@ -1,91 +1,188 @@
-using Pathfinding;
 using UnityEngine;
-using System;
+using Unity.Netcode;
 using System.Collections;
-using System.Collections.Generic;
+using Pathfinding;
+using Sigilspire.Player;
+using Sigilspire.Combat;
 
-public class Health : MonoBehaviour
+namespace Sigilspire.Combat
 {
-    private Rigidbody2D rb;
-    [SerializeField] private float health, maxHealth, healthUpgrade, maxHealthUpgrade, knockBackDelayTime = .15f;
-    // needs UI for health bar, health upgrades
-
-    public float CurrentHealth
+    /// <summary>
+    /// Handles health, damage, knockback, shield absorption, death, and UI for both players and enemies.
+    /// Server-authoritative for damage and shield absorption; clients receive visual updates via NetworkVariables and RPCs.
+    /// </summary>
+    [RequireComponent(typeof(Rigidbody2D))]
+    public class Health : NetworkBehaviour
     {
-        get { return health; }
-        set { health = value; }
-    }
+        [Header("Health Settings")]
+        [SerializeField] private float maxHealth = 100f;
 
-    public float MaximumHealth
-    {
-        get { return maxHealth; }
-        set { maxHealth = value; }
-    }
+        // Tracks current health and syncs automatically across clients
+        private NetworkVariable<float> currentHealth = new NetworkVariable<float>();
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        // get the rb for the damage knockback
-        rb = GetComponent<Rigidbody2D>();
-    }
+        [Header("Knockback Settings")]
+        [SerializeField] private float knockBackDelayTime = 0.15f;
 
-    void UpgradeHealth()
-    {
+        private Rigidbody2D rb;
+        private AIPath enemyAIPath;
+        private PlayerShieldController shieldController;
 
-    }
+        public float CurrentHealth => currentHealth.Value;
+        public float MaxHealth => maxHealth;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        public bool IsDead { get; private set; } = false;
 
-    public void TakeDamage(float amount, float knockBackForce, Vector3 position)
-    {
-        print(this + " is being knocked backwards");
-        if(this.GetComponent<EnemyController>() != null)
+        private void Awake()
         {
-            GetComponent<AIPath>().enabled = false;
-        }
-        rb.AddForce((transform.position - position) * knockBackForce, ForceMode2D.Force);
-        print(this + " is being damaged");
-        health -= amount;
-        if(health <= 0)
-        {
-            Death();
-            // play death animation that calls a death function
-            GetComponent<CapsuleCollider2D>().enabled = false;
+            rb = GetComponent<Rigidbody2D>();
+
+            // Try to get enemy AIPath if it exists
+            enemyAIPath = GetComponent<AIPath>();
+
+            // Try to get shield if player
+            shieldController = GetComponent<PlayerShieldController>();
         }
 
-        StartCoroutine(KnockBackStop(knockBackDelayTime));
-    }
-
-    private void Death()
-    {
-        if(GetComponent <EnemyController>() != null)
+        public override void OnNetworkSpawn()
         {
-            GetComponent<EnemyController>().IsDead = true;
+            if (IsServer)
+            {
+                // Initialize health on server
+                currentHealth.Value = maxHealth;
+            }
+
+            // Subscribe to health changes for client-side UI updates
+            currentHealth.OnValueChanged += OnHealthChanged;
         }
-        if(GetComponent <PlayerController>() != null)
+
+        public override void OnDestroy()
         {
-            GetComponent<PlayerController>().IsDead = 1;
+            base.OnDestroy(); // call NetworkBehaviour's OnDestroy
+            currentHealth.OnValueChanged -= OnHealthChanged;
         }
-    }
 
-    IEnumerator KnockBackStop(float delayTime)
-    {
-        yield return new WaitForSeconds(delayTime);
-        rb.linearVelocity = Vector3.zero;
-        if (GetComponent<EnemyController>() != null)
+
+        /// <summary>
+        /// Called to apply damage to this entity.
+        /// Server-authoritative. Handles shield absorption, leftover damage, knockback, and death.
+        /// </summary>
+        /// <param name="amount">Damage amount</param>
+        /// <param name="knockbackForce">Knockback force</param>
+        /// <param name="sourcePosition">Position of the damage source for knockback direction</param>
+        [ServerRpc]
+        public void TakeDamageServerRpc(float amount, float knockbackForce, Vector3 sourcePosition, ServerRpcParams rpcParams = default)
         {
-            GetComponent<AIPath>().enabled = true;
+            if (IsDead) return;
+
+            float remainingDamage = amount;
+
+            // -------------------------------
+            // Shield Absorption (if player has shield)
+            // -------------------------------
+            if (shieldController != null && shieldController.CanBlock())
+            {
+                shieldController.AbsorbDamageServerRpc(amount);
+                remainingDamage = Mathf.Max(0f, amount - shieldController.CurrentShieldEnergy);
+            }
+
+            // -------------------------------
+            // Apply remaining damage to health
+            // -------------------------------
+            if (remainingDamage > 0f)
+            {
+                currentHealth.Value -= remainingDamage;
+
+                // -------------------------------
+                // Apply knockback
+                // -------------------------------
+                if (rb != null)
+                {
+                    StartCoroutine(KnockbackRoutine(knockbackForce, sourcePosition));
+                }
+
+                // -------------------------------
+                // Check for death
+                // -------------------------------
+                if (currentHealth.Value <= 0f)
+                {
+                    Die();
+                }
+            }
         }
-    }
 
-    void DisplayHealth(GameObject gameObject)
-    {
-        // if gameObject = player, display on HUD UI
+        /// <summary>
+        /// Knockback coroutine disables AI temporarily, applies force, and stops it after delay.
+        /// </summary>
+        private IEnumerator KnockbackRoutine(float force, Vector3 sourcePos)
+        {
+            // Disable enemy AI movement temporarily
+            if (enemyAIPath != null) enemyAIPath.canMove = false;
 
-        // if gameObject = enemy, display on healthbar above head, and only show bars if health < maxHealth
+            // Apply knockback force
+            rb.AddForce((rb.position - (Vector2)sourcePos) * force, ForceMode2D.Impulse);
+
+            yield return new WaitForSeconds(knockBackDelayTime);
+
+            // Stop velocity
+            rb.linearVelocity = Vector2.zero;
+
+            // Re-enable AI if present
+            if (enemyAIPath != null) enemyAIPath.canMove = true;
+        }
+
+        /// <summary>
+        /// Called when health changes on clients; use to update UI.
+        /// </summary>
+        private void OnHealthChanged(float oldValue, float newValue)
+        {
+            // TODO: Update health bars, HUD, or floating numbers
+            // Example: HealthUI.Instance.UpdateHealthBar(this, newValue / maxHealth);
+        }
+
+        /// <summary>
+        /// Handles death logic for both player and enemies.
+        /// </summary>
+        private void Die()
+        {
+            IsDead = true;
+
+            // Disable colliders
+            var colliders = GetComponents<Collider2D>();
+            foreach (var col in colliders)
+            {
+                col.enabled = false;
+            }
+
+            // Disable movement
+            if (enemyAIPath != null) enemyAIPath.canMove = false;
+
+            // Notify client-side for animations / VFX
+            PlayDeathClientRpc();
+
+            // Optional: handle player respawn logic elsewhere
+        }
+
+        [ClientRpc]
+        private void PlayDeathClientRpc(ClientRpcParams rpcParams = default)
+        {
+            // Play death animation if Animator exists
+            var animator = GetComponent<Animator>();
+            if (animator != null)
+            {
+                animator.SetTrigger("Death");
+            }
+        }
+
+        /// <summary>
+        /// Fully heal entity (useful for respawn or health potions).
+        /// Server-authoritative.
+        /// </summary>
+        [ServerRpc]
+        public void HealServerRpc(float amount, ServerRpcParams rpcParams = default)
+        {
+            if (IsDead) return;
+
+            currentHealth.Value = Mathf.Min(currentHealth.Value + amount, maxHealth);
+        }
     }
 }

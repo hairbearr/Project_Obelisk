@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(Attack))]
+[CustomEditor(typeof(Sigilspire.Combat.Attack))]
 public class AttackEditor : Editor
 {
     // Basic Info
