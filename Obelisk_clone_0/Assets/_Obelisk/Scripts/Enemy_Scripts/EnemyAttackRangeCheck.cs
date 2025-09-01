@@ -1,5 +1,6 @@
 using UnityEngine;
 using Pathfinding;
+using Sigilspire.Enemy;
 
 public class EnemyRangeCheck : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class EnemyRangeCheck : MonoBehaviour
     {
         if (collision != null && collision.CompareTag("Player"))
         {
-            enemyController.IsInAttackRange = true;
+            enemyController.IsInAttackRange.Value = true;
             enemyController.GetComponent<AIPath>().canMove = false;
         }
     }
@@ -23,7 +24,7 @@ public class EnemyRangeCheck : MonoBehaviour
     {
         if (collision != null && collision.CompareTag("Player"))
         {
-            enemyController.IsInAttackRange = false;
+            enemyController.IsInAttackRange.Value = false;
             enemyController.GetComponent<AIPath>().canMove = true;
         }
     }

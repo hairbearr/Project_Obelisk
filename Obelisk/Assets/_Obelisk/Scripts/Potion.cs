@@ -1,4 +1,5 @@
 using UnityEngine;
+using Sigilspire.Combat;
 
 public class Potion : MonoBehaviour
 {
@@ -62,17 +63,17 @@ public class Potion : MonoBehaviour
                 potionPotency = potionUpgrade * 4f;
             }
 
-            if (health.CurrentHealth >= health.MaximumHealth)
+            if (health.CurrentHealth >= health.MaxHealth)
             {
-                health.CurrentHealth = health.MaximumHealth;
+                health.CurrentHealth = health.MaxHealth;
             }
             else
             {
                 health.CurrentHealth += potionPotency;
                 potionCount--;
-                if (health.CurrentHealth >= health.MaximumHealth)
+                if (health.CurrentHealth >= health.MaxHealth)
                 {
-                    health.CurrentHealth = health.MaximumHealth;
+                    health.CurrentHealth = health.MaxHealth;
                 }
             }
             usePotion = false;

@@ -35,6 +35,9 @@ namespace Sigilspire.Combat
         [Tooltip("Prefab for any projectile this attack spawns (optional).")]
         public GameObject projectilePrefab;
 
+        [Tooltip("Radius of this attack. If >0, attack hits all players within this radius.")]
+        public float attackRadius = 0f;
+
         [Header("Animation Clips")]
         [Tooltip("Animations for directional actions (attack, block, grapple, etc.).")]
         public DirectionalAnimations animations;

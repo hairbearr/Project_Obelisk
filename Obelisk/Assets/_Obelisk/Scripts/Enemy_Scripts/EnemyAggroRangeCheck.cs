@@ -1,57 +1,58 @@
-using Pathfinding;
 using System.Collections;
 using UnityEngine;
+using Pathfinding;
 
-public class EnemyAggroCheck : MonoBehaviour
+namespace Sigilspire.Enemy
 {
-    [SerializeField] private EnemyController enemyController;
-    [SerializeField] private float waitTime = 10f;
-
-    private Coroutine returnRoutine;
-
-    void Start()
+    public class EnemyAggroRangeCheck : MonoBehaviour
     {
-        enemyController = GetComponentInParent<EnemyController>();
-    }
+        [SerializeField] private EnemyController enemyController;
+        [SerializeField] private float returnDelay = 10f;
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision != null && collision.CompareTag("Player"))
+        private Coroutine returnRoutine;
+
+        private void Start()
         {
-            enemyController.IsInAggroRange = true;
-            enemyController.GetComponent<AIDestinationSetter>().target = collision.transform;
-            enemyController.IsReturningToStartPoint = false;
+            enemyController = GetComponentInParent<EnemyController>();
+        }
 
-            if (returnRoutine != null)
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.CompareTag("Player"))
             {
-                enemyController.StopCoroutine(returnRoutine);
-                returnRoutine = null;
+                enemyController.SetAggroTarget(collision.transform);
+
+                if (returnRoutine != null)
+                {
+                    enemyController.StopCoroutine(returnRoutine);
+                    returnRoutine = null;
+                }
             }
         }
-    }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision != null && collision.CompareTag("Player"))
+        private void OnTriggerExit2D(Collider2D collision)
         {
-            enemyController.IsInAggroRange = false;
-
-            if (returnRoutine == null)
+            if (collision.CompareTag("Player"))
             {
-                returnRoutine = enemyController.StartCoroutine(DelayedReturn(waitTime));
+                if (returnRoutine == null)
+                {
+                    returnRoutine = enemyController.StartCoroutine(DelayedReturn(returnDelay, collision.transform));
+                }
             }
         }
-    }
 
-    private IEnumerator DelayedReturn(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        if (!enemyController.IsInAggroRange && !enemyController.IsDead)
+        private IEnumerator DelayedReturn(float delay, Transform target)
         {
-            enemyController.IsReturningToStartPoint = true;
-            enemyController.GetComponent<AIDestinationSetter>().target = enemyController.StartPosition;
+            yield return new WaitForSeconds(delay);
+
+            if (!enemyController.IsInAggroRange.Value && !enemyController.IsDead)
+            {
+                enemyController.ClearAggroTarget(target);
+            }
+
+            returnRoutine = null;
         }
-        returnRoutine = null;
     }
 }
+
 
