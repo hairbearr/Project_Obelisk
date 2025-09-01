@@ -27,7 +27,7 @@ namespace Sigilspire.Combat
         private AIPath enemyAIPath;
         private PlayerShieldController shieldController;
 
-        public float CurrentHealth => currentHealth.Value;
+        public NetworkVariable<float> CurrentHealth => currentHealth; // Need to make this readonly, and then add an "add to health" function in here, then have Potion Call it
         public float MaxHealth => maxHealth;
 
         public bool IsDead { get; private set; } = false;

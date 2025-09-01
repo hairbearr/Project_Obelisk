@@ -26,6 +26,8 @@ namespace Sigilspire.Enemy
         public NetworkVariable<bool> IsInAttackRange = new NetworkVariable<bool>(false);
         public NetworkVariable<bool> IsGrappleable = new NetworkVariable<bool>(true);
 
+        public EnemySpawner enemySpawner;
+
         public Direction Direction { get => direction; private set => direction = value; }
         public bool IsAttacking { get => isAttacking; private set => isAttacking = value; }
         public bool IsDead { get => isDead; private set => isDead = value; }

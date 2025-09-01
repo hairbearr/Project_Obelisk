@@ -1,6 +1,7 @@
 using UnityEngine;
 using Unity.Netcode;
 using System.Collections;
+using Sigilspire.Enemy;
 
 public class EnemySpawner : NetworkBehaviour
 {

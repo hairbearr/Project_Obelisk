@@ -52,7 +52,9 @@ public class Potion : MonoBehaviour
 
     private void DrinkPotion()
     {
-        if(potionCount > 0)
+        //Need to make this health.CurrentHealth readonly, and then add an "add to health" function in Health, then have this Call it
+
+        if (potionCount > 0)
         {
             if (potionUpgrade == 00)
             {
@@ -63,17 +65,17 @@ public class Potion : MonoBehaviour
                 potionPotency = potionUpgrade * 4f;
             }
 
-            if (health.CurrentHealth >= health.MaxHealth)
+            if (health.CurrentHealth.Value >= health.MaxHealth)
             {
-                health.CurrentHealth = health.MaxHealth;
+                health.CurrentHealth.Value = health.MaxHealth;
             }
             else
             {
-                health.CurrentHealth += potionPotency;
+                health.CurrentHealth.Value += potionPotency;
                 potionCount--;
-                if (health.CurrentHealth >= health.MaxHealth)
+                if (health.CurrentHealth.Value >= health.MaxHealth)
                 {
-                    health.CurrentHealth = health.MaxHealth;
+                    health.CurrentHealth.Value = health.MaxHealth;
                 }
             }
             usePotion = false;
