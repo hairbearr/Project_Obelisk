@@ -27,7 +27,7 @@ namespace Sigilspire.Combat
         private AIPath enemyAIPath;
         private PlayerShieldController shieldController;
 
-        public NetworkVariable<float> CurrentHealth => currentHealth; // Need to make this readonly, and then add an "add to health" function in here, then have Potion Call it
+        public NetworkVariable<float> CurrentHealth => currentHealth; // Need to make this readonly, and then adAddd an "add to health" function in here, then have Potion Call it
         public float MaxHealth => maxHealth;
 
         public bool IsDead { get; private set; } = false;
@@ -81,7 +81,7 @@ namespace Sigilspire.Combat
             // -------------------------------
             if (shieldController != null && shieldController.CanBlock())
             {
-                shieldController.AbsorbDamageServerRpc(amount);
+                shieldController.AbsorbDamageServerRpc(amount, knockbackForce);
                 remainingDamage = Mathf.Max(0f, amount - shieldController.CurrentShieldEnergy);
             }
 

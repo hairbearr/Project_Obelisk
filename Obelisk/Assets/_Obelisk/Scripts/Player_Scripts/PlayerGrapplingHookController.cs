@@ -1,6 +1,7 @@
 using UnityEngine;
 using Unity.Netcode;
 using Sigilspire.Combat;
+using Sigilspire.Enemy;
 
 namespace Sigilspire.Player
 {
@@ -14,14 +15,8 @@ namespace Sigilspire.Player
     {
         [Header("References")]
         public Animator hookAnimator; // Animator for the grappling hook sprite
-        public Attack grappleAttackSO; // AttackSO for the grappling hook
+        public Attack currentGrapplingHookAbility; // AttackSO for the grappling hook
         public PlayerController playerController;
-
-        [Header("Grapple Settings")]
-        public float pullSpeed = 10f; // Speed to pull player or enemy
-        public float damageToEnemy = 10f; // Small damage to enemies hit
-        public LayerMask grappleLayerMask; // Layer mask for grapple targets
-        public float maxGrappleDistance = 5f;
 
         private Rigidbody2D rb;
         private bool isGrappling;
@@ -47,7 +42,7 @@ namespace Sigilspire.Player
             Vector2 grappleDir = DirectionToVector(dir);
 
             // Raycast to find target
-            RaycastHit2D hit = Physics2D.Raycast(rb.position, grappleDir, maxGrappleDistance, grappleLayerMask);
+            RaycastHit2D hit = Physics2D.Raycast(rb.position, grappleDir, currentGrapplingHookAbility.grapplingHookMaxDistance, currentGrapplingHookAbility.grapplingHookLayerMask);
 
             if (hit.collider != null)
             {
@@ -57,13 +52,13 @@ namespace Sigilspire.Player
                 Health enemyHealth = hit.collider.GetComponent<Health>();
                 if (enemyHealth != null)
                 {
-                    bool canBeGrappled = hit.collider.GetComponent<EnemyController>()?.IsGrappleable ?? true;
+                    bool canBeGrappled = hit.collider.GetComponent<EnemyController>()?.IsGrappleable.Value ?? true;
 
                     if (canBeGrappled)
                     {
                         // Pull enemy towards player
                         StartCoroutine(PullEnemyToPlayer(enemyHealth));
-                        enemyHealth.TakeDamageServerRpc(damageToEnemy, 0f, transform.position); // small damage
+                        enemyHealth.TakeDamageServerRpc(currentGrapplingHookAbility.grapplingHookDamage, 0f, transform.position); // small damage
                     }
                     else
                     {
@@ -90,7 +85,7 @@ namespace Sigilspire.Player
         public void PlayGrappleAnimationClientRpc(Direction dir)
         {
             // Set hook animation for direction
-            hookAnimator.Play(grappleAttackSO.GetGrappleAnimation(dir).name);
+            hookAnimator.Play(currentGrapplingHookAbility.GetGrappleAnimation(dir).name);
         }
 
         // -------------------------------
@@ -103,7 +98,7 @@ namespace Sigilspire.Player
             while (Vector2.Distance(rb.position, target.position) > 0.1f)
             {
                 Vector2 direction = ((Vector2)target.position - rb.position).normalized;
-                rb.MovePosition(rb.position + direction * pullSpeed * Time.fixedDeltaTime);
+                rb.MovePosition(rb.position + direction * currentGrapplingHookAbility.grapplingHookPullSpeed * Time.fixedDeltaTime);
                 yield return new WaitForFixedUpdate();
             }
             isGrappling = false;
@@ -116,7 +111,7 @@ namespace Sigilspire.Player
             while (Vector2.Distance(rb.position, enemyTransform.position) > 0.1f)
             {
                 Vector2 direction = (rb.position - (Vector2)enemyTransform.position).normalized;
-                enemyTransform.position += (Vector3)(direction * pullSpeed * Time.fixedDeltaTime);
+                enemyTransform.position += (Vector3)(direction * currentGrapplingHookAbility.grapplingHookPullSpeed * Time.fixedDeltaTime);
                 yield return new WaitForFixedUpdate();
             }
             isGrappling = false;

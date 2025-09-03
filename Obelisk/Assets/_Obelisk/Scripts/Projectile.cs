@@ -1,4 +1,6 @@
 using UnityEngine;
+using Sigilspire.Combat;
+using Sigilspire.Player;
 
 public class Projectile : MonoBehaviour
 {
@@ -47,11 +49,11 @@ public class Projectile : MonoBehaviour
     {
         if (collision.collider.gameObject.CompareTag("Shield"))
         {
-            collision.collider.gameObject.GetComponent<ShieldController>()?.ShieldDamage(damage, knockback, transform.position);
+            collision.collider.gameObject.GetComponent<PlayerShieldController>()?.AbsorbDamageServerRpc(damage, knockback);
         }
         else if (collision.collider.gameObject.CompareTag("Player"))
         {
-            collision.collider.gameObject.GetComponent<Health>()?.TakeDamage(damage, knockback, transform.position);
+            collision.collider.gameObject.GetComponent<Health>()?.TakeDamageServerRpc(damage, knockback, transform.position);
         }
     }
 

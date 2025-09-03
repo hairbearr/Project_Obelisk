@@ -38,6 +38,33 @@ namespace Sigilspire.Combat
         [Tooltip("Radius of this attack. If >0, attack hits all players within this radius.")]
         public float attackRadius = 0f;
 
+        [Header("Shield Stats")]
+        [Tooltip("Maximum energy the shield can hold.")]
+        public float shieldMaxEnergy = 50f;
+
+        [Tooltip("Energy regenerated per second when not blocking or stunned.")]
+        public float shieldRegenRate = 5f;
+
+        [Tooltip("Time the player is stunned when the shield breaks.")]
+        public float shieldBreakStunDuration = 1.5f;
+
+        [Tooltip("Percentage of knockback reduced while blocking.")]
+        [Range(0f, 1f)]
+        public float shieldKnockBackReduction = 0.5f;
+
+        [Header("Grappling Hook Stats")]
+        [Tooltip("Speed at which the grappling hook retracts.")]
+        public float grapplingHookPullSpeed = 10f;
+
+        [Tooltip("Amount of damage dealt to enemies when hit.")]
+        public float grapplingHookDamage = 10f;
+
+        [Tooltip("Maximum distance grappling hook flies.")]
+        public float grapplingHookMaxDistance = 5f;
+
+        [Tooltip("LayerMask used to grapple.")]
+        public LayerMask grapplingHookLayerMask;
+
         [Header("Animation Clips")]
         [Tooltip("Animations for directional actions (attack, block, grapple, etc.).")]
         public DirectionalAnimations animations;

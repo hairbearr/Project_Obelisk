@@ -12,14 +12,10 @@ namespace Sigilspire.Player
     [RequireComponent(typeof(Health))]
     public class PlayerShieldController : NetworkBehaviour
     {
-        [Header("Shield Settings")]
-        public float maxShieldEnergy = 50f;      // Maximum shield energy
-        public float shieldRegenRate = 5f;       // Energy regenerated per second
-        public float shieldBreakStunDuration = 1.5f; // Time stunned when shield breaks
 
         [Header("References")]
         public Animator shieldAnimator;           // Animator controlling shield animations
-        public Attack blockAttackSO;             // AttackSO representing the block ability
+        public Attack currentShieldAbility;             // AttackSO representing the block ability
         private Health playerHealth;
 
         private float currentShieldEnergy;
@@ -29,7 +25,7 @@ namespace Sigilspire.Player
         private void Awake()
         {
             playerHealth = GetComponent<Health>();
-            currentShieldEnergy = maxShieldEnergy;
+            currentShieldEnergy = currentShieldAbility.shieldMaxEnergy; // use the ability's energy data
         }
 
         private void Update()
@@ -39,8 +35,8 @@ namespace Sigilspire.Player
             // Regenerate shield if not blocking or stunned
             if (!isBlocking && !isStunned)
             {
-                currentShieldEnergy += shieldRegenRate * Time.deltaTime;
-                currentShieldEnergy = Mathf.Min(currentShieldEnergy, maxShieldEnergy);
+                currentShieldEnergy += currentShieldAbility.shieldRegenRate * Time.deltaTime;
+                currentShieldEnergy = Mathf.Min(currentShieldEnergy, currentShieldAbility.shieldMaxEnergy);
             }
 
             // Example: update animations for client visuals
@@ -68,18 +64,24 @@ namespace Sigilspire.Player
         /// Applies damage to the shield first, leftover goes to health.
         /// Should be called from server-side for Netcode.
         /// </summary>
-        public void AbsorbDamageServerRpc(float amount, ServerRpcParams rpcParams = default)
+        [ServerRpc]
+        public void AbsorbDamageServerRpc(float amount, float knockBack, ServerRpcParams rpcParams = default)
         {
             if (!IsServer) return;
 
-            float leftoverDamage = 0f;
+            float leftoverDamage = amount;
 
             if (isBlocking && currentShieldEnergy > 0)
             {
                 currentShieldEnergy -= amount;
+
+                knockBack *= (1f - currentShieldAbility.shieldKnockBackReduction); // percentage knockback reduction while blocking
+
+                playerHealth.TakeDamageServerRpc(0f, knockBack, transform.position);
+
                 if (currentShieldEnergy <= 0)
                 {
-                    leftoverDamage = -currentShieldEnergy; // remaining damage
+                    leftoverDamage -= currentShieldEnergy; // remaining damage
                     currentShieldEnergy = 0;
                     StartCoroutine(BreakShieldRoutine());
                 }
@@ -92,7 +94,7 @@ namespace Sigilspire.Player
             // Apply leftover damage to player's health
             if (IsServer && leftoverDamage > 0f)
             {
-                playerHealth.TakeDamageServerRpc(leftoverDamage, 0f, transform.position);
+                playerHealth.TakeDamageServerRpc(leftoverDamage, knockBack, transform.position);
             }
 
             // Send client visual updates
@@ -114,9 +116,9 @@ namespace Sigilspire.Player
             // Play shield break animation
             shieldAnimator.SetTrigger("Break");
 
-            yield return new WaitForSeconds(shieldBreakStunDuration);
+            yield return new WaitForSeconds(currentShieldAbility.shieldBreakStunDuration);
             isStunned = false;
-            currentShieldEnergy = maxShieldEnergy * 0.2f; // small regen after break
+            currentShieldEnergy = currentShieldAbility.shieldMaxEnergy * 0.2f; // small regen after break
         }
 
         /// <summary>
