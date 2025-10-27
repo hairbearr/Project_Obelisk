@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b27be473a1ae8240a1f2fe46ca1b5b2, type: 3}
+  m_Name: BasicSwordAttack
+  m_EditorClassIdentifier: 
+  attackName: Overhead Slash
+  damage: 10
+  cooldown: 1
+  knockback: 5
+  weight: 0
+  isSpecial: 0
+  canChainCombo: 0
+  projectilePrefab: {fileID: 0}
+  attackRadius: 0
+  shieldMaxEnergy: 50
+  shieldRegenRate: 5
+  shieldBreakStunDuration: 1.5
+  shieldKnockBackReduction: 0.5
+  grapplingHookPullSpeed: 10
+  grapplingHookDamage: 10
+  grapplingHookMaxDistance: 5
+  grapplingHookLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  animations:
+    actionAnimations:
+    - actionType: 0
+      north: {fileID: 7400000, guid: f8a8edca81f35414290ff719bec73013, type: 2}
+      northEast: {fileID: 7400000, guid: bcbcf900ee41b8042b722e9d81cc19cf, type: 2}
+      east: {fileID: 7400000, guid: f6e69f84929944046ab20c3e217f52aa, type: 2}
+      southEast: {fileID: 7400000, guid: 91efcd926c50a664aa5110b2614a5bee, type: 2}
+      south: {fileID: 7400000, guid: 146efd69559903d4f92464040b632737, type: 2}
+      southWest: {fileID: 7400000, guid: 06bfa18d14c53f545aa3d6afbb4ff05d, type: 2}
+      west: {fileID: 7400000, guid: 8da5a965ce7c36b4cb0f6fb6f9b9005e, type: 2}
+      northWest: {fileID: 7400000, guid: 0fddeca424be3b54682e753bae424b87, type: 2}
+    - actionType: 1
+      north: {fileID: 7400000, guid: 954b1d974d3bc1d468c0d60bfbf5ef9b, type: 2}
+      northEast: {fileID: 7400000, guid: 8e614fd9e30c3da4290b3a457646c74b, type: 2}
+      east: {fileID: 7400000, guid: 4b52edb72a21cfe45b01aec7850a50ad, type: 2}
+      southEast: {fileID: 7400000, guid: 4329075ef5da2d94896bec56dfdc47cd, type: 2}
+      south: {fileID: 7400000, guid: 393b7c8d67b6c5f49a04c584834919b9, type: 2}
+      southWest: {fileID: 7400000, guid: 2b5c4de0cc2b5bb42b01048fe3f79292, type: 2}
+      west: {fileID: 7400000, guid: 79909a16d80847a48ba10d2140ae4536, type: 2}
+      northWest: {fileID: 7400000, guid: 55486cbb5c558a54cb51a12e8e5483c6, type: 2}
+    - actionType: 8
+      north: {fileID: 7400000, guid: e9ffe773d51b09940b807731e87508df, type: 2}
+      northEast: {fileID: 7400000, guid: 33561dea0e6d11f4285e50b5be916012, type: 2}
+      east: {fileID: 7400000, guid: f2ba103fffd8a1540b44a14dbbc91f25, type: 2}
+      southEast: {fileID: 7400000, guid: cc18c800c2de9b1419478c1904c92488, type: 2}
+      south: {fileID: 7400000, guid: 6a68ca2f1b5de29499032e45259111ba, type: 2}
+      southWest: {fileID: 7400000, guid: 31658f6de796e5445845d541a7113904, type: 2}
+      west: {fileID: 7400000, guid: 2bfff26f655bbe34e96ec62156d36a40, type: 2}
+      northWest: {fileID: 7400000, guid: 7ad45dfffd24ea9478f358b08db417f0, type: 2}
+    - actionType: 3
+      north: {fileID: 7400000, guid: 89465bffdf8f63e469458aa307a09fe2, type: 2}
+      northEast: {fileID: 7400000, guid: 53129dda05ea46a4885d4b60a44ba522, type: 2}
+      east: {fileID: 7400000, guid: ca00858e9a5a13849b190debe17baf8c, type: 2}
+      southEast: {fileID: 7400000, guid: 4ab91f63e09089b4993d29aa62c5ba8b, type: 2}
+      south: {fileID: 7400000, guid: 14f03fbbc0414f14983e0f5eb9a95372, type: 2}
+      southWest: {fileID: 7400000, guid: c57f1fbccc8bc7e42baf2cae56eefaa2, type: 2}
+      west: {fileID: 7400000, guid: 678aa0ee4a29dc24a8e54a7113396a73, type: 2}
+      northWest: {fileID: 7400000, guid: 6b781db7a938fa34285bddb2bfe79b07, type: 2}
+    - actionType: 6
+      north: {fileID: 7400000, guid: fec29485c25bf4f44bca21a1d06e57c3, type: 2}
+      northEast: {fileID: 7400000, guid: 62c1a590529ef7840bd2aba904bf0c61, type: 2}
+      east: {fileID: 7400000, guid: 0b70ee92f6b8ccc43bb4b38a24dba3dd, type: 2}
+      southEast: {fileID: 7400000, guid: fe9d4fef6ee00f74aad7f562c7bee96a, type: 2}
+      south: {fileID: 7400000, guid: 53b029f8b02914148ab69c09a3eb49e6, type: 2}
+      southWest: {fileID: 7400000, guid: ea55a84eb213fa44ea18aa965ecb4e5c, type: 2}
+      west: {fileID: 7400000, guid: d1c83fc538aede6448ed88bda93c08f7, type: 2}
+      northWest: {fileID: 7400000, guid: faba4ecca8812d048a803642e945a419, type: 2}
+    - actionType: 9
+      north: {fileID: 7400000, guid: 6c0268e831a87534796a0d281239391d, type: 2}
+      northEast: {fileID: 7400000, guid: a30a83a27911c964e8466f5ea32e240d, type: 2}
+      east: {fileID: 7400000, guid: 05a2982819b1b5c41b80be44ce8281a5, type: 2}
+      southEast: {fileID: 7400000, guid: ad2b64a00c49e8646829aa9410770975, type: 2}
+      south: {fileID: 7400000, guid: a5454dd837813644f93e3bc7a77c86c7, type: 2}
+      southWest: {fileID: 7400000, guid: df588c32323a7b645a118998d0186858, type: 2}
+      west: {fileID: 7400000, guid: 6c29b225357516e4d8ea67e0517f4079, type: 2}
+      northWest: {fileID: 7400000, guid: 98c3a9804d8de3247a10dda56eb579fb, type: 2}
+  upgradedAttack: {fileID: 0}
+  lastUsedTime: 0

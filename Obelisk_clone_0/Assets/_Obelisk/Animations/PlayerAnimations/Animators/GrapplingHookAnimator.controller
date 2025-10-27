@@ -40,37 +40,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: IsMoving
-    m_EventTreshold: 1
-  - m_ConditionMode: 4
     m_ConditionEvent: IsAttacking
-    m_EventTreshold: 1
-  - m_ConditionMode: 4
-    m_ConditionEvent: IsBlocking
-    m_EventTreshold: 1
-  - m_ConditionMode: 4
-    m_ConditionEvent: IsClimbing
-    m_EventTreshold: 1
-  - m_ConditionMode: 4
-    m_ConditionEvent: IsDrinkingPotion
-    m_EventTreshold: 1
-  - m_ConditionMode: 4
-    m_ConditionEvent: IsGettingHit
-    m_EventTreshold: 1
-  - m_ConditionMode: 4
-    m_ConditionEvent: IsInteracting
-    m_EventTreshold: 1
-  - m_ConditionMode: 4
-    m_ConditionEvent: IsJumping
-    m_EventTreshold: 1
-  - m_ConditionMode: 4
-    m_ConditionEvent: IsGrappling
-    m_EventTreshold: 1
-  - m_ConditionMode: 4
-    m_ConditionEvent: IsShooting
-    m_EventTreshold: 1
-  - m_ConditionMode: 4
-    m_ConditionEvent: IsUsingItem
     m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4562661315263662006}
