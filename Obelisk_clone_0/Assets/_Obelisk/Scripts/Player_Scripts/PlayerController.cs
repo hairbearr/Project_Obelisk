@@ -235,26 +235,6 @@ public class PlayerController : NetworkBehaviour
 >>>>>>> parent of 0509b8a (Started enemy pathfinding and scripts)
             return;
         }
-<<<<<<< HEAD
-=======
-
-        movementInput = new Vector2(horizontal, vertical);
-        // east
-        if ( horizontal == 1  && vertical == 0   )
-        { 
-            direction = 0;
-        }
-        else if ( horizontal == 1  && vertical == 1   ) { direction = 1; } // northEast
-        else if ( horizontal == 0  && vertical == 1   ) { direction = 2; } // north
-        else if ( horizontal == -1 && vertical == 1   ) { direction = 3; } // northWest
-        else if ( horizontal == -1 && vertical == 0   ) { direction = 4; } // west
-        else if ( horizontal == -1 && vertical == -1  ) { direction = 5; } // southWest
-        else if ( horizontal == 0  && vertical == -1  ) { direction = 6; } // south
-        else if ( horizontal == 1  && vertical == -1  ) { direction = 7; } // southEast
-
-        isMoving = 1;
-        rb.linearVelocity = movementInput * movementSpeed * movementSpeedMultiplier * Time.fixedDeltaTime;
->>>>>>> parent of 0509b8a (Started enemy pathfinding and scripts)
     }
 
     // =========================
@@ -374,7 +354,6 @@ public class PlayerController : NetworkBehaviour
     private void Animate()
     {
 <<<<<<< HEAD
-<<<<<<< HEAD
         foreach (var param in animatorParams)
         {
             if (param.Value is float f)
@@ -430,8 +409,6 @@ public class PlayerController : NetworkBehaviour
             currentInteractable = null;
         }
 =======
-=======
->>>>>>> parent of 0509b8a (Started enemy pathfinding and scripts)
         playerAnimator.SetFloat("MovementX", movementInput.x);
         playerAnimator.SetFloat("MovementY", movementInput.y);
         playerAnimator.SetFloat("Direction", direction);
@@ -492,9 +469,6 @@ public class PlayerController : NetworkBehaviour
         grapplingHookAnimator.SetFloat("IsGrappling", isGrappling);
         grapplingHookAnimator.SetFloat("IsShooting", isShooting);
         grapplingHookAnimator.SetFloat("IsUsingItem", isUsingItem);
-<<<<<<< HEAD
->>>>>>> parent of 0509b8a (Started enemy pathfinding and scripts)
-=======
 >>>>>>> parent of 0509b8a (Started enemy pathfinding and scripts)
     }
 }
