@@ -91,7 +91,7 @@ public class SwordController : NetworkBehaviour
 
     private void Animate()
     {
-        animator.SetFloat("Direction", (float)player.Direction);
+        animator.SetFloat("Direction", player.Direction);
         animator.SetFloat("IsMoving", player.IsMoving);
         animator.SetFloat("IsAttacking", player.IsAttacking);
         animator.SetFloat("SwordAttackType", player.SwordAttackType);
@@ -137,7 +137,7 @@ public class SwordController : NetworkBehaviour
     private void PlaySwingAnimationClientRpc(float attackType)
     {
         animator.SetFloat("SwordAttackType", attackType);
-       // animator.SetTrigger("Swing"); // Assumes you use a "Swing" trigger in your Animator
+        animator.SetTrigger("Swing"); // Assumes you use a "Swing" trigger in your Animator
     }
 }
 

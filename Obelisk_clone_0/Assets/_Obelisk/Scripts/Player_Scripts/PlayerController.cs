@@ -1,30 +1,22 @@
 using UnityEngine;
 using Unity.Netcode;
+using System;
 using System.Collections;
 
 public class PlayerController : NetworkBehaviour
 {
     [SerializeField] private float movementSpeed =5;
+
     [SerializeField] private Animator animator;
     private Rigidbody2D rb;
     private float movementSpeedMultiplier =1f;
-
-    private Vector2 cachedMovementInput = Vector2.zero;
-
-    [SerializeField] private Direction direction;
-
-    [SerializeField] private float isMoving, isAttacking, isBlocking, isGrappling, isJumping, isClimbing, isDrinkingPotion, isGettingHit, isInteracting, isShooting, isUsingItem, isDead, swordAttackType, attackComboTimer;
+    [SerializeField] private Vector2 movementInput;
+    [SerializeField] private float swingSpeed, swordAttackType, direction, attackComboTimer, jumpTimer, isDead;
     [SerializeField] private bool attackCooldown, movementDisabled, cantShield, isDisabled;
-    [SerializeField] private GameObject sword, grapplingHook;
-    [SerializeField] ShieldController shield;
-    //[SerializeField] private string activeSwordAbility;
+    [SerializeField] private float isMoving, isAttacking, isBlocking, isGrappling, isJumping, isClimbing, isDrinkingPotion, isGettingHit, isInteracting, isShooting, isUsingItem;
+    [SerializeField] private GameObject sword, shield, grapplingHook;
+    [SerializeField] private string activeSwordAbility;
 
-
-    public  float MovementSpeedMultiplier
-    {
-        get { return movementSpeedMultiplier; }
-        set { movementSpeedMultiplier = value; }
-    }
     public float IsDead
     {
         get { return isDead; }
@@ -35,7 +27,7 @@ public class PlayerController : NetworkBehaviour
         get { return cantShield; }
         set { cantShield = value; }
     }
-    public Direction Direction
+    public float Direction
     {
         get { return direction; }
         set { direction = value; }
@@ -126,6 +118,11 @@ public class PlayerController : NetworkBehaviour
         set { attackCooldown = value; }
     }
 
+
+
+
+
+
     public override void OnNetworkSpawn()
     {
         if (!IsOwner)
@@ -140,7 +137,6 @@ public class PlayerController : NetworkBehaviour
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        shield = GetComponentInChildren<ShieldController>();
     }
 
     // Update is called once per frame
@@ -149,7 +145,7 @@ public class PlayerController : NetworkBehaviour
         if (!IsDisabled)
         {
             Controls();
-            ReadMovementInput();
+            Move();
         }
         Animate();
         
@@ -161,7 +157,7 @@ public class PlayerController : NetworkBehaviour
     }
     private void Jump()
     {
-        // input jump mechanics here
+
     }
     
     private void Controls()
@@ -210,92 +206,50 @@ public class PlayerController : NetworkBehaviour
 
         if (cantShield)
         {
-
             isBlocking = 0;
-
-            if (shield != null)
-            {
-                StartCoroutine(Delay(shield.ShieldCooldownTime));
-            }
+            Delay(shield.GetComponent<ShieldController>().ShieldCooldownTime);
             cantShield = false;
         }
     }
 
-    private void ReadMovementInput()
+    private void Move()
     {
-        
-        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
 
-        if(input.sqrMagnitude < 0.1f) // deadzone threshold
+        if (horizontal == 0 && vertical == 0)
         {
-            cachedMovementInput = Vector2.zero;
+            rb.linearVelocity = new Vector2(0,0);
+            isMoving = 0;
             return;
         }
-        input.Normalize();
 
-        float angle = Mathf.Atan2(input.y, input.x) * Mathf.Rad2Deg;
-        if (angle < 0) angle += 360f;
+        movementInput = new Vector2(horizontal, vertical);
 
-        if(angle >= 337.5f || angle < 22.5f)
-        {
-            direction = Direction.East;
-            cachedMovementInput = Vector2.right;
-        }
-        else if(angle >= 22.5f && angle < 67.5f)
-        {
-            direction = Direction.NorthEast;
-            cachedMovementInput = new Vector2(1, 1).normalized;
-        }
-        else if(angle >= 67.5f && angle < 112.5f)
-        {
-            direction = Direction.North;
-            cachedMovementInput = Vector2.up;
-        }
-        else if (angle >= 112.5f && angle < 157.5f)
-        {
-            direction = Direction.NorthWest;
-            cachedMovementInput = new Vector2(-1, 1).normalized;
-        }
-        else if (angle >= 157.5f && angle < 202.5f)
-        {
-            direction = Direction.West;
-            cachedMovementInput = Vector2.left;
-        }
-        else if (angle >= 202.5f && angle < 247.5f)
-        {
-            direction = Direction.SouthWest;
-            cachedMovementInput = new Vector2(-1, -1).normalized;
-        }
-        else if (angle >= 247.5f && angle < 292.5f)
-        {
-            direction = Direction.South;
-            cachedMovementInput = Vector2.down;
-        }
-        else if (angle >= 292.5f && angle < 337.5f)
-        {
-            direction = Direction.SouthEast;
-            cachedMovementInput = new Vector2(1, -1).normalized;
-        }
+             if ( horizontal == 1  && vertical == 0   ) { direction = 0; } // east
+        else if ( horizontal == 1  && vertical == 1   ) { direction = 1; } // northEast
+        else if ( horizontal == 0  && vertical == 1   ) { direction = 2; } // north
+        else if ( horizontal == -1 && vertical == 1   ) { direction = 3; } // northWest
+        else if ( horizontal == -1 && vertical == 0   ) { direction = 4; } // west
+        else if ( horizontal == -1 && vertical == -1  ) { direction = 5; } // southWest
+        else if ( horizontal == 0  && vertical == -1  ) { direction = 6; } // south
+        else if ( horizontal == 1  && vertical == -1  ) { direction = 7; } // southEast
 
-    }
-
-    private void FixedUpdate()
-    {
         if (!movementDisabled)
         {
-            rb.linearVelocity = cachedMovementInput * movementSpeed * movementSpeedMultiplier;
-            isMoving = cachedMovementInput.sqrMagnitude > 0 ? 1 : 0;
+            isMoving = 1;
+            rb.linearVelocity = movementInput * movementSpeed * movementSpeedMultiplier * Time.fixedDeltaTime;
         }
         else
         {
-            rb.linearVelocity = Vector2.zero;
+            rb.linearVelocity = movementInput * 0f;
             isMoving = 0;
         }
     }
 
     private void Animate()
     {
-        animator.SetFloat("Direction", (float)direction);
+        animator.SetFloat("Direction", direction);
         animator.SetFloat("IsMoving", isMoving);
         animator.SetFloat("IsAttacking", isAttacking);
         animator.SetFloat("SwordAttackType", swordAttackType);

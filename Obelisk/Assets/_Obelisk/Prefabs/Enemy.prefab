@@ -45,8 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2177af5acc1c0964b87f907410dd2cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPool:
-  - {fileID: 11400000, guid: 06fff527c259f4249b39954ac93f7f2a, type: 2}
+  baseDamage: 0
+  damageModifier: 0
+  knockbackForce: 0
 --- !u!95 &7825435757221718035
 Animator:
   serializedVersion: 7
@@ -115,7 +116,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyController: {fileID: 0}
-  waitTime: 10
 --- !u!58 &8308127713149284555
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -308,11 +308,10 @@ MonoBehaviour:
   isChasing: 0
   isGettingHit: 0
   isDead: 0
-  isDisabled: 0
   returnToStartPoint: 0
   patrolStart: {x: 0, y: 0, z: 0}
   patrolEnd: {x: 0, y: 0, z: 0}
-  startPosition: {fileID: 0}
+  startPosition: {x: 0, y: 0, z: 0}
   enemySpawner: {fileID: 0}
 --- !u!114 &8595410283389588095
 MonoBehaviour:
@@ -539,7 +538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
-  radius: 0.5
+  radius: 0.75
   height: 2
   canMove: 1
   maxSpeed: 1
@@ -562,12 +561,12 @@ MonoBehaviour:
   maxAcceleration: -2.5
   rotationSpeed: 360
   slowdownDistance: 0.6
-  pickNextWaypointDist: 0.025
+  pickNextWaypointDist: 2
   endReachedDistance: 0.2
   alwaysDrawGizmos: 1
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 1
-  constrainInsideGraph: 1
+  constrainInsideGraph: 0
 --- !u!114 &2961504555484043623
 MonoBehaviour:
   m_ObjectHideFlags: 0
