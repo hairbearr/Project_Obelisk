@@ -13,12 +13,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField] Direction direction;
     private Rigidbody2D rb;
     private Animator animator;
-<<<<<<< HEAD
     private AIDestinationSetter destinationSetter;
     [SerializeField] bool playerIsInAggroRange, playerIsInAttackRange, isAttacking, specialAttacking, isPatrolling, canPatrol, isRunning, isWalking, isChasing, isGettingHit, isDead, isDisabled, returnToStartPoint = false;
-=======
-    [SerializeField] bool playerIsInAggroRange, playerIsInAttackRange, isAttacking, specialAttacking, isPatrolling, canPatrol, isRunning, isWalking, isChasing, isGettingHit, isDead, returnToStartPoint = false;
->>>>>>> parent of 5b3f190 (Enemy Attacks)
     [SerializeField] Vector3 patrolStart, patrolEnd;
     [SerializeField] Transform startPosition;
 =======
@@ -52,7 +48,11 @@ public class EnemyController : MonoBehaviour
         get { return startPosition; }
         set { startPosition = value; }
     }
-
+    public bool IsDisabled
+    {
+        get { return isDisabled; }
+        set { isDisabled = value; }
+    }
     public bool IsReturningToStartPoint
     {
         get { return returnToStartPoint; }
@@ -122,9 +122,8 @@ public class EnemyController : MonoBehaviour
 <<<<<<< HEAD
         if(startPosition == null) {  return; }
 
-        if (GetComponent<AIDestinationSetter>().target != null)
+        if (!IsDisabled)
         {
-<<<<<<< HEAD
             if (destinationSetter.target != null)
             {
                 Movement();
@@ -147,28 +146,7 @@ public class EnemyController : MonoBehaviour
 
             Combat();
             Patrol();
-=======
-            Movement();
->>>>>>> parent of 5b3f190 (Enemy Attacks)
         }
-
-        if (!playerIsInAggroRange && Vector2.Distance(startPosition.position, transform.position) > 0.05f)
-        {
-            returnToStartPoint = true;
-        }
-
-        if (IsReturningToStartPoint)
-        {
-            if (Vector2.Distance(startPosition.position, transform.position) <= 0.05f)
-            {
-                transform.position = startPosition.position;
-                GetComponent<AIDestinationSetter>().target = null;
-                IsReturningToStartPoint = false;
-            }
-        }
-
-        Combat();
-        Patrol();
         Animate();
     }
 

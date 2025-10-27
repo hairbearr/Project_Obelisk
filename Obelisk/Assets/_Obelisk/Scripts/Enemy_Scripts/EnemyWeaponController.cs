@@ -1,17 +1,14 @@
-using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class EnemyWeaponController : MonoBehaviour
 {
     private EnemyController enemy;
     private Animator animator;
-<<<<<<< HEAD
 
     [SerializeField] private Attack[] attackPool;
     private Attack currentAttack;
-=======
-    [SerializeField] float baseDamage, damageModifier, knockbackForce;
->>>>>>> parent of 5b3f190 (Enemy Attacks)
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,15 +17,24 @@ public class EnemyWeaponController : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    private void NextAttack()
+    private void Update()
     {
-        // roll a die, pick either basic attack or whichever one of it's special attacks
-        // cast that attack/play that animation
+        if (enemy != null)
+        {
+            if (enemy.IsInAttackRange)
+            {
+                Attack();
+            }
+        }    
     }
 
-    void BasicMeleeAttack()
+    // so you get into attack range.
+    // you do NextAttack(), which calls the first attack
+    // you do the first attack, which calls NextAttack(), which calls the next attack
+    // keep going
+
+    private void Attack()
     {
-<<<<<<< HEAD
         // get all attacks that are off cooldown
         List<Attack> readyAttacks = attackPool.Where(a => a.IsReady()).ToList();
         if (readyAttacks.Count == 0) return; // No attacks are ready, do nothing
@@ -70,37 +76,33 @@ public class EnemyWeaponController : MonoBehaviour
     }
 
     private void FireProjectile(Attack attack)
-=======
-        //pick the right animation
-        //set baseDamage, damageModifier, and knockbackForce correctly
-    }
-
-    void BasicRangedAttack()
->>>>>>> parent of 5b3f190 (Enemy Attacks)
     {
-        //pick the right animation
-        //set the baseDamage, damageModifier, and KnockbackForce correctly
-        // pick the right projectile, and set it's baseDamage, damageModifier, and KnockbackForce correctly
-    }
+        // instantiate the projectile at the enemy's position, no rotation
+        GameObject projectile = Instantiate(attack.ProjectilePrefab, transform.position, Quaternion.identity);
 
-    private float DealDamage(float damage, float modifier)
-    {
-        return damage + modifier;
+        // initialize the projectile with damage and knockback values
+        Projectile proj = projectile.GetComponent<Projectile>();
+        if (proj != null) 
+        {
+            proj.Initialize(attack.DealDamage(), attack.KnockbackForce, enemy.Direction);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision != null)
+        if(collision == null || currentAttack == null) { return; }
+
+        float damage = currentAttack.DealDamage();
+        float knockback = currentAttack.KnockbackForce;
+
+        if (collision.collider.gameObject.CompareTag("Shield"))
         {
-            if (collision.collider.gameObject.CompareTag("Shield"))
-            {
-                collision.collider.gameObject.GetComponent<ShieldController>().ShieldDamage(DealDamage(baseDamage, damageModifier), knockbackForce, transform.position);
-                return;
-            }
-            if (collision.collider.gameObject.CompareTag("Player"))
-            {
-                collision.gameObject.GetComponent<Health>().TakeDamage(DealDamage(baseDamage, damageModifier), knockbackForce, transform.position);
-            }
+            collision.collider.gameObject.GetComponent<ShieldController>()?.ShieldDamage(damage, knockback, transform.position);
+            return;
+        }
+           if (collision.collider.gameObject.CompareTag("Player"))
+        {
+            collision.collider.gameObject.GetComponent<Health>()?.TakeDamage(damage, knockback, transform.position);
         }
     }
 

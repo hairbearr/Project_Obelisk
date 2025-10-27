@@ -185,10 +185,6 @@ public class PlayerController : NetworkBehaviour
         {
             isBlocking = 1;
             print("Actively Blocking");
-<<<<<<< HEAD
-=======
-            movementDisabled = true;
->>>>>>> parent of 5b3f190 (Enemy Attacks)
             // play block animation(s)
             // if there's an ability, use the ability here
         }
@@ -201,24 +197,14 @@ public class PlayerController : NetworkBehaviour
         // Fire Grappling Hook
         if (Input.GetMouseButtonDown(2))
         {
-<<<<<<< HEAD
             isGrappling = 1;
-=======
-            movementDisabled = true;
-            isShooting = 1;
->>>>>>> parent of 5b3f190 (Enemy Attacks)
             print("Grappling Hook Fire");
             // play grappling hook animation
             // fire grappling hook projectile, which does all the grappling hook stuffs, including the abilities
         }
         if (Input.GetMouseButtonUp(2))
         {
-<<<<<<< HEAD
             isGrappling = 0;
-=======
-            movementDisabled = false;
-            isShooting = 0;
->>>>>>> parent of 5b3f190 (Enemy Attacks)
             print("Grappling Hook No Longer Firing");
             //If (GrapplingHookConnected){
             // if(Connection == enemy){
