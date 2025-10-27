@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+<<<<<<< HEAD
 using Pathfinding;
 using System;
 
@@ -15,6 +16,18 @@ public class EnemyController : MonoBehaviour
     [SerializeField] bool playerIsInAggroRange, playerIsInAttackRange, isAttacking, specialAttacking, isPatrolling, canPatrol, isRunning, isWalking, isChasing, isGettingHit, isDead, isDisabled, returnToStartPoint = false;
     [SerializeField] Vector3 patrolStart, patrolEnd;
     [SerializeField] Transform startPosition;
+=======
+
+public class EnemyController : MonoBehaviour
+{
+    [SerializeField] private float directionInRadian;
+    [SerializeField] GameObject player;
+    private Rigidbody2D rb;
+    private Animator animator;
+    [SerializeField] bool playerIsInAggroRange, playerIsInAttackRange, isAttacking, specialAttacking, isPatrolling, canPatrol, isChasing;
+    [SerializeField] Vector3 patrolStart, patrolEnd;
+    [SerializeField] float direction;
+>>>>>>> parent of 0509b8a (Started enemy pathfinding and scripts)
     public EnemySpawner enemySpawner;
 
     public Transform StartPosition
@@ -92,6 +105,7 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+<<<<<<< HEAD
         if(startPosition == null) {  return; }
 
         if (!IsDisabled)
@@ -131,10 +145,14 @@ public class EnemyController : MonoBehaviour
             // when you hit patrol point i, set destination to patrol point i+1
             // if i > patrol points, set i to 0;
         }
+=======
+        
+>>>>>>> parent of 0509b8a (Started enemy pathfinding and scripts)
     }
 
     private void Movement()
     {
+<<<<<<< HEAD
         var target = destinationSetter.target;
         if (target == null) return;
 
@@ -150,6 +168,27 @@ public class EnemyController : MonoBehaviour
         else if (directionInDegrees > 157.5f || directionInDegrees <= -157.5f) direction = Direction.West;  // W
         else if (directionInDegrees > 112.5f && directionInDegrees <= 157.5f) direction = Direction.NorthWest;  // NW
 
+=======
+        switch (direction)
+        {
+            case 0: // do the east stuff
+                break;
+            case 1: // do the north stuff
+                break;
+            case 2: // do the northeast stuff
+                break;
+            case 3: // do the northwest stuff
+                break;
+            case 4: // do the south stuff
+                break;
+            case 5: // do the southEast stuff
+                break;
+            case 6: // do the southwest stuff
+                break;
+            case 7: // do the west stuff
+                break;
+        }
+>>>>>>> parent of 0509b8a (Started enemy pathfinding and scripts)
     }
 
     private void Combat()
