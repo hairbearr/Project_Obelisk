@@ -39391,13 +39391,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-<<<<<<< HEAD
   enemyPrefab: {fileID: 8842397654035953887, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
   enemy: {fileID: 0}
   spawnCooldown: 0
   spawnCooldownOG: 60
-=======
->>>>>>> parent of 0509b8a (Started enemy pathfinding and scripts)
 --- !u!4 &142623289
 Transform:
   m_ObjectHideFlags: 0
