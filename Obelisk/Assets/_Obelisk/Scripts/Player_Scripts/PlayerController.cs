@@ -2,8 +2,9 @@ using UnityEngine;
 using Unity.Netcode;
 using System;
 using System.Collections;
+using UnityEngine.InputSystem;
 
-public class PlayerController : NetworkBehaviour
+public class PlayerController : NetworkBehaviour, InputMap.IPlayerActions
 {
     [SerializeField] private float movementSpeed =5;
 
@@ -16,6 +17,8 @@ public class PlayerController : NetworkBehaviour
     [SerializeField] private float isMoving, isAttacking, isBlocking, isGrappling, isJumping, isClimbing, isDrinkingPotion, isGettingHit, isInteracting, isShooting, isUsingItem;
     [SerializeField] private GameObject sword, shield, grapplingHook;
     [SerializeField] private string activeSwordAbility;
+
+    private InputMap inputMap;
 
     public float IsDead
     {
@@ -131,12 +134,24 @@ public class PlayerController : NetworkBehaviour
         }
     }
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Awake()
     {
-        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+
+        // Initialize Input System
+        inputMap = new InputMap();
+        inputMap.Player.SetCallbacks(this);
+    }
+
+    private void OnEnable()
+    {
+        inputMap.Player.Enable();
+    }
+
+    private void OnDisable()
+    {
+        inputMap.Player.Disable();
     }
 
     // Update is called once per frame
@@ -214,26 +229,25 @@ public class PlayerController : NetworkBehaviour
 
     private void Move()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-
-        if (horizontal == 0 && vertical == 0)
+        if (movementInput == Vector2.zero)
         {
-            rb.linearVelocity = new Vector2(0,0);
+            rb.linearVelocity = Vector2.zero;
             isMoving = 0;
             return;
         }
 
-        movementInput = new Vector2(horizontal, vertical);
+        float horizontal = Mathf.RoundToInt(movementInput.x);
+        float vertical = Mathf.RoundToInt(movementInput.y);
 
-             if ( horizontal == 1  && vertical == 0   ) { direction = 0; } // east
-        else if ( horizontal == 1  && vertical == 1   ) { direction = 1; } // northEast
-        else if ( horizontal == 0  && vertical == 1   ) { direction = 2; } // north
-        else if ( horizontal == -1 && vertical == 1   ) { direction = 3; } // northWest
-        else if ( horizontal == -1 && vertical == 0   ) { direction = 4; } // west
-        else if ( horizontal == -1 && vertical == -1  ) { direction = 5; } // southWest
-        else if ( horizontal == 0  && vertical == -1  ) { direction = 6; } // south
-        else if ( horizontal == 1  && vertical == -1  ) { direction = 7; } // southEast
+        // 8-direction direction assignment (same as before)
+        if (horizontal == 1 && vertical == 0) direction = 0;
+        else if (horizontal == 1 && vertical == 1) direction = 1;
+        else if (horizontal == 0 && vertical == 1) direction = 2;
+        else if (horizontal == -1 && vertical == 1) direction = 3;
+        else if (horizontal == -1 && vertical == 0) direction = 4;
+        else if (horizontal == -1 && vertical == -1) direction = 5;
+        else if (horizontal == 0 && vertical == -1) direction = 6;
+        else if (horizontal == 1 && vertical == -1) direction = 7;
 
         if (!movementDisabled)
         {
@@ -242,7 +256,7 @@ public class PlayerController : NetworkBehaviour
         }
         else
         {
-            rb.linearVelocity = movementInput * 0f;
+            rb.linearVelocity = Vector2.zero;
             isMoving = 0;
         }
     }
@@ -275,4 +289,76 @@ public class PlayerController : NetworkBehaviour
     {
         yield return new WaitForSeconds(delayTime);
     }
+
+    #region Input Callbacks (from InputMap.IPlayerActions)
+    public void OnMovementInput(InputAction.CallbackContext context)
+    {
+        movementInput = context.ReadValue<Vector2>();
+    }
+
+    public void OnAttack(InputAction.CallbackContext context)
+    {
+        if (context.started && !attackCooldown)
+        {
+            isAttacking = 1;
+        }
+        else if (context.canceled)
+        {
+            isAttacking = 0;
+        }
+    }
+
+    public void OnBlock(InputAction.CallbackContext context)
+    {
+        if (context.started && !cantShield)
+        {
+            isBlocking = 1;
+            movementDisabled = true;
+            Debug.Log("Actively Blocking");
+        }
+        else if (context.canceled)
+        {
+            isBlocking = 0;
+            movementDisabled = false;
+            Debug.Log("No Longer Blocking");
+        }
+    }
+
+    public void OnGrapple(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            isShooting = 1;
+            Debug.Log("Grappling Hook Fire");
+        }
+        else if (context.canceled)
+        {
+            isShooting = 0;
+            Debug.Log("Grappling Hook Released");
+        }
+    }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            isJumping = 1;
+            Debug.Log("Jump!");
+        }
+        else if (context.canceled)
+        {
+            isJumping = 0;
+        }
+    }
+
+    public void OnMenuInput(InputAction.CallbackContext context)
+    {
+        // Optional: handle pause/menu toggle
+        if (context.started)
+        {
+            Debug.Log("Menu Button Pressed");
+        }
+    }
+    #endregion
 }
+
