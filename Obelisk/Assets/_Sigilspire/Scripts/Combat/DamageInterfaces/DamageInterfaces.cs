@@ -9,6 +9,10 @@ namespace Combat.DamageInterfaces
 
     public interface IKnockbackable
     {
-        void ApplyKnockback(Vector3 direction, float force);
+        /// <summary>
+        /// Apply a 2D knockback impulse in world-space.
+        /// direction MUST be a Vector2 in XY plane.
+        /// </summary>
+        void ApplyKnockback(Vector2 direction, float force);
     }
 }

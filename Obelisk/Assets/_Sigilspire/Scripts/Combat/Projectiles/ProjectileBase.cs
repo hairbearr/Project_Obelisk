@@ -12,17 +12,27 @@ namespace Combat.Projectiles
         [SerializeField] protected LayerMask hitLayers;
 
         private float spawnTime;
+        private Vector2 moveDirection = Vector2.right; // default
 
         private void OnEnable()
         {
             spawnTime = Time.time;
+            if (moveDirection == Vector2.zero)
+                moveDirection = Vector2.right;
+        }
+
+        public void SetDirection(Vector2 direction)
+        {
+            moveDirection = direction.sqrMagnitude > 0.01f ? direction.normalized : Vector2.right;
         }
 
         private void Update()
         {
             if (!IsServer) return;
 
-            transform.position += transform.forward * (speed * Time.deltaTime);
+            Vector2 currentPos = transform.position;
+            Vector2 newPos = currentPos + moveDirection * (speed * Time.deltaTime);
+            transform.position = new Vector3(newPos.x, newPos.y, 0f);
 
             if (Time.time - spawnTime > lifetime)
             {
@@ -30,7 +40,7 @@ namespace Combat.Projectiles
             }
         }
 
-        private void OnTriggerEnter(Collider other)
+        private void OnTriggerEnter2D(Collider2D other)
         {
             if (!IsServer) return;
 
@@ -38,7 +48,7 @@ namespace Combat.Projectiles
                 return;
 
             var dmg = other.GetComponent<IDamageable>();
-            if (dmg != null)
+            if (dmg != null && damage > 0f)
             {
                 dmg.TakeDamage(damage);
             }

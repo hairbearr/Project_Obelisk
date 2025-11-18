@@ -1,4 +1,4 @@
-using Combat; // for IWeaponController + weapon controllers
+using Combat;
 using Combat.AbilitySystem;
 using Unity.Netcode;
 using UnityEngine;
@@ -7,27 +7,30 @@ using UnityEngine.InputSystem;
 namespace Player
 {
     [RequireComponent(typeof(NetworkObject))]
+    [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerController : NetworkBehaviour
     {
         [Header("Movement")]
         [SerializeField] private float moveSpeed = 5f;
         private Vector2 moveInput;
+        private Rigidbody2D rb2D;
 
         [Header("References")]
         [SerializeField] private SwordController sword;
         [SerializeField] private ShieldController shield;
         [SerializeField] private GrapplingHookController grapplingHook;
 
-        [Header("Testing")] // Delete this after you get a loadout screen set up
+        [Header("Testing Loadout")] // remove later when you have a real loadout UI
         [SerializeField] private SigilDefinition testSwordSigil;
         [SerializeField] private SigilDefinition testShieldSigil;
         [SerializeField] private SigilDefinition testGrappleSigil;
 
         public Vector2 CurrentMoveInput => moveInput;
 
-
         private void Awake()
         {
+            rb2D = GetComponent<Rigidbody2D>();
+
             if (sword == null) sword = GetComponentInChildren<SwordController>();
             if (shield == null) shield = GetComponentInChildren<ShieldController>();
             if (grapplingHook == null) grapplingHook = GetComponentInChildren<GrapplingHookController>();
@@ -41,27 +44,19 @@ namespace Player
                 return;
             }
 
-            if (IsOwner)
-            {
-                ApplyLoadout(testSwordSigil, testShieldSigil, testGrappleSigil); // delete this after you get a loadout screen set up
-            }
+            // Temp: auto-apply test sigils on spawn
+            ApplyLoadout(testSwordSigil, testShieldSigil, testGrappleSigil);
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
-            HandleMovement();
+            if (!IsOwner) return;
+
+            Vector2 delta = moveInput * (moveSpeed * Time.fixedDeltaTime);
+            rb2D.MovePosition(rb2D.position + delta);
         }
 
-        private void HandleMovement()
-        {
-            Vector3 move = new Vector3(moveInput.x, 0f, moveInput.y) * (moveSpeed * Time.deltaTime);
-            transform.Translate(move, Space.World);
-
-            if (move != Vector3.zero)
-                transform.forward = move.normalized;
-        }
-
-        // ========= New Input System Callbacks =========
+        // -------- New Input System Callbacks --------
 
         public void OnMove(InputAction.CallbackContext context)
         {
@@ -92,15 +87,23 @@ namespace Player
 
         public void ApplyLoadout(SigilDefinition swordSigil, SigilDefinition shieldSigil, SigilDefinition grappleSigil)
         {
-            sword.ApplyVisualSet(swordSigil.visualSet);
-            shield.ApplyVisualSet(shieldSigil.visualSet);
-            grapplingHook.ApplyVisualSet(grappleSigil.visualSet);
+            if (swordSigil != null)
+            {
+                sword.ApplyVisualSet(swordSigil.visualSet);
+                sword.SetEquippedSigil(swordSigil);
+            }
 
-            // store equipped sigils so abilities scale correctly
-            sword.SetEquippedSigil(swordSigil);
-            shield.SetEquippedSigil(shieldSigil);
-            grapplingHook.SetEquippedSigil(grappleSigil);
+            if (shieldSigil != null)
+            {
+                shield.ApplyVisualSet(shieldSigil.visualSet);
+                shield.SetEquippedSigil(shieldSigil);
+            }
+
+            if (grappleSigil != null)
+            {
+                grapplingHook.ApplyVisualSet(grappleSigil.visualSet);
+                grapplingHook.SetEquippedSigil(grappleSigil);
+            }
         }
-
     }
 }
