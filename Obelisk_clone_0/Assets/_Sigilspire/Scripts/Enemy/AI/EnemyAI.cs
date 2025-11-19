@@ -2,99 +2,139 @@ using UnityEngine;
 using Unity.Netcode;
 using Combat.AbilitySystem;
 using Combat.DamageInterfaces;
+using Combat.Health;
 
 namespace Enemy
 {
     /// <summary>
-    /// Simple server-authoritative 2D enemy AI.
-    /// Uses Physics2D for detection and Rigidbody2D for movement.
+    /// 2D Enemy AI with locomotion + attack animation support.
+    /// Server authoritative. Uses Rigidbody2D and Physics2D only.
     /// </summary>
-    [RequireComponent(typeof(Rigidbody2D))]
     public class EnemyAI : NetworkBehaviour
     {
         [Header("Targeting")]
-        [SerializeField] private float detectionRadius = 10f;
+        [SerializeField] private float detectionRadius = 8f;
         [SerializeField] private LayerMask targetLayers;
 
         [Header("Movement")]
-        [SerializeField] private float moveSpeed = 3f;
-        [SerializeField] private float stoppingDistance = 1.5f;
+        [SerializeField] private float moveSpeed = 2.5f;
+        [SerializeField] private float stoppingDistance = 1.2f;
 
         [Header("Attack")]
         [SerializeField] private Ability primaryAbility;
-        [SerializeField] private float attackRange = 1.8f;
+        [SerializeField] private float attackRange = 1.6f;
 
-        private Transform _currentTarget;
-        private float _lastAttackTime;
-        private Rigidbody2D _rb2D;
+        private Transform currentTarget;
+        private Rigidbody2D rb2D;
+        private EnemyAnimationDriver animDriver;
+        private HealthBase health;
+
+        private float lastAttackTime;
 
         private void Awake()
         {
-            _rb2D = GetComponent<Rigidbody2D>();
+            rb2D = GetComponent<Rigidbody2D>();
+            animDriver = GetComponentInChildren<EnemyAnimationDriver>();
+            health = GetComponent<HealthBase>();
         }
 
         private void Update()
         {
             if (!IsServer) return;
 
-            if (_currentTarget == null)
+            if (health != null && health.CurrentHealth.Value <= 0f)
+            {
+                if (animDriver != null)
+                {
+                    animDriver.SetMovement(Vector2.zero);
+                }
+                return;
+            }
+
+            if (currentTarget == null)
             {
                 FindTarget();
             }
 
-            if (_currentTarget != null)
+            if (currentTarget != null)
             {
                 HandleMovement();
                 TryAttack();
             }
+            else
+            {
+                if (animDriver != null)
+                {
+                    animDriver.SetMovement(Vector2.zero);
+                }
+            }
         }
 
-        protected virtual void FindTarget()
+        private void FindTarget()
         {
             Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, detectionRadius, targetLayers);
             if (hits.Length == 0)
             {
-                _currentTarget = null;
+                currentTarget = null;
                 return;
             }
 
-            _currentTarget = hits[0].transform;
+            currentTarget = hits[0].transform;
         }
 
-        protected virtual void HandleMovement()
+        private void HandleMovement()
         {
-            if (_currentTarget == null) return;
+            if (currentTarget == null) return;
 
-            Vector2 currentPos = _rb2D.position;
-            Vector2 toTarget = (Vector2)_currentTarget.position - currentPos;
+            Vector2 toTarget = (Vector2)currentTarget.position - rb2D.position;
             float distance = toTarget.magnitude;
 
-            if (distance <= stoppingDistance) return;
+            if (distance <= stoppingDistance)
+            {
+                if (animDriver != null)
+                {
+                    animDriver.SetMovement(Vector2.zero);
+                }
+                return;
+            }
 
             Vector2 direction = toTarget.normalized;
-            Vector2 newPos = currentPos + direction * (moveSpeed * Time.deltaTime);
-            _rb2D.MovePosition(newPos);
+            rb2D.MovePosition(rb2D.position + direction * (moveSpeed * Time.deltaTime));
+
+            if (animDriver != null)
+            {
+                animDriver.SetMovement(direction);
+            }
         }
 
-        protected virtual void TryAttack()
+        private void TryAttack()
         {
-            if (primaryAbility == null) return;
-            if (_currentTarget == null) return;
+            if (primaryAbility == null || currentTarget == null)
+                return;
 
-            if (Time.time - _lastAttackTime < primaryAbility.cooldown) return;
+            if (Time.time - lastAttackTime < primaryAbility.cooldown)
+                return;
 
-            Vector2 toTarget = (Vector2)_currentTarget.position - (Vector2)transform.position;
+            Vector2 toTarget = (Vector2)currentTarget.position - rb2D.position;
             float distance = toTarget.magnitude;
 
-            if (distance > attackRange) return;
+            if (distance > attackRange)
+                return;
 
-            _lastAttackTime = Time.time;
-            PerformAbilityAttack(_currentTarget, primaryAbility);
+            lastAttackTime = Time.time;
+            PerformAbilityAttack(currentTarget, primaryAbility);
         }
 
-        protected virtual void PerformAbilityAttack(Transform target, Ability ability)
+        private void PerformAbilityAttack(Transform target, Ability ability)
         {
-            var dmg = target.GetComponent<IDamageable>();
+            Vector2 attackDir = ((Vector2)target.position - rb2D.position).normalized;
+
+            if (animDriver != null)
+            {
+                animDriver.PlayAttack(attackDir);
+            }
+
+            IDamageable dmg = target.GetComponent<IDamageable>();
             if (dmg != null && ability.damage > 0f)
             {
                 dmg.TakeDamage(ability.damage);
@@ -102,9 +142,12 @@ namespace Enemy
 
             if (ability.vfxPrefab != null)
             {
-                Vector3 spawnPos = target.position;
-                var vfx = Object.Instantiate(ability.vfxPrefab, spawnPos, Quaternion.identity);
-                Object.Destroy(vfx, 2f);
+                GameObject vfx = GameObject.Instantiate(
+                    ability.vfxPrefab,
+                    target.position,
+                    Quaternion.identity
+                );
+                GameObject.Destroy(vfx, 2f);
             }
         }
 

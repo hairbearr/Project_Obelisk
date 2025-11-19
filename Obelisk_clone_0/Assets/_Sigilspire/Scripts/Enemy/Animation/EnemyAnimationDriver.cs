@@ -3,38 +3,44 @@ using UnityEngine;
 namespace Enemy
 {
     /// <summary>
-    /// Simple enemy animation driver based on movement.
-    /// Uses local position delta to infer movement direction.
+    /// Simple animation driver for enemies.
+    /// EnemyAI calls into this to update movement and attack animations.
+    /// All animation is server-driven. No network animator required.
     /// </summary>
-    [RequireComponent(typeof(Animator))]
     public class EnemyAnimationDriver : MonoBehaviour
     {
+        [Header("References")]
         [SerializeField] private Animator animator;
 
-        private Vector3 _lastPosition;
+        private const string MoveX = "MoveX";
+        private const string MoveY = "MoveY";
+        private const string Speed = "Speed";
+        private const string Attack = "Attack";
 
-        private void Awake()
+        private void Reset()
         {
-            if (animator == null)
-                animator = GetComponent<Animator>();
-
-            _lastPosition = transform.position;
+            animator = GetComponentInChildren<Animator>();
         }
 
-        private void Update()
+        public void SetMovement(Vector2 direction)
         {
-            Vector3 delta = transform.position - _lastPosition;
-            _lastPosition = transform.position;
+            if (animator == null) return;
 
-            Vector2 move = new Vector2(delta.x, delta.z);
-            float speed = move.magnitude / Mathf.Max(Time.deltaTime, 0.0001f);
+            float speed = direction.magnitude;
 
-            if (animator != null)
-            {
-                animator.SetFloat("MoveX", move.x);
-                animator.SetFloat("MoveY", move.y);
-                animator.SetFloat("Speed", speed);
-            }
+            animator.SetFloat(MoveX, direction.x);
+            animator.SetFloat(MoveY, direction.y);
+            animator.SetFloat(Speed, speed);
+        }
+
+        public void PlayAttack(Vector2 attackDirection)
+        {
+            if (animator == null) return;
+
+            animator.SetFloat(MoveX, attackDirection.x);
+            animator.SetFloat(MoveY, attackDirection.y);
+            animator.SetTrigger(Attack);
         }
     }
 }
+

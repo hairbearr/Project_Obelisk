@@ -222,4 +222,3 @@ namespace Combat
         public bool IsCurrentlyGrapplingLocal => IsGrappling.Value;
     }
 }
-
