@@ -18,18 +18,40 @@ namespace Combat
         [Header("Grapple Settings")]
         [SerializeField] private float maxDistance = 10f;
         [SerializeField] private LayerMask grappleLayers;
-
-        public NetworkVariable<bool> IsGrappling = new NetworkVariable<bool>();
-
-        private Vector3 serverTargetPoint;
-        private float lastGrappleTime;
+        [SerializeField] private float minDistanceToStop = 0.2f;
 
         [Header("Visual References")]
         [SerializeField] private Animator weaponAnimator;
         [SerializeField] private SpriteRenderer grappleRenderer;
         [SerializeField] private Transform vfxSpawnPoint;
+        [SerializeField] private LineRenderer lineRenderer;
+
+        public NetworkVariable<bool> IsGrappling = new NetworkVariable<bool>();
 
         private GameObject grappleVfxPrefab;
+        private Vector2 serverTargetPoint;
+        private float lastGrappleTime;
+
+        private void Awake()
+        {
+            if (sigilInventory == null)
+                sigilInventory = GetComponentInParent<SigilInventory>();
+
+            if (equippedSigil != null && string.IsNullOrEmpty(equippedSigilId))
+                equippedSigilId = equippedSigil.id;
+
+            if (lineRenderer == null)
+                lineRenderer = GetComponent<LineRenderer>();
+
+            if (lineRenderer != null)
+                lineRenderer.enabled = false;
+        }
+
+        public void SetEquippedSigil(SigilDefinition sigil)
+        {
+            equippedSigil = sigil;
+            equippedSigilId = sigil != null ? sigil.id : string.Empty;
+        }
 
         public void ApplyVisualSet(WeaponVisualSet set)
         {
@@ -44,32 +66,6 @@ namespace Combat
 
             grappleVfxPrefab = set.attackVfx;
         }
-
-
-        private void Awake()
-        {
-            if (sigilInventory == null)
-                sigilInventory = GetComponentInParent<SigilInventory>();
-
-            if (equippedSigil != null && string.IsNullOrEmpty(equippedSigilId))
-                equippedSigilId = equippedSigil.id;
-        }
-
-        public void SetEquippedSigil(SigilDefinition sigil)
-        {
-            equippedSigil = sigil;
-
-            if (sigil != null)
-                equippedSigilId = sigil.id;
-            else
-                equippedSigilId = string.Empty;
-        }
-
-
-
-        // ---------------------------------------------------------
-        // Effective Stats
-        // ---------------------------------------------------------
 
         private EffectiveAbilityStats GetCurrentStats()
         {
@@ -113,9 +109,7 @@ namespace Combat
             return baseAbility != null ? baseAbility.damage : 0f;
         }
 
-        // ---------------------------------------------------------
-        // Public API for PlayerController
-        // ---------------------------------------------------------
+        // -------- Public API for PlayerController --------
 
         public void RequestFireGrapple(Vector2 inputDirection)
         {
@@ -131,18 +125,26 @@ namespace Combat
 
             lastGrappleTime = Time.time;
 
-            Vector3 worldDir = new Vector3(inputDirection.x, 0f, inputDirection.y);
-            if (worldDir.sqrMagnitude < 0.01f)
-                worldDir = transform.forward;
+            Vector2 dir = inputDirection.sqrMagnitude > 0.01f
+                ? inputDirection.normalized
+                : Vector2.up;
 
-            FireGrappleServerRpc(worldDir.normalized);
+            if (weaponAnimator != null)
+                weaponAnimator.SetTrigger("GrappleCast");
+
+            FireGrappleServerRpc(dir);
+        }
+
+        public void RequestUseAbility(Vector2 inputDirection)
+        {
+            RequestFireGrapple(inputDirection);
         }
 
         [ServerRpc]
-        private void FireGrappleServerRpc(Vector3 worldDirection)
+        private void FireGrappleServerRpc(Vector2 direction)
         {
-            if (!Physics.Raycast(transform.position, worldDirection, out RaycastHit hit, maxDistance, grappleLayers))
-                return;
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, maxDistance, grappleLayers);
+            if (!hit) return;
 
             IsGrappling.Value = true;
             serverTargetPoint = hit.point;
@@ -150,14 +152,45 @@ namespace Combat
             var stats = GetCurrentStats();
             float damage = GetEffectiveDamage(stats);
 
-            IDamageable dmg = hit.collider.GetComponent<IDamageable>();
+            var dmg = hit.collider.GetComponent<IDamageable>();
             if (dmg != null && damage > 0f)
             {
                 dmg.TakeDamage(damage);
             }
 
-            // Future implementation:
-            // If hit is an enemy with a "pull to player" tag, pull enemy to player instead.
+            StartGrappleClientRpc(serverTargetPoint);
+        }
+
+        [ClientRpc]
+        private void StartGrappleClientRpc(Vector2 targetPoint)
+        {
+            if (lineRenderer != null)
+            {
+                lineRenderer.enabled = true;
+                lineRenderer.positionCount = 2;
+                lineRenderer.SetPosition(0, transform.position);
+                lineRenderer.SetPosition(1, new Vector3(targetPoint.x, targetPoint.y, 0f));
+            }
+
+            if (grappleVfxPrefab != null && vfxSpawnPoint != null)
+            {
+                var vfx = Object.Instantiate(grappleVfxPrefab, vfxSpawnPoint.position, Quaternion.identity);
+                Object.Destroy(vfx, 2f);
+            }
+        }
+
+        [ClientRpc]
+        private void StopGrappleClientRpc()
+        {
+            if (lineRenderer != null)
+            {
+                lineRenderer.enabled = false;
+            }
+
+            if (weaponAnimator != null)
+            {
+                weaponAnimator.SetTrigger("GrappleRetract");
+            }
         }
 
         private void Update()
@@ -168,30 +201,25 @@ namespace Combat
             var stats = GetCurrentStats();
             float pullSpeed = GetEffectivePullSpeed(stats);
 
-            Vector3 currentPos = transform.position;
-            Vector3 toTarget = serverTargetPoint - currentPos;
-            float distanceThisFrame = pullSpeed * Time.deltaTime;
+            Vector2 currentPos = transform.position;
+            Vector2 toTarget = serverTargetPoint - currentPos;
+            float dist = toTarget.magnitude;
+            float step = pullSpeed * Time.deltaTime;
 
-            if (toTarget.magnitude <= distanceThisFrame)
+            if (dist <= minDistanceToStop || dist <= step)
             {
-                transform.position = serverTargetPoint;
+                transform.position = new Vector3(serverTargetPoint.x, serverTargetPoint.y, 0f);
                 IsGrappling.Value = false;
+                StopGrappleClientRpc();
             }
             else
             {
-                transform.position += toTarget.normalized * distanceThisFrame;
+                Vector2 newPos = currentPos + toTarget.normalized * step;
+                transform.position = new Vector3(newPos.x, newPos.y, 0f);
             }
         }
 
-        public bool IsCurrentlyGrapplingLocal
-        {
-            get { return IsGrappling.Value; }
-        }
-
-        public void RequestUseAbility(Vector2 inputDirection)
-        {
-            RequestFireGrapple(inputDirection);
-        }
+        public bool IsCurrentlyGrapplingLocal => IsGrappling.Value;
     }
 }
 

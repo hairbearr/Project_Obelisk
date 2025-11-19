@@ -3,10 +3,6 @@ using Unity.Netcode;
 
 namespace Enemy
 {
-    /// <summary>
-    /// Simple networked enemy spawner skeleton.
-    /// Spawns enemies on the server at start.
-    /// </summary>
     public class EnemySpawner : NetworkBehaviour
     {
         [Header("Spawning")]
@@ -34,16 +30,11 @@ namespace Enemy
                 return;
             }
 
-            Vector3 offset = Random.insideUnitSphere;
-            offset.y = 0f;
-            offset = offset.normalized * Random.Range(0f, spawnRadius);
+            Vector2 offset = Random.insideUnitCircle * spawnRadius;
+            Vector3 spawnPos = new Vector3(transform.position.x + offset.x, transform.position.y + offset.y, 0f);
 
-            Vector3 spawnPos = transform.position + offset;
-            Quaternion spawnRot = Quaternion.identity;
-
-            NetworkObject enemyInstance = Instantiate(enemyPrefab, spawnPos, spawnRot);
+            NetworkObject enemyInstance = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
             enemyInstance.Spawn(true);
         }
     }
 }
-

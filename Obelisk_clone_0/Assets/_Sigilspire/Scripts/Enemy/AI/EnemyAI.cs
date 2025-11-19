@@ -6,9 +6,10 @@ using Combat.DamageInterfaces;
 namespace Enemy
 {
     /// <summary>
-    /// Simple minion AI skeleton that owns its own Ability.
-    /// Runs only on the server.
+    /// Simple server-authoritative 2D enemy AI.
+    /// Uses Physics2D for detection and Rigidbody2D for movement.
     /// </summary>
+    [RequireComponent(typeof(Rigidbody2D))]
     public class EnemyAI : NetworkBehaviour
     {
         [Header("Targeting")]
@@ -20,11 +21,17 @@ namespace Enemy
         [SerializeField] private float stoppingDistance = 1.5f;
 
         [Header("Attack")]
-        [SerializeField] private Ability primaryAbility;  // uses damage/cooldown/vfx of this
+        [SerializeField] private Ability primaryAbility;
         [SerializeField] private float attackRange = 1.8f;
 
         private Transform _currentTarget;
         private float _lastAttackTime;
+        private Rigidbody2D _rb2D;
+
+        private void Awake()
+        {
+            _rb2D = GetComponent<Rigidbody2D>();
+        }
 
         private void Update()
         {
@@ -44,14 +51,13 @@ namespace Enemy
 
         protected virtual void FindTarget()
         {
-            Collider[] hits = Physics.OverlapSphere(transform.position, detectionRadius, targetLayers);
+            Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, detectionRadius, targetLayers);
             if (hits.Length == 0)
             {
                 _currentTarget = null;
                 return;
             }
 
-            // TODO: better target selection (closest, aggro, etc.)
             _currentTarget = hits[0].transform;
         }
 
@@ -59,17 +65,15 @@ namespace Enemy
         {
             if (_currentTarget == null) return;
 
-            Vector3 toTarget = _currentTarget.position - transform.position;
-            toTarget.y = 0f;
-
+            Vector2 currentPos = _rb2D.position;
+            Vector2 toTarget = (Vector2)_currentTarget.position - currentPos;
             float distance = toTarget.magnitude;
+
             if (distance <= stoppingDistance) return;
 
-            Vector3 direction = toTarget.normalized;
-            transform.position += direction * (moveSpeed * Time.deltaTime);
-
-            if (direction != Vector3.zero)
-                transform.forward = direction;
+            Vector2 direction = toTarget.normalized;
+            Vector2 newPos = currentPos + direction * (moveSpeed * Time.deltaTime);
+            _rb2D.MovePosition(newPos);
         }
 
         protected virtual void TryAttack()
@@ -79,8 +83,7 @@ namespace Enemy
 
             if (Time.time - _lastAttackTime < primaryAbility.cooldown) return;
 
-            Vector3 toTarget = _currentTarget.position - transform.position;
-            toTarget.y = 0f;
+            Vector2 toTarget = (Vector2)_currentTarget.position - (Vector2)transform.position;
             float distance = toTarget.magnitude;
 
             if (distance > attackRange) return;
@@ -89,27 +92,19 @@ namespace Enemy
             PerformAbilityAttack(_currentTarget, primaryAbility);
         }
 
-        /// <summary>
-        /// Uses the given Ability on the target: damage + optional VFX.
-        /// </summary>
         protected virtual void PerformAbilityAttack(Transform target, Ability ability)
         {
-            // TODO: add windup, animations, etc.
-
-            // Apply damage
-            IDamageable dmg = target.GetComponent<IDamageable>();
+            var dmg = target.GetComponent<IDamageable>();
             if (dmg != null && ability.damage > 0f)
             {
                 dmg.TakeDamage(ability.damage);
             }
 
-            // Spawn VFX at target or between enemy & target
             if (ability.vfxPrefab != null)
             {
                 Vector3 spawnPos = target.position;
-                Quaternion rot = Quaternion.LookRotation((target.position - transform.position).normalized);
-                var vfx = Instantiate(ability.vfxPrefab, spawnPos, rot);
-                Destroy(vfx, 2f);
+                var vfx = Object.Instantiate(ability.vfxPrefab, spawnPos, Quaternion.identity);
+                Object.Destroy(vfx, 2f);
             }
         }
 
@@ -123,5 +118,3 @@ namespace Enemy
         }
     }
 }
-
-

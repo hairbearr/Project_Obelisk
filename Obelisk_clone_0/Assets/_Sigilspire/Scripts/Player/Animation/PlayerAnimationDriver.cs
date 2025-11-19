@@ -1,16 +1,8 @@
 using UnityEngine;
 using Unity.Netcode;
-using Shared; // For DirectionResolver if you want to use it later
 
 namespace Player
 {
-    /// <summary>
-    /// Drives the player and weapon animators based on PlayerController input.
-    /// Assumes:
-    /// - PlayerAnimator has parameters: MoveX, MoveY, Speed
-    /// - WeaponAnimator has the same parameters and a state named "WeaponLocomotion"
-    /// - Player locomotion state is named "PlayerLocomotion"
-    /// </summary>
     [RequireComponent(typeof(PlayerController))]
     public class PlayerAnimationDriver : NetworkBehaviour
     {
@@ -18,17 +10,11 @@ namespace Player
         [SerializeField] private Animator playerAnimator;
         [SerializeField] private Animator weaponAnimator;
 
-        private PlayerController _playerController;
+        private PlayerController _player;
 
         private void Awake()
         {
-            _playerController = GetComponent<PlayerController>();
-
-            if (playerAnimator == null)
-            {
-                // Try to auto-find under VisualRoot
-                playerAnimator = GetComponentInChildren<Animator>();
-            }
+            _player = GetComponent<PlayerController>();
         }
 
         public override void OnNetworkSpawn()
@@ -43,10 +29,9 @@ namespace Player
         private void Update()
         {
             if (!IsOwner) return;
-            if (_playerController == null) return;
+            if (_player == null) return;
 
-            Vector2 move = _playerController.CurrentMoveInput;
-
+            Vector2 move = _player.CurrentMoveInput;
             float speed = move.magnitude;
 
             if (playerAnimator != null)
@@ -62,15 +47,14 @@ namespace Player
                 weaponAnimator.SetFloat("MoveY", move.y);
                 weaponAnimator.SetFloat("Speed", speed);
 
-                // Optional: sync locomotion normalized time
                 if (playerAnimator != null)
                 {
                     var stateInfo = playerAnimator.GetCurrentAnimatorStateInfo(0);
                     float t = stateInfo.normalizedTime;
-
                     weaponAnimator.Play("WeaponLocomotion", 0, t % 1f);
                 }
             }
         }
     }
 }
+
