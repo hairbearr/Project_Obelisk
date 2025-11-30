@@ -62,8 +62,6 @@ Transform:
   m_Children:
   - {fileID: 7415081870465982011}
   - {fileID: 3683851921335150057}
-  - {fileID: 5329450118513669043}
-  - {fileID: 6682100134318847466}
   m_Father: {fileID: 5580738341358601720}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &900814497721851969
@@ -850,12 +848,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3083904682477675722}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4176490862163490889}
+  m_Father: {fileID: 7415081870465982011}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4086169537133452126
 SpriteRenderer:
@@ -904,15 +902,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -8449569279180219261, guid: 89976e5a720d8c446b10f645fca62767, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.28, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &3707221530821532489
@@ -939,7 +937,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3707221530821532489}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -947,7 +945,7 @@ Transform:
   - {fileID: 2525895992609779035}
   - {fileID: 2219199362890570227}
   - {fileID: 6817848913564763957}
-  m_Father: {fileID: 4176490862163490889}
+  m_Father: {fileID: 3683851921335150057}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4382260915170033419
 GameObject:
@@ -1010,7 +1008,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6682100134318847466}
   m_Father: {fileID: 4176490862163490889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5887886810488324001
@@ -1026,63 +1025,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  TransitionStateInfoList:
-  - IsCrossFadeExit: 0
-    Layer: 0
-    OriginatingState: -2089788878
-    DestinationState: 646380074
-    TransitionDuration: 0.05
-    TriggerNameHash: 646380074
-    TransitionIndex: 0
-  - IsCrossFadeExit: 0
-    Layer: 0
-    OriginatingState: -2089788878
-    DestinationState: -954359197
-    TransitionDuration: 0.05
-    TriggerNameHash: -954359197
-    TransitionIndex: 1
-  - IsCrossFadeExit: 0
-    Layer: 0
-    OriginatingState: -2089788878
-    DestinationState: -800931151
-    TransitionDuration: 0.05
-    TriggerNameHash: -800931151
-    TransitionIndex: 2
-  - IsCrossFadeExit: 0
-    Layer: 0
-    OriginatingState: -2089788878
-    DestinationState: -187943821
-    TransitionDuration: 0.05
-    TriggerNameHash: -187943821
-    TransitionIndex: 3
-  - IsCrossFadeExit: 0
-    Layer: 0
-    OriginatingState: -2089788878
-    DestinationState: 2074866571
-    TransitionDuration: 0.05
-    TriggerNameHash: 2074866571
-    TransitionIndex: 4
-  - IsCrossFadeExit: 0
-    Layer: 0
-    OriginatingState: -2089788878
-    DestinationState: -1004578160
-    TransitionDuration: 0.05
-    TriggerNameHash: -1004578160
-    TransitionIndex: 5
-  - IsCrossFadeExit: 0
-    Layer: 0
-    OriginatingState: -2089788878
-    DestinationState: -1036723533
-    TransitionDuration: 0.05
-    TriggerNameHash: -1004578160
-    TransitionIndex: 6
-  - IsCrossFadeExit: 0
-    Layer: 0
-    OriginatingState: -2089788878
-    DestinationState: 1740614436
-    TransitionDuration: 0.05
-    TriggerNameHash: 1740614436
-    TransitionIndex: 7
+  TransitionStateInfoList: []
   m_Animator: {fileID: 684316158004550362}
 --- !u!95 &684316158004550362
 Animator:
@@ -1094,7 +1037,7 @@ Animator:
   m_GameObject: {fileID: 4449148684170314800}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8a05b9466ef606b4da037425d2067a3b, type: 2}
+  m_Controller: {fileID: 22100000, guid: 0399d41a801d2ad4c8ffe5a7de491f4a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1166,7 +1109,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5329450118513669043}
   m_Father: {fileID: 4176490862163490889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &398743435127655844
