@@ -8,7 +8,10 @@ namespace Player
     {
         [Header("Animator References")]
         [SerializeField] private Animator playerAnimator;
-        [SerializeField] private Animator weaponAnimator;
+        [SerializeField] private Animator swordAnimator;
+        [SerializeField] private Animator shieldAnimator;
+        [SerializeField] private Animator grappleAnimator;
+
 
         private PlayerController _player;
 
@@ -18,7 +21,9 @@ namespace Player
         {
             _player = GetComponent<PlayerController>();
 
-            Debug.Log("SwordController: weaponAnimator = " + (weaponAnimator != null ? weaponAnimator.name : "null"));
+            Debug.Log("SwordController: swordAnimator = " + (swordAnimator != null ? swordAnimator.name : "null"));
+            Debug.Log("ShieldController: shieldAnimator = " + (shieldAnimator != null ? shieldAnimator.name : "null"));
+            Debug.Log("GrappleController: grappleAnimator = " + (grappleAnimator != null ? grappleAnimator.name : "null"));
 
         }
 
@@ -59,31 +64,18 @@ namespace Player
                 playerAnimator.SetFloat("Speed", speed);
             }
 
-            if (weaponAnimator != null)
-            {
-                weaponAnimator.SetFloat("MoveX", facing.x);
-                weaponAnimator.SetFloat("MoveY", facing.y);
-                weaponAnimator.SetFloat("Speed", speed);
-
-                /*if (playerAnimator != null)
-                {
-                    var stateInfo = playerAnimator.GetCurrentAnimatorStateInfo(0);
-                    float t = stateInfo.normalizedTime;
-                    weaponAnimator.Play("Locomotion", 0, t % 1f);
-                }*/
-
-                if (playerAnimator != null)
-                {
-                    AnimatorStateInfo p = playerAnimator.GetCurrentAnimatorStateInfo(0);
-                    AnimatorStateInfo w = weaponAnimator.GetCurrentAnimatorStateInfo(0);
-
-                    if (p.IsName("Locomotion") && w.IsName("Locomotion"))
-                    {
-                        float t = p.normalizedTime;
-                        weaponAnimator.Play("Locomotion", 0, t % 1f);
-                    }
-                }
-            }
+            SetWeaponFloats(swordAnimator, move, speed);
+            SetWeaponFloats(shieldAnimator, move, speed);
+            SetWeaponFloats(grappleAnimator, move, speed);
         }
+
+        private void SetWeaponFloats(Animator anim, Vector2 move, float speed)
+        {
+            if (anim == null) return;
+            anim.SetFloat("MoveX", move.x);
+            anim.SetFloat("MoveY", move.y);
+            anim.SetFloat("Speed", speed);
+        }
+
     }
 }
