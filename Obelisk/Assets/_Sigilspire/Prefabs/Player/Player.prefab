@@ -512,7 +512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  moveSpeed: 5
+  moveSpeed: 3
   sword: {fileID: 78977168204350336}
   shield: {fileID: 5704845622145136166}
   grapplingHook: {fileID: 7138369990208878990}
@@ -615,7 +615,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2837075920242125394}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_TargetAssemblyTypeName: Player.PlayerController, Assembly-CSharp
         m_MethodName: OnMovementInput
         m_Mode: 0
         m_Arguments:
@@ -629,25 +629,13 @@ MonoBehaviour:
     m_ActionId: 3370f73f-59c8-46ff-831b-c9e060d2e0fa
     m_ActionName: 'Player/MovementInput[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2837075920242125394}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnMenuInput
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 64fc51af-d8c1-44a2-8d85-264d05634fba
     m_ActionName: 'Player/MenuInput[/Keyboard/escape]'
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2837075920242125394}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_TargetAssemblyTypeName: Player.PlayerController, Assembly-CSharp
         m_MethodName: OnAttack
         m_Mode: 0
         m_Arguments:
@@ -663,7 +651,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2837075920242125394}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_TargetAssemblyTypeName: Player.PlayerController, Assembly-CSharp
         m_MethodName: OnBlock
         m_Mode: 0
         m_Arguments:
@@ -678,25 +666,9 @@ MonoBehaviour:
     m_ActionName: 'Player/Block[/Keyboard/e,/Mouse/rightButton]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1510615852687295852}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 92dc19a7-11a8-459c-a612-f8a10c16708d
-    m_ActionName: 'Player/Grapple[/Keyboard/r,/Mouse/middleButton]'
-  - m_PersistentCalls:
-      m_Calls:
       - m_Target: {fileID: 2837075920242125394}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnJump
+        m_TargetAssemblyTypeName: Player.PlayerController, Assembly-CSharp
+        m_MethodName: OnGrapple
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -706,6 +678,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+    m_ActionId: 92dc19a7-11a8-459c-a612-f8a10c16708d
+    m_ActionName: 'Player/Grapple[/Keyboard/r,/Mouse/middleButton]'
+  - m_PersistentCalls:
+      m_Calls: []
     m_ActionId: de81b8a0-1cc7-47d7-b18a-c206011d3129
     m_ActionName: 'Player/Jump[/Keyboard/space]'
   - m_PersistentCalls:
@@ -714,7 +690,7 @@ MonoBehaviour:
     m_ActionName: UI/New action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &2704062506876815872

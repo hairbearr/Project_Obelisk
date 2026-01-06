@@ -51,7 +51,7 @@ namespace Player
                 {
                     var stateInfo = playerAnimator.GetCurrentAnimatorStateInfo(0);
                     float t = stateInfo.normalizedTime;
-                    weaponAnimator.Play("WeaponLocomotion", 0, t % 1f);
+                    weaponAnimator.Play("Locomotion", 0, t % 1f);
                 }
             }
         }

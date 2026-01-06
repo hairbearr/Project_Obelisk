@@ -12,7 +12,7 @@ namespace Player
     {
         [Header("Movement")]
         [SerializeField] private float moveSpeed = 5f;
-        private Vector2 moveInput;
+        [SerializeField] private Vector2 moveInput;
         private Rigidbody2D rb2D;
 
         [Header("References")]
@@ -52,37 +52,52 @@ namespace Player
         {
             if (!IsOwner) return;
 
+            if (Keyboard.current != null && Keyboard.current.wKey.wasPressedThisFrame)
+            {
+                Debug.Log("W pressed (raw keyboard check).");
+            }
+
             Vector2 delta = moveInput * (moveSpeed * Time.fixedDeltaTime);
             rb2D.MovePosition(rb2D.position + delta);
         }
 
         // -------- New Input System Callbacks --------
 
-        public void OnMove(InputAction.CallbackContext context)
+        public void OnMovementInput(InputAction.CallbackContext context)
         {
+            print("Moving 1.0");
             moveInput = context.ReadValue<Vector2>();
+            print("Moving 1.1");
         }
 
         public void OnAttack(InputAction.CallbackContext context)
         {
+            print("Attacking 1.0");
             if (!context.performed || sword == null) return;
-
+            print("Attacking 1.1");
             Vector2 attackDir = moveInput.sqrMagnitude > 0.01f ? moveInput.normalized : Vector2.up;
             sword.RequestUseAbility(attackDir);
+            print("Attacking 1.2");
         }
 
         public void OnBlock(InputAction.CallbackContext context)
         {
+            print("Blocking 1.0");
             if (shield == null) return;
+            print("Blocking 1.1");
             shield.HandleBlockInput(context);
+            print("Blocking 1.2");
         }
 
         public void OnGrapple(InputAction.CallbackContext context)
         {
+            print("Grappling 1.0");
             if (!context.performed || grapplingHook == null) return;
-
+            print("Grappling 1.1");
             Vector2 aimDir = moveInput.sqrMagnitude > 0.01f ? moveInput.normalized : Vector2.up;
+            print("Grappling 1.2");
             grapplingHook.RequestFireGrapple(aimDir);
+            print("Grappling 1.3");
         }
 
         public void ApplyLoadout(SigilDefinition swordSigil, SigilDefinition shieldSigil, SigilDefinition grappleSigil)
