@@ -65,39 +65,30 @@ namespace Player
 
         public void OnMovementInput(InputAction.CallbackContext context)
         {
-            print("Moving 1.0");
             moveInput = context.ReadValue<Vector2>();
-            print("Moving 1.1");
         }
 
         public void OnAttack(InputAction.CallbackContext context)
         {
-            print("Attacking 1.0");
             if (!context.performed || sword == null) return;
-            print("Attacking 1.1");
             Vector2 attackDir = moveInput.sqrMagnitude > 0.01f ? moveInput.normalized : Vector2.up;
             sword.RequestUseAbility(attackDir);
-            print("Attacking 1.2");
+            print("Attacking");
         }
 
         public void OnBlock(InputAction.CallbackContext context)
         {
-            print("Blocking 1.0");
             if (shield == null) return;
-            print("Blocking 1.1");
             shield.HandleBlockInput(context);
-            print("Blocking 1.2");
+            print("Blocking");
         }
 
         public void OnGrapple(InputAction.CallbackContext context)
         {
-            print("Grappling 1.0");
             if (!context.performed || grapplingHook == null) return;
-            print("Grappling 1.1");
             Vector2 aimDir = moveInput.sqrMagnitude > 0.01f ? moveInput.normalized : Vector2.up;
-            print("Grappling 1.2");
             grapplingHook.RequestFireGrapple(aimDir);
-            print("Grappling 1.3");
+            print("Grappling");
         }
 
         public void ApplyLoadout(SigilDefinition swordSigil, SigilDefinition shieldSigil, SigilDefinition grappleSigil)

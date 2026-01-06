@@ -92,7 +92,11 @@ namespace Combat
                 : Vector2.up;
 
             if (weaponAnimator != null)
+            {
+                Debug.Log("SwordController: weaponAnimator = " + (weaponAnimator != null ? weaponAnimator.name : "null"));
                 weaponAnimator.SetTrigger("SwordSlash");
+            }
+                
 
             UseAbilityServerRpc(dir);
         }
