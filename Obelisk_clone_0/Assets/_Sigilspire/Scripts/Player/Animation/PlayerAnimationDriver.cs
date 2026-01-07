@@ -85,5 +85,46 @@ namespace Player
             anim.SetFloat("Speed", speed);
         }
 
+        public void PlaySwordSlash()
+        {
+            if (!IsOwner) return;
+            if (playerAnimator == null) return;
+            playerAnimator.ResetTrigger("SwordSlash");
+            playerAnimator.SetTrigger("SwordSlash");
+        }
+
+        public void PlayRaiseShield()
+        {
+            if (!IsOwner) return;
+            if (playerAnimator == null) return;
+            playerAnimator.ResetTrigger("LowerShield");
+            playerAnimator.SetTrigger("RaiseShield");
+        }
+
+        public void PlayLowerShield()
+        {
+            if (!IsOwner) return;
+            if (playerAnimator == null) return;
+            playerAnimator.ResetTrigger("RaiseShield");
+            playerAnimator.SetTrigger("LowerShield");
+        }
+
+        public void PlayGrappleCast()
+        {
+            if (!IsOwner) return;
+            if (playerAnimator == null) return;
+            playerAnimator.ResetTrigger("GrappleCast");
+            playerAnimator.SetTrigger("GrappleCast");
+        }
+
+        public void PlayGrappleRetract()
+        {
+            if (!IsOwner) return;
+            if (playerAnimator == null) return;
+            playerAnimator.ResetTrigger("GrappleRetract");
+            playerAnimator.SetTrigger("GrappleRetract");
+        }
+
+
     }
 }

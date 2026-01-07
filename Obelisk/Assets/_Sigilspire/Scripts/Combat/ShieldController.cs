@@ -9,7 +9,6 @@ namespace Combat
     {
 
         [SerializeField] private string raiseStateName = "RaiseShield";
-        [SerializeField] private string lowerStateName = "LowerShield";
         private bool localIsBlocking;
 
         [SerializeField] private string raiseTriggerName = "RaiseShield";

@@ -10,6 +10,8 @@ namespace Player
     [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerController : NetworkBehaviour
     {
+        [SerializeField] private PlayerAnimationDriver animationDriver;
+
         [Header("Movement")]
         [SerializeField] private float moveSpeed = 5f;
         [SerializeField] private Vector2 moveInput;
@@ -31,6 +33,7 @@ namespace Player
         {
             rb2D = GetComponent<Rigidbody2D>();
 
+            if (animationDriver == null) animationDriver = GetComponent<PlayerAnimationDriver>();
             if (sword == null) sword = GetComponentInChildren<SwordController>();
             if (shield == null) shield = GetComponentInChildren<ShieldController>();
             if (grapplingHook == null) grapplingHook = GetComponentInChildren<GrapplingHookController>();
