@@ -12,6 +12,7 @@ namespace Player
         [SerializeField] private Animator shieldAnimator;
         [SerializeField] private Animator grappleAnimator;
 
+        private bool localIsShielding;
 
         private PlayerController _player;
 
@@ -77,6 +78,35 @@ namespace Player
 
         }
 
+        private void LateUpdate()
+        {
+            if (!IsOwner) return;
+            if (playerAnimator  == null) return;
+
+            if (!localIsShielding) return;
+
+            AnimatorStateInfo s = playerAnimator.GetCurrentAnimatorStateInfo(0);
+
+            // freeze body at the end of RaiseShield while held
+            if(localIsShielding && s.IsName("RaiseShield") && s.normalizedTime >= 1f)
+            {
+                playerAnimator.speed = 0f;
+                playerAnimator.Play("RaiseShield", 0, 1f);
+                return;
+            }
+
+            if( !localIsShielding && s.IsName("LowerShield") && s.normalizedTime >= 1f)
+            {
+                playerAnimator.speed = 1f;
+
+                if(_player != null)
+                {
+                    _player.SetMovementLocked(false);
+                }
+            }
+        }
+
+
         private void SetWeaponFloats(Animator anim, Vector2 move, float speed)
         {
             if (anim == null) return;
@@ -97,6 +127,8 @@ namespace Player
         {
             if (!IsOwner) return;
             if (playerAnimator == null) return;
+
+            playerAnimator.speed = 1f; // ensure not frozen
             playerAnimator.ResetTrigger("LowerShield");
             playerAnimator.SetTrigger("RaiseShield");
         }
@@ -105,6 +137,10 @@ namespace Player
         {
             if (!IsOwner) return;
             if (playerAnimator == null) return;
+
+            // unfreeze so LowerShield can play
+            if(playerAnimator.speed == 0f) playerAnimator.speed = 1f;
+
             playerAnimator.ResetTrigger("RaiseShield");
             playerAnimator.SetTrigger("LowerShield");
         }
@@ -125,6 +161,13 @@ namespace Player
             playerAnimator.SetTrigger("GrappleRetract");
         }
 
+        public void SetShielding(bool shielding)
+        {
+            localIsShielding = shielding;
+
+            // if we are releasing, make sure the animator can play again.
+            if (!localIsShielding && playerAnimator != null && playerAnimator.speed == 0f) playerAnimator.speed = 1f;
+        }
 
     }
 }

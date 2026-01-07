@@ -101,7 +101,7 @@ namespace Combat
 
             AnimatorStateInfo s = weaponAnimator.GetCurrentAnimatorStateInfo(0);
 
-            // When RaiseShield reaches the end, freeze ont he last frame.
+            // When RaiseShield reaches the end, freeze on the last frame.
             if (s.IsName(raiseStateName) && s.normalizedTime >= 1f)
             {
                 weaponAnimator.speed = 0f;

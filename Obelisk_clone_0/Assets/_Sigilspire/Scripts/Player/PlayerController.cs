@@ -16,6 +16,8 @@ namespace Player
         [SerializeField] private float moveSpeed = 5f;
         [SerializeField] private Vector2 moveInput;
         private Rigidbody2D rb2D;
+        private bool isShieldingLocal;
+
 
         [Header("References")]
         [SerializeField] private SwordController sword;
@@ -60,6 +62,13 @@ namespace Player
                 Debug.Log("W pressed (raw keyboard check).");
             }
 
+            if (isShieldingLocal)
+            {
+                // hard stop input so animations also go idle
+                moveInput = Vector2.zero;
+                return;
+            }
+
             Vector2 delta = moveInput * (moveSpeed * Time.fixedDeltaTime);
             rb2D.MovePosition(rb2D.position + delta);
         }
@@ -74,16 +83,39 @@ namespace Player
         public void OnAttack(InputAction.CallbackContext context)
         {
             if (!context.performed || sword == null) return;
+
+
+
             Vector2 attackDir = moveInput.sqrMagnitude > 0.01f ? moveInput.normalized : Vector2.up;
+            
+            
             sword.RequestUseAbility(attackDir);
+
+            if (animationDriver != null) animationDriver.PlaySwordSlash();
+
             print("Attacking");
         }
 
         public void OnBlock(InputAction.CallbackContext context)
         {
             if (shield == null) return;
+
+            if (context.performed)
+            {
+                SetMovementLocked(true);
+
+                if (animationDriver != null)
+                {
+                    animationDriver.SetShielding(true);
+                    animationDriver.PlayRaiseShield();
+                }
+            }
+            else if (context.canceled)
+            {
+                if (animationDriver != null) animationDriver.SetShielding(false); animationDriver.PlayLowerShield();
+            }
+
             shield.HandleBlockInput(context);
-            print("Blocking");
         }
 
         public void OnGrapple(InputAction.CallbackContext context)
@@ -91,6 +123,9 @@ namespace Player
             if (!context.performed || grapplingHook == null) return;
             Vector2 aimDir = moveInput.sqrMagnitude > 0.01f ? moveInput.normalized : Vector2.up;
             grapplingHook.RequestFireGrapple(aimDir);
+
+            if (animationDriver != null) animationDriver.PlayGrappleCast();
+            
             print("Grappling");
         }
 
@@ -113,6 +148,12 @@ namespace Player
                 grapplingHook.ApplyVisualSet(grappleSigil.visualSet);
                 grapplingHook.SetEquippedSigil(grappleSigil);
             }
+        }
+
+        public void SetMovementLocked(bool locked)
+        {
+            isShieldingLocal = locked;
+            if (locked) moveInput = Vector2.zero;
         }
     }
 }
