@@ -7,6 +7,12 @@ namespace Combat
 {
     public class ShieldController : NetworkBehaviour, IWeaponController
     {
+
+        [SerializeField] private string shieldBlockStateName = "ShieldBlock";
+        private bool localIsBlocking;
+        private bool localIsReleasing;
+
+
         [Header("Ability / Sigil")]
         [SerializeField] private Ability baseAbility;
         [SerializeField] private SigilDefinition equippedSigil;
@@ -84,6 +90,37 @@ namespace Combat
             }
         }
 
+        private void LateUpdate()
+        {
+            if (!IsOwner) return;
+            if (weaponAnimator == null) return;
+
+            AnimatorStateInfo s = weaponAnimator.GetCurrentAnimatorStateInfo(0);
+
+            if (!s.IsName(shieldBlockStateName)) return;
+
+            // Hold: freeze at last frame
+            if(localIsBlocking && !localIsReleasing)
+            {
+                if(s.normalizedTime >= 1f)
+                {
+                    weaponAnimator.speed = 0f;
+                    weaponAnimator.Play(shieldBlockStateName, 0, 1f);
+                }
+            }
+
+            // Release: reverse until start, then back to locomotion
+            if (localIsReleasing)
+            {
+                if(s.normalizedTime <= 0f)
+                {
+                    localIsReleasing = false;
+                    weaponAnimator.speed = 1f;
+                    weaponAnimator.Play("Locomotion", 0, 0f);
+                }
+            }
+        }
+
         public void SetEquippedSigil(SigilDefinition sigil)
         {
             equippedSigil = sigil;
@@ -143,9 +180,37 @@ namespace Combat
             if (!IsOwner) return;
 
             if (context.performed)
+            {
+                localIsBlocking = true;
+                localIsReleasing = false;
+
+                if (weaponAnimator != null)
+                {
+                    weaponAnimator.speed = 1f;
+                    weaponAnimator.Play(shieldBlockStateName, 0, 0f);
+                    weaponAnimator.ResetTrigger("ShieldBlock");
+                    weaponAnimator.SetTrigger("ShieldBlock");
+                }
                 SetBlockingServerRpc(true);
+            }
             else if (context.canceled)
+            {
+                localIsBlocking = false;
+                localIsReleasing = true;
+
                 SetBlockingServerRpc(false);
+
+                if (weaponAnimator != null)
+                {
+                    // Begin reversing from wherever we currently are.
+                    weaponAnimator.speed = -1f;
+
+                    // Make sure we are in the block state so reverse actually plays.
+                    // If we are already there, this does nothing harmful.
+                    weaponAnimator.Play(shieldBlockStateName, 0, weaponAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime % 1f);
+                }
+            }
+
         }
 
         [ServerRpc]

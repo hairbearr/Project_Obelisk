@@ -44,7 +44,8 @@ namespace Player
             
 
             Vector2 move = _player.CurrentMoveInput;
-            float speed = move.magnitude;
+            float speed = Mathf.Clamp01(move.magnitude);
+
 
             Vector2 facing = move;
 
@@ -64,9 +65,16 @@ namespace Player
                 playerAnimator.SetFloat("Speed", speed);
             }
 
-            SetWeaponFloats(swordAnimator, move, speed);
-            SetWeaponFloats(shieldAnimator, move, speed);
-            SetWeaponFloats(grappleAnimator, move, speed);
+            SetWeaponFloats(swordAnimator, facing, speed);
+            SetWeaponFloats(shieldAnimator, facing, speed);
+            SetWeaponFloats(grappleAnimator, facing, speed);
+
+            if (Time.frameCount % 120 == 0)
+            {
+                if (playerAnimator != null) Debug.Log("PlayerAnimator.speed=" + playerAnimator.speed);
+                if (swordAnimator != null) Debug.Log("SwordAnimator.speed=" + swordAnimator.speed);
+            }
+
         }
 
         private void SetWeaponFloats(Animator anim, Vector2 move, float speed)
