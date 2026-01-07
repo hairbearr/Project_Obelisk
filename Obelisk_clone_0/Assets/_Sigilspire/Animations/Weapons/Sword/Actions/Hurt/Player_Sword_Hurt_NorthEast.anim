@@ -52,7 +52,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Color.r
-    path: WeaponRenderers/SwordRenderer
+    path: SwordRenderer
     classID: 212
     script: {fileID: 0}
     flags: 0
@@ -91,7 +91,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Color.g
-    path: WeaponRenderers/SwordRenderer
+    path: SwordRenderer
     classID: 212
     script: {fileID: 0}
     flags: 0
@@ -130,7 +130,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Color.b
-    path: WeaponRenderers/SwordRenderer
+    path: SwordRenderer
     classID: 212
     script: {fileID: 0}
     flags: 0
@@ -169,7 +169,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Color.a
-    path: WeaponRenderers/SwordRenderer
+    path: SwordRenderer
     classID: 212
     script: {fileID: 0}
     flags: 0
@@ -182,7 +182,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 3587124377
+      path: 3056897558
       attribute: 2526845255
       script: {fileID: 0}
       typeID: 212
@@ -191,7 +191,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3587124377
+      path: 3056897558
       attribute: 4215373228
       script: {fileID: 0}
       typeID: 212
@@ -200,7 +200,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3587124377
+      path: 3056897558
       attribute: 2334886179
       script: {fileID: 0}
       typeID: 212
@@ -209,7 +209,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3587124377
+      path: 3056897558
       attribute: 304273561
       script: {fileID: 0}
       typeID: 212
@@ -274,7 +274,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Color.r
-    path: WeaponRenderers/SwordRenderer
+    path: SwordRenderer
     classID: 212
     script: {fileID: 0}
     flags: 0
@@ -313,7 +313,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Color.g
-    path: WeaponRenderers/SwordRenderer
+    path: SwordRenderer
     classID: 212
     script: {fileID: 0}
     flags: 0
@@ -352,7 +352,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Color.b
-    path: WeaponRenderers/SwordRenderer
+    path: SwordRenderer
     classID: 212
     script: {fileID: 0}
     flags: 0
@@ -391,7 +391,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Color.a
-    path: WeaponRenderers/SwordRenderer
+    path: SwordRenderer
     classID: 212
     script: {fileID: 0}
     flags: 0

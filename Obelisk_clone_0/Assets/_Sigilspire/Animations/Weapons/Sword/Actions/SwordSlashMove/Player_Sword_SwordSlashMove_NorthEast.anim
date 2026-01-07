@@ -51,7 +51,7 @@ AnimationClip:
     - time: 1.1666666
       value: {fileID: -368086452005159891, guid: f580e87d4ce325849934421ff004849e, type: 3}
     attribute: m_Sprite
-    path: WeaponRenderers/SwordRenderer
+    path: SwordRenderer
     classID: 212
     script: {fileID: 0}
     flags: 2
@@ -63,7 +63,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 3587124377
+      path: 3056897558
       attribute: 0
       script: {fileID: 0}
       typeID: 212
