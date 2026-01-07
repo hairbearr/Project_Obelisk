@@ -83,7 +83,7 @@ namespace Player
             if (!IsOwner) return;
             if (playerAnimator  == null) return;
 
-            if (!localIsShielding) return;
+            //if (!localIsShielding) return;
 
             AnimatorStateInfo s = playerAnimator.GetCurrentAnimatorStateInfo(0);
 
@@ -101,6 +101,7 @@ namespace Player
 
                 if(_player != null)
                 {
+                    print("lowering shield from PlayerAnimationDriver");
                     _player.SetMovementLocked(false);
                 }
             }
