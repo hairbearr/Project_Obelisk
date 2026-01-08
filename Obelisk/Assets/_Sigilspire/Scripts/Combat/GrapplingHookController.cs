@@ -57,6 +57,8 @@ namespace Combat
 
             if (lineRenderer != null)
                 lineRenderer.enabled = false;
+
+            Debug.Log("LineRenderer found: " + (lineRenderer != null));
         }
 
         public void SetEquippedSigil(SigilDefinition sigil)
@@ -146,7 +148,35 @@ namespace Combat
 
             if (playerController != null) playerController.SetMovementLocked(true);
 
+            if(lineRenderer == null) { lineRenderer = GetComponent<LineRenderer>(); }
+
+            Debug.Log("Grapple pressed, showing line");
+            ShowLocalCastLine(dir);
+
             FireGrappleServerRpc(dir);
+        }
+
+        private void ShowLocalCastLine(Vector2 dir)
+        {
+            if (lineRenderer == null)
+            {
+                Debug.Log("ShowLocalCastLine: lineRenderer is null");
+                return; 
+            }
+
+
+            Debug.Log("LR instance id: " + lineRenderer.GetInstanceID());
+
+            lineRenderer.enabled = true;
+            lineRenderer.positionCount = 2;
+
+            Debug.Log("ShowLocalCastLine: enabled=" + lineRenderer.enabled + " count=" + lineRenderer.positionCount);
+
+            Vector3 start = vfxSpawnPoint != null ? vfxSpawnPoint.position : transform.position;
+            Vector3 end = start + new Vector3(dir.x, dir.y, 0f) * maxDistance;
+
+            lineRenderer.SetPosition(0, start);
+            lineRenderer.SetPosition(1, end);
         }
 
         public void RequestUseAbility(Vector2 inputDirection)
@@ -157,8 +187,13 @@ namespace Combat
         [ServerRpc]
         private void FireGrappleServerRpc(Vector2 direction)
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, maxDistance, grappleLayers);
-            if (!hit) return;
+            Vector2 origin = vfxSpawnPoint != null ? (Vector2)vfxSpawnPoint.position : (Vector2)transform.position;
+            RaycastHit2D hit = Physics2D.Raycast(origin, direction, maxDistance, grappleLayers);
+            if (!hit)
+            {
+                GrappleMissClientRpc();
+                return;
+            }
 
             IsGrappling.Value = true;
             serverTargetPoint = hit.point;
@@ -194,6 +229,23 @@ namespace Combat
         }
 
         [ClientRpc]
+        private void GrappleMissClientRpc()
+        {
+            // Hide line
+            if (lineRenderer  != null) { lineRenderer.enabled = false; }
+
+            // play retract animation
+            if (weaponAnimator != null) { weaponAnimator.SetTrigger("GrappleRetract"); }
+
+            // restore movement for the owner
+            var pc = GetComponentInParent<Player.PlayerController>();
+            if (IsOwner && pc != null)
+            {
+                pc.SetMovementLocked(false);
+            }
+        }
+
+        [ClientRpc]
         private void StartGrappleClientRpc(Vector2 targetPoint)
         {
             localTargetPoint = targetPoint;
@@ -202,7 +254,8 @@ namespace Combat
             {
                 lineRenderer.enabled = true;
                 lineRenderer.positionCount = 2;
-                lineRenderer.SetPosition(0, transform.position);
+                Vector3 start = vfxSpawnPoint != null ? vfxSpawnPoint.position : transform.position;
+                lineRenderer.SetPosition(0, start);
                 lineRenderer.SetPosition(1, new Vector3(targetPoint.x, targetPoint.y, 0f));
             }
 
@@ -288,7 +341,7 @@ namespace Combat
 
         private void LateUpdate()
         {
-            if (lineRenderer = null) return;
+            if (lineRenderer == null) return;
 
             if (!IsGrappling.Value) return;
 
