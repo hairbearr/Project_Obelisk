@@ -16,8 +16,6 @@ namespace Player
 
         private PlayerController _player;
 
-        private Vector2 _lastFacing = Vector2.down;
-
         private void Awake()
         {
             _player = GetComponent<PlayerController>();
@@ -48,16 +46,7 @@ namespace Player
             float speed = Mathf.Clamp01(move.magnitude);
 
 
-            Vector2 facing = move;
-
-            if(facing.sqrMagnitude > 0.0001f)
-            {
-                _lastFacing  = facing.normalized;
-            }
-            else
-            {
-                facing = _lastFacing;
-            }
+            Vector2 facing = _player.LastFacingDir;
 
             if (playerAnimator != null)
             {

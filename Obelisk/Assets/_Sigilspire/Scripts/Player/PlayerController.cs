@@ -17,7 +17,7 @@ namespace Player
         [SerializeField] private Vector2 moveInput;
         private Rigidbody2D rb2D;
         private bool isShieldingLocal;
-
+        private Vector2 lastFacingDir = Vector2.up;
 
         [Header("References")]
         [SerializeField] private SwordController sword;
@@ -78,18 +78,16 @@ namespace Player
         public void OnMovementInput(InputAction.CallbackContext context)
         {
             moveInput = context.ReadValue<Vector2>();
+
+            if (moveInput.sqrMagnitude > 0.01f) lastFacingDir = moveInput.normalized;
         }
 
         public void OnAttack(InputAction.CallbackContext context)
         {
             if (!context.performed || sword == null) return;
 
-
-
-            Vector2 attackDir = moveInput.sqrMagnitude > 0.01f ? moveInput.normalized : Vector2.up;
-            
-            
-            sword.RequestUseAbility(attackDir);
+            Vector2 dir = LastFacingDir;
+            sword.RequestUseAbility(dir);
 
             if (animationDriver != null) animationDriver.PlaySwordSlash();
 
@@ -112,7 +110,11 @@ namespace Player
             }
             else if (context.canceled)
             {
-                if (animationDriver != null) animationDriver.SetShielding(false); animationDriver.PlayLowerShield();
+                if (animationDriver != null)
+                {
+                    animationDriver.SetShielding(false);
+                    animationDriver.PlayLowerShield();
+                }
             }
 
             shield.HandleBlockInput(context);
@@ -121,8 +123,9 @@ namespace Player
         public void OnGrapple(InputAction.CallbackContext context)
         {
             if (!context.performed || grapplingHook == null) return;
-            Vector2 aimDir = moveInput.sqrMagnitude > 0.01f ? moveInput.normalized : Vector2.up;
-            grapplingHook.RequestFireGrapple(aimDir);
+
+            Vector2 dir = LastFacingDir;
+            grapplingHook.RequestFireGrapple(dir);
 
             if (animationDriver != null) animationDriver.PlayGrappleCast();
             
@@ -154,6 +157,11 @@ namespace Player
         {
             isShieldingLocal = locked;
             if (locked) moveInput = Vector2.zero;
+        }
+
+        public Vector2 LastFacingDir
+        {
+            get { return lastFacingDir; }
         }
     }
 }

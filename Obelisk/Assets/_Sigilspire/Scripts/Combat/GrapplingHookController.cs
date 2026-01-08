@@ -32,8 +32,20 @@ namespace Combat
         private Vector2 serverTargetPoint;
         private float lastGrappleTime;
 
+        private NetworkObject serverPulledEnemy;
+        private Rigidbody2D serverPulledEnemyRb;
+        private bool serverPullEnemyToPlayer;
+        private Vector2 localTargetPoint;
+
+        [SerializeField] private Rigidbody2D playerRb;
+        [SerializeField] private Player.PlayerController playerController;
+
         private void Awake()
         {
+            if (playerRb == null) playerRb = GetComponentInParent<Rigidbody2D>();
+
+            if(playerController == null) playerController = GetComponentInParent<Player.PlayerController>();
+
             if (sigilInventory == null)
                 sigilInventory = GetComponentInParent<SigilInventory>();
 
@@ -132,6 +144,8 @@ namespace Combat
             if (weaponAnimator != null)
                 weaponAnimator.SetTrigger("GrappleCast");
 
+            if (playerController != null) playerController.SetMovementLocked(true);
+
             FireGrappleServerRpc(dir);
         }
 
@@ -149,6 +163,24 @@ namespace Combat
             IsGrappling.Value = true;
             serverTargetPoint = hit.point;
 
+
+            serverPulledEnemy = null;
+            serverPulledEnemyRb = null;
+            serverPullEnemyToPlayer = false;
+
+            // if we hit an enemy that can be pulled, pull it to the player.
+            // otherwise, pull the player to the hit point.
+
+            var pullable = hit.collider.GetComponentInParent<Combat.DamageInterfaces.IGrapplePullable>();
+            if(pullable != null && pullable.ShouldPullToPlayer())
+            {
+                serverPullEnemyToPlayer = true;
+                serverPulledEnemyRb = hit.collider.GetComponentInParent<Rigidbody2D>();
+
+                var no = hit.collider.GetComponentInParent<NetworkObject>();
+                if (no != null) serverPulledEnemy = no;
+            }
+
             var stats = GetCurrentStats();
             float damage = GetEffectiveDamage(stats);
 
@@ -164,6 +196,8 @@ namespace Combat
         [ClientRpc]
         private void StartGrappleClientRpc(Vector2 targetPoint)
         {
+            localTargetPoint = targetPoint;
+
             if (lineRenderer != null)
             {
                 lineRenderer.enabled = true;
@@ -191,6 +225,12 @@ namespace Combat
             {
                 weaponAnimator.SetTrigger("GrappleRetract");
             }
+
+            if(IsOwner && playerController != null)
+            {
+                playerController.SetMovementLocked(false);
+            }
+
         }
 
         private void Update()
@@ -201,22 +241,65 @@ namespace Combat
             var stats = GetCurrentStats();
             float pullSpeed = GetEffectivePullSpeed(stats);
 
-            Vector2 currentPos = transform.position;
-            Vector2 toTarget = serverTargetPoint - currentPos;
-            float dist = toTarget.magnitude;
-            float step = pullSpeed * Time.deltaTime;
-
-            if (dist <= minDistanceToStop || dist <= step)
+            if (serverPullEnemyToPlayer && serverPulledEnemyRb != null && playerRb != null)
             {
-                transform.position = new Vector3(serverTargetPoint.x, serverTargetPoint.y, 0f);
+                Vector2 enemyPos = serverPulledEnemyRb.position;
+                Vector2 playerPos = playerRb.position;
+
+                Vector2 toPlayer = playerPos - enemyPos;
+                float dist = toPlayer.magnitude;
+                float step = pullSpeed * Time.deltaTime;
+
+                if(dist <= minDistanceToStop || dist <= step)
+                {
+                    serverPulledEnemyRb.MovePosition(playerPos);
+                    IsGrappling.Value = false;
+                    StopGrappleClientRpc();
+                }
+                else
+                {
+                    Vector2 newPos = enemyPos + toPlayer.normalized * step;
+                    serverPulledEnemyRb.MovePosition(newPos);
+                }
+
+                return;
+            }
+
+            // Default: pull the player to the target point (enemy or environment point)
+            if (playerRb == null) return;
+
+            Vector2 currentPos = playerRb.position;
+            Vector2 toTarget = serverTargetPoint - currentPos;
+            float dist2 = toTarget.magnitude;
+            float step2 = pullSpeed * Time.deltaTime;
+
+            if (dist2 <= minDistanceToStop || dist2 <= step2)
+            {
+                playerRb.MovePosition(serverTargetPoint);
                 IsGrappling.Value = false;
                 StopGrappleClientRpc();
             }
             else
             {
-                Vector2 newPos = currentPos + toTarget.normalized * step;
-                transform.position = new Vector3(newPos.x, newPos.y, 0f);
+                Vector2 newPos = currentPos + toTarget.normalized * step2;
+                playerRb.MovePosition(newPos);
             }
+        }
+
+        private void LateUpdate()
+        {
+            if (lineRenderer = null) return;
+
+            if (!IsGrappling.Value) return;
+
+            lineRenderer.enabled = true;
+            lineRenderer.positionCount = 2;
+
+            Vector3 start = vfxSpawnPoint != null ? vfxSpawnPoint.position : transform.position;
+            Vector3 end = new Vector3(localTargetPoint.x, localTargetPoint.y, 0f);
+
+            lineRenderer.SetPosition(0, start);
+            lineRenderer.SetPosition(1, end);
         }
 
         public bool IsCurrentlyGrapplingLocal => IsGrappling.Value;
