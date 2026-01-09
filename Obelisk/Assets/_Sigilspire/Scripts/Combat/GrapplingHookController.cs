@@ -177,6 +177,8 @@ namespace Combat
 
             lineRenderer.SetPosition(0, start);
             lineRenderer.SetPosition(1, end);
+
+            localTargetPoint = (Vector2)end;
         }
 
         public void RequestUseAbility(Vector2 inputDirection)
@@ -232,7 +234,7 @@ namespace Combat
         private void GrappleMissClientRpc()
         {
             // Hide line
-            if (lineRenderer  != null) { lineRenderer.enabled = false; }
+            // if (lineRenderer  != null) { lineRenderer.enabled = false; }
 
             // play retract animation
             if (weaponAnimator != null) { weaponAnimator.SetTrigger("GrappleRetract"); }
@@ -269,10 +271,10 @@ namespace Combat
         [ClientRpc]
         private void StopGrappleClientRpc()
         {
-            if (lineRenderer != null)
+            /*if (lineRenderer != null)
             {
                 lineRenderer.enabled = false;
-            }
+            }*/
 
             if (weaponAnimator != null)
             {
@@ -343,7 +345,7 @@ namespace Combat
         {
             if (lineRenderer == null) return;
 
-            if (!IsGrappling.Value) return;
+            //if (!IsGrappling.Value) return;
 
             lineRenderer.enabled = true;
             lineRenderer.positionCount = 2;
