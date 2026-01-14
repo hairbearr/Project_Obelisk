@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Combat.AbilitySystem.Ability
   abilityName: Grapple
   type: 3
-  cooldown: 1.5
+  cooldown: 0
   resourceCost: 0
   direction: 2
   damage: 2
   knockbackForce: 0
   shieldEnergyModifier: 0
-  grappleForce: 15
+  grappleForce: 50
   vfxPrefab: {fileID: 0}

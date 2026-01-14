@@ -357,6 +357,7 @@ MonoBehaviour:
   baseAbility: {fileID: 11400000, guid: 4003b1ea2ff089843963213f811be38e, type: 2}
   equippedSigil: {fileID: 11400000, guid: 3c1cd90e61e054e42bf81e9d90b5d595, type: 2}
   equippedSigilId: shield_default
+  enforceAbilityCooldown: 1
   sigilInventory: {fileID: 7608890470901692854}
   baseMaxShieldEnergy: 100
   baseRegenDelay: 2
@@ -516,7 +517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   animationDriver: {fileID: 0}
-  moveSpeed: 3
+  moveSpeed: 15
   moveInput: {x: 0, y: 0}
   sword: {fileID: 78977168204350336}
   shield: {fileID: 5704845622145136166}
@@ -1504,6 +1505,7 @@ MonoBehaviour:
   hitLayers:
     serializedVersion: 2
     m_Bits: 0
+  enforceAbilityCooldown: 1
 --- !u!1 &7570831862445896486
 GameObject:
   m_ObjectHideFlags: 0
@@ -1555,19 +1557,24 @@ MonoBehaviour:
   equippedSigil: {fileID: 11400000, guid: 9dcd4ecc1f048e644acdbb91e01424cc, type: 2}
   equippedSigilId: grapple_default
   sigilInventory: {fileID: 7608890470901692854}
-  maxDistance: 10
+  maxDistance: 15
   grappleLayers:
     serializedVersion: 2
-    m_Bits: 0
-  minDistanceToStop: 0.2
+    m_Bits: 128
+  minDistanceToStop: 0.52
+  castDuration: 0.35
+  retractDuration: 0.25
   weaponAnimator: {fileID: 2663175753877607411}
   grappleRenderer: {fileID: 7445083387766132111}
   vfxSpawnPoint: {fileID: 8488801066186197738}
   lineRenderer: {fileID: 8694550340195308258}
-  IsGrappling:
-    m_InternalValue: 0
   playerRb: {fileID: 0}
   playerController: {fileID: 0}
+  playerCollider: {fileID: 0}
+  IsGrappling:
+    m_InternalValue: 0
+  localPressDebounce: 0.1
+  stopDistanceFromSurface: 0.25
 --- !u!120 &8694550340195308258
 LineRenderer:
   serializedVersion: 2
@@ -1626,8 +1633,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.20319979
-        value: 0.5796164
+        time: 0.22329561
+        value: 0.14435947
         inSlope: -2.2227092
         outSlope: -2.2227092
         tangentMode: 0
@@ -1639,8 +1646,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.1, g: 0.1, b: 0.1, a: 1}
-      key1: {r: 0.1, g: 0.1, b: 0.1, a: 1}
+      key0: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
+      key1: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}

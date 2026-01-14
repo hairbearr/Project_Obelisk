@@ -7,6 +7,8 @@ namespace Combat
 {
     public class SwordController : NetworkBehaviour, IWeaponController
     {
+        #region Inspector - Ability / Sigil
+
         [Header("Ability / Sigil")]
         [SerializeField] private Ability baseAbility;
         [SerializeField] private SigilDefinition equippedSigil;
@@ -15,18 +17,35 @@ namespace Combat
         [Header("Progress / Inventory")]
         [SerializeField] private SigilInventory sigilInventory;
 
+        #endregion
+
+        #region Inspector - Visual References
+
         [Header("Visual References")]
         [SerializeField] private Animator weaponAnimator;
         [SerializeField] private SpriteRenderer swordRenderer;
         [SerializeField] private Transform vfxSpawnPoint;
+
+        #endregion
+
+        #region Inspector - Hitbox Settings
 
         [Header("Hitbox Settings")]
         [SerializeField] private float hitRange = 1.5f;
         [SerializeField] private float hitRadius = 1.0f;
         [SerializeField] private LayerMask hitLayers;
 
+        #endregion
+
+        #region Runtime State
+
+        [SerializeField] private bool enforceAbilityCooldown = true;
+        private float lastAbilityUseTimeLocal = -9999f;
         private GameObject attackVfxPrefab;
-        private float lastAttackTime;
+
+        #endregion
+
+        #region Unity Callbacks
 
         private void Awake()
         {
@@ -36,6 +55,21 @@ namespace Combat
             if (equippedSigil != null && string.IsNullOrEmpty(equippedSigilId))
                 equippedSigilId = equippedSigil.id;
         }
+
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.red;
+
+            // Gizmo uses Up as a simple preview direction.
+            Vector2 dir = Vector2.up;
+            Vector2 origin = (Vector2)transform.position + dir * (hitRange * 0.5f);
+
+            Gizmos.DrawWireSphere(origin, hitRadius);
+        }
+
+        #endregion
+
+        #region Visual Set / Sigil
 
         public void SetEquippedSigil(SigilDefinition sigil)
         {
@@ -57,8 +91,14 @@ namespace Combat
             attackVfxPrefab = set.attackVfx;
         }
 
+        #endregion
+
+        #region Effective Stats
+
         private EffectiveAbilityStats GetCurrentStats()
         {
+            if (baseAbility == null) return default;
+
             SigilProgressData progress = null;
 
             if (equippedSigil != null &&
@@ -71,6 +111,10 @@ namespace Combat
             return SigilEvaluator.GetEffectiveStats(baseAbility, equippedSigil, progress);
         }
 
+        #endregion
+
+        #region Public API - IWeaponController
+
         public void RequestUseAbility(Vector2 inputDirection)
         {
             if (!IsOwner)
@@ -79,13 +123,9 @@ namespace Combat
             if (baseAbility == null)
                 return;
 
-            var stats = GetCurrentStats();
-            float cooldown = stats.cooldown > 0f ? stats.cooldown : baseAbility.cooldown;
+            if (!CanUseAbility()) return;
 
-            if (Time.time - lastAttackTime < cooldown)
-                return;
-
-            lastAttackTime = Time.time;
+            ConsumeAbilityCooldownLocal();
 
             Vector2 dir = inputDirection.sqrMagnitude > 0.01f
                 ? inputDirection.normalized
@@ -96,10 +136,51 @@ namespace Combat
                 Debug.Log("SwordController: weaponAnimator = " + (weaponAnimator != null ? weaponAnimator.name : "null"));
                 weaponAnimator.SetTrigger("SwordSlash");
             }
-                
 
             UseAbilityServerRpc(dir);
         }
+
+        private float GetEffectiveAbilityCooldown()
+        {
+            var stats = GetCurrentStats();
+
+            if (stats.cooldown > 0f) return stats.cooldown;
+            if(baseAbility != null && baseAbility.cooldown > 0f) return baseAbility.cooldown;
+
+            return 0f;
+        }
+
+        public bool CanUseAbility()
+        {
+            if (!IsOwner) return false;
+            if (baseAbility == null) return false;
+            if (!enforceAbilityCooldown) return true;
+
+            float cd = GetEffectiveAbilityCooldown();
+            if (cd <= 0f) return true;
+
+            return (Time.time - lastAbilityUseTimeLocal) >= cd;
+        }
+
+        public float GetCooldownRemaining()
+        {
+            if (!enforceAbilityCooldown) return 0f;
+
+            float cd = GetEffectiveAbilityCooldown();
+            if(cd<=0f) return 0f;
+
+            float elapsed = Time.time - lastAbilityUseTimeLocal;
+            return Mathf.Max(0f, cd- elapsed);
+        }
+
+        private void ConsumeAbilityCooldownLocal()
+        {
+            lastAbilityUseTimeLocal = Time.time;
+        }
+
+        #endregion
+
+        #region Networking - Server Ability Execution
 
         [ServerRpc]
         private void UseAbilityServerRpc(Vector2 direction)
@@ -150,12 +231,7 @@ namespace Combat
             Object.Destroy(vfx, 2f);
         }
 
-        private void OnDrawGizmosSelected()
-        {
-            Gizmos.color = Color.red;
-            Vector2 dir = Vector2.up;
-            Vector2 origin = (Vector2)transform.position + dir * (hitRange * 0.5f);
-            Gizmos.DrawWireSphere(origin, hitRadius);
-        }
+        #endregion
     }
 }
+

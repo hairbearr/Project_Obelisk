@@ -84,14 +84,40 @@ namespace Player
 
         public void OnAttack(InputAction.CallbackContext context)
         {
-            if (!context.performed || sword == null) return;
+            if (!context.performed) return;
 
             Vector2 dir = LastFacingDir;
+
+            if (isShieldingLocal)
+            {
+                if (shield == null) return;
+
+                if (!shield.CanUseAbility())
+                {
+                    float rem = shield.GetCooldownRemaining();
+                    Debug.Log("Shield ability on cooldown: " + rem.ToString("0.00") + "s");
+                    return;
+                }
+
+                shield.RequestUseAbility(dir);
+                // Play a distinct shield ability animation (Not Raise/Lower)
+                // if (animationDrive != null) animationDriver.PlayShieldAbility();
+                return;
+            }
+
+            // Normal sword attack
+            if (sword == null) return;
+
+            if (!sword.CanUseAbility())
+            {
+                float rem = sword.GetCooldownRemaining();
+                Debug.Log("Sword on Cooldown: " + rem.ToString("0.00") + "s");
+                return;
+            }
+
             sword.RequestUseAbility(dir);
 
             if (animationDriver != null) animationDriver.PlaySwordSlash();
-
-            print("Attacking");
         }
 
         public void OnBlock(InputAction.CallbackContext context)
@@ -123,6 +149,13 @@ namespace Player
         public void OnGrapple(InputAction.CallbackContext context)
         {
             if (!context.performed || grapplingHook == null) return;
+
+            if (!grapplingHook.CanUseAbility())
+            {
+                Debug.Log("Grapple on Cooldown: " + grapplingHook.GetCooldownRemaining());
+                return;
+            }
+
 
             Vector2 dir = LastFacingDir;
             grapplingHook.RequestFireGrapple(dir);

@@ -47,6 +47,7 @@ namespace Combat
         [Header("Player References")]
         [SerializeField] private Rigidbody2D playerRb;
         [SerializeField] private Player.PlayerController playerController;
+        [SerializeField] private Collider2D playerCollider;
         #endregion
         
         #region Public / External State
@@ -56,9 +57,19 @@ namespace Combat
         #region Runtime - Ability Visuals
         private GameObject grappleVfxPrefab;
         private float lastGrappleTime;
+
+        [Header("Input")]
+        [SerializeField] private float localPressDebounce = 0.10f;
+
+        private float nextAllowedLocalPressTime;
+        private Vector2 lastRequestedDir;
         #endregion
-        
+
         #region Runtime - Server Pull Data (Server Only)
+
+        [SerializeField] private float stopDistanceFromSurface = 0.25f;
+        private Collider2D serverHitCollider;
+
         private bool serverHasHit;
         private Vector2 serverTargetPoint;
 
@@ -78,6 +89,10 @@ namespace Combat
 
         // Local cache for phase change detection (for animation triggers).
         private byte lastPhaseLocal = PhaseNone;
+
+        // Input buffering so presses during retract/cooldown are not lost
+        private bool queuedFire;
+        private Vector2 queuedDir;
         #endregion
 
         #region Unity Callbacks
@@ -94,6 +109,8 @@ namespace Combat
             if (lineRenderer == null) lineRenderer = GetComponent<LineRenderer>();
 
             if (lineRenderer != null) lineRenderer.enabled = false;
+
+            if(playerCollider == null) playerCollider = GetComponentInParent<Collider2D>();
         }
 
         public override void OnNetworkSpawn()
@@ -136,22 +153,60 @@ namespace Combat
             if (!IsOwner) return;
             if (baseAbility == null) return;
 
-            // Prevent spaming while any phase is active.
-            if (phase.Value != PhaseNone) return;
+            // Debounce: ignore presses too close together
+            if (Time.time < nextAllowedLocalPressTime) return;
+            nextAllowedLocalPressTime = Time.time + localPressDebounce;
 
-            // Local cooldown check (simple, responsive)
+            Vector2 dir = inputDirection.sqrMagnitude > 0.01f ? inputDirection : Vector2.up;
+            lastRequestedDir = dir;
+
+            // If we are in any phase, queue and fire when done
+            if (phase.Value != PhaseNone)
+            {
+                queuedFire = true;
+                queuedDir = dir;
+                return;
+            }
+            
+            // local cooldown check
             var stats = GetCurrentStats();
             float cooldown = GetEffectiveCooldown(stats);
-            if (Time.time - lastGrappleTime < cooldown) return;
+
+            // If still on cooldown, queue and fire when cooldown is over
+            if (Time.time - lastGrappleTime < cooldown)
+            {
+                queuedFire = true;
+                queuedDir = dir;
+                return;
+            }
+
             lastGrappleTime = Time.time;
 
-            Vector2 dir = inputDirection.sqrMagnitude > 0.01f ? inputDirection.normalized : Vector2.up;
-
-            // Lock movement immediately on the owner.
-            if (playerController != null) playerController.SetMovementLocked(true);
-
-            // Request server to begin a grapple attempt.
+            // Request server to begin a grapple attempt
             FireGrappleServerRpc(dir);
+        }
+        
+        public bool CanUseAbility()
+        {
+            if (!IsOwner) return false;
+            if (baseAbility == null) return false;
+            if (phase.Value != PhaseNone) return false;
+
+            var stats = GetCurrentStats();
+            float cooldown = GetEffectiveCooldown(stats);
+
+            return (Time.time - lastGrappleTime) >= cooldown;
+        }
+
+        public float GetCooldownRemaining()
+        {
+            if (baseAbility == null) return 0f;
+
+            var stats = GetCurrentStats();
+            float cooldown = GetEffectiveCooldown(stats);
+
+            float remaining = cooldown - (Time.time - lastGrappleTime);
+            return Mathf.Max(0f, remaining);
         }
         #endregion
 
@@ -209,6 +264,8 @@ namespace Combat
 
             return baseAbility != null ? baseAbility.damage : 0f;
         }
+
+       
         #endregion
 
         #region Networking - Begin Grapple
@@ -223,6 +280,9 @@ namespace Combat
 
             serverHasHit = hit.collider != null;
             Vector2 end = serverHasHit ? hit.point : start + direction.normalized * maxDistance;
+
+            serverHitCollider = hit.collider;
+            if (!serverHasHit) serverHitCollider = null;
 
             // Reset server pull data.
             serverTargetPoint = end;
@@ -332,43 +392,51 @@ namespace Combat
 
         private bool ServerSimulatePull(float pullSpeed, float dt)
         {
+
+            float step = pullSpeed * dt;
+
+
             // If pulling enemy to player
             if (serverPullEnemyToPlayer && serverPulledEnemyRb != null && playerRb != null)
             {
                 Vector2 enemyPos = serverPulledEnemyRb.position;
-                Vector2 playerPos = playerRb.position;
 
-                Vector2 toPlayer = playerPos - enemyPos;
-                float dist = toPlayer.magnitude;
-                float step = pullSpeed * dt;
+                // pull toward the player collider surface
+
+                Vector2 targetPoint = playerCollider != null ? playerCollider.ClosestPoint(enemyPos) : (Vector2)playerRb.position;
+
+                Vector2 toTarget = targetPoint - enemyPos;
+                float dist = toTarget.magnitude;
+
+
 
                 if (dist <= minDistanceToStop || dist <= step)
                 {
-                    serverPulledEnemyRb.MovePosition(playerPos);
                     return true;
                 }
-
-                Vector2 newPos = enemyPos + toPlayer.normalized * step;
-                serverPulledEnemyRb.MovePosition(newPos);
+                
+                serverPulledEnemyRb.MovePosition(enemyPos + toTarget.normalized * step);
                 return false;
             }
 
             // Default: pull player to the target point
             if (playerRb == null) return true;
 
-            Vector2 currentPos = playerRb.position;
-            Vector2 toTarget = serverTargetPoint - currentPos;
-            float dist2 = toTarget.magnitude;
-            float step2 = pullSpeed * dt;
+            Vector2 playerPos = playerRb.position;
 
-            if (dist2 <= minDistanceToStop || dist2 <= step2)
+            // pull toward the Hit Collider Surface if available
+            Vector2 targetSurface = serverHitCollider != null ? serverHitCollider.ClosestPoint(playerPos) : serverTargetPoint;
+
+            Vector2 toSurface = targetSurface - playerPos;
+            float distToSurface = toSurface.magnitude;
+
+            if(distToSurface <= minDistanceToStop || distToSurface <= step)
             {
-                playerRb.MovePosition(serverTargetPoint);
+                // stop without snapping into the object
                 return true;
             }
 
-            Vector2 newPos2 = currentPos + toTarget.normalized * step2;
-            playerRb.MovePosition(newPos2);
+            playerRb.MovePosition(playerPos + toSurface.normalized * step);
             return false;
         }
         #endregion
@@ -376,10 +444,25 @@ namespace Combat
         #region Client Visuals / Animations
         private void OnPhaseChanged(byte oldPhase, byte newPhase)
         {
-            // Owner unlocks when returning to None.
-            if (IsOwner && newPhase == PhaseNone)
+            if (!IsOwner) return;
+
+            // Lock when the server begins casting
+            if(newPhase == PhaseCasting)
+            {
+                if (playerController != null) playerController.SetMovementLocked(true);
+            }
+
+            // Unlock when the server finishes retracting.
+            if (newPhase == PhaseNone)
             {
                 if (playerController != null) playerController.SetMovementLocked(false);
+
+                // if the player pressed grapple while we were busy, fire now
+                if (queuedFire)
+                {
+                    queuedFire = false;
+                    RequestFireGrapple(queuedDir);
+                }
             }
         }
 
