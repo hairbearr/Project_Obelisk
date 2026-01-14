@@ -32,7 +32,7 @@ namespace Combat
 
         [Header("Timing")]
         [SerializeField] private float castDuration = 0.35f;
-        [SerializeField] private float retractDuration = 0.30f;
+        [SerializeField] private float retractDuration = 0.25f;
         #endregion
 
         #region Inspector - Visual References
@@ -415,9 +415,17 @@ namespace Combat
 
             Vector2 currentEnd = end;
 
-            if (p == PhaseCasting) { currentEnd = Vector2.Lerp(start, end, t); }
+            if (p == PhaseCasting)
+            {
+                t = EastOutCubic(t); // fast snap outward
+                currentEnd = Vector2.Lerp(start, end, t); 
+            }
             else if (p == PhaseAttached) { currentEnd = GetAttachedEnd(end); }
-            else if (p == PhaseRetracting) { currentEnd = Vector2.Lerp(end, start, t); }
+            else if (p == PhaseRetracting)
+            {
+                t = EaseInCubic(t); // quick snap back
+                currentEnd = Vector2.Lerp(end, start, t);
+            }
 
             lineRenderer.SetPosition(0, new Vector3(start.x, start.y, 0f));
             lineRenderer.SetPosition(1, new Vector3(currentEnd.x, currentEnd.y, 0f));
@@ -434,6 +442,18 @@ namespace Combat
             if (phase.Value == PhaseRetracting) return Mathf.Clamp01(elapsed / Mathf.Max(0.001f, retractDuration));
 
             return 1f;
+        }
+
+        private float EastOutCubic(float t)
+        {
+            t = Mathf.Clamp01(t);
+            return 1f - Mathf.Pow(1f - t, 3f);
+        }
+
+        private float EaseInCubic(float t)
+        {
+            t = Mathf.Clamp01(t);
+            return t * t * t;
         }
 
         private Vector2 GetAttachedEnd(Vector2 fallbackEnd)
