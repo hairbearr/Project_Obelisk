@@ -311,7 +311,18 @@ namespace Combat
                 float damage = GetEffectiveDamage(stats);
 
                 var dmg = hit.collider.GetComponent<IDamageable>();
+
+                var attackerNO = GetComponentInParent<NetworkObject>();
+                ulong attackerId = attackerNO != null ? attackerNO.NetworkObjectId : NetworkObjectId;
+
+                var threat = hit.collider.GetComponentInParent<Combat.DamageInterfaces.IThreatReceiver>();
+
                 if (dmg != null && damage > 0f) dmg.TakeDamage(damage);
+                
+                if(threat != null && damage > 0f)
+                {
+                    threat.AddThreat(attackerId, damage);
+                }
             }
 
             // Replicate cast start/end for everyone to render.

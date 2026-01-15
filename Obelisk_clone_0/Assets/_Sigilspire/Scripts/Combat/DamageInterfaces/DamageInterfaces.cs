@@ -2,6 +2,13 @@ using UnityEngine;
 
 namespace Combat.DamageInterfaces
 {
+    public interface IThreatReceiver
+    {
+        // Source is the player that generated the threat
+        // Amount is "threat points"
+        void AddThreat(ulong sourceNetworkObjectId, float amount);
+    }
+
     public interface IDamageable
     {
         void TakeDamage(float amount);

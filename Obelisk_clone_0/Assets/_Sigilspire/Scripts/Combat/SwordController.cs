@@ -203,10 +203,19 @@ namespace Combat
                 if (hit.transform == transform)
                     continue;
 
+                ulong attackerId = NetworkObjectId; // this is the sword object's NetworkObjectId (might be the player or child)
+                var attackerNO = GetComponentInParent<NetworkObject>();
+                if(attackerNO != null) attackerId = attackerNO.NetworkObjectId;
+
                 var dmg = hit.GetComponent<IDamageable>();
                 if (dmg != null && damage > 0f)
                 {
                     dmg.TakeDamage(damage);
+                    var threat = hit.GetComponentInParent<Combat.DamageInterfaces.IThreatReceiver>();
+                    if(threat != null && damage > 0f)
+                    {
+                        threat.AddThreat(attackerId, damage);
+                    }
                 }
 
                 var kb = hit.GetComponent<IKnockbackable>();
