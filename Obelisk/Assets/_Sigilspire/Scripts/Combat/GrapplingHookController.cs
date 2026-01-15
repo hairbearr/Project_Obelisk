@@ -392,72 +392,108 @@ namespace Combat
 
         private bool ServerSimulatePull(float pullSpeed, float dt)
         {
-            // Movement step toward the surface point (fallback if we don't have collider distance)
             float step = pullSpeed * dt;
 
-            // If pulling enemy to player
+            
+            // Pull enemy to player
             if (serverPullEnemyToPlayer && serverPulledEnemyRb != null && playerRb != null)
             {
                 Vector2 enemyPos = serverPulledEnemyRb.position;
 
-                // pull toward the player collider surface, and stop based on collider-to-collider distance
-
+                // Preferred stop: collider-to-collider distance (uses stopDistanceFromSurface)
                 if (playerCollider != null)
                 {
                     var enemyCol = serverPulledEnemyRb.GetComponent<Collider2D>();
                     if (enemyCol != null)
                     {
                         ColliderDistance2D d = enemyCol.Distance(playerCollider);
-                        if (d.isOverlapped || d.distance <= stopDistanceFromSurface) { return true; }
+
+                        // Stop when we're close enough to the player's collider surface.
+                        if (d.isOverlapped || d.distance <= stopDistanceFromSurface)
+                            return true;
                     }
                 }
 
-                
+                // Fallback movement target: closest point on player collider, or player position
+                Vector2 surface = playerCollider != null
+                    ? playerCollider.ClosestPoint(enemyPos)
+                    : (Vector2)playerRb.position;
 
-                Vector2 targetPoint = playerCollider != null ? playerCollider.ClosestPoint(enemyPos) : (Vector2)playerRb.position;
+                Vector2 toSurface = surface - enemyPos;
+                float distToSurface = toSurface.magnitude;
 
-                Vector2 toTarget = targetPoint - enemyPos;
-                float dist = toTarget.magnitude;
+                // Aim to stop short of the surface using stopDistanceFromSurface
+                Vector2 desiredTarget = surface;
+                if (playerCollider != null && distToSurface > 0.0001f)
+                {
+                    desiredTarget = surface - toSurface.normalized * stopDistanceFromSurface;
+                }
 
-                if (dist<= step || dist <= minDistanceToStop) { return true; }
-                
+                Vector2 toTarget = desiredTarget - enemyPos;
+                float distToTarget = toTarget.magnitude;
+
+                // minDistanceToStop is only epsilon (tiny) so we don't jitter forever.
+                if (distToTarget <= minDistanceToStop || distToTarget <= step)
+                {
+                    // Snap to position
+                    serverPulledEnemyRb.MovePosition(desiredTarget);
+                    return true;
+                }
+
                 serverPulledEnemyRb.MovePosition(enemyPos + toTarget.normalized * step);
                 return false;
             }
 
-            // Default: pull player to the target point
+            // Pull Player to Target
             if (playerRb == null) return true;
 
             Vector2 playerPos = playerRb.position;
 
-            // if we have a hit collider + player collider, stop based collider to collider distance
-            if(serverHitCollider != null && playerCollider != null)
+            // Preferred stop: collider-to-collider distance (uses stopDistanceFromSurface)
+            if (serverHitCollider != null && playerCollider != null)
             {
                 ColliderDistance2D d = playerCollider.Distance(serverHitCollider);
 
-                // distance == 0 means touching, isOverlapped means "arrived"
-                if(d.isOverlapped || d.distance <= stopDistanceFromSurface)
-                {
-                    return true; // "arrived" at surface; don't snap into object
-                }
+                // Stop when the player collider is close enough to the hit collider surface.
+                if (d.isOverlapped || d.distance <= stopDistanceFromSurface)
+                    return true;
             }
 
-            // Move toward the closest point on the hit collider (or the raw target point on miss)
-            Vector2 targetSurface = serverHitCollider != null ? serverHitCollider.ClosestPoint(playerPos) : serverTargetPoint;
+            // Movement target:
+            // - If we have a hit collider, move toward its closest point, but stop short (stopDistanceFromSurface)
+            // - If no collider (miss), move toward the raw target point and finish with epsilon (minDistanceToStop)
+            Vector2 surfacePoint = serverHitCollider != null
+                ? serverHitCollider.ClosestPoint(playerPos)
+                : serverTargetPoint;
 
-            Vector2 toSurface = targetSurface - playerPos;
-            float distToSurface = toSurface.magnitude;
+            Vector2 toSurface2 = surfacePoint - playerPos;
+            float distToSurface2 = toSurface2.magnitude;
 
-            if(distToSurface <= step || distToSurface <= minDistanceToStop)
+            Vector2 desiredPlayerTarget = surfacePoint;
+
+            // If we're pulling to a collider surface, stop short so we don't ram the collider.
+            if (serverHitCollider != null && distToSurface2 > 0.0001f)
             {
+                desiredPlayerTarget = surfacePoint - toSurface2.normalized * stopDistanceFromSurface;
+            }
+
+            Vector2 toTarget2 = desiredPlayerTarget - playerPos;
+            float distToTarget2 = toTarget2.magnitude;
+
+            // minDistanceToStop = epsilon completion threshold
+            if (distToTarget2 <= minDistanceToStop || distToTarget2 <= step)
+            {
+                // Optional snap (usually safe). If you don't want snapping, remove this line.
+                playerRb.MovePosition(desiredPlayerTarget);
                 return true;
             }
 
-            playerRb.MovePosition(playerPos + toSurface.normalized * step);
+            playerRb.MovePosition(playerPos + toTarget2.normalized * step);
             return false;
         }
+
         #endregion
-        
+
         #region Client Visuals / Animations
         private void OnPhaseChanged(byte oldPhase, byte newPhase)
         {
