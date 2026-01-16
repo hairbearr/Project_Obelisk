@@ -24,6 +24,9 @@ namespace Enemy
         [SerializeField] private Ability primaryAbility;
         [SerializeField] private float attackRange = 1.6f;
 
+        [Header("Threat")]
+        [SerializeField] private EnemyThreatTracker threatTracker;
+
         private Transform currentTarget;
         private Rigidbody2D rb2D;
         private EnemyAnimationDriver animDriver;
@@ -79,7 +82,49 @@ namespace Enemy
                 return;
             }
 
-            currentTarget = hits[0].transform;
+            // If we don't have a target yet, just pick the highest threat in range
+            if(currentTarget== null)
+            {
+                currentTarget = PickHighestThreatInRange(hits);
+                return;
+            }
+
+            // check if someone else has enough aggro to justify switching
+
+            Transform bestCandidate = PickHighestThreatInRange(hits);
+
+            if (bestCandidate == null) return;
+
+            float currentThreat = GetThreatForTransform(currentTarget);
+            float newThreat = GetThreatForTransform(bestCandidate);
+
+            // Only switch if new target exceeds aggro threshold
+            if(newThreat > currentThreat * threatTracker.AggroThreshold)
+            {
+                currentTarget = bestCandidate;
+            }
+        }
+
+        private Transform PickHighestThreatInRange(Collider2D[] hits)
+        {
+            Transform best = null;
+            float bestThreat = 0f;
+
+            foreach (var hit in hits)
+            {
+                var no = hit.GetComponentInParent<NetworkObject>();
+                if(no == null) continue;
+
+                float threat = threatTracker.GetThreat(no.NetworkObjectId);
+            }
+
+            return best; // just to have no errors
+        }
+
+        private float GetThreatForTransform(Transform target)
+        {
+            float var = 1f;
+            return var;
         }
 
         private void HandleMovement()
