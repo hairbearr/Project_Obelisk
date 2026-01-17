@@ -4,6 +4,7 @@ using Combat.AbilitySystem;
 using Combat.DamageInterfaces;
 using Combat.Health;
 using System.Collections.Generic;
+using System;
 
 namespace Enemy
 {
@@ -34,6 +35,15 @@ namespace Enemy
         private HealthBase health;
 
         private float lastAttackTime;
+
+        private enum AttackMode { Melee, RangedHitscan }
+        [Header("Attack Mode")]
+        [SerializeField] private AttackMode attackMode = AttackMode.Melee;
+
+        [Header("Ranged (Hitscan)")]
+        [SerializeField] private float rangedMaxRange = 8f;
+        [SerializeField] private LayerMask lineOfSightMask; // walls/obstacles
+        [SerializeField] private float rangedStopDistance = 5f; // keep-away distance
 
         // Reuse buffers to avoid GC allocations
         private readonly List<ulong> candidates = new List<ulong>(16);
@@ -154,17 +164,21 @@ namespace Enemy
             Vector2 toTarget = (Vector2)currentTarget.position - rb2D.position;
             float distance = toTarget.magnitude;
 
-            if (distance <= stoppingDistance)
+            float desiredStopDistance = stoppingDistance;
+            if (attackMode == AttackMode.RangedHitscan)
+                desiredStopDistance = rangedStopDistance;
+
+            if (distance <= desiredStopDistance)
             {
-                if (animDriver != null) animDriver.SetMovement(Vector2.zero);
+                animDriver?.SetMovement(Vector2.zero);
                 return;
             }
 
             Vector2 direction = toTarget.normalized;
             rb2D.MovePosition(rb2D.position + direction * (moveSpeed * Time.deltaTime));
-
-            if (animDriver != null) animDriver.SetMovement(direction);
+            animDriver?.SetMovement(direction);
         }
+
 
         private void TryAttack()
         {
@@ -174,10 +188,45 @@ namespace Enemy
             Vector2 toTarget = (Vector2)currentTarget.position - rb2D.position;
             float distance = toTarget.magnitude;
 
-            if (distance > attackRange) return;
+            if(attackMode == AttackMode.Melee)
+            {
+                if (distance > attackRange) return;
+
+                lastAttackTime = Time.time;
+                PerformAbilityAttack(currentTarget, primaryAbility);
+                return;
+            }
+
+            // ranged hitscan
+            if (distance > rangedMaxRange) return;
+
+            // LOS check (raycast to target, stop if blocked
+            Vector2 origin = rb2D.position;
+            Vector2 dir = ((Vector2)currentTarget.position - origin).normalized;
+            float rayDist = Vector2.Distance(origin, currentTarget.position);
+
+            RaycastHit2D los = Physics2D.Raycast(origin, dir, rayDist, lineOfSightMask);
+            if (los.collider != null) return; // blocked by wall.
 
             lastAttackTime = Time.time;
-            PerformAbilityAttack(currentTarget, primaryAbility);
+            PerformHitscanAttack(currentTarget, primaryAbility);
+        }
+
+        private void PerformHitscanAttack(Transform target, Ability ability)
+        {
+            Vector2 attackDir = ((Vector2)target.position - rb2D.position).normalized;
+
+            animDriver?.PlayAttack(attackDir);
+
+            // damage the player
+            IDamageable dmg = target.GetComponentInParent<IDamageable>();
+            if(dmg != null && ability.damage > 0f) dmg.TakeDamage(ability.damage, NetworkObjectId);
+
+            if (ability.vfxPrefab != null)
+            {
+                GameObject vfx = Instantiate(ability.vfxPrefab, target.position, Quaternion.identity);
+                Destroy(vfx, 2f);
+            }
         }
 
         private void PerformAbilityAttack(Transform target, Ability ability)
@@ -192,7 +241,7 @@ namespace Enemy
             IDamageable dmg = target.GetComponent<IDamageable>();
             if (dmg != null && ability.damage > 0f)
             {
-                dmg.TakeDamage(ability.damage);
+                dmg.TakeDamage(ability.damage, NetworkObjectId);
             }
 
             if (ability.vfxPrefab != null)

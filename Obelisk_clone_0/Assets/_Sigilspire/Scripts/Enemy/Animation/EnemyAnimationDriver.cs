@@ -2,11 +2,6 @@ using UnityEngine;
 
 namespace Enemy
 {
-    /// <summary>
-    /// Simple animation driver for enemies.
-    /// EnemyAI calls into this to update movement and attack animations.
-    /// All animation is server-driven. No network animator required.
-    /// </summary>
     public class EnemyAnimationDriver : MonoBehaviour
     {
         [Header("References")]
