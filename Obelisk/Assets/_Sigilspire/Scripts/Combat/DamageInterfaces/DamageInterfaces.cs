@@ -12,6 +12,7 @@ namespace Combat.DamageInterfaces
     public interface IDamageable
     {
         void TakeDamage(float amount);
+        void TakeDamage(float amount, ulong attackerId);
     }
 
     public interface IKnockbackable

@@ -30,6 +30,26 @@ namespace Combat.Health
             }
         }
 
+        public virtual void TakeDamage(float amount, ulong attackerId)
+        {
+            if (!IsServer) return;
+
+            CurrentHealth.Value -= amount;
+
+            // If this object can receive threat, award it here.
+            var threat = GetComponentInParent<Combat.DamageInterfaces.IThreatReceiver>();
+            if (threat != null && amount > 0f && attackerId != 0)
+            {
+                threat.AddThreat(attackerId, amount);
+            }
+
+            if (CurrentHealth.Value <= 0f)
+            {
+                CurrentHealth.Value = 0f;
+                OnDeath();
+            }
+        }
+
         protected virtual void OnDeath()
         {
             // Override in specific implementations

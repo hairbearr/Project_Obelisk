@@ -3,13 +3,10 @@ using Unity.Netcode;
 using Combat.AbilitySystem;
 using Combat.DamageInterfaces;
 using Combat.Health;
+using System.Collections.Generic;
 
 namespace Enemy
 {
-    /// <summary>
-    /// 2D Enemy AI with locomotion + attack animation support.
-    /// Server authoritative. Uses Rigidbody2D and Physics2D only.
-    /// </summary>
     public class EnemyAI : NetworkBehaviour
     {
         [Header("Targeting")]
@@ -26,13 +23,20 @@ namespace Enemy
 
         [Header("Threat")]
         [SerializeField] private EnemyThreatTracker threatTracker;
+        [SerializeField] private float retargetInterval = 0.25f;
+        private float lastRetargetTime;
 
         private Transform currentTarget;
+        private ulong currentTargetId;
+
         private Rigidbody2D rb2D;
         private EnemyAnimationDriver animDriver;
         private HealthBase health;
 
         private float lastAttackTime;
+
+        // Reuse buffers to avoid GC allocations
+        private readonly List<ulong> candidates = new List<ulong>(16);
 
         private void Awake()
         {
@@ -47,16 +51,26 @@ namespace Enemy
 
             if (health != null && health.CurrentHealth.Value <= 0f)
             {
-                if (animDriver != null)
-                {
-                    animDriver.SetMovement(Vector2.zero);
-                }
+                if (animDriver != null) animDriver.SetMovement(Vector2.zero);
                 return;
             }
 
-            if (currentTarget == null)
+            // Retarget periodically
+            if (Time.time - lastRetargetTime >= retargetInterval)
             {
+                lastRetargetTime = Time.time;
                 FindTarget();
+            }
+
+            // If our transform target became invalid (despawn), try to resolve again
+            if (currentTarget == null && currentTargetId != 0)
+            {
+                currentTarget = ResolveTargetTransform(currentTargetId);
+                if (currentTarget == null)
+                {
+                    currentTargetId = 0;
+                    if (threatTracker != null) threatTracker.SetCurrentTargetId(0);
+                }
             }
 
             if (currentTarget != null)
@@ -66,65 +80,71 @@ namespace Enemy
             }
             else
             {
-                if (animDriver != null)
-                {
-                    animDriver.SetMovement(Vector2.zero);
-                }
+                if (animDriver != null) animDriver.SetMovement(Vector2.zero);
             }
         }
 
         private void FindTarget()
         {
-            Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, detectionRadius, targetLayers);
-            if (hits.Length == 0)
+            if (threatTracker == null || NetworkManager == null)
             {
                 currentTarget = null;
+                currentTargetId = 0;
                 return;
             }
 
-            // If we don't have a target yet, just pick the highest threat in range
-            if(currentTarget== null)
+            Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, detectionRadius, targetLayers);
+            if (hits == null || hits.Length == 0)
             {
-                currentTarget = PickHighestThreatInRange(hits);
+                currentTarget = null;
+                currentTargetId = 0;
+                threatTracker.SetCurrentTargetId(0);
                 return;
             }
 
-            // check if someone else has enough aggro to justify switching
-
-            Transform bestCandidate = PickHighestThreatInRange(hits);
-
-            if (bestCandidate == null) return;
-
-            float currentThreat = GetThreatForTransform(currentTarget);
-            float newThreat = GetThreatForTransform(bestCandidate);
-
-            // Only switch if new target exceeds aggro threshold
-            if(newThreat > currentThreat * threatTracker.AggroThreshold)
+            // Build unique candidate list (NetworkObjectIds) in range
+            candidates.Clear();
+            for (int i = 0; i < hits.Length; i++)
             {
-                currentTarget = bestCandidate;
-            }
-        }
+                var no = hits[i].GetComponentInParent<NetworkObject>();
+                if (no == null) continue;
 
-        private Transform PickHighestThreatInRange(Collider2D[] hits)
-        {
-            Transform best = null;
-            float bestThreat = 0f;
+                ulong id = no.NetworkObjectId;
 
-            foreach (var hit in hits)
-            {
-                var no = hit.GetComponentInParent<NetworkObject>();
-                if(no == null) continue;
-
-                float threat = threatTracker.GetThreat(no.NetworkObjectId);
+                // Prevent duplicates if target has multiple colliders
+                if (!candidates.Contains(id))
+                    candidates.Add(id);
             }
 
-            return best; // just to have no errors
+            if (candidates.Count == 0)
+            {
+                currentTarget = null;
+                currentTargetId = 0;
+                threatTracker.SetCurrentTargetId(0);
+                return;
+            }
+
+
+            threatTracker.PruneInvalidThreat();
+            // Use the tracker’s hysteresis rule (aggroThreshold) to pick/keep target
+            ulong bestId = threatTracker.PickBestTargetId(currentTargetId, candidates);
+
+            currentTargetId = bestId;
+            threatTracker.SetCurrentTargetId(bestId);
+
+            currentTarget = ResolveTargetTransform(bestId);
         }
 
-        private float GetThreatForTransform(Transform target)
+        private Transform ResolveTargetTransform(ulong id)
         {
-            float var = 1f;
-            return var;
+            if (id == 0) return null;
+            if (NetworkManager == null) return null;
+
+            var sm = NetworkManager.SpawnManager;
+            if (sm == null) return null;
+
+            if (!sm.SpawnedObjects.TryGetValue(id, out NetworkObject obj)) return null;
+            return obj.transform;
         }
 
         private void HandleMovement()
@@ -136,35 +156,25 @@ namespace Enemy
 
             if (distance <= stoppingDistance)
             {
-                if (animDriver != null)
-                {
-                    animDriver.SetMovement(Vector2.zero);
-                }
+                if (animDriver != null) animDriver.SetMovement(Vector2.zero);
                 return;
             }
 
             Vector2 direction = toTarget.normalized;
             rb2D.MovePosition(rb2D.position + direction * (moveSpeed * Time.deltaTime));
 
-            if (animDriver != null)
-            {
-                animDriver.SetMovement(direction);
-            }
+            if (animDriver != null) animDriver.SetMovement(direction);
         }
 
         private void TryAttack()
         {
-            if (primaryAbility == null || currentTarget == null)
-                return;
-
-            if (Time.time - lastAttackTime < primaryAbility.cooldown)
-                return;
+            if (primaryAbility == null || currentTarget == null) return;
+            if (Time.time - lastAttackTime < primaryAbility.cooldown) return;
 
             Vector2 toTarget = (Vector2)currentTarget.position - rb2D.position;
             float distance = toTarget.magnitude;
 
-            if (distance > attackRange)
-                return;
+            if (distance > attackRange) return;
 
             lastAttackTime = Time.time;
             PerformAbilityAttack(currentTarget, primaryAbility);
@@ -187,11 +197,7 @@ namespace Enemy
 
             if (ability.vfxPrefab != null)
             {
-                GameObject vfx = GameObject.Instantiate(
-                    ability.vfxPrefab,
-                    target.position,
-                    Quaternion.identity
-                );
+                GameObject vfx = GameObject.Instantiate(ability.vfxPrefab, target.position, Quaternion.identity);
                 GameObject.Destroy(vfx, 2f);
             }
         }
@@ -206,3 +212,4 @@ namespace Enemy
         }
     }
 }
+

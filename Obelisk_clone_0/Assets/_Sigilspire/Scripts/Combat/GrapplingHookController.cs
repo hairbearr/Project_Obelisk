@@ -317,12 +317,7 @@ namespace Combat
 
                 var threat = hit.collider.GetComponentInParent<Combat.DamageInterfaces.IThreatReceiver>();
 
-                if (dmg != null && damage > 0f) dmg.TakeDamage(damage);
-                
-                if(threat != null && damage > 0f)
-                {
-                    threat.AddThreat(attackerId, damage);
-                }
+                if (dmg != null && damage > 0f) dmg.TakeDamage(damage, attackerId);
             }
 
             // Replicate cast start/end for everyone to render.

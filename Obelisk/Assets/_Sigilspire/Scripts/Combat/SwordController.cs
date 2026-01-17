@@ -210,12 +210,7 @@ namespace Combat
                 var dmg = hit.GetComponent<IDamageable>();
                 if (dmg != null && damage > 0f)
                 {
-                    dmg.TakeDamage(damage);
-                    var threat = hit.GetComponentInParent<Combat.DamageInterfaces.IThreatReceiver>();
-                    if(threat != null && damage > 0f)
-                    {
-                        threat.AddThreat(attackerId, damage);
-                    }
+                    dmg.TakeDamage(damage, attackerId);
                 }
 
                 var kb = hit.GetComponent<IKnockbackable>();
