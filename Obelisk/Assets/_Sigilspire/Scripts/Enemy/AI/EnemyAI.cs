@@ -45,6 +45,15 @@ namespace Enemy
         [SerializeField] private LayerMask lineOfSightMask; // walls/obstacles
         [SerializeField] private float rangedStopDistance = 5f; // keep-away distance
 
+        [Header("Ranged Kiting")]
+        [SerializeField] private float kiteDeadZone = 0.75f; // how much slack around rangedStopDistance
+        [SerializeField] private float kiteDecisionCooldown = 0.8f; // how often we re-evaluate kiting
+        [SerializeField] private float kiteMaxDuration = 0.9f; // max time we keep backing up once we start
+        [SerializeField] private float kiteSpeedMultiplier = 1.0f; // potentially slightly increases speed while kiting
+        private float nextKiteDecisiontime;
+        private float kiteEndTime;
+        private bool isKiting;
+
         // Reuse buffers to avoid GC allocations
         private readonly List<ulong> candidates = new List<ulong>(16);
 
@@ -136,14 +145,60 @@ namespace Enemy
 
 
             threatTracker.PruneInvalidThreat();
+
+            // if our current target isnt in range anymore, don't bias towards it
+            ulong existing = candidates.Contains(currentTargetId) ? currentTargetId : 0;
+
             // Use the tracker’s hysteresis rule (aggroThreshold) to pick/keep target
             ulong bestId = threatTracker.PickBestTargetId(currentTargetId, candidates);
+
+
+            // fallback behavior : if nobody has threat yet, aggro the closest target in range
+            if (bestId == 0 || threatTracker.GetThreat(bestId) <= 0f)
+            {
+                bestId = PickClosestCandidateId(candidates);
+            }
+            
 
             currentTargetId = bestId;
             threatTracker.SetCurrentTargetId(bestId);
 
             currentTarget = ResolveTargetTransform(bestId);
+
+            
         }
+
+        private ulong PickClosestCandidateId(List<ulong> ids)
+        {
+            if (ids == null || ids.Count == 0) return 0;
+            if (NetworkManager == null) return 0;
+
+            var sm = NetworkManager.SpawnManager;
+            if (sm == null) return 0;
+
+            ulong bestId = 0;
+            float bestDistSq = float.MaxValue;
+
+            Vector2 self = rb2D != null ? rb2D.position : (Vector2)transform.position;
+
+            for (int i = 0; i < ids.Count; i++)
+            {
+                ulong id = ids[i];
+                if (!sm.SpawnedObjects.TryGetValue(id, out NetworkObject obj)) continue;
+
+                Vector2 p = obj.transform.position;
+                float dSq = (p - self).sqrMagnitude;
+
+                if (dSq < bestDistSq)
+                {
+                    bestDistSq = dSq;
+                    bestId = id;
+                }
+            }
+
+            return bestId;
+        }
+
 
         private Transform ResolveTargetTransform(ulong id)
         {
@@ -161,22 +216,76 @@ namespace Enemy
         {
             if (currentTarget == null) return;
 
-            Vector2 toTarget = (Vector2)currentTarget.position - rb2D.position;
+            Vector2 toTarget = (Vector2)currentTarget.transform.position - rb2D.position;
             float distance = toTarget.magnitude;
 
-            float desiredStopDistance = stoppingDistance;
-            if (attackMode == AttackMode.RangedHitscan)
-                desiredStopDistance = rangedStopDistance;
+            // Melee - Chase to stop
+            if(attackMode == AttackMode.Melee)
+            {
+                if(distance <= stoppingDistance)
+                {
+                    animDriver?.SetMovement(Vector2.zero);
+                    return;
+                }
 
-            if (distance <= desiredStopDistance)
+                Vector2 dir = toTarget.normalized;
+                rb2D.MovePosition(rb2D.position + dir * (moveSpeed * Time.deltaTime));
+                animDriver?.SetMovement(dir);
+                return;
+            }
+
+            // Ranged - keep distance + kite
+
+            // Decide if we should start kiting
+            if(Time.time >= nextKiteDecisiontime)
+            {
+                nextKiteDecisiontime = Time.time + kiteDecisionCooldown;
+
+                float tooCloseDist = rangedStopDistance - kiteDeadZone;
+                float safeDist = rangedStopDistance + kiteDeadZone;
+
+                // start kiting only if target got meaningfully too close
+                if(!isKiting && distance < tooCloseDist)
+                {
+                    isKiting = true;
+                    kiteEndTime = Time.time + kiteMaxDuration;
+                }
+
+                // stop kiting if we've regained a comfortable distance
+                if(isKiting && distance > safeDist)
+                {
+                    isKiting = false;
+                }
+            }
+
+            // Hard stop, don't kite forever
+            if(isKiting && Time.time >= kiteEndTime)
+            {
+                isKiting = false;
+            }
+
+            // movement direction - if kiting move away target, else move toward target until stop distance
+
+            if (isKiting)
+            {
+                Vector2 away = (-toTarget).normalized;
+                float spd = moveSpeed * kiteSpeedMultiplier;
+
+                rb2D.MovePosition(rb2D.position + away * (spd * Time.deltaTime));
+                animDriver?.SetMovement(away);
+                return;
+            }
+
+            // Not kiting, remain spacing
+            if(distance <= rangedStopDistance)
             {
                 animDriver?.SetMovement(Vector2.zero);
                 return;
             }
 
-            Vector2 direction = toTarget.normalized;
-            rb2D.MovePosition(rb2D.position + direction * (moveSpeed * Time.deltaTime));
-            animDriver?.SetMovement(direction);
+            Vector2 toward = toTarget.normalized;
+            rb2D.MovePosition(rb2D.position + toward * (moveSpeed * Time.deltaTime));
+            animDriver?.SetMovement(toward);
         }
 
 
@@ -199,6 +308,9 @@ namespace Enemy
 
             // ranged hitscan
             if (distance > rangedMaxRange) return;
+
+            if (distance < rangedStopDistance - kiteDeadZone)
+                return;
 
             // LOS check (raycast to target, stop if blocked
             Vector2 origin = rb2D.position;
@@ -238,7 +350,7 @@ namespace Enemy
                 animDriver.PlayAttack(attackDir);
             }
 
-            IDamageable dmg = target.GetComponent<IDamageable>();
+            IDamageable dmg = target.GetComponentInParent<IDamageable>();
             if (dmg != null && ability.damage > 0f)
             {
                 dmg.TakeDamage(ability.damage, NetworkObjectId);
@@ -257,8 +369,15 @@ namespace Enemy
             Gizmos.DrawWireSphere(transform.position, detectionRadius);
 
             Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(transform.position, attackRange);
+            Gizmos.DrawWireSphere(transform.position, attackMode == AttackMode.Melee ? attackRange : rangedMaxRange);
+
+            if (attackMode == AttackMode.RangedHitscan)
+            {
+                Gizmos.color = Color.cyan;
+                Gizmos.DrawWireSphere(transform.position, rangedStopDistance);
+            }
         }
+
     }
 }
 

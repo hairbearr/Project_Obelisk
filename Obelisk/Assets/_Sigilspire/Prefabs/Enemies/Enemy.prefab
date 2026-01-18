@@ -123,8 +123,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8842397654035953887}
   - component: {fileID: 7284657103081393818}
-  - component: {fileID: 5240316554649227041}
   - component: {fileID: 4425365914209931163}
+  - component: {fileID: 5240316554649227041}
+  - component: {fileID: 4230780524085010385}
   - component: {fileID: 4694913565097134589}
   - component: {fileID: 2271145318052728466}
   - component: {fileID: 426879209344388932}
@@ -176,6 +177,33 @@ MonoBehaviour:
   AutoObjectParentSync: 1
   SyncOwnerTransformWhenParented: 1
   AllowOwnerToParent: 0
+--- !u!50 &4425365914209931163
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6205151091289128448}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!70 &5240316554649227041
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -213,33 +241,21 @@ CapsuleCollider2D:
   m_Offset: {x: -0.039744675, y: 0.05384761}
   m_Size: {x: 0.54051065, y: 0.91230476}
   m_Direction: 0
---- !u!50 &4425365914209931163
-Rigidbody2D:
-  serializedVersion: 5
+--- !u!114 &4230780524085010385
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6205151091289128448}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f03b37aab0c89e04b857ff2064bf6b3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyThreatTracker
+  ShowTopMostFoldoutHeaderGroup: 1
+  aggroThreshold: 1.2
+  threatDecayPerSecond: 0
 --- !u!114 &4694913565097134589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,6 +277,18 @@ MonoBehaviour:
   stoppingDistance: 1.5
   primaryAbility: {fileID: 11400000, guid: da8ef7497755cb2468cd73b0f51a9a38, type: 2}
   attackRange: 1.8
+  threatTracker: {fileID: 0}
+  retargetInterval: 0.25
+  attackMode: 0
+  rangedMaxRange: 8
+  lineOfSightMask:
+    serializedVersion: 2
+    m_Bits: 0
+  rangedStopDistance: 5
+  kiteDeadZone: 0.75
+  kiteDecisionCooldown: 0.8
+  kiteMaxDuration: 0.9
+  kiteSpeedMultiplier: 1
 --- !u!114 &2271145318052728466
 MonoBehaviour:
   m_ObjectHideFlags: 0

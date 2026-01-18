@@ -125,6 +125,11 @@ public class EnemyThreatTracker : NetworkBehaviour, IThreatReceiver
 
         if (currentTargetId != 0 && !spawned.ContainsKey(currentTargetId))
             currentTargetId = 0;
+
+        if(currentTargetId != 0 && !threat.ContainsKey(currentTargetId))
+        {
+            currentTargetId = 0;
+        }
     }
 
     /// Server-only: prints current threat table for debugging.
