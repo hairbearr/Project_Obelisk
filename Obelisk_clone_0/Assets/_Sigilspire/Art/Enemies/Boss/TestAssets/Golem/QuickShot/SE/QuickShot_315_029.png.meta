@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: ab0a4aadb00b0a545a54d6fd80514f95
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1804330573477068506
+    second: QuickShot_315_029_0
+  - first:
+      213: 8926030473317420287
+    second: QuickShot_315_029_1
+  - first:
+      213: -1082706419859770762
+    second: QuickShot_315_029_2
+  - first:
+      213: 5886189542693987093
+    second: QuickShot_315_029_3
+  - first:
+      213: -7926912235286443471
+    second: QuickShot_315_029_4
+  - first:
+      213: 6973450399938479562
+    second: QuickShot_315_029_5
+  - first:
+      213: 7145370418506559024
+    second: QuickShot_315_029_6
+  - first:
+      213: 4858585043355726565
+    second: QuickShot_315_029_7
+  - first:
+      213: -4578931946655962144
+    second: QuickShot_315_029_8
+  - first:
+      213: 6594086228184204333
+    second: QuickShot_315_029_9
+  - first:
+      213: -4755159110739166083
+    second: QuickShot_315_029_10
+  - first:
+      213: -4386915019817481218
+    second: QuickShot_315_029_11
+  - first:
+      213: 3548023848564272484
+    second: QuickShot_315_029_12
+  - first:
+      213: 8034926928717627869
+    second: QuickShot_315_029_13
+  - first:
+      213: -4715197594841598715
+    second: QuickShot_315_029_14
+  - first:
+      213: -4079603857915567506
+    second: QuickShot_315_029_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: QuickShot_315_029_0
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 135
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ade3a79c8154a0910800000000000000
+      internalID: 1804330573477068506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuickShot_315_029_1
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 147
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffc85606c61afdb70800000000000000
+      internalID: 8926030473317420287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuickShot_315_029_2
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 149
+        width: 33
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67239306f3479f0f0800000000000000
+      internalID: -1082706419859770762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuickShot_315_029_3
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 139
+        width: 54
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 513e4e4e332ffa150800000000000000
+      internalID: 5886189542693987093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuickShot_315_029_4
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 136
+        width: 21
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13acd021253fdf190800000000000000
+      internalID: -7926912235286443471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuickShot_315_029_5
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 129
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac5832b113ca6c060800000000000000
+      internalID: 6973450399938479562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuickShot_315_029_6
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 107
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03eeaafa984792360800000000000000
+      internalID: 7145370418506559024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuickShot_315_029_7
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 129
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e27e34ea592d6340800000000000000
+      internalID: 4858585043355726565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuickShot_315_029_8
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 121
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0eb22ec97ad5470c0800000000000000
+      internalID: -4578931946655962144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuickShot_315_029_9
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 98
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d240731dc76e28b50800000000000000
+      internalID: 6594086228184204333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuickShot_315_029_10
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 93
+        width: 31
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7cfde19bf7420eb0800000000000000
+      internalID: -4755159110739166083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuickShot_315_029_11
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 34
+        width: 97
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efb04f7480c8e13c0800000000000000
+      internalID: -4386915019817481218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuickShot_315_029_12
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 86
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46da94c54ec1d3130800000000000000
+      internalID: 3548023848564272484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuickShot_315_029_13
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 87
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd14f66887bc18f60800000000000000
+      internalID: 8034926928717627869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuickShot_315_029_14
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 82
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 505b0b905c0409eb0800000000000000
+      internalID: -4715197594841598715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuickShot_315_029_15
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 71
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6221a8e7e55267c0800000000000000
+      internalID: -4079603857915567506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      QuickShot_315_029_0: 1804330573477068506
+      QuickShot_315_029_1: 8926030473317420287
+      QuickShot_315_029_10: -4755159110739166083
+      QuickShot_315_029_11: -4386915019817481218
+      QuickShot_315_029_12: 3548023848564272484
+      QuickShot_315_029_13: 8034926928717627869
+      QuickShot_315_029_14: -4715197594841598715
+      QuickShot_315_029_15: -4079603857915567506
+      QuickShot_315_029_2: -1082706419859770762
+      QuickShot_315_029_3: 5886189542693987093
+      QuickShot_315_029_4: -7926912235286443471
+      QuickShot_315_029_5: 6973450399938479562
+      QuickShot_315_029_6: 7145370418506559024
+      QuickShot_315_029_7: 4858585043355726565
+      QuickShot_315_029_8: -4578931946655962144
+      QuickShot_315_029_9: 6594086228184204333
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
