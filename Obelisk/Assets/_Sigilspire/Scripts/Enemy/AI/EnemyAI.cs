@@ -17,6 +17,7 @@ namespace Enemy
         [Header("Movement")]
         [SerializeField] private float moveSpeed = 2.5f;
         [SerializeField] private float stoppingDistance = 1.2f;
+        [SerializeField] private Collider2D enemyCollider;
 
         [Header("Attack")]
         [SerializeField] private Ability primaryAbility;
@@ -62,13 +63,21 @@ namespace Enemy
             rb2D = GetComponent<Rigidbody2D>();
             animDriver = GetComponentInChildren<EnemyAnimationDriver>();
             health = GetComponent<HealthBase>();
+            if (enemyCollider == null) { enemyCollider = GetComponent<Collider2D>(); }
         }
 
         private void Update()
         {
+            if (Time.frameCount % 60 == 0)
+                Debug.Log($"[EnemyAI] IsServer={IsServer} IsHost={NetworkManager.Singleton?.IsHost} spawned={IsSpawned}", this);
+
+            if (Time.frameCount % 60 == 0 && IsServer && health != null)
+                Debug.Log($"[EnemyAI] HP={health.CurrentHealth.Value} max={health.MaxHealth}", this);
+
+
             if (!IsServer) return;
 
-            if (health != null && health.CurrentHealth.Value <= 0f)
+            if (health != null && health.Initialized && health.CurrentHealth.Value <= 0f)
             {
                 if (animDriver != null) animDriver.SetMovement(Vector2.zero);
                 return;
@@ -105,6 +114,8 @@ namespace Enemy
 
         private void FindTarget()
         {
+
+
             if (threatTracker == null || NetworkManager == null)
             {
                 currentTarget = null;
@@ -113,6 +124,8 @@ namespace Enemy
             }
 
             Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, detectionRadius, targetLayers);
+            Debug.Log($"Enemy sees {hits.Length} targets in radius.");
+
             if (hits == null || hits.Length == 0)
             {
                 currentTarget = null;
@@ -165,7 +178,8 @@ namespace Enemy
 
             currentTarget = ResolveTargetTransform(bestId);
 
-            
+            Debug.Log($"[EnemyAI] hits={hits.Length} cand={candidates.Count}", this);
+
         }
 
         private ulong PickClosestCandidateId(List<ulong> ids)
@@ -214,78 +228,118 @@ namespace Enemy
 
         private void HandleMovement()
         {
-            if (currentTarget == null) return;
+            if (currentTarget == null || rb2D == null) return;
 
-            Vector2 toTarget = (Vector2)currentTarget.transform.position - rb2D.position;
-            float distance = toTarget.magnitude;
+            Vector2 selfPos = rb2D.position;
+            Vector2 targetPos = currentTarget.position;
+            Vector2 toTarget = targetPos - selfPos;
 
-            // Melee - Chase to stop
-            if(attackMode == AttackMode.Melee)
+            // Grab colliders (player/root collider per your setup)
+            Collider2D targetCol = currentTarget.GetComponentInParent<Collider2D>();
+
+            // Compute "surface distance" if possible, otherwise fallback to center distance
+            bool hasColliderDistance = (enemyCollider != null && targetCol != null);
+            ColliderDistance2D cd = default;
+            float surfaceDistance = toTarget.magnitude;
+
+            if (hasColliderDistance)
             {
-                if(distance <= stoppingDistance)
+                cd = enemyCollider.Distance(targetCol);
+                // If overlapped, treat distance as 0 for decision making
+                surfaceDistance = cd.isOverlapped ? 0f : cd.distance;
+            }
+
+            // --- Helper: move + animate ---
+            void Move(Vector2 dir, float speedMult = 1f)
+            {
+                if (dir.sqrMagnitude < 0.0001f)
                 {
                     animDriver?.SetMovement(Vector2.zero);
                     return;
                 }
 
-                Vector2 dir = toTarget.normalized;
-                rb2D.MovePosition(rb2D.position + dir * (moveSpeed * Time.deltaTime));
-                animDriver?.SetMovement(dir);
+                float spd = moveSpeed * speedMult;
+                rb2D.MovePosition(selfPos + dir.normalized * (spd * Time.deltaTime));
+                animDriver?.SetMovement(dir.normalized);
+            }
+
+            // --- Overlap escape (prevents "trying to run through") ---
+            // If we are overlapping the target, back off a bit to separate.
+            // This makes melee stop cleanly and prevents constant pushing.
+            if (hasColliderDistance && cd.isOverlapped)
+            {
+                // If separation is available, use it. Otherwise just move away from target center.
+                Vector2 away =
+                    cd.normal.sqrMagnitude > 0.0001f
+                        ? cd.normal
+                        : (-toTarget).sqrMagnitude > 0.0001f ? (-toTarget).normalized : Vector2.up;
+
+                Move(away, 1.0f);
                 return;
             }
 
-            // Ranged - keep distance + kite
+            // -------------------------------
+            // Melee - Chase until "stop distance" from collider surface
+            // -------------------------------
+            if (attackMode == AttackMode.Melee)
+            {
+                if (surfaceDistance <= stoppingDistance)
+                {
+                    animDriver?.SetMovement(Vector2.zero);
+                    return;
+                }
 
-            // Decide if we should start kiting
-            if(Time.time >= nextKiteDecisiontime)
+                // Move toward target
+                Move(toTarget);
+                return;
+            }
+
+            // -------------------------------
+            // Ranged - keep distance + kite
+            // Decisions based on SURFACE distance (better spacing)
+            // -------------------------------
+            float tooCloseDist = rangedStopDistance - kiteDeadZone;
+            float safeDist = rangedStopDistance + kiteDeadZone;
+
+            // Decide if we should start/stop kiting (throttled)
+            if (Time.time >= nextKiteDecisiontime)
             {
                 nextKiteDecisiontime = Time.time + kiteDecisionCooldown;
 
-                float tooCloseDist = rangedStopDistance - kiteDeadZone;
-                float safeDist = rangedStopDistance + kiteDeadZone;
-
-                // start kiting only if target got meaningfully too close
-                if(!isKiting && distance < tooCloseDist)
+                if (!isKiting && surfaceDistance < tooCloseDist)
                 {
                     isKiting = true;
                     kiteEndTime = Time.time + kiteMaxDuration;
                 }
 
-                // stop kiting if we've regained a comfortable distance
-                if(isKiting && distance > safeDist)
+                if (isKiting && surfaceDistance > safeDist)
                 {
                     isKiting = false;
                 }
             }
 
-            // Hard stop, don't kite forever
-            if(isKiting && Time.time >= kiteEndTime)
+            // Hard stop: don't kite forever
+            if (isKiting && Time.time >= kiteEndTime)
             {
                 isKiting = false;
             }
 
-            // movement direction - if kiting move away target, else move toward target until stop distance
-
             if (isKiting)
             {
-                Vector2 away = (-toTarget).normalized;
-                float spd = moveSpeed * kiteSpeedMultiplier;
-
-                rb2D.MovePosition(rb2D.position + away * (spd * Time.deltaTime));
-                animDriver?.SetMovement(away);
+                // Move away to regain spacing
+                Vector2 away = (-toTarget);
+                Move(away, kiteSpeedMultiplier);
                 return;
             }
 
-            // Not kiting, remain spacing
-            if(distance <= rangedStopDistance)
+            // Not kiting: hold position if within desired range, otherwise close distance
+            if (surfaceDistance <= rangedStopDistance)
             {
                 animDriver?.SetMovement(Vector2.zero);
                 return;
             }
 
-            Vector2 toward = toTarget.normalized;
-            rb2D.MovePosition(rb2D.position + toward * (moveSpeed * Time.deltaTime));
-            animDriver?.SetMovement(toward);
+            Move(toTarget);
         }
 
 
@@ -299,7 +353,20 @@ namespace Enemy
 
             if(attackMode == AttackMode.Melee)
             {
-                if (distance > attackRange) return;
+                Collider2D targetCol = currentTarget.GetComponentInParent<Collider2D>();
+
+                if (enemyCollider != null && targetCol != null)
+                {
+                    ColliderDistance2D d = enemyCollider.Distance(targetCol);
+                    float surfDist = d.isOverlapped ? 0f : d.distance;
+
+                    if (surfDist > attackRange) return;
+                }
+                else
+                {
+                    // fallback if colliders missing
+                    if (distance > attackRange) return;
+                }
 
                 lastAttackTime = Time.time;
                 PerformAbilityAttack(currentTarget, primaryAbility);
@@ -377,7 +444,6 @@ namespace Enemy
                 Gizmos.DrawWireSphere(transform.position, rangedStopDistance);
             }
         }
-
     }
 }
 

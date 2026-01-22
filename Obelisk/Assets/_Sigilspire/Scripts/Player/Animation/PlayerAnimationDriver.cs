@@ -59,12 +59,6 @@ namespace Player
             SetWeaponFloats(shieldAnimator, facing, speed);
             SetWeaponFloats(grappleAnimator, facing, speed);
 
-            if (Time.frameCount % 120 == 0)
-            {
-                if (playerAnimator != null) Debug.Log("PlayerAnimator.speed=" + playerAnimator.speed);
-                if (swordAnimator != null) Debug.Log("SwordAnimator.speed=" + swordAnimator.speed);
-            }
-
         }
 
         private void LateUpdate()

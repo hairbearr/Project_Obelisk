@@ -161,8 +161,6 @@ namespace Player
             grapplingHook.RequestFireGrapple(dir);
 
             if (animationDriver != null) animationDriver.PlayGrappleCast();
-            
-            print("Grappling");
         }
 
         public void ApplyLoadout(SigilDefinition swordSigil, SigilDefinition shieldSigil, SigilDefinition grappleSigil)

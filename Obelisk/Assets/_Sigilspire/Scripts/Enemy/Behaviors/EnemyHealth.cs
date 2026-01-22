@@ -14,9 +14,13 @@ namespace Enemy
 
         private Rigidbody2D _rb2D;
 
-        protected override void Start()
+        public override void OnNetworkSpawn()
         {
-            base.Start();
+            base.OnNetworkSpawn();
+        }
+
+        private void Awake()
+        {
             _rb2D = GetComponent<Rigidbody2D>();
         }
 
@@ -24,6 +28,7 @@ namespace Enemy
         {
             if (IsServer)
             {
+                Debug.Log("I've Died");
                 NetworkObject.Despawn();
             }
         }

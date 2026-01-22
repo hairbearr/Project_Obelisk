@@ -185,6 +185,8 @@ namespace Combat
         [ServerRpc]
         private void UseAbilityServerRpc(Vector2 direction)
         {
+            Debug.Log($"[SERVER] Sword RPC fired. IsServer={IsServer} Owner={OwnerClientId}");
+
             var stats = GetCurrentStats();
 
             float damage = stats.damage;

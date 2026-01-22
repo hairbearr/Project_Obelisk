@@ -49,11 +49,11 @@ namespace Combat
         [SerializeField] private Player.PlayerController playerController;
         [SerializeField] private Collider2D playerCollider;
         #endregion
-        
+
         #region Public / External State
         public NetworkVariable<bool> IsGrappling = new NetworkVariable<bool>(false);
         #endregion
-        
+
         #region Runtime - Ability Visuals
         private GameObject grappleVfxPrefab;
         private float lastGrappleTime;
@@ -66,7 +66,6 @@ namespace Combat
         #endregion
 
         #region Runtime - Server Pull Data (Server Only)
-
         [SerializeField] private float stopDistanceFromSurface = 0.25f;
         private Collider2D serverHitCollider;
 
@@ -76,15 +75,17 @@ namespace Combat
         private NetworkObject serverPulledEnemy;
         private Rigidbody2D serverPulledEnemyRb;
         private bool serverPullEnemyToPlayer;
+
+        private IGrapplePullable serverPullable;
         #endregion
-        
+
         #region Runtime - Networked Grapple State
         private NetworkVariable<byte> phase = new NetworkVariable<byte>(PhaseNone);
         private NetworkVariable<Vector2> netStartPoint = new NetworkVariable<Vector2>();
         private NetworkVariable<Vector2> netEndPoint = new NetworkVariable<Vector2>();
         private NetworkVariable<double> phaseStartServerTime = new NetworkVariable<double>(0.0);
 
-        // If we attack to an enemy, clients can render to the enemy position
+        // If we attach to an enemy, clients can render to the enemy position
         private NetworkVariable<ulong> attachedEnemyId = new NetworkVariable<ulong>(0);
 
         // Local cache for phase change detection (for animation triggers).
@@ -99,24 +100,21 @@ namespace Combat
         private void Awake()
         {
             if (playerRb == null) playerRb = GetComponentInParent<Rigidbody2D>();
-
             if (playerController == null) playerController = GetComponentInParent<Player.PlayerController>();
-
             if (sigilInventory == null) sigilInventory = GetComponentInParent<SigilInventory>();
 
-            if (equippedSigil != null && string.IsNullOrEmpty(equippedSigilId)) equippedSigilId = equippedSigil.id;
+            if (equippedSigil != null && string.IsNullOrEmpty(equippedSigilId))
+                equippedSigilId = equippedSigil.id;
 
             if (lineRenderer == null) lineRenderer = GetComponent<LineRenderer>();
-
             if (lineRenderer != null) lineRenderer.enabled = false;
 
-            if(playerCollider == null) playerCollider = GetComponentInParent<Collider2D>();
+            if (playerCollider == null) playerCollider = GetComponentInParent<Collider2D>();
         }
 
         public override void OnNetworkSpawn()
         {
             lastPhaseLocal = phase.Value;
-
             // Owner movement unlock should be driven by phase returning to None
             phase.OnValueChanged += OnPhaseChanged;
         }
@@ -124,9 +122,7 @@ namespace Combat
         private void Update()
         {
             // server runs the grapple simulation and phase transitions.
-
             if (!IsServer) return;
-
             ServerTick();
         }
 
@@ -167,7 +163,7 @@ namespace Combat
                 queuedDir = dir;
                 return;
             }
-            
+
             // local cooldown check
             var stats = GetCurrentStats();
             float cooldown = GetEffectiveCooldown(stats);
@@ -185,7 +181,7 @@ namespace Combat
             // Request server to begin a grapple attempt
             FireGrappleServerRpc(dir);
         }
-        
+
         public bool CanUseAbility()
         {
             if (!IsOwner) return false;
@@ -221,9 +217,11 @@ namespace Combat
         {
             if (set == null) return;
 
-            if (weaponAnimator != null && set.overrideController != null) weaponAnimator.runtimeAnimatorController = set.overrideController;
+            if (weaponAnimator != null && set.overrideController != null)
+                weaponAnimator.runtimeAnimatorController = set.overrideController;
 
-            if (grappleRenderer != null && set.idleSprite != null) grappleRenderer.sprite = set.idleSprite;
+            if (grappleRenderer != null && set.idleSprite != null)
+                grappleRenderer.sprite = set.idleSprite;
 
             grappleVfxPrefab = set.attackVfx;
         }
@@ -247,13 +245,14 @@ namespace Combat
         private float GetEffectiveCooldown(EffectiveAbilityStats stats)
         {
             if (stats.cooldown <= 0f && baseAbility != null) return baseAbility.cooldown;
-
             return stats.cooldown;
         }
 
         private float GetEffectivePullSpeed(EffectiveAbilityStats stats)
         {
-            float baseForce = stats.grappleForce > 0f ? stats.grappleForce : (baseAbility != null ? baseAbility.grappleForce : 15f);
+            float baseForce = stats.grappleForce > 0f
+                ? stats.grappleForce
+                : (baseAbility != null ? baseAbility.grappleForce : 15f);
 
             return baseForce;
         }
@@ -261,17 +260,16 @@ namespace Combat
         private float GetEffectiveDamage(EffectiveAbilityStats stats)
         {
             if (stats.damage > 0f) return stats.damage;
-
             return baseAbility != null ? baseAbility.damage : 0f;
         }
-
-       
         #endregion
 
         #region Networking - Begin Grapple
         [ServerRpc]
         private void FireGrappleServerRpc(Vector2 direction)
         {
+            Debug.Log($"[SERVER] Grapple RPC fired. IsServer={IsServer} Owner={OwnerClientId}");
+
             direction = direction.sqrMagnitude > 0.0001f ? direction.normalized : Vector2.up;
 
             Vector2 start = vfxSpawnPoint != null ? (Vector2)vfxSpawnPoint.position : (Vector2)transform.position;
@@ -289,21 +287,28 @@ namespace Combat
             serverPulledEnemy = null;
             serverPulledEnemyRb = null;
             serverPullEnemyToPlayer = false;
+            serverPullable = null; // IMPORTANT: clear stale reference on miss/new cast
             attachedEnemyId.Value = 0;
 
             if (serverHasHit)
             {
                 // Pull rules: enemy to player OR player to point
-                var pullable = hit.collider.GetComponentInParent<Combat.DamageInterfaces.IGrapplePullable>();
+                var pullable = hit.collider.GetComponentInParent<IGrapplePullable>();
+                serverPullable = pullable;
+
                 if (pullable != null && pullable.ShouldPullToPlayer())
                 {
                     serverPullEnemyToPlayer = true;
+
+                    // Cache RB for collision distance + position fallback
                     serverPulledEnemyRb = hit.collider.GetComponentInParent<Rigidbody2D>();
 
                     var no = hit.collider.GetComponentInParent<NetworkObject>();
-                    if (no != null) serverPulledEnemy = no;
-
-                    if (serverPulledEnemy != null) attachedEnemyId.Value = serverPulledEnemy.NetworkObjectId;
+                    if (no != null)
+                    {
+                        serverPulledEnemy = no;
+                        attachedEnemyId.Value = no.NetworkObjectId;
+                    }
                 }
 
                 // Apply a small damage on attach.
@@ -315,9 +320,8 @@ namespace Combat
                 var attackerNO = GetComponentInParent<NetworkObject>();
                 ulong attackerId = attackerNO != null ? attackerNO.NetworkObjectId : NetworkObjectId;
 
-                var threat = hit.collider.GetComponentInParent<Combat.DamageInterfaces.IThreatReceiver>();
-
-                if (dmg != null && damage > 0f) dmg.TakeDamage(damage, attackerId);
+                if (dmg != null && damage > 0f)
+                    dmg.TakeDamage(damage, attackerId);
             }
 
             // Replicate cast start/end for everyone to render.
@@ -400,53 +404,38 @@ namespace Combat
         {
             float step = pullSpeed * dt;
 
-            
             // Pull enemy to player
-            if (serverPullEnemyToPlayer && serverPulledEnemyRb != null && playerRb != null)
+            if (serverPullEnemyToPlayer && serverPullable != null && playerRb != null)
             {
-                Vector2 enemyPos = serverPulledEnemyRb.position;
+                // Use enemy position as the query point for ClosestPoint (correct usage)
+                Vector2 enemyPosForClosest =
+                    serverPulledEnemyRb != null ? serverPulledEnemyRb.position
+                    : (Vector2)((Component)serverPullable).transform.position;
 
-                // Preferred stop: collider-to-collider distance (uses stopDistanceFromSurface)
-                if (playerCollider != null)
+                Vector2 pullPoint =
+                    playerCollider != null ? playerCollider.ClosestPoint(enemyPosForClosest)
+                    : (Vector2)playerRb.position;
+
+                // Let the pullable implement how it moves (RB MovePosition, etc.)
+                serverPullable.PullTowards(pullPoint, pullSpeed);
+
+                // Preferred completion: collider-to-collider distance
+                if (playerCollider != null && serverPulledEnemyRb != null)
                 {
                     var enemyCol = serverPulledEnemyRb.GetComponent<Collider2D>();
                     if (enemyCol != null)
                     {
                         ColliderDistance2D d = enemyCol.Distance(playerCollider);
-
-                        // Stop when we're close enough to the player's collider surface.
                         if (d.isOverlapped || d.distance <= stopDistanceFromSurface)
                             return true;
                     }
                 }
 
-                // Fallback movement target: closest point on player collider, or player position
-                Vector2 surface = playerCollider != null
-                    ? playerCollider.ClosestPoint(enemyPos)
-                    : (Vector2)playerRb.position;
-
-                Vector2 toSurface = surface - enemyPos;
-                float distToSurface = toSurface.magnitude;
-
-                // Aim to stop short of the surface using stopDistanceFromSurface
-                Vector2 desiredTarget = surface;
-                if (playerCollider != null && distToSurface > 0.0001f)
-                {
-                    desiredTarget = surface - toSurface.normalized * stopDistanceFromSurface;
-                }
-
-                Vector2 toTarget = desiredTarget - enemyPos;
-                float distToTarget = toTarget.magnitude;
-
-                // minDistanceToStop is only epsilon (tiny) so we don't jitter forever.
-                if (distToTarget <= minDistanceToStop || distToTarget <= step)
-                {
-                    // Snap to position
-                    serverPulledEnemyRb.MovePosition(desiredTarget);
+                // Fallback completion so we don't get stuck if colliders are missing
+                float dist = Vector2.Distance(enemyPosForClosest, pullPoint);
+                if (dist <= stopDistanceFromSurface + minDistanceToStop || dist <= step)
                     return true;
-                }
 
-                serverPulledEnemyRb.MovePosition(enemyPos + toTarget.normalized * step);
                 return false;
             }
 
@@ -497,7 +486,6 @@ namespace Combat
             playerRb.MovePosition(playerPos + toTarget2.normalized * step);
             return false;
         }
-
         #endregion
 
         #region Client Visuals / Animations
@@ -506,7 +494,7 @@ namespace Combat
             if (!IsOwner) return;
 
             // Lock when the server begins casting
-            if(newPhase == PhaseCasting)
+            if (newPhase == PhaseCasting)
             {
                 if (playerController != null) playerController.SetMovementLocked(true);
             }
@@ -560,9 +548,12 @@ namespace Combat
             if (p == PhaseCasting)
             {
                 t = EastOutCubic(t); // fast snap outward
-                currentEnd = Vector2.Lerp(start, end, t); 
+                currentEnd = Vector2.Lerp(start, end, t);
             }
-            else if (p == PhaseAttached) { currentEnd = GetAttachedEnd(end); }
+            else if (p == PhaseAttached)
+            {
+                currentEnd = GetAttachedEnd(end);
+            }
             else if (p == PhaseRetracting)
             {
                 t = EaseInCubic(t); // quick snap back
@@ -580,9 +571,7 @@ namespace Combat
             float elapsed = (float)(now - phaseStartServerTime.Value);
 
             if (phase.Value == PhaseCasting) return Mathf.Clamp01(elapsed / Mathf.Max(0.001f, castDuration));
-
             if (phase.Value == PhaseRetracting) return Mathf.Clamp01(elapsed / Mathf.Max(0.001f, retractDuration));
-
             return 1f;
         }
 
