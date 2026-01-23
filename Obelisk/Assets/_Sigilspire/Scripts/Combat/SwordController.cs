@@ -1,7 +1,8 @@
-using UnityEngine;
-using Unity.Netcode;
 using Combat.AbilitySystem;
 using Combat.DamageInterfaces;
+using System.Collections.Generic;
+using Unity.Netcode;
+using UnityEngine;
 
 namespace Combat
 {
@@ -17,6 +18,13 @@ namespace Combat
         [Header("Progress / Inventory")]
         [SerializeField] private SigilInventory sigilInventory;
 
+        [Header("Timings")]
+        [SerializeField] private float hitWindupSeconds = 0.12f; // tune per animation
+        [SerializeField] private float hitActiveSeconds = 0.05f; // how long the hitbox is active
+        [SerializeField] private bool useWindupTiming = true;
+
+        private Coroutine serverAttackRoutine;
+
         #endregion
 
         #region Inspector - Visual References
@@ -31,9 +39,14 @@ namespace Combat
         #region Inspector - Hitbox Settings
 
         [Header("Hitbox Settings")]
-        [SerializeField] private float hitRange = 1.5f;
         [SerializeField] private float hitRadius = 1.0f;
         [SerializeField] private LayerMask hitLayers;
+        [SerializeField, Range(10f, 180f)] private float attackArcDegrees = 110f;
+        [SerializeField] private float hitForwardOffset = 0.6f; // shifts hit center forward
+        [SerializeField] private float northSouthMultiplier = 1.0f;
+        [SerializeField] private float diagonalMultiplier = 1.0f;
+        [SerializeField] private float eastWestMultiplier = 1.1f;
+
 
         #endregion
 
@@ -56,16 +69,55 @@ namespace Combat
                 equippedSigilId = equippedSigil.id;
         }
 
+        private Vector2 lastDebugAttackDir = Vector2.up;
+
         private void OnDrawGizmosSelected()
         {
+            // Choose a preview direction for editor gizmos
+            // If you store last attack direction, you can use that instead
+            Vector2 dir = lastDebugAttackDir;
+
+            Vector2 origin = (Vector2)transform.position + dir * GetOffsetForDir(dir);
+
+            // ---- Draw hit radius ----
             Gizmos.color = Color.red;
-
-            // Gizmo uses Up as a simple preview direction.
-            Vector2 dir = Vector2.up;
-            Vector2 origin = (Vector2)transform.position + dir * (hitRange * 0.5f);
-
             Gizmos.DrawWireSphere(origin, hitRadius);
+
+            // ---- Draw attack arc ----
+            Gizmos.color = Color.yellow;
+
+            float halfArc = attackArcDegrees * 0.5f;
+            int steps = 24; // smoothness of the arc
+
+            Vector3 prevPoint = origin + Rotate(dir, -halfArc) * hitRadius;
+
+            for (int i = 1; i <= steps; i++)
+            {
+                float t = i / (float)steps;
+                float angle = Mathf.Lerp(-halfArc, halfArc, t);
+                Vector3 nextPoint = origin + Rotate(dir, angle) * hitRadius;
+
+                Gizmos.DrawLine(prevPoint, nextPoint);
+                prevPoint = nextPoint;
+            }
+
+            // ---- Draw center direction line ----
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawLine(origin, origin + dir * hitRadius);
         }
+
+        private Vector2 Rotate(Vector2 v, float degrees)
+        {
+            float rad = degrees * Mathf.Deg2Rad;
+            float sin = Mathf.Sin(rad);
+            float cos = Mathf.Cos(rad);
+
+            return new Vector2(
+                cos * v.x - sin * v.y,
+                sin * v.x + cos * v.y
+            );
+        }
+
 
         #endregion
 
@@ -111,6 +163,29 @@ namespace Combat
             return SigilEvaluator.GetEffectiveStats(baseAbility, equippedSigil, progress);
         }
 
+        private float GetEffectiveWindup(EffectiveAbilityStats stats)
+        {
+            if (stats.windupSeconds > 0f)
+                return stats.windupSeconds;
+
+            if (baseAbility != null && baseAbility.windupSeconds > 0f)
+                return baseAbility.windupSeconds;
+
+            return 0f; // instant hit fallback
+        }
+
+        private float GetEffectiveActiveTime(EffectiveAbilityStats stats)
+        {
+            if (stats.activeSeconds > 0f)
+                return stats.activeSeconds;
+
+            if (baseAbility != null && baseAbility.activeSeconds > 0f)
+                return baseAbility.activeSeconds;
+
+            return 0.03f; // tiny default window
+        }
+
+
         #endregion
 
         #region Public API - IWeaponController
@@ -138,6 +213,19 @@ namespace Combat
             }
 
             UseAbilityServerRpc(dir);
+            lastDebugAttackDir = dir;
+        }
+
+        float GetOffsetForDir(Vector2 dir)
+        {
+            dir = dir.normalized;
+
+            bool isDiagonal = Mathf.Abs(dir.x) > 0.1f && Mathf.Abs(dir.y) > 0.1f;
+            bool isNorthSouth = Mathf.Abs(dir.y) >= Mathf.Abs(dir.x);
+
+            float mult = isDiagonal ? diagonalMultiplier : isNorthSouth ? northSouthMultiplier : eastWestMultiplier;
+
+            return hitForwardOffset * mult;
         }
 
         private float GetEffectiveAbilityCooldown()
@@ -185,46 +273,116 @@ namespace Combat
         [ServerRpc]
         private void UseAbilityServerRpc(Vector2 direction)
         {
-            Debug.Log($"[SERVER] Sword RPC fired. IsServer={IsServer} Owner={OwnerClientId}");
-
+            Debug.Log($"[SERVER] Sword attack received dir={direction} time={Time.time}");
             var stats = GetCurrentStats();
 
-            float damage = stats.damage;
-            if (damage <= 0f && baseAbility != null)
-                damage = baseAbility.damage;
+            if (serverAttackRoutine != null)
+                StopCoroutine(serverAttackRoutine);
 
-            float knockback = stats.knockbackForce;
-            if (knockback <= 0f && baseAbility != null)
-                knockback = baseAbility.knockbackForce;
+            serverAttackRoutine = StartCoroutine(Server_DoSwordHit(direction, stats));
+        }
 
-            Vector2 origin = (Vector2)transform.position + direction.normalized * (hitRange * 0.5f);
+
+        private System.Collections.IEnumerator Server_DoSwordHit(Vector2 direction, EffectiveAbilityStats stats)
+        {
+            // Prefer effective stats, fallback to baseAbility, then inspector tuning.
+            float windup = GetEffectiveWindup(stats);
+            if (windup <= 0f) windup = hitWindupSeconds;
+
+            float active = GetEffectiveActiveTime(stats);
+            if (active <= 0f) active = hitActiveSeconds;
+
+            float damage = stats.damage > 0f ? stats.damage : (baseAbility != null ? baseAbility.damage : 0f);
+
+            Debug.Log($"[SERVER] windup={windup} active={active} damage={damage}");
+
+            if (useWindupTiming && windup > 0f)
+                yield return new WaitForSeconds(windup);
+
+            DoSwordOverlap(direction, stats);
+
+            yield return null;
+        }
+
+
+        private void DoSwordOverlap(Vector2 direction, EffectiveAbilityStats stats)
+        {
+            float damage = stats.damage > 0f ? stats.damage : (baseAbility != null ? baseAbility.damage : 0f);
+            float knockback = stats.knockbackForce > 0f ? stats.knockbackForce : (baseAbility != null ? baseAbility.knockbackForce : 0f);
+
+            Vector2 dir = direction.sqrMagnitude > 0.01f ? direction.normalized : Vector2.up;
+
+            float offset = GetOffsetForDir(dir);
+            Vector2 origin = (Vector2)transform.position + dir * offset;
+
             Collider2D[] hits = Physics2D.OverlapCircleAll(origin, hitRadius, hitLayers);
 
-            foreach (var hit in hits)
+            float halfArc = attackArcDegrees * 0.5f;
+
+            // Prefer "attacker root" exclusion
+            Transform attackerRoot = GetComponentInParent<NetworkObject>()?.transform;
+
+            for (int i = 0; i < hits.Length; i++)
             {
-                if (hit.transform == transform)
-                    continue;
+                var hit = hits[i];
+                if (hit == null) continue;
 
-                ulong attackerId = NetworkObjectId; // this is the sword object's NetworkObjectId (might be the player or child)
-                var attackerNO = GetComponentInParent<NetworkObject>();
-                if(attackerNO != null) attackerId = attackerNO.NetworkObjectId;
-
-                var dmg = hit.GetComponent<IDamageable>();
-                if (dmg != null && damage > 0f)
+                // Don’t hit yourself / your own player root hierarchy
+                if (attackerRoot != null)
                 {
-                    dmg.TakeDamage(damage, attackerId);
+                    if (hit.transform == attackerRoot || hit.transform.IsChildOf(attackerRoot))
+                        continue;
+                }
+                else
+                {
+                    if (hit.transform == transform || hit.transform.IsChildOf(transform))
+                        continue;
                 }
 
-                var kb = hit.GetComponent<IKnockbackable>();
+                // --- Arc filter ---
+                Vector2 closest = hit.bounds.ClosestPoint(origin);
+                Vector2 to = closest - origin;
+                if (to.sqrMagnitude < 0.0001f) continue;
+
+                Vector2 toNorm = to.normalized;
+
+                if (Vector2.Dot(dir, toNorm) <= 0f)
+                    continue;
+
+                float angle = Vector2.Angle(dir, toNorm);
+                if (angle > halfArc)
+                    continue;
+
+                // Attacker id should be the player/root NO, not the sword child
+                ulong attackerId = NetworkObjectId;
+                var attackerNO = GetComponentInParent<NetworkObject>();
+                if (attackerNO != null) attackerId = attackerNO.NetworkObjectId;
+
+                var dmg = hit.GetComponentInParent<IDamageable>();
+                if (dmg != null && damage > 0f)
+                    dmg.TakeDamage(damage, attackerId);
+
+                var kb = hit.GetComponentInParent<IKnockbackable>();
                 if (kb != null && knockback > 0f)
+                    kb.ApplyKnockback(toNorm, knockback);
+
+                if (kb == null)
                 {
-                    Vector2 toTarget = ((Vector2)hit.transform.position - (Vector2)transform.position).normalized;
-                    kb.ApplyKnockback(toTarget, knockback);
+                    Debug.Log($"[Sword] No IKnockbackable found for hit={hit.name} root={hit.transform.root.name}");
+                }
+                else
+                {
+                    Debug.Log($"[Sword] Knockbacking {hit.name} dir={toNorm} force={knockback}");
                 }
             }
 
-            PlayAttackVfxClientRpc(direction);
+            PlayAttackVfxClientRpc(dir);
         }
+
+
+
+
+
 
         [ClientRpc]
         private void PlayAttackVfxClientRpc(Vector2 direction)
@@ -240,4 +398,3 @@ namespace Combat
         #endregion
     }
 }
-

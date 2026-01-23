@@ -17,8 +17,8 @@ MonoBehaviour:
   cooldown: 0.25
   resourceCost: 0
   direction: 2
-  damage: 0
-  knockbackForce: 0
+  damage: 1
+  knockbackForce: 100
   shieldEnergyModifier: 0
   grappleForce: 0
   vfxPrefab: {fileID: 0}

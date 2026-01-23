@@ -19,7 +19,7 @@ PrefabInstance:
     - target: {fileID: 3081394880648425571, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 6934013284892070054, guid: bc7bd631fb0ee444f8c6ee991aae2397, type: 3}
+      objectReference: {fileID: -7494887683080363229, guid: 498222c5ac8d0794689e49709b3816d0, type: 3}
     - target: {fileID: 3081394880648425571, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -30,15 +30,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: attackRange
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: threatTracker
       value: 
       objectReference: {fileID: 5925980190507697977}
     - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: attackLockTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: detectionRadius
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: stoppingDistance
-      value: 1.2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: targetLayers.m_Bits
@@ -47,6 +55,22 @@ PrefabInstance:
     - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: lineOfSightMask.m_Bits
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5240316554649227041, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: m_Size.x
+      value: 0.15456787
+      objectReference: {fileID: 0}
+    - target: {fileID: 5240316554649227041, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: m_Size.y
+      value: 0.32115337
+      objectReference: {fileID: 0}
+    - target: {fileID: 5240316554649227041, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.01014545
+      objectReference: {fileID: 0}
+    - target: {fileID: 5240316554649227041, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.019575644
       objectReference: {fileID: 0}
     - target: {fileID: 6205151091289128448, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_Name

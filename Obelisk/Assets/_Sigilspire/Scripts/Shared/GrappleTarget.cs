@@ -10,14 +10,18 @@ public class GrappleTarget : NetworkBehaviour, IGrapplePullable
     [SerializeField] private bool pullToPlayer = true;
 
     [Header("Stop Tuning")]
-    [Tooltip("Stop when collider-to-collider distance is <= this.")]
-    [SerializeField] private float stopDistanceFromSurface = 0.25f;
+    //[Tooltip("Stop when collider-to-collider distance is <= this.")]
+    //[SerializeField] private float stopDistanceFromSurface = 0.25f;
 
     [Tooltip("Fallback epsilon so we don't jitter forever")]
     [SerializeField] private float minDistanceToStop = 0.02f;
 
+    private bool isBeingGrappled = false;
+
     private Rigidbody2D rb;
     private Collider2D col;
+
+    public bool IsBeingGrappled => isBeingGrappled;
 
     private void Awake()
     {
@@ -31,6 +35,8 @@ public class GrappleTarget : NetworkBehaviour, IGrapplePullable
     {
         if (!IsServer) return;
         if (rb == null) return;
+
+        isBeingGrappled = true;
 
         float step = speed * Time.deltaTime;
 
@@ -49,6 +55,7 @@ public class GrappleTarget : NetworkBehaviour, IGrapplePullable
         if (d <= minDistanceToStop || d <= step)
         {
             rb.MovePosition(desired);
+            isBeingGrappled = false;
             return;
         }
 

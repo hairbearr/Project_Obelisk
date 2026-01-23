@@ -9,6 +9,8 @@ namespace Combat.AbilitySystem
         public float cooldown;
         public float knockbackForce;
         public float grappleForce;
+        public float windupSeconds;
+        public float activeSeconds;
         // You can add more as you expand Ability later.
     }
 }

@@ -15,7 +15,6 @@ namespace Combat.Health
             NetworkVariableWritePermission.Server
         );
 
-        // NEW: everyone can query this
         public bool Initialized => initialized;
         private bool initialized;
 
@@ -24,10 +23,11 @@ namespace Combat.Health
             // Everyone listens so clients can know when the first real value arrives
             CurrentHealth.OnValueChanged += OnHealthChanged;
 
+            initialized = true;
+
             if (IsServer)
             {
-                CurrentHealth.Value = maxHealth; // will replicate
-                initialized = true;
+                CurrentHealth.Value = maxHealth;
             }
         }
 
@@ -38,8 +38,6 @@ namespace Combat.Health
 
         private void OnHealthChanged(float oldVal, float newVal)
         {
-            // Client-side: first time we receive a replicated health value, mark initialized.
-            // (Also runs on server, harmless.)
             if (!initialized)
                 initialized = true;
         }

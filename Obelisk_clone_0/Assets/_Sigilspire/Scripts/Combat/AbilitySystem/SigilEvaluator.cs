@@ -24,7 +24,9 @@ namespace Combat.AbilitySystem
                     damage = baseAbility.damage,
                     cooldown = baseAbility.cooldown,
                     knockbackForce = baseAbility.knockbackForce,
-                    grappleForce = baseAbility.grappleForce
+                    grappleForce = baseAbility.grappleForce,
+                    windupSeconds = baseAbility.windupSeconds,
+                    activeSeconds = baseAbility.activeSeconds
                 };
             }
 
@@ -42,7 +44,9 @@ namespace Combat.AbilitySystem
                 damage = baseAbility.damage * dmgMult,
                 cooldown = baseAbility.cooldown * cdMult,
                 knockbackForce = baseAbility.knockbackForce * kbMult,
-                grappleForce = baseAbility.grappleForce * gfMult
+                grappleForce = baseAbility.grappleForce * gfMult,
+                windupSeconds = baseAbility.windupSeconds,
+                activeSeconds = baseAbility.activeSeconds
             };
         }
     }

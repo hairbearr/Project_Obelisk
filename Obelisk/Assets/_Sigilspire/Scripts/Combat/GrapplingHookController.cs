@@ -75,6 +75,9 @@ namespace Combat
         private NetworkObject serverPulledEnemy;
         private Rigidbody2D serverPulledEnemyRb;
         private bool serverPullEnemyToPlayer;
+        private Collider2D serverPulledEnemyCol;
+        private bool ignoringPullCollision;
+
 
         private IGrapplePullable serverPullable;
         #endregion
@@ -395,9 +398,21 @@ namespace Combat
                     IsGrappling.Value = false;
                     serverHasHit = false;
                     attachedEnemyId.Value = 0;
+                    ClearPullCollisionIgnore();
                 }
                 return;
             }
+        }
+
+        private void ClearPullCollisionIgnore()
+        {
+            if (!IsServer) return;
+            if (!ignoringPullCollision) return;
+
+            if (playerCollider != null && serverPulledEnemyCol != null) { Physics2D.IgnoreCollision(playerCollider, serverPulledEnemyCol, false); }
+
+            ignoringPullCollision = false;
+            serverPulledEnemyCol = null;
         }
 
         private bool ServerSimulatePull(float pullSpeed, float dt)
@@ -415,6 +430,14 @@ namespace Combat
                 Vector2 pullPoint =
                     playerCollider != null ? playerCollider.ClosestPoint(enemyPosForClosest)
                     : (Vector2)playerRb.position;
+
+                serverPulledEnemyCol = serverHitCollider.GetComponentInParent<Collider2D>();
+                if(playerCollider !=null && serverPulledEnemyCol != null)
+                {
+                    Physics2D.IgnoreCollision(playerCollider, serverPulledEnemyCol, true);
+                    ignoringPullCollision = true;
+                }
+
 
                 // Let the pullable implement how it moves (RB MovePosition, etc.)
                 serverPullable.PullTowards(pullPoint, pullSpeed);

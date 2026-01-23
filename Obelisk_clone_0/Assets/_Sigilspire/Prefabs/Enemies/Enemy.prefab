@@ -190,7 +190,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0
+  m_LinearDamping: 4
   m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -275,8 +275,11 @@ MonoBehaviour:
     m_Bits: 256
   moveSpeed: 3
   stoppingDistance: 1.5
+  enemyCollider: {fileID: 0}
+  knockbackMoveLockTime: 0.12
   primaryAbility: {fileID: 11400000, guid: da8ef7497755cb2468cd73b0f51a9a38, type: 2}
   attackRange: 1.8
+  attackLockTime: 0.2
   threatTracker: {fileID: 0}
   retargetInterval: 0.25
   attackMode: 0
@@ -318,4 +321,6 @@ MonoBehaviour:
   maxHealth: 100
   CurrentHealth:
     m_InternalValue: 0
+  maxKnockbackSpeed: 30
   knockbackResistance: 0
+  knockbackCooldown: 0.15

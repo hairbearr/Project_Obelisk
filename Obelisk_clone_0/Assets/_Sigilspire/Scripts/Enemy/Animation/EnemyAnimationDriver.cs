@@ -22,20 +22,40 @@ namespace Enemy
             if (animator == null) return;
 
             float speed = direction.magnitude;
+            if (speed > 0.001f)
+            {
+                animator.SetFloat(MoveX, direction.x);
+                animator.SetFloat(MoveY, direction.y);
+            }
 
+            animator.SetFloat(Speed, speed);
+        }
+
+        public void SetFacing(Vector2 direction)
+        {
+            if (animator == null) return;
+            if (direction.sqrMagnitude < 0.0001f) return;
+
+            direction.Normalize();
             animator.SetFloat(MoveX, direction.x);
             animator.SetFloat(MoveY, direction.y);
-            animator.SetFloat(Speed, speed);
+            // Do NOT touch Speed here.
         }
 
         public void PlayAttack(Vector2 attackDirection)
         {
             if (animator == null) return;
 
-            animator.SetFloat(MoveX, attackDirection.x);
-            animator.SetFloat(MoveY, attackDirection.y);
+            if (attackDirection.sqrMagnitude > 0.0001f)
+            {
+                attackDirection.Normalize();
+                animator.SetFloat(MoveX, attackDirection.x);
+                animator.SetFloat(MoveY, attackDirection.y);
+            }
+
             animator.SetTrigger(Attack);
         }
+
     }
 }
 

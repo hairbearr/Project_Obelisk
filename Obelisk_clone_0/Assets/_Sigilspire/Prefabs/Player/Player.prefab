@@ -471,8 +471,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.016525412, y: -0.039569568}
-  m_Size: {x: 0.23828053, y: 0.48479864}
+  m_Offset: {x: 0.012209296, y: -0.029858304}
+  m_Size: {x: 0.19080324, y: 0.3704215}
   m_Direction: 0
 --- !u!114 &2837075920242125394
 MonoBehaviour:
@@ -705,7 +705,7 @@ MonoBehaviour:
   equippedSigil: {fileID: 11400000, guid: 9dcd4ecc1f048e644acdbb91e01424cc, type: 2}
   equippedSigilId: grapple_default
   sigilInventory: {fileID: 7608890470901692854}
-  maxDistance: 15
+  maxDistance: 25
   grappleLayers:
     serializedVersion: 2
     m_Bits: 192
@@ -740,14 +740,21 @@ MonoBehaviour:
   equippedSigil: {fileID: 11400000, guid: c462ed4864449ac4097d961508dfddcd, type: 2}
   equippedSigilId: sword_default
   sigilInventory: {fileID: 7608890470901692854}
+  hitWindupSeconds: 0.12
+  hitActiveSeconds: 0.05
+  useWindupTiming: 1
   weaponAnimator: {fileID: 3715217323501954718}
   swordRenderer: {fileID: 4217421764613162781}
   vfxSpawnPoint: {fileID: 8063220511822114338}
-  hitRange: 1.5
-  hitRadius: 1
+  hitRadius: 2.9
   hitLayers:
     serializedVersion: 2
     m_Bits: 64
+  attackArcDegrees: 110
+  hitForwardOffset: 2
+  northSouthMultiplier: 1
+  diagonalMultiplier: 1
+  eastWestMultiplier: 1.1
   enforceAbilityCooldown: 1
 --- !u!114 &1978432937673861373
 MonoBehaviour:
@@ -859,7 +866,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3204445589143468964, guid: c1df60cfa70f9264e8321a0cbea69a09, type: 3}
+  m_Sprite: {fileID: 8748667142837503464, guid: 035a706ef4c07b247a4f88a8e40d3286, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1158,7 +1165,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3828859814732937702}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1ef152b034a1594aa92a3db7dfc0704, type: 3}
   m_Name: 

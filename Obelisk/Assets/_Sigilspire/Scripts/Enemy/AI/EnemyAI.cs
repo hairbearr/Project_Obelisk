@@ -18,10 +18,16 @@ namespace Enemy
         [SerializeField] private float moveSpeed = 2.5f;
         [SerializeField] private float stoppingDistance = 1.2f;
         [SerializeField] private Collider2D enemyCollider;
+        [SerializeField] private float knockbackMoveLockTime = 0.12f;
+        private float moveLockedUntil;
 
         [Header("Attack")]
         [SerializeField] private Ability primaryAbility;
         [SerializeField] private float attackRange = 1.6f;
+        [SerializeField] private float attackLockTime = 0.2f;
+        private float attackLockUntil;
+        [SerializeField] private float facingEpsilon = 0.001f;
+        private Vector2 lastFacingDir = Vector2.down;
 
         [Header("Threat")]
         [SerializeField] private EnemyThreatTracker threatTracker;
@@ -101,10 +107,18 @@ namespace Enemy
                 }
             }
 
+            bool attackLocked = Time.time < attackLockUntil;
+
             if (currentTarget != null)
             {
-                HandleMovement();
-                TryAttack();
+                if (!attackLocked) { HandleMovement(); }
+                else
+                {
+                    animDriver?.SetFacing(lastFacingDir);
+                    animDriver?.SetMovement(Vector2.zero); 
+                }
+
+                    TryAttack();
             }
             else
             {
@@ -166,7 +180,7 @@ namespace Enemy
             ulong bestId = threatTracker.PickBestTargetId(currentTargetId, candidates);
 
 
-            // fallback behavior : if nobody has threat yet, aggro the closest target in range
+            // if nobody has threat yet, aggro the closest target in range
             if (bestId == 0 || threatTracker.GetThreat(bestId) <= 0f)
             {
                 bestId = PickClosestCandidateId(candidates);
@@ -230,11 +244,17 @@ namespace Enemy
         {
             if (currentTarget == null || rb2D == null) return;
 
+            if(Time.time < moveLockedUntil)
+            {
+                animDriver?.SetFacing(lastFacingDir);
+                animDriver?.SetMovement(Vector2.zero);
+                return;
+            }
+
             Vector2 selfPos = rb2D.position;
             Vector2 targetPos = currentTarget.position;
             Vector2 toTarget = targetPos - selfPos;
 
-            // Grab colliders (player/root collider per your setup)
             Collider2D targetCol = currentTarget.GetComponentInParent<Collider2D>();
 
             // Compute "surface distance" if possible, otherwise fallback to center distance
@@ -249,23 +269,27 @@ namespace Enemy
                 surfaceDistance = cd.isOverlapped ? 0f : cd.distance;
             }
 
-            // --- Helper: move + animate ---
             void Move(Vector2 dir, float speedMult = 1f)
             {
                 if (dir.sqrMagnitude < 0.0001f)
                 {
+                    // Stop movement but KEEP facing
+                    animDriver?.SetFacing(lastFacingDir);
                     animDriver?.SetMovement(Vector2.zero);
                     return;
                 }
 
+                SetFacing(dir);
+
                 float spd = moveSpeed * speedMult;
                 rb2D.MovePosition(selfPos + dir.normalized * (spd * Time.deltaTime));
+
+                // Movement sets Speed + also updates facing through SetMovement
                 animDriver?.SetMovement(dir.normalized);
             }
 
             // --- Overlap escape (prevents "trying to run through") ---
             // If we are overlapping the target, back off a bit to separate.
-            // This makes melee stop cleanly and prevents constant pushing.
             if (hasColliderDistance && cd.isOverlapped)
             {
                 // If separation is available, use it. Otherwise just move away from target center.
@@ -278,13 +302,12 @@ namespace Enemy
                 return;
             }
 
-            // -------------------------------
             // Melee - Chase until "stop distance" from collider surface
-            // -------------------------------
             if (attackMode == AttackMode.Melee)
             {
                 if (surfaceDistance <= stoppingDistance)
                 {
+                    animDriver?.SetFacing(lastFacingDir);
                     animDriver?.SetMovement(Vector2.zero);
                     return;
                 }
@@ -294,10 +317,7 @@ namespace Enemy
                 return;
             }
 
-            // -------------------------------
             // Ranged - keep distance + kite
-            // Decisions based on SURFACE distance (better spacing)
-            // -------------------------------
             float tooCloseDist = rangedStopDistance - kiteDeadZone;
             float safeDist = rangedStopDistance + kiteDeadZone;
 
@@ -335,11 +355,23 @@ namespace Enemy
             // Not kiting: hold position if within desired range, otherwise close distance
             if (surfaceDistance <= rangedStopDistance)
             {
+                animDriver?.SetFacing(lastFacingDir);
                 animDriver?.SetMovement(Vector2.zero);
                 return;
             }
 
             Move(toTarget);
+        }
+
+        public void NotifyKnockback()
+        {
+            moveLockedUntil = Time.time + knockbackMoveLockTime;
+        }
+
+        private void SetFacing(Vector2 dir)
+        {
+            if (dir.sqrMagnitude <= facingEpsilon) return;
+            lastFacingDir = dir.normalized;
         }
 
 
@@ -369,7 +401,13 @@ namespace Enemy
                 }
 
                 lastAttackTime = Time.time;
-                PerformAbilityAttack(currentTarget, primaryAbility);
+                attackLockUntil = Time.time + attackLockTime;
+
+                Vector2 attackDir = ((Vector2)currentTarget.position - rb2D.position);
+                if (attackDir.sqrMagnitude < 0.0001f) attackDir = lastFacingDir;
+                SetFacing(attackDir);
+                animDriver?.SetFacing(lastFacingDir);
+                PerformAbilityAttack(currentTarget, primaryAbility, lastFacingDir);
                 return;
             }
 
@@ -388,18 +426,20 @@ namespace Enemy
             if (los.collider != null) return; // blocked by wall.
 
             lastAttackTime = Time.time;
-            PerformHitscanAttack(currentTarget, primaryAbility);
+            SetFacing(dir);
+            animDriver?.SetFacing(lastFacingDir);
+            PerformHitscanAttack(currentTarget, primaryAbility, lastFacingDir);
         }
 
-        private void PerformHitscanAttack(Transform target, Ability ability)
+        private void PerformHitscanAttack(Transform target, Ability ability, Vector2 facingDir)
         {
-            Vector2 attackDir = ((Vector2)target.position - rb2D.position).normalized;
+            Vector2 attackDir = facingDir.sqrMagnitude > 0.0001f ? facingDir.normalized : Vector2.down;
 
             animDriver?.PlayAttack(attackDir);
 
-            // damage the player
             IDamageable dmg = target.GetComponentInParent<IDamageable>();
-            if(dmg != null && ability.damage > 0f) dmg.TakeDamage(ability.damage, NetworkObjectId);
+            if (dmg != null && ability.damage > 0f)
+                dmg.TakeDamage(ability.damage, NetworkObjectId);
 
             if (ability.vfxPrefab != null)
             {
@@ -408,25 +448,20 @@ namespace Enemy
             }
         }
 
-        private void PerformAbilityAttack(Transform target, Ability ability)
+        private void PerformAbilityAttack(Transform target, Ability ability, Vector2 facingDir)
         {
-            Vector2 attackDir = ((Vector2)target.position - rb2D.position).normalized;
+            Vector2 attackDir = facingDir.sqrMagnitude > 0.0001f ? facingDir.normalized : Vector2.down;
 
-            if (animDriver != null)
-            {
-                animDriver.PlayAttack(attackDir);
-            }
+            animDriver?.PlayAttack(attackDir);
 
             IDamageable dmg = target.GetComponentInParent<IDamageable>();
             if (dmg != null && ability.damage > 0f)
-            {
                 dmg.TakeDamage(ability.damage, NetworkObjectId);
-            }
 
             if (ability.vfxPrefab != null)
             {
-                GameObject vfx = GameObject.Instantiate(ability.vfxPrefab, target.position, Quaternion.identity);
-                GameObject.Destroy(vfx, 2f);
+                GameObject vfx = Instantiate(ability.vfxPrefab, target.position, Quaternion.identity);
+                Destroy(vfx, 2f);
             }
         }
 

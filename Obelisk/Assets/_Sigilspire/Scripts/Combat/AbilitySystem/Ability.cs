@@ -41,5 +41,9 @@ namespace Combat.AbilitySystem
 
         [Header("Visuals")]
         public GameObject vfxPrefab;
+
+        [Header("Attack Timing")]
+        public float windupSeconds = 0.12f;
+        public float activeSeconds = 0.05f;
     }
 }
