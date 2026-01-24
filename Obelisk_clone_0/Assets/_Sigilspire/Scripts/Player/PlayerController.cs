@@ -136,6 +136,8 @@ namespace Player
             }
             else if (context.canceled)
             {
+                SetMovementLocked(false);
+
                 if (animationDriver != null)
                 {
                     animationDriver.SetShielding(false);
@@ -143,12 +145,18 @@ namespace Player
                 }
             }
 
+
             shield.HandleBlockInput(context);
         }
 
         public void OnGrapple(InputAction.CallbackContext context)
         {
-            if (!context.performed || grapplingHook == null) return;
+            if (!context.performed) return;
+
+            // No grapple while shielding
+            if (isShieldingLocal) return;
+
+            if (grapplingHook == null) return;
 
             if (!grapplingHook.CanUseAbility())
             {
@@ -156,12 +164,11 @@ namespace Player
                 return;
             }
 
-
-            Vector2 dir = LastFacingDir;
-            grapplingHook.RequestFireGrapple(dir);
+            grapplingHook.RequestFireGrapple(LastFacingDir);
 
             if (animationDriver != null) animationDriver.PlayGrappleCast();
         }
+
 
         public void ApplyLoadout(SigilDefinition swordSigil, SigilDefinition shieldSigil, SigilDefinition grappleSigil)
         {

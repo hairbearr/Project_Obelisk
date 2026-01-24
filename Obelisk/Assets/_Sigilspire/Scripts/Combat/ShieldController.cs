@@ -2,10 +2,11 @@ using UnityEngine;
 using Unity.Netcode;
 using UnityEngine.InputSystem;
 using Combat.AbilitySystem;
+using Combat.DamageInterfaces;
 
 namespace Combat
 {
-    public class ShieldController : NetworkBehaviour, IWeaponController
+    public class ShieldController : NetworkBehaviour, IWeaponController, IBlockProvider
     {
         #region Inspector - Animator Names
 
@@ -38,6 +39,15 @@ namespace Combat
         [SerializeField] private float baseRegenDelay = 2f;
         [SerializeField] private float baseRegenRate = 15f;
 
+        [Header("Block Rules")]
+        [SerializeField, Range(30f, 180f)] private float blockArcDegrees = 120f;
+        [SerializeField] private float damageToEnergyRatio = 1f;   // 1 damage drains 1 energy
+        [SerializeField] private float minEnergyToBlock = 0.5f;    // prevents “blocking” at 0
+
+        // For gizmos + optional extra rule: how far away an attacker can be and still be blocked.
+        // If you only care about arc (not distance), set this to something large like 10+.
+        [SerializeField] private float blockRadius = 1.25f;
+
         #endregion
 
         #region Inspector - Visual References
@@ -54,16 +64,23 @@ namespace Combat
         public NetworkVariable<float> ShieldEnergy = new NetworkVariable<float>();
         public NetworkVariable<bool> IsBroken = new NetworkVariable<bool>();
 
+        public NetworkVariable<bool> IsBlockingNet = new NetworkVariable<bool>(
+            false,
+            NetworkVariableReadPermission.Everyone,
+            NetworkVariableWritePermission.Server
+        );
+
         #endregion
 
         #region Runtime State
 
         private GameObject blockVfxPrefab;
-
         private float lastHitTime;
 
-        private bool isBlocking;       // authoritative (server)
         private bool localIsBlocking;  // owner-only input state for freezing anim
+
+        // Editor preview facing if animator isn't available in edit-mode.
+        [SerializeField] private Vector2 gizmoFacingPreview = Vector2.up;
 
         #endregion
 
@@ -78,13 +95,16 @@ namespace Combat
                 equippedSigilId = equippedSigil.id;
         }
 
-        private void Start()
+        public override void OnNetworkSpawn()
         {
-            if (!IsServer) return;
+            base.OnNetworkSpawn();
 
-            float maxEnergy = GetEffectiveMaxShieldEnergy();
-            ShieldEnergy.Value = maxEnergy;
-            IsBroken.Value = false;
+            if (IsServer)
+            {
+                ShieldEnergy.Value = GetEffectiveMaxShieldEnergy();
+                IsBroken.Value = false;
+                IsBlockingNet.Value = false;
+            }
         }
 
         private void Update()
@@ -92,7 +112,6 @@ namespace Combat
             if (!IsServer) return;
 
             if (IsBroken.Value) return;
-
             if (Time.time - lastHitTime <= GetEffectiveRegenDelay()) return;
 
             float maxEnergy = GetEffectiveMaxShieldEnergy();
@@ -169,15 +188,8 @@ namespace Combat
             return baseMaxShieldEnergy * (1f + modifier);
         }
 
-        private float GetEffectiveRegenDelay()
-        {
-            return baseRegenDelay;
-        }
-
-        private float GetEffectiveRegenRate()
-        {
-            return baseRegenRate;
-        }
+        private float GetEffectiveRegenDelay() => baseRegenDelay;
+        private float GetEffectiveRegenRate() => baseRegenRate;
 
         #endregion
 
@@ -218,33 +230,80 @@ namespace Combat
         [ServerRpc]
         private void SetBlockingServerRpc(bool blocking)
         {
-            isBlocking = blocking;
+            IsBlockingNet.Value = blocking;
         }
 
         #endregion
 
-        #region Damage Application (Server)
+        #region IBlockProvider
 
-        public void ApplyIncomingDamage(float amount)
+        public bool TryBlock(Vector2 attackerWorldPos, float incomingDamage, out float damageAfterBlock)
         {
-            if (!IsServer) return;
+            damageAfterBlock = incomingDamage;
 
-            if (!isBlocking) return;
-            if (IsBroken.Value) return;
+            if (!IsServer) return false;
+            if (!IsBlockingNet.Value) return false;
+            if (IsBroken.Value) return false;
+            if (incomingDamage <= 0f) return false;
+            if (ShieldEnergy.Value < minEnergyToBlock) return false;
 
+            Vector2 forward = GetFacingForBlock();
+            if (forward.sqrMagnitude < 0.0001f)
+                forward = Vector2.up;
+
+            Vector2 toAttacker = attackerWorldPos - (Vector2)transform.position;
+            if (toAttacker.sqrMagnitude < 0.0001f) return false;
+
+            // Optional distance gate (so "block arc" doesn't protect you from across the room)
+            if (blockRadius > 0f && toAttacker.sqrMagnitude > blockRadius * blockRadius)
+                return false;
+
+            float angle = Vector2.Angle(forward, toAttacker.normalized);
+            if (angle > blockArcDegrees * 0.5f) return false;
+
+            // Spend energy
             lastHitTime = Time.time;
-            ShieldEnergy.Value -= amount;
+
+            float energyCost = incomingDamage * damageToEnergyRatio;
+            float spend = Mathf.Min(ShieldEnergy.Value, energyCost);
+            ShieldEnergy.Value -= spend;
 
             if (ShieldEnergy.Value <= 0f)
             {
                 ShieldEnergy.Value = 0f;
                 BreakShield();
             }
+
+            // Block proportional to energy spent
+            float blockedDamage = (energyCost <= 0.0001f) ? incomingDamage : incomingDamage * (spend / energyCost);
+            damageAfterBlock = Mathf.Max(0f, incomingDamage - blockedDamage);
+
+            return blockedDamage > 0f;
+        }
+
+        private Vector2 GetFacingForBlock()
+        {
+            // Prefer animator floats (matches your current system)
+            if (weaponAnimator != null)
+            {
+                float x = weaponAnimator.GetFloat("MoveX");
+                float y = weaponAnimator.GetFloat("MoveY");
+                Vector2 f = new Vector2(x, y);
+                if (f.sqrMagnitude > 0.0001f)
+                    return f.normalized;
+            }
+
+            // Fallback for edit mode / missing animator
+            if (gizmoFacingPreview.sqrMagnitude > 0.0001f)
+                return gizmoFacingPreview.normalized;
+
+            return Vector2.up;
         }
 
         private void BreakShield()
         {
             IsBroken.Value = true;
+            IsBlockingNet.Value = false; // auto-drop block when broken (optional)
         }
 
         #endregion
@@ -264,8 +323,8 @@ namespace Combat
         {
             var stats = GetCurrentStats();
 
-            if(stats.cooldown >0f) return stats.cooldown;
-            if(baseAbility!=null && baseAbility.cooldown > 0f) return baseAbility.cooldown;
+            if (stats.cooldown > 0f) return stats.cooldown;
+            if (baseAbility != null && baseAbility.cooldown > 0f) return baseAbility.cooldown;
 
             return 0f;
         }
@@ -277,7 +336,7 @@ namespace Combat
             if (!enforceAbilityCooldown) return true;
 
             float cd = GetEffectiveAbilityCooldown();
-            if(cd <= 0f) return false;
+            if (cd <= 0f) return false;
 
             return (Time.time - lastAbilityUseTimeLocal) >= cd;
         }
@@ -291,7 +350,7 @@ namespace Combat
             if (cd <= 0f) return 0f;
 
             float elapsed = Time.time - lastAbilityUseTimeLocal;
-            return Mathf.Max(0f, cd -  elapsed);
+            return Mathf.Max(0f, cd - elapsed);
         }
 
         private void ConsumeAbilityCooldownLocal()
@@ -303,6 +362,53 @@ namespace Combat
         private void UseAbilityServerRpc()
         {
             // Implement shield bash or other shield ability here
+        }
+
+        #endregion
+
+        #region Gizmos (Editor)
+
+        private void OnDrawGizmosSelected()
+        {
+            Vector2 origin = transform.position;
+            Vector2 forward = GetFacingForBlock();
+
+            // ---- Draw block radius ----
+            Gizmos.color = new Color(0.2f, 0.6f, 1f, 1f); // blue-ish
+            if (blockRadius > 0f)
+                Gizmos.DrawWireSphere(origin, blockRadius);
+
+            // ---- Draw block arc ----
+            float halfArc = blockArcDegrees * 0.5f;
+            int steps = 24;
+
+            Vector3 prevPoint = origin + Rotate(forward, -halfArc) * blockRadius;
+
+            for (int i = 1; i <= steps; i++)
+            {
+                float t = i / (float)steps;
+                float angle = Mathf.Lerp(-halfArc, halfArc, t);
+                Vector3 nextPoint = origin + Rotate(forward, angle) * blockRadius;
+
+                Gizmos.DrawLine(prevPoint, nextPoint);
+                prevPoint = nextPoint;
+            }
+
+            // ---- Draw forward line ----
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawLine(origin, origin + forward * blockRadius);
+        }
+
+        private Vector2 Rotate(Vector2 v, float degrees)
+        {
+            float rad = degrees * Mathf.Deg2Rad;
+            float sin = Mathf.Sin(rad);
+            float cos = Mathf.Cos(rad);
+
+            return new Vector2(
+                cos * v.x - sin * v.y,
+                sin * v.x + cos * v.y
+            );
         }
 
         #endregion

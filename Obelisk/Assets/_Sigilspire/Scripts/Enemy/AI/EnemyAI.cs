@@ -111,14 +111,18 @@ namespace Enemy
 
             if (currentTarget != null)
             {
-                if (!attackLocked) { HandleMovement(); }
+                if (!attackLocked)
+                {
+                    HandleMovement();
+                    TryAttack();
+                }
                 else
                 {
                     animDriver?.SetFacing(lastFacingDir);
                     animDriver?.SetMovement(Vector2.zero); 
                 }
 
-                    TryAttack();
+                    
             }
             else
             {
@@ -377,9 +381,14 @@ namespace Enemy
 
         private void TryAttack()
         {
-            if (primaryAbility == null || currentTarget == null) return;
-            if (Time.time - lastAttackTime < primaryAbility.cooldown) return;
+            if (Time.time < attackLockUntil) return;
 
+            if (primaryAbility == null || currentTarget == null) return;
+
+            float cd = Mathf.Max(0.15f, primaryAbility.cooldown);
+            if (Time.time - lastAttackTime < cd) return;
+
+            
             Vector2 toTarget = (Vector2)currentTarget.position - rb2D.position;
             float distance = toTarget.magnitude;
 
@@ -399,6 +408,7 @@ namespace Enemy
                     // fallback if colliders missing
                     if (distance > attackRange) return;
                 }
+
 
                 lastAttackTime = Time.time;
                 attackLockUntil = Time.time + attackLockTime;
@@ -453,10 +463,15 @@ namespace Enemy
             Vector2 attackDir = facingDir.sqrMagnitude > 0.0001f ? facingDir.normalized : Vector2.down;
 
             animDriver?.PlayAttack(attackDir);
+            
 
             IDamageable dmg = target.GetComponentInParent<IDamageable>();
             if (dmg != null && ability.damage > 0f)
+            {
+                Debug.Log($"[EnemyAI] ATTACK dmg={primaryAbility.damage} cd={primaryAbility.cooldown} t={Time.time}");
                 dmg.TakeDamage(ability.damage, NetworkObjectId);
+            }
+                
 
             if (ability.vfxPrefab != null)
             {

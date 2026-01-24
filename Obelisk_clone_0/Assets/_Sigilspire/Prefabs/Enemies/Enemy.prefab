@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: 4694913565097134589}
   - component: {fileID: 2271145318052728466}
   - component: {fileID: 426879209344388932}
+  - component: {fileID: 737629954192953947}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
@@ -164,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3218549926
+  GlobalObjectIdHash: 595022958
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -273,20 +274,21 @@ MonoBehaviour:
   targetLayers:
     serializedVersion: 2
     m_Bits: 256
-  moveSpeed: 3
+  moveSpeed: 1
   stoppingDistance: 1.5
   enemyCollider: {fileID: 0}
   knockbackMoveLockTime: 0.12
   primaryAbility: {fileID: 11400000, guid: da8ef7497755cb2468cd73b0f51a9a38, type: 2}
   attackRange: 1.8
   attackLockTime: 0.2
+  facingEpsilon: 0.001
   threatTracker: {fileID: 0}
   retargetInterval: 0.25
   attackMode: 0
   rangedMaxRange: 8
   lineOfSightMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   rangedStopDistance: 5
   kiteDeadZone: 0.75
   kiteDecisionCooldown: 0.8
@@ -324,3 +326,19 @@ MonoBehaviour:
   maxKnockbackSpeed: 30
   knockbackResistance: 0
   knockbackCooldown: 0.15
+--- !u!114 &737629954192953947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6205151091289128448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373586dcc50edc44fade682d5cca2d57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GrappleTarget
+  ShowTopMostFoldoutHeaderGroup: 1
+  pullToPlayer: 1
+  stopDistanceFromSurface: 0.5
+  minDistanceToStop: 0.2

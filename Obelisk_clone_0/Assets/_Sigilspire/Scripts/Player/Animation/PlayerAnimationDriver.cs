@@ -12,6 +12,8 @@ namespace Player
         [SerializeField] private Animator shieldAnimator;
         [SerializeField] private Animator grappleAnimator;
 
+        private bool pendingUnlock;
+
         private bool localIsShielding;
 
         private PlayerController _player;
@@ -19,11 +21,6 @@ namespace Player
         private void Awake()
         {
             _player = GetComponent<PlayerController>();
-
-            Debug.Log("SwordController: swordAnimator = " + (swordAnimator != null ? swordAnimator.name : "null"));
-            Debug.Log("ShieldController: shieldAnimator = " + (shieldAnimator != null ? shieldAnimator.name : "null"));
-            Debug.Log("GrappleController: grappleAnimator = " + (grappleAnimator != null ? grappleAnimator.name : "null"));
-
         }
 
         public override void OnNetworkSpawn()
@@ -40,64 +37,91 @@ namespace Player
             if (!IsOwner) return;
             if (_player == null) return;
 
-            
-
             Vector2 move = _player.CurrentMoveInput;
             float speed = Mathf.Clamp01(move.magnitude);
 
-
             Vector2 facing = _player.LastFacingDir;
 
-            if (playerAnimator != null)
-            {
-                playerAnimator.SetFloat("MoveX", facing.x);
-                playerAnimator.SetFloat("MoveY", facing.y);
-                playerAnimator.SetFloat("Speed", speed);
-            }
-
-            SetWeaponFloats(swordAnimator, facing, speed);
-            SetWeaponFloats(shieldAnimator, facing, speed);
-            SetWeaponFloats(grappleAnimator, facing, speed);
-
+            SetAnimFloats(playerAnimator, facing, speed);
+            SetAnimFloats(swordAnimator, facing, speed);
+            SetAnimFloats(shieldAnimator, facing, speed);
+            SetAnimFloats(grappleAnimator, facing, speed);
         }
+
+        private void SetAnimFloats(Animator anim, Vector2 facing, float speed)
+        {
+            if (anim == null) return;
+
+            anim.SetFloat("MoveX", facing.x);
+            anim.SetFloat("MoveY", facing.y);
+            anim.SetFloat("Speed", speed);
+        }
+
+        public void SetShielding(bool shielding)
+        {
+            localIsShielding = shielding;
+
+            if (localIsShielding)
+            {
+                pendingUnlock = false;
+                // Make sure RaiseShield can play
+                SetAnimSpeed(1f);
+            }
+            else
+            {
+                // We want to unlock movement when LowerShield completes
+                pendingUnlock = true;
+
+                // Ensure LowerShield can play
+                SetAnimSpeed(1f);
+            }
+        }
+
 
         private void LateUpdate()
         {
             if (!IsOwner) return;
-            if (playerAnimator  == null) return;
-
-            //if (!localIsShielding) return;
+            if (playerAnimator == null) return;
 
             AnimatorStateInfo s = playerAnimator.GetCurrentAnimatorStateInfo(0);
 
-            // freeze body at the end of RaiseShield while held
-            if(localIsShielding && s.IsName("RaiseShield") && s.normalizedTime >= 1f)
+            // While holding block: once RaiseShield finishes, freeze everything.
+            if (localIsShielding && s.IsName("RaiseShield") && s.normalizedTime >= 1f)
             {
-                playerAnimator.speed = 0f;
+                // Pin the state to last frame (prevents drift)
                 playerAnimator.Play("RaiseShield", 0, 1f);
+
+                // Freeze player + weapons (since you don't allow other actions anyway)
+                SetAnimSpeed(0f);
                 return;
             }
 
-            if( !localIsShielding && s.IsName("LowerShield") && s.normalizedTime >= 1f)
+            // When releasing: ensure anims can play LowerShield
+            if (!localIsShielding)
             {
-                playerAnimator.speed = 1f;
+                // Always unfreeze so LowerShield can progress
+                if (playerAnimator.speed == 0f) SetAnimSpeed(1f);
 
-                if(_player != null)
+                // Unlock movement after LowerShield ends (once)
+                if (pendingUnlock && s.IsName("LowerShield") && s.normalizedTime >= 1f)
                 {
-                    print("lowering shield from PlayerAnimationDriver");
-                    _player.SetMovementLocked(false);
+                    pendingUnlock = false;
+                    if (_player != null) _player.SetMovementLocked(false);
                 }
             }
         }
 
 
-        private void SetWeaponFloats(Animator anim, Vector2 move, float speed)
+
+
+        private void SetWeaponFloats(Animator anim, Vector2 facing, float speed)
         {
             if (anim == null) return;
-            anim.SetFloat("MoveX", move.x);
-            anim.SetFloat("MoveY", move.y);
+            anim.SetFloat("MoveX", facing.x);
+            anim.SetFloat("MoveY", facing.y);
             anim.SetFloat("Speed", speed);
         }
+
 
         public void PlaySwordSlash()
         {
@@ -145,13 +169,14 @@ namespace Player
             playerAnimator.SetTrigger("GrappleRetract");
         }
 
-        public void SetShielding(bool shielding)
+        private void SetAnimSpeed(float speed)
         {
-            localIsShielding = shielding;
-
-            // if we are releasing, make sure the animator can play again.
-            if (!localIsShielding && playerAnimator != null && playerAnimator.speed == 0f) playerAnimator.speed = 1f;
+            if (playerAnimator != null) playerAnimator.speed = speed;
+            if (swordAnimator != null) swordAnimator.speed = speed;
+            if (shieldAnimator != null) shieldAnimator.speed = speed;
+            if (grappleAnimator != null) grappleAnimator.speed = speed;
         }
+
 
     }
 }

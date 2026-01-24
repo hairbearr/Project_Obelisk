@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Combat.AbilitySystem.Ability
   abilityName: Sword Slash
   type: 0
-  cooldown: 0.25
+  cooldown: 0.8
   resourceCost: 0
   direction: 2
   damage: 1
@@ -22,3 +22,5 @@ MonoBehaviour:
   shieldEnergyModifier: 0
   grappleForce: 0
   vfxPrefab: {fileID: 0}
+  windupSeconds: 0.35
+  activeSeconds: 0.05

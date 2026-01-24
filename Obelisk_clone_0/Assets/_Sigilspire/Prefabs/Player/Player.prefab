@@ -375,7 +375,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.368, y: -0.111, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2936174483584434782}
@@ -397,7 +397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1956053647
+  GlobalObjectIdHash: 1600610909
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -488,7 +488,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   animationDriver: {fileID: 0}
-  moveSpeed: 15
+  moveSpeed: 3
   moveInput: {x: 0, y: 0}
   sword: {fileID: 0}
   shield: {fileID: 0}
@@ -544,6 +544,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   NetworkTransformExpanded: 1
+  AutoOwnerAuthorityTickOffset: 1
+  PositionInterpolationType: 0
+  RotationInterpolationType: 0
+  ScaleInterpolationType: 0
+  PositionLerpSmoothing: 1
+  PositionMaxInterpolationTime: 0.1
+  RotationLerpSmoothing: 1
+  RotationMaxInterpolationTime: 0.1
+  ScaleLerpSmoothing: 1
+  ScaleMaxInterpolationTime: 0.1
   AuthorityMode: 1
   TickSyncChildren: 0
   UseUnreliableDeltas: 0
@@ -705,11 +715,12 @@ MonoBehaviour:
   equippedSigil: {fileID: 11400000, guid: 9dcd4ecc1f048e644acdbb91e01424cc, type: 2}
   equippedSigilId: grapple_default
   sigilInventory: {fileID: 7608890470901692854}
-  maxDistance: 25
+  maxDistance: 2.5
   grappleLayers:
     serializedVersion: 2
     m_Bits: 192
-  minDistanceToStop: 0.52
+  minDistanceToStop: 0.1
+  serverGrappleTarget: {fileID: 0}
   castDuration: 0.35
   retractDuration: 0.25
   weaponAnimator: {fileID: 2663175753877607411}
@@ -722,7 +733,7 @@ MonoBehaviour:
   IsGrappling:
     m_InternalValue: 0
   localPressDebounce: 0.1
-  stopDistanceFromSurface: 0.25
+  stopDistanceFromSurface: 0.5
 --- !u!114 &1555782169865307800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -740,18 +751,18 @@ MonoBehaviour:
   equippedSigil: {fileID: 11400000, guid: c462ed4864449ac4097d961508dfddcd, type: 2}
   equippedSigilId: sword_default
   sigilInventory: {fileID: 7608890470901692854}
-  hitWindupSeconds: 0.12
+  hitWindupSeconds: 0.35
   hitActiveSeconds: 0.05
   useWindupTiming: 1
   weaponAnimator: {fileID: 3715217323501954718}
   swordRenderer: {fileID: 4217421764613162781}
   vfxSpawnPoint: {fileID: 8063220511822114338}
-  hitRadius: 2.9
+  hitRadius: 0.5
   hitLayers:
     serializedVersion: 2
     m_Bits: 64
   attackArcDegrees: 110
-  hitForwardOffset: 2
+  hitForwardOffset: 0.3
   northSouthMultiplier: 1
   diagonalMultiplier: 1
   eastWestMultiplier: 1.1
@@ -780,6 +791,10 @@ MonoBehaviour:
   baseMaxShieldEnergy: 100
   baseRegenDelay: 2
   baseRegenRate: 15
+  blockArcDegrees: 120
+  damageToEnergyRatio: 1
+  minEnergyToBlock: 0.5
+  blockRadius: 1.25
   weaponAnimator: {fileID: 7578368500156746380}
   shieldRenderer: {fileID: 8830746651959417608}
   vfxSpawnPoint: {fileID: 1349328767423696752}
@@ -787,6 +802,9 @@ MonoBehaviour:
     m_InternalValue: 0
   IsBroken:
     m_InternalValue: 0
+  IsBlockingNet:
+    m_InternalValue: 0
+  gizmoFacingPreview: {x: 0, y: 1}
 --- !u!1 &2094233075969275182
 GameObject:
   m_ObjectHideFlags: 0
@@ -1640,8 +1658,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.22329561
-        value: 0.14435947
+        time: 0.18336336
+        value: 0.015788913
         inSlope: -2.2227092
         outSlope: -2.2227092
         tangentMode: 0

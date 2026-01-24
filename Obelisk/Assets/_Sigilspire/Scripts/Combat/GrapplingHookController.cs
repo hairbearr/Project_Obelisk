@@ -29,6 +29,7 @@ namespace Combat
         [SerializeField] private float maxDistance = 10f;
         [SerializeField] private LayerMask grappleLayers;
         [SerializeField] private float minDistanceToStop = 0.2f;
+        [SerializeField] private GrappleTarget serverGrappleTarget;
 
         [Header("Timing")]
         [SerializeField] private float castDuration = 0.35f;
@@ -122,11 +123,11 @@ namespace Combat
             phase.OnValueChanged += OnPhaseChanged;
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             // server runs the grapple simulation and phase transitions.
             if (!IsServer) return;
-            ServerTick();
+            ServerTick(Time.fixedDeltaTime);
         }
 
         private void LateUpdate()
@@ -138,6 +139,17 @@ namespace Combat
         public override void OnNetworkDespawn()
         {
             phase.OnValueChanged -= OnPhaseChanged;
+
+            if (IsServer)
+            {
+                ClearPullCollisionIgnore();
+
+                if (serverGrappleTarget != null)
+                {
+                    serverGrappleTarget.ServerEndGrapple();
+                    serverGrappleTarget = null;
+                }
+            }
         }
         #endregion
 
@@ -271,7 +283,14 @@ namespace Combat
         [ServerRpc]
         private void FireGrappleServerRpc(Vector2 direction)
         {
-            Debug.Log($"[SERVER] Grapple RPC fired. IsServer={IsServer} Owner={OwnerClientId}");
+
+            // If we were somehow still holding an old grapple target, release it.
+            if(serverGrappleTarget != null)
+            {
+                serverGrappleTarget.ServerEndGrapple();
+                serverGrappleTarget = null;
+            }
+            ClearPullCollisionIgnore();
 
             direction = direction.sqrMagnitude > 0.0001f ? direction.normalized : Vector2.up;
 
@@ -295,7 +314,8 @@ namespace Combat
 
             if (serverHasHit)
             {
-                // Pull rules: enemy to player OR player to point
+                serverGrappleTarget = null;
+
                 var pullable = hit.collider.GetComponentInParent<IGrapplePullable>();
                 serverPullable = pullable;
 
@@ -303,14 +323,16 @@ namespace Combat
                 {
                     serverPullEnemyToPlayer = true;
 
-                    // Cache RB for collision distance + position fallback
-                    serverPulledEnemyRb = hit.collider.GetComponentInParent<Rigidbody2D>();
-
                     var no = hit.collider.GetComponentInParent<NetworkObject>();
                     if (no != null)
                     {
                         serverPulledEnemy = no;
+                        serverPulledEnemyRb = no.GetComponentInParent<Rigidbody2D>();
                         attachedEnemyId.Value = no.NetworkObjectId;
+
+                        serverGrappleTarget = no.GetComponentInParent<GrappleTarget>();
+                        if (serverGrappleTarget != null)
+                            serverGrappleTarget.ServerBeginGrapple();
                     }
                 }
 
@@ -341,7 +363,7 @@ namespace Combat
         #endregion
 
         #region Server Simulation
-        private void ServerTick()
+        private void ServerTick(float dt)
         {
             byte p = phase.Value;
             if (p == PhaseNone) return;
@@ -376,10 +398,18 @@ namespace Combat
                 var stats = GetCurrentStats();
                 float pullSpeed = GetEffectivePullSpeed(stats);
 
-                bool complete = ServerSimulatePull(pullSpeed, Time.deltaTime);
+                bool complete = ServerSimulatePull(pullSpeed, dt);
 
                 if (complete)
                 {
+                    ClearPullCollisionIgnore();
+                 
+                    if(serverGrappleTarget != null)
+                    {
+                        serverGrappleTarget.ServerEndGrapple();
+                        serverGrappleTarget = null;
+                    }
+
                     // When pull finishes, immediately retract.
                     phase.Value = PhaseRetracting;
                     phaseStartServerTime.Value = now;
@@ -392,13 +422,28 @@ namespace Combat
                 // When retract finishes, end grapple.
                 if (elapsed >= retractDuration)
                 {
+
+                    ClearPullCollisionIgnore();
+
                     phase.Value = PhaseNone;
                     phaseStartServerTime.Value = now;
 
                     IsGrappling.Value = false;
                     serverHasHit = false;
                     attachedEnemyId.Value = 0;
-                    ClearPullCollisionIgnore();
+
+                    // clear grapple flag
+                    if (serverGrappleTarget != null)
+                    {
+                        serverGrappleTarget.ServerEndGrapple();
+                        serverGrappleTarget = null;
+                    }
+
+                    // also clear other cached refs
+                    serverPullable = null;
+                    serverPulledEnemy = null;
+                    serverPulledEnemyRb = null;
+                    serverPullEnemyToPlayer = false;
                 }
                 return;
             }
@@ -431,13 +476,22 @@ namespace Combat
                     playerCollider != null ? playerCollider.ClosestPoint(enemyPosForClosest)
                     : (Vector2)playerRb.position;
 
-                serverPulledEnemyCol = serverHitCollider.GetComponentInParent<Collider2D>();
-                if(playerCollider !=null && serverPulledEnemyCol != null)
+                // #2: Ignore collision ONCE at the start of pull (prevents shoving / slowdown)
+                if (!ignoringPullCollision && playerCollider != null)
                 {
-                    Physics2D.IgnoreCollision(playerCollider, serverPulledEnemyCol, true);
-                    ignoringPullCollision = true;
-                }
+                    // Prefer the pulled enemy RB collider, or the grapple target collider
+                    Collider2D enemyCol =
+                        serverPulledEnemyRb != null ? serverPulledEnemyRb.GetComponent<Collider2D>() :
+                        serverGrappleTarget != null ? serverGrappleTarget.GetComponent<Collider2D>() :
+                        null;
 
+                    if (enemyCol != null)
+                    {
+                        serverPulledEnemyCol = enemyCol;
+                        Physics2D.IgnoreCollision(playerCollider, serverPulledEnemyCol, true);
+                        ignoringPullCollision = true;
+                    }
+                }
 
                 // Let the pullable implement how it moves (RB MovePosition, etc.)
                 serverPullable.PullTowards(pullPoint, pullSpeed);
@@ -509,6 +563,7 @@ namespace Combat
             playerRb.MovePosition(playerPos + toTarget2.normalized * step);
             return false;
         }
+
         #endregion
 
         #region Client Visuals / Animations

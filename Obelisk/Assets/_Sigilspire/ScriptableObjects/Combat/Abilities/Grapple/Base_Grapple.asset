@@ -20,5 +20,7 @@ MonoBehaviour:
   damage: 2
   knockbackForce: 0
   shieldEnergyModifier: 0
-  grappleForce: 50
+  grappleForce: 10
   vfxPrefab: {fileID: 0}
+  windupSeconds: 0.12
+  activeSeconds: 0.05

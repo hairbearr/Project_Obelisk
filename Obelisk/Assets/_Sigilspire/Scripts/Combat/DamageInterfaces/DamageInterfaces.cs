@@ -23,4 +23,9 @@ namespace Combat.DamageInterfaces
         /// </summary>
         void ApplyKnockback(Vector2 direction, float force);
     }
+
+    public interface IBlockProvider
+    {
+        bool TryBlock(Vector2 attackerWorldPos, float incomingDamage, out float afterBlock);
+    }
 }

@@ -2,7 +2,6 @@ using Combat.DamageInterfaces;
 using Unity.Netcode;
 using UnityEngine;
 
-
 [RequireComponent(typeof(Rigidbody2D))]
 public class GrappleTarget : NetworkBehaviour, IGrapplePullable
 {
@@ -10,18 +9,20 @@ public class GrappleTarget : NetworkBehaviour, IGrapplePullable
     [SerializeField] private bool pullToPlayer = true;
 
     [Header("Stop Tuning")]
-    //[Tooltip("Stop when collider-to-collider distance is <= this.")]
-    //[SerializeField] private float stopDistanceFromSurface = 0.25f;
-
-    [Tooltip("Fallback epsilon so we don't jitter forever")]
+    [SerializeField] private float stopDistanceFromSurface = 0.25f;
     [SerializeField] private float minDistanceToStop = 0.02f;
-
-    private bool isBeingGrappled = false;
 
     private Rigidbody2D rb;
     private Collider2D col;
 
-    public bool IsBeingGrappled => isBeingGrappled;
+    // Networked so everyone can know (optional, but useful)
+    private readonly NetworkVariable<bool> isBeingGrappled = new NetworkVariable<bool>(
+        false,
+        NetworkVariableReadPermission.Everyone,
+        NetworkVariableWritePermission.Server
+    );
+
+    public bool IsBeingGrappled => isBeingGrappled.Value;
 
     private void Awake()
     {
@@ -31,12 +32,23 @@ public class GrappleTarget : NetworkBehaviour, IGrapplePullable
 
     public bool ShouldPullToPlayer() => pullToPlayer;
 
+    // server-only setters
+    public void ServerBeginGrapple()
+    {
+        if (!IsServer) return;
+        isBeingGrappled.Value = true;
+    }
+
+    public void ServerEndGrapple()
+    {
+        if (!IsServer) return;
+        isBeingGrappled.Value = false;
+    }
+
     public void PullTowards(Vector2 point, float speed)
     {
         if (!IsServer) return;
         if (rb == null) return;
-
-        isBeingGrappled = true;
 
         float step = speed * Time.deltaTime;
 
@@ -46,8 +58,9 @@ public class GrappleTarget : NetworkBehaviour, IGrapplePullable
 
         if (dist < minDistanceToStop) return;
 
-        // try to stop short of the point
         Vector2 desired = point;
+        if (dist > 0.0001f)
+            desired = point - (toPoint.normalized * stopDistanceFromSurface);
 
         Vector2 toDesired = desired - pos;
         float d = toDesired.magnitude;
@@ -55,10 +68,15 @@ public class GrappleTarget : NetworkBehaviour, IGrapplePullable
         if (d <= minDistanceToStop || d <= step)
         {
             rb.MovePosition(desired);
-            isBeingGrappled = false;
             return;
         }
 
         rb.MovePosition(pos + toDesired.normalized * step);
+    }
+
+    public override void OnNetworkDespawn()
+    {
+        // clear if despawned while grappled
+        if (IsServer) isBeingGrappled.Value = false;
     }
 }
