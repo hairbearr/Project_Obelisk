@@ -23,6 +23,10 @@ namespace Combat
         [SerializeField] private float hitActiveSeconds = 0.05f; // how long the hitbox is active
         [SerializeField] private bool useWindupTiming = true;
 
+        private readonly Dictionary<ulong, float> serverLastHitTimeByTarget = new Dictionary<ulong, float>(32);
+        [SerializeField] private float perTargetRehitLockSeconds = 0.25f;
+
+
         private Coroutine serverAttackRoutine;
 
         #endregion
@@ -212,6 +216,7 @@ namespace Combat
                 weaponAnimator.SetTrigger("SwordSlash");
             }
 
+            double pressedServerTime = NetworkManager.Singleton.ServerTime.Time;
             UseAbilityServerRpc(dir);
             lastDebugAttackDir = dir;
         }
@@ -273,7 +278,6 @@ namespace Combat
         [ServerRpc]
         private void UseAbilityServerRpc(Vector2 direction)
         {
-            Debug.Log($"[SERVER] Sword attack received dir={direction} time={Time.time}");
             var stats = GetCurrentStats();
 
             if (serverAttackRoutine != null)
@@ -283,26 +287,20 @@ namespace Combat
         }
 
 
+
+
+
         private System.Collections.IEnumerator Server_DoSwordHit(Vector2 direction, EffectiveAbilityStats stats)
         {
-            // Prefer effective stats, fallback to baseAbility, then inspector tuning.
             float windup = GetEffectiveWindup(stats);
             if (windup <= 0f) windup = hitWindupSeconds;
-
-            float active = GetEffectiveActiveTime(stats);
-            if (active <= 0f) active = hitActiveSeconds;
-
-            float damage = stats.damage > 0f ? stats.damage : (baseAbility != null ? baseAbility.damage : 0f);
-
-            Debug.Log($"[SERVER] windup={windup} active={active} damage={damage}");
 
             if (useWindupTiming && windup > 0f)
                 yield return new WaitForSeconds(windup);
 
             DoSwordOverlap(direction, stats);
-
-            yield return null;
         }
+
 
 
         private void DoSwordOverlap(Vector2 direction, EffectiveAbilityStats stats)
@@ -316,7 +314,6 @@ namespace Combat
             Vector2 origin = (Vector2)transform.position + dir * offset;
 
             Collider2D[] hits = Physics2D.OverlapCircleAll(origin, hitRadius, hitLayers);
-
             float halfArc = attackArcDegrees * 0.5f;
 
             // Prefer "attacker root" exclusion
@@ -346,12 +343,28 @@ namespace Combat
 
                 Vector2 toNorm = to.normalized;
 
+                // must be in front
                 if (Vector2.Dot(dir, toNorm) <= 0f)
                     continue;
 
                 float angle = Vector2.Angle(dir, toNorm);
                 if (angle > halfArc)
                     continue;
+
+                // Resolve target NetworkObject (for the hard guarantee)
+                var targetNO = hit.GetComponentInParent<NetworkObject>();
+                ulong targetId = targetNO != null ? targetNO.NetworkObjectId : 0;
+
+                // ---- HARD GUARANTEE: per-target re-hit lock (server side) ----
+                if (targetId != 0)
+                {
+                    if (serverLastHitTimeByTarget.TryGetValue(targetId, out float lastHit) &&
+                        Time.time - lastHit < perTargetRehitLockSeconds)
+                    {
+                        continue;
+                    }
+                    serverLastHitTimeByTarget[targetId] = Time.time;
+                }
 
                 // Attacker id should be the player/root NO, not the sword child
                 ulong attackerId = NetworkObjectId;
@@ -378,6 +391,8 @@ namespace Combat
 
             PlayAttackVfxClientRpc(dir);
         }
+
+
 
 
 

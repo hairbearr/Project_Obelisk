@@ -29,21 +29,23 @@ namespace Enemy
 
         protected override void OnDeath()
         {
-            if (IsServer)
-            {
-                Debug.Log("I've Died");
-                NetworkObject.Despawn();
-            }
+            if (!IsServer) return;
+
+            if (TryGetComponent<GrappleTarget>(out var gt))
+                gt.ServerEndGrapple();
+
+            NetworkObject.Despawn();
         }
+
 
         public void ApplyKnockback(Vector2 direction, float force)
         {
             if (!IsServer) return;
             if (_rb2D == null) return;
             if (force <= 0f) return;
+
             if (TryGetComponent<GrappleTarget>(out var gt) && gt.IsBeingGrappled)
                 return;
-
 
             if (Time.time < nextKnockbackTime) return;
             nextKnockbackTime = Time.time + knockbackCooldown;
@@ -54,13 +56,14 @@ namespace Enemy
             float effectiveForce = force * (1f - knockbackResistance);
             if (effectiveForce <= 0f) return;
 
-            _rb2D.AddForce(direction.normalized * effectiveForce, ForceMode2D.Impulse);
-            _rb2D.linearVelocity = Vector2.ClampMagnitude(_rb2D.linearVelocity, maxKnockbackSpeed);
             Vector2 velBefore = _rb2D.linearVelocity;
+
             _rb2D.AddForce(direction.normalized * effectiveForce, ForceMode2D.Impulse);
             _rb2D.linearVelocity = Vector2.ClampMagnitude(_rb2D.linearVelocity, maxKnockbackSpeed);
-            Debug.Log($"KB {name} force={effectiveForce} velBefore={velBefore} velAfter={_rb2D.linearVelocity}");
 
+            Debug.Log($"KB {name} force={effectiveForce} velBefore={velBefore} velAfter={_rb2D.linearVelocity}");
         }
+
+
     }
 }

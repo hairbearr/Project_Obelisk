@@ -57,11 +57,6 @@ namespace Player
         {
             if (!IsOwner) return;
 
-            if (Keyboard.current != null && Keyboard.current.wKey.wasPressedThisFrame)
-            {
-                Debug.Log("W pressed (raw keyboard check).");
-            }
-
             if (isShieldingLocal)
             {
                 // hard stop input so animations also go idle

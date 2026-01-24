@@ -55,7 +55,6 @@ namespace Combat.Health
             if (!initialized) return;
             if (amount <= 0f) return;
 
-            Debug.Log($"[DMG] {name} took {amount} from {attackerId} at t={Time.time}\n{System.Environment.StackTrace}");
 
 
             // Look up attacker position (for directional block)

@@ -369,19 +369,24 @@ namespace Combat
             if (p == PhaseNone) return;
 
             double now = NetworkManager.ServerTime.Time;
+
+            // Abort cleanly if the attached target despawned mid-grapple
+            ServerAbortGrappleIfTargetGone(now);
+
+            // Re-read phase in case abort changed it
+            p = phase.Value;
+            if (p == PhaseNone) return;
+
             float elapsed = (float)(now - phaseStartServerTime.Value);
 
             if (p == PhaseCasting)
             {
-                // at the end of the cast, either attach (hit) or retract (miss).
                 if (elapsed >= castDuration)
                 {
                     if (serverHasHit)
                     {
                         phase.Value = PhaseAttached;
                         phaseStartServerTime.Value = now;
-
-                        // spawnVFX on attach for all clients
                         SpawnAttachVfxClientRpc(netStartPoint.Value);
                     }
                     else
@@ -402,15 +407,6 @@ namespace Combat
 
                 if (complete)
                 {
-                    ClearPullCollisionIgnore();
-                 
-                    if(serverGrappleTarget != null)
-                    {
-                        serverGrappleTarget.ServerEndGrapple();
-                        serverGrappleTarget = null;
-                    }
-
-                    // When pull finishes, immediately retract.
                     phase.Value = PhaseRetracting;
                     phaseStartServerTime.Value = now;
                 }
@@ -419,10 +415,8 @@ namespace Combat
 
             if (p == PhaseRetracting)
             {
-                // When retract finishes, end grapple.
                 if (elapsed >= retractDuration)
                 {
-
                     ClearPullCollisionIgnore();
 
                     phase.Value = PhaseNone;
@@ -432,18 +426,17 @@ namespace Combat
                     serverHasHit = false;
                     attachedEnemyId.Value = 0;
 
-                    // clear grapple flag
                     if (serverGrappleTarget != null)
                     {
                         serverGrappleTarget.ServerEndGrapple();
                         serverGrappleTarget = null;
                     }
 
-                    // also clear other cached refs
                     serverPullable = null;
                     serverPulledEnemy = null;
                     serverPulledEnemyRb = null;
                     serverPullEnemyToPlayer = false;
+                    serverHitCollider = null;
                 }
                 return;
             }
@@ -465,21 +458,24 @@ namespace Combat
             float step = pullSpeed * dt;
 
             // Pull enemy to player
-            if (serverPullEnemyToPlayer && serverPullable != null && playerRb != null)
+            if (serverPullEnemyToPlayer)
             {
-                // Use enemy position as the query point for ClosestPoint (correct usage)
+                if (serverPullable == null) return true;
+                if (playerRb == null) return true;
+
                 Vector2 enemyPosForClosest =
-                    serverPulledEnemyRb != null ? serverPulledEnemyRb.position
-                    : (Vector2)((Component)serverPullable).transform.position;
+                    serverPulledEnemyRb != null
+                        ? serverPulledEnemyRb.position
+                        : (Vector2)((Component)serverPullable).transform.position;
 
                 Vector2 pullPoint =
-                    playerCollider != null ? playerCollider.ClosestPoint(enemyPosForClosest)
-                    : (Vector2)playerRb.position;
+                    playerCollider != null
+                        ? playerCollider.ClosestPoint(enemyPosForClosest)
+                        : (Vector2)playerRb.position;
 
-                // #2: Ignore collision ONCE at the start of pull (prevents shoving / slowdown)
+                // Ignore collision once at pull start
                 if (!ignoringPullCollision && playerCollider != null)
                 {
-                    // Prefer the pulled enemy RB collider, or the grapple target collider
                     Collider2D enemyCol =
                         serverPulledEnemyRb != null ? serverPulledEnemyRb.GetComponent<Collider2D>() :
                         serverGrappleTarget != null ? serverGrappleTarget.GetComponent<Collider2D>() :
@@ -493,10 +489,10 @@ namespace Combat
                     }
                 }
 
-                // Let the pullable implement how it moves (RB MovePosition, etc.)
+                if (serverPullable == null) return true;
+
                 serverPullable.PullTowards(pullPoint, pullSpeed);
 
-                // Preferred completion: collider-to-collider distance
                 if (playerCollider != null && serverPulledEnemyRb != null)
                 {
                     var enemyCol = serverPulledEnemyRb.GetComponent<Collider2D>();
@@ -508,7 +504,6 @@ namespace Combat
                     }
                 }
 
-                // Fallback completion so we don't get stuck if colliders are missing
                 float dist = Vector2.Distance(enemyPosForClosest, pullPoint);
                 if (dist <= stopDistanceFromSurface + minDistanceToStop || dist <= step)
                     return true;
@@ -516,51 +511,45 @@ namespace Combat
                 return false;
             }
 
-            // Pull Player to Target
+            // Pull player to target
             if (playerRb == null) return true;
 
             Vector2 playerPos = playerRb.position;
 
-            // Preferred stop: collider-to-collider distance (uses stopDistanceFromSurface)
+            if (serverHasHit && serverHitCollider == null)
+                return true;
+
             if (serverHitCollider != null && playerCollider != null)
             {
                 ColliderDistance2D d = playerCollider.Distance(serverHitCollider);
-
-                // Stop when the player collider is close enough to the hit collider surface.
                 if (d.isOverlapped || d.distance <= stopDistanceFromSurface)
                     return true;
             }
 
-            // Movement target:
-            // - If we have a hit collider, move toward its closest point, but stop short (stopDistanceFromSurface)
-            // - If no collider (miss), move toward the raw target point and finish with epsilon (minDistanceToStop)
             Vector2 surfacePoint = serverHitCollider != null
                 ? serverHitCollider.ClosestPoint(playerPos)
                 : serverTargetPoint;
 
-            Vector2 toSurface2 = surfacePoint - playerPos;
-            float distToSurface2 = toSurface2.magnitude;
+            Vector2 toSurface = surfacePoint - playerPos;
+            float distToSurface = toSurface.magnitude;
 
-            Vector2 desiredPlayerTarget = surfacePoint;
+            Vector2 desiredTarget = surfacePoint;
 
-            // If we're pulling to a collider surface, stop short so we don't ram the collider.
-            if (serverHitCollider != null && distToSurface2 > 0.0001f)
+            if (serverHitCollider != null && distToSurface > 0.0001f)
             {
-                desiredPlayerTarget = surfacePoint - toSurface2.normalized * stopDistanceFromSurface;
+                desiredTarget = surfacePoint - toSurface.normalized * stopDistanceFromSurface;
             }
 
-            Vector2 toTarget2 = desiredPlayerTarget - playerPos;
-            float distToTarget2 = toTarget2.magnitude;
+            Vector2 toTarget = desiredTarget - playerPos;
+            float distToTarget = toTarget.magnitude;
 
-            // minDistanceToStop = epsilon completion threshold
-            if (distToTarget2 <= minDistanceToStop || distToTarget2 <= step)
+            if (distToTarget <= minDistanceToStop || distToTarget <= step)
             {
-                // Optional snap (usually safe). If you don't want snapping, remove this line.
-                playerRb.MovePosition(desiredPlayerTarget);
+                playerRb.MovePosition(desiredTarget);
                 return true;
             }
 
-            playerRb.MovePosition(playerPos + toTarget2.normalized * step);
+            playerRb.MovePosition(playerPos + toTarget.normalized * step);
             return false;
         }
 
@@ -589,6 +578,50 @@ namespace Combat
                     RequestFireGrapple(queuedDir);
                 }
             }
+        }
+
+        private void ServerAbortGrappleIfTargetGone(double now)
+        {
+            if (!IsServer) return;
+
+            // If we believe we're attached to an enemy, verify it's still spawned.
+            if (attachedEnemyId.Value != 0)
+            {
+                var sm = NetworkManager != null ? NetworkManager.SpawnManager : null;
+                bool stillSpawned = (sm != null && sm.SpawnedObjects.ContainsKey(attachedEnemyId.Value));
+
+                if (!stillSpawned)
+                {
+                    // Target despawned mid-grapple. Cleanly retract/end.
+                    ClearPullCollisionIgnore();
+
+                    // Clear cached refs that could be "missing"
+                    serverHasHit = false;
+                    serverHitCollider = null;
+                    serverPullable = null;
+                    serverPulledEnemy = null;
+                    serverPulledEnemyRb = null;
+                    serverPullEnemyToPlayer = false;
+
+                    if (serverGrappleTarget != null)
+                    {
+                        // If this is already destroyed, Unity null-check will evaluate true anyway
+                        serverGrappleTarget.ServerEndGrapple();
+                        serverGrappleTarget = null;
+                    }
+
+                    attachedEnemyId.Value = 0;
+
+                    // Either retract quickly or just end immediately.
+                    phase.Value = PhaseRetracting;
+                    phaseStartServerTime.Value = now;
+                }
+            }
+
+            // Also guard against Unity "fake null" components
+            if (serverHitCollider == null) serverHitCollider = null;
+            if (serverGrappleTarget == null) serverGrappleTarget = null;
+            if (serverPullable == null) serverPullable = null;
         }
 
         private void DrawLineAndPlayLocalAnim()
