@@ -283,9 +283,8 @@ namespace Combat
         [ServerRpc]
         private void FireGrappleServerRpc(Vector2 direction)
         {
-
             // If we were somehow still holding an old grapple target, release it.
-            if(serverGrappleTarget != null)
+            if (serverGrappleTarget != null)
             {
                 serverGrappleTarget.ServerEndGrapple();
                 serverGrappleTarget = null;
@@ -309,7 +308,7 @@ namespace Combat
             serverPulledEnemy = null;
             serverPulledEnemyRb = null;
             serverPullEnemyToPlayer = false;
-            serverPullable = null; // IMPORTANT: clear stale reference on miss/new cast
+            serverPullable = null; // clear stale reference on miss/new cast
             attachedEnemyId.Value = 0;
 
             if (serverHasHit)
@@ -332,21 +331,30 @@ namespace Combat
 
                         serverGrappleTarget = no.GetComponentInParent<GrappleTarget>();
                         if (serverGrappleTarget != null)
+                        {
                             serverGrappleTarget.ServerBeginGrapple();
+
+                            // Tell the target to ignore collision with THIS player
+                            if (playerCollider != null)
+                                serverGrappleTarget.ServerIgnoreCollisionWith(playerCollider);
+                        }
                     }
                 }
 
-                // Apply a small damage on attach.
+                // Apply damage to anything we hit that implements IDamageable
                 var stats = GetCurrentStats();
                 float damage = GetEffectiveDamage(stats);
 
-                var dmg = hit.collider.GetComponent<IDamageable>();
-
-                var attackerNO = GetComponentInParent<NetworkObject>();
-                ulong attackerId = attackerNO != null ? attackerNO.NetworkObjectId : NetworkObjectId;
-
-                if (dmg != null && damage > 0f)
-                    dmg.TakeDamage(damage, attackerId);
+                if (damage > 0f)
+                {
+                    var dmg = hit.collider.GetComponentInParent<IDamageable>();
+                    if (dmg != null)
+                    {
+                        var attackerNO = GetComponentInParent<NetworkObject>();
+                        ulong attackerId = attackerNO != null ? attackerNO.NetworkObjectId : NetworkObjectId;
+                        dmg.TakeDamage(damage, attackerId);
+                    }
+                }
             }
 
             // Replicate cast start/end for everyone to render.
@@ -447,7 +455,11 @@ namespace Combat
             if (!IsServer) return;
             if (!ignoringPullCollision) return;
 
-            if (playerCollider != null && serverPulledEnemyCol != null) { Physics2D.IgnoreCollision(playerCollider, serverPulledEnemyCol, false); }
+            // Tell the target to restore collision with this player
+            if (serverGrappleTarget != null && playerCollider != null)
+            {
+                serverGrappleTarget.ServerRestoreCollisionWith(playerCollider);
+            }
 
             ignoringPullCollision = false;
             serverPulledEnemyCol = null;
@@ -473,20 +485,9 @@ namespace Combat
                         ? playerCollider.ClosestPoint(enemyPosForClosest)
                         : (Vector2)playerRb.position;
 
-                // Ignore collision once at pull start
-                if (!ignoringPullCollision && playerCollider != null)
+                if (!ignoringPullCollision)
                 {
-                    Collider2D enemyCol =
-                        serverPulledEnemyRb != null ? serverPulledEnemyRb.GetComponent<Collider2D>() :
-                        serverGrappleTarget != null ? serverGrappleTarget.GetComponent<Collider2D>() :
-                        null;
-
-                    if (enemyCol != null)
-                    {
-                        serverPulledEnemyCol = enemyCol;
-                        Physics2D.IgnoreCollision(playerCollider, serverPulledEnemyCol, true);
-                        ignoringPullCollision = true;
-                    }
+                    ignoringPullCollision = true;
                 }
 
                 if (serverPullable == null) return true;

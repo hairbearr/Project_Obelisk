@@ -30,6 +30,9 @@ namespace Combat
         [Header("Progress / Inventory")]
         [SerializeField] private SigilInventory sigilInventory;
 
+        [Header("Player Reference")]
+        [SerializeField] private Player.PlayerController playerController;
+
         #endregion
 
         #region Inspector - Shield Settings
@@ -79,9 +82,6 @@ namespace Combat
 
         private bool localIsBlocking;  // owner-only input state for freezing anim
 
-        // Editor preview facing if animator isn't available in edit-mode.
-        [SerializeField] private Vector2 gizmoFacingPreview = Vector2.up;
-
         #endregion
 
         #region Unity Callbacks
@@ -90,6 +90,10 @@ namespace Combat
         {
             if (sigilInventory == null)
                 sigilInventory = GetComponentInParent<SigilInventory>();
+
+            // NEW: Auto-find player controller
+            if (playerController == null)
+                playerController = GetComponentInParent<Player.PlayerController>();
 
             if (equippedSigil != null && string.IsNullOrEmpty(equippedSigilId))
                 equippedSigilId = equippedSigil.id;
@@ -283,7 +287,15 @@ namespace Combat
 
         private Vector2 GetFacingForBlock()
         {
-            // Prefer animator floats (matches your current system)
+            // BEST: Use the player's last facing direction (most reliable)
+            if (playerController != null)
+            {
+                Vector2 f = playerController.LastFacingDir;
+                if (f.sqrMagnitude > 0.0001f)
+                    return f.normalized;
+            }
+
+            // Fallback: animator floats (if player controller missing somehow)
             if (weaponAnimator != null)
             {
                 float x = weaponAnimator.GetFloat("MoveX");
@@ -293,10 +305,7 @@ namespace Combat
                     return f.normalized;
             }
 
-            // Fallback for edit mode / missing animator
-            if (gizmoFacingPreview.sqrMagnitude > 0.0001f)
-                return gizmoFacingPreview.normalized;
-
+            // Last resort
             return Vector2.up;
         }
 
@@ -371,7 +380,17 @@ namespace Combat
         private void OnDrawGizmosSelected()
         {
             Vector2 origin = transform.position;
-            Vector2 forward = GetFacingForBlock();
+
+            // Use player controller's facing if available in play mode
+            Vector2 forward = Vector2.up;
+            if (Application.isPlaying && playerController != null)
+            {
+                forward = playerController.LastFacingDir;
+            }
+            else
+            {
+                forward = GetFacingForBlock();
+            }
 
             // ---- Draw block radius ----
             Gizmos.color = new Color(0.2f, 0.6f, 1f, 1f); // blue-ish

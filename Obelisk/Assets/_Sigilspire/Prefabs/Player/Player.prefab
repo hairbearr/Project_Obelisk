@@ -358,6 +358,7 @@ GameObject:
   - component: {fileID: 682889023214438744}
   - component: {fileID: 1555782169865307800}
   - component: {fileID: 1978432937673861373}
+  - component: {fileID: 5409830336202922783}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -490,12 +491,13 @@ MonoBehaviour:
   animationDriver: {fileID: 0}
   moveSpeed: 3
   moveInput: {x: 0, y: 0}
-  sword: {fileID: 0}
-  shield: {fileID: 0}
-  grapplingHook: {fileID: 0}
+  loadout: {fileID: 0}
   testSwordSigil: {fileID: 11400000, guid: c462ed4864449ac4097d961508dfddcd, type: 2}
   testShieldSigil: {fileID: 11400000, guid: 3c1cd90e61e054e42bf81e9d90b5d595, type: 2}
   testGrappleSigil: {fileID: 11400000, guid: 9dcd4ecc1f048e644acdbb91e01424cc, type: 2}
+  sword: {fileID: 0}
+  shield: {fileID: 0}
+  grapplingHook: {fileID: 0}
 --- !u!114 &7971292241909552992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -789,6 +791,7 @@ MonoBehaviour:
   equippedSigilId: shield_default
   enforceAbilityCooldown: 1
   sigilInventory: {fileID: 7608890470901692854}
+  playerController: {fileID: 0}
   baseMaxShieldEnergy: 100
   baseRegenDelay: 2
   baseRegenRate: 15
@@ -805,7 +808,27 @@ MonoBehaviour:
     m_InternalValue: 0
   IsBlockingNet:
     m_InternalValue: 0
-  gizmoFacingPreview: {x: 0, y: 1}
+--- !u!114 &5409830336202922783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510615852687295852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e0d0e0ec46c8e648a397e187288b979, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerLoadout
+  ShowTopMostFoldoutHeaderGroup: 1
+  equipped:
+    swordSigilId: 
+    shieldSigilId: 
+    grappleSigilId: 
+  inventory: {fileID: 0}
+  sword: {fileID: 0}
+  shield: {fileID: 0}
+  grapple: {fileID: 0}
 --- !u!1 &2094233075969275182
 GameObject:
   m_ObjectHideFlags: 0
@@ -1132,6 +1155,7 @@ GameObject:
   - component: {fileID: 4394170259281887245}
   - component: {fileID: 3715217323501954718}
   - component: {fileID: 5233633244058319499}
+  - component: {fileID: 3176397838248870446}
   m_Layer: 8
   m_Name: SwordAnimator
   m_TagString: Untagged
@@ -1192,6 +1216,19 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   TransitionStateInfoList: []
   m_Animator: {fileID: 3715217323501954718}
+--- !u!114 &3176397838248870446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3828859814732937702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7c09bcf9e50ca4681d89b8c9c5a7b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Combat.SwordAnimationEvents
+  swordController: {fileID: 1555782169865307800}
 --- !u!1 &4364058371796881274
 GameObject:
   m_ObjectHideFlags: 0

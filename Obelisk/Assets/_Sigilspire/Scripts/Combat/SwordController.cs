@@ -24,6 +24,11 @@ namespace Combat
         [SerializeField] private bool useWindupTiming = true;
 
         private readonly Dictionary<ulong, float> serverLastHitTimeByTarget = new Dictionary<ulong, float>(32);
+
+        private bool pendingHitCheck;
+        private Vector2 pendingHitDirection;
+        private EffectiveAbilityStats pendingHitStats;
+
         [SerializeField] private float perTargetRehitLockSeconds = 0.25f;
 
 
@@ -59,6 +64,8 @@ namespace Combat
         [SerializeField] private bool enforceAbilityCooldown = true;
         private float lastAbilityUseTimeLocal = -9999f;
         private GameObject attackVfxPrefab;
+
+
 
         #endregion
 
@@ -292,13 +299,27 @@ namespace Combat
 
         private System.Collections.IEnumerator Server_DoSwordHit(Vector2 direction, EffectiveAbilityStats stats)
         {
-            float windup = GetEffectiveWindup(stats);
-            if (windup <= 0f) windup = hitWindupSeconds;
+            // Store the hit data for when the animation event fires
+            pendingHitCheck = true;
+            pendingHitDirection = direction;
+            pendingHitStats = stats;
 
-            if (useWindupTiming && windup > 0f)
-                yield return new WaitForSeconds(windup);
+            // Safety fallback: if animation event doesn't fire within 1 second, auto-execute
+            float timeout = 1f;
+            float elapsed = 0f;
 
-            DoSwordOverlap(direction, stats);
+            while (pendingHitCheck && elapsed < timeout)
+            {
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+
+            // Timeout fallback: execute hit if animation event never fired
+            if (pendingHitCheck)
+            {
+                Debug.LogWarning("[Sword] Animation event didn't fire within timeout, executing hit as fallback");
+                ExecuteHitCheck();
+            }
         }
 
 
@@ -392,13 +413,6 @@ namespace Combat
             PlayAttackVfxClientRpc(dir);
         }
 
-
-
-
-
-
-
-
         [ClientRpc]
         private void PlayAttackVfxClientRpc(Vector2 direction)
         {
@@ -410,6 +424,25 @@ namespace Combat
             Object.Destroy(vfx, 2f);
         }
 
+        /// <summary>
+        /// Called by Animation Event on the sword attack animation.
+        /// This should be placed on the frame where the sword makes contact.
+        /// </summary>
+        public void OnSwordHitFrame()
+        {
+            if (!IsServer) return;
+            if (!pendingHitCheck) return;
+
+            ExecuteHitCheck();
+        }
+
+        private void ExecuteHitCheck()
+        {
+            if (!pendingHitCheck) return;
+
+            DoSwordOverlap(pendingHitDirection, pendingHitStats);
+            pendingHitCheck = false;
+        }
         #endregion
     }
 }

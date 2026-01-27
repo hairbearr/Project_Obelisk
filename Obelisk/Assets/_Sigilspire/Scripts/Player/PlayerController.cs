@@ -19,15 +19,19 @@ namespace Player
         private bool isShieldingLocal;
         private Vector2 lastFacingDir = Vector2.up;
 
+        [Header("Loadout")]
+        [SerializeField] private PlayerLoadout loadout;
+
+        [Header("Testing Loadout - TEMP")]
+        [SerializeField] private SigilDefinition testSwordSigil;
+        [SerializeField] private SigilDefinition testShieldSigil;
+        [SerializeField] private SigilDefinition testGrappleSigil;
+
+
         [Header("References")]
         [SerializeField] private SwordController sword;
         [SerializeField] private ShieldController shield;
         [SerializeField] private GrapplingHookController grapplingHook;
-
-        [Header("Testing Loadout")] // remove later when you have a real loadout UI
-        [SerializeField] private SigilDefinition testSwordSigil;
-        [SerializeField] private SigilDefinition testShieldSigil;
-        [SerializeField] private SigilDefinition testGrappleSigil;
 
         public Vector2 CurrentMoveInput => moveInput;
 
@@ -39,6 +43,8 @@ namespace Player
             if (sword == null) sword = GetComponentInChildren<SwordController>();
             if (shield == null) shield = GetComponentInChildren<ShieldController>();
             if (grapplingHook == null) grapplingHook = GetComponentInChildren<GrapplingHookController>();
+
+            if(loadout == null) loadout = GetComponentInParent<PlayerLoadout>();
         }
 
         public override void OnNetworkSpawn()
@@ -49,8 +55,11 @@ namespace Player
                 return;
             }
 
-            // Temp: auto-apply test sigils on spawn
-            ApplyLoadout(testSwordSigil, testShieldSigil, testGrappleSigil);
+            // Temp: auto-apply test sigils on spawn (remove when you have UI)
+            if (loadout != null && (testSwordSigil != null || testShieldSigil != null || testGrappleSigil != null))
+            {
+                loadout.EquipSigilsForTesting(testSwordSigil, testShieldSigil, testGrappleSigil);
+            }
         }
 
         private void FixedUpdate()
@@ -162,28 +171,6 @@ namespace Player
             grapplingHook.RequestFireGrapple(LastFacingDir);
 
             if (animationDriver != null) animationDriver.PlayGrappleCast();
-        }
-
-
-        public void ApplyLoadout(SigilDefinition swordSigil, SigilDefinition shieldSigil, SigilDefinition grappleSigil)
-        {
-            if (swordSigil != null)
-            {
-                sword.ApplyVisualSet(swordSigil.visualSet);
-                sword.SetEquippedSigil(swordSigil);
-            }
-
-            if (shieldSigil != null)
-            {
-                shield.ApplyVisualSet(shieldSigil.visualSet);
-                shield.SetEquippedSigil(shieldSigil);
-            }
-
-            if (grappleSigil != null)
-            {
-                grapplingHook.ApplyVisualSet(grappleSigil.visualSet);
-                grapplingHook.SetEquippedSigil(grappleSigil);
-            }
         }
 
         public void SetMovementLocked(bool locked)
