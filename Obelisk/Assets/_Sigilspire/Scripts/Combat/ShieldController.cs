@@ -256,14 +256,26 @@ namespace Combat
                 forward = Vector2.up;
 
             Vector2 toAttacker = attackerWorldPos - (Vector2)transform.position;
+
+            // DEBUG
+            //Debug.Log($"[Shield] Blocking? attackerPos={attackerWorldPos}, myPos={transform.position}, toAttacker={toAttacker}, forward={forward}");
+
             if (toAttacker.sqrMagnitude < 0.0001f) return false;
+
 
             // Optional distance gate (so "block arc" doesn't protect you from across the room)
             if (blockRadius > 0f && toAttacker.sqrMagnitude > blockRadius * blockRadius)
                 return false;
 
             float angle = Vector2.Angle(forward, toAttacker.normalized);
-            if (angle > blockArcDegrees * 0.5f) return false;
+
+            //Debug.Log($"[Shield] Angle check: angle={angle}, halfArc={blockArcDegrees * 0.5f}");
+
+            if (angle > blockArcDegrees * 0.5f)
+            {
+                //Debug.Log($"[Shield] Outside block arc!");
+                return false; 
+            }
 
             // Spend energy
             lastHitTime = Time.time;
@@ -281,6 +293,8 @@ namespace Combat
             // Block proportional to energy spent
             float blockedDamage = (energyCost <= 0.0001f) ? incomingDamage : incomingDamage * (spend / energyCost);
             damageAfterBlock = Mathf.Max(0f, incomingDamage - blockedDamage);
+
+            //Debug.Log($"[Shield] BLOCKED! blockedDamage={blockedDamage}, afterBlock={damageAfterBlock}");
 
             return blockedDamage > 0f;
         }

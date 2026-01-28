@@ -55,7 +55,7 @@ namespace Combat.Health
             if (!initialized) return;
             if (amount <= 0f) return;
 
-
+            Debug.Log($"[Health] {name} TakeDamage called: amount={amount}, attackerId={attackerId}");
 
             // Look up attacker position (for directional block)
             Vector2 attackerPos = Vector2.zero;

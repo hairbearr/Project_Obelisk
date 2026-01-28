@@ -7,6 +7,8 @@ namespace Enemy
         [Header("References")]
         [SerializeField] private Animator animator;
 
+        public System.Action onAttackHitFrame;
+
         private const string MoveX = "MoveX";
         private const string MoveY = "MoveY";
         private const string Speed = "Speed";
@@ -54,6 +56,11 @@ namespace Enemy
             }
 
             animator.SetTrigger(Attack);
+        }
+
+        public void OnAttackHitFrame()
+        {
+            onAttackHitFrame?.Invoke();
         }
 
     }

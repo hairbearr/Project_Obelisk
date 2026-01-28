@@ -29,6 +29,11 @@ namespace Enemy
         [SerializeField] private float facingEpsilon = 0.001f;
         private Vector2 lastFacingDir = Vector2.down;
 
+        [Tooltip("When during the attack animation should damage occur (0 = start, 1 = end)")]
+        [SerializeField, Range(0f, 1f)] private float attackHitTiming = 0.5f;
+
+        public float AttackHitTiming => attackHitTiming;
+
         [Header("Threat")]
         [SerializeField] private EnemyThreatTracker threatTracker;
         [SerializeField] private float retargetInterval = 0.25f;
@@ -70,6 +75,11 @@ namespace Enemy
             animDriver = GetComponentInChildren<EnemyAnimationDriver>();
             health = GetComponent<HealthBase>();
             if (enemyCollider == null) { enemyCollider = GetComponent<Collider2D>(); }
+
+            if(animDriver != null)
+            {
+                animDriver.onAttackHitFrame += OnEnemyAttackHitFrame;
+            }
         }
 
         private void Update()
@@ -406,7 +416,9 @@ namespace Enemy
                 if (attackDir.sqrMagnitude < 0.0001f) attackDir = lastFacingDir;
                 SetFacing(attackDir);
                 animDriver?.SetFacing(lastFacingDir);
-                PerformAbilityAttack(currentTarget, primaryAbility, lastFacingDir);
+
+                // Just play the animation - damage happens on animation event
+                animDriver?.PlayAttack(lastFacingDir);
                 return;
             }
 
@@ -427,45 +439,65 @@ namespace Enemy
             lastAttackTime = Time.time;
             SetFacing(dir);
             animDriver?.SetFacing(lastFacingDir);
-            PerformHitscanAttack(currentTarget, primaryAbility, lastFacingDir);
+
+            // Just play the animation - damage happens on animation event
+            animDriver?.PlayAttack(lastFacingDir);
         }
 
-        private void PerformHitscanAttack(Transform target, Ability ability, Vector2 facingDir)
+        private void OnEnemyAttackHitFrame()
         {
-            Vector2 attackDir = facingDir.sqrMagnitude > 0.0001f ? facingDir.normalized : Vector2.down;
+            if (!IsServer) return;
+            if (currentTarget == null) return;
+            if (primaryAbility == null) return;
 
-            animDriver?.PlayAttack(attackDir);
+            Debug.Log($"[Enemy] {name} OnEnemyAttackHitFrame called! damage={primaryAbility.damage}");
 
-            IDamageable dmg = target.GetComponentInParent<IDamageable>();
-            if (dmg != null && ability.damage > 0f)
-                dmg.TakeDamage(ability.damage, NetworkObjectId);
-
-            if (ability.vfxPrefab != null)
+            // Execute attack immediately when animation hits the "release" frame
+            if (attackMode == AttackMode.Melee)
             {
-                GameObject vfx = Instantiate(ability.vfxPrefab, target.position, Quaternion.identity);
-                Destroy(vfx, 2f);
+                // Melee Attack
+                IDamageable dmg = currentTarget.GetComponentInParent<IDamageable>();
+                if (dmg != null && primaryAbility.damage > 0f)
+                {
+                    dmg.TakeDamage(primaryAbility.damage, NetworkObjectId);
+                }
+
+                if (primaryAbility.vfxPrefab != null) 
+                {
+                    GameObject vfx = Instantiate(primaryAbility.vfxPrefab, currentTarget.position, Quaternion.identity);
+                    Destroy(vfx, 2f);
+                }
             }
-        }
-
-        private void PerformAbilityAttack(Transform target, Ability ability, Vector2 facingDir)
-        {
-            Vector2 attackDir = facingDir.sqrMagnitude > 0.0001f ? facingDir.normalized : Vector2.down;
-
-            animDriver?.PlayAttack(attackDir);
-            
-
-            IDamageable dmg = target.GetComponentInParent<IDamageable>();
-            if (dmg != null && ability.damage > 0f)
+            else if(attackMode == AttackMode.RangedHitscan)
             {
-                Debug.Log($"[EnemyAI] ATTACK dmg={primaryAbility.damage} cd={primaryAbility.cooldown} t={Time.time}");
-                dmg.TakeDamage(ability.damage, NetworkObjectId);
-            }
-                
+                // Ranged hitscan attack
+                Vector2 toTarget = (Vector2)currentTarget.position - rb2D.position;
+                float distance = toTarget.magnitude;
 
-            if (ability.vfxPrefab != null)
-            {
-                GameObject vfx = Instantiate(ability.vfxPrefab, target.position, Quaternion.identity);
-                Destroy(vfx, 2f);
+                if (distance > rangedMaxRange) return;
+
+                // LOS check
+                Vector2 origin = rb2D.position;
+                Vector2 dir = toTarget.normalized;
+                float rayDist = distance;
+
+                RaycastHit2D los = Physics2D.Raycast(origin, dir, rayDist, lineOfSightMask);
+                if (los.collider != null) return; // Blocked by wall
+
+                // Deal Damage
+                IDamageable dmg = currentTarget.GetComponentInParent<IDamageable>();
+                if(dmg != null && primaryAbility.damage > 0f)
+                {
+                    Debug.Log($"[Enemy] About to deal {primaryAbility.damage} damage");
+                    dmg.TakeDamage(primaryAbility.damage, NetworkObjectId);
+                    Debug.Log($"[Enemy] Damage dealt!");
+                }
+
+                if (primaryAbility.vfxPrefab != null)
+                {
+                    GameObject vfx = Instantiate(primaryAbility.vfxPrefab, currentTarget.position, Quaternion.identity);
+                    Destroy(vfx, 2f);
+                }
             }
         }
 

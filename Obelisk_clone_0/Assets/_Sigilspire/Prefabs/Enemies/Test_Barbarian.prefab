@@ -50,12 +50,16 @@ PrefabInstance:
       objectReference: {fileID: 5925980190507697977}
     - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: attackLockTime
-      value: 0.25
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: primaryAbility
       value: 
       objectReference: {fileID: 11400000, guid: 30800bcc8ff78714cba79af85ab8d841, type: 2}
+    - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: attackHitTiming
+      value: 0.43
+      objectReference: {fileID: 0}
     - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: detectionRadius
       value: 3
@@ -159,7 +163,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3514413188484985845, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4457864477458606970}
   m_SourcePrefab: {fileID: 100100000, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
 --- !u!114 &5925980190507697977 stripped
 MonoBehaviour:
@@ -172,3 +179,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f03b37aab0c89e04b857ff2064bf6b3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyThreatTracker
+--- !u!1 &6363089028469009181 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3514413188484985845, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+  m_PrefabInstance: {fileID: 7533273056715528424}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4457864477458606970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6363089028469009181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e34bbd82fe2882642a065a4142912f9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy.EnemyAnimationEvents
+  animDriver: {fileID: 8579134418489169530}
+--- !u!114 &8579134418489169530 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2271145318052728466, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+  m_PrefabInstance: {fileID: 7533273056715528424}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c4404f2e41ef0f4db1ff63144cf11cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy.EnemyAnimationDriver
