@@ -371,7 +371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 295866b2ed5b870478097c8607827ea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy.EnemyAttackStateBehaviour
-  hitFrameNormalizedTime: 0.4
+  defaultHitFrameNormalizedTime: 0.5
 --- !u!1102 &-3888591989776801068
 AnimatorState:
   serializedVersion: 6
@@ -1341,7 +1341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 295866b2ed5b870478097c8607827ea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy.EnemyAttackStateBehaviour
-  hitFrameNormalizedTime: 0.36
+  defaultHitFrameNormalizedTime: 0.5
 --- !u!206 &5550774512575229908
 BlendTree:
   m_ObjectHideFlags: 1
@@ -1525,4 +1525,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 295866b2ed5b870478097c8607827ea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy.EnemyAttackStateBehaviour
-  hitFrameNormalizedTime: 0.4
+  defaultHitFrameNormalizedTime: 0.5

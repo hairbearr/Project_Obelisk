@@ -13,7 +13,7 @@ namespace Enemy
         private const string MoveY = "MoveY";
         private const string Speed = "Speed";
         private const string Attack = "Attack";
-
+        private const string Death = "Death";
         private void Reset()
         {
             animator = GetComponentInChildren<Animator>();
@@ -63,6 +63,11 @@ namespace Enemy
             onAttackHitFrame?.Invoke();
         }
 
+        public void PlayDeath()
+        {
+            if (animator == null) return;
+            animator.SetTrigger(Death);
+        }
     }
 }
 

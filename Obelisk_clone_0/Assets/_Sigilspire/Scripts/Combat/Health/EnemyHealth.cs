@@ -31,12 +31,61 @@ namespace Enemy
         {
             if (!IsServer) return;
 
+            // Notify Mob Counter
+            var mobCounter = FindFirstObjectByType<MobCounterUI>();
+            if (mobCounter != null)
+            {
+                mobCounter.ServerIncrementKills();
+            }
+
             if (TryGetComponent<GrappleTarget>(out var gt))
                 gt.ServerEndGrapple();
 
-            NetworkObject.Despawn();
+            StartCoroutine(DeathSequence());
         }
 
+        private System.Collections.IEnumerator DeathSequence()
+        {
+            // Disable collider and rigidbody so enemy can't be hit/moved
+            if (TryGetComponent<Collider2D>(out var col)) col.enabled = false;
+
+            if (TryGetComponent<Rigidbody2D>(out var rb)) rb.simulated = false;
+
+            // disable AI so it stops moving/attacking
+            if(TryGetComponent<Enemy.EnemyAI>(out var ai)) ai.enabled = false;
+
+            // play death animation
+            var animDriver = GetComponentInChildren<Enemy.EnemyAnimationDriver>();
+            if(animDriver != null)
+            {
+                // set speed to 0 (dead/idle pose)
+                animDriver.SetMovement(Vector2.zero);
+
+                animDriver.PlayDeath();
+            }
+
+            // wait for animation to play
+            yield return new WaitForSeconds(90f);
+
+            // Fade out effect
+            var spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+            if(spriteRenderer != null)
+            {
+                float fadeTime = 0.3f;
+                float elapsed = 0f;
+                Color originalColor = spriteRenderer.color;
+
+                while (elapsed < fadeTime)
+                {
+                    elapsed += Time.deltaTime;
+                    float alpha = Mathf.Lerp(1f, 0f, elapsed / fadeTime);
+                    spriteRenderer.color = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
+                    yield return null;
+                }
+            }
+            // Despawn
+            NetworkObject.Despawn();
+        }
 
         public void ApplyKnockback(Vector2 direction, float force)
         {
