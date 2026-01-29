@@ -3,6 +3,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using Combat.Health;
+using System;
+using Enemy;
 
 public class TestBuildHotkeys : MonoBehaviour
 {
@@ -30,6 +32,15 @@ public class TestBuildHotkeys : MonoBehaviour
 
         if (kb[quitKey].wasPressedThisFrame)
             Quit();
+    }
+
+    private void MurderEveryone()
+    {
+        GameObject[] enemiesInScene = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach(GameObject obj in enemiesInScene)
+        {
+            obj.GetComponent<EnemyHealth>().TakeDamage(1000f);
+        }
     }
 
     private void TogglePause()

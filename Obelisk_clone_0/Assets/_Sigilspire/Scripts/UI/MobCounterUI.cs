@@ -89,4 +89,8 @@ public class MobCounterUI : NetworkBehaviour
         if (!IsServer) return;
         CountTotalEnemies();
     }
+
+    public int EnemiesKilled => enemiesKilled.Value;
+    public int TotalEnemies => totalEnemies.Value;
+    public float CompletionPercentage => totalEnemies.Value > 0 ? (float)enemiesKilled.Value / totalEnemies.Value : 0f;
 }

@@ -86,7 +86,19 @@ public class RunTimerUI : NetworkBehaviour
     {
         if (!IsServer) return;
 
-        Debug.Log("[Timer] Run failed - time expired!");
+        timerActive.Value = false;
+
+        var runManager = FindFirstObjectByType<RunManager>();
+        if (runManager != null)
+        {
+            runManager.ServerNotifyTimeExpired();
+        }
+        else
+        {
+            Debug.Log("[Timer] Run failed - time expired!");
+        }
+
+            
         // TODO: Trigger defeat screen
     }
 
