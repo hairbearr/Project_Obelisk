@@ -9,12 +9,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 426879209344388932, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: slider
+      value: 
+      objectReference: {fileID: 4190180453609327456}
+    - target: {fileID: 426879209344388932, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: knockbackCooldown
       value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 426879209344388932, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: maxKnockbackSpeed
-      value: 8
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 426879209344388932, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: knockbackResistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 737629954192953947, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: pullToPlayer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3081394880648425571, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_Size.x
@@ -55,7 +67,7 @@ PrefabInstance:
     - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: primaryAbility
       value: 
-      objectReference: {fileID: 11400000, guid: 30800bcc8ff78714cba79af85ab8d841, type: 2}
+      objectReference: {fileID: 11400000, guid: 215cd923a58410148bd40fafc2662269, type: 2}
     - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: attackHitTiming
       value: 0.43
@@ -96,9 +108,33 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.019575644
       objectReference: {fileID: 0}
+    - target: {fileID: 5532320623927628924, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 5532320623927628924, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5532320623927628924, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 6205151091289128448, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_Name
       value: Test_Barbarian_Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 6557871603474874252, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6557871603474874252, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6557871603474874252, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6910408176820858265, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_Controller
@@ -168,6 +204,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 4457864477458606970}
   m_SourcePrefab: {fileID: 100100000, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+--- !u!114 &4190180453609327456 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5957432186866471816, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+  m_PrefabInstance: {fileID: 7533273056715528424}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
 --- !u!114 &5925980190507697977 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4230780524085010385, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}

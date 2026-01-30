@@ -29,6 +29,10 @@ namespace Enemy
         [SerializeField] private float facingEpsilon = 0.001f;
         private Vector2 lastFacingDir = Vector2.down;
 
+        [Header("Melee Spacing")]
+        [SerializeField] private float meleeMinDistance = 0.8f; // Don't get closer than this
+        [SerializeField] private float meleeIdealDistance = 1.2f; // Try to stay at this range
+
         [Tooltip("When during the attack animation should damage occur (0 = start, 1 = end)")]
         [SerializeField, Range(0f, 1f)] private float attackHitTiming = 0.5f;
 
@@ -316,15 +320,26 @@ namespace Enemy
             // Melee - Chase until "stop distance" from collider surface
             if (attackMode == AttackMode.Melee)
             {
-                if (surfaceDistance <= stoppingDistance)
+                // Too close? Back away
+                if (surfaceDistance < meleeMinDistance)
+                {
+                    // Move away from target
+                    Vector2 awayFromTarget = -toTarget.normalized;
+                    Move(awayFromTarget, .5f); // Move Slower when backing up
+                    return;
+                }
+
+                // At ideal distance? Stop and attack
+                if(surfaceDistance <= meleeIdealDistance)
                 {
                     animDriver?.SetFacing(lastFacingDir);
                     animDriver?.SetMovement(Vector2.zero);
                     return;
                 }
 
+                // Too far? Chase
                 Move(toTarget);
-                return;
+
             }
 
             // ----- Ranged -----

@@ -84,11 +84,16 @@ namespace Combat
 
         private void OnDrawGizmosSelected()
         {
+            Vector2 dir = lastDebugAttackDir;
+            Vector2 origin = (Vector2)transform.position + dir * GetOffsetForDir(dir);
+
+            // NEW: Draw close hitbox
+            Vector2 closeOrigin = (Vector2)transform.position + dir * 0.2f;
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(closeOrigin, hitRadius * 0.7f);
+
             // Choose a preview direction for editor gizmos
             // If you store last attack direction, you can use that instead
-            Vector2 dir = lastDebugAttackDir;
-
-            Vector2 origin = (Vector2)transform.position + dir * GetOffsetForDir(dir);
 
             // ---- Draw hit radius ----
             Gizmos.color = Color.red;
@@ -331,21 +336,55 @@ namespace Combat
 
             Vector2 dir = direction.sqrMagnitude > 0.01f ? direction.normalized : Vector2.up;
 
-            float offset = GetOffsetForDir(dir);
-            Vector2 origin = (Vector2)transform.position + dir * offset;
+            // TWO hitboxes to cover dead zone
+            float closeOffset = 0.2f;
+            float farOffset = GetOffsetForDir(dir);
 
-            Collider2D[] hits = Physics2D.OverlapCircleAll(origin, hitRadius, hitLayers);
+            Vector2 closeOrigin = (Vector2)transform.position + dir * closeOffset;
+            Vector2 farOrigin = (Vector2)transform.position + dir * farOffset;
+
+            Debug.DrawLine(transform.position, closeOrigin, Color.yellow, 2f);
+            Debug.DrawLine(transform.position, farOrigin, Color.red, 2f);
+
+            // Check both areas
+            Collider2D[] closeHits = Physics2D.OverlapCircleAll(closeOrigin, hitRadius * 0.7f, hitLayers);
+            Collider2D[] farHits = Physics2D.OverlapCircleAll(farOrigin, hitRadius, hitLayers);
+
+            Debug.Log($"[Sword] Close hits: {closeHits.Length}, Far hits: {farHits.Length}");
+
+            // Combine and deduplicate
+            var allHits = new System.Collections.Generic.HashSet<Collider2D>();
+            foreach (var hit in closeHits)
+            {
+                if (hit != null) allHits.Add(hit);
+            }
+            foreach (var hit in farHits)
+            {
+                if (hit != null) allHits.Add(hit);
+            }
+
+            Debug.Log($"[Sword] Attack direction: {dir}");
+            Debug.Log($"[Sword] Close origin: {closeOrigin}, radius: {hitRadius * 0.7f}");
+            Debug.Log($"[Sword] Far origin: {farOrigin}, radius: {hitRadius}");
+            Debug.Log($"[Sword] Close hits: {closeHits.Length}");
+            foreach (var h in closeHits)
+            {
+                Debug.Log($"  - Close hit: {h.name} at {h.transform.position}");
+            }
+            Debug.Log($"[Sword] Far hits: {farHits.Length}");
+            foreach (var h in farHits)
+            {
+                Debug.Log($"  - Far hit: {h.name} at {h.transform.position}");
+            }
+
             float halfArc = attackArcDegrees * 0.5f;
-
-            // Prefer "attacker root" exclusion
             Transform attackerRoot = GetComponentInParent<NetworkObject>()?.transform;
 
-            for (int i = 0; i < hits.Length; i++)
+            foreach (var hit in allHits)
             {
-                var hit = hits[i];
                 if (hit == null) continue;
 
-                // Don’t hit yourself / your own player root hierarchy
+                // Don't hit yourself
                 if (attackerRoot != null)
                 {
                     if (hit.transform == attackerRoot || hit.transform.IsChildOf(attackerRoot))
@@ -357,26 +396,28 @@ namespace Combat
                         continue;
                 }
 
-                // --- Arc filter ---
-                Vector2 closest = hit.bounds.ClosestPoint(origin);
-                Vector2 to = closest - origin;
-                if (to.sqrMagnitude < 0.0001f) continue;
+                // Arc filter
+                // Use PLAYER position for arc check, not hitbox origin
+                Vector2 playerPos = transform.position;
+                Vector2 toEnemy = ((Vector2)hit.transform.position) - playerPos;
 
-                Vector2 toNorm = to.normalized;
+                if (toEnemy.sqrMagnitude < 0.0001f) continue;
 
-                // must be in front
-                if (Vector2.Dot(dir, toNorm) <= 0f)
+                Vector2 toEnemyNorm = toEnemy.normalized;
+
+                // Must be in front
+                if (Vector2.Dot(dir, toEnemyNorm) <= 0f)
                     continue;
 
-                float angle = Vector2.Angle(dir, toNorm);
+                // Must be in arc
+                float angle = Vector2.Angle(dir, toEnemyNorm);
                 if (angle > halfArc)
                     continue;
 
-                // Resolve target NetworkObject (for the hard guarantee)
+                // Per-target rehit lock
                 var targetNO = hit.GetComponentInParent<NetworkObject>();
                 ulong targetId = targetNO != null ? targetNO.NetworkObjectId : 0;
 
-                // ---- HARD GUARANTEE: per-target re-hit lock (server side) ----
                 if (targetId != 0)
                 {
                     if (serverLastHitTimeByTarget.TryGetValue(targetId, out float lastHit) &&
@@ -387,7 +428,7 @@ namespace Combat
                     serverLastHitTimeByTarget[targetId] = Time.time;
                 }
 
-                // Attacker id should be the player/root NO, not the sword child
+                // Apply damage and knockback
                 ulong attackerId = NetworkObjectId;
                 var attackerNO = GetComponentInParent<NetworkObject>();
                 if (attackerNO != null) attackerId = attackerNO.NetworkObjectId;
@@ -398,16 +439,7 @@ namespace Combat
 
                 var kb = hit.GetComponentInParent<IKnockbackable>();
                 if (kb != null && knockback > 0f)
-                    kb.ApplyKnockback(toNorm, knockback);
-
-                if (kb == null)
-                {
-                    Debug.Log($"[Sword] No IKnockbackable found for hit={hit.name} root={hit.transform.root.name}");
-                }
-                else
-                {
-                    Debug.Log($"[Sword] Knockbacking {hit.name} dir={toNorm} force={knockback}");
-                }
+                    kb.ApplyKnockback(toEnemyNorm, knockback);
             }
 
             PlayAttackVfxClientRpc(dir);

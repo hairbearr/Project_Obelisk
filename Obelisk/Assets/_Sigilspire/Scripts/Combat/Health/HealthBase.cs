@@ -1,6 +1,7 @@
 using UnityEngine;
 using Unity.Netcode;
 using Combat.DamageInterfaces;
+using UnityEngine.UI;
 
 namespace Combat.Health
 {
@@ -18,6 +19,9 @@ namespace Combat.Health
         public bool Initialized => initialized;
         private bool initialized;
 
+        [Header("Healthbar")]
+        [SerializeField] private Slider slider;
+
         public override void OnNetworkSpawn()
         {
             // Everyone listens so clients can know when the first real value arrives
@@ -29,6 +33,13 @@ namespace Combat.Health
             {
                 CurrentHealth.Value = maxHealth;
             }
+
+            if(slider != null)
+            {
+                if (!slider.enabled) slider.enabled = true;
+            }
+
+            UpdateHealthBar(CurrentHealth.Value, maxHealth);
         }
 
         public override void OnNetworkDespawn()
@@ -40,6 +51,8 @@ namespace Combat.Health
         {
             if (!initialized)
                 initialized = true;
+
+            UpdateHealthBar(newVal, maxHealth);
         }
 
         public virtual void TakeDamage(float amount)
@@ -86,9 +99,17 @@ namespace Combat.Health
             {
                 CurrentHealth.Value = 0f;
                 OnDeath();
+                slider.enabled = false;
             }
         }
 
+        public void UpdateHealthBar(float currentValue, float maxValue)
+        {
+            if (slider == null) return;
+            if(maxValue <=0f) { slider.value = 0f; return; }
+
+            slider.value = currentValue / maxValue;
+        }
 
         protected virtual void OnDeath()
         {
