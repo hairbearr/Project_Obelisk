@@ -71,7 +71,6 @@ namespace Enemy
         {
             if (enemyPrefab == null)
             {
-                Debug.LogWarning("EnemySpawner has no enemyPrefab assigned.", this);
                 return;
             }
 

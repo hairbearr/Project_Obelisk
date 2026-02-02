@@ -110,6 +110,12 @@ public class RunTimerUI : NetworkBehaviour
         timeRemaining.Value += 30f;
     }
 
+    public void ServerAddPenalty(float deathPenalty)
+    {
+        if (!IsServer) return;
+        timeRemaining.Value -= deathPenalty;
+    }
+
     public void ServerStopTimer()
     {
         if (!IsServer) return;

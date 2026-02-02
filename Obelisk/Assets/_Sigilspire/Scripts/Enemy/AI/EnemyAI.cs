@@ -15,14 +15,14 @@ namespace Enemy
         [SerializeField] private LayerMask targetLayers;
 
         [Header("Movement")]
-        [SerializeField] private float moveSpeed = 2.5f;
+        [SerializeField] public float moveSpeed = 2.5f;
         [SerializeField] private float stoppingDistance = 1.2f;
         [SerializeField] private Collider2D enemyCollider;
         [SerializeField] private float knockbackMoveLockTime = 0.12f;
         private float moveLockedUntil;
 
         [Header("Attack")]
-        [SerializeField] private Ability primaryAbility;
+        [SerializeField] public Ability primaryAbility;
         [SerializeField] private float attackRange = 1.6f;
         [SerializeField] private float attackLockTime = 0.2f;
         private float attackLockUntil;
@@ -465,8 +465,6 @@ namespace Enemy
             if (currentTarget == null) return;
             if (primaryAbility == null) return;
 
-            Debug.Log($"[Enemy] {name} OnEnemyAttackHitFrame called! damage={primaryAbility.damage}");
-
             // Execute attack immediately when animation hits the "release" frame
             if (attackMode == AttackMode.Melee)
             {
@@ -503,9 +501,7 @@ namespace Enemy
                 IDamageable dmg = currentTarget.GetComponentInParent<IDamageable>();
                 if(dmg != null && primaryAbility.damage > 0f)
                 {
-                    Debug.Log($"[Enemy] About to deal {primaryAbility.damage} damage");
                     dmg.TakeDamage(primaryAbility.damage, NetworkObjectId);
-                    Debug.Log($"[Enemy] Damage dealt!");
                 }
 
                 if (primaryAbility.vfxPrefab != null)

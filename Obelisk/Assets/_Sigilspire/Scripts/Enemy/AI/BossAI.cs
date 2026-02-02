@@ -18,16 +18,24 @@ namespace Enemy
         [SerializeField] private float phase2HealthThreshold = 0.66f;
         [SerializeField] private float phase3HealthThreshold = 0.33f;
 
-        [Header("Boss Abilities")]
-        [SerializeField] private Ability phase2Ability;
-        [SerializeField] private Ability phase3Ability;
+        [Header("Phase Buffs")]
+        [SerializeField] private float phase2SpeedMult = 1.3f;
+        [SerializeField] private float phase3SpeedMult = 1.6f;
+        [SerializeField] private float phase2DmgMult = 1.5f;
+        [SerializeField] private float phase3DmgMult = 2.0f;
 
         private BossPhase _currentPhase = BossPhase.Phase1;
         private HealthBase _health;   // use base type
+        private float _baseMoveSpeed;
+        private float _baseDamage;
 
         private void Start()
         {
             _health = GetComponent<HealthBase>();
+
+            // Cache base stats from EnemyAI
+            _baseMoveSpeed = moveSpeed;
+            _baseDamage = primaryAbility != null ? primaryAbility.damage : 10f;
         }
 
         private void LateUpdate()
@@ -44,6 +52,7 @@ namespace Enemy
 
             float healthPercent = _health.CurrentHealth.Value / _health.MaxHealth;
 
+            // Check for phase transitions
             if (healthPercent <= phase3HealthThreshold && _currentPhase != BossPhase.Phase3)
             {
                 SwitchPhase(BossPhase.Phase3);
@@ -58,13 +67,71 @@ namespace Enemy
         {
             _currentPhase = newPhase;
 
-            // TODO: swap abilities / buff stats / change behavior patterns
-            // Example:
-            // if (newPhase == BossPhase.Phase2 && phase2Ability != null) { ... }
+            Debug.Log($"[Boss] Entering {newPhase}!");
+
+            // apply phase buffs
+            switch (newPhase)
+            {
+                case BossPhase.Phase2:
+                    ApplyPhase2Buffs();
+                    break;
+                case BossPhase.Phase3:
+                    ApplyPhase3Buffs();
+                    break;
+            }
+
+            // Visual/Audio feedback
+            PhaseTransitionEffectsClientRpc();
         }
 
-        // Later you can override PerformAbilityAttack or TryAttack to use
-        // phase-specific abilities.
+        private void ApplyPhase2Buffs()
+        {
+            // Increase speed and damage
+            moveSpeed = _baseMoveSpeed * phase2SpeedMult;
+
+            if (primaryAbility != null)
+                primaryAbility.damage = _baseDamage * phase2DmgMult;
+        }
+
+        private void ApplyPhase3Buffs()
+        {
+            // Further increase speed & damage
+            moveSpeed = _baseMoveSpeed * phase3SpeedMult;
+
+            if (primaryAbility != null)
+                primaryAbility.damage = _baseDamage * phase3DmgMult;
+        }
+
+        [ClientRpc]
+        private void PhaseTransitionEffectsClientRpc()
+        {
+            // Screen shake
+            var shake = FindFirstObjectByType<CameraShake>();
+            if (shake != null)
+                shake.Shake(0.3f, 0.3f);
+
+            // flash boss sprite
+            StartCoroutine(PhaseTransitionFlash());
+        }
+
+        private System.Collections.IEnumerator PhaseTransitionFlash()
+        {
+            var sprite = GetComponentInChildren<SpriteRenderer>();
+            if (sprite == null) yield break;
+
+            Color original = sprite.color;
+
+            // flash white/red 3 times
+            for(int i = 0; i < 3; i++)
+            {
+                sprite.color = Color.white;
+                yield return new WaitForSeconds(0.1f);
+                sprite.color = Color.red;
+                yield return new WaitForSeconds(0.1f);
+            }
+
+            sprite.color = original;
+        }
     }
 }
 

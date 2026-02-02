@@ -99,7 +99,6 @@ namespace Player
                 if (!shield.CanUseAbility())
                 {
                     float rem = shield.GetCooldownRemaining();
-                    Debug.Log("Shield ability on cooldown: " + rem.ToString("0.00") + "s");
                     return;
                 }
 
@@ -115,7 +114,6 @@ namespace Player
             if (!sword.CanUseAbility())
             {
                 float rem = sword.GetCooldownRemaining();
-                Debug.Log("Sword on Cooldown: " + rem.ToString("0.00") + "s");
                 return;
             }
 
@@ -164,7 +162,6 @@ namespace Player
 
             if (!grapplingHook.CanUseAbility())
             {
-                Debug.Log("Grapple on Cooldown: " + grapplingHook.GetCooldownRemaining());
                 return;
             }
 

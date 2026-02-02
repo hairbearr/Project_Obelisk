@@ -3,10 +3,12 @@ using TMPro;
 using Unity.Netcode;
 using UnityEngine;
 using Combat.Health;
+using UnityEngine.UI;
 
 public class PlayerHealthUI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI hpText;
+    [SerializeField] private Slider hpSlider;
 
     [Header("Optional: leave empty to auto-bind to local player")]
     [SerializeField] private HealthBase playerHealth;
@@ -118,7 +120,13 @@ public class PlayerHealthUI : MonoBehaviour
         float current = playerHealth.CurrentHealth.Value;
         float max = playerHealth.MaxHealth;
 
-        hpText.text = $"HP: {Mathf.CeilToInt(current)} / {Mathf.CeilToInt(max)}";
+        // update Text
+        if(hpText != null)
+        hpText.text = $"{Mathf.CeilToInt(current)}/{Mathf.CeilToInt(max)}";
+
+        // updateSlider
+        if (hpSlider != null)
+            hpSlider.value = current / max;
     }
 }
 

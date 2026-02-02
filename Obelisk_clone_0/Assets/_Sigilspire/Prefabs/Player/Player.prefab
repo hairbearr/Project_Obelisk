@@ -77,6 +77,7 @@ GameObject:
   - component: {fileID: 3883217432460283518}
   - component: {fileID: 3417266848188217596}
   - component: {fileID: 590640724724568550}
+  - component: {fileID: 8513129559222808608}
   m_Layer: 8
   m_Name: Camera
   m_TagString: Untagged
@@ -215,6 +216,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
+--- !u!114 &8513129559222808608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900814497721851969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 883267dd59e29794091e2962c4c9f879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraShake
 --- !u!1 &1080443935391917180
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,11 +367,11 @@ GameObject:
   - component: {fileID: 7608890470901692854}
   - component: {fileID: 8041656580344547172}
   - component: {fileID: 2150351558415702893}
-  - component: {fileID: 2704062506876815872}
   - component: {fileID: 682889023214438744}
   - component: {fileID: 1555782169865307800}
   - component: {fileID: 1978432937673861373}
   - component: {fileID: 5409830336202922783}
+  - component: {fileID: 4625086448752195998}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -398,7 +411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2698343998
+  GlobalObjectIdHash: 1600610909
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -684,22 +697,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &2704062506876815872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1510615852687295852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5eae3bade1bc8974dafcf812b58ec6b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Combat.Health.HealthBase
-  ShowTopMostFoldoutHeaderGroup: 1
-  maxHealth: 200
-  CurrentHealth:
-    m_InternalValue: 100
 --- !u!114 &682889023214438744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -829,6 +826,25 @@ MonoBehaviour:
   sword: {fileID: 0}
   shield: {fileID: 0}
   grapple: {fileID: 0}
+--- !u!114 &4625086448752195998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510615852687295852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42516b1c4e33a104389f181b0ab07cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Combat.Health.PlayerHealth
+  ShowTopMostFoldoutHeaderGroup: 1
+  maxHealth: 200
+  CurrentHealth:
+    m_InternalValue: 0
+  slider: {fileID: 0}
+  deathPenaltySeconds: 15
+  invulnerabilityDuration: 2
 --- !u!1 &2094233075969275182
 GameObject:
   m_ObjectHideFlags: 0

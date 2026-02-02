@@ -32,7 +32,6 @@ namespace Enemy
             {
                 // Fallback if no EnemyAI found (shouldn't happen)
                 targetNormalizedTime = defaultHitFrameNormalizedTime;
-                Debug.LogWarning($"[EnemyAttackStateBehaviour] No EnemyAI found on {animator.name}, using default timing");
             }
         }
 

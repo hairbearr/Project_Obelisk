@@ -31,12 +31,29 @@ namespace Enemy
         {
             if (!IsServer) return;
 
-            // Notify Mob Counter
-            var mobCounter = FindFirstObjectByType<MobCounterUI>();
-            if (mobCounter != null)
+            // check if this is a boss
+            bool isBoss = GetComponent<Enemy.BossAI>() != null;
+
+            if (isBoss)
             {
-                mobCounter.ServerIncrementKills();
+                Debug.Log("[EnemyHealth] Boss defeated!");
+
+                // Notify RunManager
+                var runManager = FindFirstObjectByType<RunManager>();
+                if(runManager != null)
+                {
+                    runManager.ServerNotifyBossDeath();
+                }
             }
+            else
+            {
+                // regular enemy, notify Mob Counter
+                var mobCounter = FindFirstObjectByType<MobCounterUI>();
+                if (mobCounter != null)
+                {
+                    mobCounter.ServerIncrementKills();
+                }
+            }                
 
             if (TryGetComponent<GrappleTarget>(out var gt))
                 gt.ServerEndGrapple();
@@ -110,7 +127,6 @@ namespace Enemy
             _rb2D.AddForce(direction.normalized * effectiveForce, ForceMode2D.Impulse);
             _rb2D.linearVelocity = Vector2.ClampMagnitude(_rb2D.linearVelocity, maxKnockbackSpeed);
 
-            Debug.Log($"KB {name} force={effectiveForce} velBefore={velBefore} velAfter={_rb2D.linearVelocity}");
         }
 
 

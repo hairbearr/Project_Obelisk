@@ -224,7 +224,6 @@ namespace Combat
 
             if (weaponAnimator != null)
             {
-                Debug.Log("SwordController: weaponAnimator = " + (weaponAnimator != null ? weaponAnimator.name : "null"));
                 weaponAnimator.SetTrigger("SwordSlash");
             }
 
@@ -322,7 +321,6 @@ namespace Combat
             // Timeout fallback: execute hit if animation event never fired
             if (pendingHitCheck)
             {
-                Debug.LogWarning("[Sword] Animation event didn't fire within timeout, executing hit as fallback");
                 ExecuteHitCheck();
             }
         }
@@ -350,7 +348,6 @@ namespace Combat
             Collider2D[] closeHits = Physics2D.OverlapCircleAll(closeOrigin, hitRadius * 0.7f, hitLayers);
             Collider2D[] farHits = Physics2D.OverlapCircleAll(farOrigin, hitRadius, hitLayers);
 
-            Debug.Log($"[Sword] Close hits: {closeHits.Length}, Far hits: {farHits.Length}");
 
             // Combine and deduplicate
             var allHits = new System.Collections.Generic.HashSet<Collider2D>();
@@ -361,20 +358,6 @@ namespace Combat
             foreach (var hit in farHits)
             {
                 if (hit != null) allHits.Add(hit);
-            }
-
-            Debug.Log($"[Sword] Attack direction: {dir}");
-            Debug.Log($"[Sword] Close origin: {closeOrigin}, radius: {hitRadius * 0.7f}");
-            Debug.Log($"[Sword] Far origin: {farOrigin}, radius: {hitRadius}");
-            Debug.Log($"[Sword] Close hits: {closeHits.Length}");
-            foreach (var h in closeHits)
-            {
-                Debug.Log($"  - Close hit: {h.name} at {h.transform.position}");
-            }
-            Debug.Log($"[Sword] Far hits: {farHits.Length}");
-            foreach (var h in farHits)
-            {
-                Debug.Log($"  - Far hit: {h.name} at {h.transform.position}");
             }
 
             float halfArc = attackArcDegrees * 0.5f;

@@ -177,6 +177,31 @@ namespace Player
             if (grappleAnimator != null) grappleAnimator.speed = speed;
         }
 
+        public void PlayDeath()
+        {
+            if (playerAnimator != null)
+            {
+                playerAnimator.ResetTrigger("Death");
+                playerAnimator.SetTrigger("Death");
+            }
 
+            if (swordAnimator != null) 
+            {
+                swordAnimator.ResetTrigger("Death");
+                swordAnimator.SetTrigger("Death");
+            }
+
+            if(shieldAnimator != null)
+            {
+                shieldAnimator.ResetTrigger("Death");
+                shieldAnimator.SetTrigger("Death");
+            }
+
+            if(grappleAnimator != null)
+            {
+                grappleAnimator.ResetTrigger("Death");
+                grappleAnimator.SetTrigger("Death");
+            }
+        }
     }
 }

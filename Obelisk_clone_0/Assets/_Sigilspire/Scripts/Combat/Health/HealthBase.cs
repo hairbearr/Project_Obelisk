@@ -20,7 +20,7 @@ namespace Combat.Health
         private bool initialized;
 
         [Header("Healthbar")]
-        [SerializeField] private Slider slider;
+        [SerializeField] protected Slider slider;
 
         public override void OnNetworkSpawn()
         {
@@ -68,7 +68,7 @@ namespace Combat.Health
             if (!initialized) return;
             if (amount <= 0f) return;
 
-            Debug.Log($"[Health] {name} TakeDamage called: amount={amount}, attackerId={attackerId}");
+
 
             // Look up attacker position (for directional block)
             Vector2 attackerPos = Vector2.zero;
@@ -91,16 +91,20 @@ namespace Combat.Health
 
             CurrentHealth.Value -= amount;
 
+
             var threat = GetComponentInParent<IThreatReceiver>();
             if (threat != null && attackerId != 0)
                 threat.AddThreat(attackerId, amount);
+
 
             if (CurrentHealth.Value <= 0f)
             {
                 CurrentHealth.Value = 0f;
                 OnDeath();
-                slider.enabled = false;
+                if (slider!=null)
+                    slider.enabled = false;
             }
+
         }
 
         public void UpdateHealthBar(float currentValue, float maxValue)

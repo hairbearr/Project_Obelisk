@@ -186,7 +186,7 @@ namespace Combat
             return SigilEvaluator.GetEffectiveStats(baseAbility, equippedSigil, progress);
         }
 
-        private float GetEffectiveMaxShieldEnergy()
+        public float GetEffectiveMaxShieldEnergy()
         {
             float modifier = baseAbility != null ? baseAbility.shieldEnergyModifier : 0f;
             return baseMaxShieldEnergy * (1f + modifier);
@@ -258,22 +258,18 @@ namespace Combat
             Vector2 toAttacker = attackerWorldPos - (Vector2)transform.position;
 
             // DEBUG
-            //Debug.Log($"[Shield] Blocking? attackerPos={attackerWorldPos}, myPos={transform.position}, toAttacker={toAttacker}, forward={forward}");
 
             if (toAttacker.sqrMagnitude < 0.0001f) return false;
 
 
-            // Optional distance gate (so "block arc" doesn't protect you from across the room)
             if (blockRadius > 0f && toAttacker.sqrMagnitude > blockRadius * blockRadius)
                 return false;
 
             float angle = Vector2.Angle(forward, toAttacker.normalized);
 
-            //Debug.Log($"[Shield] Angle check: angle={angle}, halfArc={blockArcDegrees * 0.5f}");
 
             if (angle > blockArcDegrees * 0.5f)
             {
-                //Debug.Log($"[Shield] Outside block arc!");
                 return false; 
             }
 
@@ -294,7 +290,6 @@ namespace Combat
             float blockedDamage = (energyCost <= 0.0001f) ? incomingDamage : incomingDamage * (spend / energyCost);
             damageAfterBlock = Mathf.Max(0f, incomingDamage - blockedDamage);
 
-            //Debug.Log($"[Shield] BLOCKED! blockedDamage={blockedDamage}, afterBlock={damageAfterBlock}");
 
             return blockedDamage > 0f;
         }

@@ -63,12 +63,6 @@ public class MobCounterUI : NetworkBehaviour
         if (!IsServer) return;
 
         float completion = totalEnemies.Value > 0 ? (float)enemiesKilled.Value / totalEnemies.Value : 0f;
-
-        if(completion >= 1f)
-        {
-            Debug.Log("[MobCounter] All enemies defeated!");
-            // TODO: Trigger Victory or Unlock Boss? Probably not.
-        }
     }
 
     private void OnCountChanged(int oldVal, int newVal)
@@ -80,7 +74,19 @@ public class MobCounterUI : NetworkBehaviour
     {
         if (counterText == null) return;
 
-        counterText.text = $"Enemies: {enemiesKilled.Value}/{totalEnemies.Value}";
+        // get required count from RunManager
+        var runManager = FindFirstObjectByType<RunManager>();
+        int required = totalEnemies.Value;
+
+        if (runManager != null)
+        {
+            required = Mathf.CeilToInt(totalEnemies.Value * runManager.GetRequiredMobPercentage());
+        }
+
+        // calculate percentage
+        float percentage = totalEnemies.Value > 0 ? (float)enemiesKilled.Value / required * 100f : 0f;
+
+        counterText.text = $"Enemies: {enemiesKilled.Value}/{required} ({percentage:F0}%)";
     }
 
     [ContextMenu("Recount Enemies")]
