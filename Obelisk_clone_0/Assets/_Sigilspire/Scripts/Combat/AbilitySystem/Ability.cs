@@ -45,5 +45,10 @@ namespace Combat.AbilitySystem
         [Header("Attack Timing")]
         public float windupSeconds = 0.12f;
         public float activeSeconds = 0.05f;
+
+        [Header("Boss/Advanced")]
+        public float windupDuration = 1.0f;
+        public float aoeRadius = 3f;
+        public GameObject telegraphPrefab;
     }
 }

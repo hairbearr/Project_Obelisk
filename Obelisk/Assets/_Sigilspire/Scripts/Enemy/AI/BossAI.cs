@@ -2,6 +2,7 @@ using UnityEngine;
 using Unity.Netcode;
 using Combat.AbilitySystem;
 using Combat.Health;
+using System;
 
 namespace Enemy
 {
@@ -29,6 +30,17 @@ namespace Enemy
         private float _baseMoveSpeed;
         private float _baseDamage;
 
+        [Header("Abilities")]
+        [SerializeField] private BossAbilityController abilityController;
+
+        private void Awake()
+        {
+            if(abilityController == null)
+            {
+                abilityController = GetComponentInParent<BossAbilityController>();
+            }
+        }
+
         private void Start()
         {
             _health = GetComponent<HealthBase>();
@@ -41,9 +53,29 @@ namespace Enemy
         private void LateUpdate()
         {
             if (!IsServer) return;
-            if (_health == null) return;
+            if (_health == null || _health.CurrentHealth.Value <= 0f) return;
 
             UpdatePhase();
+            TryUseAbilities();
+        }
+
+        private void TryUseAbilities()
+        {
+            if (abilityController == null) return;
+            if (abilityController.IsPerformingAbility) return;
+
+            Transform target = FindClosestPlayer();
+            if (target != null)
+            {
+                abilityController.TryUseAbility(target);
+            }
+        }
+
+        private Transform FindClosestPlayer()
+        {
+            // finds any player
+            var player = FindFirstObjectByType<Player.PlayerController>();
+            return player != null ? player.transform : null;
         }
 
         private void UpdatePhase()
@@ -69,7 +101,17 @@ namespace Enemy
 
             Debug.Log($"[Boss] Entering {newPhase}!");
 
-            // apply phase buffs
+            // Tell ability controller about phase change
+            if (abilityController != null)
+            {
+                int phaseIndex = newPhase == BossPhase.Phase1 ? 0
+                               : newPhase == BossPhase.Phase2 ? 1
+                               : 2;
+
+                abilityController.SetPhase(phaseIndex);
+            }
+
+            // Apply phase buffs
             switch (newPhase)
             {
                 case BossPhase.Phase2:
@@ -80,7 +122,6 @@ namespace Enemy
                     break;
             }
 
-            // Visual/Audio feedback
             PhaseTransitionEffectsClientRpc();
         }
 

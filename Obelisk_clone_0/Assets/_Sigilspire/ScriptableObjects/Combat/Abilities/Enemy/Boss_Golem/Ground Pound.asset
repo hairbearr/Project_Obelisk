@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b27be473a1ae8240a1f2fe46ca1b5b2, type: 3}
+  m_Name: Ground Pound
+  m_EditorClassIdentifier: Assembly-CSharp::Combat.AbilitySystem.Ability
+  abilityName: 
+  type: 0
+  cooldown: 8
+  resourceCost: 0
+  direction: 2
+  damage: 25
+  knockbackForce: 0
+  shieldEnergyModifier: 0
+  grappleForce: 0
+  vfxPrefab: {fileID: 0}
+  windupSeconds: 0.12
+  activeSeconds: 0.05
+  windupDuration: 1
+  aoeRadius: 2.5
+  telegraphPrefab: {fileID: 8552267455541584144, guid: 4e46b5bd39202b34e81c020d1a1c53a6, type: 3}
