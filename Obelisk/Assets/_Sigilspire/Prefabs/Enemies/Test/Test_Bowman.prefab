@@ -24,6 +24,10 @@ PrefabInstance:
       propertyPath: maxKnockbackSpeed
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 1645118322472254613, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3081394880648425571, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_Size.x
       value: 1.28
@@ -38,6 +42,10 @@ PrefabInstance:
       objectReference: {fileID: 6934013284892070054, guid: 56566c0d6b5f05f49b4e3eaf8ab7ebc7, type: 3}
     - target: {fileID: 3081394880648425571, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3361967414344876869, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
@@ -77,6 +85,14 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: rangedTelegraphInner
+      value: 
+      objectReference: {fileID: 3979412786716130782}
+    - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: rangedTelegraphOuter
+      value: 
+      objectReference: {fileID: 976809898723069594}
+    - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: lineOfSightMask.m_Bits
       value: 8
       objectReference: {fileID: 0}
@@ -112,6 +128,22 @@ PrefabInstance:
       propertyPath: m_Value
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6071857348336624480, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071857348336624480, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: m_Positions.Array.data[1].x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071857348336624480, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 6169853426857489534, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6205151091289128448, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_Name
       value: Test_Bowman
@@ -139,6 +171,26 @@ PrefabInstance:
     - target: {fileID: 7284657103081393818, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 175045445
+      objectReference: {fileID: 0}
+    - target: {fileID: 7995146783050616868, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7995146783050616868, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: m_Positions.Array.data[1].x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7995146783050616868, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8490817103320451334, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8828054330758817477, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8842397654035953887, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_LocalPosition.x
@@ -199,6 +251,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
+--- !u!120 &976809898723069594 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 6071857348336624480, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+  m_PrefabInstance: {fileID: 6471040977452297722}
+  m_PrefabAsset: {fileID: 0}
+--- !u!120 &3979412786716130782 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 7995146783050616868, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+  m_PrefabInstance: {fileID: 6471040977452297722}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5064715431648519016 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2271145318052728466, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}

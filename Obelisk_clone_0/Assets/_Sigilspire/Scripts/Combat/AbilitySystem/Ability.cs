@@ -50,5 +50,24 @@ namespace Combat.AbilitySystem
         public float windupDuration = 1.0f;
         public float aoeRadius = 3f;
         public GameObject telegraphPrefab;
+
+        [Header("Multi-Projectile")]
+        public int projectileCount = 3;
+        public float spreadAngle = 30f;
+        public GameObject projectilePrefab;
+        public float projectileSpeed = 10f;
+
+        [Header("Summon")]
+        public GameObject summonPrefab;
+        public int summonCount = 1;
+        public float summonHPMultiplier = 0.5f;
+
+        [Header("Charge")]
+        public float chargeSpeed = 15f;
+        public bool isOneShot = false;
+
+        [Header("Channel")]
+        public float channelDuration = 10f;
+        public bool killAllOnComplete = false;
     }
 }

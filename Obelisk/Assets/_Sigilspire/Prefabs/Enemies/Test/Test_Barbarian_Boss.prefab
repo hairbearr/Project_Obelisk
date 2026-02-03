@@ -32,6 +32,10 @@ PrefabInstance:
       propertyPath: pullToPlayer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2240397288113715450, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3081394880648425571, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_Size.x
       value: 1.28
@@ -140,6 +144,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 300
       objectReference: {fileID: 0}
+    - target: {fileID: 5539460198813783716, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071857348336624480, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071857348336624480, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: m_Positions.Array.data[1].x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071857348336624480, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 6169853426857489534, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6205151091289128448, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_Name
       value: Test_Barbarian_Boss
@@ -163,6 +187,18 @@ PrefabInstance:
     - target: {fileID: 7284657103081393818, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 36384456
+      objectReference: {fileID: 0}
+    - target: {fileID: 7995146783050616868, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7995146783050616868, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 8490817103320451334, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8842397654035953887, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_LocalScale.x
@@ -269,12 +305,19 @@ MonoBehaviour:
   attackRange: 1.6
   attackLockTime: 0.2
   facingEpsilon: 0.001
+  attackArcDegrees: 360
   meleeMinDistance: 0.8
   meleeIdealDistance: 1.2
   attackHitTiming: 0.5
   threatTracker: {fileID: 5925980190507697977}
   retargetInterval: 0.25
   attackMode: 0
+  meleeTelegraphOuter: {fileID: 0}
+  meleeTelegraphInner: {fileID: 0}
+  rangedTelegraphOuter: {fileID: 0}
+  rangedTelegraphInner: {fileID: 0}
+  telegraphOuterColor: {r: 1, g: 0, b: 0, a: 0.2}
+  telegraphInnerColor: {r: 1, g: 0, b: 0, a: 0.6}
   rangedMaxRange: 8
   lineOfSightMask:
     serializedVersion: 2
@@ -290,6 +333,7 @@ MonoBehaviour:
   phase3SpeedMult: 1.6
   phase2DmgMult: 1.5
   phase3DmgMult: 2
+  abilityController: {fileID: 0}
 --- !u!114 &5925980190507697977 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4230780524085010385, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}

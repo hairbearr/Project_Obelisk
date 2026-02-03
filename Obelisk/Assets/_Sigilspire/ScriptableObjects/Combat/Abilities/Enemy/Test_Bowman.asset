@@ -24,3 +24,17 @@ MonoBehaviour:
   vfxPrefab: {fileID: 0}
   windupSeconds: 0.45
   activeSeconds: 0.05
+  windupDuration: 1
+  aoeRadius: 3
+  telegraphPrefab: {fileID: 0}
+  projectileCount: 1
+  spreadAngle: 30
+  projectilePrefab: {fileID: 8814034529641949395, guid: 069a89b1767bc8240920f4d4a82f94bb, type: 3}
+  projectileSpeed: 10
+  summonPrefab: {fileID: 0}
+  summonCount: 1
+  summonHPMultiplier: 0.5
+  chargeSpeed: 15
+  isOneShot: 0
+  channelDuration: 10
+  killAllOnComplete: 0
