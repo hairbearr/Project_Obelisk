@@ -1,5 +1,6 @@
 using Combat.AbilitySystem;
 using Combat.DamageInterfaces;
+using Combat.Projectiles;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
@@ -152,10 +153,20 @@ namespace Enemy
         {
             isPerformingAbility = true;
 
+            Debug.Log($"[BossAbility] Using: {ability.abilityName}");
+
             // Route to appropriate ability handler based on type
             if (ability.aoeRadius > 0f)
             {
                 yield return StartCoroutine(GroundPoundSequence(ability));
+            }
+            else if (ability.damage > 0f && ability.knockbackForce > 0f)
+            {
+                yield return StartCoroutine(StoneFistSequence(ability, target));
+            }
+            else if (ability.projectilePrefab != null)
+            {
+                yield return StartCoroutine(RuneBarrageSequence(ability, target));
             }
             // TODO: Add other ability types (projectile, summon, etc.)
             else
@@ -180,6 +191,55 @@ namespace Enemy
             DealAoEDamage(bossPos, radius, ability.damage);
             HideTelegraphClientRpc();
             ScreenShakeClientRpc();
+        }
+
+        private IEnumerator StoneFistSequence(Ability ability, Transform target)
+        {
+            if (target == null) yield break;
+
+            Vector2 bossPos = transform.position;
+            Vector2 targetPos = target.position;
+            float windup = ability.windupDuration;
+
+            // show telegraph at target position
+            ShowTelegraphClientRpc(targetPos, ability.aoeRadius, windup);
+            yield return new WaitForSeconds(windup);
+            // deal damage + knockback in small AoE
+            DealAoEDamage(targetPos, ability.aoeRadius, ability.damage);
+            HideTelegraphClientRpc();
+        }
+
+        private IEnumerator RuneBarrageSequence(Ability ability, Transform target)
+        {
+            if (target == null) yield break;
+
+            float windup = ability.windupDuration;
+            Vector2 origin = transform.position;
+            Vector2 toTarget = (Vector2)target.position - origin;
+            Vector2 baseDir = toTarget.normalized;
+
+            // Show telegraph lines for each projectile path
+            ShowProjectileTelegraphClientRpc(origin, baseDir, ability.projectileCount, ability.spreadAngle, ability.windupDuration);
+
+            yield return new WaitForSeconds(windup);
+
+            HideProjectileTelegraphClientRpc();
+
+            int count = Mathf.Max(1, ability.projectileCount);
+            float spread = ability.spreadAngle;
+
+            for (int i = 0; i < count; i++)
+            {
+                float angle = 0f;
+                if (count > 1)
+                {
+                    float step = spread / (count - 1);
+                    angle = -spread / 2f + (i * step);
+                }
+
+                Vector2 dir = RotateVector(baseDir, angle);
+                SpawnProjectile(ability.projectilePrefab, origin, dir, ability.projectileSpeed);
+            }
         }
 
         // Helper methods
@@ -211,6 +271,28 @@ namespace Enemy
             }
         }
 
+        private void SpawnProjectile(GameObject prefab, Vector2 origin, Vector2 direction, float speed)
+        {
+            GameObject proj = Instantiate(prefab, origin, Quaternion.identity);
+
+            var netObj = proj.GetComponent<NetworkObject>();
+            if (netObj != null) netObj.Spawn(true);
+
+            var projBase = proj.GetComponent<ProjectileBase>();
+            if(projBase != null)
+            {
+                projBase.SetDirection(direction);
+                // ProjectileBase uses its own speed field
+            }
+        }
+
+        private Vector2 RotateVector(Vector2 v, float degrees)
+        {
+            float rad = degrees * Mathf.Deg2Rad;
+            return new Vector2(Mathf.Cos(rad) * v.x - Mathf.Sin(rad) * v.y, Mathf.Sin(rad) * v.x + Mathf.Cos(rad) * v.y);
+        }
+
+
         [ClientRpc]
         private void ShowTelegraphClientRpc(Vector2 position, float radius, float duration)
         {
@@ -227,11 +309,87 @@ namespace Enemy
         }
 
         [ClientRpc]
+        private void ShowProjectileTelegraphClientRpc(Vector2 origin, Vector2 baseDirection, int count, float spread, float duration)
+        {
+            // For now, just log - you can add actual LineRenderer visualization later
+            Debug.Log($"[BossAbility] Showing {count} projectile telegraphs from {origin}");
+
+            // TODO: Instantiate LineRenderers showing projectile paths
+            // Similar to ranged enemy telegraph but multiple lines
+        }
+
+        [ClientRpc]
+        private void HideProjectileTelegraphClientRpc()
+        {
+            // TODO: Hide/destroy projectile telegraph lines
+        }
+
+        [ClientRpc]
         private void ScreenShakeClientRpc()
         {
             var shake = FindFirstObjectByType<CameraShake>();
             if (shake != null)
                 shake.Shake(0.3f, 0.3f);
+        }
+
+        private void OnDrawGizmosSelected()
+        {
+            if (abilitySet == null) return;
+
+            Vector3 pos = transform.position;
+            var phase = abilitySet.GetPhaseAbilities(currentPhaseIndex);
+            if (phase == null) return;
+
+            // Draw primary abilities (A/B pool)
+            foreach (var ability in phase.primaryAbilities)
+            {
+                if (ability == null) continue;
+
+                // AoE abilities (Ground Pound, Stone Fist)
+                if (ability.aoeRadius > 0f)
+                {
+                    Gizmos.color = new Color(1f, 0f, 0f, 0.3f); // red transparent
+                    Gizmos.DrawWireSphere(pos, ability.aoeRadius);
+
+                    // Label
+#if UNITY_EDITOR
+                    UnityEditor.Handles.Label(pos + Vector3.up * ability.aoeRadius, ability.abilityName + " AoE");
+#endif
+                }
+
+                // Projectile abilities (Rune Barrage)
+                if (ability.projectilePrefab != null)
+                {
+                    float range = 10f; // estimate based on projectileSpeed * lifetime
+                    Gizmos.color = new Color(0f, 1f, 1f, 0.3f); // cyan transparent
+                    Gizmos.DrawWireSphere(pos, range);
+
+#if UNITY_EDITOR
+                    UnityEditor.Handles.Label(pos + Vector3.up * range, ability.abilityName + " Range");
+#endif
+                }
+            }
+
+            // Draw secondary abilities (C pool) - different color
+            foreach (var ability in phase.secondaryAbilities)
+            {
+                if (ability == null) continue;
+
+                if (ability.aoeRadius > 0f)
+                {
+                    Gizmos.color = new Color(1f, 0f, 1f, 0.3f); // magenta transparent
+                    Gizmos.DrawWireSphere(pos, ability.aoeRadius);
+
+#if UNITY_EDITOR
+                    UnityEditor.Handles.Label(pos + Vector3.up * ability.aoeRadius, ability.abilityName + " (Secondary)");
+#endif
+                }
+            }
+
+            // Draw current phase info
+#if UNITY_EDITOR
+            UnityEditor.Handles.Label(pos + Vector3.up * 3f, $"Phase {currentPhaseIndex + 1} - {phase.rotationMode}");
+#endif
         }
     }
 }

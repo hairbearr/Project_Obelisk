@@ -40959,7 +40959,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &660828418
 Transform:
   m_ObjectHideFlags: 0
@@ -81930,7 +81930,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1406215037
 Transform:
   m_ObjectHideFlags: 0
@@ -87891,6 +87891,14 @@ PrefabInstance:
       propertyPath: teleportDestination
       value: 
       objectReference: {fileID: 1522150584}
+    - target: {fileID: 5767519925674875149, guid: 600fcec8ceadbf443bb3b0cc2882882d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5767519925674875149, guid: 600fcec8ceadbf443bb3b0cc2882882d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6099843563108323441, guid: 600fcec8ceadbf443bb3b0cc2882882d, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 2756848518

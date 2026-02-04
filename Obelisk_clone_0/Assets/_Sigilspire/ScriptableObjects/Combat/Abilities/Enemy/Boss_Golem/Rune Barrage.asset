@@ -10,31 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b27be473a1ae8240a1f2fe46ca1b5b2, type: 3}
-  m_Name: Ground Pound
+  m_Name: Rune Barrage
   m_EditorClassIdentifier: Assembly-CSharp::Combat.AbilitySystem.Ability
-  abilityName: 
+  abilityName: Runic Barrage
   type: 0
-  cooldown: 8
+  cooldown: 5
   resourceCost: 0
   direction: 2
-  damage: 25
-  knockbackForce: 10
+  damage: 10
+  knockbackForce: 3
   shieldEnergyModifier: 0
   grappleForce: 0
   vfxPrefab: {fileID: 0}
   windupSeconds: 0.12
   activeSeconds: 0.05
-  windupDuration: 2
-  aoeRadius: 2.5
-  telegraphPrefab: {fileID: 8552267455541584144, guid: 4e46b5bd39202b34e81c020d1a1c53a6, type: 3}
-  projectileCount: 0
-  spreadAngle: 0
-  projectilePrefab: {fileID: 0}
+  windupDuration: 0.07
+  aoeRadius: 0
+  telegraphPrefab: {fileID: 0}
+  projectileCount: 3
+  spreadAngle: 30
+  projectilePrefab: {fileID: 1550007675400891042, guid: 4ea29afe27083934a9531455c3877f09, type: 3}
   projectileSpeed: 10
   summonPrefab: {fileID: 0}
-  summonCount: 1
-  summonHPMultiplier: 0.5
-  chargeSpeed: 15
+  summonCount: 0
+  summonHPMultiplier: 0
+  chargeSpeed: 0
   isOneShot: 0
   channelDuration: 10
   killAllOnComplete: 0

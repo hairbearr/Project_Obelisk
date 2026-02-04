@@ -68,6 +68,14 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4044940585338921720, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044940585338921720, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4425365914209931163, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_LinearDamping
       value: 6
@@ -142,7 +150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5532320623927628924, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 300
+      value: 440
       objectReference: {fileID: 0}
     - target: {fileID: 5539460198813783716, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_Enabled
@@ -188,6 +196,14 @@ PrefabInstance:
       propertyPath: GlobalObjectIdHash
       value: 36384456
       objectReference: {fileID: 0}
+    - target: {fileID: 7284657103081393818, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: SceneMigrationSynchronization
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284657103081393818, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 36384456
+      objectReference: {fileID: 0}
     - target: {fileID: 7995146783050616868, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -202,11 +218,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8842397654035953887, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8842397654035953887, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8842397654035953887, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_LocalScale.z
@@ -214,11 +230,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8842397654035953887, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 96.534195
       objectReference: {fileID: 0}
     - target: {fileID: 8842397654035953887, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.1495974
       objectReference: {fileID: 0}
     - target: {fileID: 8842397654035953887, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_LocalPosition.z
@@ -260,6 +276,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6205151091289128448, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4968707085168890851}
+    - targetCorrespondingSourceObject: {fileID: 6205151091289128448, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -4788789153440097013}
     - targetCorrespondingSourceObject: {fileID: 3514413188484985845, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4457864477458606970}
@@ -293,21 +312,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy.BossAI
   ShowTopMostFoldoutHeaderGroup: 1
-  detectionRadius: 8
+  detectionRadius: 3.5
   targetLayers:
     serializedVersion: 2
     m_Bits: 256
-  moveSpeed: 2.5
-  stoppingDistance: 1.2
+  moveSpeed: 3
   enemyCollider: {fileID: 0}
   knockbackMoveLockTime: 0.12
-  primaryAbility: {fileID: 11400000, guid: 215cd923a58410148bd40fafc2662269, type: 2}
-  attackRange: 1.6
-  attackLockTime: 0.2
+  primaryAbility: {fileID: 0}
+  attackRange: 0.9
+  attackLockTime: 0.3
   facingEpsilon: 0.001
   attackArcDegrees: 360
-  meleeMinDistance: 0.8
-  meleeIdealDistance: 1.2
+  meleeMinDistance: 0.5
+  meleeIdealDistance: 0.8
   attackHitTiming: 0.5
   threatTracker: {fileID: 5925980190507697977}
   retargetInterval: 0.25
@@ -329,11 +347,28 @@ MonoBehaviour:
   kiteSpeedMultiplier: 1
   phase2HealthThreshold: 0.66
   phase3HealthThreshold: 0.33
-  phase2SpeedMult: 1.3
-  phase3SpeedMult: 1.6
-  phase2DmgMult: 1.5
-  phase3DmgMult: 2
-  abilityController: {fileID: 0}
+  phase2SpeedMult: 1
+  phase3SpeedMult: 1
+  phase2DmgMult: 1
+  phase3DmgMult: 1
+  abilityController: {fileID: -4788789153440097013}
+--- !u!114 &-4788789153440097013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509985470920697576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7679701ff1470b54a9f94d50a3987c9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy.BossAbilityController
+  ShowTopMostFoldoutHeaderGroup: 1
+  abilitySet: {fileID: 11400000, guid: 6d9efcdcc60956844a953914611d752e, type: 2}
+  damageableLayers:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &5925980190507697977 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4230780524085010385, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}

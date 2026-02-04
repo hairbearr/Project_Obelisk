@@ -19,9 +19,9 @@ namespace Combat
         [SerializeField] private SigilInventory sigilInventory;
 
         [Header("Timings")]
-        [SerializeField] private float hitWindupSeconds = 0.12f; // tune per animation
-        [SerializeField] private float hitActiveSeconds = 0.05f; // how long the hitbox is active
-        [SerializeField] private bool useWindupTiming = true;
+        //[SerializeField] private float hitWindupSeconds = 0.12f; // tune per animation
+        //[SerializeField] private float hitActiveSeconds = 0.05f; // how long the hitbox is active
+        //[SerializeField] private bool useWindupTiming = true;
 
         private readonly Dictionary<ulong, float> serverLastHitTimeByTarget = new Dictionary<ulong, float>(32);
 

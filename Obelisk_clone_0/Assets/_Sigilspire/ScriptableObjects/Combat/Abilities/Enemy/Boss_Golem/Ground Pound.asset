@@ -18,12 +18,23 @@ MonoBehaviour:
   resourceCost: 0
   direction: 2
   damage: 25
-  knockbackForce: 0
+  knockbackForce: 10
   shieldEnergyModifier: 0
   grappleForce: 0
   vfxPrefab: {fileID: 0}
   windupSeconds: 0.12
   activeSeconds: 0.05
-  windupDuration: 1
+  windupDuration: 2
   aoeRadius: 2.5
   telegraphPrefab: {fileID: 8552267455541584144, guid: 4e46b5bd39202b34e81c020d1a1c53a6, type: 3}
+  projectileCount: 0
+  spreadAngle: 0
+  projectilePrefab: {fileID: 0}
+  projectileSpeed: 10
+  summonPrefab: {fileID: 0}
+  summonCount: 1
+  summonHPMultiplier: 0.5
+  chargeSpeed: 15
+  isOneShot: 0
+  channelDuration: 10
+  killAllOnComplete: 0

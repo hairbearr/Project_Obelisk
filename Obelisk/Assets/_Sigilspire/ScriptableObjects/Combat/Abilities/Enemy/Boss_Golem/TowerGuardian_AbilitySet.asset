@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10a78f0dafe684d44b1ee7e7f959eff1, type: 3}
+  m_Name: TowerGuardian_AbilitySet
+  m_EditorClassIdentifier: Assembly-CSharp::BossAbilitySet
+  phases:
+  - phaseName: Phase 1
+    primaryAbilities:
+    - {fileID: 11400000, guid: d87a872447040414c9fa56f7b3af9245, type: 2}
+    - {fileID: 11400000, guid: 22bb4e03264c7744bb59eec9848e2884, type: 2}
+    secondaryAbilities: []
+    rotationMode: 0
+    abilityCooldown: 8
+    secondaryAbilityCooldown: 0

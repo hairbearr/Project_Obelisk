@@ -33,19 +33,15 @@ namespace Enemy
         [Header("Abilities")]
         [SerializeField] private BossAbilityController abilityController;
 
-        private void Awake()
-        {
-            if(abilityController == null)
-            {
-                abilityController = GetComponentInParent<BossAbilityController>();
-            }
-        }
-
         private void Start()
         {
             _health = GetComponent<HealthBase>();
 
-            // Cache base stats from EnemyAI
+            if (abilityController == null)
+            {
+                abilityController = GetComponentInParent<BossAbilityController>();
+            }
+
             _baseMoveSpeed = moveSpeed;
             _baseDamage = primaryAbility != null ? primaryAbility.damage : 10f;
         }
@@ -67,7 +63,12 @@ namespace Enemy
             Transform target = FindClosestPlayer();
             if (target != null)
             {
-                abilityController.TryUseAbility(target);
+                float distance = Vector2.Distance(transform.position, target.position);
+
+                if (distance <= detectionRadius)
+                {
+                    abilityController.TryUseAbility(target);
+                }
             }
         }
 

@@ -13,12 +13,12 @@ namespace Enemy
     public class EnemyAI : NetworkBehaviour
     {
         [Header("Targeting")]
-        [SerializeField] private float detectionRadius = 8f;
+        [SerializeField] protected float detectionRadius = 8f;
         [SerializeField] private LayerMask targetLayers;
 
         [Header("Movement")]
         [SerializeField] public float moveSpeed = 2.5f;
-        [SerializeField] private float stoppingDistance = 1.2f;
+//        [SerializeField] private float stoppingDistance = 1.2f;
         [SerializeField] private Collider2D enemyCollider;
         [SerializeField] private float knockbackMoveLockTime = 0.12f;
         private float moveLockedUntil;
@@ -101,6 +101,11 @@ namespace Enemy
 
         private void Update()
         {
+            if (this is BossAI)
+            {
+                Debug.Log($"[Boss Update] currentTarget={currentTarget?.name}, attackLocked={Time.time < attackLockUntil}, health exists={health != null}, health initialized={health?.Initialized}, health value={health?.CurrentHealth.Value}, IsServer={IsServer}");
+            }
+
             if (!IsServer) return;
 
             if (health != null && health.Initialized && health.CurrentHealth.Value <= 0f)
@@ -134,7 +139,11 @@ namespace Enemy
                 if (!attackLocked)
                 {
                     HandleMovement();
-                    TryAttack();
+                    if (primaryAbility != null)
+                    {
+                        TryAttack();
+                    }
+                    
                 }
                 else
                 {
