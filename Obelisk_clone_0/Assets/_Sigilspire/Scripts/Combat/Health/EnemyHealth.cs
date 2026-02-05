@@ -36,7 +36,6 @@ namespace Enemy
 
             if (isBoss)
             {
-                Debug.Log("[EnemyHealth] Boss defeated!");
 
                 // Notify RunManager
                 var runManager = FindFirstObjectByType<RunManager>();

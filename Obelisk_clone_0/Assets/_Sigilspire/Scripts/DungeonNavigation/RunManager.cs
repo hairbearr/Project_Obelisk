@@ -79,12 +79,10 @@ public class RunManager : NetworkBehaviour
 
         if (victory)
         {
-            Debug.Log("[RunManager] Victory! Boss defeated and mob count met!");
             ShowVictoryClientRpc(timeRemaining, killed, required);
         }
         else
         {
-            Debug.Log("[RunManager] Defeat! Timer expired.");
             ShowDefeatClientRpc("Time Expired", killed, required);
         }
     }
@@ -130,7 +128,6 @@ public class RunManager : NetworkBehaviour
         int total = mobCounter != null ? mobCounter.TotalEnemies : 0;
         int needed = Mathf.CeilToInt(total * requiredMobPercentage);
 
-        Debug.Log($"[RunManager] Boss defeated, but only {killed}/{needed} enemies killed! Keep clearing!");
     }
 
     public void ServerNotifyTimeExpired()

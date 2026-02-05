@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TowerGuardian_AbilitySet
   m_EditorClassIdentifier: Assembly-CSharp::BossAbilitySet
   phases:
-  - phaseName: Phase 1
+  - phaseName: Awakening
     primaryAbilities:
     - {fileID: 11400000, guid: d87a872447040414c9fa56f7b3af9245, type: 2}
     - {fileID: 11400000, guid: 22bb4e03264c7744bb59eec9848e2884, type: 2}
@@ -21,3 +21,12 @@ MonoBehaviour:
     rotationMode: 0
     abilityCooldown: 8
     secondaryAbilityCooldown: 0
+  - phaseName: Enraged
+    primaryAbilities:
+    - {fileID: 11400000, guid: d87a872447040414c9fa56f7b3af9245, type: 2}
+    - {fileID: 11400000, guid: 22bb4e03264c7744bb59eec9848e2884, type: 2}
+    secondaryAbilities:
+    - {fileID: 11400000, guid: 752a5118653252f439a7605e049cae37, type: 2}
+    rotationMode: 1
+    abilityCooldown: 8
+    secondaryAbilityCooldown: 12

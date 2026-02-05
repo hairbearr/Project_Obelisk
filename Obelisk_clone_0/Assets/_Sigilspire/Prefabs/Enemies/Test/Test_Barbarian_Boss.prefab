@@ -283,6 +283,16 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 4457864477458606970}
   m_SourcePrefab: {fileID: 100100000, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+--- !u!120 &468365895989332172 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 7995146783050616868, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+  m_PrefabInstance: {fileID: 7533273056715528424}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &2624352136141016652 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5539460198813783716, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+  m_PrefabInstance: {fileID: 7533273056715528424}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4190180453609327456 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5957432186866471816, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
@@ -294,6 +304,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
+--- !u!120 &4379783588808227720 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 6071857348336624480, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+  m_PrefabInstance: {fileID: 7533273056715528424}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4509985470920697576 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6205151091289128448, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
@@ -319,7 +334,7 @@ MonoBehaviour:
   moveSpeed: 3
   enemyCollider: {fileID: 0}
   knockbackMoveLockTime: 0.12
-  primaryAbility: {fileID: 0}
+  primaryAbility: {fileID: 11400000, guid: 8582ec7c420cf174eb4db1bc8c3b187b, type: 2}
   attackRange: 0.9
   attackLockTime: 0.3
   facingEpsilon: 0.001
@@ -329,11 +344,12 @@ MonoBehaviour:
   attackHitTiming: 0.5
   threatTracker: {fileID: 5925980190507697977}
   retargetInterval: 0.25
+  currentTargetId: 0
   attackMode: 0
-  meleeTelegraphOuter: {fileID: 0}
-  meleeTelegraphInner: {fileID: 0}
-  rangedTelegraphOuter: {fileID: 0}
-  rangedTelegraphInner: {fileID: 0}
+  meleeTelegraphOuter: {fileID: 2624352136141016652}
+  meleeTelegraphInner: {fileID: 8619030522540646418}
+  rangedTelegraphOuter: {fileID: 4379783588808227720}
+  rangedTelegraphInner: {fileID: 468365895989332172}
   telegraphOuterColor: {r: 1, g: 0, b: 0, a: 0.2}
   telegraphInnerColor: {r: 1, g: 0, b: 0, a: 0.6}
   rangedMaxRange: 8
@@ -369,6 +385,9 @@ MonoBehaviour:
   damageableLayers:
     serializedVersion: 2
     m_Bits: 256
+  circleTelegraphPrefab: {fileID: 8552267455541584144, guid: 4e46b5bd39202b34e81c020d1a1c53a6, type: 3}
+  coneTelegraphPrefab: {fileID: 8552267455541584144, guid: 4e46b5bd39202b34e81c020d1a1c53a6, type: 3}
+  lineTelegraphPrefab: {fileID: 6608510399317256289, guid: eafbcd17177858c4db3320b91a47fb0b, type: 3}
 --- !u!114 &5925980190507697977 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4230780524085010385, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
@@ -409,3 +428,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4404f2e41ef0f4db1ff63144cf11cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy.EnemyAnimationDriver
+--- !u!212 &8619030522540646418 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2240397288113715450, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+  m_PrefabInstance: {fileID: 7533273056715528424}
+  m_PrefabAsset: {fileID: 0}

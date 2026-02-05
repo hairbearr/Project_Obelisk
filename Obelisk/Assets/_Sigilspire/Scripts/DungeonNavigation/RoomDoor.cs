@@ -55,7 +55,6 @@ public class RoomDoor : NetworkBehaviour
 
         if (isLocked.Value)
         {
-            Debug.Log("[Door] Locked! Clear all enemies first.");
             return;
         }
 

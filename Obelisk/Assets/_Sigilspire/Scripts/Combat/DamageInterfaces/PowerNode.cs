@@ -73,7 +73,6 @@ public class PowerNode : NetworkBehaviour, IDamageable
             puzzleManager.ServerNotifyNodeDestroyed();
         }
 
-        Debug.Log($"[PowerNode] {name} destroyed!");
     }
 
     [ClientRpc]

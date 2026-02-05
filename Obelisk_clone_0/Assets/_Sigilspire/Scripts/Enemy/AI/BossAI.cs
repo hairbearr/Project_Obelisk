@@ -65,7 +65,9 @@ namespace Enemy
             {
                 float distance = Vector2.Distance(transform.position, target.position);
 
-                if (distance <= detectionRadius)
+                // Only use abilities when at basic attack range
+                // This keeps movement and abilities unified
+                if (distance <= attackRange * 1.2f) // Small buffer
                 {
                     abilityController.TryUseAbility(target);
                 }
@@ -100,7 +102,6 @@ namespace Enemy
         {
             _currentPhase = newPhase;
 
-            Debug.Log($"[Boss] Entering {newPhase}!");
 
             // Tell ability controller about phase change
             if (abilityController != null)

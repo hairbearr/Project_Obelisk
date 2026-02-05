@@ -57,7 +57,6 @@ public class CombatRoom : NetworkBehaviour
 
     private void UnlockDoors()
     {
-        Debug.Log($"[CombatRoom] {name} cleared! Unlocking doors.");
 
         foreach (var door in doorsToUnlock)
         {

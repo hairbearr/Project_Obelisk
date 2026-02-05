@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b27be473a1ae8240a1f2fe46ca1b5b2, type: 3}
-  m_Name: Stone Fist
+  m_Name: Boss_MeleeSwipe
   m_EditorClassIdentifier: Assembly-CSharp::Combat.AbilitySystem.Ability
-  abilityName: Stone Fist
+  abilityName: Boss Melee Swipe
   type: 0
-  cooldown: 3
+  cooldown: 2
   resourceCost: 0
   direction: 2
-  damage: 20
-  knockbackForce: 8
+  damage: 15
+  knockbackForce: 5
   shieldEnergyModifier: 0
   grappleForce: 0
   vfxPrefab: {fileID: 0}
   windupSeconds: 0
   activeSeconds: 0
-  windupDuration: 0.5
-  aoeRadius: 1.5
-  telegraphPrefab: {fileID: 8552267455541584144, guid: 4e46b5bd39202b34e81c020d1a1c53a6, type: 3}
+  windupDuration: 0
+  aoeRadius: 0
+  telegraphPrefab: {fileID: 0}
   projectileCount: 0
   spreadAngle: 0
   projectilePrefab: {fileID: 0}

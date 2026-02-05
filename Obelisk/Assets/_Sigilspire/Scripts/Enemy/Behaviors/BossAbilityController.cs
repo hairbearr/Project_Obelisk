@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 using static BossAbilitySet;
+using static UnityEngine.GraphicsBuffer;
 
 namespace Enemy
 {
@@ -17,12 +18,21 @@ namespace Enemy
         [Header("Settings")]
         [SerializeField] private LayerMask damageableLayers;
 
+        [Header("Telegraph Prefabs")]
+        [SerializeField] private GameObject circleTelegraphPrefab;
+        [SerializeField] private GameObject coneTelegraphPrefab;
+        [SerializeField] private GameObject lineTelegraphPrefab;
+
+        public enum TelegraphType { Circle, Cone, Line }
+
         private int currentPhaseIndex = 0;
         private float lastPrimaryAbilityTime = -999f;
         private float lastSecondaryAbilityTime = -999f;
 
         private int primaryRotationIndex = 0; // For Alternate mode
         private bool useSecondaryNext = false; // For PriorityRotate mode
+
+        private GameObject activeTelegraph; // Track current telegraph
 
         private bool isPerformingAbility = false;
 
@@ -38,7 +48,6 @@ namespace Enemy
             lastPrimaryAbilityTime = -999f;
             lastSecondaryAbilityTime = -999f;
 
-            Debug.Log($"[BossAbility] Switched to phase {phaseIndex}");
         }
 
         public void TryUseAbility(Transform target)
@@ -153,7 +162,13 @@ namespace Enemy
         {
             isPerformingAbility = true;
 
-            Debug.Log($"[BossAbility] Using: {ability.abilityName}");
+
+            // Lock boss movement during ability
+            var enemyAI = GetComponentInParent<EnemyAI>();
+            if (enemyAI != null)
+            {
+                enemyAI.NotifyKnockback(); // Reuses the movement lock mechanism
+            }
 
             // Route to appropriate ability handler based on type
             if (ability.aoeRadius > 0f)
@@ -171,7 +186,6 @@ namespace Enemy
             // TODO: Add other ability types (projectile, summon, etc.)
             else
             {
-                Debug.LogWarning($"[BossAbility] No handler for ability type: {ability.type}");
             }
 
             isPerformingAbility = false;
@@ -181,64 +195,60 @@ namespace Enemy
         private IEnumerator GroundPoundSequence(Ability ability)
         {
             Vector2 bossPos = transform.position;
-            float radius = ability.aoeRadius;
-            float windup = ability.windupDuration;
 
-            ShowTelegraphClientRpc(bossPos, radius, windup);
+            // Show circle telegraph (direction doesn't matter)
+            ShowTelegraphClientRpc(bossPos, Vector2.zero, TelegraphType.Circle, ability.aoeRadius, ability.windupDuration);
 
-            yield return new WaitForSeconds(windup);
+            yield return new WaitForSeconds(ability.windupDuration);
 
-            DealAoEDamage(bossPos, radius, ability.damage);
-            HideTelegraphClientRpc();
+            // Deal circular AoE damage
+            DealAoEDamage(bossPos, ability.aoeRadius, ability.damage);
+
             ScreenShakeClientRpc();
         }
 
         private IEnumerator StoneFistSequence(Ability ability, Transform target)
         {
-            if (target == null) yield break;
-
             Vector2 bossPos = transform.position;
-            Vector2 targetPos = target.position;
-            float windup = ability.windupDuration;
+            Vector2 toTarget = ((Vector2)target.position - bossPos).normalized;
 
-            // show telegraph at target position
-            ShowTelegraphClientRpc(targetPos, ability.aoeRadius, windup);
-            yield return new WaitForSeconds(windup);
-            // deal damage + knockback in small AoE
-            DealAoEDamage(targetPos, ability.aoeRadius, ability.damage);
-            HideTelegraphClientRpc();
+            // Show cone telegraph facing the target
+            ShowTelegraphClientRpc(bossPos, toTarget, TelegraphType.Cone, ability.aoeRadius, ability.windupDuration);
+
+            yield return new WaitForSeconds(ability.windupDuration);
+
+            // Deal cone damage (90 degree arc)
+            DealConeAoeDamage(bossPos, toTarget, ability.aoeRadius, 90f, ability.damage);
+
+            ScreenShakeClientRpc();
         }
 
         private IEnumerator RuneBarrageSequence(Ability ability, Transform target)
         {
-            if (target == null) yield break;
+            Vector2 bossPos = transform.position;
+            Vector2 toTarget = ((Vector2)target.position - bossPos).normalized;
 
-            float windup = ability.windupDuration;
-            Vector2 origin = transform.position;
-            Vector2 toTarget = (Vector2)target.position - origin;
-            Vector2 baseDir = toTarget.normalized;
+            // Fire 3 projectiles in a spread pattern (-15, 0, +15 degrees)
+            float[] spreadAngles = { -15f, 0f, 15f };
+            float projectileRange = 10f; // Visual range for telegraph
+            float lineWidth = 0.2f;
 
-            // Show telegraph lines for each projectile path
-            ShowProjectileTelegraphClientRpc(origin, baseDir, ability.projectileCount, ability.spreadAngle, ability.windupDuration);
-
-            yield return new WaitForSeconds(windup);
-
-            HideProjectileTelegraphClientRpc();
-
-            int count = Mathf.Max(1, ability.projectileCount);
-            float spread = ability.spreadAngle;
-
-            for (int i = 0; i < count; i++)
+            // Show line telegraphs for each projectile path
+            foreach (float angleOffset in spreadAngles)
             {
-                float angle = 0f;
-                if (count > 1)
-                {
-                    float step = spread / (count - 1);
-                    angle = -spread / 2f + (i * step);
-                }
+                Vector2 direction = RotateVector(toTarget, angleOffset);
+                Vector2 endPoint = bossPos + direction * projectileRange;
 
-                Vector2 dir = RotateVector(baseDir, angle);
-                SpawnProjectile(ability.projectilePrefab, origin, dir, ability.projectileSpeed);
+                ShowLineTelegraphClientRpc(bossPos, endPoint, lineWidth, ability.windupDuration);
+            }
+
+            yield return new WaitForSeconds(ability.windupDuration);
+
+            // Fire the actual projectiles
+            foreach (float angleOffset in spreadAngles)
+            {
+                Vector2 direction = RotateVector(toTarget, angleOffset);
+                SpawnProjectile(bossPos, direction, ability);
             }
         }
 
@@ -271,57 +281,186 @@ namespace Enemy
             }
         }
 
-        private void SpawnProjectile(GameObject prefab, Vector2 origin, Vector2 direction, float speed)
+        private void DealConeAoeDamage(Vector2 center, Vector2 direction, float radius, float arcDegrees, float damage)
         {
-            GameObject proj = Instantiate(prefab, origin, Quaternion.identity);
+            if (!IsServer) return;
 
-            var netObj = proj.GetComponent<NetworkObject>();
-            if (netObj != null) netObj.Spawn(true);
+            Collider2D[] hits = Physics2D.OverlapCircleAll(center, radius, damageableLayers);
 
-            var projBase = proj.GetComponent<ProjectileBase>();
-            if(projBase != null)
+            var bossNetworkObject = GetComponentInParent<NetworkObject>();
+            ulong bossId = bossNetworkObject != null ? bossNetworkObject.NetworkObjectId : 0;
+
+            float halfArc = arcDegrees * 0.5f;
+
+            foreach (var hit in hits)
             {
-                projBase.SetDirection(direction);
-                // ProjectileBase uses its own speed field
+                if (hit == null) continue;
+                if (hit.transform == transform || hit.transform.IsChildOf(transform))
+                    continue;
+
+                // Arc filter
+                Vector2 toTarget = ((Vector2)hit.transform.position) - center;
+                if (toTarget.sqrMagnitude < 0.0001f) continue;
+
+                Vector2 toTargetNorm = toTarget.normalized;
+
+                // Must be in front (within 180 degrees)
+                if (Vector2.Dot(direction, toTargetNorm) <= 0f)
+                    continue;
+
+                // Must be within arc
+                float angle = Vector2.Angle(direction, toTargetNorm);
+                if (angle > halfArc)
+                    continue;
+
+                // Damage + knockback
+                var damageable = hit.GetComponentInParent<IDamageable>();
+                if (damageable != null)
+                    damageable.TakeDamage(damage, bossId);
+
+                var knockbackable = hit.GetComponentInParent<IKnockbackable>();
+                if (knockbackable != null)
+                {
+                    knockbackable.ApplyKnockback(toTargetNorm, 10f);
+                }
             }
         }
 
-        private Vector2 RotateVector(Vector2 v, float degrees)
+        private void SpawnProjectile(Vector2 startPos, Vector2 direction, Ability ability)
         {
-            float rad = degrees * Mathf.Deg2Rad;
-            return new Vector2(Mathf.Cos(rad) * v.x - Mathf.Sin(rad) * v.y, Mathf.Sin(rad) * v.x + Mathf.Cos(rad) * v.y);
+            if (!IsServer) return;
+            if (ability.projectilePrefab == null)
+            {
+                Debug.LogWarning("[BossAbility] No projectilePrefab set on ability!");
+                return;
+            }
+
+            // Instantiate projectile
+            GameObject projObj = Instantiate(ability.projectilePrefab, startPos, Quaternion.identity);
+
+            // Configure it before spawning
+            var projectile = projObj.GetComponent<ProjectileBase>();
+            if (projectile != null)
+            {
+                projectile.SetDirection(direction);
+                // Override damage from ability (projectile prefab has default)
+                projectile.damage = ability.damage;
+            }
+
+            // Network spawn
+            var networkObject = projObj.GetComponent<NetworkObject>();
+            if (networkObject != null)
+            {
+                networkObject.Spawn();
+            }
+            else
+            {
+                Debug.LogWarning("[BossAbility] Projectile prefab missing NetworkObject component!");
+                Destroy(projObj);
+            }
+        }
+
+        private Vector2 RotateVector(Vector2 vector, float degrees)
+        {
+            float radians = degrees * Mathf.Deg2Rad;
+            float cos = Mathf.Cos(radians);
+            float sin = Mathf.Sin(radians);
+
+            return new Vector2(
+                cos * vector.x - sin * vector.y,
+                sin * vector.x + cos * vector.y
+            );
         }
 
 
         [ClientRpc]
-        private void ShowTelegraphClientRpc(Vector2 position, float radius, float duration)
+        private void ShowTelegraphClientRpc(Vector2 position, Vector2 direction, TelegraphType type, float radius, float duration)
         {
-            // For now, just log - we'll add telegraph prefab reference to BossAbilitySet later
-            Debug.Log($"[BossAbility] Showing telegraph at {position}, radius {radius}");
+            GameObject prefab = type switch
+            {
+                TelegraphType.Circle => circleTelegraphPrefab,
+                TelegraphType.Cone => coneTelegraphPrefab,
+                TelegraphType.Line => lineTelegraphPrefab,
+                _ => null
+            };
 
-            // TODO: Instantiate telegraph visual
+            if (prefab == null)
+            {
+                Debug.LogWarning($"[BossAbility] No telegraph prefab for type {type}!");
+                return;
+            }
+
+            GameObject instance = Instantiate(prefab, position, Quaternion.identity);
+
+            // Rotate to face direction (matters for cones, doesn't hurt circles)
+            if (direction.sqrMagnitude > 0.01f)
+            {
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                instance.transform.rotation = Quaternion.Euler(0, 0, angle - 90f);
+            }
+
+            // Scale to match radius
+            instance.transform.localScale = Vector3.one * radius;
+
+            Destroy(instance, duration);
         }
 
         [ClientRpc]
-        private void HideTelegraphClientRpc()
+        private void ShowLineTelegraphClientRpc(Vector2 startPoint, Vector2 endPoint, float width, float duration)
         {
-            // Telegraph auto-destroys after duration
+            if (lineTelegraphPrefab == null) return;
+
+            GameObject instance = Instantiate(lineTelegraphPrefab, startPoint, Quaternion.identity);
+
+            // Get both line renderers
+            LineRenderer[] lines = instance.GetComponents<LineRenderer>();
+
+            if (lines.Length >= 2)
+            {
+                LineRenderer backgroundLine = lines[0];
+                LineRenderer foregroundLine = lines[1];
+
+                // Background: show full path instantly (semi-transparent)
+                backgroundLine.positionCount = 2;
+                backgroundLine.SetPosition(0, new Vector3(startPoint.x, startPoint.y, 0));
+                backgroundLine.SetPosition(1, new Vector3(endPoint.x, endPoint.y, 0));
+                backgroundLine.startWidth = width;
+                backgroundLine.endWidth = width;
+
+                // Foreground: animate fill (opaque)
+                foregroundLine.startWidth = width;
+                foregroundLine.endWidth = width;
+                StartCoroutine(AnimateLineFill(foregroundLine, startPoint, endPoint, duration));
+            }
+            else
+            {
+                Debug.LogWarning("[BossAbility] Line telegraph prefab needs 2 LineRenderer components!");
+            }
+
+            Destroy(instance, duration);
         }
 
-        [ClientRpc]
-        private void ShowProjectileTelegraphClientRpc(Vector2 origin, Vector2 baseDirection, int count, float spread, float duration)
+        private IEnumerator AnimateLineFill(LineRenderer line, Vector2 start, Vector2 end, float fillTime)
         {
-            // For now, just log - you can add actual LineRenderer visualization later
-            Debug.Log($"[BossAbility] Showing {count} projectile telegraphs from {origin}");
+            line.positionCount = 2;
+            line.SetPosition(0, new Vector3(start.x, start.y, 0));
+            line.SetPosition(1, new Vector3(start.x, start.y, 0)); // Start collapsed
 
-            // TODO: Instantiate LineRenderers showing projectile paths
-            // Similar to ranged enemy telegraph but multiple lines
-        }
+            float elapsed = 0f;
 
-        [ClientRpc]
-        private void HideProjectileTelegraphClientRpc()
-        {
-            // TODO: Hide/destroy projectile telegraph lines
+            while (elapsed < fillTime)
+            {
+                elapsed += Time.deltaTime;
+                float t = elapsed / fillTime;
+
+                Vector2 currentEnd = Vector2.Lerp(start, end, t);
+                line.SetPosition(1, new Vector3(currentEnd.x, currentEnd.y, 0));
+
+                yield return null;
+            }
+
+            // Snap to final position
+            line.SetPosition(1, new Vector3(end.x, end.y, 0));
         }
 
         [ClientRpc]

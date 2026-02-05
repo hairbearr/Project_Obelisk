@@ -25,11 +25,11 @@ namespace Enemy
 
         [Header("Attack")]
         [SerializeField] public Ability primaryAbility;
-        [SerializeField] private float attackRange = 1.6f;
+        [SerializeField] protected float attackRange = 1.6f;
         [SerializeField] private float attackLockTime = 0.2f;
         private float attackLockUntil;
         [SerializeField] private float facingEpsilon = 0.001f;
-        private Vector2 lastFacingDir = Vector2.down;
+        protected Vector2 lastFacingDir = Vector2.down;
         [SerializeField, Range(0f, 360f)] private float attackArcDegrees = 360f; // 360 = full circle, 120 = cone
         private Vector2 lockedRangedAimDirection;
 
@@ -48,10 +48,10 @@ namespace Enemy
         private float lastRetargetTime;
 
         private Transform currentTarget;
-        private ulong currentTargetId;
+        [SerializeField] private ulong currentTargetId = 0;
 
         private Rigidbody2D rb2D;
-        private EnemyAnimationDriver animDriver;
+        protected EnemyAnimationDriver animDriver;
         private HealthBase health;
 
         private float lastAttackTime;
@@ -101,10 +101,7 @@ namespace Enemy
 
         private void Update()
         {
-            if (this is BossAI)
-            {
-                Debug.Log($"[Boss Update] currentTarget={currentTarget?.name}, attackLocked={Time.time < attackLockUntil}, health exists={health != null}, health initialized={health?.Initialized}, health value={health?.CurrentHealth.Value}, IsServer={IsServer}");
-            }
+
 
             if (!IsServer) return;
 
@@ -270,7 +267,7 @@ namespace Enemy
             return obj.transform;
         }
 
-        private void HandleMovement()
+        protected virtual void HandleMovement()
         {
             if (currentTarget == null || rb2D == null) return;
 
@@ -295,7 +292,15 @@ namespace Enemy
             {
                 cd = enemyCollider.Distance(targetCol);
                 surfaceDistance = cd.isOverlapped ? 0f : cd.distance;
+
+                if (this is BossAI)
+                {
+                    Debug.Log($"[Boss Collider] overlap={cd.isOverlapped}, rawDist={cd.distance:F2}, surfDist={surfaceDistance:F2}");
+                }
             }
+
+
+
 
             void Move(Vector2 dir, float speedMult = 1f)
             {
@@ -309,7 +314,14 @@ namespace Enemy
                 SetFacing(dir);
 
                 float spd = moveSpeed * speedMult;
-                rb2D.MovePosition(selfPos + dir.normalized * (spd * Time.deltaTime));
+                Vector2 newPos = selfPos + dir.normalized * (spd * Time.deltaTime);
+
+                if (this is BossAI)
+                {
+                    Debug.Log($"[Boss Move] Trying to move from {selfPos} to {newPos}, distance={Vector2.Distance(selfPos, newPos):F4}");
+                }
+
+                rb2D.MovePosition(newPos);
                 animDriver?.SetMovement(dir.normalized);
             }
 
@@ -318,6 +330,7 @@ namespace Enemy
             {
                 if (attackMode == AttackMode.Melee)
                 {
+                    
                     // Melee: don't bounce away, just stop and let TryAttack handle it.
                     animDriver?.SetFacing(lastFacingDir);
                     animDriver?.SetMovement(Vector2.zero);
@@ -339,6 +352,15 @@ namespace Enemy
             // Melee - Chase until "stop distance" from collider surface
             if (attackMode == AttackMode.Melee)
             {
+                /*if (this is BossAI)
+                {
+                    string branch = surfaceDistance < meleeMinDistance ? "BACKING_AWAY"
+                                  : surfaceDistance <= meleeIdealDistance ? "AT_IDEAL_STOP"
+                                  : "CHASING";
+
+                    Debug.Log($"[Boss Frame] surf={surfaceDistance:F2} min={meleeMinDistance:F2} ideal={meleeIdealDistance:F2} | Branch={branch} | toTarget={toTarget.normalized}");
+                }*/
+
                 // Too close? Back away
                 if (surfaceDistance < meleeMinDistance)
                 {
@@ -358,7 +380,7 @@ namespace Enemy
 
                 // Too far? Chase
                 Move(toTarget);
-
+                return;
             }
 
             // ----- Ranged -----
@@ -490,7 +512,6 @@ namespace Enemy
             if (currentTarget == null) return;
             if (primaryAbility == null) return;
 
-            Debug.Log($"[Enemy] {name} OnEnemyAttackHitFrame called! damage={primaryAbility.damage}");
 
             HideMeleeTelegraph();
             HideRangedTelegraph();
@@ -521,7 +542,6 @@ namespace Enemy
 
                 if (!inRange)
                 {
-                    Debug.Log($"[Enemy] {name} melee attack MISSED - target dodged out of range!");
                     return; // Player dodged!
                 }
 
@@ -536,7 +556,6 @@ namespace Enemy
 
                     if (angle > halfArc)
                     {
-                        Debug.Log($"[Enemy] {name} melee attack MISSED - target outside attack arc! (angle={angle}, halfArc={halfArc})");
                         return;
                     }
                 }
@@ -581,9 +600,7 @@ namespace Enemy
                 IDamageable dmg = currentTarget.GetComponentInParent<IDamageable>();
                 if (dmg != null && primaryAbility.damage > 0f)
                 {
-                    Debug.Log($"[Enemy] About to deal {primaryAbility.damage} damage");
                     dmg.TakeDamage(primaryAbility.damage, NetworkObjectId);
-                    Debug.Log($"[Enemy] Damage dealt!");
                 }
 
                 if (primaryAbility.vfxPrefab != null)

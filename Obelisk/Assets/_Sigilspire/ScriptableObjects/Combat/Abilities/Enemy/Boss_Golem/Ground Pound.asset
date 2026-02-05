@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b27be473a1ae8240a1f2fe46ca1b5b2, type: 3}
   m_Name: Ground Pound
   m_EditorClassIdentifier: Assembly-CSharp::Combat.AbilitySystem.Ability
-  abilityName: 
+  abilityName: Ground Pound
   type: 0
   cooldown: 8
   resourceCost: 0
@@ -22,19 +22,19 @@ MonoBehaviour:
   shieldEnergyModifier: 0
   grappleForce: 0
   vfxPrefab: {fileID: 0}
-  windupSeconds: 0.12
-  activeSeconds: 0.05
+  windupSeconds: 0
+  activeSeconds: 0
   windupDuration: 2
   aoeRadius: 2.5
   telegraphPrefab: {fileID: 8552267455541584144, guid: 4e46b5bd39202b34e81c020d1a1c53a6, type: 3}
   projectileCount: 0
   spreadAngle: 0
   projectilePrefab: {fileID: 0}
-  projectileSpeed: 10
+  projectileSpeed: 0
   summonPrefab: {fileID: 0}
-  summonCount: 1
-  summonHPMultiplier: 0.5
-  chargeSpeed: 15
+  summonCount: 0
+  summonHPMultiplier: 0
+  chargeSpeed: 0
   isOneShot: 0
-  channelDuration: 10
+  channelDuration: 0
   killAllOnComplete: 0

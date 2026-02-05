@@ -7,7 +7,8 @@ namespace Combat.Projectiles
     public class ProjectileBase : NetworkBehaviour
     {
         [SerializeField] protected float speed = 10f;
-        [SerializeField] protected float damage = 10f;
+        [SerializeField] private float _damage = 10f;
+        public float damage { get => _damage; set => _damage = value; }
         [SerializeField] protected float lifetime = 3f;
         [SerializeField] protected LayerMask hitLayers;
 
