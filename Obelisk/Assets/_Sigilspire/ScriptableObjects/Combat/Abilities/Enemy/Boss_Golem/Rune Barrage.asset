@@ -22,7 +22,7 @@ MonoBehaviour:
   shieldEnergyModifier: 0
   grappleForce: 0
   vfxPrefab: {fileID: 0}
-  windupSeconds: 0.12
+  windupSeconds: 1
   activeSeconds: 0.05
   windupDuration: 0.07
   aoeRadius: 0
@@ -38,3 +38,4 @@ MonoBehaviour:
   isOneShot: 0
   channelDuration: 10
   killAllOnComplete: 0
+  shape: 2

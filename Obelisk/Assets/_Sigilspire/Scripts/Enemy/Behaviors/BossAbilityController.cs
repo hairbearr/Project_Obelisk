@@ -23,6 +23,24 @@ namespace Enemy
         [SerializeField] private GameObject coneTelegraphPrefab;
         [SerializeField] private GameObject lineTelegraphPrefab;
 
+        // active telegraph tracking
+        private Coroutine activeTrackingCoroutine;
+        private GameObject activeCircleInstance;
+        private GameObject activeLineInstance;
+
+        [Header("Charge Attack Settings")]
+        [SerializeField] private float chargeWindupTime = 2.5f;
+        [SerializeField] private float chargeLockTime = 0.5f;
+        [SerializeField] private float chargeSpeed = 20f;
+        [SerializeField] private float chargeMaxDistance = 15f;
+        [SerializeField] private LayerMask chargeCollisionLayers;
+
+        [Header("Charge Visuals")]
+        [SerializeField] private GameObject targetCirclePrefab; // Circle on targeted player
+        [SerializeField] private float circleRadius = 1f;
+
+        [SerializeField] private BossAI bossAI;
+
         public enum TelegraphType { Circle, Cone, Line }
 
         private int currentPhaseIndex = 0;
@@ -42,12 +60,19 @@ namespace Enemy
         {
             currentPhaseIndex = phaseIndex;
 
-            // Reset rotation state on phase change
+            var phase = abilitySet.GetPhaseAbilities(phaseIndex);
+            if (phase == null) return;
+
+            // Reset rotation state
             primaryRotationIndex = 0;
             useSecondaryNext = false;
             lastPrimaryAbilityTime = -999f;
             lastSecondaryAbilityTime = -999f;
 
+            Debug.Log($"[BossAbility] Switched to phase {phaseIndex}");
+
+            // Execute phase transition
+            ExecutePhaseTransition(phase);
         }
 
         public void TryUseAbility(Transform target)
@@ -162,30 +187,31 @@ namespace Enemy
         {
             isPerformingAbility = true;
 
-
             // Lock boss movement during ability
             var enemyAI = GetComponentInParent<EnemyAI>();
             if (enemyAI != null)
             {
-                enemyAI.NotifyKnockback(); // Reuses the movement lock mechanism
+                enemyAI.NotifyKnockback();
             }
 
-            // Route to appropriate ability handler based on type
-            if (ability.aoeRadius > 0f)
+            // Route based on ability shape
+            switch (ability.shape)
             {
-                yield return StartCoroutine(GroundPoundSequence(ability));
-            }
-            else if (ability.damage > 0f && ability.knockbackForce > 0f)
-            {
-                yield return StartCoroutine(StoneFistSequence(ability, target));
-            }
-            else if (ability.projectilePrefab != null)
-            {
-                yield return StartCoroutine(RuneBarrageSequence(ability, target));
-            }
-            // TODO: Add other ability types (projectile, summon, etc.)
-            else
-            {
+                case AbilityShape.Circle:
+                    yield return StartCoroutine(GroundPoundSequence(ability));
+                    break;
+
+                case AbilityShape.Cone:
+                    yield return StartCoroutine(StoneFistSequence(ability, target));
+                    break;
+
+                case AbilityShape.Projectile:
+                    yield return StartCoroutine(RuneBarrageSequence(ability, target));
+                    break;
+
+                default:
+                    Debug.LogWarning($"[BossAbility] Unhandled ability shape: {ability.shape}");
+                    break;
             }
 
             isPerformingAbility = false;
@@ -252,7 +278,154 @@ namespace Enemy
             }
         }
 
+        private IEnumerator ExecuteAllTransitions(BossAbilitySet.PhaseAbilities phase)
+        {
+            Debug.Log($"[BossTransition] ExecuteAllTransitions started! Transition count: {phase.transitions.Count}");
+
+            // Disable boss AI during transitions
+            if (bossAI != null)
+                bossAI.inTransition = true;
+
+            foreach (var transitionType in phase.transitions)
+            {
+                Debug.Log($"[BossTransition] Executing transition: {transitionType}");
+
+                switch (transitionType)
+                {
+                    case PhaseTransitionType.Charge:
+                        Debug.Log($"[BossTransition] Starting charge with count: {phase.chargeCount}");
+                        yield return StartCoroutine(PhaseTransitionChargeAttack(phase.chargeCount));
+                        break;
+
+                    case PhaseTransitionType.Summon:
+                        PhaseTransitionSummonAdds();
+                        break;
+
+                    case PhaseTransitionType.Shield:
+                        PhaseTransitionApplyShield(phase.shieldAmount);
+                        break;
+
+                    case PhaseTransitionType.Enrage:
+                        PhaseTransitionEffectsClientRpc();
+                        break;
+                }
+            }
+
+            if (bossAI != null)
+                bossAI.inTransition = false;
+
+            Debug.Log("[BossTransition] All transitions complete!");
+        }
+
+        private IEnumerator PhaseTransitionChargeAttack(int chargeCount)
+        {
+            for(int i = 0; i < chargeCount; i++)
+            {
+                yield return StartCoroutine(SingleChargeAttack());
+
+                if(i < chargeCount - 1)
+                {
+                    yield return new WaitForSeconds(1f); // brief pause between charges
+                }
+            }
+        }
+
+        private IEnumerator SingleChargeAttack()
+        {
+            // Pick random player
+            Transform target = FindRandomPlayer();
+            if(target == null)
+            {
+                Debug.LogWarning("[BossCharge] No valid player target found!");
+                yield break;
+            }
+
+            var targetNetObj = target.GetComponentInParent<NetworkObject>();
+            if (targetNetObj == null) yield break;
+
+            ulong targetId = targetNetObj.NetworkObjectId;
+            Vector2 bossPos = transform.position;
+
+            // Phase 1: Tracking telegraph (line follows player while filling)
+            ShowTrackingChargeTelegraphClientRpc(targetId, chargeWindupTime);
+
+            yield return new WaitForSeconds(chargeWindupTime);
+
+            // Phase 2: Lock Position
+            Vector2 lockedTargetPos = target.position;
+            LockChargePositionClientRpc(lockedTargetPos);
+
+            yield return new WaitForSeconds(chargeLockTime);
+
+            // Phase 3: Execute charge
+            HideChargeTelegraphClientRpc();
+            yield return StartCoroutine(ExecuteCharge(bossPos, lockedTargetPos));
+        }
+
+        private IEnumerator ExecuteCharge(Vector2 startPos, Vector2 targetPos)
+        {
+            Vector2 direction = (targetPos - startPos).normalized;
+            float distance = Vector2.Distance(startPos, targetPos);
+            float cappedDistance = Mathf.Min(distance, chargeMaxDistance);
+
+            Vector2 endPos = startPos + direction * cappedDistance;
+
+            // Move boss quickly in straight line
+            float elapsed = 0f;
+            float duration = cappedDistance / chargeSpeed;
+
+            while (elapsed < duration)
+            {
+                elapsed += Time.deltaTime;
+                float t = elapsed / duration;
+
+                Vector2 currentPos = Vector2.Lerp(startPos, endPos, t);
+                transform.position = currentPos;
+
+                // check collisions during charge
+                CheckChargeCollisions(direction);
+                yield return null;
+            }
+            transform.position = endPos;
+        }
+
         // Helper methods
+
+        private void CheckChargeCollisions(Vector2 direction)
+        {
+            // TODO: Raycast/overlap to detect pillar or player hits
+            Debug.Log("[BossCharge] Checking collisions...");
+        }
+
+        private Transform FindRandomPlayer()
+        {
+            // find all players
+            var players = FindObjectsByType<Player.PlayerController>(FindObjectsSortMode.None);
+            if (players.Length == 0) return null;
+
+            // pick random
+            return players[Random.Range(0, players.Length)].transform;
+        }
+
+        private void PhaseTransitionSummonAdds()
+        {
+            // TODO: Spawn enemies
+            Debug.Log("[BossTransition] Summoning adds!");
+        }
+
+        private void PhaseTransitionApplyShield(float amount)
+        {
+            // TODO: Apply shield/armor buff
+            Debug.Log($"[BossTransition] Applying {amount} shield!");
+        }
+
+        [ClientRpc]
+        private void PhaseTransitionEffectsClientRpc()
+        {
+            // TODO: Do stuffs
+            Debug.Log("[BossTransition] Transitioning!");
+        }
+
         private void DealAoEDamage(Vector2 center, float radius, float damage)
         {
             if (!IsServer) return;
@@ -360,6 +533,25 @@ namespace Enemy
             }
         }
 
+        private void ExecutePhaseTransition(BossAbilitySet.PhaseAbilities phase)
+        {
+            Debug.Log($"[BossTransition] ExecutePhaseTransition called. IsServer={IsServer}");
+
+            if (!IsServer) return;
+
+            Debug.Log($"[BossTransition] Checking transitions. Count: {(phase.transitions != null ? phase.transitions.Count : -1)}");
+
+            if (phase.transitions == null || phase.transitions.Count == 0)
+            {
+                Debug.Log("[BossTransition] No transitions configured for this phase.");
+                return;
+            }
+
+            Debug.Log($"[BossTransition] Starting ExecuteAllTransitions coroutine...");
+            StartCoroutine(ExecuteAllTransitions(phase));
+        }
+
+
         private Vector2 RotateVector(Vector2 vector, float degrees)
         {
             float radians = degrees * Mathf.Deg2Rad;
@@ -408,37 +600,103 @@ namespace Enemy
         [ClientRpc]
         private void ShowLineTelegraphClientRpc(Vector2 startPoint, Vector2 endPoint, float width, float duration)
         {
-            if (lineTelegraphPrefab == null) return;
+            if (lineTelegraphPrefab == null)
+            {
+                Debug.LogWarning("[BossAbility] No line telegraph prefab!");
+                return;
+            }
 
             GameObject instance = Instantiate(lineTelegraphPrefab, startPoint, Quaternion.identity);
 
-            // Get both line renderers
-            LineRenderer[] lines = instance.GetComponents<LineRenderer>();
+            // Get LineRenderers from root AND children
+            LineRenderer[] lines = instance.GetComponentsInChildren<LineRenderer>();
 
-            if (lines.Length >= 2)
+            if (lines.Length > 0)
             {
-                LineRenderer backgroundLine = lines[0];
-                LineRenderer foregroundLine = lines[1];
-
-                // Background: show full path instantly (semi-transparent)
-                backgroundLine.positionCount = 2;
-                backgroundLine.SetPosition(0, new Vector3(startPoint.x, startPoint.y, 0));
-                backgroundLine.SetPosition(1, new Vector3(endPoint.x, endPoint.y, 0));
-                backgroundLine.startWidth = width;
-                backgroundLine.endWidth = width;
-
-                // Foreground: animate fill (opaque)
-                foregroundLine.startWidth = width;
-                foregroundLine.endWidth = width;
-                StartCoroutine(AnimateLineFill(foregroundLine, startPoint, endPoint, duration));
-            }
-            else
-            {
-                Debug.LogWarning("[BossAbility] Line telegraph prefab needs 2 LineRenderer components!");
+                foreach (var line in lines)
+                {
+                    line.positionCount = 2;
+                    line.SetPosition(0, new Vector3(startPoint.x, startPoint.y, 0));
+                    line.SetPosition(1, new Vector3(endPoint.x, endPoint.y, 0));
+                    line.startWidth = width;
+                    line.endWidth = width;
+                }
             }
 
             Destroy(instance, duration);
         }
+
+        [ClientRpc]
+        private void ShowTrackingChargeTelegraphClientRpc(ulong targetNetworkObjectId, float duration)
+        {
+            // clean up any existing telegraph
+            if(activeTrackingCoroutine != null) StopCoroutine(activeTrackingCoroutine);
+
+            activeTrackingCoroutine = StartCoroutine(TrackingTelegraphRoutine(targetNetworkObjectId, duration));
+        }
+
+        private IEnumerator TrackingTelegraphRoutine(ulong targetId, float duration)
+        {
+            // Get target safely
+            if (!NetworkManager.Singleton.SpawnManager.SpawnedObjects.TryGetValue(targetId, out NetworkObject targetObj))
+            {
+                Debug.LogWarning($"[BossCharge] Target {targetId} not found!");
+                yield break;
+            }
+
+            if (targetObj == null) yield break;
+
+            // Spawn circle on target
+            if (targetCirclePrefab != null)
+            {
+                activeCircleInstance = Instantiate(targetCirclePrefab, targetObj.transform.position, Quaternion.identity);
+                activeCircleInstance.transform.localScale = Vector3.one * circleRadius;
+            }
+
+            // Spawn line
+            if (lineTelegraphPrefab != null)
+            {
+                activeLineInstance = Instantiate(lineTelegraphPrefab, transform.position, Quaternion.identity);
+            }
+
+            LineRenderer[] lines = activeLineInstance?.GetComponents<LineRenderer>();
+            LineRenderer backgroundLine = lines != null && lines.Length > 0 ? lines[0] : null;
+            LineRenderer foregroundLine = lines != null && lines.Length > 1 ? lines[1] : null;
+
+            float elapsed = 0f;
+
+            while (elapsed < duration && targetObj != null)  // Check targetObj != null in loop
+            {
+                elapsed += Time.deltaTime;
+                float t = elapsed / duration;
+
+                Vector2 bossPos = transform.position;
+                Vector2 targetPos = targetObj.transform.position;
+
+                // Update circle position EVERY FRAME
+                if (activeCircleInstance != null)
+                    activeCircleInstance.transform.position = targetPos;
+
+                // Update line
+                if (backgroundLine != null)
+                {
+                    backgroundLine.positionCount = 2;
+                    backgroundLine.SetPosition(0, bossPos);
+                    backgroundLine.SetPosition(1, targetPos);
+                }
+
+                if (foregroundLine != null)
+                {
+                    Vector2 fillEnd = Vector2.Lerp(bossPos, targetPos, t);
+                    foregroundLine.positionCount = 2;
+                    foregroundLine.SetPosition(0, bossPos);
+                    foregroundLine.SetPosition(1, fillEnd);
+                }
+
+                yield return null;
+            }
+        }
+
 
         private IEnumerator AnimateLineFill(LineRenderer line, Vector2 start, Vector2 end, float fillTime)
         {
@@ -461,6 +719,39 @@ namespace Enemy
 
             // Snap to final position
             line.SetPosition(1, new Vector3(end.x, end.y, 0));
+        }
+
+        [ClientRpc]
+        private void LockChargePositionClientRpc(Vector2 lockedPosition)
+        {
+            // Move Circle to locked position
+            if(activeCircleInstance != null) activeCircleInstance.transform.position = lockedPosition;
+
+            // Freeze line at locked position
+            LineRenderer[] lines = activeLineInstance?.GetComponents<LineRenderer>();
+            if(lines != null && lines.Length > 0)
+            {
+                Vector2 bossPos = transform.position;
+                foreach(var line in lines)
+                {
+                    line.SetPosition(0, bossPos);
+                    line.SetPosition(1, lockedPosition);
+                }
+            }
+        }
+
+        [ClientRpc]
+        private void HideChargeTelegraphClientRpc()
+        {
+            if (activeCircleInstance != null) Destroy(activeCircleInstance);
+
+            if (activeLineInstance != null) Destroy(activeLineInstance);
+
+            if (activeTrackingCoroutine != null)
+            {
+                StopCoroutine(activeTrackingCoroutine);
+                activeTrackingCoroutine = null;
+            }
         }
 
         [ClientRpc]

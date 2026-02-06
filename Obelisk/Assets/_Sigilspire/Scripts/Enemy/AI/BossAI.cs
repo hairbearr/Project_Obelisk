@@ -87,6 +87,8 @@ namespace Enemy
 
             float healthPercent = _health.CurrentHealth.Value / _health.MaxHealth;
 
+            Debug.Log($"[Boss] Health: {healthPercent:F2}, Phase: {_currentPhase}");
+
             // Check for phase transitions
             if (healthPercent <= phase3HealthThreshold && _currentPhase != BossPhase.Phase3)
             {

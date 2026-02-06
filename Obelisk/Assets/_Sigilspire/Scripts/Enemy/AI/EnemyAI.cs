@@ -68,6 +68,7 @@ namespace Enemy
         [SerializeField] private Color telegraphOuterColor = new Color(1f, 0f, 0f, 0.2f); // faint
         [SerializeField] private Color telegraphInnerColor = new Color(1f, 0f, 0f, 0.6f); // bright
 
+        public bool inTransition = false;
 
         [Header("Ranged (Hitscan)")]
         [SerializeField] private float rangedMaxRange = 8f;
@@ -104,6 +105,8 @@ namespace Enemy
 
 
             if (!IsServer) return;
+            if (inTransition) return;
+
 
             if (health != null && health.Initialized && health.CurrentHealth.Value <= 0f)
             {
@@ -292,11 +295,6 @@ namespace Enemy
             {
                 cd = enemyCollider.Distance(targetCol);
                 surfaceDistance = cd.isOverlapped ? 0f : cd.distance;
-
-                if (this is BossAI)
-                {
-                    Debug.Log($"[Boss Collider] overlap={cd.isOverlapped}, rawDist={cd.distance:F2}, surfDist={surfaceDistance:F2}");
-                }
             }
 
 
@@ -315,11 +313,6 @@ namespace Enemy
 
                 float spd = moveSpeed * speedMult;
                 Vector2 newPos = selfPos + dir.normalized * (spd * Time.deltaTime);
-
-                if (this is BossAI)
-                {
-                    Debug.Log($"[Boss Move] Trying to move from {selfPos} to {newPos}, distance={Vector2.Distance(selfPos, newPos):F4}");
-                }
 
                 rb2D.MovePosition(newPos);
                 animDriver?.SetMovement(dir.normalized);
@@ -352,14 +345,6 @@ namespace Enemy
             // Melee - Chase until "stop distance" from collider surface
             if (attackMode == AttackMode.Melee)
             {
-                /*if (this is BossAI)
-                {
-                    string branch = surfaceDistance < meleeMinDistance ? "BACKING_AWAY"
-                                  : surfaceDistance <= meleeIdealDistance ? "AT_IDEAL_STOP"
-                                  : "CHASING";
-
-                    Debug.Log($"[Boss Frame] surf={surfaceDistance:F2} min={meleeMinDistance:F2} ideal={meleeIdealDistance:F2} | Branch={branch} | toTarget={toTarget.normalized}");
-                }*/
 
                 // Too close? Back away
                 if (surfaceDistance < meleeMinDistance)

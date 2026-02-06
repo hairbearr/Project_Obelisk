@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BossAbilitySet
   phases:
   - phaseName: Awakening
+    transitions: 
+    chargeCount: 0
+    shieldAmount: 0
     primaryAbilities:
     - {fileID: 11400000, guid: d87a872447040414c9fa56f7b3af9245, type: 2}
     - {fileID: 11400000, guid: 22bb4e03264c7744bb59eec9848e2884, type: 2}
@@ -22,6 +25,21 @@ MonoBehaviour:
     abilityCooldown: 8
     secondaryAbilityCooldown: 0
   - phaseName: Enraged
+    transitions: 01000000
+    chargeCount: 1
+    shieldAmount: 0
+    primaryAbilities:
+    - {fileID: 11400000, guid: d87a872447040414c9fa56f7b3af9245, type: 2}
+    - {fileID: 11400000, guid: 22bb4e03264c7744bb59eec9848e2884, type: 2}
+    secondaryAbilities:
+    - {fileID: 11400000, guid: 752a5118653252f439a7605e049cae37, type: 2}
+    rotationMode: 1
+    abilityCooldown: 8
+    secondaryAbilityCooldown: 12
+  - phaseName: Mana Bomb
+    transitions: 01000000
+    chargeCount: 2
+    shieldAmount: 0
     primaryAbilities:
     - {fileID: 11400000, guid: d87a872447040414c9fa56f7b3af9245, type: 2}
     - {fileID: 11400000, guid: 22bb4e03264c7744bb59eec9848e2884, type: 2}

@@ -10,6 +10,11 @@ public class BossAbilitySet : ScriptableObject
     {
         public string phaseName = "Phase 1";
 
+        [Header("Phase Transition")]
+        public List<PhaseTransitionType> transitions = new List<PhaseTransitionType>();
+        public int chargeCount = 1; // for charge transitions
+        public float shieldAmount = 100f; // Used if shield is on the list
+
         [Header("Ability Pool")]
         public List<Ability> primaryAbilities = new List<Ability>(); // A/B pool
         public List<Ability> secondaryAbilities = new List<Ability>(); // C pool (priority)
@@ -18,6 +23,15 @@ public class BossAbilitySet : ScriptableObject
         public RotationMode rotationMode = RotationMode.Alternate;
         public float abilityCooldown = 8f;
         public float secondaryAbilityCooldown = 8f; // For A/B -> C -> A/B pattern
+    }
+
+    public enum PhaseTransitionType
+    {
+        None,   // No special transition
+        Charge, // Boss charges at player(s)
+        Shield, // Boss shields itself during transition
+        Summon, // Could summon adds
+        Enrage, // Could just do VFX/Shake
     }
 
     public enum RotationMode

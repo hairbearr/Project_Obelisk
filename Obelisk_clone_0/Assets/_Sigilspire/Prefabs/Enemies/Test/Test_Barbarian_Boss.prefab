@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 4190180453609327456}
     - target: {fileID: 426879209344388932, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: maxHealth
-      value: 50
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 426879209344388932, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: knockbackCooldown
@@ -126,19 +126,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5240316554649227041, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_Size.x
-      value: 0.15456787
+      value: 0.43388367
       objectReference: {fileID: 0}
     - target: {fileID: 5240316554649227041, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_Size.y
-      value: 0.32115337
+      value: 0.77267313
       objectReference: {fileID: 0}
     - target: {fileID: 5240316554649227041, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_Offset.x
-      value: 0.01014545
+      value: 0.032196045
       objectReference: {fileID: 0}
     - target: {fileID: 5240316554649227041, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_Offset.y
-      value: -0.019575644
+      value: -0.0185256
       objectReference: {fileID: 0}
     - target: {fileID: 5532320623927628924, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_SizeDelta.x
@@ -352,6 +352,7 @@ MonoBehaviour:
   rangedTelegraphInner: {fileID: 468365895989332172}
   telegraphOuterColor: {r: 1, g: 0, b: 0, a: 0.2}
   telegraphInnerColor: {r: 1, g: 0, b: 0, a: 0.6}
+  inTransition: 0
   rangedMaxRange: 8
   lineOfSightMask:
     serializedVersion: 2
@@ -388,6 +389,16 @@ MonoBehaviour:
   circleTelegraphPrefab: {fileID: 8552267455541584144, guid: 4e46b5bd39202b34e81c020d1a1c53a6, type: 3}
   coneTelegraphPrefab: {fileID: 8552267455541584144, guid: 4e46b5bd39202b34e81c020d1a1c53a6, type: 3}
   lineTelegraphPrefab: {fileID: 6608510399317256289, guid: eafbcd17177858c4db3320b91a47fb0b, type: 3}
+  chargeWindupTime: 2.5
+  chargeLockTime: 0.5
+  chargeSpeed: 20
+  chargeMaxDistance: 15
+  chargeCollisionLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  targetCirclePrefab: {fileID: 8552267455541584144, guid: 4e46b5bd39202b34e81c020d1a1c53a6, type: 3}
+  circleRadius: 1
+  bossAI: {fileID: 4968707085168890851}
 --- !u!114 &5925980190507697977 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4230780524085010385, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}

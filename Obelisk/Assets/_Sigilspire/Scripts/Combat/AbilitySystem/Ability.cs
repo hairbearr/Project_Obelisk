@@ -19,6 +19,13 @@ namespace Combat.AbilitySystem
         AllAround
     }
 
+    public enum AbilityShape
+    {
+        Circle,
+        Cone,
+        Projectile
+    }
+
     [CreateAssetMenu(fileName = "NewAbility", menuName = "Sigilspire/Ability")]
     public class Ability : ScriptableObject
     {
@@ -69,5 +76,8 @@ namespace Combat.AbilitySystem
         [Header("Channel")]
         public float channelDuration = 10f;
         public bool killAllOnComplete = false;
+
+        [Header("Shape")]
+        public AbilityShape shape = AbilityShape.Circle;
     }
 }
