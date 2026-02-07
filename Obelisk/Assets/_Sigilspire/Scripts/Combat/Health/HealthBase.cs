@@ -1,6 +1,7 @@
-using UnityEngine;
-using Unity.Netcode;
 using Combat.DamageInterfaces;
+using Enemy;
+using Unity.Netcode;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Combat.Health
@@ -67,8 +68,6 @@ namespace Combat.Health
             if (!IsServer) return;
             if (!initialized) return;
             if (amount <= 0f) return;
-
-
 
             // Look up attacker position (for directional block)
             Vector2 attackerPos = Vector2.zero;

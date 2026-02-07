@@ -28,6 +28,13 @@ namespace Enemy
         private GameObject activeCircleInstance;
         private GameObject activeLineInstance;
 
+        [Header("Damage Buffs")]
+        public NetworkVariable<float> damageTakenMultiplier = new NetworkVariable<float>(1f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
+        public NetworkVariable<float> damageDealingMultiplier = new NetworkVariable<float>(1f,NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
+
+        private float damageDealingBuffEndTime = 0f;
+        private float damageTakenDebuffEndTime = 0f;
+
         [Header("Charge Attack Settings")]
         [SerializeField] private float chargeWindupTime = 2.5f;
         [SerializeField] private float chargeLockTime = 0.5f;
@@ -38,6 +45,15 @@ namespace Enemy
         [Header("Charge Visuals")]
         [SerializeField] private GameObject targetCirclePrefab; // Circle on targeted player
         [SerializeField] private float circleRadius = 1f;
+
+        [Header("Charge Collision")]
+        [SerializeField] private LayerMask destructibleLayer;
+        [SerializeField] private LayerMask playerLayer;
+        [SerializeField] private float chargeCollisionCheckRadius = 0.5f;
+
+        [Header("Stun")]
+        public NetworkVariable<bool> isStunned = new NetworkVariable<bool>(false, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
+        private float stunEndTime = 0f;
 
         [SerializeField] private BossAI bossAI;
 
@@ -55,6 +71,32 @@ namespace Enemy
         private bool isPerformingAbility = false;
 
         public bool IsPerformingAbility => isPerformingAbility;
+
+        private void Update()
+        {
+            if (!IsServer) return;
+
+            // Expire damage dealing buff
+            if (damageDealingMultiplier.Value > 1f && Time.time >= damageDealingBuffEndTime)
+            {
+                damageDealingMultiplier.Value = 1f;
+                Debug.Log("[Boss] Damage Dealing Buff Expired!");
+            }
+
+            // Expire damage taken debuff
+            if (damageTakenMultiplier.Value > 1f && Time.time >= damageTakenDebuffEndTime)
+            {
+                damageTakenMultiplier.Value = 1f;
+                Debug.Log("[Boss] Damage Taken Debuff Expired!");
+            }
+
+            // Expire stun
+            if (isStunned.Value && Time.time >= stunEndTime)
+            {
+                isStunned.Value = false;
+                Debug.Log("[Boss] Stun expired!");
+            }
+        }
 
         public void SetPhase(int phaseIndex)
         {
@@ -79,6 +121,7 @@ namespace Enemy
         {
             if (!IsServer) return;
             if (isPerformingAbility) return;
+            if (isStunned.Value) return;
             if (abilitySet == null) return;
 
             var phase = abilitySet.GetPhaseAbilities(currentPhaseIndex);
@@ -252,29 +295,59 @@ namespace Enemy
         private IEnumerator RuneBarrageSequence(Ability ability, Transform target)
         {
             Vector2 bossPos = transform.position;
-            Vector2 toTarget = ((Vector2)target.position - bossPos).normalized;
 
-            // Fire 3 projectiles in a spread pattern (-15, 0, +15 degrees)
-            float[] spreadAngles = { -15f, 0f, 15f };
-            float projectileRange = 10f; // Visual range for telegraph
-            float lineWidth = 0.2f;
+            int volleyCount = ability.volleyCount;
+            float volleyInterval = ability.volleyInterval;
+            float volleyWindup = ability.windupDuration;
+            int shotsPerLine = ability.shotsPerProjectile;
+            float shotDelay = ability.shotInterval;
+            int lineCount = ability.projectileCount;
+            float totalArc = ability.spreadAngle;
+            float range = ability.projectileRange;
 
-            // Show line telegraphs for each projectile path
-            foreach (float angleOffset in spreadAngles)
+            for (int i = 0; i < volleyCount; i++)
             {
-                Vector2 direction = RotateVector(toTarget, angleOffset);
-                Vector2 endPoint = bossPos + direction * projectileRange;
+                if(target == null) yield break;
 
-                ShowLineTelegraphClientRpc(bossPos, endPoint, lineWidth, ability.windupDuration);
-            }
+                Vector2 toTarget = ((Vector2)target.position - bossPos).normalized;
 
-            yield return new WaitForSeconds(ability.windupDuration);
+                // Calculate spread angles dynamically
+                float[] spreadAngles = CalculateSpreadAngles(lineCount, totalArc);
 
-            // Fire the actual projectiles
-            foreach (float angleOffset in spreadAngles)
-            {
-                Vector2 direction = RotateVector(toTarget, angleOffset);
-                SpawnProjectile(bossPos, direction, ability);
+                float projectileRange = 10f;
+                float lineWidth = 0.2f;
+
+                // show telegraphs
+                foreach (float angleOffset in spreadAngles)
+                {
+                    Vector2 direction = RotateVector(toTarget, angleOffset);
+                    Vector2 endPoint = bossPos + direction * projectileRange;
+
+                    ShowLineTelegraphClientRpc(bossPos, endPoint, lineWidth, volleyWindup);
+                }
+
+                yield return new WaitForSeconds(volleyWindup);
+
+                // Fire Shots
+                for(int shotNum = 0; shotNum < shotsPerLine; shotNum++)
+                {
+                    foreach (float angleOffset in spreadAngles)
+                    {
+                        Vector2 direction = RotateVector(toTarget, angleOffset);
+                        SpawnProjectile(bossPos, direction, ability);
+                    }
+
+                    if(shotNum < shotsPerLine - 1)
+                    {
+                        yield return new WaitForSeconds(shotDelay);
+                    }
+                }
+
+                // wait before next volley
+                if(i < volleyCount - 1)
+                {
+                    yield return new WaitForSeconds(volleyInterval - volleyWindup - (shotsPerLine * shotDelay));
+                }
             }
         }
 
@@ -370,11 +443,12 @@ namespace Enemy
 
             Vector2 endPos = startPos + direction * cappedDistance;
 
-            // Move boss quickly in straight line
             float elapsed = 0f;
             float duration = cappedDistance / chargeSpeed;
 
-            while (elapsed < duration)
+            bool chargeAborted = false;
+
+            while (elapsed < duration && !chargeAborted)
             {
                 elapsed += Time.deltaTime;
                 float t = elapsed / duration;
@@ -382,19 +456,70 @@ namespace Enemy
                 Vector2 currentPos = Vector2.Lerp(startPos, endPos, t);
                 transform.position = currentPos;
 
-                // check collisions during charge
-                CheckChargeCollisions(direction);
+                // Check collisions
+                chargeAborted = CheckChargeCollisions(currentPos, direction);
+
                 yield return null;
             }
-            transform.position = endPos;
+
+            if (!chargeAborted)
+            {
+                // Charge completed without hitting anything - apply damage buff
+                transform.position = endPos;
+
+                // Pull buff values from current phase (designers can tune per phase)
+                float buffAmount = 0.25f; // Fallback defaults
+                float buffDuration = 10f;
+
+                var phase = abilitySet.GetPhaseAbilities(currentPhaseIndex);
+                if (phase != null)
+                {
+                    buffAmount = phase.chargeMissBuffAmount;
+                    buffDuration = phase.chargeMissBuffDuration;
+                }
+
+                ServerApplyDamageBuff(buffAmount, buffDuration, isBuff: true);
+
+                Debug.Log($"[BossCharge] MISSED! Boss enraged, +{buffAmount * 100}% damage for {buffDuration}s");
+            }
         }
 
         // Helper methods
 
-        private void CheckChargeCollisions(Vector2 direction)
+        private bool CheckChargeCollisions(Vector2 currentPos, Vector2 direction)
         {
-            // TODO: Raycast/overlap to detect pillar or player hits
-            Debug.Log("[BossCharge] Checking collisions...");
+            // Check destructible environment hits
+            Collider2D[] envHits = Physics2D.OverlapCircleAll(currentPos, chargeCollisionCheckRadius, destructibleLayer);
+            foreach(var hit in envHits)
+            {
+                var destructible = hit.GetComponent<DestructibleEnvironment>();
+                if(destructible != null && !destructible.IsDestroyed)
+                {
+                    destructible.ServerHitByCharge(this);
+                    ScreenShakeClientRpc();
+                    return true; // stop charge
+                }
+            }
+
+            // Check for player hits
+            Collider2D[] playerHits = Physics2D.OverlapCircleAll(currentPos, chargeCollisionCheckRadius, playerLayer);
+            foreach (var hit in playerHits)
+            {
+                var playerHealth = hit.GetComponentInParent<Combat.Health.PlayerHealth>();
+                if(playerHealth != null)
+                {
+                    // Instant Kill
+                    var bossNetObj = GetComponentInParent<NetworkObject>();
+                    ulong bossId = bossNetObj != null ? bossNetObj.NetworkObjectId : 0;
+                    playerHealth.TakeDamage(99999f, bossId);
+
+                    Debug.Log($"[BossCharge] KILLED PLAYER: {hit.name}");
+                    ScreenShakeClientRpc();
+                    return true; // stop charge
+                }
+            }
+
+            return false; // keep charging
         }
 
         private Transform FindRandomPlayer()
@@ -443,7 +568,7 @@ namespace Enemy
 
                 var damageable = hit.GetComponentInParent<IDamageable>();
                 if (damageable != null)
-                    damageable.TakeDamage(damage, bossId);
+                    damageable.TakeDamage(damage * damageDealingMultiplier.Value, bossId);
 
                 var knockbackable = hit.GetComponentInParent<IKnockbackable>();
                 if (knockbackable != null)
@@ -489,7 +614,7 @@ namespace Enemy
                 // Damage + knockback
                 var damageable = hit.GetComponentInParent<IDamageable>();
                 if (damageable != null)
-                    damageable.TakeDamage(damage, bossId);
+                    damageable.TakeDamage(damage * damageDealingMultiplier.Value, bossId);
 
                 var knockbackable = hit.GetComponentInParent<IKnockbackable>();
                 if (knockbackable != null)
@@ -760,6 +885,82 @@ namespace Enemy
             var shake = FindFirstObjectByType<CameraShake>();
             if (shake != null)
                 shake.Shake(0.3f, 0.3f);
+        }
+
+        // Calculate evenly-spaced angles across an arc
+        private float[] CalculateSpreadAngles(int count, float totalArc)
+        {
+            if (count <= 0) return new float[0];
+            if (count == 1) return new float[] { 0f };
+
+            float[] angles = new float[count];
+            float halfArc = totalArc / 2f;
+            float step = totalArc / (count - 1);
+
+            for (int i = 0; i < count; i++)
+            {
+                angles[i] = -halfArc + (step * i);
+            }
+
+            return angles;
+        }
+
+        public void ServerApplyDamageBuff(float buffAmount, float duration, bool isBuff)
+        {
+            if (!IsServer) return;
+
+            if (!isBuff)
+            {
+                // Damage TAKEN debuff (boss receives more damage)
+                damageTakenMultiplier.Value += buffAmount;
+                damageTakenDebuffEndTime = Mathf.Max(damageTakenDebuffEndTime, Time.time + duration);
+
+                Debug.Log($"[Boss] Damage taken debuff applied! Now taking {damageTakenMultiplier.Value}x damage for {duration}s!");
+
+                DebuffEffectClientRpc();
+            }
+            else
+            {
+                // Damage DEALING buff (boss deals more damage)
+                damageDealingMultiplier.Value += buffAmount;
+                damageDealingBuffEndTime = Mathf.Max(damageDealingBuffEndTime, Time.time + duration);
+
+                Debug.Log($"[Boss] Damage dealing buff applied! Now dealing {damageDealingMultiplier.Value}x damage for {duration}s!");
+
+                BuffEffectClientRpc();
+            }
+        }
+
+        [ClientRpc]
+        private void BuffEffectClientRpc()
+        {
+            // TODO: Visual feedback (boss glows red, particle effect, etc.)
+            Debug.Log("[Boss] Pillar buff VFX!");
+        }
+
+        [ClientRpc]
+        private void DebuffEffectClientRpc()
+        {
+            // TODO: Visual feedback (boss glows blue/vulnerable, particle effect, etc.)
+            Debug.Log("[Boss] Debuff VFX!");
+        }
+
+        public void ServerApplyStun(float duration)
+        {
+            if (!IsServer) return;
+
+            isStunned.Value = true;
+            stunEndTime = Time.time + duration;
+
+            Debug.Log($"[Boss] Stunned for {duration}s!");
+            StunEffectClientRpc();
+        }
+
+        [ClientRpc]
+        private void StunEffectClientRpc()
+        {
+            // TODO: Visual Feedback
+            Debug.Log("[Boss] Stun VFX!");
         }
 
         private void OnDrawGizmosSelected()

@@ -22,15 +22,20 @@ MonoBehaviour:
   shieldEnergyModifier: 0
   grappleForce: 0
   vfxPrefab: {fileID: 0}
-  windupSeconds: 1
+  windupSeconds: 1.5
   activeSeconds: 0.05
-  windupDuration: 0.07
+  windupDuration: 1
   aoeRadius: 0
   telegraphPrefab: {fileID: 0}
   projectileCount: 3
   spreadAngle: 30
   projectilePrefab: {fileID: 1550007675400891042, guid: 4ea29afe27083934a9531455c3877f09, type: 3}
   projectileSpeed: 10
+  shotsPerProjectile: 3
+  shotInterval: 0.1
+  volleyCount: 3
+  volleyInterval: 1.5
+  projectileRange: 10
   summonPrefab: {fileID: 0}
   summonCount: 0
   summonHPMultiplier: 0

@@ -58,11 +58,16 @@ namespace Combat.AbilitySystem
         public float aoeRadius = 3f;
         public GameObject telegraphPrefab;
 
-        [Header("Multi-Projectile")]
-        public int projectileCount = 3;
-        public float spreadAngle = 30f;
-        public GameObject projectilePrefab;
-        public float projectileSpeed = 10f;
+        [Header("Projectile Settings")]
+        public int projectileCount = 3;         // How many lines/directions
+        public float spreadAngle = 30f;         // total arc in degrees
+        public GameObject projectilePrefab;     // projectile's prefab
+        public float projectileSpeed = 10f;     // rate at which the projectile travels
+        public int shotsPerProjectile = 1;      // Shots per line (barrage density)
+        public float shotInterval = 0.1f;       // Delay between shots
+        public int volleyCount = 1;             // How many times to retarget
+        public float volleyInterval = 1.2f;     // Time between volleys
+        public float projectileRange = 10f;     // How far projectiles travel        
 
         [Header("Summon")]
         public GameObject summonPrefab;

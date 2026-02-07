@@ -103,6 +103,21 @@ namespace Enemy
             NetworkObject.Despawn();
         }
 
+        public override void TakeDamage(float amount, ulong attackerId)
+        {
+            if (!IsServer) return;
+
+            // Apply boss damage taken multiplier if this is a boss
+            var bossAbility = GetComponentInChildren<BossAbilityController>();
+            if (bossAbility != null)
+            {
+                amount *= bossAbility.damageTakenMultiplier.Value;
+                Debug.Log($"[Boss] Taking {amount} damage (multiplier: {bossAbility.damageTakenMultiplier.Value}x)");
+            }
+
+            base.TakeDamage(amount, attackerId);
+        }
+
         public void ApplyKnockback(Vector2 direction, float force)
         {
             if (!IsServer) return;

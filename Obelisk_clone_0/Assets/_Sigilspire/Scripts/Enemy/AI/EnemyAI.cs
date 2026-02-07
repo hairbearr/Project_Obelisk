@@ -107,6 +107,10 @@ namespace Enemy
             if (!IsServer) return;
             if (inTransition) return;
 
+            // if boss, check if it's stunned
+            var bossAbility = GetComponentInChildren<BossAbilityController>();
+            if (bossAbility != null && bossAbility.isStunned.Value) return;
+
 
             if (health != null && health.Initialized && health.CurrentHealth.Value <= 0f)
             {
@@ -549,7 +553,17 @@ namespace Enemy
                 IDamageable dmg = currentTarget.GetComponentInParent<IDamageable>();
                 if (dmg != null && primaryAbility.damage > 0f)
                 {
-                    dmg.TakeDamage(primaryAbility.damage, NetworkObjectId);
+                    float damageMultiplier = 1f;
+                    var bossAbility = GetComponentInChildren<BossAbilityController>();
+                    if(bossAbility != null)
+                    {
+                        damageMultiplier = bossAbility.damageDealingMultiplier.Value;
+                    }
+
+                    float finalDamage = primaryAbility.damage * damageMultiplier;
+
+
+                    dmg.TakeDamage(finalDamage, NetworkObjectId);
                 }
 
                 if (primaryAbility.vfxPrefab != null)
@@ -585,7 +599,17 @@ namespace Enemy
                 IDamageable dmg = currentTarget.GetComponentInParent<IDamageable>();
                 if (dmg != null && primaryAbility.damage > 0f)
                 {
-                    dmg.TakeDamage(primaryAbility.damage, NetworkObjectId);
+                    float damageMultiplier = 1f;
+                    var bossAbility = GetComponentInChildren<BossAbilityController>();
+                    if (bossAbility != null)
+                    {
+                        damageMultiplier = bossAbility.damageDealingMultiplier.Value;
+                    }
+
+                    float finalDamage = primaryAbility.damage * damageMultiplier;
+
+
+                    dmg.TakeDamage(finalDamage, NetworkObjectId);
                 }
 
                 if (primaryAbility.vfxPrefab != null)

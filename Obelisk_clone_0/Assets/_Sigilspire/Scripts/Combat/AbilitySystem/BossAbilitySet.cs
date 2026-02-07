@@ -13,6 +13,8 @@ public class BossAbilitySet : ScriptableObject
         [Header("Phase Transition")]
         public List<PhaseTransitionType> transitions = new List<PhaseTransitionType>();
         public int chargeCount = 1; // for charge transitions
+        public float chargeMissBuffAmount = 0.25f; // damage buff if charge misses
+        public float chargeMissBuffDuration = 10f; // how long the buff lasts
         public float shieldAmount = 100f; // Used if shield is on the list
 
         [Header("Ability Pool")]
