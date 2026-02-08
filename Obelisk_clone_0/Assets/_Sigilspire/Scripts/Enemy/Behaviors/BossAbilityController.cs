@@ -60,6 +60,15 @@ namespace Enemy
         [SerializeField] private Transform castLocation;
         [SerializeField] private float maxSelfDestructRadius;
 
+        [Header("Summon Add")]
+        [SerializeField] private float summonWindupTime = 2.0f;
+        [SerializeField] private GameObject summonAddPrefab;
+
+        [Header("Shield From Add")]
+        private ulong summonedAddId = 0;
+        public bool shieldFromAddActive = false;
+        public float damageReductionFromAdd = 0.5f;
+
         [SerializeField] private BossAI bossAI;
 
         public enum TelegraphType { Circle, Cone, Line }
@@ -100,6 +109,21 @@ namespace Enemy
             {
                 isStunned.Value = false;
                 Debug.Log("[Boss] Stun expired!");
+            }
+
+            if(shieldFromAddActive && summonedAddId != 0)
+            {
+                bool addStillAlive = IsAddAlive(summonedAddId);
+
+                if (!addStillAlive)
+                {
+                    // add died, remove shield
+                    shieldFromAddActive = false;
+                    summonedAddId = 0;
+
+                    Debug.Log("[Boss] Add shield DEACTIVATED! Add was destroyed!");
+                    AddShieldDeactivatedClientRpc();
+                }
             }
         }
 
@@ -390,7 +414,7 @@ namespace Enemy
                         break;
 
                     case PhaseTransitionType.Summon:
-                        PhaseTransitionSummonAdds();
+                        yield return StartCoroutine(ExecuteSummon(phase));
                         break;
 
                     case PhaseTransitionType.Shield:
@@ -407,6 +431,56 @@ namespace Enemy
                 bossAI.inTransition = false;
 
             Debug.Log("[BossTransition] All transitions complete!");
+        }
+
+        private IEnumerator ExecuteSummon(BossAbilitySet.PhaseAbilities phase)
+        {
+            Debug.Log("[Boss] SUMMONING ADD");
+
+            ShowSummonTelegraphClientRpc();
+            yield return new WaitForSeconds(summonWindupTime);
+
+            // Spawn the add
+            if(phase.summonPrefab != null)
+            {
+                Vector2 spawnPos = (Vector2)transform.position + Random.insideUnitCircle * 2f;
+
+                GameObject add = Instantiate(phase.summonPrefab, spawnPos, Quaternion.identity);
+                NetworkObject netObj = add.GetComponent<NetworkObject>();
+
+                if(netObj != null)
+                {
+                    netObj.Spawn(true);
+
+                    // Reduce HP by a percentage
+                    var health = add.GetComponent<Combat.Health.HealthBase>();
+                    if(health != null)
+                    {
+                        float reducedHP = health.MaxHealth * phase.summonHPMultiplier;
+                        health.CurrentHealth.Value = reducedHP;
+                    }
+
+                    // enable add shield if configured
+                    if (phase.enableShieldFromAdd)
+                    {
+                        summonedAddId = netObj.NetworkObjectId;
+                        shieldFromAddActive = true;
+                        damageReductionFromAdd = phase.shieldFromAddDamageReduction;
+
+                        Debug.Log($"[Boss] Shield from add ACTIVE! Boss takes {damageReductionFromAdd * 100}% damage!");
+                        AddShieldActivatedClientRpc();
+                    }
+
+                    Debug.Log($"[Boss] Spawned Gargoyle at {spawnPos}");
+                }
+
+            }
+            else
+            {
+                Debug.LogWarning("[Boss] No summon prefab assigned in BossAbilitySet!");
+            }
+
+            HideSummonTelegraphClientRpc();
         }
 
         private IEnumerator PhaseTransitionChargeAttack(int chargeCount)
@@ -729,12 +803,6 @@ namespace Enemy
             return players[Random.Range(0, players.Length)].transform;
         }
 
-        private void PhaseTransitionSummonAdds()
-        {
-            // TODO: Spawn enemies
-            Debug.Log("[BossTransition] Summoning adds!");
-        }
-
         private void PhaseTransitionApplyShield(float amount)
         {
             // TODO: Apply shield/armor buff
@@ -873,7 +941,6 @@ namespace Enemy
             StartCoroutine(ExecuteAllTransitions(phase));
         }
 
-
         private Vector2 RotateVector(Vector2 vector, float degrees)
         {
             float radians = degrees * Mathf.Deg2Rad;
@@ -886,6 +953,31 @@ namespace Enemy
             );
         }
 
+        [ClientRpc]
+        private void AddShieldActivatedClientRpc()
+        {
+            // TODO: Boss glows purple, shield VFX appears
+            Debug.Log("[Boss] Add shield VFX - boss protected!");
+        }
+
+        [ClientRpc]
+        private void AddShieldDeactivatedClientRpc()
+        {
+            // TODO: Shield breaks VFX
+            Debug.Log("[Boss] Add shield broke!");
+        }
+
+        [ClientRpc]
+        private void ShowSummonTelegraphClientRpc()
+        {
+            // TODO: Spawn a swirling portal or summoning circle VFX
+            Debug.Log("[Boss] Summoning telegraph (add VFX Later)");
+        }
+        [ClientRpc]
+        private void HideSummonTelegraphClientRpc()
+        {
+            Debug.Log("[Boss] Summon complete");
+        }
 
         [ClientRpc]
         private void ShowTelegraphClientRpc(Vector2 position, Vector2 direction, TelegraphType type, float radius, float duration)
@@ -1019,7 +1111,6 @@ namespace Enemy
             }
         }
 
-
         private IEnumerator AnimateLineFill(LineRenderer line, Vector2 start, Vector2 end, float fillTime)
         {
             line.positionCount = 2;
@@ -1151,6 +1242,26 @@ namespace Enemy
 
             Debug.Log($"[Boss] Stunned for {duration}s!");
             StunEffectClientRpc();
+        }
+
+        private bool IsAddAlive(ulong addId)
+        {
+            if(!IsServer) return false;
+            if(addId == 0) return false;
+            if(NetworkManager == null) return false;
+
+            var sm = NetworkManager.SpawnManager;
+            if(sm == null) return false;
+
+            // check if add is still spawned
+            if (!sm.SpawnedObjects.TryGetValue(addId, out NetworkObject addObj))
+                return false;
+
+            // check if add has health and is alive
+            var health = addObj.GetComponent<Combat.Health.HealthBase>();
+            if(health == null) return false;
+
+            return health.CurrentHealth.Value > 0f;
         }
 
         [ClientRpc]

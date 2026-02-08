@@ -25,6 +25,12 @@ public class BossAbilitySet : ScriptableObject
         public RotationMode rotationMode = RotationMode.Alternate;
         public float abilityCooldown = 8f;
         public float secondaryAbilityCooldown = 8f; // For A/B -> C -> A/B pattern
+
+        [Header("Summon Settings")]
+        public GameObject summonPrefab;
+        public float summonHPMultiplier = 0.5f; // 50% of normal HP
+        public bool enableShieldFromAdd = false;
+        public float shieldFromAddDamageReduction = 0.5f;
     }
 
     public enum PhaseTransitionType

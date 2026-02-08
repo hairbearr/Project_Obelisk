@@ -112,7 +112,16 @@ namespace Enemy
             if (bossAbility != null)
             {
                 amount *= bossAbility.damageTakenMultiplier.Value;
-                Debug.Log($"[Boss] Taking {amount} damage (multiplier: {bossAbility.damageTakenMultiplier.Value}x)");
+
+                if (bossAbility.shieldFromAddActive)
+                {
+                    amount *= bossAbility.damageReductionFromAdd;
+                    Debug.Log($"[Boss] Add shield active! Damage reduced: {amount}");
+                }
+                if(bossAbility.damageTakenMultiplier.Value != 1)
+                {
+                    Debug.Log($"[Boss] Taking {amount} damage (multiplier: {bossAbility.damageTakenMultiplier.Value}x)");
+                }
             }
 
             base.TakeDamage(amount, attackerId);

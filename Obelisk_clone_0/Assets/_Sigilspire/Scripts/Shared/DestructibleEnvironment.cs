@@ -21,6 +21,8 @@ public class DestructibleEnvironment : NetworkBehaviour
     public override void OnNetworkSpawn()
     {
         isDestroyed.OnValueChanged += OnDestroyedChanged;
+        Collider2D col = GetComponent<Collider2D>();
+        if (col != null) { col.enabled = true; }
         UpdateVisuals();
     }
 
@@ -60,6 +62,8 @@ public class DestructibleEnvironment : NetworkBehaviour
     private void OnDestroyedChanged(bool oldVal, bool newVal)
     {
         UpdateVisuals();
+        Collider2D col = GetComponent<Collider2D>();
+        if (col != null) { col.enabled = false; }
     }
 
     private void UpdateVisuals()

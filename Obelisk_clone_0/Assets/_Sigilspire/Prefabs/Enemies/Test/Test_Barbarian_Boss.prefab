@@ -387,7 +387,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   circleTelegraphPrefab: {fileID: 8552267455541584144, guid: 4e46b5bd39202b34e81c020d1a1c53a6, type: 3}
-  coneTelegraphPrefab: {fileID: 8552267455541584144, guid: 4e46b5bd39202b34e81c020d1a1c53a6, type: 3}
+  coneTelegraphPrefab: {fileID: 8552267455541584144, guid: 8adafb92df4b30c42b83c53ad1b33d0a, type: 3}
   lineTelegraphPrefab: {fileID: 6608510399317256289, guid: eafbcd17177858c4db3320b91a47fb0b, type: 3}
   damageTakenMultiplier:
     m_InternalValue: 1
@@ -400,7 +400,7 @@ MonoBehaviour:
   chargeCollisionLayers:
     serializedVersion: 2
     m_Bits: 256
-  targetCirclePrefab: {fileID: 8552267455541584144, guid: 4e46b5bd39202b34e81c020d1a1c53a6, type: 3}
+  targetCirclePrefab: {fileID: 8552267455541584144, guid: 50fd50fdb3c09c740b9c5cc2ae1628bb, type: 3}
   circleRadius: 1
   destructibleLayer:
     serializedVersion: 2
@@ -411,6 +411,9 @@ MonoBehaviour:
   chargeCollisionCheckRadius: 1
   isStunned:
     m_InternalValue: 0
+  relocationTime: 3
+  castLocation: {fileID: 0}
+  maxSelfDestructRadius: 10
   bossAI: {fileID: 4968707085168890851}
 --- !u!114 &5925980190507697977 stripped
 MonoBehaviour:
