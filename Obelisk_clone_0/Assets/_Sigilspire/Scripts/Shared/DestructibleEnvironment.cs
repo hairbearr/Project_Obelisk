@@ -31,11 +31,22 @@ public class DestructibleEnvironment : NetworkBehaviour
 
     public void ServerHitByCharge(BossAbilityController boss)
     {
+        Debug.Log($"[Pillar] ServerHitByCharge called! IsServer={IsServer}, boss={boss != null}, isDestroyed={isDestroyed.Value}");
+
         if (!IsServer) return;
         if (isDestroyed.Value) return;
+        if (boss == null)
+        {
+            Debug.LogError("[Pillar] Boss is NULL!");
+            return;
+        }
+
+        Debug.Log($"[Pillar] About to stun boss for {stunDuration}s");
 
         // stun boss
         boss.ServerApplyStun(stunDuration);
+
+        Debug.Log($"[Pillar] About to apply damage debuff");
 
         // apply damage debuff to boss
         boss.ServerApplyDamageBuff(damageBuffAmount, buffDuration, buff);
@@ -53,7 +64,8 @@ public class DestructibleEnvironment : NetworkBehaviour
 
     private void UpdateVisuals()
     {
-        if(sprite != null) sprite.sprite = isDestroyed.Value ? brokenSprite : normalSprite;
+        if (sprite != null) sprite.sprite = isDestroyed.Value ? brokenSprite : normalSprite;
+        if (normalSprite == null || brokenSprite == null) sprite.color = isDestroyed.Value ? Color.red : Color.white;
     }
 
     public bool IsDestroyed => isDestroyed.Value;

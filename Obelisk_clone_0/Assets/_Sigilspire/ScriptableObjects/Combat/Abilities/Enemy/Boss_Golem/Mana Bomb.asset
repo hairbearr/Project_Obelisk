@@ -10,37 +10,38 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b27be473a1ae8240a1f2fe46ca1b5b2, type: 3}
-  m_Name: Base_SwordSlash
+  m_Name: Mana Bomb
   m_EditorClassIdentifier: Assembly-CSharp::Combat.AbilitySystem.Ability
-  abilityName: SwordSlash
-  type: 0
-  cooldown: 0.5
+  abilityName: Mana Bomb
+  type: 4
+  cooldown: 0.25
   resourceCost: 0
   direction: 2
-  damage: 20
-  knockbackForce: 15
+  damage: 0
+  knockbackForce: 0
   shieldEnergyModifier: 0
   grappleForce: 0
   vfxPrefab: {fileID: 0}
-  windupSeconds: 0.35
-  activeSeconds: 0.05
-  windupDuration: 1
-  aoeRadius: 3
+  windupSeconds: 0
+  activeSeconds: 0
+  windupDuration: 0
+  aoeRadius: 0
   telegraphPrefab: {fileID: 0}
-  projectileCount: 3
-  spreadAngle: 30
+  projectileCount: 0
+  spreadAngle: 0
   projectilePrefab: {fileID: 0}
-  projectileSpeed: 10
-  shotsPerProjectile: 1
-  shotInterval: 0.1
-  volleyCount: 1
-  volleyInterval: 1.2
-  projectileRange: 10
+  projectileSpeed: 0
+  shotsPerProjectile: 0
+  shotInterval: 0
+  volleyCount: 0
+  volleyInterval: 0
+  projectileRange: 0
   summonPrefab: {fileID: 0}
-  summonCount: 1
-  summonHPMultiplier: 0.5
-  chargeSpeed: 15
+  summonCount: 0
+  summonHPMultiplier: 0
+  chargeSpeed: 0
   isOneShot: 0
   channelDuration: 10
-  killAllOnComplete: 0
-  shape: 0
+  killAllOnComplete: 1
+  minActivationRange: 10
+  shape: 3

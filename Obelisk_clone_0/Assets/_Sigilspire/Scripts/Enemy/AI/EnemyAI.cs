@@ -142,20 +142,30 @@ namespace Enemy
             {
                 if (!attackLocked)
                 {
-                    HandleMovement();
-                    if (primaryAbility != null)
+                    // Check if boss is performing ability (immobilize during special attacks)
+                    if (bossAbility != null && bossAbility.IsPerformingAbility)
                     {
-                        TryAttack();
+                        // Boss frozen during abilities
+                        animDriver?.SetFacing(lastFacingDir);
+                        animDriver?.SetMovement(Vector2.zero);
                     }
-                    
+                    else
+                    {
+                        // Normal movement and attacks
+                        HandleMovement();
+                        if (primaryAbility != null)
+                        {
+                            TryAttack();
+                        }
+                    }
                 }
                 else
                 {
                     animDriver?.SetFacing(lastFacingDir);
-                    animDriver?.SetMovement(Vector2.zero); 
+                    animDriver?.SetMovement(Vector2.zero);
                 }
 
-                    
+
             }
             else
             {

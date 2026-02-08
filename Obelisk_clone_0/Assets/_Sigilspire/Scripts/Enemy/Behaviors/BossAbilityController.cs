@@ -55,6 +55,11 @@ namespace Enemy
         public NetworkVariable<bool> isStunned = new NetworkVariable<bool>(false, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
         private float stunEndTime = 0f;
 
+        [Header("Self Destruct")]
+        [SerializeField] private float relocationTime;
+        [SerializeField] private Transform castLocation;
+        [SerializeField] private float maxSelfDestructRadius;
+
         [SerializeField] private BossAI bossAI;
 
         public enum TelegraphType { Circle, Cone, Line }
@@ -146,6 +151,16 @@ namespace Enemy
 
             if (chosenAbility != null)
             {
+                // Check if the ability has minimum range requirement
+                if(chosenAbility.minActivationRange > 0f)
+                {
+                    float distance = Vector2.Distance(transform.position, target.position);
+                    if(distance > chosenAbility.minActivationRange)
+                    {
+                        return; // too far, don't use the ability.
+                    }
+                }
+
                 StartCoroutine(UseAbilityCoroutine(chosenAbility, target));
             }
         }
@@ -250,6 +265,10 @@ namespace Enemy
 
                 case AbilityShape.Projectile:
                     yield return StartCoroutine(RuneBarrageSequence(ability, target));
+                    break;
+
+                case AbilityShape.Channel:
+                    yield return StartCoroutine(SelfDestructSequence(ability));
                     break;
 
                 default:
@@ -484,19 +503,197 @@ namespace Enemy
             }
         }
 
+        private IEnumerator SelfDestructSequence(Ability ability)
+        {
+            Debug.Log("[Boss] SELF DESTRUCT - Moving to set point!");
+
+            // find ability's cast point (or use boss's current position as fallback)
+            Vector2 castPoint = FindCastPoint();
+
+            // Move boss to center over x seconds
+            Vector2 startPos = transform.position;
+            float elapsed = 0f;
+
+            while (elapsed < relocationTime)
+            {
+                elapsed += Time.deltaTime;
+                float t = elapsed / relocationTime;
+                transform.position = Vector2.Lerp(startPos, castPoint, t);
+                yield return null;
+            }
+
+            transform.position = castPoint;
+
+            // start channel
+            float channelDuration = ability.channelDuration > 0f ? ability.channelDuration : 10f;
+
+            Debug.Log($"[Boss] CHANNELING SELF DESTRUCT - {channelDuration}s until wipe!");
+
+            // show telegraph (growing circle of doom?
+            ShowSelfDestructTelegraphClientRpc(castPoint, channelDuration);
+
+            // wait for channel to complete (or boss to die)
+            float channelElapsed = 0f;
+
+            while (channelElapsed < channelDuration)
+            {
+                // check if boss died durning channel
+                var health = GetComponentInParent<Combat.Health.HealthBase>();
+                if (health != null && health.CurrentHealth.Value <= 0f)
+                {
+                    Debug.Log("[Boss] DIED DURING CHANNEL - Self Destruct cancelled!");
+                    HideSelfDestructTelegraphClientRpc();
+                    yield break;
+                }
+
+                channelElapsed += Time.deltaTime;
+                yield return null;
+            }
+
+            // channel completed - party wipe
+            Debug.Log("[Boss] SELF DESTRUCT COMPLETE - KILLING EVERYONE!");
+            HideSelfDestructTelegraphClientRpc();
+            ExecuteSelfDestructWipe();
+
+        }
+
         // Helper methods
+
+        private Vector2 FindCastPoint()
+        {
+            if (castLocation == null)
+            {
+                GameObject castObj = GameObject.FindWithTag("CastPoint");
+                if (castObj != null)
+                {
+                    castLocation = castObj.transform;
+                }
+            }
+
+            if(castLocation != null)
+            {
+                return castLocation.position;
+            }
+            else
+            {
+                return transform.position;
+            }
+        }
+
+        private void ExecuteSelfDestructWipe()
+        {
+            if (!IsServer) return;
+            // Find all players and kill them
+            var players = FindObjectsByType<Combat.Health.PlayerHealth>(FindObjectsSortMode.None);
+
+            var bossNetObj = GetComponentInParent<NetworkObject>();
+            ulong bossId = bossNetObj != null ? bossNetObj.NetworkObjectId : 0;
+
+            foreach (var player in players)
+            {
+                if (player != null)
+                {
+                    player.TakeDamage(99999f, bossId);
+                    Debug.Log($"[Self Destruct] Killed Player: {player.name}");
+                }
+            }
+            SelfDestructExplosionClientRpc();
+        }
+
+        [ClientRpc]
+        private void ShowSelfDestructTelegraphClientRpc(Vector2 center, float duration)
+        {
+            StartCoroutine(AnimateSelfDestructTelegraph(center, duration));
+        }
+
+        private IEnumerator AnimateSelfDestructTelegraph(Vector2 center, float duration)
+        {
+            // spawn circle telegraph
+            if (circleTelegraphPrefab == null) yield break;
+            GameObject telegraph = Instantiate(circleTelegraphPrefab, center, Quaternion.identity);
+            activeTelegraph = telegraph;
+
+            // Get Sprite renderers
+            SpriteRenderer[] renderers = telegraph.GetComponentsInChildren<SpriteRenderer>();
+
+            if(renderers.Length >= 2)
+            {
+                SpriteRenderer outer = renderers[0];
+                SpriteRenderer inner = renderers[1];
+
+                // Set colors (red = danger)
+                Color outerColor = new Color(1f, 0f, 0f, 0.2f); // faint red
+                Color innerColor = new Color(1f, 0f, 0f, 0.8f); // bright red
+
+                outer.color = outerColor;
+                inner.color = innerColor;
+
+                outer.transform.localScale = new Vector3(maxSelfDestructRadius, maxSelfDestructRadius, 1f);
+                inner.transform.localScale = Vector3.zero;
+
+                // Grow inner circle over duration
+                float elapsed = 0f;
+                while (elapsed < duration)
+                {
+                    elapsed += Time.deltaTime;
+                    float t = elapsed / duration;
+
+                    float currentRadius = maxSelfDestructRadius * t;
+                    inner.transform.localScale = new Vector3(currentRadius, currentRadius, 1f);
+
+                    yield return null;
+                }
+
+                inner.transform.localScale = new Vector3(maxSelfDestructRadius, maxSelfDestructRadius, 1f);
+            }
+        }
+
+        [ClientRpc]
+        private void HideSelfDestructTelegraphClientRpc()
+        {
+            if(activeTelegraph != null)
+            {
+                Destroy(activeTelegraph);
+                activeTelegraph = null;
+            }
+        }
+
+        [ClientRpc]
+        private void SelfDestructExplosionClientRpc()
+        {
+            // Screen shake
+            var shake = FindFirstObjectByType<CameraShake>();
+            if (shake != null)
+            {
+                shake.Shake(1f, 0.5f); // big shake!
+            }
+
+            Debug.Log("[Self Destruct] BOOM!");
+        }
 
         private bool CheckChargeCollisions(Vector2 currentPos, Vector2 direction)
         {
+            // DEBUG: Draw collision check radius
+            Debug.DrawLine(currentPos, currentPos + Vector2.up * chargeCollisionCheckRadius, Color.red, 1f);
+            Debug.DrawLine(currentPos, currentPos + Vector2.right * chargeCollisionCheckRadius, Color.red, 1f);
+
             // Check destructible environment hits
             Collider2D[] envHits = Physics2D.OverlapCircleAll(currentPos, chargeCollisionCheckRadius, destructibleLayer);
-            foreach(var hit in envHits)
+
+            Debug.Log($"[Charge] Checking at {currentPos}, found {envHits.Length} destructible hits");
+
+            foreach (var hit in envHits)
             {
+                Debug.Log($"[Charge] Hit collider: {hit.name} on layer {LayerMask.LayerToName(hit.gameObject.layer)}");
+
                 var destructible = hit.GetComponent<DestructibleEnvironment>();
                 if(destructible != null && !destructible.IsDestroyed)
                 {
+                    Debug.Log($"[Charge] HIT PILLAR: {hit.name}!");
+
+                    Debug.Log($"[Charge] Calling ServerHitByCharge on {hit.name}, boss={this != null}");
                     destructible.ServerHitByCharge(this);
-                    ScreenShakeClientRpc();
+                    Debug.Log($"[Charge] ServerHitByCharge returned"); ScreenShakeClientRpc();
                     return true; // stop charge
                 }
             }

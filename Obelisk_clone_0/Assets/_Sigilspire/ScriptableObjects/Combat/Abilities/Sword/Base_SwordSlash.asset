@@ -17,10 +17,30 @@ MonoBehaviour:
   cooldown: 0.5
   resourceCost: 0
   direction: 2
-  damage: 10
+  damage: 20
   knockbackForce: 15
   shieldEnergyModifier: 0
   grappleForce: 0
   vfxPrefab: {fileID: 0}
   windupSeconds: 0.35
   activeSeconds: 0.05
+  windupDuration: 1
+  aoeRadius: 3
+  telegraphPrefab: {fileID: 0}
+  projectileCount: 3
+  spreadAngle: 30
+  projectilePrefab: {fileID: 0}
+  projectileSpeed: 10
+  shotsPerProjectile: 1
+  shotInterval: 0.1
+  volleyCount: 1
+  volleyInterval: 1.2
+  projectileRange: 10
+  summonPrefab: {fileID: 0}
+  summonCount: 1
+  summonHPMultiplier: 0.5
+  chargeSpeed: 15
+  isOneShot: 0
+  channelDuration: 10
+  killAllOnComplete: 0
+  shape: 0

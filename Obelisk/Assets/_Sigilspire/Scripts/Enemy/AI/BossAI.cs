@@ -59,6 +59,7 @@ namespace Enemy
         {
             if (abilityController == null) return;
             if (abilityController.IsPerformingAbility) return;
+            if (inTransition) return;
 
             Transform target = FindClosestPlayer();
             if (target != null)

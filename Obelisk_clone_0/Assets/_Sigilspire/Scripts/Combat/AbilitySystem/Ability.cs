@@ -23,7 +23,8 @@ namespace Combat.AbilitySystem
     {
         Circle,
         Cone,
-        Projectile
+        Projectile,
+        Channel
     }
 
     [CreateAssetMenu(fileName = "NewAbility", menuName = "Sigilspire/Ability")]
@@ -81,6 +82,7 @@ namespace Combat.AbilitySystem
         [Header("Channel")]
         public float channelDuration = 10f;
         public bool killAllOnComplete = false;
+        public float minActivationRange = 0f; // 0  no restriction, >0 = must be this close
 
         [Header("Shape")]
         public AbilityShape shape = AbilityShape.Circle;
