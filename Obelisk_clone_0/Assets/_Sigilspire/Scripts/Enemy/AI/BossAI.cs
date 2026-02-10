@@ -44,6 +44,8 @@ namespace Enemy
 
             _baseMoveSpeed = moveSpeed;
             _baseDamage = primaryAbility != null ? primaryAbility.damage : 10f;
+
+            resetBehavior = ResetBehavior.Teleport;
         }
 
         private void LateUpdate()
@@ -146,6 +148,31 @@ namespace Enemy
 
             if (primaryAbility != null)
                 primaryAbility.damage = _baseDamage * phase3DmgMult;
+        }
+
+        public virtual void OnBossReset()
+        {
+            if (!IsServer) return;
+
+            Debug.Log("[Boss] Clearing summoned adds on reset");
+
+            // clear add if it exists
+            if(abilityController != null && abilityController.summonedAddId != 0)
+            {
+                var sm = NetworkManager.SpawnManager;
+                if(sm != null && sm.SpawnedObjects.TryGetValue(abilityController.summonedAddId, out NetworkObject addObj))
+                {
+                    if(addObj != null && addObj.IsSpawned)
+                    {
+                        addObj.Despawn(true);
+                        Debug.Log("[Boss] Despawned add on reset");
+                    }
+                }
+
+                // Clear boss ability controller state
+                abilityController.summonedAddId = 0;
+                abilityController.shieldFromAddActive = false;
+            }
         }
 
         [ClientRpc]

@@ -99,6 +99,19 @@ public class EnemyThreatTracker : NetworkBehaviour, IThreatReceiver
         if (currentTargetId == id) currentTargetId = 0;
     }
 
+    public void ClearAllThreat()
+    {
+        if (!IsServer) return;
+
+        threat.Clear();
+        currentTargetId = 0;
+
+        Debug.Log("[ThreatTracker] All threat cleared.");
+    }
+
+
+
+
     /// Server-only: remove threat entries whose NetworkObjects no longer exist (despawn/disconnect).
     /// Also clears currentTargetId if it's invalid.
     /// Call this before choosing targets or occasionally in Update.

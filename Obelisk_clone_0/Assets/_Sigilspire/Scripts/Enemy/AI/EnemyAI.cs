@@ -16,9 +16,19 @@ namespace Enemy
         [SerializeField] protected float detectionRadius = 8f;
         [SerializeField] private LayerMask targetLayers;
 
+        [Header("Leashing")]
+        [SerializeField] private float leashDistance = 20f; // Distance from spawn before resetting
+        [SerializeField] private float outOfCombatDelay = 5f; // Seconds out of combat before resetting
+        [SerializeField] private bool canLeash = true; // Can this enemy reset?
+        [SerializeField] protected ResetBehavior resetBehavior = ResetBehavior.RunBack;
+
+        private Vector2 spawnPos;
+        private float lastCombatTime;
+        private bool isReturningToSpawn = false;
+
         [Header("Movement")]
         [SerializeField] public float moveSpeed = 2.5f;
-//        [SerializeField] private float stoppingDistance = 1.2f;
+      //[SerializeField] private float stoppingDistance = 1.2f;
         [SerializeField] private Collider2D enemyCollider;
         [SerializeField] private float knockbackMoveLockTime = 0.12f;
         private float moveLockedUntil;
@@ -60,6 +70,12 @@ namespace Enemy
         [Header("Attack Mode")]
         [SerializeField] private AttackMode attackMode = AttackMode.Melee;
 
+        public enum ResetBehavior
+        {
+            RunBack,
+            Teleport
+        }
+
         [Header("Attack Telegraph")]
         [SerializeField] private SpriteRenderer meleeTelegraphOuter; // static danger zone
         [SerializeField] private SpriteRenderer meleeTelegraphInner; // growing fill
@@ -92,7 +108,13 @@ namespace Enemy
             rb2D = GetComponent<Rigidbody2D>();
             animDriver = GetComponentInChildren<EnemyAnimationDriver>();
             health = GetComponent<HealthBase>();
+            
+            spawnPos = rb2D != null ? rb2D.position : (Vector2)transform.position;
+            lastCombatTime = Time.time;
+
             if (enemyCollider == null) { enemyCollider = GetComponent<Collider2D>(); }
+
+
 
             if(animDriver != null)
             {
@@ -116,6 +138,11 @@ namespace Enemy
             {
                 if (animDriver != null) animDriver.SetMovement(Vector2.zero);
                 return;
+            }
+
+            if (canLeash)
+            {
+                CheckLeash();
             }
 
             // Retarget periodically
@@ -175,8 +202,6 @@ namespace Enemy
 
         private void FindTarget()
         {
-
-
             if (threatTracker == null || NetworkManager == null)
             {
                 currentTarget = null;
@@ -216,7 +241,6 @@ namespace Enemy
                 return;
             }
 
-
             threatTracker.PruneInvalidThreat();
 
             // if our current target isnt in range anymore, don't bias towards it
@@ -225,19 +249,22 @@ namespace Enemy
             // Use the tracker’s hysteresis rule (aggroThreshold) to pick/keep target
             ulong bestId = threatTracker.PickBestTargetId(currentTargetId, candidates);
 
-
             // if nobody has threat yet, aggro the closest target in range
             if (bestId == 0 || threatTracker.GetThreat(bestId) <= 0f)
             {
                 bestId = PickClosestCandidateId(candidates);
             }
-            
 
             currentTargetId = bestId;
             threatTracker.SetCurrentTargetId(bestId);
 
             currentTarget = ResolveTargetTransform(bestId);
 
+            // Update combat time if we have a target
+            if(currentTarget != null)
+            {
+                lastCombatTime = Time.time;
+            }
         }
 
         private ulong PickClosestCandidateId(List<ulong> ids)
@@ -286,6 +313,13 @@ namespace Enemy
 
         protected virtual void HandleMovement()
         {
+            if (isReturningToSpawn)
+            {
+                RunBackToSpawn();
+                return;
+            }
+
+
             if (currentTarget == null || rb2D == null) return;
 
             if (Time.time < moveLockedUntil)
@@ -508,6 +542,7 @@ namespace Enemy
         private void OnEnemyAttackHitFrame()
         {
             if (!IsServer) return;
+            lastCombatTime = Time.time; // combat activity
             if (currentTarget == null) return;
             if (primaryAbility == null) return;
 
@@ -827,6 +862,204 @@ namespace Enemy
 
             if (rangedTelegraphOuter != null) rangedTelegraphOuter.enabled = false;
             if (rangedTelegraphInner != null) rangedTelegraphInner.enabled = false;
+        }
+
+        private void CheckLeash()
+        {
+            if (!IsServer) return;
+
+            // Check if we're too far from spawn
+            Vector2 currentPos = rb2D != null ? rb2D.position : (Vector2)transform.position;
+
+            // If already returning, check if we reached spawn
+            if (isReturningToSpawn)
+            {
+                float distToSpawn = Vector2.Distance(currentPos, spawnPos);
+
+                if(distToSpawn < 0.5f) // close enough to spawn
+                {
+                    CompleteReset();
+                }
+                return;
+            }
+
+            // don't start leash if we have a valid target
+            if (currentTarget != null) return;
+
+            // check if we're out of combat long enough
+            float timeSinceLastCombat = Time.time - lastCombatTime;
+            if (timeSinceLastCombat < outOfCombatDelay) return;
+
+            
+            float distanceFromSpawn = Vector2.Distance(currentPos, spawnPos);
+
+            if(distanceFromSpawn > leashDistance)
+            {
+                StartReset();
+            }
+        }
+
+        private void StartReset()
+        {
+            if (!IsServer) return;
+
+            Debug.Log($"[Enemy] {name} starting reset (behavior: {resetBehavior})");
+
+            if(resetBehavior == ResetBehavior.Teleport)
+            {
+                TeleportReset();
+            }
+            else
+            {
+                isReturningToSpawn = true;
+
+                // clear threat and target so we don't attack while running
+                if(threatTracker != null)
+                {
+                    threatTracker.ClearAllThreat();
+                }
+                currentTarget = null;
+                currentTargetId = 0;
+
+                LeashEffectClientRpc(false); // Visual: enemy is returning
+            }
+        }
+
+        private void TeleportReset()
+        {
+            if (!IsServer) return;
+
+            Debug.Log($"[Enemy] {name} teleporting to spawn!");
+
+            // clear threat
+            if (threatTracker != null) threatTracker.ClearAllThreat();
+
+            // clear target
+            currentTarget = null;
+            currentTargetId = 0;
+
+            // Teleport to Spawn
+            if (rb2D != null)
+            {
+                rb2D.position = spawnPos;
+            }
+            else
+            {
+                transform.position = spawnPos;
+            }
+            CompleteReset();
+        }
+
+        private void CompleteReset()
+        {
+            if (!IsServer) return;
+
+            Debug.Log($"[Enemy] {name} reset complete!");
+
+            // reset health
+            if (health != null) health.ServerSetFullHealth();
+
+            // stop movement
+            if (animDriver != null) animDriver.SetMovement(Vector2.zero);
+
+            // reset flags
+            isReturningToSpawn = false;
+            lastCombatTime = Time.time;
+
+            // boss specific reset hook
+            var bossAI = this as BossAI;
+            if(bossAI != null)
+            {
+                bossAI.OnBossReset();
+            }
+
+            // visual feedback
+            LeashEffectClientRpc(true); // completed reset
+        }
+
+        private void RunBackToSpawn()
+        {
+            if (!IsServer) return;
+            if (rb2D == null) return;
+
+            Vector2 currentPos = rb2D.position;
+            Vector2 toSpawn = spawnPos - currentPos;
+
+            if(toSpawn.sqrMagnitude < 0.01f)
+            {
+                // arrived at spawn
+                CompleteReset();
+                return;
+            }
+
+            // run towards spawn at full speed
+            Vector2 direction = toSpawn.normalized;
+            SetFacing(direction);
+
+            rb2D.MovePosition(currentPos + direction * (moveSpeed * Time.deltaTime));
+
+            if(animDriver != null)
+            {
+                animDriver.SetMovement(direction);
+            }
+        }
+
+        [ClientRpc]
+        private void LeashEffectClientRpc(bool completed)
+        {
+            if (completed)
+            {
+                Debug.Log($"[Enemy] {name} reset complete (visual feedback)");
+                // TODO: Flash effect, particle burst
+            }
+            else
+            {
+                Debug.Log($"[Enemy] {name} returning to spawn (visual feedback)");
+                // TODO: Trail effect, speed lines
+            }
+        }
+
+
+        private void ServerResetEnemy()
+        {
+            if (!IsServer) return;
+
+            Debug.Log($"[Enemy] {name} leashing back to spawn!");
+
+            // Clear threat
+            if(threatTracker != null)
+            {
+                threatTracker.ClearAllThreat();
+            }
+
+            // clear target
+            currentTarget = null;
+            currentTargetId = 0;
+
+            // Reset health
+            if(health != null)
+            {
+                health.ServerSetFullHealth();
+            }
+
+            // Teleport to Spawn
+            if(rb2D != null)
+            {
+                rb2D.position = spawnPos;
+            }
+            else
+            {
+                transform.position = spawnPos;
+            }
+
+            // stop Movement
+            if (animDriver != null)
+            {
+                animDriver.SetMovement(Vector2.zero);
+            }
+
+            // reset combat timer
+            lastCombatTime = Time.time;
         }
 
 

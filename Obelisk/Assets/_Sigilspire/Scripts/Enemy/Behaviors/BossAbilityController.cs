@@ -65,7 +65,7 @@ namespace Enemy
         [SerializeField] private GameObject summonAddPrefab;
 
         [Header("Shield From Add")]
-        private ulong summonedAddId = 0;
+        public ulong summonedAddId = 0;
         public bool shieldFromAddActive = false;
         public float damageReductionFromAdd = 0.5f;
 
