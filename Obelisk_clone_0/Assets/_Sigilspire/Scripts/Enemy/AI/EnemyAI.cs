@@ -17,7 +17,7 @@ namespace Enemy
         [SerializeField] private LayerMask targetLayers;
 
         [Header("Leashing")]
-        [SerializeField] private float leashDistance = 20f; // Distance from spawn before resetting
+        [SerializeField] private float leashDistance = 5f; // Distance from spawn before resetting
         [SerializeField] private float outOfCombatDelay = 5f; // Seconds out of combat before resetting
         [SerializeField] private bool canLeash = true; // Can this enemy reset?
         [SerializeField] protected ResetBehavior resetBehavior = ResetBehavior.RunBack;
@@ -25,6 +25,7 @@ namespace Enemy
         private Vector2 spawnPos;
         private float lastCombatTime;
         private bool isReturningToSpawn = false;
+        private bool hasEnteredCombat = false;
 
         [Header("Movement")]
         [SerializeField] public float moveSpeed = 2.5f;
@@ -110,7 +111,7 @@ namespace Enemy
             health = GetComponent<HealthBase>();
             
             spawnPos = rb2D != null ? rb2D.position : (Vector2)transform.position;
-            lastCombatTime = Time.time;
+            lastCombatTime = -99999f;
 
             if (enemyCollider == null) { enemyCollider = GetComponent<Collider2D>(); }
 
@@ -196,7 +197,12 @@ namespace Enemy
             }
             else
             {
-                if (animDriver != null) animDriver.SetMovement(Vector2.zero);
+                if (isReturningToSpawn) HandleMovement();
+                else
+                {
+                    if (animDriver != null) animDriver.SetMovement(Vector2.zero);
+                }
+                
             }
         }
 
@@ -264,6 +270,7 @@ namespace Enemy
             if(currentTarget != null)
             {
                 lastCombatTime = Time.time;
+                hasEnteredCombat = true;
             }
         }
 
@@ -542,10 +549,10 @@ namespace Enemy
         private void OnEnemyAttackHitFrame()
         {
             if (!IsServer) return;
-            lastCombatTime = Time.time; // combat activity
             if (currentTarget == null) return;
             if (primaryAbility == null) return;
 
+            lastCombatTime = Time.time; // combat activity
 
             HideMeleeTelegraph();
             HideRangedTelegraph();
@@ -875,29 +882,44 @@ namespace Enemy
             if (isReturningToSpawn)
             {
                 float distToSpawn = Vector2.Distance(currentPos, spawnPos);
+                Debug.Log($"[Leash] {name} returning to spawn, distance: {distToSpawn:F2}");
 
-                if(distToSpawn < 0.5f) // close enough to spawn
+                if (distToSpawn < 0.5f) // close enough to spawn
                 {
                     CompleteReset();
                 }
                 return;
             }
 
-            // don't start leash if we have a valid target
-            if (currentTarget != null) return;
-
-            // check if we're out of combat long enough
+            // Debug: Check all conditions
+            bool hasTarget = currentTarget != null;
             float timeSinceLastCombat = Time.time - lastCombatTime;
-            if (timeSinceLastCombat < outOfCombatDelay) return;
-
-            
+            bool outOfCombatLongEnough = timeSinceLastCombat >= outOfCombatDelay;
             float distanceFromSpawn = Vector2.Distance(currentPos, spawnPos);
+            bool tooFarFromSpawn = distanceFromSpawn > leashDistance;
 
-            if(distanceFromSpawn > leashDistance)
+            // Log every few seconds to avoid spam
+            if (Time.frameCount % 120 == 0) // Every ~2 seconds at 60fps
             {
+                Debug.Log($"[Leash] {name} - Target: {hasTarget}, OutOfCombat: {outOfCombatLongEnough} ({timeSinceLastCombat:F1}s/{outOfCombatDelay}s), Distance: {distanceFromSpawn:F1}/{leashDistance}");
+            }
+
+            // TRIGGER 1: Boss pulled too far from spawn
+            if (tooFarFromSpawn)
+            {
+                Debug.Log($"[Leash] {name} TRIGGERING RESET! Pulled too far: {distanceFromSpawn:F1} > {leashDistance}");
+                StartReset();
+                return;
+            }
+
+            // TRIGGER 2: Players disengaged (no target for X seconds)
+            if (!hasTarget && outOfCombatLongEnough && hasEnteredCombat)
+            {
+                Debug.Log($"[Leash] {name} TRIGGERING RESET! Players disengaged for {timeSinceLastCombat:F1}s");
                 StartReset();
             }
         }
+
 
         private void StartReset()
         {
@@ -964,7 +986,8 @@ namespace Enemy
 
             // reset flags
             isReturningToSpawn = false;
-            lastCombatTime = Time.time;
+            lastCombatTime = -9999f;
+            hasEnteredCombat = false;
 
             // boss specific reset hook
             var bossAI = this as BossAI;

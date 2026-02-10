@@ -40990,7 +40990,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &660828418
 Transform:
   m_ObjectHideFlags: 0
@@ -81961,7 +81961,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1406215037
 Transform:
   m_ObjectHideFlags: 0
@@ -100381,6 +100381,10 @@ PrefabInstance:
       propertyPath: teleportDestination
       value: 
       objectReference: {fileID: 2134549699}
+    - target: {fileID: 1565279896528347366, guid: 67f604e67fb22e34eaf2ad74754aaa7d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1801689656066026742, guid: 67f604e67fb22e34eaf2ad74754aaa7d, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 2984425436
@@ -100400,6 +100404,18 @@ PrefabInstance:
     - target: {fileID: 5161259643280927709, guid: 67f604e67fb22e34eaf2ad74754aaa7d, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 3414158397
+      objectReference: {fileID: 0}
+    - target: {fileID: 6647612017934788574, guid: 67f604e67fb22e34eaf2ad74754aaa7d, type: 3}
+      propertyPath: initialSpawnCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7699789460361409273, guid: 67f604e67fb22e34eaf2ad74754aaa7d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8223636932341859810, guid: 67f604e67fb22e34eaf2ad74754aaa7d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8563396975993670828, guid: 67f604e67fb22e34eaf2ad74754aaa7d, type: 3}
       propertyPath: m_Name
