@@ -57,6 +57,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: kiteDeadZone
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: threatTracker
       value: 
       objectReference: {fileID: 7168324346177401387}
@@ -77,12 +81,20 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: kiteMaxDuration
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: stoppingDistance
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: rangedStopDistance
-      value: 2
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: kiteDecisionCooldown
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: rangedTelegraphInner

@@ -2,6 +2,7 @@ using Enemy;
 using System;
 using Unity.Netcode;
 using UnityEngine;
+using Pathfinding;
 
 public class DestructibleEnvironment : NetworkBehaviour
 {
@@ -64,12 +65,34 @@ public class DestructibleEnvironment : NetworkBehaviour
         UpdateVisuals();
         Collider2D col = GetComponent<Collider2D>();
         if (col != null) { col.enabled = false; }
+
+        if (newVal) UpdatePathfindingGrid();
     }
 
     private void UpdateVisuals()
     {
         if (sprite != null) sprite.sprite = isDestroyed.Value ? brokenSprite : normalSprite;
         if (normalSprite == null || brokenSprite == null) sprite.color = isDestroyed.Value ? Color.red : Color.white;
+    }
+
+    private void UpdatePathfindingGrid()
+    {
+        if (AstarPath.active == null) return;
+        
+        // Get bounds of this pillar's collider
+        Collider2D col = GetComponentInParent<Collider2D>();
+        if(col == null) return;
+
+        Bounds bounds = col.bounds;
+
+        // add padding to ensure we update surrounding area
+        bounds.Expand(1.5f);
+
+        // Update the grid in this area
+        var guo = new GraphUpdateObject(bounds);
+        AstarPath.active.UpdateGraphs(guo);
+
+        Debug.Log($"[Pathfinding] Updated grid for destroyed pillar at {transform.position}");
     }
 
     public bool IsDestroyed => isDestroyed.Value;

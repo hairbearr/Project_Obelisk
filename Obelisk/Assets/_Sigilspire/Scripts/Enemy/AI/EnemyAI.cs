@@ -2,6 +2,7 @@ using Combat.AbilitySystem;
 using Combat.DamageInterfaces;
 using Combat.Health;
 using Combat.Projectiles;
+using Pathfinding;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -65,6 +66,14 @@ namespace Enemy
         protected EnemyAnimationDriver animDriver;
         private HealthBase health;
 
+        [Header("Pathfinding")]
+        private Seeker seeker;
+        private Path currentPath;
+        private int currentWaypoint = 0;
+        private float pathUpdateInterval = 0.5f; // update path every 0.5s
+        private float nextPathUpdateTime = 0f;
+        private const float waypointReachedDistance = 0.3f; // how close to waypoint before moving to next
+
         private float lastAttackTime;
 
         private enum AttackMode { Melee, RangedHitscan }
@@ -113,9 +122,9 @@ namespace Enemy
             spawnPos = rb2D != null ? rb2D.position : (Vector2)transform.position;
             lastCombatTime = -99999f;
 
+            seeker = GetComponent<Seeker>();
+
             if (enemyCollider == null) { enemyCollider = GetComponent<Collider2D>(); }
-
-
 
             if(animDriver != null)
             {
@@ -326,7 +335,6 @@ namespace Enemy
                 return;
             }
 
-
             if (currentTarget == null || rb2D == null) return;
 
             if (Time.time < moveLockedUntil)
@@ -341,7 +349,6 @@ namespace Enemy
             Vector2 toTarget = targetPos - selfPos;
 
             Collider2D targetCol = currentTarget.GetComponentInParent<Collider2D>();
-
             bool hasColliderDistance = (enemyCollider != null && targetCol != null);
             ColliderDistance2D cd = default;
             float surfaceDistance = toTarget.magnitude;
@@ -352,8 +359,11 @@ namespace Enemy
                 surfaceDistance = cd.isOverlapped ? 0f : cd.distance;
             }
 
+            // Request path to target (throttled by pathUpdateInterval)
+            RequestPath(targetPos);
 
-
+            // Get pathfinding direction (used for both melee and ranged)
+            Vector2 pathDir = GetPathDirection();
 
             void Move(Vector2 dir, float speedMult = 1f)
             {
@@ -378,7 +388,6 @@ namespace Enemy
             {
                 if (attackMode == AttackMode.Melee)
                 {
-                    
                     // Melee: don't bounce away, just stop and let TryAttack handle it.
                     animDriver?.SetFacing(lastFacingDir);
                     animDriver?.SetMovement(Vector2.zero);
@@ -400,34 +409,52 @@ namespace Enemy
             // Melee - Chase until "stop distance" from collider surface
             if (attackMode == AttackMode.Melee)
             {
-
                 // Too close? Back away
                 if (surfaceDistance < meleeMinDistance)
                 {
-                    // Move away from target
+                    // Move away from target (direct, not pathfinding)
                     Vector2 awayFromTarget = -toTarget.normalized;
-                    Move(awayFromTarget, .5f); // Move Slower when backing up
+                    Move(awayFromTarget, .5f);
                     return;
                 }
 
                 // At ideal distance? Stop and attack
-                if(surfaceDistance <= meleeIdealDistance)
+                if (surfaceDistance <= meleeIdealDistance)
                 {
                     animDriver?.SetFacing(lastFacingDir);
                     animDriver?.SetMovement(Vector2.zero);
                     return;
                 }
 
-                // Too far? Chase
-                Move(toTarget);
+                // Too far? Chase using pathfinding
+                if (pathDir.sqrMagnitude > 0.01f)
+                {
+                    Move(pathDir); // Follow the path
+                }
+                else
+                {
+                    Move(toTarget); // Fallback to direct if no path
+                }
                 return;
             }
 
             // ----- Ranged -----
+            if (Time.frameCount % 60 == 0) // Log every second
+            {
+                Debug.Log($"[Ranged] {name} - HasPath: {currentPath != null}, Waypoint: {currentWaypoint}, PathDir: {pathDir}");
+            }
             float tooCloseDist = rangedStopDistance - kiteDeadZone;
             float safeDist = rangedStopDistance + kiteDeadZone;
 
-            if (Time.time >= nextKiteDecisiontime)
+            // Check line of sight BEFORE kiting decision
+            Vector2 origin = selfPos;
+            Vector2 dir = toTarget.normalized;
+            float rayDist = surfaceDistance;
+            RaycastHit2D los = Physics2D.Raycast(origin, dir, rayDist, lineOfSightMask);
+            bool hasLOS = (los.collider == null);
+
+            // Only evaluate kiting if we have LOS
+            if (hasLOS && Time.time >= nextKiteDecisiontime)
             {
                 nextKiteDecisiontime = Time.time + kiteDecisionCooldown;
 
@@ -443,23 +470,46 @@ namespace Enemy
                 }
             }
 
-            if (isKiting && Time.time >= kiteEndTime)
+            // Stop kiting if we lose LOS (obstacle in the way)
+            if (!hasLOS && isKiting)
+            {
                 isKiting = false;
+            }
 
             if (isKiting)
             {
+                // Kite away (direct movement, not pathfinding)
                 Move(-toTarget, kiteSpeedMultiplier);
                 return;
             }
 
-            if (surfaceDistance <= rangedStopDistance)
+            // If we have LOS and are in range - stop and shoot
+            if (hasLOS && surfaceDistance <= rangedStopDistance)
             {
                 animDriver?.SetFacing(lastFacingDir);
                 animDriver?.SetMovement(Vector2.zero);
                 return;
             }
 
-            Move(toTarget);
+            // No LOS or out of range - move using pathfinding to get better position
+            if (pathDir.sqrMagnitude > 0.01f)
+            {
+                Move(pathDir); // Follow the path around obstacles
+            }
+            else
+            {
+                // No valid path - try direct movement as fallback
+                if (surfaceDistance > rangedStopDistance)
+                {
+                    Move(toTarget);
+                }
+                else
+                {
+                    // In range but stuck - stop moving
+                    animDriver?.SetFacing(lastFacingDir);
+                    animDriver?.SetMovement(Vector2.zero);
+                }
+            }
         }
 
         public void NotifyKnockback()
@@ -1025,6 +1075,58 @@ namespace Enemy
             {
                 animDriver.SetMovement(direction);
             }
+        }
+
+        private void RequestPath(Vector2 targetPos)
+        {
+            if(seeker == null || !seeker.enabled) return;
+            if (Time.time < nextPathUpdateTime) return; // Don't spam path requests
+
+            nextPathUpdateTime = Time.time + pathUpdateInterval;
+
+            Vector2 startPos = rb2D != null ? rb2D.position : (Vector2)transform.position;
+
+            seeker.StartPath(startPos, targetPos, OnPathComplete);
+        }
+
+        private void OnPathComplete(Path p)
+        {
+            if (!p.error)
+            {
+                currentPath = p;
+                currentWaypoint = 0;
+            }
+            else
+            {
+                Debug.LogWarning($"[Pathfinding] Path error for {name}: {p.errorLog}");
+            }
+        }
+
+        private Vector2 GetPathDirection()
+        {
+            if (currentPath == null || currentWaypoint >= currentPath.vectorPath.Count) return Vector2.zero;
+
+            Vector2 currentPos = rb2D != null ? rb2D.position : (Vector2)transform.position;
+            Vector2 waypointPos = currentPath.vectorPath[currentWaypoint];
+
+            float distanceToWaypoint = Vector2.Distance(currentPos, waypointPos);
+
+            // reached this waypoint move to next
+            if(distanceToWaypoint < waypointReachedDistance)
+            {
+                currentWaypoint++;
+
+                // reached end of path
+                if(currentWaypoint >= currentPath.vectorPath.Count)
+                {
+                    return Vector2.zero;
+                }
+
+                waypointPos = currentPath.vectorPath[currentWaypoint];
+            }
+
+            // Direction to current waypoint
+            return (waypointPos - currentPos).normalized;
         }
 
         [ClientRpc]

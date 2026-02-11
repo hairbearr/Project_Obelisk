@@ -530,6 +530,7 @@ GameObject:
   - component: {fileID: 2271145318052728466}
   - component: {fileID: 426879209344388932}
   - component: {fileID: 737629954192953947}
+  - component: {fileID: 5063057880258473614}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
@@ -677,8 +678,11 @@ MonoBehaviour:
   targetLayers:
     serializedVersion: 2
     m_Bits: 256
+  leashDistance: 5
+  outOfCombatDelay: 5
+  canLeash: 1
+  resetBehavior: 0
   moveSpeed: 1
-  stoppingDistance: 1.5
   enemyCollider: {fileID: 0}
   knockbackMoveLockTime: 0.3
   primaryAbility: {fileID: 11400000, guid: da8ef7497755cb2468cd73b0f51a9a38, type: 2}
@@ -691,6 +695,7 @@ MonoBehaviour:
   attackHitTiming: 0.5
   threatTracker: {fileID: 0}
   retargetInterval: 0.25
+  currentTargetId: 0
   attackMode: 0
   meleeTelegraphOuter: {fileID: 0}
   meleeTelegraphInner: {fileID: 0}
@@ -698,10 +703,11 @@ MonoBehaviour:
   rangedTelegraphInner: {fileID: 0}
   telegraphOuterColor: {r: 1, g: 0, b: 0, a: 0.2}
   telegraphInnerColor: {r: 1, g: 0, b: 0, a: 0.6}
+  inTransition: 0
   rangedMaxRange: 8
   lineOfSightMask:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 520
   rangedStopDistance: 5
   kiteDeadZone: 0.75
   kiteDecisionCooldown: 0.8
@@ -756,6 +762,34 @@ MonoBehaviour:
   pullToPlayer: 1
   stopDistanceFromSurface: 0.5
   minDistanceToStop: 0.2
+--- !u!114 &5063057880258473614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6205151091289128448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: AstarPathfindingProject::Pathfinding.Seeker
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
 --- !u!1 &6564467713557097236
 GameObject:
   m_ObjectHideFlags: 0
