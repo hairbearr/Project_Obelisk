@@ -43,7 +43,7 @@ PrefabInstance:
     - target: {fileID: 3081394880648425571, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -7494887683080363229, guid: 498222c5ac8d0794689e49709b3816d0, type: 3}
+      objectReference: {fileID: 4723107735738678597, guid: f5d19abbf1354a6499deb654a118e92d, type: 3}
     - target: {fileID: 3081394880648425571, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -99,7 +99,7 @@ PrefabInstance:
     - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: primaryAbility
       value: 
-      objectReference: {fileID: 11400000, guid: 30800bcc8ff78714cba79af85ab8d841, type: 2}
+      objectReference: {fileID: 11400000, guid: 2a37c503b4da2de48a408289301471dc, type: 2}
     - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: attackHitTiming
       value: 0.43
@@ -215,7 +215,7 @@ PrefabInstance:
     - target: {fileID: 6910408176820858265, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 22100000, guid: 373d33908fc4cce42af4317110c0894f, type: 2}
+      objectReference: {fileID: 22100000, guid: 0e5ae7cae8c1b4646b40e6e590167789, type: 2}
     - target: {fileID: 7284657103081393818, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 805928502
