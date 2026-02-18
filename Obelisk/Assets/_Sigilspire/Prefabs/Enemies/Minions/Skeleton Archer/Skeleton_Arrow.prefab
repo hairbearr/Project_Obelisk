@@ -8,6 +8,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 522510915329731660, guid: 069a89b1767bc8240920f4d4a82f94bb, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 417093673
+      objectReference: {fileID: 0}
+    - target: {fileID: 1212078593255361206, guid: 069a89b1767bc8240920f4d4a82f94bb, type: 3}
+      propertyPath: m_Color.b
+      value: 0.4245283
+      objectReference: {fileID: 0}
+    - target: {fileID: 1212078593255361206, guid: 069a89b1767bc8240920f4d4a82f94bb, type: 3}
+      propertyPath: m_Color.g
+      value: 0.4245283
+      objectReference: {fileID: 0}
+    - target: {fileID: 1212078593255361206, guid: 069a89b1767bc8240920f4d4a82f94bb, type: 3}
+      propertyPath: m_Color.r
+      value: 0.4245283
+      objectReference: {fileID: 0}
     - target: {fileID: 1798757265505359445, guid: 069a89b1767bc8240920f4d4a82f94bb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -50,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8814034529641949395, guid: 069a89b1767bc8240920f4d4a82f94bb, type: 3}
       propertyPath: m_Name
-      value: Projectile
+      value: Skeleton_Arrow
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
