@@ -47,18 +47,18 @@ PrefabInstance:
     - target: {fileID: 3081394880648425571, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -7494887683080363229, guid: 498222c5ac8d0794689e49709b3816d0, type: 3}
+      objectReference: {fileID: -4184526593498019664, guid: 10acbdcff6444844ab99136487e1b397, type: 3}
     - target: {fileID: 3081394880648425571, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3081394880648425571, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_Color.b
-      value: 0.3066038
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3081394880648425571, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_Color.g
-      value: 0.60402983
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3081394880648425571, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_Color.r
@@ -174,7 +174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6205151091289128448, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_Name
-      value: Test_Barbarian_Boss
+      value: TowerGuardian
       objectReference: {fileID: 0}
     - target: {fileID: 6557871603474874252, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_AnchorMax.y
@@ -191,10 +191,10 @@ PrefabInstance:
     - target: {fileID: 6910408176820858265, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 22100000, guid: 373d33908fc4cce42af4317110c0894f, type: 2}
+      objectReference: {fileID: 22100000, guid: c058e7dd04f92034495ea519a85ef5c0, type: 2}
     - target: {fileID: 7284657103081393818, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: GlobalObjectIdHash
-      value: 36384456
+      value: 3778071768
       objectReference: {fileID: 0}
     - target: {fileID: 7284657103081393818, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: SceneMigrationSynchronization
@@ -218,11 +218,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8842397654035953887, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8842397654035953887, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8842397654035953887, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_LocalScale.z
@@ -267,6 +267,10 @@ PrefabInstance:
     - target: {fileID: 8842397654035953887, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8842397654035953887, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
@@ -331,6 +335,10 @@ MonoBehaviour:
   targetLayers:
     serializedVersion: 2
     m_Bits: 256
+  leashDistance: 5
+  outOfCombatDelay: 5
+  canLeash: 1
+  resetBehavior: 0
   moveSpeed: 3
   enemyCollider: {fileID: 0}
   knockbackMoveLockTime: 0.12
@@ -414,6 +422,11 @@ MonoBehaviour:
   relocationTime: 3
   castLocation: {fileID: 0}
   maxSelfDestructRadius: 10
+  summonWindupTime: 2
+  summonAddPrefab: {fileID: 0}
+  summonedAddId: 0
+  shieldFromAddActive: 0
+  damageReductionFromAdd: 0.5
   bossAI: {fileID: 4968707085168890851}
 --- !u!114 &5925980190507697977 stripped
 MonoBehaviour:
