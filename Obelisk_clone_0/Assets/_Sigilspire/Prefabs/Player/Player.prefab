@@ -411,7 +411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1600610909
+  GlobalObjectIdHash: 2698343998
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -750,9 +750,6 @@ MonoBehaviour:
   equippedSigil: {fileID: 11400000, guid: c462ed4864449ac4097d961508dfddcd, type: 2}
   equippedSigilId: sword_default
   sigilInventory: {fileID: 7608890470901692854}
-  hitWindupSeconds: 0.35
-  hitActiveSeconds: 0.05
-  useWindupTiming: 1
   perTargetRehitLockSeconds: 0.25
   weaponAnimator: {fileID: 3715217323501954718}
   swordRenderer: {fileID: 4217421764613162781}

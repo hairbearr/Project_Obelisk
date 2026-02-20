@@ -1,3 +1,4 @@
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 namespace Combat.AbilitySystem
@@ -27,6 +28,16 @@ namespace Combat.AbilitySystem
         Channel
     }
 
+    public enum AttackAnimationType
+    {
+        Slash = 1,
+        Slam = 2,
+        Spin = 3,
+        Cast = 4,
+        Shoot = 5,
+        Special = 6
+    }
+
     [CreateAssetMenu(fileName = "NewAbility", menuName = "Sigilspire/Ability")]
     public class Ability : ScriptableObject
     {
@@ -49,6 +60,9 @@ namespace Combat.AbilitySystem
 
         [Header("Visuals")]
         public GameObject vfxPrefab;
+
+        [Header("Animation")]
+        public AttackAnimationType animationType = AttackAnimationType.Slash;
 
         [Header("Attack Timing")]
         public float windupSeconds = 0.12f;

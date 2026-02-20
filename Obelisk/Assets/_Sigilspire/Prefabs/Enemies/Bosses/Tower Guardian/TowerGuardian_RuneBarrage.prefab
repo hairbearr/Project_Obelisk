@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 281305449
+  GlobalObjectIdHash: 2134946876
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Combat.Projectiles.ProjectileBase
   ShowTopMostFoldoutHeaderGroup: 1
   speed: 10
-  damage: 10
+  _damage: 5
   lifetime: 3
   hitLayers:
     serializedVersion: 2

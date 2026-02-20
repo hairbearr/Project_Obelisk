@@ -22,6 +22,7 @@ MonoBehaviour:
   shieldEnergyModifier: 0
   grappleForce: 0
   vfxPrefab: {fileID: 0}
+  animationType: 5
   windupSeconds: 0
   activeSeconds: 0
   windupDuration: 0.5
@@ -31,6 +32,11 @@ MonoBehaviour:
   spreadAngle: 0
   projectilePrefab: {fileID: 0}
   projectileSpeed: 0
+  shotsPerProjectile: 1
+  shotInterval: 0.1
+  volleyCount: 1
+  volleyInterval: 1.2
+  projectileRange: 10
   summonPrefab: {fileID: 0}
   summonCount: 0
   summonHPMultiplier: 0
@@ -38,4 +44,5 @@ MonoBehaviour:
   isOneShot: 0
   channelDuration: 0
   killAllOnComplete: 0
+  minActivationRange: 0
   shape: 1

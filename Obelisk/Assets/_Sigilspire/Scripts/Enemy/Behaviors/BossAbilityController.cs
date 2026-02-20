@@ -86,6 +86,60 @@ namespace Enemy
 
         public bool IsPerformingAbility => isPerformingAbility;
 
+        private void TriggerAbilityAnimation(Ability ability, int fallbackAnimType = 1)
+        {
+            if (ability == null)
+            {
+                // No ability - use fallback animation type
+                TriggerRawAnimation(fallbackAnimType);
+                return;
+            }
+
+            var animDriver = GetComponentInParent<EnemyAnimationDriver>();
+            if (animDriver != null)
+            {
+                Vector2 direction = Vector2.down; // Default
+
+                if (bossAI != null && bossAI.CurrentTarget != null) // Will work after fixing access
+                {
+                    direction = ((Vector2)bossAI.CurrentTarget.position - (Vector2)transform.position).normalized;
+                }
+
+                if(bossAI != null)
+                {
+                    bossAI.SetFacing(direction);
+                }
+
+                animDriver.PlayAttack(direction, (int)ability.animationType);
+
+                Debug.Log($"[Boss] Triggered animation type {ability.animationType} for {ability.name}");
+            }
+        }
+
+        private void TriggerRawAnimation(int animationType)
+        {
+            var animDriver = GetComponentInParent<EnemyAnimationDriver>();
+            if (animDriver != null)
+            {
+                Vector2 direction = Vector2.down; // Default
+
+                if (bossAI != null && bossAI.CurrentTarget != null)
+                {
+                    direction = ((Vector2)bossAI.CurrentTarget.position - (Vector2)transform.position).normalized;
+                }
+
+
+                if (bossAI != null)
+                {
+                    bossAI.SetFacing(direction);
+                }
+
+                animDriver.PlayAttack(direction, animationType);
+
+                Debug.Log($"[Boss] Triggered raw animation type {animationType}");
+            }
+        }
+
         private void Update()
         {
             if (!IsServer) return;
@@ -306,6 +360,8 @@ namespace Enemy
         // Ability-specific implementations
         private IEnumerator GroundPoundSequence(Ability ability)
         {
+            TriggerAbilityAnimation(ability);
+
             Vector2 bossPos = transform.position;
 
             // Show circle telegraph (direction doesn't matter)
@@ -323,6 +379,8 @@ namespace Enemy
         {
             Vector2 bossPos = transform.position;
             Vector2 toTarget = ((Vector2)target.position - bossPos).normalized;
+
+            TriggerAbilityAnimation(ability);
 
             // Show cone telegraph facing the target
             ShowTelegraphClientRpc(bossPos, toTarget, TelegraphType.Cone, ability.aoeRadius, ability.windupDuration);
@@ -365,7 +423,7 @@ namespace Enemy
                 {
                     Vector2 direction = RotateVector(toTarget, angleOffset);
                     Vector2 endPoint = bossPos + direction * projectileRange;
-
+                    TriggerAbilityAnimation(ability);
                     ShowLineTelegraphClientRpc(bossPos, endPoint, lineWidth, volleyWindup);
                 }
 
@@ -437,6 +495,8 @@ namespace Enemy
         {
             Debug.Log("[Boss] SUMMONING ADD");
 
+            TriggerRawAnimation(6);
+
             ShowSummonTelegraphClientRpc();
             yield return new WaitForSeconds(summonWindupTime);
 
@@ -498,6 +558,7 @@ namespace Enemy
 
         private IEnumerator SingleChargeAttack()
         {
+            TriggerRawAnimation(6);
             // Pick random player
             Transform target = FindRandomPlayer();
             if(target == null)
@@ -533,6 +594,7 @@ namespace Enemy
             Vector2 direction = (targetPos - startPos).normalized;
             float distance = Vector2.Distance(startPos, targetPos);
             float cappedDistance = Mathf.Min(distance, chargeMaxDistance);
+
 
             Vector2 endPos = startPos + direction * cappedDistance;
 

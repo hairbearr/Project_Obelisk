@@ -126,19 +126,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5240316554649227041, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_Size.x
-      value: 0.43388367
+      value: 0.53907776
       objectReference: {fileID: 0}
     - target: {fileID: 5240316554649227041, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_Size.y
-      value: 0.77267313
+      value: 0.70430017
       objectReference: {fileID: 0}
     - target: {fileID: 5240316554649227041, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_Offset.x
-      value: 0.032196045
+      value: 0.016418457
       objectReference: {fileID: 0}
     - target: {fileID: 5240316554649227041, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_Offset.y
-      value: -0.0185256
+      value: -0.052712083
       objectReference: {fileID: 0}
     - target: {fileID: 5532320623927628924, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: m_SizeDelta.x
@@ -292,11 +292,6 @@ LineRenderer:
   m_CorrespondingSourceObject: {fileID: 7995146783050616868, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
   m_PrefabInstance: {fileID: 7533273056715528424}
   m_PrefabAsset: {fileID: 0}
---- !u!212 &2624352136141016652 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 5539460198813783716, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
-  m_PrefabInstance: {fileID: 7533273056715528424}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4190180453609327456 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5957432186866471816, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
@@ -346,7 +341,7 @@ MonoBehaviour:
   attackRange: 0.9
   attackLockTime: 0.3
   facingEpsilon: 0.001
-  attackArcDegrees: 360
+  attackArcDegrees: 180
   meleeMinDistance: 0.5
   meleeIdealDistance: 0.8
   attackHitTiming: 0.5
@@ -354,8 +349,8 @@ MonoBehaviour:
   retargetInterval: 0.25
   currentTargetId: 0
   attackMode: 0
-  meleeTelegraphOuter: {fileID: 2624352136141016652}
-  meleeTelegraphInner: {fileID: 8619030522540646418}
+  meleeTelegraphOuter: {fileID: 0}
+  meleeTelegraphInner: {fileID: 0}
   rangedTelegraphOuter: {fileID: 4379783588808227720}
   rangedTelegraphInner: {fileID: 468365895989332172}
   telegraphOuterColor: {r: 1, g: 0, b: 0, a: 0.2}
@@ -395,7 +390,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   circleTelegraphPrefab: {fileID: 8552267455541584144, guid: 4e46b5bd39202b34e81c020d1a1c53a6, type: 3}
-  coneTelegraphPrefab: {fileID: 8552267455541584144, guid: 8adafb92df4b30c42b83c53ad1b33d0a, type: 3}
+  coneTelegraphPrefab: {fileID: 0}
   lineTelegraphPrefab: {fileID: 6608510399317256289, guid: eafbcd17177858c4db3320b91a47fb0b, type: 3}
   damageTakenMultiplier:
     m_InternalValue: 1
@@ -468,8 +463,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4404f2e41ef0f4db1ff63144cf11cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy.EnemyAnimationDriver
---- !u!212 &8619030522540646418 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 2240397288113715450, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
-  m_PrefabInstance: {fileID: 7533273056715528424}
-  m_PrefabAsset: {fileID: 0}

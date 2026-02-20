@@ -57,6 +57,13 @@ namespace Enemy
             if (TryGetComponent<GrappleTarget>(out var gt))
                 gt.ServerEndGrapple();
 
+            slider.gameObject.SetActive(false);
+            var enemyAI = GetComponent<EnemyAI>();
+            if(enemyAI != null)
+            {
+                enemyAI.CleanUpTelegraphs();
+            }
+
             StartCoroutine(DeathSequence());
         }
 

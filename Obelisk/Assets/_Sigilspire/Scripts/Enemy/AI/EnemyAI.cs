@@ -59,7 +59,8 @@ namespace Enemy
         [SerializeField] private float retargetInterval = 0.25f;
         private float lastRetargetTime;
 
-        private Transform currentTarget;
+        protected Transform currentTarget;
+        public Transform CurrentTarget => currentTarget;
         [SerializeField] private ulong currentTargetId = 0;
 
         private Rigidbody2D rb2D;
@@ -517,7 +518,7 @@ namespace Enemy
             moveLockedUntil = Time.time + knockbackMoveLockTime;
         }
 
-        private void SetFacing(Vector2 dir)
+        public void SetFacing(Vector2 dir)
         {
             if (dir.sqrMagnitude <= facingEpsilon) return;
             lastFacingDir = dir.normalized;
@@ -566,7 +567,7 @@ namespace Enemy
                 ShowMeleeTelegraph();
 
                 // Just play the animation - damage happens on animation event
-                animDriver?.PlayAttack(lastFacingDir);
+                animDriver?.PlayAttack(lastFacingDir, (int)primaryAbility.animationType);
                 return;
             }
 
@@ -593,7 +594,7 @@ namespace Enemy
             ShowRangedTelegraph();
 
             // Just play the animation - damage happens on animation event
-            animDriver?.PlayAttack(lastFacingDir);
+            animDriver?.PlayAttack(lastFacingDir, (int)primaryAbility.animationType);
         }
 
         private void OnEnemyAttackHitFrame()
@@ -1144,6 +1145,12 @@ namespace Enemy
             }
         }
 
+        public void CleanUpTelegraphs()
+        {
+            HideMeleeTelegraph();
+            HideRangedTelegraph();
+            Debug.Log("[EnemyAI] Telegraphs cleaned up on death.");
+        }
 
         private void ServerResetEnemy()
         {

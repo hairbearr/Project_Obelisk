@@ -44,7 +44,7 @@ namespace Enemy
             // Do NOT touch Speed here.
         }
 
-        public void PlayAttack(Vector2 attackDirection)
+        public void PlayAttack(Vector2 attackDirection, int attackType)
         {
             if (animator == null) return;
 
@@ -54,6 +54,8 @@ namespace Enemy
                 animator.SetFloat(MoveX, attackDirection.x);
                 animator.SetFloat(MoveY, attackDirection.y);
             }
+
+            animator.SetFloat("AttackType", attackType);
 
             animator.SetTrigger(Attack);
         }
