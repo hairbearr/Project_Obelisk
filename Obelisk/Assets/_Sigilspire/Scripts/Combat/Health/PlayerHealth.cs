@@ -9,6 +9,7 @@ namespace Combat.Health
         [Header("Death Settings")]
         [SerializeField] private float deathPenaltySeconds = 15f;
         [SerializeField] private float invulnerabilityDuration = 2f;
+        private bool isDead = false;
 
         private bool isInvulnerable = false;
         private Rigidbody2D rb;
@@ -21,7 +22,14 @@ namespace Combat.Health
         public override void TakeDamage(float amount, ulong attackerId)
         {
 
-            if (isInvulnerable) return;
+            if (isInvulnerable || isDead) return;
+
+            var shake = FindFirstObjectByType<CameraShake>();
+            if (shake != null)
+            {
+                shake.Shake(0.2f, 0.15f);
+            }
+
             base.TakeDamage(amount, attackerId);
 
         }
@@ -31,11 +39,17 @@ namespace Combat.Health
         {
 
             if (!IsServer) return;
+            if (isDead) return;
 
+            isDead = true;
+
+            Debug.Log($"[PlayerHealth] OnDeath called! Penalty value: {deathPenaltySeconds}");
 
             var timer = FindFirstObjectByType<RunTimerUI>();
             if ((timer!= null))
             {
+                Debug.Log($"[PlayerHealth] Calling ServerAddPenalty with {deathPenaltySeconds} seconds");
+
                 timer.ServerAddPenalty(deathPenaltySeconds);
             }
 
@@ -56,6 +70,8 @@ namespace Combat.Health
             yield return new WaitForSeconds(1.1f);
 
             RespawnAtCheckpoint();
+
+            isDead = false;
         }
 
         [ClientRpc]

@@ -113,7 +113,12 @@ public class RunTimerUI : NetworkBehaviour
     public void ServerAddPenalty(float deathPenalty)
     {
         if (!IsServer) return;
+
+        float before = timeRemaining.Value;
         timeRemaining.Value -= deathPenalty;
+        float after = timeRemaining.Value;
+
+        Debug.Log($"[Timer] ServerAddPenalty called! Penalty: {deathPenalty}s, Before: {before:F1}s, After: {after:F1}s, Difference: {before - after:F1}s");
     }
 
     public void ServerStopTimer()

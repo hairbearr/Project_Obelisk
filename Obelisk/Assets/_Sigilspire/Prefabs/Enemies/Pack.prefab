@@ -12,8 +12,10 @@ GameObject:
   - component: {fileID: 4227133276995526358}
   - component: {fileID: 4240117575948647314}
   - component: {fileID: 2083171123045825745}
+  - component: {fileID: -3330308633827861893}
+  - component: {fileID: 5399276383905642392}
   m_Layer: 0
-  m_Name: Spawner
+  m_Name: Pack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8047087057626836408}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.82, y: -1.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -46,8 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 4263620780
-  InScenePlacedSourceGlobalObjectIdHash: 0
+  GlobalObjectIdHash: 674175244
+  InScenePlacedSourceGlobalObjectIdHash: 674175244
   DeferredDespawnTick: 0
   Ownership: 1
   AlwaysReplicateAsRoot: 0
@@ -66,14 +68,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8047087057626836408}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 23a963b87448f6a4aaca2f65f43425ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  enemyPrefab: {fileID: 4383564233564693344, guid: be653eeb2d8692f42aaf749732db252b, type: 3}
-  initialSpawnCount: 0
+  enemyPrefab: {fileID: 4383564233564693344, guid: 01cef2236c7a4d14b9c5b89cd5bacfd9, type: 3}
+  initialSpawnCount: 1
   spawnRadius: 1
   trackSpawnedEnemies: 1
 --- !u!114 &2083171123045825745
@@ -83,13 +85,47 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8047087057626836408}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 23a963b87448f6a4aaca2f65f43425ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy.EnemySpawner
   ShowTopMostFoldoutHeaderGroup: 1
-  enemyPrefab: {fileID: 978339830830044786, guid: cc065e5e23592f145bd9a4a21132b526, type: 3}
-  initialSpawnCount: 3
+  enemyPrefab: {fileID: 978339830830044786, guid: def2037612d731e458125bfe728d67a7, type: 3}
+  initialSpawnCount: 2
+  spawnRadius: 1
+  trackSpawnedEnemies: 1
+--- !u!114 &-3330308633827861893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8047087057626836408}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23a963b87448f6a4aaca2f65f43425ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy.EnemySpawner
+  ShowTopMostFoldoutHeaderGroup: 1
+  enemyPrefab: {fileID: 4383564233564693344, guid: c055f1dbc6d718d4aa1873ddaacafd77, type: 3}
+  initialSpawnCount: 0
+  spawnRadius: 1
+  trackSpawnedEnemies: 1
+--- !u!114 &5399276383905642392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8047087057626836408}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23a963b87448f6a4aaca2f65f43425ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy.EnemySpawner
+  ShowTopMostFoldoutHeaderGroup: 1
+  enemyPrefab: {fileID: 978339830830044786, guid: 47a006104f0d24c4a97c730c603fe0b3, type: 3}
+  initialSpawnCount: 0
   spawnRadius: 1
   trackSpawnedEnemies: 1

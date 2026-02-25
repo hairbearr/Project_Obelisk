@@ -372,7 +372,7 @@ namespace Enemy
             // Deal circular AoE damage
             DealAoEDamage(bossPos, ability.aoeRadius, ability.damage);
 
-            ScreenShakeClientRpc();
+            ScreenShakeClientRpc(0.4f, 0.3f);
         }
 
         private IEnumerator StoneFistSequence(Ability ability, Transform target)
@@ -390,7 +390,7 @@ namespace Enemy
             // Deal cone damage (90 degree arc)
             DealConeAoeDamage(bossPos, toTarget, ability.aoeRadius, 90f, ability.damage);
 
-            ScreenShakeClientRpc();
+            ScreenShakeClientRpc(0.3f, 0.25f);
         }
 
         private IEnumerator RuneBarrageSequence(Ability ability, Transform target)
@@ -829,7 +829,7 @@ namespace Enemy
 
                     Debug.Log($"[Charge] Calling ServerHitByCharge on {hit.name}, boss={this != null}");
                     destructible.ServerHitByCharge(this);
-                    Debug.Log($"[Charge] ServerHitByCharge returned"); ScreenShakeClientRpc();
+                    Debug.Log($"[Charge] ServerHitByCharge returned"); ScreenShakeClientRpc(0.5f, 0.4f);
                     return true; // stop charge
                 }
             }
@@ -847,7 +847,7 @@ namespace Enemy
                     playerHealth.TakeDamage(99999f, bossId);
 
                     Debug.Log($"[BossCharge] KILLED PLAYER: {hit.name}");
-                    ScreenShakeClientRpc();
+                    ScreenShakeClientRpc(0.5f, 0.4f);
                     return true; // stop charge
                 }
             }
@@ -1230,11 +1230,11 @@ namespace Enemy
         }
 
         [ClientRpc]
-        private void ScreenShakeClientRpc()
+        private void ScreenShakeClientRpc(float duration, float magnitude)
         {
             var shake = FindFirstObjectByType<CameraShake>();
             if (shake != null)
-                shake.Shake(0.3f, 0.3f);
+                shake.Shake(duration, magnitude);
         }
 
         // Calculate evenly-spaced angles across an arc

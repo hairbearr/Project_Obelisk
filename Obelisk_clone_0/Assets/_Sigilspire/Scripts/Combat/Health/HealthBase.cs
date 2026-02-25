@@ -1,5 +1,6 @@
 using Combat.DamageInterfaces;
 using Enemy;
+using System.Collections;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,8 +10,8 @@ namespace Combat.Health
     public class HealthBase : NetworkBehaviour, IDamageable
     {
         [SerializeField] protected float maxHealth = 100f;
+        [SerializeField] protected Color flashColor = Color.white;
         public float MaxHealth => maxHealth;
-
         public NetworkVariable<float> CurrentHealth = new NetworkVariable<float>(
             0f,
             NetworkVariableReadPermission.Everyone,
@@ -90,6 +91,11 @@ namespace Combat.Health
 
             CurrentHealth.Value -= amount;
 
+            // flash white when damage, but not when dead
+            if(CurrentHealth.Value > 0f)
+            {
+                FlashColorClientRpc(flashColor);
+            }
 
             var threat = GetComponentInParent<IThreatReceiver>();
             if (threat != null && attackerId != 0)
@@ -123,6 +129,40 @@ namespace Combat.Health
         {
             if (!IsServer) return;
             CurrentHealth.Value = maxHealth;
+        }
+
+        [ClientRpc]
+        private void FlashColorClientRpc(Color color)
+        {
+            Debug.Log($"[Flash] FlashColorClientRpc called with color: {color}");
+
+            StartCoroutine(FlashRoutine(color));
+        }
+
+        private IEnumerator FlashRoutine(Color color)
+        {
+            var sprite = GetComponentInChildren<SpriteRenderer>();
+            if (sprite == null) {
+                Debug.LogWarning($"[Flash] No SpriteRenderer found on {gameObject.name}!");
+
+                yield break; }
+
+            Debug.Log($"[Flash] Found sprite: {sprite.name}, original color: {sprite.color}");
+
+            Color og = sprite.color;
+            sprite.color = color;
+
+            Debug.Log($"[Flash] Changed to flash color: {color}");
+
+
+            yield return new WaitForSeconds(0.1f);
+
+            if(sprite != null)
+            {
+                sprite.color = og;
+                Debug.Log($"[Flash] Restored original color: {og}");
+
+            }
         }
 
     }

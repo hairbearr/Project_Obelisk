@@ -933,7 +933,7 @@ namespace Enemy
             if (isReturningToSpawn)
             {
                 float distToSpawn = Vector2.Distance(currentPos, spawnPos);
-                Debug.Log($"[Leash] {name} returning to spawn, distance: {distToSpawn:F2}");
+                //Debug.Log($"[Leash] {name} returning to spawn, distance: {distToSpawn:F2}");
 
                 if (distToSpawn < 0.5f) // close enough to spawn
                 {
@@ -952,13 +952,13 @@ namespace Enemy
             // Log every few seconds to avoid spam
             if (Time.frameCount % 120 == 0) // Every ~2 seconds at 60fps
             {
-                Debug.Log($"[Leash] {name} - Target: {hasTarget}, OutOfCombat: {outOfCombatLongEnough} ({timeSinceLastCombat:F1}s/{outOfCombatDelay}s), Distance: {distanceFromSpawn:F1}/{leashDistance}");
+                //Debug.Log($"[Leash] {name} - Target: {hasTarget}, OutOfCombat: {outOfCombatLongEnough} ({timeSinceLastCombat:F1}s/{outOfCombatDelay}s), Distance: {distanceFromSpawn:F1}/{leashDistance}");
             }
 
             // TRIGGER 1: Boss pulled too far from spawn
             if (tooFarFromSpawn)
             {
-                Debug.Log($"[Leash] {name} TRIGGERING RESET! Pulled too far: {distanceFromSpawn:F1} > {leashDistance}");
+               // Debug.Log($"[Leash] {name} TRIGGERING RESET! Pulled too far: {distanceFromSpawn:F1} > {leashDistance}");
                 StartReset();
                 return;
             }
@@ -966,7 +966,7 @@ namespace Enemy
             // TRIGGER 2: Players disengaged (no target for X seconds)
             if (!hasTarget && outOfCombatLongEnough && hasEnteredCombat)
             {
-                Debug.Log($"[Leash] {name} TRIGGERING RESET! Players disengaged for {timeSinceLastCombat:F1}s");
+               // Debug.Log($"[Leash] {name} TRIGGERING RESET! Players disengaged for {timeSinceLastCombat:F1}s");
                 StartReset();
             }
         }

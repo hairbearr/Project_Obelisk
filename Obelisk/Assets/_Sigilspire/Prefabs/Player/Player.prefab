@@ -262,6 +262,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7445083387766132111
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -307,6 +308,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -316,7 +318,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1178975577014766791
 GameObject:
@@ -411,7 +412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2698343998
+  GlobalObjectIdHash: 1600610909
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -837,10 +838,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Combat.Health.PlayerHealth
   ShowTopMostFoldoutHeaderGroup: 1
   maxHealth: 200
+  flashColor: {r: 1, g: 0, b: 0, a: 1}
   CurrentHealth:
     m_InternalValue: 0
   slider: {fileID: 0}
-  deathPenaltySeconds: 15
+  deathPenaltySeconds: 5
   invulnerabilityDuration: 2
 --- !u!1 &2094233075969275182
 GameObject:
@@ -876,6 +878,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4217421764613162781
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -921,6 +924,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 8748667142837503464, guid: 035a706ef4c07b247a4f88a8e40d3286, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -930,7 +934,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &2181674472651299838
 GameObject:
@@ -1001,8 +1004,110 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClientNetworkAnimator
   ShowTopMostFoldoutHeaderGroup: 1
-  TransitionStateInfoList: []
+  NetworkAnimatorExpanded: 0
+  AuthorityMode: 0
   m_Animator: {fileID: 7578368500156746380}
+  TransitionStateInfoList:
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: -2089788878
+    DestinationState: 646380074
+    TransitionDuration: 0.05
+    TriggerNameHash: 646380074
+    TransitionIndex: 0
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: -2089788878
+    DestinationState: -954359197
+    TransitionDuration: 0.05
+    TriggerNameHash: -954359197
+    TransitionIndex: 1
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: -2089788878
+    DestinationState: -800931151
+    TransitionDuration: 0.05
+    TriggerNameHash: -800931151
+    TransitionIndex: 2
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: -2089788878
+    DestinationState: -187943821
+    TransitionDuration: 0.05
+    TriggerNameHash: -187943821
+    TransitionIndex: 3
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: -2089788878
+    DestinationState: -1004578160
+    TransitionDuration: 0
+    TriggerNameHash: -1004578160
+    TransitionIndex: 4
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: -2089788878
+    DestinationState: -1036723533
+    TransitionDuration: 0.05
+    TriggerNameHash: -1004578160
+    TransitionIndex: 5
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: -2089788878
+    DestinationState: 1740614436
+    TransitionDuration: 0.05
+    TriggerNameHash: 1740614436
+    TransitionIndex: 6
+  AnimatorParameterEntries:
+    ParameterEntries:
+    - name: MoveX
+      NameHash: 675470966
+      Synchronize: 1
+      ParameterType: 1
+    - name: MoveY
+      NameHash: 1598418656
+      Synchronize: 1
+      ParameterType: 1
+    - name: Speed
+      NameHash: -823668238
+      Synchronize: 1
+      ParameterType: 1
+    - name: SwordSlash
+      NameHash: -1004578160
+      Synchronize: 1
+      ParameterType: 9
+    - name: ShieldBlock
+      NameHash: 2074866571
+      Synchronize: 1
+      ParameterType: 9
+    - name: ShieldBreak
+      NameHash: -187943821
+      Synchronize: 1
+      ParameterType: 9
+    - name: GrappleCast
+      NameHash: -800931151
+      Synchronize: 1
+      ParameterType: 9
+    - name: GrappleRetract
+      NameHash: -954359197
+      Synchronize: 1
+      ParameterType: 9
+    - name: Death
+      NameHash: 646380074
+      Synchronize: 1
+      ParameterType: 9
+    - name: Hurt
+      NameHash: 1740614436
+      Synchronize: 1
+      ParameterType: 9
+    - name: RaiseShield
+      NameHash: -702804236
+      Synchronize: 1
+      ParameterType: 9
+    - name: LowerShield
+      NameHash: 1224397445
+      Synchronize: 1
+      ParameterType: 9
+  AnimatorParametersExpanded: 0
 --- !u!1 &2556719980368882129
 GameObject:
   m_ObjectHideFlags: 0
@@ -1069,6 +1174,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4086169537133452126
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1114,6 +1220,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
+  m_MaskInteraction: 0
   m_Sprite: {fileID: -8449569279180219261, guid: 89976e5a720d8c446b10f645fca62767, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1123,7 +1230,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &3707221530821532489
 GameObject:
@@ -1227,8 +1333,110 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClientNetworkAnimator
   ShowTopMostFoldoutHeaderGroup: 1
-  TransitionStateInfoList: []
+  NetworkAnimatorExpanded: 0
+  AuthorityMode: 0
   m_Animator: {fileID: 3715217323501954718}
+  TransitionStateInfoList:
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: -2089788878
+    DestinationState: 646380074
+    TransitionDuration: 0.05
+    TriggerNameHash: 646380074
+    TransitionIndex: 0
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: -2089788878
+    DestinationState: -954359197
+    TransitionDuration: 0.05
+    TriggerNameHash: -954359197
+    TransitionIndex: 1
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: -2089788878
+    DestinationState: -800931151
+    TransitionDuration: 0.05
+    TriggerNameHash: -800931151
+    TransitionIndex: 2
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: -2089788878
+    DestinationState: -187943821
+    TransitionDuration: 0.05
+    TriggerNameHash: -187943821
+    TransitionIndex: 3
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: -2089788878
+    DestinationState: -1004578160
+    TransitionDuration: 0
+    TriggerNameHash: -1004578160
+    TransitionIndex: 4
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: -2089788878
+    DestinationState: -1036723533
+    TransitionDuration: 0.05
+    TriggerNameHash: -1004578160
+    TransitionIndex: 5
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: -2089788878
+    DestinationState: 1740614436
+    TransitionDuration: 0.05
+    TriggerNameHash: 1740614436
+    TransitionIndex: 6
+  AnimatorParameterEntries:
+    ParameterEntries:
+    - name: MoveX
+      NameHash: 675470966
+      Synchronize: 1
+      ParameterType: 1
+    - name: MoveY
+      NameHash: 1598418656
+      Synchronize: 1
+      ParameterType: 1
+    - name: Speed
+      NameHash: -823668238
+      Synchronize: 1
+      ParameterType: 1
+    - name: SwordSlash
+      NameHash: -1004578160
+      Synchronize: 1
+      ParameterType: 9
+    - name: ShieldBlock
+      NameHash: 2074866571
+      Synchronize: 1
+      ParameterType: 9
+    - name: ShieldBreak
+      NameHash: -187943821
+      Synchronize: 1
+      ParameterType: 9
+    - name: GrappleCast
+      NameHash: -800931151
+      Synchronize: 1
+      ParameterType: 9
+    - name: GrappleRetract
+      NameHash: -954359197
+      Synchronize: 1
+      ParameterType: 9
+    - name: Death
+      NameHash: 646380074
+      Synchronize: 1
+      ParameterType: 9
+    - name: Hurt
+      NameHash: 1740614436
+      Synchronize: 1
+      ParameterType: 9
+    - name: RaiseShield
+      NameHash: -702804236
+      Synchronize: 1
+      ParameterType: 9
+    - name: LowerShield
+      NameHash: 1224397445
+      Synchronize: 1
+      ParameterType: 9
+  AnimatorParametersExpanded: 0
 --- !u!114 &3176397838248870446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1311,8 +1519,110 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClientNetworkAnimator
   ShowTopMostFoldoutHeaderGroup: 1
-  TransitionStateInfoList: []
+  NetworkAnimatorExpanded: 0
+  AuthorityMode: 0
   m_Animator: {fileID: 2663175753877607411}
+  TransitionStateInfoList:
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: -2089788878
+    DestinationState: 646380074
+    TransitionDuration: 0.05
+    TriggerNameHash: 646380074
+    TransitionIndex: 0
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: -2089788878
+    DestinationState: -954359197
+    TransitionDuration: 0.05
+    TriggerNameHash: -954359197
+    TransitionIndex: 1
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: -2089788878
+    DestinationState: -800931151
+    TransitionDuration: 0.05
+    TriggerNameHash: -800931151
+    TransitionIndex: 2
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: -2089788878
+    DestinationState: -187943821
+    TransitionDuration: 0.05
+    TriggerNameHash: -187943821
+    TransitionIndex: 3
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: -2089788878
+    DestinationState: -1004578160
+    TransitionDuration: 0
+    TriggerNameHash: -1004578160
+    TransitionIndex: 4
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: -2089788878
+    DestinationState: -1036723533
+    TransitionDuration: 0.05
+    TriggerNameHash: -1004578160
+    TransitionIndex: 5
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: -2089788878
+    DestinationState: 1740614436
+    TransitionDuration: 0.05
+    TriggerNameHash: 1740614436
+    TransitionIndex: 6
+  AnimatorParameterEntries:
+    ParameterEntries:
+    - name: MoveX
+      NameHash: 675470966
+      Synchronize: 1
+      ParameterType: 1
+    - name: MoveY
+      NameHash: 1598418656
+      Synchronize: 1
+      ParameterType: 1
+    - name: Speed
+      NameHash: -823668238
+      Synchronize: 1
+      ParameterType: 1
+    - name: SwordSlash
+      NameHash: -1004578160
+      Synchronize: 1
+      ParameterType: 9
+    - name: ShieldBlock
+      NameHash: 2074866571
+      Synchronize: 1
+      ParameterType: 9
+    - name: ShieldBreak
+      NameHash: -187943821
+      Synchronize: 1
+      ParameterType: 9
+    - name: GrappleCast
+      NameHash: -800931151
+      Synchronize: 1
+      ParameterType: 9
+    - name: GrappleRetract
+      NameHash: -954359197
+      Synchronize: 1
+      ParameterType: 9
+    - name: Death
+      NameHash: 646380074
+      Synchronize: 1
+      ParameterType: 9
+    - name: Hurt
+      NameHash: 1740614436
+      Synchronize: 1
+      ParameterType: 9
+    - name: RaiseShield
+      NameHash: -702804236
+      Synchronize: 1
+      ParameterType: 9
+    - name: LowerShield
+      NameHash: 1224397445
+      Synchronize: 1
+      ParameterType: 9
+  AnimatorParametersExpanded: 0
 --- !u!1 &4382260915170033419
 GameObject:
   m_ObjectHideFlags: 0
@@ -1530,6 +1840,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8830746651959417608
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1575,6 +1886,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1584,7 +1896,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &6332690074828862356
 GameObject:
@@ -1653,7 +1964,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!120 &8694550340195308258
 LineRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1699,6 +2010,7 @@ LineRenderer:
   m_SortingLayerID: 2004339009
   m_SortingLayer: 1
   m_SortingOrder: 100
+  m_MaskInteraction: 0
   m_Positions:
   - {x: 0, y: 0.08, z: 0}
   - {x: 1, y: 0.08, z: 0}
@@ -1757,7 +2069,6 @@ LineRenderer:
     textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
-  m_MaskInteraction: 0
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
