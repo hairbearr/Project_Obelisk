@@ -41,6 +41,12 @@ public class GrappleTarget : NetworkBehaviour, IGrapplePullable
     {
         if (!IsServer) return;
         activeGrappleCount.Value++;
+
+        var enemyAI = GetComponent<Enemy.EnemyAI>();
+        if( enemyAI != null )
+        {
+            enemyAI.SetGrappled(true);
+        }
     }
 
     // Called by GrapplingHookController when grapple ends
@@ -48,6 +54,15 @@ public class GrappleTarget : NetworkBehaviour, IGrapplePullable
     {
         if (!IsServer) return;
         activeGrappleCount.Value = Mathf.Max(0, activeGrappleCount.Value - 1);
+
+        if(activeGrappleCount.Value == 0)
+        {
+            var enemyAI = GetComponent<Enemy.EnemyAI>();
+            if ( enemyAI != null ) 
+            {
+                enemyAI.SetGrappled(false);
+            }
+        }
     }
 
     // New: Let grapple controller tell us which player collider to ignore

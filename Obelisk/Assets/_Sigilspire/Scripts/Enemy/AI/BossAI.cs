@@ -154,6 +154,10 @@ namespace Enemy
         {
             if (!IsServer) return;
 
+            // Reset phases
+            _currentPhase = 0;
+            abilityController.SetPhase(0);
+            
             Debug.Log("[Boss] Clearing summoned adds on reset");
 
             // clear add if it exists

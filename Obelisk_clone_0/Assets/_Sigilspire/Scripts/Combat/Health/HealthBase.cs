@@ -141,27 +141,32 @@ namespace Combat.Health
 
         private IEnumerator FlashRoutine(Color color)
         {
-            var sprite = GetComponentInChildren<SpriteRenderer>();
-            if (sprite == null) {
-                Debug.LogWarning($"[Flash] No SpriteRenderer found on {gameObject.name}!");
+            SpriteRenderer[] sprites = GetComponentsInChildren<SpriteRenderer>();
+            if (sprites.Length == 0)
+            {
+                Debug.LogWarning($"[Flash] No SpriteRenderers found on {gameObject.name}!");
+                yield break; 
+            }
 
-                yield break; }
+            // Store og colors
 
-            Debug.Log($"[Flash] Found sprite: {sprite.name}, original color: {sprite.color}");
+            Color[] ogs = new Color[sprites.Length];
 
-            Color og = sprite.color;
-            sprite.color = color;
-
-            Debug.Log($"[Flash] Changed to flash color: {color}");
-
+            for (int i = 0; i < sprites.Length; i++)
+            {
+                ogs[i] = sprites[i].color;
+                sprites[i].color = color;
+            }
 
             yield return new WaitForSeconds(0.1f);
 
-            if(sprite != null)
+            // Restore OG colors
+            for (int i = 0;i < sprites.Length; i++)
             {
-                sprite.color = og;
-                Debug.Log($"[Flash] Restored original color: {og}");
-
+                if (sprites[i] != null)
+                {
+                    sprites[i].color = ogs[i];
+                }
             }
         }
 

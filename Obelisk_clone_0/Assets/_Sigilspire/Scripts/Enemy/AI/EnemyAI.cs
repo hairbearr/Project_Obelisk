@@ -75,7 +75,10 @@ namespace Enemy
         private float nextPathUpdateTime = 0f;
         private const float waypointReachedDistance = 0.3f; // how close to waypoint before moving to next
 
+        private float lastAttackEventTime = 0f;
         private float lastAttackTime;
+
+        private bool isBeingGrappled = false;
 
         private enum AttackMode { Melee, RangedHitscan }
         [Header("Attack Mode")]
@@ -288,13 +291,11 @@ namespace Enemy
         {
             if (ids == null || ids.Count == 0) return 0;
             if (NetworkManager == null) return 0;
-
             var sm = NetworkManager.SpawnManager;
             if (sm == null) return 0;
 
             ulong bestId = 0;
             float bestDistSq = float.MaxValue;
-
             Vector2 self = rb2D != null ? rb2D.position : (Vector2)transform.position;
 
             for (int i = 0; i < ids.Count; i++)
@@ -304,6 +305,21 @@ namespace Enemy
 
                 Vector2 p = obj.transform.position;
                 float dSq = (p - self).sqrMagnitude;
+
+                // LOS check - only aggro targets we can see
+                Vector2 toTarget = p - self;
+                float distance = toTarget.magnitude;
+
+                if(distance > 0.01f)
+                {
+                    RaycastHit2D los = Physics2D.Raycast(self, toTarget.normalized, distance, lineOfSightMask);
+
+                    if(los.collider != null)
+                    {
+                        Debug.Log($"[FindTarget] {name} can't see target ID {id} - blocked by {los.collider.name}");
+                        continue;
+                    }
+                }
 
                 if (dSq < bestDistSq)
                 {
@@ -527,6 +543,8 @@ namespace Enemy
 
         private void TryAttack()
         {
+            if (isBeingGrappled) return;
+
             if (Time.time < attackLockUntil) return;
 
             if (primaryAbility == null || currentTarget == null) return;
@@ -600,10 +618,22 @@ namespace Enemy
         private void OnEnemyAttackHitFrame()
         {
             if (!IsServer) return;
+            if (isBeingGrappled) return;
             if (currentTarget == null) return;
             if (primaryAbility == null) return;
 
+            // prevent duplicate events from multiple animation event sources
+            const float minTimeBetweenEvents = 0.3f;
+            if(Time.time - lastAttackEventTime < minTimeBetweenEvents)
+            {
+                Debug.Log($"[Attack] {name} DUPLICATE EVENT BLOCKED! Time since last: {Time.time - lastAttackEventTime:F3}s");
+                return;
+            }
+
+            lastAttackEventTime = Time.time;
             lastCombatTime = Time.time; // combat activity
+
+            Debug.Log($"[Attack] {name} OnEnemyAttackHitFrame called! Time: {Time.time}");
 
             HideMeleeTelegraph();
             HideRangedTelegraph();
@@ -1150,6 +1180,41 @@ namespace Enemy
             HideMeleeTelegraph();
             HideRangedTelegraph();
             Debug.Log("[EnemyAI] Telegraphs cleaned up on death.");
+        }
+
+        public void SetGrappled(bool grappled)
+        {
+            isBeingGrappled = grappled;
+            if (grappled)
+            {
+                Debug.Log($"[Enemy] {name} is being grappled - attacks disabled!");
+                // Cancel any active attack
+                CancelActiveAttack();
+            }
+            else
+            {
+                Debug.Log($"[Enemy] {name} grapple ended - attacks enabled!");
+            }
+        }
+
+        public bool IsGrappled() => isBeingGrappled;
+
+        private void CancelActiveAttack()
+        {
+            // hide telegraphs
+            HideMeleeTelegraph();
+            HideRangedTelegraph();
+
+            // Reset attack lock (allows new attacks immediately after grapple ends)
+            attackLockUntil = 0f;
+
+            // stop attack animation if playing
+            if(animDriver != null)
+            {
+                animDriver.SetMovement(Vector2.zero);
+            }
+
+            Debug.Log($"[Enemy] {name} attack cancelled by grapple!");
         }
 
         private void ServerResetEnemy()

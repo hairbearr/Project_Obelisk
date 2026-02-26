@@ -27,7 +27,8 @@ namespace Combat.Health
             var shake = FindFirstObjectByType<CameraShake>();
             if (shake != null)
             {
-                shake.Shake(0.2f, 0.15f);
+                // maybe implement this if there are traps and environment hazards that cause the shakes
+                // shake.Shake(0.1f, 0.1f);
             }
 
             base.TakeDamage(amount, attackerId);

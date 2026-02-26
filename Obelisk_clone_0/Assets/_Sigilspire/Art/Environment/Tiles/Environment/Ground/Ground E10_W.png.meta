@@ -1,0 +1,923 @@
+fileFormatVersion: 2
+guid: 6e845691e2642504993dc379c2b355f6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8030082577458737759
+    second: Ground E10_W_0
+  - first:
+      213: 6152356908792112439
+    second: Ground E10_W_1
+  - first:
+      213: 5378987616590904425
+    second: Ground E10_W_2
+  - first:
+      213: -343230854749489140
+    second: Ground E10_W_3
+  - first:
+      213: 9029592233108513424
+    second: Ground E10_W_4
+  - first:
+      213: 6859212087322847846
+    second: Ground E10_W_5
+  - first:
+      213: 7525007035154621933
+    second: Ground E10_W_6
+  - first:
+      213: -3327627827945132408
+    second: Ground E10_W_7
+  - first:
+      213: 4531779740488442980
+    second: Ground E10_W_8
+  - first:
+      213: 1515027198041974617
+    second: Ground E10_W_9
+  - first:
+      213: -2181756827808516545
+    second: Ground E10_W_10
+  - first:
+      213: 8453343733660830835
+    second: Ground E10_W_11
+  - first:
+      213: 8652239254335260563
+    second: Ground E10_W_12
+  - first:
+      213: 3574454309232823424
+    second: Ground E10_W_13
+  - first:
+      213: -3664585031665058497
+    second: Ground E10_W_14
+  - first:
+      213: 5945280059581709515
+    second: Ground E10_W_15
+  - first:
+      213: -8581061477878624849
+    second: Ground E10_W_16
+  - first:
+      213: 1972330645397895390
+    second: Ground E10_W_17
+  - first:
+      213: 8457037278589945726
+    second: Ground E10_W_18
+  - first:
+      213: -3124053204805759557
+    second: Ground E10_W_19
+  - first:
+      213: -4473853322894915810
+    second: Ground E10_W_20
+  - first:
+      213: 8754746717738115087
+    second: Ground E10_W_21
+  - first:
+      213: 6801437561874837649
+    second: Ground E10_W_22
+  - first:
+      213: -4790584203100468786
+    second: Ground E10_W_23
+  - first:
+      213: -4599059492253574173
+    second: Ground E10_W_24
+  - first:
+      213: -2666898105106760361
+    second: Ground E10_W_25
+  - first:
+      213: 2072783951694595645
+    second: Ground E10_W_26
+  - first:
+      213: 3099577732910090295
+    second: Ground E10_W_27
+  - first:
+      213: -2112036826834283930
+    second: Ground E10_W_28
+  - first:
+      213: 4784934239251647583
+    second: Ground E10_W_29
+  - first:
+      213: -5174549993361967481
+    second: Ground E10_W_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 9
+  spritePivot: {x: 0.5, y: 0.18}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ground E10_W_0
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 53
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f523b7a1f85907f60800000000000000
+      internalID: 8030082577458737759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground E10_W_1
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 56
+        width: 29
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73569ff0300916550800000000000000
+      internalID: 6152356908792112439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground E10_W_2
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 52
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96c302afcb006aa40800000000000000
+      internalID: 5378987616590904425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground E10_W_3
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 50
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c08f3ba2b599c3bf0800000000000000
+      internalID: -343230854749489140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground E10_W_4
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 62
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0922f019b4e8f4d70800000000000000
+      internalID: 9029592233108513424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground E10_W_5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 67
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66aa1ff3d01d03f50800000000000000
+      internalID: 6859212087322847846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground E10_W_6
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 52
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de5e4be77023e6860800000000000000
+      internalID: 7525007035154621933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground E10_W_7
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 66
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88e20aafe14e1d1d0800000000000000
+      internalID: -3327627827945132408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground E10_W_8
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 54
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4642020e9ad14ee30800000000000000
+      internalID: 4531779740488442980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground E10_W_9
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 57
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 957e85ca535760510800000000000000
+      internalID: 1515027198041974617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground E10_W_10
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 40
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f36b03c79b7d8b1e0800000000000000
+      internalID: -2181756827808516545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground E10_W_11
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 49
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37cc029865f405570800000000000000
+      internalID: 8453343733660830835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground E10_W_12
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 47
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3970852a2cde21870800000000000000
+      internalID: 8652239254335260563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground E10_W_13
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 37
+        width: 23
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08ccfa781430b9130800000000000000
+      internalID: 3574454309232823424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground E10_W_14
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 48
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3df36a5457c42dc0800000000000000
+      internalID: -3664585031665058497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground E10_W_15
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 45
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bccb499f6b0e18250800000000000000
+      internalID: 5945280059581709515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground E10_W_16
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 47
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fad814fdc02f9e880800000000000000
+      internalID: -8581061477878624849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground E10_W_17
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 45
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed8fe8aa5402f5b10800000000000000
+      internalID: 1972330645397895390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground E10_W_18
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 38
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e77079af89e6d5570800000000000000
+      internalID: 8457037278589945726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground E10_W_19
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 35
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbdc124892225a4d0800000000000000
+      internalID: -3124053204805759557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground E10_W_20
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e17c5a73b1ea9e1c0800000000000000
+      internalID: -4473853322894915810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground E10_W_21
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 40
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f002c4151cb1f7970800000000000000
+      internalID: 8754746717738115087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground E10_W_22
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 34
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1907c8d4d6f836e50800000000000000
+      internalID: 6801437561874837649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground E10_W_23
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 39
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec949938c0d648db0800000000000000
+      internalID: -4790584203100468786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground E10_W_24
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 31
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3eb565732cbdc20c0800000000000000
+      internalID: -4599059492253574173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground E10_W_25
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 25
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75df2f0ad464dfad0800000000000000
+      internalID: -2666898105106760361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground E10_W_26
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 23
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3603e0a50204cc10800000000000000
+      internalID: 2072783951694595645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground E10_W_27
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 24
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73801db9689e30b20800000000000000
+      internalID: 3099577732910090295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground E10_W_28
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 18
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 662dfff22b980b2e0800000000000000
+      internalID: -2112036826834283930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground E10_W_29
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 25
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5cc234c650876240800000000000000
+      internalID: 4784934239251647583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground E10_W_30
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 16
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 786f82d623e4038b0800000000000000
+      internalID: -5174549993361967481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Ground E10_W_0: 8030082577458737759
+      Ground E10_W_1: 6152356908792112439
+      Ground E10_W_10: -2181756827808516545
+      Ground E10_W_11: 8453343733660830835
+      Ground E10_W_12: 8652239254335260563
+      Ground E10_W_13: 3574454309232823424
+      Ground E10_W_14: -3664585031665058497
+      Ground E10_W_15: 5945280059581709515
+      Ground E10_W_16: -8581061477878624849
+      Ground E10_W_17: 1972330645397895390
+      Ground E10_W_18: 8457037278589945726
+      Ground E10_W_19: -3124053204805759557
+      Ground E10_W_2: 5378987616590904425
+      Ground E10_W_20: -4473853322894915810
+      Ground E10_W_21: 8754746717738115087
+      Ground E10_W_22: 6801437561874837649
+      Ground E10_W_23: -4790584203100468786
+      Ground E10_W_24: -4599059492253574173
+      Ground E10_W_25: -2666898105106760361
+      Ground E10_W_26: 2072783951694595645
+      Ground E10_W_27: 3099577732910090295
+      Ground E10_W_28: -2112036826834283930
+      Ground E10_W_29: 4784934239251647583
+      Ground E10_W_3: -343230854749489140
+      Ground E10_W_30: -5174549993361967481
+      Ground E10_W_4: 9029592233108513424
+      Ground E10_W_5: 6859212087322847846
+      Ground E10_W_6: 7525007035154621933
+      Ground E10_W_7: -3327627827945132408
+      Ground E10_W_8: 4531779740488442980
+      Ground E10_W_9: 1515027198041974617
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
