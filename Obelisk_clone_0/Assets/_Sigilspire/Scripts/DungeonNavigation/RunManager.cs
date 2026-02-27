@@ -10,14 +10,18 @@ public class RunManager : NetworkBehaviour
 
     [Header("Victory Conditions")]
     [SerializeField, Range(0f, 1f)] private float requiredMobPercentage = 1.0f; // 100% = kill everything
+    [SerializeField] private float deathPenaltySeconds = 10f;
 
     [Header("UI")]
     [SerializeField] private VictoryScreen victoryScreen;
 
     private NetworkVariable<bool> bossDefeated = new NetworkVariable<bool>(false);
     private NetworkVariable<bool> runComplete = new NetworkVariable<bool>(false);
+    private NetworkVariable<int> playerDeaths = new NetworkVariable<int>(0);
 
     public float GetRequiredMobPercentage() => requiredMobPercentage;
+    public int GetPlayerDeaths() => playerDeaths.Value;
+    public float GetDeathPenaltySeconds() => deathPenaltySeconds;
 
     void Update()
     {
@@ -76,14 +80,15 @@ public class RunManager : NetworkBehaviour
         int killed = mobCounter != null ? mobCounter.EnemiesKilled : 0;
         int total = mobCounter != null ? mobCounter.TotalEnemies : 0;
         int required = Mathf.CeilToInt(total * requiredMobPercentage);
+        int deaths = playerDeaths.Value;
 
         if (victory)
         {
-            ShowVictoryClientRpc(timeRemaining, killed, required);
+            ShowVictoryClientRpc(timeRemaining, killed, required, deaths);
         }
         else
         {
-            ShowDefeatClientRpc("Time Expired", killed, required);
+            ShowDefeatClientRpc("Time Expired", killed, required, deaths);
         }
     }
 
@@ -107,17 +112,17 @@ public class RunManager : NetworkBehaviour
     }
 
     [ClientRpc]
-    private void ShowVictoryClientRpc(float timeRemaining, int killed, int total)
+    private void ShowVictoryClientRpc(float timeRemaining, int killed, int total, int deaths)
     {
-        if(victoryScreen != null) { victoryScreen.ShowVictory(timeRemaining, killed, total); }
+        if(victoryScreen != null) { victoryScreen.ShowVictory(timeRemaining, killed, total, deaths); }
     }
 
     [ClientRpc]
-    private void ShowDefeatClientRpc(string reason, int killed, int total)
+    private void ShowDefeatClientRpc(string reason, int killed, int total, int deaths)
     {
         if(victoryScreen!= null)
         {
-            victoryScreen.ShowDefeat(reason, killed, total);
+            victoryScreen.ShowDefeat(reason, killed, total, deaths);
         }
     }
 
@@ -134,5 +139,19 @@ public class RunManager : NetworkBehaviour
     {
         if (!IsServer) return;
         CompleteRun(false);
+    }
+
+    public void ServerNotifyPlayerDeath()
+    {
+        if (!IsServer) return;
+        playerDeaths.Value++;
+        Debug.Log($"[RunManager] Player died! Todal deaths: {playerDeaths.Value}");
+
+        var timer = FindFirstObjectByType<RunTimerUI>();
+        if( timer != null)
+        {
+            timer.ServerAddPenalty(deathPenaltySeconds);
+            Debug.Log($"RunManager] Applied {deathPenaltySeconds}s death penalty");
+        }
     }
 }

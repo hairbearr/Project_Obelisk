@@ -9,13 +9,15 @@ public class VictoryScreen : MonoBehaviour
     [SerializeField] private GameObject victoryPanel;
     [SerializeField] private TextMeshProUGUI resultText;
     [SerializeField] private TextMeshProUGUI statsText;
+    [SerializeField] private TextMeshProUGUI deathsText;
+    [SerializeField] private TextMeshProUGUI deathPenaltyTotalText;
 
     private void Awake()
     {
         if(victoryPanel != null) victoryPanel.SetActive(false);
     }
 
-    public void ShowVictory(float timeRemaining, int enemiesKilled, int totalEnemies)
+    public void ShowVictory(float timeRemaining, int enemiesKilled, int totalEnemies, int deaths)
     {
         if (victoryPanel != null) victoryPanel.SetActive(true);
 
@@ -35,9 +37,15 @@ public class VictoryScreen : MonoBehaviour
             statsText.text = $"Time Remaining: {minutes:00}:{seconds:00}\n" +
                        $"Enemies Defeated: {enemiesKilled}/{totalEnemies} ({percentage:F1}%)";
         }
+
+        if (deathsText != null) 
+        {
+            deathsText.text = ($"Deaths: {deaths}");
+            deathPenaltyTotalText.text = ($"Penalty: {(FindFirstObjectByType<RunManager>().GetDeathPenaltySeconds())*deaths}s");
+        }
     }
 
-    public void ShowDefeat(string reason, int enemiesKilled, int totalEnemies)
+    public void ShowDefeat(string reason, int enemiesKilled, int totalEnemies, int deaths)
     {
         if (victoryPanel != null)
             victoryPanel.SetActive(true);
@@ -56,6 +64,12 @@ public class VictoryScreen : MonoBehaviour
 
             statsText.text = $"Reason: {reason}\n" +
                            $"Enemies Defeated: {enemiesKilled}/{totalEnemies} ({percentage:F1}%)";
+        }
+
+        if(deathsText != null)
+        {
+            deathsText.text = ($"Deaths: {deaths}");
+            deathPenaltyTotalText.text = ($"Penalty: {(FindFirstObjectByType<RunManager>().GetDeathPenaltySeconds()) * deaths}s");
         }
     }
 

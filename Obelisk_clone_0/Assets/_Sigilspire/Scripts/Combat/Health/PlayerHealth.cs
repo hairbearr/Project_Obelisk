@@ -7,7 +7,6 @@ namespace Combat.Health
     public class PlayerHealth : HealthBase
     {
         [Header("Death Settings")]
-        [SerializeField] private float deathPenaltySeconds = 15f;
         [SerializeField] private float invulnerabilityDuration = 2f;
         private bool isDead = false;
 
@@ -44,17 +43,11 @@ namespace Combat.Health
 
             isDead = true;
 
-            Debug.Log($"[PlayerHealth] OnDeath called! Penalty value: {deathPenaltySeconds}");
-
-            var timer = FindFirstObjectByType<RunTimerUI>();
-            if ((timer!= null))
+            var runManager = FindFirstObjectByType<RunManager>();
+            if(runManager != null)
             {
-                Debug.Log($"[PlayerHealth] Calling ServerAddPenalty with {deathPenaltySeconds} seconds");
-
-                timer.ServerAddPenalty(deathPenaltySeconds);
+                runManager.ServerNotifyPlayerDeath();
             }
-
-
 
             StartCoroutine(DeathSequence());
         }
