@@ -9,6 +9,7 @@ public class RoomDoor : NetworkBehaviour
 
     [Header("Visual")]
     [SerializeField] private SpriteRenderer doorSprite;
+    [SerializeField] private Sprite doorOpen, doorClosed;
     [SerializeField] private Color lockedColor = Color.red;
     [SerializeField] private Color unlockedColor = Color.green;
 
@@ -39,7 +40,7 @@ public class RoomDoor : NetworkBehaviour
     {
         if (doorSprite != null)
         {
-            doorSprite.color = isLocked.Value ? lockedColor : unlockedColor;
+            doorSprite.sprite = isLocked.Value ? doorClosed : doorOpen;
         }
     }
 

@@ -307,7 +307,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_MaskInteraction: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -412,7 +412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2698343998
+  GlobalObjectIdHash: 1600610909
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -842,7 +842,6 @@ MonoBehaviour:
   CurrentHealth:
     m_InternalValue: 0
   slider: {fileID: 0}
-  deathPenaltySeconds: 5
   invulnerabilityDuration: 2
 --- !u!1 &2094233075969275182
 GameObject:
@@ -923,7 +922,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_MaskInteraction: 0
   m_Sprite: {fileID: 8748667142837503464, guid: 035a706ef4c07b247a4f88a8e40d3286, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1219,7 +1218,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_MaskInteraction: 0
   m_Sprite: {fileID: -8449569279180219261, guid: 89976e5a720d8c446b10f645fca62767, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1885,7 +1884,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_MaskInteraction: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
