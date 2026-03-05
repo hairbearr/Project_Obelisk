@@ -177,6 +177,14 @@ namespace Enemy
                 abilityController.summonedAddId = 0;
                 abilityController.shieldFromAddActive = false;
             }
+
+            // Reset any destructible objects in the room
+            var destructibleObjs = FindObjectsByType<DestructibleEnvironment>(FindObjectsSortMode.None);
+            foreach (var obj in destructibleObjs)
+            {
+                obj.ServerResetObject();
+            }
+
         }
 
         [ClientRpc]

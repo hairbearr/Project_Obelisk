@@ -4,11 +4,9 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Enemy
-  - Shield
-  - GrapplingHook
   - GrapplePoint
   - CastPoint
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -46,14 +44,32 @@ TagManager:
   - name: Background
     uniqueID: 775263129
     locked: 0
+  - name: Floor
+    uniqueID: 2166164095
+    locked: 0
+  - name: Wall
+    uniqueID: 1288052631
+    locked: 0
+  - name: Objects
+    uniqueID: 1534406327
+    locked: 0
+  - name: Enemy
+    uniqueID: 1665167323
+    locked: 0
+  - name: Player
+    uniqueID: 1727290091
+    locked: 0
+  - name: Effects
+    uniqueID: 3852400061
+    locked: 0
+  - name: UI
+    uniqueID: 1709488007
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: Grapple
     uniqueID: 2004339009
-    locked: 0
-  - name: UI
-    uniqueID: 1709488007
     locked: 0
   m_RenderingLayers:
   - Default

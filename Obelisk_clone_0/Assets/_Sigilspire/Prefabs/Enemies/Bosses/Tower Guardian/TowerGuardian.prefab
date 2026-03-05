@@ -330,10 +330,10 @@ MonoBehaviour:
   targetLayers:
     serializedVersion: 2
     m_Bits: 256
-  leashDistance: 5
+  leashDistance: 7
   outOfCombatDelay: 5
   canLeash: 1
-  resetBehavior: 0
+  resetBehavior: 1
   moveSpeed: 3
   enemyCollider: {fileID: 0}
   knockbackMoveLockTime: 0.12

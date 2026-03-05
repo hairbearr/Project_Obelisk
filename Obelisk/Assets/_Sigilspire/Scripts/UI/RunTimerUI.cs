@@ -8,12 +8,16 @@ public class RunTimerUI : NetworkBehaviour
     [SerializeField] private TextMeshProUGUI timerText;
 
     [Header("Timer Settings")]
-    [SerializeField] private float runDurationSeconds = 300f; // 5 minutes default
+    [SerializeField] private int durationMinutes = 20;
+    [SerializeField] private int durationSeconds = 0;
+    private float runDurationSeconds => (durationMinutes * 60f) + durationSeconds; // 5 minutes default
     [SerializeField] private Color normalColor = Color.white;
     [SerializeField] private Color warningColor = Color.yellow;
     [SerializeField] private Color dangerColor = Color.red;
     [SerializeField] private float warningThreshold = 60f; // last minute
     [SerializeField] private float dangerThreshold = 30f; // last 30 seconds
+
+
 
     private NetworkVariable<float> timeRemaining = new NetworkVariable<float>(
         0f,

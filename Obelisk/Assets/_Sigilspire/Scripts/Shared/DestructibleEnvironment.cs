@@ -60,6 +60,22 @@ public class DestructibleEnvironment : NetworkBehaviour
         Debug.Log($"DestructibleEnv] Hit! Boss gets {damageBuffAmount * 100}% damage taken for {buffDuration}s");
     }
 
+    public void ServerResetObject()
+    {
+        if (!IsServer) return;
+
+        isDestroyed.Value= false;
+
+        // re-enable collider
+        Collider2D col = GetComponent<Collider2D>();
+        if (col != null) col.enabled = true;
+
+        // Update Visuals
+        UpdateVisuals();
+
+        Debug.Log($"[Destructible Environment] {name} reset!");
+    }
+
     private void OnDestroyedChanged(bool oldVal, bool newVal)
     {
         UpdateVisuals();
