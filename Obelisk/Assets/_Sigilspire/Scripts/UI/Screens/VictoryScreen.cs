@@ -1,5 +1,4 @@
 using TMPro;
-using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,12 +8,13 @@ public class VictoryScreen : MonoBehaviour
     [SerializeField] private GameObject victoryPanel;
     [SerializeField] private TextMeshProUGUI resultText;
     [SerializeField] private TextMeshProUGUI statsText;
-    [SerializeField] private TextMeshProUGUI deathsText;
-    [SerializeField] private TextMeshProUGUI deathPenaltyTotalText;
+
+    private RunManager runManager;
 
     private void Awake()
     {
-        if(victoryPanel != null) victoryPanel.SetActive(false);
+        if (victoryPanel != null) victoryPanel.SetActive(false);
+        runManager = FindFirstObjectByType<RunManager>();
     }
 
     public void ShowVictory(float timeRemaining, int enemiesKilled, int totalEnemies, int deaths)
@@ -27,21 +27,19 @@ public class VictoryScreen : MonoBehaviour
             resultText.color = Color.green;
         }
 
-        if(statsText != null)
+        if (statsText != null)
         {
             int minutes = Mathf.FloorToInt(timeRemaining / 60f);
             int seconds = Mathf.FloorToInt(timeRemaining % 60f);
-
             float percentage = totalEnemies > 0 ? (float)enemiesKilled / totalEnemies * 100f : 0f;
 
-            statsText.text = $"Time Remaining: {minutes:00}:{seconds:00}\n" +
-                       $"Enemies Defeated: {enemiesKilled}/{totalEnemies} ({percentage:F1}%)";
-        }
+            // Calculate death penalty
+            float totalPenalty = runManager != null ? runManager.GetDeathPenaltySeconds() * deaths : 0f;
+            string penaltyFormatted = FormatTime(totalPenalty);
 
-        if (deathsText != null) 
-        {
-            deathsText.text = ($"Deaths: {deaths}");
-            deathPenaltyTotalText.text = ($"Penalty: {(FindFirstObjectByType<RunManager>().GetDeathPenaltySeconds())*deaths}s");
+            statsText.text = $"Time Remaining: {minutes:00}:{seconds:00}\n" +
+                           $"Enemies Defeated: {enemiesKilled}/{totalEnemies} ({percentage:F1}%)\n" +
+                           $"Deaths: {deaths} (Penalty: -{penaltyFormatted})";
         }
     }
 
@@ -50,7 +48,7 @@ public class VictoryScreen : MonoBehaviour
         if (victoryPanel != null)
             victoryPanel.SetActive(true);
 
-        if(resultText != null)
+        if (resultText != null)
         {
             resultText.text = "DEFEAT";
             resultText.color = Color.red;
@@ -62,27 +60,31 @@ public class VictoryScreen : MonoBehaviour
                 ? (float)enemiesKilled / totalEnemies * 100f
                 : 0f;
 
-            statsText.text = $"Reason: {reason}\n" +
-                           $"Enemies Defeated: {enemiesKilled}/{totalEnemies} ({percentage:F1}%)";
-        }
+            // Calculate death penalty
+            float totalPenalty = runManager != null ? runManager.GetDeathPenaltySeconds() * deaths : 0f;
+            string penaltyFormatted = FormatTime(totalPenalty);
 
-        if(deathsText != null)
-        {
-            deathsText.text = ($"Deaths: {deaths}");
-            deathPenaltyTotalText.text = ($"Penalty: {(FindFirstObjectByType<RunManager>().GetDeathPenaltySeconds()) * deaths}s");
+            statsText.text = $"Reason: {reason}\n" +
+                           $"Enemies Defeated: {enemiesKilled}/{totalEnemies} ({percentage:F1}%)\n" +
+                           $"Deaths: {deaths} (Penalty: -{penaltyFormatted})";
         }
+    }
+
+    private string FormatTime(float seconds)
+    {
+        int minutes = Mathf.FloorToInt(seconds / 60f);
+        int secs = Mathf.FloorToInt(seconds % 60f);
+        return $"{minutes:00}:{secs:00}";
     }
 
     public void OnRetryButton()
     {
-        // reload the current scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void OnQuitButton()
     {
         Application.Quit();
-
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #endif

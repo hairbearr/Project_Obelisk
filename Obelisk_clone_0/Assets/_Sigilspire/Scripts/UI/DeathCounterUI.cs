@@ -2,7 +2,7 @@ using TMPro;
 using Unity.Netcode;
 using UnityEngine;
 
-public class DeathCounterUI : NetworkBehaviour
+public class DeathCounterUI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI deathText;
 
@@ -18,6 +18,19 @@ public class DeathCounterUI : NetworkBehaviour
         if (runManager == null || deathText == null) return;
 
         int deaths = runManager.GetPlayerDeaths();
-        deathText.text = $"Deaths: {deaths}";
+        float penaltyPerDeath = runManager.GetDeathPenaltySeconds();
+        float totalPenalty = deaths * penaltyPerDeath;
+
+        // Format penalty as MM:SS
+        string penaltyFormatted = FormatTime(totalPenalty);
+
+        deathText.text = $"Deaths: {deaths} (-{penaltyFormatted})";
+    }
+
+    private string FormatTime(float seconds)
+    {
+        int minutes = Mathf.FloorToInt(seconds / 60f);
+        int secs = Mathf.FloorToInt(seconds % 60f);
+        return $"{minutes:00}:{secs:00}";
     }
 }

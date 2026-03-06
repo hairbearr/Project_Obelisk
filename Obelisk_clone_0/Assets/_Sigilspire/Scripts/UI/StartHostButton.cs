@@ -4,6 +4,7 @@ using Unity.Netcode;
 public class StartHostButton : MonoBehaviour
 {
     [SerializeField] private GameObject rootToDisable;
+    [SerializeField] private GameObject textRootToDisable;
 
     private void Awake()
     {
@@ -38,6 +39,9 @@ public class StartHostButton : MonoBehaviour
             rootToDisable.SetActive(false);
         else
             gameObject.SetActive(false);
+
+        if(textRootToDisable != null)
+            textRootToDisable.SetActive(false);
     }
 }
 
