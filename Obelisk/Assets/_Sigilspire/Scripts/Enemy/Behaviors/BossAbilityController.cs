@@ -1064,11 +1064,14 @@ namespace Enemy
             if (direction.sqrMagnitude > 0.01f)
             {
                 float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-                instance.transform.rotation = Quaternion.Euler(0, 0, angle - 90f);
+                instance.transform.rotation = Quaternion.Euler(0, 0, angle);
             }
 
-            // Scale to match radius
-            instance.transform.localScale = Vector3.one * radius;
+            // Scale to match radius (but NOT for cone - it's pre-sized)
+            if (type != TelegraphType.Cone)
+            {
+                instance.transform.localScale = Vector3.one * radius;
+            }
 
             Destroy(instance, duration);
         }

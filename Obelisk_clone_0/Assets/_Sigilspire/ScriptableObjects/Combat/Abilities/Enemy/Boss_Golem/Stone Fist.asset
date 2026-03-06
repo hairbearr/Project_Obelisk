@@ -22,12 +22,12 @@ MonoBehaviour:
   shieldEnergyModifier: 0
   grappleForce: 0
   vfxPrefab: {fileID: 0}
-  animationType: 5
+  animationType: 1
   windupSeconds: 0
   activeSeconds: 0
   windupDuration: 0.5
   aoeRadius: 1.5
-  telegraphPrefab: {fileID: 8552267455541584144, guid: 4e46b5bd39202b34e81c020d1a1c53a6, type: 3}
+  telegraphPrefab: {fileID: 0}
   projectileCount: 0
   spreadAngle: 0
   projectilePrefab: {fileID: 0}
