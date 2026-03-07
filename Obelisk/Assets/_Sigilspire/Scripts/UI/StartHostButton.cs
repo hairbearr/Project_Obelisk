@@ -27,6 +27,11 @@ public class StartHostButton : MonoBehaviour
         if (NetworkManager.Singleton.IsListening)
             return;
 
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayMenuClick();
+        }
+
         Debug.Log("[BOOT] Starting Host");
         NetworkManager.Singleton.StartHost();
 

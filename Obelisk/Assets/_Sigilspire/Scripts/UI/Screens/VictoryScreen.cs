@@ -19,6 +19,12 @@ public class VictoryScreen : MonoBehaviour
 
     public void ShowVictory(float timeRemaining, int enemiesKilled, int totalEnemies, int deaths)
     {
+        // Play Victory Sound
+        if(AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayVictory();
+        }
+
         if (victoryPanel != null) victoryPanel.SetActive(true);
 
         if (resultText != null)
@@ -45,6 +51,12 @@ public class VictoryScreen : MonoBehaviour
 
     public void ShowDefeat(string reason, int enemiesKilled, int totalEnemies, int deaths)
     {
+        if(AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayDefeat();
+            AudioManager.Instance.StopMusic();
+        }
+
         if (victoryPanel != null)
             victoryPanel.SetActive(true);
 
@@ -79,11 +91,20 @@ public class VictoryScreen : MonoBehaviour
 
     public void OnRetryButton()
     {
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayMenuClick();
+        }
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void OnQuitButton()
     {
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayMenuClick();
+        }
+
         Application.Quit();
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;

@@ -27,6 +27,7 @@ namespace Enemy
         private Coroutine activeTrackingCoroutine;
         private GameObject activeCircleInstance;
         private GameObject activeLineInstance;
+        private Coroutine activeSelfDestructCoroutine;
 
         [Header("Damage Buffs")]
         public NetworkVariable<float> damageTakenMultiplier = new NetworkVariable<float>(1f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
@@ -369,6 +370,9 @@ namespace Enemy
 
             yield return new WaitForSeconds(ability.windupDuration);
 
+            // Play sequential sounds
+            PlayGroundPoundSoundClientRpc(bossPos);
+
             // Deal circular AoE damage
             DealAoEDamage(bossPos, ability.aoeRadius, ability.damage);
 
@@ -386,6 +390,11 @@ namespace Enemy
             ShowTelegraphClientRpc(bossPos, toTarget, TelegraphType.Cone, ability.aoeRadius, ability.windupDuration);
 
             yield return new WaitForSeconds(ability.windupDuration);
+
+            if(AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayStoneFist(bossPos);
+            }
 
             // Deal cone damage (90 degree arc)
             DealConeAoeDamage(bossPos, toTarget, ability.aoeRadius, 90f, ability.damage);
@@ -432,6 +441,11 @@ namespace Enemy
                 // Fire Shots
                 for(int shotNum = 0; shotNum < shotsPerLine; shotNum++)
                 {
+                    if(shotNum == 0 && AudioManager.Instance != null)
+                    {
+                        AudioManager.Instance.PlayRuneBarrage(bossPos);
+                    }
+
                     foreach (float angleOffset in spreadAngles)
                     {
                         Vector2 direction = RotateVector(toTarget, angleOffset);
@@ -498,6 +512,12 @@ namespace Enemy
             TriggerRawAnimation(6);
 
             ShowSummonTelegraphClientRpc();
+
+            if(AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayGargoyleSummon(transform.position);
+            }
+
             yield return new WaitForSeconds(summonWindupTime);
 
             // Spawn the add
@@ -575,6 +595,9 @@ namespace Enemy
 
             // Phase 1: Tracking telegraph (line follows player while filling)
             ShowTrackingChargeTelegraphClientRpc(targetId, chargeWindupTime);
+
+            // Play wind up sound
+            PlayChargeWindupSoundClientRpc(bossPos);
 
             yield return new WaitForSeconds(chargeWindupTime);
 
@@ -739,6 +762,11 @@ namespace Enemy
         [ClientRpc]
         private void ShowSelfDestructTelegraphClientRpc(Vector2 center, float duration)
         {
+            // Stop any existing animation
+            if (activeSelfDestructCoroutine != null)
+            {
+                StopCoroutine(activeSelfDestructCoroutine);
+            }
             StartCoroutine(AnimateSelfDestructTelegraph(center, duration));
         }
 
@@ -752,7 +780,7 @@ namespace Enemy
             // Get Sprite renderers
             SpriteRenderer[] renderers = telegraph.GetComponentsInChildren<SpriteRenderer>();
 
-            if(renderers.Length >= 2)
+            if (renderers.Length >= 2)
             {
                 SpriteRenderer outer = renderers[0];
                 SpriteRenderer inner = renderers[1];
@@ -771,6 +799,8 @@ namespace Enemy
                 float elapsed = 0f;
                 while (elapsed < duration)
                 {
+                    if (inner == null || telegraph == null) yield break;
+
                     elapsed += Time.deltaTime;
                     float t = elapsed / duration;
 
@@ -780,14 +810,25 @@ namespace Enemy
                     yield return null;
                 }
 
-                inner.transform.localScale = new Vector3(maxSelfDestructRadius, maxSelfDestructRadius, 1f);
+                if(inner != null)
+                {
+                    inner.transform.localScale = new Vector3(maxSelfDestructRadius, maxSelfDestructRadius, 1f);
+                }
+
             }
         }
 
         [ClientRpc]
         private void HideSelfDestructTelegraphClientRpc()
         {
-            if(activeTelegraph != null)
+            // Stop the animation coroutine first
+            if (activeSelfDestructCoroutine != null)
+            {
+                StopCoroutine(activeSelfDestructCoroutine);
+                activeSelfDestructCoroutine = null;
+            }
+
+            if (activeTelegraph != null)
             {
                 Destroy(activeTelegraph);
                 activeTelegraph = null;
@@ -830,6 +871,10 @@ namespace Enemy
                     Debug.Log($"[Charge] Calling ServerHitByCharge on {hit.name}, boss={this != null}");
                     destructible.ServerHitByCharge(this);
                     Debug.Log($"[Charge] ServerHitByCharge returned"); ScreenShakeClientRpc(0.5f, 0.4f);
+
+                    // Play charge impact sound
+                    PlayChargeImpactSoundClientRpc(currentPos);
+                    ScreenShakeClientRpc(0.5f, 0.4f);
                     return true; // stop charge
                 }
             }
@@ -847,6 +892,9 @@ namespace Enemy
                     playerHealth.TakeDamage(99999f, bossId);
 
                     Debug.Log($"[BossCharge] KILLED PLAYER: {hit.name}");
+
+                    PlayChargeImpactSoundClientRpc(currentPos);
+                    
                     ScreenShakeClientRpc(0.5f, 0.4f);
                     return true; // stop charge
                 }
@@ -1334,6 +1382,33 @@ namespace Enemy
         {
             // TODO: Visual Feedback
             Debug.Log("[Boss] Stun VFX!");
+        }
+
+        [ClientRpc]
+        private void PlayGroundPoundSoundClientRpc(Vector2 position)
+        {
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayGroundPound(position, this);
+            }
+        }
+
+        [ClientRpc]
+        private void PlayChargeWindupSoundClientRpc(Vector2 position)
+        {
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayChargeWindup(position);
+            }
+        }
+
+        [ClientRpc]
+        private void PlayChargeImpactSoundClientRpc(Vector2 position)
+        {
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayChargeImpact(position);
+            }
         }
 
         private void OnDrawGizmosSelected()

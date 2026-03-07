@@ -37,6 +37,8 @@ namespace Enemy
             if (isBoss)
             {
 
+                StopBossMusicClientRpc();
+
                 // Notify RunManager
                 var runManager = FindFirstObjectByType<RunManager>();
                 if(runManager != null)
@@ -158,8 +160,30 @@ namespace Enemy
             _rb2D.linearVelocity = Vector2.ClampMagnitude(_rb2D.linearVelocity, maxKnockbackSpeed);
 
         }
+        protected override void PlayHurtSound()
+        {
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayEnemyHit(transform.position);
+            }
+        }
 
+        protected override void PlayDeathSound()
+        {
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayEnemyDeath(transform.position);
+            }
+        }
 
-
+        [ClientRpc]
+        private void StopBossMusicClientRpc()
+        {
+            if(AudioManager.Instance != null)
+            {
+                AudioManager.Instance.StopMusic();
+                AudioManager.Instance.PlayGameplayMusic();
+            }
+        }
     }
 }

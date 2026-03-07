@@ -640,6 +640,12 @@ namespace Enemy
 
             if (attackMode == AttackMode.Melee)
             {
+
+                if(AudioManager.Instance != null)
+                {
+                    AudioManager.Instance.PlayEnemyMeleeAttack(transform.position);
+                }
+
                 // NEW: Range check - player must STILL be in range when damage occurs
                 if (currentTarget == null) return;
 
@@ -758,6 +764,16 @@ namespace Enemy
             if (currentTarget == null) return;
             if (primaryAbility.projectilePrefab == null) return;
 
+            // Get projectile type from prefab
+            var projBase = primaryAbility.projectilePrefab.GetComponent<ProjectileBase>();
+            ProjectileType projType = projBase != null ? projBase.GetProjectileType() : ProjectileType.Arrow;
+
+            // Play fire sound based on projectile type
+            if (AudioManager.Instance != null)
+            {
+                PlayProjectileFireSound(projType);
+            }
+
             Vector2 origin = rb2D.position;
             // Use locked direction instead of current target position
             Vector2 baseDirection = lockedRangedAimDirection;
@@ -788,10 +804,10 @@ namespace Enemy
                 }
 
                 // Set direction and speed
-                var projBase = proj.GetComponent<ProjectileBase>();
-                if (projBase != null)
+                var spawnedProj = proj.GetComponent<ProjectileBase>();
+                if (spawnedProj != null)
                 {
-                    projBase.SetDirection(direction);
+                    spawnedProj.SetDirection(direction);
                     // Optionally override speed from ability if ProjectileBase exposes it
                 }
             }
@@ -1259,6 +1275,18 @@ namespace Enemy
             lastCombatTime = Time.time;
         }
 
+        private void PlayProjectileFireSound(ProjectileType type)
+        {
+            switch (type)
+            {
+                case ProjectileType.Arrow:
+                    AudioManager.Instance.PlayArcherArrowFire(transform.position);
+                    break;
+                case ProjectileType.Fireball:
+                    AudioManager.Instance.PlayMageFireballFire(transform.position);
+                    break;
+            }
+        }
 
         private void OnDrawGizmosSelected()
         {

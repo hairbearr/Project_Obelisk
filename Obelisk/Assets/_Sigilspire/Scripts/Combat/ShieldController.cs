@@ -290,6 +290,7 @@ namespace Combat
             float blockedDamage = (energyCost <= 0.0001f) ? incomingDamage : incomingDamage * (spend / energyCost);
             damageAfterBlock = Mathf.Max(0f, incomingDamage - blockedDamage);
 
+            if (blockedDamage > 0f) PlayShieldBlockClientRpc(transform.position);
 
             return blockedDamage > 0f;
         }
@@ -380,6 +381,12 @@ namespace Combat
         private void UseAbilityServerRpc()
         {
             // Implement shield bash or other shield ability here
+        }
+
+        [ClientRpc]
+        private void PlayShieldBlockClientRpc(Vector2 blockPosition)
+        {
+            if(AudioManager.Instance != null) AudioManager.Instance.PlayShieldBlock(blockPosition);
         }
 
         #endregion

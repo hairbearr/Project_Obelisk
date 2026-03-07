@@ -361,6 +361,8 @@ namespace Combat
             netStartPoint.Value = start;
             netEndPoint.Value = end;
 
+            PlayGrappleFireClientRpc(start);
+
             // Enter casting phase.
             phase.Value = PhaseCasting;
             phaseStartServerTime.Value = NetworkManager.ServerTime.Time;
@@ -396,6 +398,7 @@ namespace Combat
                         phase.Value = PhaseAttached;
                         phaseStartServerTime.Value = now;
                         SpawnAttachVfxClientRpc(netStartPoint.Value);
+                        PlayGrapplePullClientRpc(netEndPoint.Value);
                     }
                     else
                     {
@@ -737,6 +740,25 @@ namespace Combat
             var vfx = Object.Instantiate(grappleVfxPrefab, pos, Quaternion.identity);
             Object.Destroy(vfx, 2f);
         }
+
+        [ClientRpc]
+        private void PlayGrappleFireClientRpc(Vector2 firePosition)
+        {
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayGrappleFire(firePosition);
+            }
+        }
+
+        [ClientRpc]
+        private void PlayGrapplePullClientRpc(Vector2 pullPosition)
+        {
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayGrapplePull(pullPosition);
+            }
+        }
+
         #endregion
 
         #region Convenience

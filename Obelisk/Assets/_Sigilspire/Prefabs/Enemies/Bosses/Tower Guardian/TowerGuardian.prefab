@@ -390,7 +390,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   circleTelegraphPrefab: {fileID: 8552267455541584144, guid: 4e46b5bd39202b34e81c020d1a1c53a6, type: 3}
-  coneTelegraphPrefab: {fileID: 8552267455541584144, guid: 8adafb92df4b30c42b83c53ad1b33d0a, type: 3}
+  coneTelegraphPrefab: {fileID: 0}
   lineTelegraphPrefab: {fileID: 6608510399317256289, guid: eafbcd17177858c4db3320b91a47fb0b, type: 3}
   damageTakenMultiplier:
     m_InternalValue: 1

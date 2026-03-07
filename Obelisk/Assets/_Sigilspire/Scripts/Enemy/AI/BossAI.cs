@@ -8,6 +8,8 @@ namespace Enemy
 {
     public class BossAI : EnemyAI
     {
+        private static bool hasStartedBossMusic = false;
+
         private enum BossPhase
         {
             Phase1,
@@ -30,6 +32,8 @@ namespace Enemy
         private float _baseMoveSpeed;
         private float _baseDamage;
 
+        private Color trueSpriteColor;
+
         [Header("Abilities")]
         [SerializeField] private BossAbilityController abilityController;
 
@@ -46,6 +50,12 @@ namespace Enemy
             _baseDamage = primaryAbility != null ? primaryAbility.damage : 10f;
 
             resetBehavior = ResetBehavior.Teleport;
+
+            var sprite = GetComponentInChildren<SpriteRenderer>();
+            if(sprite != null)
+            {
+                trueSpriteColor = sprite.color;
+            }
         }
 
         private void LateUpdate()
@@ -66,12 +76,20 @@ namespace Enemy
             Transform target = FindClosestPlayer();
             if (target != null)
             {
+                
+
                 float distance = Vector2.Distance(transform.position, target.position);
 
                 // Only use abilities when at basic attack range
                 // This keeps movement and abilities unified
                 if (distance <= attackRange * 1.2f) // Small buffer
                 {
+                    if (!hasStartedBossMusic && AudioManager.Instance != null)
+                    {
+                        AudioManager.Instance.PlayBossFightMusic();
+                        hasStartedBossMusic = true;
+                    }
+
                     abilityController.TryUseAbility(target);
                 }
             }
@@ -185,6 +203,14 @@ namespace Enemy
                 obj.ServerResetObject();
             }
 
+            // Reset music flag so it can trigger again
+            hasStartedBossMusic = false;
+
+            // Switch back to gameplay music
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayGameplayMusic();
+            }
         }
 
         [ClientRpc]
@@ -204,18 +230,27 @@ namespace Enemy
             var sprite = GetComponentInChildren<SpriteRenderer>();
             if (sprite == null) yield break;
 
-            Color original = sprite.color;
+            Color original = trueSpriteColor;
 
             // flash white/red 3 times
-            for(int i = 0; i < 3; i++)
+            for (int i = 0; i < 3; i++)
             {
+                if (sprite == null) yield break; // Safety check
+
                 sprite.color = Color.white;
                 yield return new WaitForSeconds(0.1f);
+
+                if (sprite == null) yield break; // Safety check
+
                 sprite.color = Color.red;
                 yield return new WaitForSeconds(0.1f);
             }
 
-            sprite.color = original;
+            // Always restore color at the end (even if boss dies)
+            if (sprite != null)
+            {
+                sprite.color = original;
+            }
         }
     }
 }

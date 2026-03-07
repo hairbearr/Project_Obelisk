@@ -95,6 +95,7 @@ namespace Combat.Health
             if(CurrentHealth.Value > 0f)
             {
                 FlashColorClientRpc(flashColor);
+                PlayHurtSoundClientRpc();
             }
 
             var threat = GetComponentInParent<IThreatReceiver>();
@@ -105,6 +106,7 @@ namespace Combat.Health
             if (CurrentHealth.Value <= 0f)
             {
                 CurrentHealth.Value = 0f;
+                PlayDeathSoundClientRpc();
                 OnDeath();
                 if (slider!=null)
                     slider.enabled = false;
@@ -168,6 +170,28 @@ namespace Combat.Health
                     sprites[i].color = ogs[i];
                 }
             }
+        }
+
+        [ClientRpc]
+        protected void PlayHurtSoundClientRpc()
+        {
+            PlayHurtSound();
+        }
+
+        [ClientRpc]
+        protected void PlayDeathSoundClientRpc()
+        {
+            PlayDeathSound();
+        }
+
+        protected virtual void PlayHurtSound()
+        {
+            // Override in derived classes (PlayerHealth, EnemyHealth)
+        }
+
+        protected virtual void PlayDeathSound()
+        {
+            // Override in derived classes (PlayerHealth, EnemyHealth)
         }
 
     }

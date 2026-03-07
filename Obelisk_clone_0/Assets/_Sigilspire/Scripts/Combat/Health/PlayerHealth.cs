@@ -126,6 +126,22 @@ namespace Combat.Health
 
             isInvulnerable = false;
         }
+
+        protected override void PlayHurtSound()
+        {
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayPlayerHurt(transform.position);
+            }
+        }
+
+        protected override void PlayDeathSound()
+        {
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayPlayerDeath(transform.position);
+            }
+        }
     }
 }
 

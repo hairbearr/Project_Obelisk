@@ -227,6 +227,12 @@ namespace Combat
                 weaponAnimator.SetTrigger("SwordSlash");
             }
 
+            if(AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlaySwordSwing(transform.position);
+            }
+
+
             double pressedServerTime = NetworkManager.Singleton.ServerTime.Time;
             UseAbilityServerRpc(dir);
             lastDebugAttackDir = dir;
@@ -418,9 +424,15 @@ namespace Combat
 
                 var dmg = hit.GetComponentInParent<IDamageable>();
                 if (dmg != null && damage > 0f)
+                {
                     dmg.TakeDamage(damage, attackerId);
 
+                    PlaySwordHitClientRpc(hit.transform.position);
+                }
+                    
+
                 var kb = hit.GetComponentInParent<IKnockbackable>();
+
                 if (kb != null && knockback > 0f)
                     kb.ApplyKnockback(toEnemyNorm, knockback);
             }
@@ -437,6 +449,12 @@ namespace Combat
             Vector3 pos = vfxSpawnPoint != null ? vfxSpawnPoint.position : transform.position;
             GameObject vfx = Object.Instantiate(attackVfxPrefab, pos, Quaternion.identity);
             Object.Destroy(vfx, 2f);
+        }
+
+        [ClientRpc]
+        private void PlaySwordHitClientRpc(Vector2 hitPos)
+        {
+            if (AudioManager.Instance != null) AudioManager.Instance.PlaySwordHit(hitPos);
         }
 
         /// <summary>

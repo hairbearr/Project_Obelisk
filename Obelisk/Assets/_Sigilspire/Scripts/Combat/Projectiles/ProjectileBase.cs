@@ -4,8 +4,18 @@ using Combat.DamageInterfaces;
 
 namespace Combat.Projectiles
 {
+    public enum ProjectileType
+    {
+        Arrow,
+        Fireball
+    }
+
     public class ProjectileBase : NetworkBehaviour
     {
+        [Header("Projectile Type")]
+        [SerializeField] private ProjectileType projectileType = ProjectileType.Arrow;
+
+        [Header("Stats")]
         [SerializeField] protected float speed = 10f;
         [SerializeField] private float _damage = 10f;
         public float damage { get => _damage; set => _damage = value; }
@@ -13,7 +23,9 @@ namespace Combat.Projectiles
         [SerializeField] protected LayerMask hitLayers;
 
         private float spawnTime;
-        private Vector2 moveDirection = Vector2.right; // default
+        private Vector2 moveDirection = Vector2.right;
+
+        public ProjectileType GetProjectileType() => projectileType;
 
         private void OnEnable()
         {
@@ -49,12 +61,36 @@ namespace Combat.Projectiles
                 return;
 
             var dmg = other.GetComponent<IDamageable>();
+            bool hitFlesh = (dmg != null);
+
+            PlayImpactSoundClientRpc(transform.position, projectileType, hitFlesh);
+
             if (dmg != null && damage > 0f)
             {
                 dmg.TakeDamage(damage);
             }
 
             NetworkObject.Despawn();
+        }
+
+        [ClientRpc]
+        private void PlayImpactSoundClientRpc(Vector2 impactPos, ProjectileType type, bool hitFlesh)
+        {
+            if (AudioManager.Instance == null) return;
+
+            switch (type)
+            {
+                case ProjectileType.Arrow:
+                    if (hitFlesh)
+                        AudioManager.Instance.PlayArrowImpactFlesh(impactPos);
+                    else
+                        AudioManager.Instance.PlayArrowImpactWall(impactPos);
+                    break;
+
+                case ProjectileType.Fireball:
+                    AudioManager.Instance.PlayMageFireballHit(impactPos);
+                    break;
+            }
         }
     }
 }
