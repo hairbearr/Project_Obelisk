@@ -45,6 +45,12 @@ namespace Enemy
                 {
                     runManager.ServerNotifyBossDeath();
                 }
+
+                var bossRoom = FindFirstObjectByType<BossRoom>();
+                if (bossRoom != null)
+                {
+                    bossRoom.ServerNotifyBossDefeated();
+                }
             }
             else
             {

@@ -33,25 +33,21 @@ public class CombatRoom : NetworkBehaviour
         // Find all enemy spawners that are children of this room
         var spawners = GetComponentsInChildren<Enemy.EnemySpawner>();
 
+        // If no spawners, room is clear (no enemies to kill)
+        if (spawners.Length == 0) return true;
 
+        // Check each spawner for living enemies
         foreach (var spawner in spawners)
         {
-            // Check if any enemies from this spawner are still alive
-            var enemies = FindObjectsByType<Enemy.EnemyHealth>(FindObjectsSortMode.None);
-            if (enemies.Length <= 0) return true;
+            int livingCount = spawner.GetLivingEnemyCount();
 
-            foreach (var enemy in enemies) 
+            if (livingCount > 0)
             {
-                // if enemy is within this room's bounds (rouch check)
-                if(Vector3.Distance(enemy.transform.position, transform.position) < 50f)
-                {
-                    if(enemy.CurrentHealth.Value > 0)
-                    {
-                        return false; // still enemies alive
-                    }
-                }
+                return false; // Found living enemies, room not clear
             }
         }
+
+        // All spawners report 0 living enemies
         return true;
     }
 

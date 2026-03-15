@@ -84,6 +84,32 @@ namespace Enemy
                 spawned.Add(enemyInstance);
         }
 
+        public int GetLivingEnemyCount()
+        {
+            if (!trackSpawnedEnemies) return 0;
+
+            int livingCount = 0;
+
+            // Clean up null references while counting
+            for(int i = spawned.Count - 1; i>= 0; i--)
+            {
+                if(spawned[i] == null)
+                {
+                    spawned.RemoveAt(i);
+                    continue;
+                }
+
+                // check if enemy is alive
+                var health = spawned[i].GetComponent<EnemyHealth>();
+                if (health != null && health.CurrentHealth.Value > 0)
+                {
+                    livingCount++;
+                }
+            }
+
+            return livingCount;
+        }
+
 #if UNITY_EDITOR
         private void OnDrawGizmos()
         {

@@ -181,6 +181,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7549308035318361501}
+  - component: {fileID: 2547965629107517125}
   m_Layer: 0
   m_Name: Room 3
   m_TagString: Untagged
@@ -209,6 +210,22 @@ Transform:
   - {fileID: 5596878403231807610}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2547965629107517125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823727170002202191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b843f15a72a494d9ec252383658941, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CombatRoom
+  ShowTopMostFoldoutHeaderGroup: 1
+  doorsToUnlock:
+  - {fileID: 1820445430412888026}
+  - {fileID: 8480754784574014523}
 --- !u!1 &2501112677637645055
 GameObject:
   m_ObjectHideFlags: 0
@@ -40703,7 +40720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4227133276995526358, guid: cebafe4e79d824d44b85ffc39d296f80, type: 3}
       propertyPath: GlobalObjectIdHash
-      value: 3037109011
+      value: 3346225187
       objectReference: {fileID: 0}
     - target: {fileID: 4240117575948647314, guid: cebafe4e79d824d44b85ffc39d296f80, type: 3}
       propertyPath: m_Enabled
@@ -40831,6 +40848,82 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3361502638696570944, guid: e5d5469993f2bb6479ea5d27b596ea3e, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3361502638696570944, guid: e5d5469993f2bb6479ea5d27b596ea3e, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
+      value: 0.32654095
+      objectReference: {fileID: 0}
+    - target: {fileID: 3361502638696570944, guid: e5d5469993f2bb6479ea5d27b596ea3e, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
+      value: 0.8237057
+      objectReference: {fileID: 0}
+    - target: {fileID: 3361502638696570944, guid: e5d5469993f2bb6479ea5d27b596ea3e, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
+      value: 0.069859505
+      objectReference: {fileID: 0}
+    - target: {fileID: 3361502638696570944, guid: e5d5469993f2bb6479ea5d27b596ea3e, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
+      value: 0.71816397
+      objectReference: {fileID: 0}
+    - target: {fileID: 3361502638696570944, guid: e5d5469993f2bb6479ea5d27b596ea3e, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
+      value: -0.022625923
+      objectReference: {fileID: 0}
+    - target: {fileID: 3361502638696570944, guid: e5d5469993f2bb6479ea5d27b596ea3e, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].y
+      value: 0.64264965
+      objectReference: {fileID: 0}
+    - target: {fileID: 3361502638696570944, guid: e5d5469993f2bb6479ea5d27b596ea3e, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].x
+      value: -0.10807514
+      objectReference: {fileID: 0}
+    - target: {fileID: 3361502638696570944, guid: e5d5469993f2bb6479ea5d27b596ea3e, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].y
+      value: 0.37296057
+      objectReference: {fileID: 0}
+    - target: {fileID: 3361502638696570944, guid: e5d5469993f2bb6479ea5d27b596ea3e, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].x
+      value: -0.12829882
+      objectReference: {fileID: 0}
+    - target: {fileID: 3361502638696570944, guid: e5d5469993f2bb6479ea5d27b596ea3e, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].y
+      value: 0.10098481
+      objectReference: {fileID: 0}
+    - target: {fileID: 3361502638696570944, guid: e5d5469993f2bb6479ea5d27b596ea3e, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[5].x
+      value: -0.22964424
+      objectReference: {fileID: 0}
+    - target: {fileID: 3361502638696570944, guid: e5d5469993f2bb6479ea5d27b596ea3e, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[5].y
+      value: -0.21306884
+      objectReference: {fileID: 0}
+    - target: {fileID: 3361502638696570944, guid: e5d5469993f2bb6479ea5d27b596ea3e, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[7].x
+      value: 0.8807831
+      objectReference: {fileID: 0}
+    - target: {fileID: 3361502638696570944, guid: e5d5469993f2bb6479ea5d27b596ea3e, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[7].y
+      value: -0.00004673004
+      objectReference: {fileID: 0}
+    - target: {fileID: 3361502638696570944, guid: e5d5469993f2bb6479ea5d27b596ea3e, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[8].x
+      value: 0.57510376
+      objectReference: {fileID: 0}
+    - target: {fileID: 3361502638696570944, guid: e5d5469993f2bb6479ea5d27b596ea3e, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[8].y
+      value: 0.22432995
+      objectReference: {fileID: 0}
+    - target: {fileID: 3361502638696570944, guid: e5d5469993f2bb6479ea5d27b596ea3e, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[9].x
+      value: 0.47954082
+      objectReference: {fileID: 0}
+    - target: {fileID: 3361502638696570944, guid: e5d5469993f2bb6479ea5d27b596ea3e, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[9].y
+      value: 0.7602014
+      objectReference: {fileID: 0}
     - target: {fileID: 4005751514672988209, guid: e5d5469993f2bb6479ea5d27b596ea3e, type: 3}
       propertyPath: m_Name
       value: Exit Door
@@ -40855,6 +40948,14 @@ PrefabInstance:
       propertyPath: doorOpen
       value: 
       objectReference: {fileID: 21300000, guid: 8136b00b45cd2b541aea5cb7cf4714be, type: 3}
+    - target: {fileID: 4740336424982493606, guid: e5d5469993f2bb6479ea5d27b596ea3e, type: 3}
+      propertyPath: doorClosed
+      value: 
+      objectReference: {fileID: 21300000, guid: 5ee7ed5e3e944c445bb12095ac1ffdbd, type: 3}
+    - target: {fileID: 4740336424982493606, guid: e5d5469993f2bb6479ea5d27b596ea3e, type: 3}
+      propertyPath: startsLocked
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5291036591231781424, guid: e5d5469993f2bb6479ea5d27b596ea3e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.286
@@ -40875,7 +40976,8 @@ PrefabInstance:
       propertyPath: GlobalObjectIdHash
       value: 512296964
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3751774619051698223, guid: e5d5469993f2bb6479ea5d27b596ea3e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -40885,6 +40987,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1789326947090095668, guid: e5d5469993f2bb6479ea5d27b596ea3e, type: 3}
   m_PrefabInstance: {fileID: 3780982271307660701}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8480754784574014523 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4740336424982493606, guid: e5d5469993f2bb6479ea5d27b596ea3e, type: 3}
+  m_PrefabInstance: {fileID: 3780982271307660701}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9823693917de9d447856c71a1869ba5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoomDoor
 --- !u!1001 &4254688023810014990
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41209,6 +41322,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.158
       objectReference: {fileID: 0}
+    - target: {fileID: 4740336424982493606, guid: e5d5469993f2bb6479ea5d27b596ea3e, type: 3}
+      propertyPath: doorOpen
+      value: 
+      objectReference: {fileID: 21300000, guid: cadae57d638140d4aa6e27e229f61eaf, type: 3}
+    - target: {fileID: 4740336424982493606, guid: e5d5469993f2bb6479ea5d27b596ea3e, type: 3}
+      propertyPath: doorClosed
+      value: 
+      objectReference: {fileID: 21300000, guid: c16c2280a8a516a41bc2c37f175fb921, type: 3}
     - target: {fileID: 5291036591231781424, guid: e5d5469993f2bb6479ea5d27b596ea3e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.242
@@ -41242,6 +41363,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d5469993f2bb6479ea5d27b596ea3e, type: 3}
+--- !u!114 &1820445430412888026 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4740336424982493606, guid: e5d5469993f2bb6479ea5d27b596ea3e, type: 3}
+  m_PrefabInstance: {fileID: 6380065366035627644}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9823693917de9d447856c71a1869ba5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoomDoor
 --- !u!4 &4638281853768671304 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1789326947090095668, guid: e5d5469993f2bb6479ea5d27b596ea3e, type: 3}

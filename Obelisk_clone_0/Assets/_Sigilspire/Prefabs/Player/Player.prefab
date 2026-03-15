@@ -718,7 +718,7 @@ MonoBehaviour:
   maxDistance: 2.5
   grappleLayers:
     serializedVersion: 2
-    m_Bits: 192
+    m_Bits: 704
   minDistanceToStop: 0.1
   serverGrappleTarget: {fileID: 0}
   castDuration: 0.35
