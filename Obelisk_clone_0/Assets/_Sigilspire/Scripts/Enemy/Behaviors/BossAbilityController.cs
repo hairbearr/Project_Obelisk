@@ -244,6 +244,27 @@ namespace Enemy
             }
         }
 
+        public void ServerClearActiveAbility()
+        {
+            if (!IsServer) return;
+
+            Debug.Log("[BossAbilityController] Clearing active ability state on reset");
+
+            // Stop any active coroutines
+            StopAllCoroutines();
+
+            // Clear state flags
+            isPerformingAbility = false;
+
+            // Hide any active telegraphs
+            HideSelfDestructTelegraphClientRpc();
+            HideChargeTelegraphClientRpc();
+
+            // Clear summoned add references (if not already done)
+            summonedAddId = 0;
+            shieldFromAddActive = false;
+        }
+
         private Ability HandleAlternateRotation(BossAbilitySet.PhaseAbilities phase)
         {
             // A -> B -> A -> B pattern

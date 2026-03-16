@@ -175,7 +175,13 @@ namespace Enemy
             // Reset phases
             _currentPhase = 0;
             abilityController.SetPhase(0);
-            
+
+            // Clear any active abilities to prevent bugs on reset
+            if (abilityController != null)
+            {
+                abilityController.ServerClearActiveAbility();
+            }
+
             Debug.Log("[Boss] Clearing summoned adds on reset");
 
             // clear add if it exists
