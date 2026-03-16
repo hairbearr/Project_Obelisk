@@ -40,8 +40,9 @@ namespace Combat
         [Header("Visual References")]
         [SerializeField] private Animator weaponAnimator;
         [SerializeField] private SpriteRenderer grappleRenderer;
-        [SerializeField] private Transform vfxSpawnPoint; // muzzle
+        [SerializeField] private Transform grappleSpawnPoint; // muzzle
         [SerializeField] private LineRenderer lineRenderer;
+        [SerializeField] private Vector2 fallbackOffset = new Vector2(0.5f, 0.3f);
         #endregion
 
         #region Inspector - Player References
@@ -293,7 +294,7 @@ namespace Combat
 
             direction = direction.sqrMagnitude > 0.0001f ? direction.normalized : Vector2.up;
 
-            Vector2 start = vfxSpawnPoint != null ? (Vector2)vfxSpawnPoint.position : (Vector2)transform.position;
+            Vector2 start = grappleSpawnPoint != null ? (Vector2)grappleSpawnPoint.position : (Vector2)transform.position;
 
             RaycastHit2D hit = Physics2D.Raycast(start, direction, maxDistance, grappleLayers);
 
@@ -654,7 +655,7 @@ namespace Combat
             Vector2 end = netEndPoint.Value;
 
             // Track muzzle for the start point so it matches animation
-            if (vfxSpawnPoint != null) start = vfxSpawnPoint.position;
+            if (grappleSpawnPoint != null) start = grappleSpawnPoint.position;
 
             float t = GetPhaseT();
 
@@ -736,7 +737,7 @@ namespace Combat
         {
             if (grappleVfxPrefab == null) return;
 
-            Vector3 pos = vfxSpawnPoint != null ? vfxSpawnPoint.position : new Vector3(startPoint.x, startPoint.y, 0f);
+            Vector3 pos = grappleSpawnPoint != null ? grappleSpawnPoint.position : new Vector3(startPoint.x, startPoint.y, 0f);
             var vfx = Object.Instantiate(grappleVfxPrefab, pos, Quaternion.identity);
             Object.Destroy(vfx, 2f);
         }
