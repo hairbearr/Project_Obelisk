@@ -105,9 +105,19 @@ public class VictoryScreen : MonoBehaviour
             AudioManager.Instance.PlayMenuClick();
         }
 
-        Application.Quit();
+        // Disconnect from network first
+        if (Unity.Netcode.NetworkManager.Singleton != null &&
+            Unity.Netcode.NetworkManager.Singleton.IsListening)
+        {
+            Unity.Netcode.NetworkManager.Singleton.Shutdown();
+            Debug.Log("[VictoryScreen] Network shutdown before quit");
+        }
+
+        // Quit application
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
+#else
+    Application.Quit();
 #endif
     }
 }
