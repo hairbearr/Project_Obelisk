@@ -122,6 +122,13 @@ namespace Enemy
         {
             if (!IsServer) return;
 
+            // notify enemyAI that it took damage
+            var ai = GetComponent<EnemyAI>();
+            if (ai != null)
+            {
+                ai.NotifyDamageTaken();
+            }
+
             // Apply boss damage taken multiplier if this is a boss
             var bossAbility = GetComponentInChildren<BossAbilityController>();
             if (bossAbility != null)

@@ -529,6 +529,12 @@ namespace Enemy
             }
         }
 
+        public void NotifyDamageTaken()
+        {
+            if (!IsServer) return;
+            lastCombatTime = Time.time;
+        }
+
         public void NotifyKnockback()
         {
             moveLockedUntil = Time.time + knockbackMoveLockTime;
@@ -1016,6 +1022,7 @@ namespace Enemy
                 StartReset();
             }
         }
+
 
 
         private void StartReset()
