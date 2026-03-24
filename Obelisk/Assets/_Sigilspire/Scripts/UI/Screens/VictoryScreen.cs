@@ -95,6 +95,14 @@ public class VictoryScreen : MonoBehaviour
         {
             AudioManager.Instance.PlayMenuClick();
         }
+
+        // Shutdown network before reload
+        if (Unity.Netcode.NetworkManager.Singleton != null &&
+            Unity.Netcode.NetworkManager.Singleton.IsListening)
+        {
+            Unity.Netcode.NetworkManager.Singleton.Shutdown();
+        }
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

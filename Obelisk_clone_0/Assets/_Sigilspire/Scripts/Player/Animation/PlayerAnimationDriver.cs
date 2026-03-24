@@ -126,47 +126,130 @@ namespace Player
         public void PlaySwordSlash()
         {
             if (!IsOwner) return;
-            if (playerAnimator == null) return;
-            playerAnimator.ResetTrigger("SwordSlash");
-            playerAnimator.SetTrigger("SwordSlash");
+
+            if (playerAnimator != null)
+            {
+                playerAnimator.ResetTrigger("SwordSlash");
+                playerAnimator.SetTrigger("SwordSlash");
+            }
+
+            if (swordAnimator != null)
+            {
+                swordAnimator.ResetTrigger("SwordSlash");
+                swordAnimator.SetTrigger("SwordSlash");
+            }
+
+            if (shieldAnimator != null)
+            {
+                shieldAnimator.ResetTrigger("SwordSlash");
+                shieldAnimator.SetTrigger("SwordSlash");
+            }
         }
 
         public void PlayRaiseShield()
         {
             if (!IsOwner) return;
-            if (playerAnimator == null) return;
 
-            playerAnimator.speed = 1f; // ensure not frozen
-            playerAnimator.ResetTrigger("LowerShield");
-            playerAnimator.SetTrigger("RaiseShield");
+            if (playerAnimator != null)
+            {
+                playerAnimator.speed = 1f;
+                playerAnimator.ResetTrigger("LowerShield");
+                playerAnimator.SetTrigger("RaiseShield");
+            }
+
+            if (swordAnimator != null)
+            {
+                swordAnimator.ResetTrigger("LowerShield");
+                swordAnimator.SetTrigger("RaiseShield");
+            }
+
+            if (shieldAnimator != null)
+            {
+                shieldAnimator.ResetTrigger("LowerShield");
+                shieldAnimator.SetTrigger("RaiseShield");
+            }
         }
 
         public void PlayLowerShield()
         {
             if (!IsOwner) return;
-            if (playerAnimator == null) return;
 
-            // unfreeze so LowerShield can play
-            if(playerAnimator.speed == 0f) playerAnimator.speed = 1f;
+            if (playerAnimator != null)
+            {
+                if (playerAnimator.speed == 0f) playerAnimator.speed = 1f;
+                playerAnimator.ResetTrigger("RaiseShield");
+                playerAnimator.SetTrigger("LowerShield");
+            }
 
-            playerAnimator.ResetTrigger("RaiseShield");
-            playerAnimator.SetTrigger("LowerShield");
+            if (swordAnimator != null)
+            {
+                swordAnimator.ResetTrigger("RaiseShield");
+                swordAnimator.SetTrigger("LowerShield");
+            }
+
+            if (shieldAnimator != null)
+            {
+                shieldAnimator.ResetTrigger("RaiseShield");
+                shieldAnimator.SetTrigger("LowerShield");
+            }
         }
 
         public void PlayGrappleCast()
         {
             if (!IsOwner) return;
-            if (playerAnimator == null) return;
-            playerAnimator.ResetTrigger("GrappleCast");
-            playerAnimator.SetTrigger("GrappleCast");
+
+            if (playerAnimator != null)
+            {
+                playerAnimator.ResetTrigger("GrappleCast");
+                playerAnimator.SetTrigger("GrappleCast");
+            }
+
+            if (swordAnimator != null)
+            {
+                swordAnimator.ResetTrigger("GrappleCast");
+                swordAnimator.SetTrigger("GrappleCast");
+            }
+
+            if (shieldAnimator != null)
+            {
+                shieldAnimator.ResetTrigger("GrappleCast");
+                shieldAnimator.SetTrigger("GrappleCast");
+            }
+
+            if (grappleAnimator != null)
+            {
+                grappleAnimator.ResetTrigger("GrappleCast");
+                grappleAnimator.SetTrigger("GrappleCast");
+            }
         }
 
         public void PlayGrappleRetract()
         {
             if (!IsOwner) return;
-            if (playerAnimator == null) return;
-            playerAnimator.ResetTrigger("GrappleRetract");
-            playerAnimator.SetTrigger("GrappleRetract");
+
+            if (playerAnimator != null)
+            {
+                playerAnimator.ResetTrigger("GrappleRetract");
+                playerAnimator.SetTrigger("GrappleRetract");
+            }
+
+            if (swordAnimator != null)
+            {
+                swordAnimator.ResetTrigger("GrappleRetract");
+                swordAnimator.SetTrigger("GrappleRetract");
+            }
+
+            if (shieldAnimator != null)
+            {
+                shieldAnimator.ResetTrigger("GrappleRetract");
+                shieldAnimator.SetTrigger("GrappleRetract");
+            }
+
+            if (grappleAnimator != null)
+            {
+                grappleAnimator.ResetTrigger("GrappleRetract");
+                grappleAnimator.SetTrigger("GrappleRetract");
+            }
         }
 
         private void SetAnimSpeed(float speed)

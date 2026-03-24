@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 4190180453609327456}
     - target: {fileID: 426879209344388932, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: maxHealth
-      value: 50
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 426879209344388932, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: knockbackCooldown
@@ -77,17 +77,25 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: kiteDeadZone
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: threatTracker
       value: 
       objectReference: {fileID: 5925980190507697977}
     - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: attackLockTime
-      value: 1.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: primaryAbility
       value: 
       objectReference: {fileID: 11400000, guid: 30800bcc8ff78714cba79af85ab8d841, type: 2}
+    - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: rangedMaxRange
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: attackHitTiming
       value: 0.43
@@ -97,8 +105,12 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: kiteMaxDuration
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: meleeMinDistance
-      value: 0.4
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: stoppingDistance
@@ -106,7 +118,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: meleeIdealDistance
-      value: 0.6
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: rangedStopDistance
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: meleeTelegraphInner
@@ -119,6 +135,10 @@ PrefabInstance:
     - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: targetLayers.m_Bits
       value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
+      propertyPath: kiteDecisionCooldown
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4694913565097134589, guid: d953af7d685093f4a810dc0f52ee5847, type: 3}
       propertyPath: knockbackMoveLockTime
