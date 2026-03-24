@@ -145,13 +145,11 @@ public class RunManager : NetworkBehaviour
     {
         if (!IsServer) return;
         playerDeaths.Value++;
-        Debug.Log($"[RunManager] Player died! Todal deaths: {playerDeaths.Value}");
 
         var timer = FindFirstObjectByType<RunTimerUI>();
         if( timer != null)
         {
             timer.ServerAddPenalty(deathPenaltySeconds);
-            Debug.Log($"RunManager] Applied {deathPenaltySeconds}s death penalty");
         }
     }
 }

@@ -136,8 +136,6 @@ namespace Combat.Health
         [ClientRpc]
         private void FlashColorClientRpc(Color color)
         {
-            Debug.Log($"[Flash] FlashColorClientRpc called with color: {color}");
-
             StartCoroutine(FlashRoutine(color));
         }
 
@@ -146,7 +144,6 @@ namespace Combat.Health
             SpriteRenderer[] sprites = GetComponentsInChildren<SpriteRenderer>();
             if (sprites.Length == 0)
             {
-                Debug.LogWarning($"[Flash] No SpriteRenderers found on {gameObject.name}!");
                 yield break; 
             }
 

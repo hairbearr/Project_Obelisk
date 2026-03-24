@@ -44,8 +44,6 @@ public class BossRoom : NetworkBehaviour
         {
             exitDoor.ServerLock();
         }
-
-        Debug.Log("[BossRoom] Encounter started - door locked!");
     }
 
     /// <summary>
@@ -63,8 +61,6 @@ public class BossRoom : NetworkBehaviour
         {
             exitDoor.ServerUnlock();
         }
-
-        Debug.Log("[BossRoom] Boss defeated - door unlocked!");
     }
 
     /// <summary>

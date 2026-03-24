@@ -46,8 +46,6 @@ public class MobCounterUI : NetworkBehaviour
 
         var enemies = FindObjectsByType<Enemy.EnemyHealth>(FindObjectsSortMode.None);
         totalEnemies.Value = enemies.Length;
-
-        Debug.Log($"[MobCounter] Counted {totalEnemies.Value} total enemies.");
     }
 
     public void ServerIncrementKills()

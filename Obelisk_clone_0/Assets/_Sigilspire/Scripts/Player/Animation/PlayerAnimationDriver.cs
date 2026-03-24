@@ -6,6 +6,9 @@ namespace Player
     [RequireComponent(typeof(PlayerController))]
     public class PlayerAnimationDriver : NetworkBehaviour
     {
+        [Header("Animation Settings")]
+        [SerializeField] private bool allowAnimationCanceling = true;
+
         [Header("Animator References")]
         [SerializeField] private Animator playerAnimator;
         [SerializeField] private Animator swordAnimator;
@@ -13,9 +16,7 @@ namespace Player
         [SerializeField] private Animator grappleAnimator;
 
         private bool pendingUnlock;
-
         private bool localIsShielding;
-
         private PlayerController _player;
 
         private void Awake()
@@ -39,7 +40,6 @@ namespace Player
 
             Vector2 move = _player.CurrentMoveInput;
             float speed = Mathf.Clamp01(move.magnitude);
-
             Vector2 facing = _player.LastFacingDir;
 
             SetAnimFloats(playerAnimator, facing, speed);
@@ -64,19 +64,14 @@ namespace Player
             if (localIsShielding)
             {
                 pendingUnlock = false;
-                // Make sure RaiseShield can play
                 SetAnimSpeed(1f);
             }
             else
             {
-                // We want to unlock movement when LowerShield completes
                 pendingUnlock = true;
-
-                // Ensure LowerShield can play
                 SetAnimSpeed(1f);
             }
         }
-
 
         private void LateUpdate()
         {
@@ -85,24 +80,17 @@ namespace Player
 
             AnimatorStateInfo s = playerAnimator.GetCurrentAnimatorStateInfo(0);
 
-            // While holding block: once RaiseShield finishes, freeze everything.
             if (localIsShielding && s.IsName("RaiseShield") && s.normalizedTime >= 1f)
             {
-                // Pin the state to last frame (prevents drift)
                 playerAnimator.Play("RaiseShield", 0, 1f);
-
-                // Freeze player + weapons (since you don't allow other actions anyway)
                 SetAnimSpeed(0f);
                 return;
             }
 
-            // When releasing: ensure anims can play LowerShield
             if (!localIsShielding)
             {
-                // Always unfreeze so LowerShield can progress
                 if (playerAnimator.speed == 0f) SetAnimSpeed(1f);
 
-                // Unlock movement after LowerShield ends (once)
                 if (pendingUnlock && s.IsName("LowerShield") && s.normalizedTime >= 1f)
                 {
                     pendingUnlock = false;
@@ -111,38 +99,75 @@ namespace Player
             }
         }
 
+        // ===== ANIMATION CANCELING SYSTEM =====
 
-
-
-        private void SetWeaponFloats(Animator anim, Vector2 facing, float speed)
+        private void ForceAnimatorsToIdle()
         {
-            if (anim == null) return;
-            anim.SetFloat("MoveX", facing.x);
-            anim.SetFloat("MoveY", facing.y);
-            anim.SetFloat("Speed", speed);
+            if (!allowAnimationCanceling) return;
+
+            if (playerAnimator != null)
+                playerAnimator.Play("Idle", 0, 0f);
+
+            if (swordAnimator != null)
+                swordAnimator.Play("Idle", 0, 0f);
+
+            if (shieldAnimator != null)
+                shieldAnimator.Play("Idle", 0, 0f);
+
+            if (grappleAnimator != null)
+                grappleAnimator.Play("Idle", 0, 0f);
         }
 
+        private void SetTriggerOnAllAnimators(string triggerName)
+        {
+            if (playerAnimator != null)
+            {
+                playerAnimator.ResetTrigger(triggerName);
+                playerAnimator.SetTrigger(triggerName);
+            }
+
+            if (swordAnimator != null)
+            {
+                swordAnimator.ResetTrigger(triggerName);
+                swordAnimator.SetTrigger(triggerName);
+            }
+
+            if (shieldAnimator != null)
+            {
+                shieldAnimator.ResetTrigger(triggerName);
+                shieldAnimator.SetTrigger(triggerName);
+            }
+
+            if (grappleAnimator != null)
+            {
+                grappleAnimator.ResetTrigger(triggerName);
+                grappleAnimator.SetTrigger(triggerName);
+            }
+        }
+
+        private void ResetAllTriggers(string triggerName)
+        {
+            if (playerAnimator != null) playerAnimator.ResetTrigger(triggerName);
+            if (swordAnimator != null) swordAnimator.ResetTrigger(triggerName);
+            if (shieldAnimator != null) shieldAnimator.ResetTrigger(triggerName);
+            if (grappleAnimator != null) grappleAnimator.ResetTrigger(triggerName);
+        }
+
+        // ===== ABILITY ANIMATIONS =====
 
         public void PlaySwordSlash()
         {
             if (!IsOwner) return;
 
-            if (playerAnimator != null)
+            if (allowAnimationCanceling)
             {
-                playerAnimator.ResetTrigger("SwordSlash");
-                playerAnimator.SetTrigger("SwordSlash");
+                ResetAllTriggers("SwordSlash");
+                ForceAnimatorsToIdle();
+                SetTriggerOnAllAnimators("SwordSlash");
             }
-
-            if (swordAnimator != null)
+            else
             {
-                swordAnimator.ResetTrigger("SwordSlash");
-                swordAnimator.SetTrigger("SwordSlash");
-            }
-
-            if (shieldAnimator != null)
-            {
-                shieldAnimator.ResetTrigger("SwordSlash");
-                shieldAnimator.SetTrigger("SwordSlash");
+                SetTriggerOnAllAnimators("SwordSlash");
             }
         }
 
@@ -150,23 +175,30 @@ namespace Player
         {
             if (!IsOwner) return;
 
-            if (playerAnimator != null)
+            if (allowAnimationCanceling)
             {
-                playerAnimator.speed = 1f;
-                playerAnimator.ResetTrigger("LowerShield");
-                playerAnimator.SetTrigger("RaiseShield");
+                ResetAllTriggers("RaiseShield");
+                ForceAnimatorsToIdle();
+                SetTriggerOnAllAnimators("RaiseShield");
             }
-
-            if (swordAnimator != null)
+            else
             {
-                swordAnimator.ResetTrigger("LowerShield");
-                swordAnimator.SetTrigger("RaiseShield");
-            }
-
-            if (shieldAnimator != null)
-            {
-                shieldAnimator.ResetTrigger("LowerShield");
-                shieldAnimator.SetTrigger("RaiseShield");
+                if (playerAnimator != null)
+                {
+                    playerAnimator.speed = 1f;
+                    playerAnimator.ResetTrigger("LowerShield");
+                    playerAnimator.SetTrigger("RaiseShield");
+                }
+                if (swordAnimator != null)
+                {
+                    swordAnimator.ResetTrigger("LowerShield");
+                    swordAnimator.SetTrigger("RaiseShield");
+                }
+                if (shieldAnimator != null)
+                {
+                    shieldAnimator.ResetTrigger("LowerShield");
+                    shieldAnimator.SetTrigger("RaiseShield");
+                }
             }
         }
 
@@ -174,23 +206,30 @@ namespace Player
         {
             if (!IsOwner) return;
 
-            if (playerAnimator != null)
+            if (allowAnimationCanceling)
             {
-                if (playerAnimator.speed == 0f) playerAnimator.speed = 1f;
-                playerAnimator.ResetTrigger("RaiseShield");
-                playerAnimator.SetTrigger("LowerShield");
+                ResetAllTriggers("LowerShield");
+                ForceAnimatorsToIdle();
+                SetTriggerOnAllAnimators("LowerShield");
             }
-
-            if (swordAnimator != null)
+            else
             {
-                swordAnimator.ResetTrigger("RaiseShield");
-                swordAnimator.SetTrigger("LowerShield");
-            }
-
-            if (shieldAnimator != null)
-            {
-                shieldAnimator.ResetTrigger("RaiseShield");
-                shieldAnimator.SetTrigger("LowerShield");
+                if (playerAnimator != null)
+                {
+                    if (playerAnimator.speed == 0f) playerAnimator.speed = 1f;
+                    playerAnimator.ResetTrigger("RaiseShield");
+                    playerAnimator.SetTrigger("LowerShield");
+                }
+                if (swordAnimator != null)
+                {
+                    swordAnimator.ResetTrigger("RaiseShield");
+                    swordAnimator.SetTrigger("LowerShield");
+                }
+                if (shieldAnimator != null)
+                {
+                    shieldAnimator.ResetTrigger("RaiseShield");
+                    shieldAnimator.SetTrigger("LowerShield");
+                }
             }
         }
 
@@ -198,28 +237,15 @@ namespace Player
         {
             if (!IsOwner) return;
 
-            if (playerAnimator != null)
+            if (allowAnimationCanceling)
             {
-                playerAnimator.ResetTrigger("GrappleCast");
-                playerAnimator.SetTrigger("GrappleCast");
+                ResetAllTriggers("GrappleCast");
+                ForceAnimatorsToIdle();
+                SetTriggerOnAllAnimators("GrappleCast");
             }
-
-            if (swordAnimator != null)
+            else
             {
-                swordAnimator.ResetTrigger("GrappleCast");
-                swordAnimator.SetTrigger("GrappleCast");
-            }
-
-            if (shieldAnimator != null)
-            {
-                shieldAnimator.ResetTrigger("GrappleCast");
-                shieldAnimator.SetTrigger("GrappleCast");
-            }
-
-            if (grappleAnimator != null)
-            {
-                grappleAnimator.ResetTrigger("GrappleCast");
-                grappleAnimator.SetTrigger("GrappleCast");
+                SetTriggerOnAllAnimators("GrappleCast");
             }
         }
 
@@ -227,28 +253,15 @@ namespace Player
         {
             if (!IsOwner) return;
 
-            if (playerAnimator != null)
+            if (allowAnimationCanceling)
             {
-                playerAnimator.ResetTrigger("GrappleRetract");
-                playerAnimator.SetTrigger("GrappleRetract");
+                ResetAllTriggers("GrappleRetract");
+                ForceAnimatorsToIdle();
+                SetTriggerOnAllAnimators("GrappleRetract");
             }
-
-            if (swordAnimator != null)
+            else
             {
-                swordAnimator.ResetTrigger("GrappleRetract");
-                swordAnimator.SetTrigger("GrappleRetract");
-            }
-
-            if (shieldAnimator != null)
-            {
-                shieldAnimator.ResetTrigger("GrappleRetract");
-                shieldAnimator.SetTrigger("GrappleRetract");
-            }
-
-            if (grappleAnimator != null)
-            {
-                grappleAnimator.ResetTrigger("GrappleRetract");
-                grappleAnimator.SetTrigger("GrappleRetract");
+                SetTriggerOnAllAnimators("GrappleRetract");
             }
         }
 
@@ -268,19 +281,19 @@ namespace Player
                 playerAnimator.SetTrigger("Death");
             }
 
-            if (swordAnimator != null) 
+            if (swordAnimator != null)
             {
                 swordAnimator.ResetTrigger("Death");
                 swordAnimator.SetTrigger("Death");
             }
 
-            if(shieldAnimator != null)
+            if (shieldAnimator != null)
             {
                 shieldAnimator.ResetTrigger("Death");
                 shieldAnimator.SetTrigger("Death");
             }
 
-            if(grappleAnimator != null)
+            if (grappleAnimator != null)
             {
                 grappleAnimator.ResetTrigger("Death");
                 grappleAnimator.SetTrigger("Death");

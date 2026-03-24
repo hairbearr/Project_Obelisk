@@ -72,7 +72,6 @@ public class PlayerHealthUI : MonoBehaviour
 
         if (hb == null)
         {
-            Debug.LogWarning("[PlayerHealthUI] Local player spawned but no HealthBase found.");
             yield break;
         }
 

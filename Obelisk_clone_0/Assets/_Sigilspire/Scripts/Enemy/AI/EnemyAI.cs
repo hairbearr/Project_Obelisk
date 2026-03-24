@@ -316,7 +316,6 @@ namespace Enemy
 
                     if(los.collider != null)
                     {
-                        Debug.Log($"[FindTarget] {name} can't see target ID {id} - blocked by {los.collider.name}");
                         continue;
                     }
                 }
@@ -456,10 +455,6 @@ namespace Enemy
             }
 
             // ----- Ranged -----
-            if (Time.frameCount % 60 == 0) // Log every second
-            {
-                Debug.Log($"[Ranged] {name} - HasPath: {currentPath != null}, Waypoint: {currentWaypoint}, PathDir: {pathDir}");
-            }
             float tooCloseDist = rangedStopDistance - kiteDeadZone;
             float safeDist = rangedStopDistance + kiteDeadZone;
 
@@ -632,14 +627,11 @@ namespace Enemy
             const float minTimeBetweenEvents = 0.3f;
             if(Time.time - lastAttackEventTime < minTimeBetweenEvents)
             {
-                Debug.Log($"[Attack] {name} DUPLICATE EVENT BLOCKED! Time since last: {Time.time - lastAttackEventTime:F3}s");
                 return;
             }
 
             lastAttackEventTime = Time.time;
             lastCombatTime = Time.time; // combat activity
-
-            Debug.Log($"[Attack] {name} OnEnemyAttackHitFrame called! Time: {Time.time}");
 
             HideMeleeTelegraph();
             HideRangedTelegraph();
@@ -985,7 +977,6 @@ namespace Enemy
             if (isReturningToSpawn)
             {
                 float distToSpawn = Vector2.Distance(currentPos, spawnPos);
-                //Debug.Log($"[Leash] {name} returning to spawn, distance: {distToSpawn:F2}");
 
                 if (distToSpawn < 0.5f) // close enough to spawn
                 {
@@ -1001,16 +992,9 @@ namespace Enemy
             float distanceFromSpawn = Vector2.Distance(currentPos, spawnPos);
             bool tooFarFromSpawn = distanceFromSpawn > leashDistance;
 
-            // Log every few seconds to avoid spam
-            if (Time.frameCount % 120 == 0) // Every ~2 seconds at 60fps
-            {
-                //Debug.Log($"[Leash] {name} - Target: {hasTarget}, OutOfCombat: {outOfCombatLongEnough} ({timeSinceLastCombat:F1}s/{outOfCombatDelay}s), Distance: {distanceFromSpawn:F1}/{leashDistance}");
-            }
-
             // TRIGGER 1: Boss pulled too far from spawn
             if (tooFarFromSpawn)
             {
-               // Debug.Log($"[Leash] {name} TRIGGERING RESET! Pulled too far: {distanceFromSpawn:F1} > {leashDistance}");
                 StartReset();
                 return;
             }
@@ -1018,7 +1002,6 @@ namespace Enemy
             // TRIGGER 2: Players disengaged (no target for X seconds)
             if (!hasTarget && outOfCombatLongEnough && hasEnteredCombat)
             {
-               // Debug.Log($"[Leash] {name} TRIGGERING RESET! Players disengaged for {timeSinceLastCombat:F1}s");
                 StartReset();
             }
         }
@@ -1028,8 +1011,6 @@ namespace Enemy
         private void StartReset()
         {
             if (!IsServer) return;
-
-            Debug.Log($"[Enemy] {name} starting reset (behavior: {resetBehavior})");
 
             if(resetBehavior == ResetBehavior.Teleport)
             {
@@ -1055,8 +1036,6 @@ namespace Enemy
         {
             if (!IsServer) return;
 
-            Debug.Log($"[Enemy] {name} teleporting to spawn!");
-
             // clear threat
             if (threatTracker != null) threatTracker.ClearAllThreat();
 
@@ -1079,8 +1058,6 @@ namespace Enemy
         private void CompleteReset()
         {
             if (!IsServer) return;
-
-            Debug.Log($"[Enemy] {name} reset complete!");
 
             // reset health
             if (health != null) health.ServerSetFullHealth();
@@ -1150,10 +1127,6 @@ namespace Enemy
                 currentPath = p;
                 currentWaypoint = 0;
             }
-            else
-            {
-                Debug.LogWarning($"[Pathfinding] Path error for {name}: {p.errorLog}");
-            }
         }
 
         private Vector2 GetPathDirection()
@@ -1188,12 +1161,10 @@ namespace Enemy
         {
             if (completed)
             {
-                Debug.Log($"[Enemy] {name} reset complete (visual feedback)");
                 // TODO: Flash effect, particle burst
             }
             else
             {
-                Debug.Log($"[Enemy] {name} returning to spawn (visual feedback)");
                 // TODO: Trail effect, speed lines
             }
         }
@@ -1202,7 +1173,6 @@ namespace Enemy
         {
             HideMeleeTelegraph();
             HideRangedTelegraph();
-            Debug.Log("[EnemyAI] Telegraphs cleaned up on death.");
         }
 
         public void SetGrappled(bool grappled)
@@ -1210,13 +1180,8 @@ namespace Enemy
             isBeingGrappled = grappled;
             if (grappled)
             {
-                Debug.Log($"[Enemy] {name} is being grappled - attacks disabled!");
                 // Cancel any active attack
                 CancelActiveAttack();
-            }
-            else
-            {
-                Debug.Log($"[Enemy] {name} grapple ended - attacks enabled!");
             }
         }
 
@@ -1236,15 +1201,11 @@ namespace Enemy
             {
                 animDriver.SetMovement(Vector2.zero);
             }
-
-            Debug.Log($"[Enemy] {name} attack cancelled by grapple!");
         }
 
         private void ServerResetEnemy()
         {
             if (!IsServer) return;
-
-            Debug.Log($"[Enemy] {name} leashing back to spawn!");
 
             // Clear threat
             if(threatTracker != null)

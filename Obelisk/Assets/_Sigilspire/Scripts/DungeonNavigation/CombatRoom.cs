@@ -1,7 +1,7 @@
 using Unity.Netcode;
 using UnityEngine;
 
-public class CombatRoom : NetworkBehaviour
+public class CombatRoom : MonoBehaviour
 {
     [Header("Room Config")]
     [SerializeField] private RoomDoor[] doorsToUnlock;
@@ -14,11 +14,13 @@ public class CombatRoom : NetworkBehaviour
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (!IsServer) return;
-        if (hasCheckedCompletion) return;
+        if (Unity.Netcode.NetworkManager.Singleton == null ||
+        !Unity.Netcode.NetworkManager.Singleton.IsServer)
+        {
+            return;
+        }
 
         // Check if all enemies in this room are dead
         if (AreAllEnemiesDead())
@@ -47,7 +49,6 @@ public class CombatRoom : NetworkBehaviour
             }
         }
 
-        // All spawners report 0 living enemies
         return true;
     }
 
@@ -56,7 +57,7 @@ public class CombatRoom : NetworkBehaviour
 
         foreach (var door in doorsToUnlock)
         {
-            if(door != null)
+            if (door != null)
             {
                 door.ServerUnlock();
             }

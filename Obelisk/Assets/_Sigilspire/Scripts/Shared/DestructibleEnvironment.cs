@@ -34,30 +34,21 @@ public class DestructibleEnvironment : NetworkBehaviour
 
     public void ServerHitByCharge(BossAbilityController boss)
     {
-        Debug.Log($"[Pillar] ServerHitByCharge called! IsServer={IsServer}, boss={boss != null}, isDestroyed={isDestroyed.Value}");
-
         if (!IsServer) return;
         if (isDestroyed.Value) return;
         if (boss == null)
         {
-            Debug.LogError("[Pillar] Boss is NULL!");
             return;
         }
 
-        Debug.Log($"[Pillar] About to stun boss for {stunDuration}s");
-
         // stun boss
         boss.ServerApplyStun(stunDuration);
-
-        Debug.Log($"[Pillar] About to apply damage debuff");
 
         // apply damage debuff to boss
         boss.ServerApplyDamageBuff(damageBuffAmount, buffDuration, buff);
 
         // Destroy Pillar
         isDestroyed.Value = true;
-
-        Debug.Log($"DestructibleEnv] Hit! Boss gets {damageBuffAmount * 100}% damage taken for {buffDuration}s");
     }
 
     public void ServerResetObject()
@@ -72,8 +63,6 @@ public class DestructibleEnvironment : NetworkBehaviour
 
         // Update Visuals
         UpdateVisuals();
-
-        Debug.Log($"[Destructible Environment] {name} reset!");
     }
 
     private void OnDestroyedChanged(bool oldVal, bool newVal)
@@ -107,8 +96,6 @@ public class DestructibleEnvironment : NetworkBehaviour
         // Update the grid in this area
         var guo = new GraphUpdateObject(bounds);
         AstarPath.active.UpdateGraphs(guo);
-
-        Debug.Log($"[Pathfinding] Updated grid for destroyed pillar at {transform.position}");
     }
 
     public bool IsDestroyed => isDestroyed.Value;

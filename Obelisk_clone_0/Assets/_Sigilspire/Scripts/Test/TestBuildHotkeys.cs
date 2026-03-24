@@ -36,7 +36,6 @@ public class TestBuildHotkeys : MonoBehaviour
         if (hb == null) return;
 
         hb.ServerSetFullHealth();
-        Debug.Log("[TestHotkeys] Player fully healed");
     }
 
     private void KillAllEnemies()
@@ -46,6 +45,5 @@ public class TestBuildHotkeys : MonoBehaviour
         {
             enemy.TakeDamage(9999f, 0);
         }
-        Debug.Log($"[TestHotkeys] Killed {enemies.Length} enemies");
     }
 }

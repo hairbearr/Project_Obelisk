@@ -118,7 +118,6 @@ public class VictoryScreen : MonoBehaviour
             Unity.Netcode.NetworkManager.Singleton.IsListening)
         {
             Unity.Netcode.NetworkManager.Singleton.Shutdown();
-            Debug.Log("[VictoryScreen] Network shutdown before quit");
         }
 
         // Quit application

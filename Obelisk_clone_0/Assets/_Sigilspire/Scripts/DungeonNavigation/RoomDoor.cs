@@ -54,8 +54,6 @@ public class RoomDoor : NetworkBehaviour
         if (isLocked.Value) return; // Already locked
 
         isLocked.Value = true;
-
-        Debug.Log("[RoomDoor] Door locked");
     }
 
     public void ServerUnlock()
@@ -105,6 +103,7 @@ public class RoomDoor : NetworkBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         if (!IsServer) return;
 
         if (isLocked.Value)
@@ -113,8 +112,9 @@ public class RoomDoor : NetworkBehaviour
         }
 
         // teleport player to destination
-        if(teleportDestination != null)
+        if (teleportDestination != null)
         {
+
             var playerRb = collision.GetComponent<Rigidbody2D>();
             if (playerRb != null)
             {

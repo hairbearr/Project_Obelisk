@@ -29,8 +29,6 @@ public class PuzzleManager : NetworkBehaviour
 
         nodesDestroyed.Value++;
 
-        Debug.Log($"[PuzzleManager] Nodes destroyed: {nodesDestroyed.Value}/{nodes.Length}");
-
         // Check if puzzle complete
         if(nodesDestroyed.Value >= nodes.Length)
         {
@@ -42,8 +40,6 @@ public class PuzzleManager : NetworkBehaviour
     {
         if (!IsServer) return;
 
-        Debug.Log("[PuzzleManager] Puzzle complete! Unlocking Door.");
-
         if(doorToUnlock != null) { doorToUnlock.ServerUnlock(); }
 
         // play sound, vfx, etc
@@ -53,7 +49,6 @@ public class PuzzleManager : NetworkBehaviour
     [ClientRpc]
     private void PuzzleCompleteClientRpc()
     {
-        Debug.Log("[PuzzleManager] Puzzle complete (Client)");
         // TODO: Play completion sound/VFX
     }
 

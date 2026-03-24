@@ -112,8 +112,6 @@ namespace Enemy
                 }
 
                 animDriver.PlayAttack(direction, (int)ability.animationType);
-
-                Debug.Log($"[Boss] Triggered animation type {ability.animationType} for {ability.name}");
             }
         }
 
@@ -136,8 +134,6 @@ namespace Enemy
                 }
 
                 animDriver.PlayAttack(direction, animationType);
-
-                Debug.Log($"[Boss] Triggered raw animation type {animationType}");
             }
         }
 
@@ -149,21 +145,18 @@ namespace Enemy
             if (damageDealingMultiplier.Value > 1f && Time.time >= damageDealingBuffEndTime)
             {
                 damageDealingMultiplier.Value = 1f;
-                Debug.Log("[Boss] Damage Dealing Buff Expired!");
             }
 
             // Expire damage taken debuff
             if (damageTakenMultiplier.Value > 1f && Time.time >= damageTakenDebuffEndTime)
             {
                 damageTakenMultiplier.Value = 1f;
-                Debug.Log("[Boss] Damage Taken Debuff Expired!");
             }
 
             // Expire stun
             if (isStunned.Value && Time.time >= stunEndTime)
             {
                 isStunned.Value = false;
-                Debug.Log("[Boss] Stun expired!");
             }
 
             if(shieldFromAddActive && summonedAddId != 0)
@@ -176,7 +169,6 @@ namespace Enemy
                     shieldFromAddActive = false;
                     summonedAddId = 0;
 
-                    Debug.Log("[Boss] Add shield DEACTIVATED! Add was destroyed!");
                     AddShieldDeactivatedClientRpc();
                 }
             }
@@ -194,8 +186,6 @@ namespace Enemy
             useSecondaryNext = false;
             lastPrimaryAbilityTime = -999f;
             lastSecondaryAbilityTime = -999f;
-
-            Debug.Log($"[BossAbility] Switched to phase {phaseIndex}");
 
             // Execute phase transition
             ExecutePhaseTransition(phase);
@@ -247,8 +237,6 @@ namespace Enemy
         public void ServerClearActiveAbility()
         {
             if (!IsServer) return;
-
-            Debug.Log("[BossAbilityController] Clearing active ability state on reset");
 
             // Stop any active coroutines
             StopAllCoroutines();
@@ -372,7 +360,6 @@ namespace Enemy
                     break;
 
                 default:
-                    Debug.LogWarning($"[BossAbility] Unhandled ability shape: {ability.shape}");
                     break;
             }
 
@@ -489,7 +476,6 @@ namespace Enemy
 
         private IEnumerator ExecuteAllTransitions(BossAbilitySet.PhaseAbilities phase)
         {
-            Debug.Log($"[BossTransition] ExecuteAllTransitions started! Transition count: {phase.transitions.Count}");
 
             // Disable boss AI during transitions
             if (bossAI != null)
@@ -497,12 +483,11 @@ namespace Enemy
 
             foreach (var transitionType in phase.transitions)
             {
-                Debug.Log($"[BossTransition] Executing transition: {transitionType}");
 
                 switch (transitionType)
                 {
                     case PhaseTransitionType.Charge:
-                        Debug.Log($"[BossTransition] Starting charge with count: {phase.chargeCount}");
+
                         yield return StartCoroutine(PhaseTransitionChargeAttack(phase.chargeCount));
                         break;
 
@@ -523,12 +508,10 @@ namespace Enemy
             if (bossAI != null)
                 bossAI.inTransition = false;
 
-            Debug.Log("[BossTransition] All transitions complete!");
         }
 
         private IEnumerator ExecuteSummon(BossAbilitySet.PhaseAbilities phase)
         {
-            Debug.Log("[Boss] SUMMONING ADD");
 
             TriggerRawAnimation(6);
 
@@ -568,17 +551,12 @@ namespace Enemy
                         shieldFromAddActive = true;
                         damageReductionFromAdd = phase.shieldFromAddDamageReduction;
 
-                        Debug.Log($"[Boss] Shield from add ACTIVE! Boss takes {damageReductionFromAdd * 100}% damage!");
                         AddShieldActivatedClientRpc();
                     }
 
-                    Debug.Log($"[Boss] Spawned Gargoyle at {spawnPos}");
+
                 }
 
-            }
-            else
-            {
-                Debug.LogWarning("[Boss] No summon prefab assigned in BossAbilitySet!");
             }
 
             HideSummonTelegraphClientRpc();
@@ -604,7 +582,6 @@ namespace Enemy
             Transform target = FindRandomPlayer();
             if(target == null)
             {
-                Debug.LogWarning("[BossCharge] No valid player target found!");
                 yield break;
             }
 
@@ -679,13 +656,11 @@ namespace Enemy
 
                 ServerApplyDamageBuff(buffAmount, buffDuration, isBuff: true);
 
-                Debug.Log($"[BossCharge] MISSED! Boss enraged, +{buffAmount * 100}% damage for {buffDuration}s");
             }
         }
 
         private IEnumerator SelfDestructSequence(Ability ability)
         {
-            Debug.Log("[Boss] SELF DESTRUCT - Moving to set point!");
 
             // find ability's cast point (or use boss's current position as fallback)
             Vector2 castPoint = FindCastPoint();
@@ -707,8 +682,6 @@ namespace Enemy
             // start channel
             float channelDuration = ability.channelDuration > 0f ? ability.channelDuration : 10f;
 
-            Debug.Log($"[Boss] CHANNELING SELF DESTRUCT - {channelDuration}s until wipe!");
-
             // show telegraph (growing circle of doom?
             ShowSelfDestructTelegraphClientRpc(castPoint, channelDuration);
 
@@ -721,7 +694,6 @@ namespace Enemy
                 var health = GetComponentInParent<Combat.Health.HealthBase>();
                 if (health != null && health.CurrentHealth.Value <= 0f)
                 {
-                    Debug.Log("[Boss] DIED DURING CHANNEL - Self Destruct cancelled!");
                     HideSelfDestructTelegraphClientRpc();
                     yield break;
                 }
@@ -731,7 +703,6 @@ namespace Enemy
             }
 
             // channel completed - party wipe
-            Debug.Log("[Boss] SELF DESTRUCT COMPLETE - KILLING EVERYONE!");
             HideSelfDestructTelegraphClientRpc();
             ExecuteSelfDestructWipe();
 
@@ -774,7 +745,6 @@ namespace Enemy
                 if (player != null)
                 {
                     player.TakeDamage(99999f, bossId);
-                    Debug.Log($"[Self Destruct] Killed Player: {player.name}");
                 }
             }
             SelfDestructExplosionClientRpc();
@@ -866,32 +836,21 @@ namespace Enemy
                 shake.Shake(1f, 0.5f); // big shake!
             }
 
-            Debug.Log("[Self Destruct] BOOM!");
         }
 
         private bool CheckChargeCollisions(Vector2 currentPos, Vector2 direction)
         {
-            // DEBUG: Draw collision check radius
-            Debug.DrawLine(currentPos, currentPos + Vector2.up * chargeCollisionCheckRadius, Color.red, 1f);
-            Debug.DrawLine(currentPos, currentPos + Vector2.right * chargeCollisionCheckRadius, Color.red, 1f);
 
             // Check destructible environment hits
             Collider2D[] envHits = Physics2D.OverlapCircleAll(currentPos, chargeCollisionCheckRadius, destructibleLayer);
 
-            Debug.Log($"[Charge] Checking at {currentPos}, found {envHits.Length} destructible hits");
-
             foreach (var hit in envHits)
             {
-                Debug.Log($"[Charge] Hit collider: {hit.name} on layer {LayerMask.LayerToName(hit.gameObject.layer)}");
 
                 var destructible = hit.GetComponent<DestructibleEnvironment>();
                 if(destructible != null && !destructible.IsDestroyed)
                 {
-                    Debug.Log($"[Charge] HIT PILLAR: {hit.name}!");
-
-                    Debug.Log($"[Charge] Calling ServerHitByCharge on {hit.name}, boss={this != null}");
                     destructible.ServerHitByCharge(this);
-                    Debug.Log($"[Charge] ServerHitByCharge returned"); ScreenShakeClientRpc(0.5f, 0.4f);
 
                     // Play charge impact sound
                     PlayChargeImpactSoundClientRpc(currentPos);
@@ -911,8 +870,6 @@ namespace Enemy
                     var bossNetObj = GetComponentInParent<NetworkObject>();
                     ulong bossId = bossNetObj != null ? bossNetObj.NetworkObjectId : 0;
                     playerHealth.TakeDamage(99999f, bossId);
-
-                    Debug.Log($"[BossCharge] KILLED PLAYER: {hit.name}");
 
                     PlayChargeImpactSoundClientRpc(currentPos);
                     
@@ -937,14 +894,12 @@ namespace Enemy
         private void PhaseTransitionApplyShield(float amount)
         {
             // TODO: Apply shield/armor buff
-            Debug.Log($"[BossTransition] Applying {amount} shield!");
         }
 
         [ClientRpc]
         private void PhaseTransitionEffectsClientRpc()
         {
             // TODO: Do stuffs
-            Debug.Log("[BossTransition] Transitioning!");
         }
 
         private void DealAoEDamage(Vector2 center, float radius, float damage)
@@ -1025,7 +980,6 @@ namespace Enemy
             if (!IsServer) return;
             if (ability.projectilePrefab == null)
             {
-                Debug.LogWarning("[BossAbility] No projectilePrefab set on ability!");
                 return;
             }
 
@@ -1049,26 +1003,19 @@ namespace Enemy
             }
             else
             {
-                Debug.LogWarning("[BossAbility] Projectile prefab missing NetworkObject component!");
                 Destroy(projObj);
             }
         }
 
         private void ExecutePhaseTransition(BossAbilitySet.PhaseAbilities phase)
         {
-            Debug.Log($"[BossTransition] ExecutePhaseTransition called. IsServer={IsServer}");
-
             if (!IsServer) return;
-
-            Debug.Log($"[BossTransition] Checking transitions. Count: {(phase.transitions != null ? phase.transitions.Count : -1)}");
 
             if (phase.transitions == null || phase.transitions.Count == 0)
             {
-                Debug.Log("[BossTransition] No transitions configured for this phase.");
                 return;
             }
 
-            Debug.Log($"[BossTransition] Starting ExecuteAllTransitions coroutine...");
             StartCoroutine(ExecuteAllTransitions(phase));
         }
 
@@ -1088,26 +1035,23 @@ namespace Enemy
         private void AddShieldActivatedClientRpc()
         {
             // TODO: Boss glows purple, shield VFX appears
-            Debug.Log("[Boss] Add shield VFX - boss protected!");
         }
 
         [ClientRpc]
         private void AddShieldDeactivatedClientRpc()
         {
             // TODO: Shield breaks VFX
-            Debug.Log("[Boss] Add shield broke!");
         }
 
         [ClientRpc]
         private void ShowSummonTelegraphClientRpc()
         {
             // TODO: Spawn a swirling portal or summoning circle VFX
-            Debug.Log("[Boss] Summoning telegraph (add VFX Later)");
         }
         [ClientRpc]
         private void HideSummonTelegraphClientRpc()
         {
-            Debug.Log("[Boss] Summon complete");
+            // TODO: Hide summon telegraph client RPC
         }
 
         [ClientRpc]
@@ -1123,7 +1067,6 @@ namespace Enemy
 
             if (prefab == null)
             {
-                Debug.LogWarning($"[BossAbility] No telegraph prefab for type {type}!");
                 return;
             }
 
@@ -1150,7 +1093,6 @@ namespace Enemy
         {
             if (lineTelegraphPrefab == null)
             {
-                Debug.LogWarning("[BossAbility] No line telegraph prefab!");
                 return;
             }
 
@@ -1188,7 +1130,6 @@ namespace Enemy
             // Get target safely
             if (!NetworkManager.Singleton.SpawnManager.SpawnedObjects.TryGetValue(targetId, out NetworkObject targetObj))
             {
-                Debug.LogWarning($"[BossCharge] Target {targetId} not found!");
                 yield break;
             }
 
@@ -1337,8 +1278,6 @@ namespace Enemy
                 damageTakenMultiplier.Value += buffAmount;
                 damageTakenDebuffEndTime = Mathf.Max(damageTakenDebuffEndTime, Time.time + duration);
 
-                Debug.Log($"[Boss] Damage taken debuff applied! Now taking {damageTakenMultiplier.Value}x damage for {duration}s!");
-
                 DebuffEffectClientRpc();
             }
             else
@@ -1346,8 +1285,6 @@ namespace Enemy
                 // Damage DEALING buff (boss deals more damage)
                 damageDealingMultiplier.Value += buffAmount;
                 damageDealingBuffEndTime = Mathf.Max(damageDealingBuffEndTime, Time.time + duration);
-
-                Debug.Log($"[Boss] Damage dealing buff applied! Now dealing {damageDealingMultiplier.Value}x damage for {duration}s!");
 
                 BuffEffectClientRpc();
             }
@@ -1357,14 +1294,12 @@ namespace Enemy
         private void BuffEffectClientRpc()
         {
             // TODO: Visual feedback (boss glows red, particle effect, etc.)
-            Debug.Log("[Boss] Pillar buff VFX!");
         }
 
         [ClientRpc]
         private void DebuffEffectClientRpc()
         {
             // TODO: Visual feedback (boss glows blue/vulnerable, particle effect, etc.)
-            Debug.Log("[Boss] Debuff VFX!");
         }
 
         public void ServerApplyStun(float duration)
@@ -1374,7 +1309,6 @@ namespace Enemy
             isStunned.Value = true;
             stunEndTime = Time.time + duration;
 
-            Debug.Log($"[Boss] Stunned for {duration}s!");
             StunEffectClientRpc();
         }
 
@@ -1402,7 +1336,6 @@ namespace Enemy
         private void StunEffectClientRpc()
         {
             // TODO: Visual Feedback
-            Debug.Log("[Boss] Stun VFX!");
         }
 
         [ClientRpc]

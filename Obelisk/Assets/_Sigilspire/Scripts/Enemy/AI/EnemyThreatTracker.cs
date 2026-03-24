@@ -105,8 +105,6 @@ public class EnemyThreatTracker : NetworkBehaviour, IThreatReceiver
 
         threat.Clear();
         currentTargetId = 0;
-
-        Debug.Log("[ThreatTracker] All threat cleared.");
     }
 
 
@@ -157,8 +155,6 @@ public class EnemyThreatTracker : NetworkBehaviour, IThreatReceiver
         {
             sb.Append(kvp.Key).Append('=').Append(kvp.Value.ToString("0.##")).Append(" ");
         }
-
-        Debug.Log(sb.ToString());
     }
 
     private void Update()

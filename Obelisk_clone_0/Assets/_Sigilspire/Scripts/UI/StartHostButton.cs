@@ -20,7 +20,6 @@ public class StartHostButton : MonoBehaviour
     {
         if (NetworkManager.Singleton == null)
         {
-            Debug.LogError("No NetworkManager in scene!");
             return;
         }
 
@@ -32,7 +31,6 @@ public class StartHostButton : MonoBehaviour
             AudioManager.Instance.PlayMenuClick();
         }
 
-        Debug.Log("[BOOT] Starting Host");
         NetworkManager.Singleton.StartHost();
 
         Hide();

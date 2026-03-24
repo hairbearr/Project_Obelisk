@@ -99,9 +99,6 @@ public class ServerSpawnManager : MonoBehaviour
             .Select(s => s.transform);
 
         spawnPoints.AddRange(found);
-
-        if (spawnPoints.Count == 0)
-            Debug.LogWarning("ServerSpawnManager: No PlayerSpawnPoint objects found in scene!", this);
     }
 
     private Transform GetSpawnForClient(ulong clientId)

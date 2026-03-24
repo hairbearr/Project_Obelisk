@@ -15,8 +15,6 @@ public class Checkpoint : MonoBehaviour
         {
             _current = this;
         }
-
-        Debug.Log($"Checkpoint: {this.name}");
     }
 
     private void OnDrawGizmos()

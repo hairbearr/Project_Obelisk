@@ -97,12 +97,7 @@ public class RunTimerUI : NetworkBehaviour
         {
             runManager.ServerNotifyTimeExpired();
         }
-        else
-        {
-            Debug.Log("[Timer] Run failed - time expired!");
-        }
-
-            
+   
         // TODO: Trigger defeat screen
     }
 
@@ -121,8 +116,6 @@ public class RunTimerUI : NetworkBehaviour
         float before = timeRemaining.Value;
         timeRemaining.Value -= deathPenalty;
         float after = timeRemaining.Value;
-
-        Debug.Log($"[Timer] ServerAddPenalty called! Penalty: {deathPenalty}s, Before: {before:F1}s, After: {after:F1}s, Difference: {before - after:F1}s");
     }
 
     public void ServerStopTimer()

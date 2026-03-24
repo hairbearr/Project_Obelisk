@@ -83,12 +83,10 @@ public class PauseManager : MonoBehaviour
         if (isSinglePlayer)
         {
             Time.timeScale = 0f;
-            Debug.Log("[PauseManager] Game paused (singleplayer)");
         }
         else
         {
             DisableLocalPlayerInput();
-            Debug.Log("[PauseManager] Local player paused (multiplayer - others still playing.");
         }
 
         if(AudioManager.Instance != null)
@@ -109,12 +107,10 @@ public class PauseManager : MonoBehaviour
         if(isSinglePlayer)
         {
             Time.timeScale = 1.0f;
-            Debug.Log("[PauseManager] Game resumed (singleplayer)");
         }
         else
         {
             EnableLocalPlayerInput();
-            Debug.Log("[PauseManager] Local player resumed (multiplayer)");
         }
 
         if(AudioManager.Instance != null)
@@ -160,7 +156,7 @@ public class PauseManager : MonoBehaviour
 
     public void OnSettingsButton()
     {
-        Debug.Log("[PauseManager] Settings not implemented yet");
+        // TODO: Implement Settings Panel
     }
 
     public void OnResetButton()
@@ -186,7 +182,6 @@ public class PauseManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("[PauseManager] No confirmation dialog assigned!");
             ExecuteReset();
         }
     }
@@ -204,15 +199,12 @@ public class PauseManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("[PauseManager] No confirmation dialog assigned!");
             ExecuteQuit();
         }
     }
 
     private void ExecuteReset()
     {
-        Debug.Log("[PauseManager] Resetting run...");
-
         if (isSinglePlayer)
         {
             Time.timeScale = 1f;
@@ -230,8 +222,6 @@ public class PauseManager : MonoBehaviour
 
     private void ExecuteQuit()
     {
-        Debug.Log("[PauseManager] Quitting...");
-
         if (isSinglePlayer)
         {
             Time.timeScale = 1f;
@@ -240,7 +230,6 @@ public class PauseManager : MonoBehaviour
         if (NetworkManager.Singleton != null && NetworkManager.Singleton.IsListening)
         {
             NetworkManager.Singleton.Shutdown();
-            Debug.Log("[PauseManager] Network shutdown");
         }
 
 #if UNITY_EDITOR

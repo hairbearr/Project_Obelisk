@@ -57,7 +57,6 @@ namespace Player
                 var progress = inventory.GetOrCreateProgress(sigilId);
                 if (progress == null || progress.level < 1)
                 {
-                    Debug.LogWarning($"Cannot equip {sigilId} - not unlocked or level 0");
                     return;
                 }
             }
