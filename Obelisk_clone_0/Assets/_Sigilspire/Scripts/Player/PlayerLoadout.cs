@@ -5,19 +5,28 @@ using UnityEngine;
 
 namespace Player
 {
-    /// <summary>
-    /// Manages which sigils are currently equipped on this player.
-    /// Separate from SigilInventory (which tracks unlocks/progression).
-    /// </summary>
     public class PlayerLoadout : NetworkBehaviour
     {
+        #region Data Structures
+
         [Serializable]
         public class EquippedSigils
         {
-            public string swordSigilId;
-            public string shieldSigilId;
-            public string grappleSigilId;
+            [Header("Majors")]
+            public string swordMajorId;
+            public string shieldMajorId;
+            public string grappleMajorId;
+
+            [Header("Minors")]
+            public int amountEquippable = 2;
+            public string[] swordMinorIds = new string[2];
+            public string[] shieldMinorIds = new string[2];
+            public string[] grappleMinorIds = new string[2];
         }
+
+        #endregion
+
+        #region Serialized Fields
 
         [Header("Current Loadout")]
         [SerializeField] private EquippedSigils equipped = new EquippedSigils();
@@ -27,6 +36,10 @@ namespace Player
         [SerializeField] private Combat.SwordController sword;
         [SerializeField] private Combat.ShieldController shield;
         [SerializeField] private Combat.GrapplingHookController grapple;
+
+        #endregion
+
+        #region Unity Lifecycle
 
         private void Awake()
         {
@@ -44,10 +57,11 @@ namespace Player
             ApplyCurrentLoadout();
         }
 
-        /// <summary>
-        /// Equip a sigil in the specified slot. Call this from UI later.
-        /// </summary>
-        public void EquipSigil(WeaponSlot slot, string sigilId)
+        #endregion
+
+        #region Public API - Equip Sigils
+
+        public void EquipMajor(WeaponSlot slot, string sigilId)
         {
             if (!IsOwner) return;
 
@@ -57,6 +71,7 @@ namespace Player
                 var progress = inventory.GetOrCreateProgress(sigilId);
                 if (progress == null || progress.level < 1)
                 {
+                    Debug.LogWarning($"Cannot equip {sigilId} - not unlocked or level 0");
                     return;
                 }
             }
@@ -65,22 +80,87 @@ namespace Player
             switch (slot)
             {
                 case WeaponSlot.Sword:
-                    equipped.swordSigilId = sigilId;
+                    equipped.swordMajorId = sigilId;
                     break;
                 case WeaponSlot.Shield:
-                    equipped.shieldSigilId = sigilId;
+                    equipped.shieldMajorId = sigilId;
                     break;
                 case WeaponSlot.Grapple:
-                    equipped.grappleSigilId = sigilId;
+                    equipped.grappleMajorId = sigilId;
                     break;
             }
 
             ApplyCurrentLoadout();
         }
 
-        /// <summary>
-        /// Apply currently equipped sigils to weapon controllers.
-        /// </summary>
+        public void EquipMinor(WeaponSlot slot, int minorSlotIndex, string sigilId)
+        {
+            if (!IsOwner) return;
+            if (minorSlotIndex < 0 || minorSlotIndex > 1) return;
+
+            // Validate compatibility
+            var def = inventory?.GetDefinition(sigilId);
+            if (def != null && def.sigilType == SigilType.Minor)
+            {
+                // Check if Minor is compatible with this weapon
+                bool compatible = def.compatibility == SigilCompatibility.Universal ||
+                                 (def.compatibility == SigilCompatibility.SwordOnly && slot == WeaponSlot.Sword) ||
+                                 (def.compatibility == SigilCompatibility.ShieldOnly && slot == WeaponSlot.Shield) ||
+                                 (def.compatibility == SigilCompatibility.GrappleOnly && slot == WeaponSlot.Grapple);
+
+                if (!compatible)
+                {
+                    Debug.LogWarning($"Minor {sigilId} is not compatible with {slot}");
+                    return;
+                }
+            }
+
+            switch (slot)
+            {
+                case WeaponSlot.Sword:
+                    equipped.swordMinorIds[minorSlotIndex] = sigilId;
+                    break;
+                case WeaponSlot.Shield:
+                    equipped.shieldMinorIds[minorSlotIndex] = sigilId;
+                    break;
+                case WeaponSlot.Grapple:
+                    equipped.grappleMinorIds[minorSlotIndex] = sigilId;
+                    break;
+            }
+
+            ApplyCurrentLoadout();
+        }
+
+        #endregion
+
+        #region Public API - Getters
+
+        public string GetEquippedMajorId(WeaponSlot slot)
+        {
+            return slot switch
+            {
+                WeaponSlot.Sword => equipped.swordMajorId,
+                WeaponSlot.Shield => equipped.shieldMajorId,
+                WeaponSlot.Grapple => equipped.grappleMajorId,
+                _ => null
+            };
+        }
+
+        public string[] GetEquippedMinorIds(WeaponSlot slot)
+        {
+            return slot switch
+            {
+                WeaponSlot.Sword => equipped.swordMinorIds,
+                WeaponSlot.Shield => equipped.shieldMinorIds,
+                WeaponSlot.Grapple => equipped.grappleMinorIds,
+                _ => new string[0]
+            };
+        }
+
+        #endregion
+
+        #region Apply Loadout
+
         public void ApplyCurrentLoadout()
         {
             if (inventory == null) return;
@@ -88,71 +168,75 @@ namespace Player
             // Sword
             if (sword != null)
             {
-                var def = inventory.GetDefinition(equipped.swordSigilId);
-                if (def != null)
+                var major = inventory.GetDefinition(equipped.swordMajorId);
+                var minors = new System.Collections.Generic.List<SigilDefinition>();
+
+                foreach (var minorId in equipped.swordMinorIds)
                 {
-                    sword.SetEquippedSigil(def);
-                    sword.ApplyVisualSet(def.visualSet);
+                    if (!string.IsNullOrEmpty(minorId))
+                    {
+                        var minor = inventory.GetDefinition(minorId);
+                        if (minor != null) minors.Add(minor);
+                    }
                 }
-                else
-                {
-                    sword.SetEquippedSigil(null);
-                }
+
+                sword.SetEquippedSigils(major, minors);
+                if (major != null) sword.ApplyVisualSet(major.visualSet);
             }
 
             // Shield
             if (shield != null)
             {
-                var def = inventory.GetDefinition(equipped.shieldSigilId);
-                if (def != null)
+                var major = inventory.GetDefinition(equipped.shieldMajorId);
+                var minors = new System.Collections.Generic.List<SigilDefinition>();
+
+                foreach (var minorId in equipped.shieldMinorIds)
                 {
-                    shield.SetEquippedSigil(def);
-                    shield.ApplyVisualSet(def.visualSet);
+                    if (!string.IsNullOrEmpty(minorId))
+                    {
+                        var minor = inventory.GetDefinition(minorId);
+                        if (minor != null) minors.Add(minor);
+                    }
                 }
-                else
-                {
-                    shield.SetEquippedSigil(null);
-                }
+
+                shield.SetEquippedSigils(major, minors);
+                if (major != null) shield.ApplyVisualSet(major.visualSet);
             }
 
             // Grapple
             if (grapple != null)
             {
-                var def = inventory.GetDefinition(equipped.grappleSigilId);
-                if (def != null)
+                var major = inventory.GetDefinition(equipped.grappleMajorId);
+                var minors = new System.Collections.Generic.List<SigilDefinition>();
+
+                foreach (var minorId in equipped.grappleMinorIds)
                 {
-                    grapple.SetEquippedSigil(def);
-                    grapple.ApplyVisualSet(def.visualSet);
+                    if (!string.IsNullOrEmpty(minorId))
+                    {
+                        var minor = inventory.GetDefinition(minorId);
+                        if (minor != null) minors.Add(minor);
+                    }
                 }
-                else
-                {
-                    grapple.SetEquippedSigil(null);
-                }
+
+                grapple.SetEquippedSigils(major, minors);
+                if (major != null) grapple.ApplyVisualSet(major.visualSet);
             }
         }
 
-        public string GetEquippedSigilId(WeaponSlot slot)
-        {
-            return slot switch
-            {
-                WeaponSlot.Sword => equipped.swordSigilId,
-                WeaponSlot.Shield => equipped.shieldSigilId,
-                WeaponSlot.Grapple => equipped.grappleSigilId,
-                _ => null
-            };
-        }
+        #endregion
 
-        /// <summary>
-        /// For testing: equip sigils by their ScriptableObject references.
-        /// Remove this once you have proper UI.
-        /// </summary>
+        #region Testing Helpers
+
+        // TODO: REMOVE WHEN YOU HAVE PROPER UI
         public void EquipSigilsForTesting(SigilDefinition sword, SigilDefinition shield, SigilDefinition grapple)
         {
-            if (sword != null) equipped.swordSigilId = sword.id;
-            if (shield != null) equipped.shieldSigilId = shield.id;
-            if (grapple != null) equipped.grappleSigilId = grapple.id;
+            if (sword != null) equipped.swordMajorId = sword.id;
+            if (shield != null) equipped.shieldMajorId = shield.id;
+            if (grapple != null) equipped.grappleMajorId = grapple.id;
 
             ApplyCurrentLoadout();
         }
+
+        #endregion
     }
 }

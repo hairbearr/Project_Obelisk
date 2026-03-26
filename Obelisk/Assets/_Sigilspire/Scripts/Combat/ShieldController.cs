@@ -1,8 +1,9 @@
-using UnityEngine;
-using Unity.Netcode;
-using UnityEngine.InputSystem;
 using Combat.AbilitySystem;
 using Combat.DamageInterfaces;
+using System.Collections.Generic;
+using Unity.Netcode;
+using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Combat
 {
@@ -23,6 +24,7 @@ namespace Combat
         [SerializeField] private Ability baseAbility;
         [SerializeField] private SigilDefinition equippedSigil;
         [SerializeField] private string equippedSigilId;
+        private List<SigilDefinition> equippedMinors = new List<SigilDefinition>();
 
         [SerializeField] private bool enforceAbilityCooldown = true;
         private float lastAbilityUseTimeLocal = -9999f;
@@ -159,10 +161,11 @@ namespace Combat
             blockVfxPrefab = set.specialVfx;
         }
 
-        public void SetEquippedSigil(SigilDefinition sigil)
+        public void SetEquippedSigils(SigilDefinition major, List<SigilDefinition> minors)
         {
-            equippedSigil = sigil;
-            equippedSigilId = sigil != null ? sigil.id : string.Empty;
+            equippedSigil = major;
+            equippedSigilId = major != null ? major.id : string.Empty;
+            equippedMinors = minors ?? new List<SigilDefinition>();
         }
 
         #endregion
@@ -171,8 +174,7 @@ namespace Combat
 
         private EffectiveAbilityStats GetCurrentStats()
         {
-            if (baseAbility == null)
-                return default;
+            if (baseAbility == null) return default;
 
             SigilProgressData progress = null;
 
@@ -183,7 +185,7 @@ namespace Combat
                 progress = sigilInventory.GetOrCreateProgress(equippedSigilId);
             }
 
-            return SigilEvaluator.GetEffectiveStats(baseAbility, equippedSigil, progress);
+            return SigilEvaluator.GetEffectiveStats(baseAbility, equippedSigil, progress, equippedMinors, sigilInventory);
         }
 
         public float GetEffectiveMaxShieldEnergy()

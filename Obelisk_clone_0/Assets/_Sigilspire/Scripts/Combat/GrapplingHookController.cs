@@ -1,7 +1,8 @@
-using UnityEngine;
-using Unity.Netcode;
 using Combat.AbilitySystem;
 using Combat.DamageInterfaces;
+using System.Collections.Generic;
+using Unity.Netcode;
+using UnityEngine;
 
 namespace Combat
 {
@@ -19,6 +20,7 @@ namespace Combat
         [SerializeField] private Ability baseAbility;
         [SerializeField] private SigilDefinition equippedSigil;
         [SerializeField] private string equippedSigilId;
+        private List<SigilDefinition> equippedMinors = new List<SigilDefinition>();
 
         [Header("Progress / Inventory")]
         [SerializeField] private SigilInventory sigilInventory;
@@ -223,10 +225,11 @@ namespace Combat
         #endregion
 
         #region Visual Set / Sigil
-        public void SetEquippedSigil(SigilDefinition sigil)
+        public void SetEquippedSigils(SigilDefinition major, List<SigilDefinition> minors)
         {
-            equippedSigil = sigil;
-            equippedSigilId = sigil != null ? sigil.id : string.Empty;
+            equippedSigil = major;
+            equippedSigilId = major != null ? major.id : string.Empty;
+            equippedMinors = minors ?? new List<SigilDefinition>();
         }
 
         public void ApplyVisualSet(WeaponVisualSet set)
@@ -250,12 +253,14 @@ namespace Combat
 
             SigilProgressData progress = null;
 
-            if (equippedSigil != null && sigilInventory != null && !string.IsNullOrEmpty(equippedSigilId))
+            if (equippedSigil != null &&
+                sigilInventory != null &&
+                !string.IsNullOrEmpty(equippedSigilId))
             {
                 progress = sigilInventory.GetOrCreateProgress(equippedSigilId);
             }
 
-            return SigilEvaluator.GetEffectiveStats(baseAbility, equippedSigil, progress);
+            return SigilEvaluator.GetEffectiveStats(baseAbility, equippedSigil, progress, equippedMinors, sigilInventory);
         }
 
         private float GetEffectiveCooldown(EffectiveAbilityStats stats)

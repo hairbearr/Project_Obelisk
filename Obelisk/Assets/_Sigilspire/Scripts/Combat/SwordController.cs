@@ -14,6 +14,7 @@ namespace Combat
         [SerializeField] private Ability baseAbility;
         [SerializeField] private SigilDefinition equippedSigil;
         [SerializeField] private string equippedSigilId;
+        private List<SigilDefinition> equippedMinors = new List<SigilDefinition>();
 
         [Header("Progress / Inventory")]
         [SerializeField] private SigilInventory sigilInventory;
@@ -139,10 +140,11 @@ namespace Combat
 
         #region Visual Set / Sigil
 
-        public void SetEquippedSigil(SigilDefinition sigil)
+        public void SetEquippedSigils(SigilDefinition major, List<SigilDefinition> minors)
         {
-            equippedSigil = sigil;
-            equippedSigilId = sigil != null ? sigil.id : string.Empty;
+            equippedSigil = major;
+            equippedSigilId = major != null ? major.id : string.Empty;
+            equippedMinors = minors ?? new List<SigilDefinition>();
         }
 
         public void ApplyVisualSet(WeaponVisualSet set)
@@ -176,7 +178,7 @@ namespace Combat
                 progress = sigilInventory.GetOrCreateProgress(equippedSigilId);
             }
 
-            return SigilEvaluator.GetEffectiveStats(baseAbility, equippedSigil, progress);
+            return SigilEvaluator.GetEffectiveStats(baseAbility, equippedSigil, progress, equippedMinors, sigilInventory);
         }
 
         private float GetEffectiveWindup(EffectiveAbilityStats stats)
@@ -303,10 +305,6 @@ namespace Combat
             serverAttackRoutine = StartCoroutine(Server_DoSwordHit(direction, stats));
         }
 
-
-
-
-
         private System.Collections.IEnumerator Server_DoSwordHit(Vector2 direction, EffectiveAbilityStats stats)
         {
             // Store the hit data for when the animation event fires
@@ -330,8 +328,6 @@ namespace Combat
                 ExecuteHitCheck();
             }
         }
-
-
 
         private void DoSwordOverlap(Vector2 direction, EffectiveAbilityStats stats)
         {
@@ -457,10 +453,6 @@ namespace Combat
             if (AudioManager.Instance != null) AudioManager.Instance.PlaySwordHit(hitPos);
         }
 
-        /// <summary>
-        /// Called by Animation Event on the sword attack animation.
-        /// This should be placed on the frame where the sword makes contact.
-        /// </summary>
         public void OnSwordHitFrame()
         {
             if (!IsServer) return;
