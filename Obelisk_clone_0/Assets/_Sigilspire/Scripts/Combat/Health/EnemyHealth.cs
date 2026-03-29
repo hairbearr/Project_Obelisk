@@ -15,6 +15,9 @@ namespace Enemy
         [SerializeField] private float knockbackCooldown = 0.15f;
         private float nextKnockbackTime;
 
+        [Header("Drops")]
+        [SerializeField] private int xpReward = 10;
+
         private Rigidbody2D _rb2D;
 
         public override void OnNetworkSpawn()
@@ -60,7 +63,9 @@ namespace Enemy
                 {
                     mobCounter.ServerIncrementKills();
                 }
-            }                
+            }
+
+            AwardSigilXp();
 
             if (TryGetComponent<GrappleTarget>(out var gt))
                 gt.ServerEndGrapple();
@@ -168,6 +173,43 @@ namespace Enemy
             _rb2D.linearVelocity = Vector2.ClampMagnitude(_rb2D.linearVelocity, maxKnockbackSpeed);
 
         }
+
+        private void AwardSigilXp()
+        {
+            if (!IsServer) return;
+            if (xpReward <= 0f) return;
+
+            // Find all players in the game
+            var allPlayers = FindObjectsByType<Player.PlayerLoadout>(FindObjectsSortMode.None);
+
+            foreach (var loadout in allPlayers)
+            {
+                if (loadout == null) continue;
+
+                var inventory = loadout.GetComponent<Combat.AbilitySystem.SigilInventory>();
+                if(inventory == null) continue;
+
+                // Award XP to all equipped major sigils for this player
+                string[] majorIds = new string[3]
+                {
+                    loadout.GetEquippedMajorId(Combat.AbilitySystem.WeaponSlot.Sword),
+                    loadout.GetEquippedMajorId(Combat.AbilitySystem.WeaponSlot.Shield),
+                    loadout.GetEquippedMajorId(Combat.AbilitySystem.WeaponSlot.Grapple)
+                };
+
+                foreach (string majorId in majorIds)
+                {
+                    if(string.IsNullOrEmpty(majorId)) continue;
+
+                    var def = inventory.GetDefinition(majorId);
+                    if (def != null && def.sigilType == Combat.AbilitySystem.SigilType.Major)
+                    {
+                        inventory.AddXp(majorId, xpReward);
+                    }
+                }
+            }
+        }
+
         protected override void PlayHurtSound()
         {
             if (AudioManager.Instance != null)
