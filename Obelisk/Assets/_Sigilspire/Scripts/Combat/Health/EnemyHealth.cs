@@ -17,6 +17,8 @@ namespace Enemy
 
         [Header("Drops")]
         [SerializeField] private int xpReward = 10;
+        [SerializeField] private SigilDropTable dropTable;
+        [SerializeField, Range(0f, 100f)] private float dropChance = 5f; // 5% chance a drop event happens
 
         private Rigidbody2D _rb2D;
 
@@ -66,6 +68,8 @@ namespace Enemy
             }
 
             AwardSigilXp();
+            TryDropSigil();
+
 
             if (TryGetComponent<GrappleTarget>(out var gt))
                 gt.ServerEndGrapple();
@@ -206,6 +210,62 @@ namespace Enemy
                     {
                         inventory.AddXp(majorId, xpReward);
                     }
+                }
+            }
+        }
+
+        private void TryDropSigil()
+        {
+            if (!IsServer) return;
+            if (dropTable == null) return;
+            if (dropTable.sigilDropPrefab == null) return;
+
+            // Roll: does a drop event happen?
+            float roll = Random.Range(0f, 100f);
+            if (roll > dropChance) return; // No drop
+
+            // Find all players
+            var allPlayers = FindObjectsByType<Player.PlayerLoadout>(FindObjectsSortMode.None);
+            if (allPlayers.Length == 0) return;
+
+            // Roll a sigil for each player based on their inventory
+            var playerSigilMap = new System.Collections.Generic.Dictionary<ulong, string>();
+
+            foreach (var loadout in allPlayers)
+            {
+                if (loadout == null) continue;
+
+                var inventory = loadout.GetComponent<Combat.AbilitySystem.SigilInventory>();
+                if (inventory == null) continue;
+
+                var networkObj = loadout.GetComponent<NetworkObject>();
+                if (networkObj == null) continue;
+
+                ulong clientId = networkObj.OwnerClientId;
+
+                // Roll from this player's valid loot pool
+                var sigil = dropTable.RollDropForPlayer(inventory);
+                if (sigil != null)
+                {
+                    playerSigilMap[clientId] = sigil.id;
+                }
+            }
+
+            // If no one got a valid drop, don't spawn anything
+            if (playerSigilMap.Count == 0) return;
+
+            // Spawn ONE drop object with all player assignments
+            var dropObj = Instantiate(dropTable.sigilDropPrefab, transform.position, Quaternion.identity);
+            var netObj = dropObj.GetComponent<NetworkObject>();
+
+            if (netObj != null)
+            {
+                netObj.Spawn();
+
+                var drop = dropObj.GetComponent<SigilDrop>();
+                if (drop != null)
+                {
+                    drop.Initialize(playerSigilMap);
                 }
             }
         }

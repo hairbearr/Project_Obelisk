@@ -10,13 +10,13 @@ namespace Combat.AbilitySystem
     public class SigilProgressData
     {
         public string sigilId;
-        public int level = 1;
+        public int level = 0;
         public int currentXp = 0;
 
         public SigilProgressData(string sigilId)
         {
             this.sigilId = sigilId;
-            level = 1;
+            level = 0;
             currentXp = 0;
         }
     }

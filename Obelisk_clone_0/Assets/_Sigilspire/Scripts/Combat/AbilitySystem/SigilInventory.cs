@@ -16,6 +16,11 @@ namespace Combat.AbilitySystem
         // and link by ID -> SigilDefinition via some registry.
         [SerializeField] private List<SigilDefinition> knownSigilDefinitions = new List<SigilDefinition>();
 
+        public SigilProgressData GetProgress(string sigilId)
+        {
+            return sigils.FirstOrDefault(s => s.sigilId == sigilId);
+        }
+
         public SigilProgressData GetOrCreateProgress(string sigilId)
         {
             var existing = sigils.FirstOrDefault(s => s.sigilId == sigilId);
@@ -48,6 +53,44 @@ namespace Combat.AbilitySystem
                 progress.currentXp -= (int)xpRequired;
                 progress.level++;
                 // TODO: notify UI / player about level up
+            }
+        }
+
+        public void AddSigilDrop(SigilDefinition sigil)
+        {
+            if (sigil == null) return;
+
+            var progress = GetOrCreateProgress(sigil.id);
+
+            if (sigil.sigilType == SigilType.Minor)
+            {
+                // Minors: level up via duplicates (max 3)
+                if (progress.level < sigil.minorMaxLevel)
+                {
+                    progress.level++;
+                    Debug.Log($"[Sigil] {sigil.displayName} upgraded to Level {progress.level}!");
+
+                    // TODO: Show level-up UI notification
+                }
+                else
+                {
+                    Debug.Log($"[Sigil] {sigil.displayName} already maxed (Level {sigil.minorMaxLevel})");
+                }
+            }
+            else if (sigil.sigilType == SigilType.Major)
+            {
+                // Majors: unlock at level 1 if new (XP gained through combat)
+                if (progress.level < 1)
+                {
+                    progress.level = 1;
+                    Debug.Log($"[Sigil] {sigil.displayName} unlocked!");
+
+                    // TODO: Show unlock UI notification
+                }
+                else
+                {
+                    Debug.Log($"[Sigil] {sigil.displayName} already unlocked");
+                }
             }
         }
     }

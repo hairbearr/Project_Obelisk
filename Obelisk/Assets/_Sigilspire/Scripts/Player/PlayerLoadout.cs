@@ -41,6 +41,17 @@ namespace Player
 
         #region Unity Lifecycle
 
+        private void Start()
+        {
+            if (!IsOwner) return;
+
+            var slash = inventory.GetDefinition("major_slash");
+            var block = inventory.GetDefinition("major_block");
+            var hook = inventory.GetDefinition("major_hook");
+
+            EquipSigilsForTesting(slash, block, hook);
+        }
+
         private void Awake()
         {
             if (inventory == null) inventory = GetComponent<SigilInventory>();
@@ -230,9 +241,9 @@ namespace Player
         // TODO: REMOVE WHEN YOU HAVE PROPER UI
         public void EquipSigilsForTesting(SigilDefinition sword, SigilDefinition shield, SigilDefinition grapple)
         {
-            if (sword != null) equipped.swordMajorId = sword.id;
-            if (shield != null) equipped.shieldMajorId = shield.id;
-            if (grapple != null) equipped.grappleMajorId = grapple.id;
+            if (sword != null) { inventory.AddSigilDrop(sword); equipped.swordMajorId = sword.id; }
+            if (shield != null) { inventory.AddSigilDrop(shield); equipped.shieldMajorId = shield.id; }
+            if (grapple != null) { inventory.AddSigilDrop(grapple); equipped.grappleMajorId = grapple.id; }
 
             ApplyCurrentLoadout();
         }

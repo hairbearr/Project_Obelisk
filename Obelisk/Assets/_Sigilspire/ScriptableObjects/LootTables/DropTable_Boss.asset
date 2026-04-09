@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 724db2f0696a10f43acb14f396a9b6cb, type: 3}
+  m_Name: DropTable_Boss
+  m_EditorClassIdentifier: Assembly-CSharp::SigilDropTable
+  possibleDrops:
+  - sigil: {fileID: 11400000, guid: c615c362eb0d5d84cbe6fc8b8a642e1f, type: 2}
+    dropWeight: 33
+  - sigil: {fileID: 11400000, guid: 5f013148dd229bb4b90b0111a847f96e, type: 2}
+    dropWeight: 33
+  - sigil: {fileID: 11400000, guid: 16b94cd7045b7274795e5ebad8695988, type: 2}
+    dropWeight: 33
+  sigilDropPrefab: {fileID: 6459830015172273110, guid: 200a391f322f2624582112e64320f268, type: 3}
