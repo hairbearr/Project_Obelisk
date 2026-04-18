@@ -16,6 +16,10 @@ namespace Combat.AbilitySystem
         // and link by ID -> SigilDefinition via some registry.
         [SerializeField] private List<SigilDefinition> knownSigilDefinitions = new List<SigilDefinition>();
 
+        public event System.Action<string, int, int, int> OnXpChanged;
+        public event System.Action<string, int> OnLevelChanged;
+
+
         public SigilProgressData GetProgress(string sigilId)
         {
             return sigils.FirstOrDefault(s => s.sigilId == sigilId);
@@ -52,8 +56,15 @@ namespace Combat.AbilitySystem
 
                 progress.currentXp -= (int)xpRequired;
                 progress.level++;
-                // TODO: notify UI / player about level up
+                var networkObj = GetComponent<Unity.Netcode.NetworkObject>();
+                if (networkObj != null && networkObj.IsOwner)
+                    SigilNotificationUI.Instance?.ShowLevelUp(def, progress.level);
+
+                OnLevelChanged?.Invoke(sigilId, progress.level);
             }
+
+            int xpReq = (int)def.GetXpRequiredForLevel(progress.level);
+            OnXpChanged?.Invoke(sigilId, progress.currentXp, xpReq, progress.level);
         }
 
         public void AddSigilDrop(SigilDefinition sigil)
@@ -70,7 +81,9 @@ namespace Combat.AbilitySystem
                     progress.level++;
                     Debug.Log($"[Sigil] {sigil.displayName} upgraded to Level {progress.level}!");
 
-                    // TODO: Show level-up UI notification
+                    var networkObj = GetComponent<Unity.Netcode.NetworkObject>();
+                    if (networkObj != null && networkObj.IsOwner)
+                        SigilNotificationUI.Instance?.ShowLevelUp(sigil, progress.level);
                 }
                 else
                 {
@@ -85,7 +98,9 @@ namespace Combat.AbilitySystem
                     progress.level = 1;
                     Debug.Log($"[Sigil] {sigil.displayName} unlocked!");
 
-                    // TODO: Show unlock UI notification
+                    var networkObj = GetComponent<Unity.Netcode.NetworkObject>();
+                    if (networkObj != null && networkObj.IsOwner)
+                        SigilNotificationUI.Instance?.ShowPickup(sigil);
                 }
                 else
                 {

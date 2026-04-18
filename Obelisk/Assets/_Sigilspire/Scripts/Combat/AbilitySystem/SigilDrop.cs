@@ -10,6 +10,12 @@ public class SigilDrop : NetworkBehaviour
     [SerializeField] private Color minorColor = Color.cyan;
     [SerializeField] private Color majorColor = new Color(1f, 0.84f, 0f); // gold
 
+    [Header("Visual Feedback")]
+    [SerializeField] private ParticleSystem pickupParticles;
+    [SerializeField] private float pulseMinAlpha = 0.4f;
+    [SerializeField] private float pulseMaxAlpha = 1f;
+    [SerializeField] private float pulseSpeed = 2f;
+
     [Header("Pickup")]
     [SerializeField] private float pickupRadius = 1.5f;
     [SerializeField] private LayerMask playerLayer;
@@ -24,7 +30,22 @@ public class SigilDrop : NetworkBehaviour
     // Client tracks: have I picked this up yet?
     private bool localPlayerPickedUp = false;
 
+    private Coroutine pulseRoutine;
+
     private float spawnTime;
+
+    private System.Collections.IEnumerator PulseSprite()
+    {
+        while (sprite != null && sprite.enabled)
+        {
+            float t = Mathf.PingPong(Time.time * pulseSpeed, 1f);
+            float alpha = Mathf.Lerp(pulseMinAlpha, pulseMaxAlpha, t);
+            Color c = sprite.color;
+            c.a = alpha;
+            sprite.color = c;
+            yield return null;
+        }
+    }
 
     public void Initialize(Dictionary<ulong, string> playerSigilMap)
     {
@@ -89,7 +110,8 @@ public class SigilDrop : NetworkBehaviour
             playersWhoPickedUp.Add(clientId);
 
             // Tell that specific client they picked it up
-            NotifyPickupClientRpc(def.displayName, def.sigilType == SigilType.Minor, clientId);
+            NotifyPickupClientRpc(def.id, def.displayName, def.sigilType == SigilType.Minor, clientId);
+
         }
     }
 
@@ -140,10 +162,12 @@ public class SigilDrop : NetworkBehaviour
                 sprite.sprite = def.icon;
             }
         }
+
+        pulseRoutine = StartCoroutine(PulseSprite());
     }
 
     [ClientRpc]
-    private void NotifyPickupClientRpc(string sigilName, bool isMinor, ulong targetClientId)
+    private void NotifyPickupClientRpc(string sigilId, string sigilName, bool isMinor, ulong targetClientId)
     {
         // Only the target client reacts
         if (NetworkManager.Singleton == null) return;
@@ -151,12 +175,26 @@ public class SigilDrop : NetworkBehaviour
 
         localPlayerPickedUp = true;
 
-        // Hide visually for this client
+        if(pulseRoutine != null) StopCoroutine(pulseRoutine);
         if (sprite != null) sprite.enabled = false;
+
+        if(pickupParticles != null)
+        {
+            pickupParticles.transform.SetParent(null);
+            pickupParticles.Play();
+        }
 
         Debug.Log($"[Sigil] Picked up {(isMinor ? "Minor" : "Major")}: {sigilName}");
 
-        // TODO: Show UI notification
+        var allLoadouts = FindObjectsByType<Player.PlayerLoadout>(FindObjectsSortMode.None);
+        foreach (var loadout in allLoadouts)
+        {
+            if (!loadout.IsOwner) continue;
+            var inv = loadout.GetComponent<Combat.AbilitySystem.SigilInventory>();
+            if (inv == null) break;
+            SigilNotificationUI.Instance?.ShowPickup(inv.GetDefinition(sigilId));
+            break;
+        }
         if (AudioManager.Instance != null)
         {
             AudioManager.Instance.PlayMenuClick(); // Temp - add proper pickup sound
